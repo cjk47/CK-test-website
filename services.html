@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services — Craig Kleila</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          coral:  { DEFAULT: '#F47B5A', light: '#FFF1EC', dark: '#D45F3C' },
+          violet: { DEFAULT: '#7B68EE', light: '#F0EFFE', dark: '#5E4DD6' },
+          ink:    '#323232',
+          muted:  '#6B7280',
+          border: '#E8E8F0',
+          offwhite: '#F9F8FF',
+        },
+        fontFamily: {
+          display: ['Poppins', 'sans-serif'],
+          body:    ['Inter', 'sans-serif'],
+        },
+      }
+    }
+  }
+</script>
+<style>
+  body { font-family: 'Inter', sans-serif; background: #ffffff; color: #323232; }
+  .font-display { font-family: 'Poppins', sans-serif; }
+  .btn-coral { transition: transform 0.2s cubic-bezier(0.22,1,0.36,1), box-shadow 0.2s cubic-bezier(0.22,1,0.36,1); }
+  .btn-coral:hover { transform: translateY(-2px); box-shadow: 0 10px 28px -6px rgba(244,123,90,0.45); }
+  .btn-coral:active { transform: translateY(0); }
+  .btn-outline { transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease; }
+  .btn-outline:hover { background: #F9F8FF; border-color: #7B68EE; color: #5E4DD6; }
+  nav a { transition: color 0.15s ease; }
+  nav a:hover { color: #F47B5A; }
+  .service-card { scroll-margin-top: 100px; }
+</style>
+</head>
+<body class="antialiased">
+
+<!-- NAV -->
+<header class="sticky top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-border">
+  <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+    <a href="index.html"><img src="logo.png" alt="Craig Kleila SEO" class="h-16"></a>
+    <div class="hidden md:flex items-center gap-8 text-sm font-medium text-muted">
+      <a href="services.html" class="text-coral font-semibold">Services</a>
+      <a href="case-studies.html">Case Studies</a>
+      <a href="about.html">About</a>
+      
+      <a href="contact.html" class="btn-coral bg-coral text-white px-5 py-2 rounded-full font-semibold text-sm">Get in Touch</a>
+    </div>
+    <button class="md:hidden p-2 rounded text-ink" onclick="document.getElementById('mob').classList.toggle('hidden')" aria-label="Toggle menu">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M3 6h16M3 11h16M3 16h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+  </nav>
+  <div id="mob" class="hidden md:hidden border-t border-border bg-white px-6 py-4 flex flex-col gap-4 text-sm font-medium text-muted">
+    <a href="services.html" class="text-coral">Services</a>
+    <a href="case-studies.html" class="hover:text-coral">Case Studies</a>
+    <a href="about.html" class="hover:text-coral">About</a>
+    
+    <a href="contact.html" class="bg-coral text-white text-center px-4 py-2 rounded-full font-semibold">Get in Touch</a>
+  </div>
+</header>
+
+<!-- PAGE HEADER -->
+<section class="max-w-6xl mx-auto px-6 pt-20 pb-16">
+  <div class="inline-flex items-center gap-2 bg-coral-light text-coral text-xs font-semibold px-3 py-1.5 rounded-full mb-5">
+    <span class="w-1.5 h-1.5 rounded-full bg-coral"></span>Services
+  </div>
+  <h1 class="font-display font-extrabold text-5xl md:text-6xl text-ink leading-tight max-w-2xl">Four ways I help you grow in search.</h1>
+</section>
+
+<!-- SERVICES -->
+<div class="max-w-6xl mx-auto px-6 pb-24 flex flex-col gap-5">
+
+  <!-- Content Strategy -->
+  <div id="content" class="service-card bg-offwhite rounded-3xl border border-border overflow-hidden">
+    <div class="grid md:grid-cols-2">
+      <div class="p-10 md:p-12">
+        <div class="w-12 h-12 rounded-2xl bg-coral-light flex items-center justify-center mb-6">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 10h12M4 14h16M4 18h10" stroke="#F47B5A" stroke-width="1.7" stroke-linecap="round"/></svg>
+        </div>
+        <h2 class="font-display font-bold text-3xl text-ink mb-4">Content Strategy</h2>
+        <p class="text-muted mb-5" style="line-height:1.7">Most content misses because it's written for the brand, not the searcher. I help you build a content program that's genuinely useful — one that earns rankings because it earns trust.</p>
+        <p class="text-muted mb-8" style="line-height:1.7">From keyword research and topic clustering to editorial calendars and brief writing, I handle the strategy so your team can focus on execution.</p>
+        <ul class="space-y-3">
+          <li class="flex items-start gap-3 text-sm text-muted"><span class="w-5 h-5 rounded-full bg-coral-light flex items-center justify-center flex-shrink-0 mt-0.5"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#F47B5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Keyword research &amp; opportunity mapping</li>
+          <li class="flex items-start gap-3 text-sm text-muted"><span class="w-5 h-5 rounded-full bg-coral-light flex items-center justify-center flex-shrink-0 mt-0.5"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#F47B5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Topic clusters &amp; pillar page planning</li>
+          <li class="flex items-start gap-3 text-sm text-muted"><span class="w-5 h-5 rounded-full bg-coral-light flex items-center justify-center flex-shrink-0 mt-0.5"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#F47B5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Content briefs your writers can follow</li>
+          <li class="flex items-start gap-3 text-sm text-muted"><span class="w-5 h-5 rounded-full bg-coral-light flex items-center justify-center flex-shrink-0 mt-0.5"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#F47B5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Existing content audit &amp; refresh recommendations</li>
+        </ul>
+      </div>
+      <div style="background:#ffe5e4; padding:80px; display:flex; align-items:center; justify-content:center;">
+        <svg viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg" class="w-full">
+          <circle cx="240" cy="185" r="142" fill="white"/>
+          <!-- Document (all 4 corners extend beyond white circle) -->
+          <rect x="136" y="36" width="168" height="262" rx="14" fill="white"/>
+          <!-- Coral header fill -->
+          <rect x="136" y="36" width="168" height="56" rx="14" fill="#F47B5A"/>
+          <rect x="136" y="78" width="168" height="14" fill="#F47B5A"/>
+          <!-- Header divider -->
+          <line x1="136" y1="92" x2="304" y2="92" stroke="#323232" stroke-width="6"/>
+          <!-- Document outline drawn last (on top) -->
+          <rect x="136" y="36" width="168" height="262" rx="14" fill="none" stroke="#323232" stroke-width="6"/>
+          <!-- White title lines in coral header -->
+          <rect x="154" y="52" width="88" height="11" rx="5" fill="white"/>
+          <rect x="154" y="71" width="58" height="8" rx="4" fill="white" opacity="0.6"/>
+          <!-- Headline bar inside doc -->
+          <rect x="154" y="108" width="132" height="13" rx="6" fill="#323232"/>
+          <!-- Image placeholder -->
+          <rect x="154" y="132" width="132" height="76" rx="8" fill="#ffe5e4"/>
+          <!-- Mountain scene in image block -->
+          <polygon points="154,208 192,162 228,188 258,172 286,208" fill="#F47B5A" opacity="0.55"/>
+          <circle cx="274" cy="156" r="18" fill="#F47B5A" opacity="0.65"/>
+          <!-- Body text lines -->
+          <rect x="154" y="222" width="132" height="10" rx="5" fill="#e8c8c2"/>
+          <rect x="154" y="240" width="108" height="10" rx="5" fill="#e8c8c2"/>
+          <rect x="154" y="258" width="132" height="10" rx="5" fill="#e8c8c2"/>
+          <rect x="154" y="276" width="78" height="10" rx="5" fill="#e8c8c2"/>
+          <!-- Pencil (eraser extends outside circle top-right, tip points toward doc) -->
+          <g transform="translate(352,258) rotate(-42)">
+            <!-- Shaft -->
+            <rect x="-14" y="-98" width="28" height="118" rx="4" fill="white" stroke="#323232" stroke-width="6" stroke-linejoin="round"/>
+            <!-- Eraser cap (extends outside circle) -->
+            <rect x="-14" y="-98" width="28" height="34" rx="4" fill="#F47B5A"/>
+            <line x1="-14" y1="-98" x2="14" y2="-98" stroke="#323232" stroke-width="6"/>
+            <!-- Metal ferrule -->
+            <rect x="-14" y="-64" width="28" height="14" fill="#aaaaaa" stroke="#323232" stroke-width="5"/>
+            <!-- Wood / tip section -->
+            <polygon points="-14,18 14,18 0,50" fill="#f4d082" stroke="#323232" stroke-width="6" stroke-linejoin="round"/>
+            <line x1="-14" y1="18" x2="14" y2="18" stroke="#323232" stroke-width="5"/>
+            <!-- Tip dot -->
+            <circle cx="0" cy="48" r="5" fill="#323232"/>
+          </g>
+          <!-- 4-point star sparkle outside circle (top-right) -->
+          <path d="M356,72 L360,84 L372,88 L360,92 L356,104 L352,92 L340,88 L352,84 Z" fill="#F47B5A"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- Technical SEO -->
+  <div id="technical" class="service-card bg-offwhite rounded-3xl border border-border overflow-hidden">
+    <div class="grid md:grid-cols-2">
+      <div class="order-last md:order-first" style="background:#eae1fe; padding:80px; display:flex; align-items:center; justify-content:center;">
+        <svg viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg" class="w-full">
+          <circle cx="240" cy="185" r="142" fill="white"/>
+          <!-- Gear teeth (8 teeth, tips at r=155, extend beyond white circle r=142) -->
+          <rect x="227" y="30" width="26" height="48" rx="5" fill="white" stroke="#323232" stroke-width="5.5" transform="rotate(0,240,185)"/>
+          <rect x="227" y="30" width="26" height="48" rx="5" fill="white" stroke="#323232" stroke-width="5.5" transform="rotate(45,240,185)"/>
+          <rect x="227" y="30" width="26" height="48" rx="5" fill="white" stroke="#323232" stroke-width="5.5" transform="rotate(90,240,185)"/>
+          <rect x="227" y="30" width="26" height="48" rx="5" fill="white" stroke="#323232" stroke-width="5.5" transform="rotate(135,240,185)"/>
+          <rect x="227" y="30" width="26" height="48" rx="5" fill="white" stroke="#323232" stroke-width="5.5" transform="rotate(180,240,185)"/>
+          <rect x="227" y="30" width="26" height="48" rx="5" fill="white" stroke="#323232" stroke-width="5.5" transform="rotate(225,240,185)"/>
+          <rect x="227" y="30" width="26" height="48" rx="5" fill="white" stroke="#323232" stroke-width="5.5" transform="rotate(270,240,185)"/>
+          <rect x="227" y="30" width="26" height="48" rx="5" fill="white" stroke="#323232" stroke-width="5.5" transform="rotate(315,240,185)"/>
+          <!-- Gear body (covers tooth bases cleanly) -->
+          <circle cx="240" cy="185" r="108" fill="white" stroke="#323232" stroke-width="6"/>
+          <!-- Center hole (filled with bg color) -->
+          <circle cx="240" cy="185" r="44" fill="#eae1fe" stroke="#323232" stroke-width="5.5"/>
+          <!-- </> code symbols in center hole -->
+          <path d="M219,171 L207,185 L219,199" fill="none" stroke="#323232" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+          <line x1="234" y1="169" x2="246" y2="201" stroke="#7B68EE" stroke-width="7" stroke-linecap="round"/>
+          <path d="M261,171 L273,185 L261,199" fill="none" stroke="#323232" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="p-10 md:p-12">
+        <div class="w-12 h-12 rounded-2xl bg-violet-light flex items-center justify-center mb-6">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M10 4L6 20M14 4l4 16M4 9h16M4 15h16" stroke="#7B68EE" stroke-width="1.7" stroke-linecap="round"/></svg>
+        </div>
+        <h2 class="font-display font-bold text-3xl text-ink mb-4">Technical SEO</h2>
+        <p class="text-muted mb-5" style="line-height:1.7">If search engines can't crawl, understand, or trust your site, no amount of great content will move the needle. I dig into the foundations and make sure nothing is holding you back.</p>
+        <p class="text-muted mb-8" style="line-height:1.7">From site audits to Core Web Vitals, structured data, and crawl budget optimisation — I find the issues and work with your dev team to fix them.</p>
+        <ul class="space-y-3">
+          <li class="flex items-start gap-3 text-sm text-muted"><span class="w-5 h-5 rounded-full bg-violet-light flex items-center justify-center flex-shrink-0 mt-0.5"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#7B68EE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Full site technical audit</li>
+          <li class="flex items-start gap-3 text-sm text-muted"><span class="w-5 h-5 rounded-full bg-violet-light flex items-center justify-center flex-shrink-0 mt-0.5"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#7B68EE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Core Web Vitals &amp; page speed</li>
+          <li class="flex items-start gap-3 text-sm text-muted"><span class="w-5 h-5 rounded-full bg-violet-light flex items-center justify-center flex-shrink-0 mt-0.5"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#7B68EE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Structured data &amp; schema markup</li>
+          <li class="flex items-start gap-3 text-sm text-muted"><span class="w-5 h-5 rounded-full bg-violet-light flex items-center justify-center flex-shrink-0 mt-0.5"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#7B68EE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Indexability, crawl budget &amp; canonicalisation</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- AI Search Strategy -->
+  <div id="ai" class="service-card bg-offwhite rounded-3xl border border-border overflow-hidden">
+    <div class="grid md:grid-cols-2">
+      <div class="p-10 md:p-12">
+        <div class="w-12 h-12 rounded-2xl flex items-center justify-center mb-4" style="background:#fff4d6;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="7" stroke="#b8860b" stroke-width="1.7"/><path d="M12 8v4l3 3" stroke="#b8860b" stroke-width="1.7" stroke-linecap="round"/></svg>
+        </div>
+        <div class="inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1 rounded-full mb-4" style="color:#b8860b; background:#fff4d6;">New &amp; Emerging</div>
+        <h2 class="font-display font-bold text-3xl text-ink mb-4">AI Search Strategy</h2>
+        <p class="text-muted mb-5" style="line-height:1.7">Search isn't just Google anymore. ChatGPT, Perplexity, Gemini, and AI Overviews are changing where and how people find answers — and most brands aren't optimised for any of them.</p>
+        <p class="text-muted mb-8" style="line-height:1.7">I help you build the authority signals, content structures, and E-E-A-T foundations that get your brand cited in AI-generated responses.</p>
+        <ul class="space-y-3">
+          <li class="flex items-start gap-3 text-sm text-muted"><span class="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style="background:#fff4d6"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#b8860b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>AI Overview &amp; featured snippet optimisation</li>
+          <li class="flex items-start gap-3 text-sm text-muted"><span class="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style="background:#fff4d6"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#b8860b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>E-E-A-T signal building</li>
+          <li class="flex items-start gap-3 text-sm text-muted"><span class="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style="background:#fff4d6"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#b8860b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Brand mention monitoring across AI tools</li>
+          <li class="flex items-start gap-3 text-sm text-muted"><span class="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style="background:#fff4d6"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#b8860b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Conversational query &amp; answer-layer content</li>
+        </ul>
+      </div>
+      <div style="background:#fff0cf; padding:80px; display:flex; align-items:center; justify-content:center;">
+        <svg viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg" class="w-full">
+          <circle cx="240" cy="185" r="142" fill="white"/>
+          <!-- Handle extends well outside circle (bottom-right) -->
+          <line x1="267" y1="228" x2="382" y2="352" stroke="#323232" stroke-width="32" stroke-linecap="round"/>
+          <!-- Lens (large, centered left; left edge just past circle boundary) -->
+          <circle cx="196" cy="158" r="96" fill="white" stroke="#323232" stroke-width="6"/>
+          <!-- Inner lens tinted fill -->
+          <circle cx="196" cy="158" r="88" fill="#fff0cf"/>
+          <!-- Central AI node -->
+          <circle cx="196" cy="158" r="14" fill="white" stroke="#323232" stroke-width="5"/>
+          <!-- Surrounding nodes -->
+          <circle cx="158" cy="132" r="11" fill="white" stroke="#323232" stroke-width="4.5"/>
+          <circle cx="236" cy="132" r="11" fill="white" stroke="#323232" stroke-width="4.5"/>
+          <circle cx="158" cy="184" r="11" fill="white" stroke="#323232" stroke-width="4.5"/>
+          <circle cx="236" cy="184" r="11" fill="white" stroke="#323232" stroke-width="4.5"/>
+          <!-- Connection lines from center to surrounding nodes -->
+          <line x1="166" y1="138" x2="183" y2="150" stroke="#323232" stroke-width="4" stroke-linecap="round"/>
+          <line x1="226" y1="138" x2="210" y2="150" stroke="#323232" stroke-width="4" stroke-linecap="round"/>
+          <line x1="166" y1="178" x2="183" y2="166" stroke="#323232" stroke-width="4" stroke-linecap="round"/>
+          <line x1="226" y1="178" x2="210" y2="166" stroke="#323232" stroke-width="4" stroke-linecap="round"/>
+          <!-- Plus sign in center node -->
+          <line x1="196" y1="151" x2="196" y2="165" stroke="#323232" stroke-width="4" stroke-linecap="round"/>
+          <line x1="189" y1="158" x2="203" y2="158" stroke="#323232" stroke-width="4" stroke-linecap="round"/>
+          <!-- Coral sparkle stars (inside lens) -->
+          <path d="M168,114 L173,128 L187,133 L173,138 L168,152 L163,138 L149,133 L163,128 Z" fill="#F47B5A"/>
+          <!-- Star outside circle on yellow bg (top right) -->
+          <path d="M352,68 L357,82 L371,87 L357,92 L352,106 L347,92 L333,87 L347,82 Z" fill="#ffd166"/>
+          <!-- Small star outside circle bottom left -->
+          <path d="M104,268 L107,277 L116,280 L107,283 L104,292 L101,283 L92,280 L101,277 Z" fill="#ffd166"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- Off-site SEO -->
+  <div id="offsite" class="service-card bg-offwhite rounded-3xl border border-border overflow-hidden">
+    <div class="grid md:grid-cols-2">
+      <div class="order-last md:order-first" style="background:#d3dce5; padding:80px; display:flex; align-items:center; justify-content:center;">
+        <svg viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg" class="w-full">
+          <circle cx="240" cy="185" r="142" fill="white"/>
+          <!-- Chain links — right link drawn behind, left in front -->
+          <!-- Right link (behind) -->
+          <ellipse cx="288" cy="185" rx="110" ry="48" fill="none" stroke="#323232" stroke-width="40" transform="rotate(-30,288,185)"/>
+          <ellipse cx="288" cy="185" rx="110" ry="48" fill="none" stroke="white" stroke-width="26" transform="rotate(-30,288,185)"/>
+          <!-- Left link (in front) -->
+          <ellipse cx="192" cy="185" rx="110" ry="48" fill="none" stroke="#323232" stroke-width="40" transform="rotate(-30,192,185)"/>
+          <ellipse cx="192" cy="185" rx="110" ry="48" fill="none" stroke="white" stroke-width="26" transform="rotate(-30,192,185)"/>
+          <!-- Node dots at link ends -->
+          <circle cx="142" cy="126" r="20" fill="white" stroke="#323232" stroke-width="5"/>
+          <circle cx="142" cy="126" r="10" fill="#d3dce5"/>
+          <circle cx="338" cy="244" r="20" fill="white" stroke="#323232" stroke-width="5"/>
+          <circle cx="338" cy="244" r="10" fill="#d3dce5"/>
+          <!-- Dashed connector lines -->
+          <line x1="158" y1="143" x2="188" y2="165" stroke="#323232" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="8,5"/>
+          <line x1="292" y1="208" x2="324" y2="232" stroke="#323232" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="8,5"/>
+          <!-- External link icon outside circle (top right on bg) -->
+          <g transform="translate(348,72)">
+            <rect x="0" y="10" width="28" height="28" rx="6" fill="white" stroke="#323232" stroke-width="5"/>
+            <path d="M17,0 L30,0 L30,13" fill="none" stroke="#323232" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+            <line x1="12" y1="18" x2="30" y2="0" stroke="#323232" stroke-width="5" stroke-linecap="round"/>
+          </g>
+        </svg>
+      </div>
+      <div class="p-10 md:p-12">
+        <div class="w-12 h-12 rounded-2xl flex items-center justify-center mb-6" style="background:#dde4ea;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="6" cy="12" r="3" stroke="#5c7a8f" stroke-width="1.7"/><circle cx="18" cy="6" r="3" stroke="#5c7a8f" stroke-width="1.7"/><circle cx="18" cy="18" r="3" stroke="#5c7a8f" stroke-width="1.7"/><path d="M8.7 10.7l6.6-3.4M8.7 13.3l6.6 3.4" stroke="#5c7a8f" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <h2 class="font-display font-bold text-3xl text-ink mb-4">Off-site SEO</h2>
+        <p class="text-muted mb-5" style="line-height:1.7">On-page optimisation can only take you so far. Long-term rankings require authority — and authority is built off your site, through links, mentions, and digital PR.</p>
+        <p class="text-muted mb-8" style="line-height:1.7">I build ethical, sustainable link profiles through genuine relationships, expert positioning, and content that's worth linking to.</p>
+        <ul class="space-y-3">
+          <li class="flex items-start gap-3 text-sm text-muted"><span class="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style="background:#dde4ea"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#5c7a8f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Backlink profile audit &amp; cleanup</li>
+          <li class="flex items-start gap-3 text-sm text-muted"><span class="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style="background:#dde4ea"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#5c7a8f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Digital PR &amp; link acquisition strategy</li>
+          <li class="flex items-start gap-3 text-sm text-muted"><span class="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style="background:#dde4ea"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#5c7a8f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Competitor link gap analysis</li>
+          <li class="flex items-start gap-3 text-sm text-muted"><span class="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style="background:#dde4ea"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#5c7a8f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Brand mention &amp; unlinked citation recovery</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- CTA -->
+<section class="relative overflow-hidden bg-offwhite border-t border-border py-20 px-6 text-center">
+  <div class="relative z-10 max-w-xl mx-auto">
+    <h2 class="font-display font-bold text-4xl text-ink tracking-tight mb-4">Not sure which service fits?</h2>
+    <p class="text-muted mb-8" style="line-height:1.7">Drop me a note about your situation and I'll point you in the right direction — no commitment needed.</p>
+    <a href="mailto:hello@craigkleila.com" class="btn-coral inline-block bg-coral text-white font-semibold px-8 py-4 rounded-full text-base">hello@craigkleila.com</a>
+  </div>
+  <div class="absolute -left-16 top-1/2 -translate-y-1/2 w-64 h-64 rounded-full" style="background: radial-gradient(circle, #F47B5A18 0%, transparent 70%);"></div>
+  <div class="absolute -right-16 top-1/2 -translate-y-1/2 w-64 h-64 rounded-full" style="background: radial-gradient(circle, #7B68EE18 0%, transparent 70%);"></div>
+</section>
+
+<!-- FOOTER -->
+<footer class="border-t border-border">
+  <div class="max-w-6xl mx-auto px-6 py-10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted">
+    <img src="logo.png" alt="Craig Kleila SEO" class="h-12">
+    <nav class="flex gap-6">
+      <a href="services.html" class="hover:text-coral transition-colors duration-150">Services</a>
+      <a href="case-studies.html" class="hover:text-coral transition-colors duration-150">Case Studies</a>
+      <a href="about.html" class="hover:text-coral transition-colors duration-150">About</a>
+      <a href="contact.html" class="hover:text-coral transition-colors duration-150">Contact</a>
+    </nav>
+    <p>© 2026 Craig Kleila. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>

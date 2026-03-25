@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case Studies — Craig Kleila</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          coral:  { DEFAULT: '#F47B5A', light: '#FFF1EC', dark: '#D45F3C' },
+          violet: { DEFAULT: '#7B68EE', light: '#F0EFFE', dark: '#5E4DD6' },
+          ink:    '#323232',
+          muted:  '#6B7280',
+          border: '#E8E8F0',
+          offwhite: '#F9F8FF',
+        },
+        fontFamily: {
+          display: ['Poppins', 'sans-serif'],
+          body:    ['Inter', 'sans-serif'],
+        },
+      }
+    }
+  }
+</script>
+<style>
+  body { font-family: 'Inter', sans-serif; background: #ffffff; color: #323232; }
+  .font-display { font-family: 'Poppins', sans-serif; }
+  .btn-coral { transition: transform 0.2s cubic-bezier(0.22,1,0.36,1), box-shadow 0.2s cubic-bezier(0.22,1,0.36,1); }
+  .btn-coral:hover { transform: translateY(-2px); box-shadow: 0 10px 28px -6px rgba(244,123,90,0.45); }
+  .btn-coral:active { transform: translateY(0); }
+  .card-hover { transition: transform 0.25s cubic-bezier(0.22,1,0.36,1), box-shadow 0.25s cubic-bezier(0.22,1,0.36,1); }
+  .card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 48px -10px rgba(123,104,238,0.15), 0 4px 12px -4px rgba(0,0,0,0.06); }
+  nav a { transition: color 0.15s ease; }
+  nav a:hover { color: #F47B5A; }
+</style>
+</head>
+<body class="antialiased">
+
+<!-- NAV -->
+<header class="sticky top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-border">
+  <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+    <a href="index.html"><img src="logo.png" alt="Craig Kleila SEO" class="h-16"></a>
+    <div class="hidden md:flex items-center gap-8 text-sm font-medium text-muted">
+      <a href="services.html">Services</a>
+      <a href="case-studies.html" class="text-coral font-semibold">Case Studies</a>
+      <a href="about.html">About</a>
+      
+      <a href="contact.html" class="btn-coral bg-coral text-white px-5 py-2 rounded-full font-semibold text-sm">Get in Touch</a>
+    </div>
+    <button class="md:hidden p-2 rounded text-ink" onclick="document.getElementById('mob').classList.toggle('hidden')" aria-label="Toggle menu">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M3 6h16M3 11h16M3 16h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+  </nav>
+  <div id="mob" class="hidden md:hidden border-t border-border bg-white px-6 py-4 flex flex-col gap-4 text-sm font-medium text-muted">
+    <a href="services.html" class="hover:text-coral">Services</a>
+    <a href="case-studies.html" class="text-coral">Case Studies</a>
+    <a href="about.html" class="hover:text-coral">About</a>
+    
+    <a href="contact.html" class="bg-coral text-white text-center px-4 py-2 rounded-full font-semibold">Get in Touch</a>
+  </div>
+</header>
+
+<!-- PAGE HEADER -->
+<section class="max-w-6xl mx-auto px-6 pt-20 pb-16">
+  <div class="inline-flex items-center gap-2 bg-coral-light text-coral text-xs font-semibold px-3 py-1.5 rounded-full mb-5">
+    <span class="w-1.5 h-1.5 rounded-full bg-coral"></span>Case Studies
+  </div>
+  <h1 class="font-display font-extrabold text-5xl md:text-6xl text-ink leading-tight max-w-2xl">Real results from real projects.</h1>
+  <p class="text-muted mt-5 max-w-xl" style="line-height:1.7">A selection of projects I've worked on. Names and details changed where requested.</p>
+</section>
+
+<!-- GRID -->
+<section class="max-w-6xl mx-auto px-6 pb-24">
+  <div class="grid md:grid-cols-2 gap-5">
+
+    <!-- Case Study 1 - XVIVO -->
+    <div class="card-hover bg-offwhite rounded-3xl border border-border overflow-hidden flex flex-col">
+      <div class="relative overflow-hidden h-52">
+        <img src="new-xvivo.png" alt="XVIVO Medical Animation" class="w-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-ink/60 to-transparent"></div>
+        <div class="absolute bottom-4 left-5 flex gap-2">
+          <span class="text-xs font-semibold text-white bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">Content Strategy</span>
+          <span class="text-xs font-semibold text-white bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">Technical SEO</span>
+        </div>
+      </div>
+      <div class="p-8 flex flex-col flex-1">
+        <h2 class="font-display font-bold text-2xl text-ink mb-3">XVIVO: 27% more organic inquiries for a medical animation company</h2>
+        <p class="text-sm text-muted mb-6 flex-1" style="line-height:1.7">XVIVO had strong rankings but poor metadata, duplicate content, and a content structure that didn't match user intent. I fixed their metadata, rewrote underperforming pages, built topic clusters, and systematically improved internal linking — driving a 27% lift in organic inquiries in three months.</p>
+        <div class="grid grid-cols-3 gap-4 pt-6 border-t border-border">
+          <div><p class="font-display text-3xl text-coral">+72%</p><p class="text-xs text-muted mt-1">Impressions</p></div>
+          <div><p class="font-display text-3xl text-coral">+45%</p><p class="text-xs text-muted mt-1">Organic clicks</p></div>
+          <div><p class="font-display text-3xl text-coral">+27%</p><p class="text-xs text-muted mt-1">Conversions</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Case Study 2 - Rukkus -->
+    <div class="card-hover bg-offwhite rounded-3xl border border-border overflow-hidden flex flex-col">
+      <div class="relative overflow-hidden h-52">
+        <img src="cs3.png" alt="Rukkus Live Entertainment" class="w-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-ink/60 to-transparent"></div>
+        <div class="absolute bottom-4 left-5 flex gap-2">
+          <span class="text-xs font-semibold text-white bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">Off-site SEO</span>
+          <span class="text-xs font-semibold text-white bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">Link Building</span>
+        </div>
+      </div>
+      <div class="p-8 flex flex-col flex-1">
+        <h2 class="font-display font-bold text-2xl text-ink mb-3">Rukkus: 121,420 new visitors for a live entertainment startup</h2>
+        <p class="text-sm text-muted mb-6 flex-1" style="line-height:1.7">A newly launched ticket marketplace needed organic authority fast. Through data-driven PR, infographic outreach, a press launch, competitor link gap analysis, and university discount partnerships, I secured placements in CNN, Forbes, Sports Illustrated and more — driving a 1,256% traffic increase that helped lead to the startup's acquisition in 2018.</p>
+        <div class="grid grid-cols-3 gap-4 pt-6 border-t border-border">
+          <div><p class="font-display text-3xl text-violet">+1,256%</p><p class="text-xs text-muted mt-1">Organic traffic</p></div>
+          <div><p class="font-display text-3xl text-violet">27</p><p class="text-xs text-muted mt-1">High-DA backlinks</p></div>
+          <div><p class="font-display text-3xl text-violet">6mo</p><p class="text-xs text-muted mt-1">Timeline</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Case Study 3 - Epic Reads -->
+    <div class="card-hover bg-offwhite rounded-3xl border border-border overflow-hidden flex flex-col">
+      <div class="relative overflow-hidden h-52">
+        <img src="cs4.png" alt="Epic Reads Book Blog" class="w-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-ink/60 to-transparent"></div>
+        <div class="absolute bottom-4 left-5 flex gap-2">
+          <span class="text-xs font-semibold text-white bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">Keyword Research</span>
+          <span class="text-xs font-semibold text-white bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">Content Strategy</span>
+        </div>
+      </div>
+      <div class="p-8 flex flex-col flex-1">
+        <h2 class="font-display font-bold text-2xl text-ink mb-3">Epic Reads: 37% more online sales for a HarperCollins book blog</h2>
+        <p class="text-sm text-muted mb-6 flex-1" style="line-height:1.7">Epic Reads was publishing 10+ articles a week but targeting topics nobody searched for. I identified high-volume, low-competition book genre keywords, built detailed content briefs for the writing team, and optimised every on-page element to guide readers toward product pages — growing sales by 37%.</p>
+        <div class="grid grid-cols-3 gap-4 pt-6 border-t border-border">
+          <div><p class="font-display text-3xl text-coral">+37%</p><p class="text-xs text-muted mt-1">Online sales</p></div>
+          <div><p class="font-display text-3xl text-coral">50</p><p class="text-xs text-muted mt-1">Keywords targeted</p></div>
+          <div><p class="font-display text-3xl text-coral">10+</p><p class="text-xs text-muted mt-1">Articles/week optimised</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Card -->
+    <div class="bg-coral rounded-3xl overflow-hidden flex flex-col p-10 justify-between" style="background-color: #F47B5A;">
+      <div>
+        <div class="inline-flex items-center gap-2 bg-white/20 text-white text-xs font-semibold px-3 py-1.5 rounded-full mb-5">Your project here</div>
+        <h2 class="font-display text-3xl text-white leading-tight mb-4">Want results like these?</h2>
+        <p class="text-white/80 text-sm" style="line-height:1.7">Every project is different. Send me a note about your situation and let's talk through what's possible.</p>
+      </div>
+      <div class="mt-10">
+        <a href="contact.html" class="btn-coral inline-block bg-white text-coral font-semibold px-6 py-3 rounded-full text-sm focus-visible:outline-2 focus-visible:outline-white">Start a conversation →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="border-t border-border">
+  <div class="max-w-6xl mx-auto px-6 py-10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted">
+    <img src="logo.png" alt="Craig Kleila SEO" class="h-12">
+    <nav class="flex gap-6">
+      <a href="services.html" class="hover:text-coral transition-colors duration-150">Services</a>
+      <a href="case-studies.html" class="hover:text-coral transition-colors duration-150">Case Studies</a>
+      <a href="about.html" class="hover:text-coral transition-colors duration-150">About</a>
+      <a href="contact.html" class="hover:text-coral transition-colors duration-150">Contact</a>
+    </nav>
+    <p>© 2026 Craig Kleila. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>

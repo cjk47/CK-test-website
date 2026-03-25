@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Craig Kleila</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          coral:  { DEFAULT: '#F47B5A', light: '#FFF1EC', dark: '#D45F3C' },
+          violet: { DEFAULT: '#7B68EE', light: '#F0EFFE', dark: '#5E4DD6' },
+          ink:    '#323232',
+          muted:  '#6B7280',
+          border: '#E8E8F0',
+          offwhite: '#F9F8FF',
+        },
+        fontFamily: {
+          display: ['Poppins', 'sans-serif'],
+          body:    ['Inter', 'sans-serif'],
+        },
+      }
+    }
+  }
+</script>
+<style>
+  body { font-family: 'Inter', sans-serif; background: #ffffff; color: #323232; }
+  .font-display { font-family: 'Poppins', sans-serif; }
+  .btn-coral { transition: transform 0.2s cubic-bezier(0.22,1,0.36,1), box-shadow 0.2s cubic-bezier(0.22,1,0.36,1); }
+  .btn-coral:hover { transform: translateY(-2px); box-shadow: 0 10px 28px -6px rgba(244,123,90,0.45); }
+  .btn-coral:active { transform: translateY(0); }
+  .btn-outline { transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease; }
+  .btn-outline:hover { background: #F9F8FF; border-color: #7B68EE; color: #5E4DD6; }
+  nav a { transition: color 0.15s ease; }
+  nav a:hover { color: #F47B5A; }
+  .email-link { transition: color 0.2s ease; }
+  .email-link:hover { color: #D45F3C; }
+</style>
+</head>
+<body class="antialiased">
+
+<!-- NAV -->
+<header class="sticky top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-border">
+  <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+    <a href="index.html"><img src="logo.png" alt="Craig Kleila SEO" class="h-16"></a>
+    <div class="hidden md:flex items-center gap-8 text-sm font-medium text-muted">
+      <a href="services.html">Services</a>
+      <a href="case-studies.html">Case Studies</a>
+      <a href="about.html">About</a>
+      
+      <a href="contact.html" class="btn-coral bg-coral text-white px-5 py-2 rounded-full font-semibold text-sm">Get in Touch</a>
+    </div>
+    <button class="md:hidden p-2 rounded text-ink" onclick="document.getElementById('mob').classList.toggle('hidden')" aria-label="Toggle menu">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M3 6h16M3 11h16M3 16h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+  </nav>
+  <div id="mob" class="hidden md:hidden border-t border-border bg-white px-6 py-4 flex flex-col gap-4 text-sm font-medium text-muted">
+    <a href="services.html" class="hover:text-coral">Services</a>
+    <a href="case-studies.html" class="hover:text-coral">Case Studies</a>
+    <a href="about.html" class="hover:text-coral">About</a>
+    
+    <a href="contact.html" class="bg-coral text-white text-center px-4 py-2 rounded-full font-semibold">Get in Touch</a>
+  </div>
+</header>
+
+<!-- MAIN -->
+<section class="max-w-6xl mx-auto px-6 pt-20 pb-24">
+  <div class="grid md:grid-cols-2 gap-16 items-start">
+
+    <!-- Left -->
+    <div>
+      <div class="inline-flex items-center gap-2 bg-coral-light text-coral text-xs font-semibold px-3 py-1.5 rounded-full mb-5">
+        <span class="w-1.5 h-1.5 rounded-full bg-coral"></span>Contact
+      </div>
+      <h1 class="font-display font-extrabold text-5xl md:text-6xl text-ink leading-tight mb-6">Let's start a conversation.</h1>
+      <p class="text-muted mb-5" style="line-height:1.7">Whether you're ready to kick off a project or just want to explore what's possible — I'd love to hear from you. No hard sell, no discovery call with three people you've never met. Just a genuine conversation.</p>
+      <p class="text-muted mb-10" style="line-height:1.7">The best way to reach me is email. I typically respond within one business day.</p>
+
+      <!-- Email card -->
+      <div class="bg-offwhite rounded-3xl border border-border p-8" style="box-shadow: 0 8px 32px -8px rgba(244,123,90,0.1), 0 2px 8px -4px rgba(0,0,0,0.04);">
+        <p class="text-sm text-muted mb-3 font-medium">Send me an email at:</p>
+        <a href="mailto:hello@craigkleila.com" class="email-link font-display text-3xl text-coral block mb-6">hello@craigkleila.com</a>
+        <a href="mailto:hello@craigkleila.com" class="btn-coral inline-flex items-center gap-2 bg-coral text-white px-6 py-3 rounded-full font-semibold text-sm">
+          Open in email client
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 5l4 3-4 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Right -->
+    <div class="flex flex-col gap-4">
+
+      <div class="bg-offwhite rounded-3xl border border-border p-8">
+        <h2 class="font-display text-xl text-ink mb-5">What to include in your email</h2>
+        <ul class="space-y-4">
+          <li class="flex items-start gap-3 text-sm text-muted">
+            <span class="w-5 h-5 rounded-full bg-coral-light flex items-center justify-center flex-shrink-0 mt-0.5 text-coral font-semibold text-xs">1</span>
+            <span style="line-height:1.6"><strong class="text-ink font-medium">What your site is</strong> — your business and where you're at right now</span>
+          </li>
+          <li class="flex items-start gap-3 text-sm text-muted">
+            <span class="w-5 h-5 rounded-full bg-coral-light flex items-center justify-center flex-shrink-0 mt-0.5 text-coral font-semibold text-xs">2</span>
+            <span style="line-height:1.6"><strong class="text-ink font-medium">What you're hoping to achieve</strong> — more traffic, better rankings, stronger authority, or all three</span>
+          </li>
+          <li class="flex items-start gap-3 text-sm text-muted">
+            <span class="w-5 h-5 rounded-full bg-coral-light flex items-center justify-center flex-shrink-0 mt-0.5 text-coral font-semibold text-xs">3</span>
+            <span style="line-height:1.6"><strong class="text-ink font-medium">Your rough timeline and budget</strong> — a ballpark so we can figure out scope</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="bg-offwhite rounded-3xl border border-border p-8">
+        <h2 class="font-display text-xl text-ink mb-5">Quick answers</h2>
+        <div class="space-y-4">
+          <div>
+            <p class="text-sm font-semibold text-ink mb-1">Do you take on short-term projects?</p>
+            <p class="text-sm text-muted" style="line-height:1.6">Yes — I offer both project-based work (audits and strategies) and ongoing monthly retainers.</p>
+          </div>
+          <div class="pt-4 border-t border-border">
+            <p class="text-sm font-semibold text-ink mb-1">What industries do you work in?</p>
+            <p class="text-sm text-muted" style="line-height:1.6">Primarily SaaS, professional services, e-commerce, and media — but open to most industries.</p>
+          </div>
+          <div class="pt-4 border-t border-border">
+            <p class="text-sm font-semibold text-ink mb-1">Do you work with agencies?</p>
+            <p class="text-sm text-muted" style="line-height:1.6">Yes. I'm available for white-label work on a selective basis. Just mention it in your email.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="border-t border-border">
+  <div class="max-w-6xl mx-auto px-6 py-10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted">
+    <img src="logo.png" alt="Craig Kleila SEO" class="h-12">
+    <nav class="flex gap-6">
+      <a href="services.html" class="hover:text-coral transition-colors duration-150">Services</a>
+      <a href="case-studies.html" class="hover:text-coral transition-colors duration-150">Case Studies</a>
+      <a href="about.html" class="hover:text-coral transition-colors duration-150">About</a>
+      <a href="contact.html" class="hover:text-coral transition-colors duration-150">Contact</a>
+    </nav>
+    <p>© 2026 Craig Kleila. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>

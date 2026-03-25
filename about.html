@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Craig Kleila</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          coral:  { DEFAULT: '#F47B5A', light: '#FFF1EC', dark: '#D45F3C' },
+          violet: { DEFAULT: '#7B68EE', light: '#F0EFFE', dark: '#5E4DD6' },
+          ink:    '#323232',
+          muted:  '#6B7280',
+          border: '#E8E8F0',
+          offwhite: '#F9F8FF',
+        },
+        fontFamily: {
+          display: ['Poppins', 'sans-serif'],
+          body:    ['Inter', 'sans-serif'],
+        },
+      }
+    }
+  }
+</script>
+<style>
+  body { font-family: 'Inter', sans-serif; background: #ffffff; color: #323232; }
+  .font-display { font-family: 'Poppins', sans-serif; }
+  .btn-coral { transition: transform 0.2s cubic-bezier(0.22,1,0.36,1), box-shadow 0.2s cubic-bezier(0.22,1,0.36,1); }
+  .btn-coral:hover { transform: translateY(-2px); box-shadow: 0 10px 28px -6px rgba(244,123,90,0.45); }
+  .btn-coral:active { transform: translateY(0); }
+  .btn-outline { transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease; }
+  .btn-outline:hover { background: #F9F8FF; border-color: #7B68EE; color: #5E4DD6; }
+  nav a { transition: color 0.15s ease; }
+  nav a:hover { color: #F47B5A; }
+</style>
+</head>
+<body class="antialiased">
+
+<!-- NAV -->
+<header class="sticky top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-border">
+  <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+    <a href="index.html"><img src="logo.png" alt="Craig Kleila SEO" class="h-16"></a>
+    <div class="hidden md:flex items-center gap-8 text-sm font-medium text-muted">
+      <a href="services.html">Services</a>
+      <a href="case-studies.html">Case Studies</a>
+      <a href="about.html" class="text-coral font-semibold">About</a>
+      
+      <a href="contact.html" class="btn-coral bg-coral text-white px-5 py-2 rounded-full font-semibold text-sm">Get in Touch</a>
+    </div>
+    <button class="md:hidden p-2 rounded text-ink" onclick="document.getElementById('mob').classList.toggle('hidden')" aria-label="Toggle menu">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M3 6h16M3 11h16M3 16h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+  </nav>
+  <div id="mob" class="hidden md:hidden border-t border-border bg-white px-6 py-4 flex flex-col gap-4 text-sm font-medium text-muted">
+    <a href="services.html" class="hover:text-coral">Services</a>
+    <a href="case-studies.html" class="hover:text-coral">Case Studies</a>
+    <a href="about.html" class="text-coral">About</a>
+    
+    <a href="contact.html" class="bg-coral text-white text-center px-4 py-2 rounded-full font-semibold">Get in Touch</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="max-w-6xl mx-auto px-6 pt-20 pb-20">
+  <div class="grid md:grid-cols-2 gap-16 items-start">
+    <div>
+      <div class="inline-flex items-center gap-2 bg-coral-light text-coral text-xs font-semibold px-3 py-1.5 rounded-full mb-5">
+        <span class="w-1.5 h-1.5 rounded-full bg-coral"></span>About me
+      </div>
+      <h1 class="font-display font-extrabold text-5xl md:text-6xl text-ink leading-tight mb-6">Hi, I'm Craig.</h1>
+      <p class="text-muted text-lg mb-5" style="line-height:1.7">I'm a freelance SEO strategist based in Brooklyn, NY. I help founders, small teams, and growing businesses earn more organic visibility — without shortcuts, fluff, or cookie-cutter strategies.</p>
+      <p class="text-muted mb-5" style="line-height:1.7">I've been working in organic search for over thirteen years, across SaaS, e-commerce, media, professional services, and local businesses. I've seen what works, what doesn't, and how fast things change.</p>
+      <p class="text-muted mb-5" style="line-height:1.7">By day, I lead SEO at Bounteous, managing organic strategy for enterprise clients including Best Western, Chase, KKR, and Gerber. On the side, I take on a select number of freelance clients — bringing that same enterprise-level thinking to smaller teams who want it done properly.</p>
+      <p class="text-muted mb-8" style="line-height:1.7">What I care about most is building something sustainable — not a quick traffic spike that disappears with an algorithm shift, but a genuine, lasting presence that compounds over time.</p>
+      <a href="contact.html" class="btn-coral inline-flex items-center gap-2 bg-coral text-white px-6 py-3 rounded-full font-semibold">Get in touch</a>
+    </div>
+    <div class="relative">
+      <div class="rounded-3xl overflow-hidden" style="box-shadow: 0 24px 64px -12px rgba(244,123,90,0.25), 0 8px 24px -8px rgba(0,0,0,0.08);">
+        <img src="https://placehold.co/580x520/FFF1EC/F47B5A?text=Craig+Kleila" alt="Craig Kleila" class="w-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-coral/20 to-transparent mix-blend-multiply"></div>
+      </div>
+      <!-- Available badge -->
+      <div class="absolute -bottom-4 -left-4 bg-white rounded-2xl px-4 py-3 border border-border" style="box-shadow: 0 8px 24px -4px rgba(123,104,238,0.15);">
+        <div class="flex items-center gap-2 mb-0.5">
+          <div class="w-2 h-2 rounded-full bg-green-400"></div>
+          <span class="text-xs font-semibold text-ink">Available for work</span>
+        </div>
+        <p class="text-xs text-muted">Q2 2026 slots open</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MY APPROACH -->
+<section class="bg-offwhite border-y border-border py-20">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="max-w-xl mb-12">
+      <div class="inline-flex items-center gap-2 bg-violet-light text-violet text-xs font-semibold px-3 py-1.5 rounded-full mb-4">
+        <span class="w-1.5 h-1.5 rounded-full bg-violet"></span>How I work
+      </div>
+      <h2 class="font-display text-4xl text-ink tracking-tight">My approach to SEO.</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-5">
+      <div class="bg-white rounded-2xl p-7 border border-border">
+        <div class="w-10 h-10 rounded-xl bg-coral-light flex items-center justify-center mb-5">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 3v14M3 10h14" stroke="#F47B5A" stroke-width="1.7" stroke-linecap="round"/></svg>
+        </div>
+        <h3 class="font-display text-xl text-ink mb-3">Start with the fundamentals</h3>
+        <p class="text-sm text-muted" style="line-height:1.65">I don't skip ahead to tactics. Before anything else, I make sure your site is technically sound and we're targeting the right opportunities.</p>
+      </div>
+      <div class="bg-white rounded-2xl p-7 border border-border">
+        <div class="w-10 h-10 rounded-xl bg-violet-light flex items-center justify-center mb-5">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 16l4-4 3 3 5-7" stroke="#7B68EE" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="font-display text-xl text-ink mb-3">Think long-term</h3>
+        <p class="text-sm text-muted" style="line-height:1.65">SEO is a compounding investment, not a one-time fix. I focus on building content, authority, and structure that grows in value over time.</p>
+      </div>
+      <div class="bg-white rounded-2xl p-7 border border-border">
+        <div class="w-10 h-10 rounded-xl bg-coral-light flex items-center justify-center mb-5">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="#F47B5A" stroke-width="1.7"/><path d="M7 10l2 2 4-4" stroke="#F47B5A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="font-display text-xl text-ink mb-3">Communicate clearly</h3>
+        <p class="text-sm text-muted" style="line-height:1.65">No jargon, no inflated reports. You'll always know what I'm doing, why it matters, and how it's performing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS / WHO I WORK WITH -->
+<section class="max-w-6xl mx-auto px-6 py-20">
+  <div class="grid md:grid-cols-2 gap-12 items-center">
+    <div>
+      <div class="inline-flex items-center gap-2 bg-coral-light text-coral text-xs font-semibold px-3 py-1.5 rounded-full mb-5">
+        <span class="w-1.5 h-1.5 rounded-full bg-coral"></span>By the numbers
+      </div>
+      <h2 class="font-display text-4xl text-ink tracking-tight mb-8">A bit of context.</h2>
+      <div class="grid grid-cols-2 gap-4">
+        <div class="bg-offwhite rounded-2xl p-6 border border-border">
+          <p class="font-display text-4xl text-coral mb-1">13+</p>
+          <p class="text-sm text-muted">Years in organic search</p>
+        </div>
+        <div class="bg-offwhite rounded-2xl p-6 border border-border">
+          <p class="font-display text-4xl text-coral mb-1">100+</p>
+          <p class="text-sm text-muted">Clients worked with</p>
+        </div>
+        <div class="bg-offwhite rounded-2xl p-6 border border-border">
+          <p class="font-display text-4xl text-coral mb-1">Solo</p>
+          <p class="text-sm text-muted">You work directly with me</p>
+        </div>
+        <div class="bg-offwhite rounded-2xl p-6 border border-border">
+          <p class="font-display text-4xl text-violet mb-1">AI-ready</p>
+          <p class="text-sm text-muted">Future-proofing your presence</p>
+        </div>
+      </div>
+    </div>
+    <div class="bg-offwhite rounded-3xl p-10 border border-border">
+      <h3 class="font-display font-bold text-2xl text-ink mb-5">Who I work best with</h3>
+      <ul class="space-y-4">
+        <li class="flex items-start gap-3 text-sm text-muted">
+          <span class="w-5 h-5 rounded-full bg-coral-light flex items-center justify-center flex-shrink-0 mt-0.5"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#F47B5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span style="line-height:1.6">Founders and small teams who want expert-level SEO without agency overhead</span>
+        </li>
+        <li class="flex items-start gap-3 text-sm text-muted">
+          <span class="w-5 h-5 rounded-full bg-coral-light flex items-center justify-center flex-shrink-0 mt-0.5"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#F47B5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span style="line-height:1.6">Businesses burned by vague reporting and wanting clear accountability</span>
+        </li>
+        <li class="flex items-start gap-3 text-sm text-muted">
+          <span class="w-5 h-5 rounded-full bg-coral-light flex items-center justify-center flex-shrink-0 mt-0.5"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#F47B5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span style="line-height:1.6">Teams ready to invest in SEO properly — not looking for overnight miracles</span>
+        </li>
+        <li class="flex items-start gap-3 text-sm text-muted">
+          <span class="w-5 h-5 rounded-full bg-violet-light flex items-center justify-center flex-shrink-0 mt-0.5"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#7B68EE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span style="line-height:1.6">Brands thinking ahead about AI search and what it means for their organic strategy</span>
+        </li>
+      </ul>
+      <div class="mt-8 pt-6 border-t border-border">
+        <a href="contact.html" class="btn-outline inline-block border border-border text-ink px-5 py-2.5 rounded-full text-sm font-semibold">Sound like you? Let's talk →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="border-t border-border">
+  <div class="max-w-6xl mx-auto px-6 py-10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted">
+    <img src="logo.png" alt="Craig Kleila SEO" class="h-12">
+    <nav class="flex gap-6">
+      <a href="services.html" class="hover:text-coral transition-colors duration-150">Services</a>
+      <a href="case-studies.html" class="hover:text-coral transition-colors duration-150">Case Studies</a>
+      <a href="about.html" class="hover:text-coral transition-colors duration-150">About</a>
+      <a href="contact.html" class="hover:text-coral transition-colors duration-150">Contact</a>
+    </nav>
+    <p>© 2026 Craig Kleila. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
