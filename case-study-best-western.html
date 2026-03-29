@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Best Western Case Study — Craig Kleila</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          coral:  { DEFAULT: '#F47B5A', light: '#FFF1EC', dark: '#D45F3C' },
+          violet: { DEFAULT: '#7B68EE', light: '#F0EFFE', dark: '#5E4DD6' },
+          ink:    '#323232',
+          muted:  '#6B7280',
+          border: '#E8E8F0',
+          offwhite: '#F9F8FF',
+          gold:   '#C4900A',
+        },
+        fontFamily: {
+          display: ['Poppins', 'sans-serif'],
+          body:    ['Inter', 'sans-serif'],
+        },
+      }
+    }
+  }
+</script>
+<style>
+  body { font-family: 'Inter', sans-serif; background: #ffffff; color: #323232; }
+  .font-display { font-family: 'Poppins', sans-serif; }
+  .btn-coral { transition: transform 0.2s cubic-bezier(0.22,1,0.36,1), box-shadow 0.2s cubic-bezier(0.22,1,0.36,1); }
+  .btn-coral:hover { transform: translateY(-2px); box-shadow: 0 10px 28px -6px rgba(244,123,90,0.45); }
+  .btn-coral:active { transform: translateY(0); }
+  nav a { transition: color 0.15s ease; }
+  nav a:hover { color: #F47B5A; }
+  .breadcrumb-arrow { display: inline-block; transition: transform 0.2s cubic-bezier(0.22,1,0.36,1); }
+  .breadcrumb-link:hover .breadcrumb-arrow { transform: translateX(-4px); }
+  .toc-link { transition: color 0.15s ease, border-color 0.15s ease; }
+</style>
+</head>
+<body class="antialiased">
+
+<!-- NAV -->
+<header class="sticky top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-border">
+  <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+    <a href="index.html"><img src="logo.png" alt="Craig Kleila SEO" class="h-16"></a>
+    <div class="hidden md:flex items-center gap-8 text-sm font-medium text-muted">
+      <a href="services.html">Services</a>
+      <a href="case-studies.html" class="text-coral font-semibold">Case Studies</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="btn-coral bg-coral text-white px-5 py-2 rounded-full font-semibold text-sm">Get in Touch</a>
+    </div>
+    <button class="md:hidden p-2 rounded text-ink" onclick="document.getElementById('mob').classList.toggle('hidden')" aria-label="Toggle menu">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M3 6h16M3 11h16M3 16h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+  </nav>
+  <div id="mob" class="hidden md:hidden border-t border-border bg-white px-6 py-4 flex flex-col gap-4 text-sm font-medium text-muted">
+    <a href="services.html" class="hover:text-coral">Services</a>
+    <a href="case-studies.html" class="text-coral">Case Studies</a>
+    <a href="about.html" class="hover:text-coral">About</a>
+    <a href="contact.html" class="bg-coral text-white text-center px-4 py-2 rounded-full font-semibold">Get in Touch</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section style="background:#ffffff;position:relative;overflow:hidden;">
+  <div class="max-w-5xl mx-auto px-6 pt-14 pb-0" style="position:relative;z-index:2;">
+
+    <!-- Breadcrumb -->
+    <a href="case-studies.html" class="breadcrumb-link inline-flex items-center gap-1.5 text-sm text-ink mb-10">
+      <span class="breadcrumb-arrow">←</span> Case Studies
+    </a>
+
+    <!-- Centered content -->
+    <div class="text-center max-w-3xl mx-auto mb-10">
+      <div class="flex justify-center mb-5">
+        <img src="Best-Western-logo.png" alt="Best Western" style="height:40px;object-fit:contain;mix-blend-mode:multiply;">
+      </div>
+      <h1 class="font-display font-bold text-4xl md:text-5xl text-ink leading-tight mb-6">How Best Western Achieved 349% More AI Overview Visibility</h1>
+      <div class="flex justify-center gap-2 flex-wrap">
+        <span style="background:#f8f5ee;color:#323232;" class="text-xs font-semibold px-3 py-1.5 rounded-full">AI Search Strategy</span>
+        <span style="background:#f8f5ee;color:#323232;" class="text-xs font-semibold px-3 py-1.5 rounded-full">Technical SEO</span>
+      </div>
+    </div>
+
+    <!-- Hero image — stats repositioned to upper-middle area -->
+    <div class="relative rounded-t-2xl overflow-hidden" style="height:460px;">
+      <img src="rl.png" alt="Best Western Case Study" class="w-full h-full object-cover">
+      <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent"></div>
+      <!-- Stats repositioned to sit above the white curve -->
+      <div class="absolute left-0 right-0 p-8 bottom-0">
+        <div class="flex gap-0 divide-x divide-white/20">
+          <div class="flex-1 text-center px-6">
+            <p class="font-display font-bold text-5xl text-white">+349%</p>
+            <p class="text-sm text-white/70 mt-1">AI Overview Visibility</p>
+          </div>
+          <div class="flex-1 text-center px-6">
+            <p class="font-display font-bold text-5xl text-white">+18.5%</p>
+            <p class="text-sm text-white/70 mt-1">Organic Traffic</p>
+          </div>
+          <div class="flex-1 text-center px-6">
+            <p class="font-display font-bold text-5xl text-white">+8%</p>
+            <p class="text-sm text-white/70 mt-1">Conversions</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- White curved section: arcs UP into the hero image, extends below -->
+  <div style="background:#F1EFED;border-radius:50% 50% 0 0/80px 80px 0 0;margin-top:-280px;position:relative;z-index:1;padding-top:310px;padding-bottom:60px;width:150%;margin-left:-25%;">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="flex justify-center gap-16 flex-wrap">
+        <div class="text-center">
+          <p class="text-[10px] font-bold uppercase tracking-widest mb-1.5" style="color:#8B7E6E;">Industry</p>
+          <p class="font-display font-semibold text-ink text-sm">Hospitality</p>
+        </div>
+        <div class="text-center">
+          <p class="text-[10px] font-bold uppercase tracking-widest mb-1.5" style="color:#8B7E6E;">Service</p>
+          <p class="font-display font-semibold text-ink text-sm">AI Search + Technical SEO</p>
+        </div>
+        <div class="text-center">
+          <p class="text-[10px] font-bold uppercase tracking-widest mb-1.5" style="color:#8B7E6E;">Timeline</p>
+          <p class="font-display font-semibold text-ink text-sm">Ongoing</p>
+        </div>
+        <div class="text-center">
+          <p class="text-[10px] font-bold uppercase tracking-widest mb-1.5" style="color:#8B7E6E;">Region</p>
+          <p class="font-display font-semibold text-ink text-sm">United States</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- BODY -->
+<div class="max-w-5xl mx-auto px-6 pt-20 pb-0">
+  <div class="grid md:grid-cols-[1fr_260px] gap-16">
+
+    <!-- LEFT COLUMN -->
+    <div>
+
+      <section id="challenge" class="mb-14 scroll-mt-24">
+        <h2 class="font-display font-bold text-2xl text-ink mb-6">The Challenge</h2>
+        <p class="text-[#4B5563] text-base mb-4" style="line-height:1.8;">When Google began rolling out AI Overviews across travel and hospitality queries, Best Western's organic traffic took an immediate hit. Pages that had ranked consistently for years were suddenly displaced by AI-generated answers that didn't reference their content.</p>
+        <p class="text-[#4B5563] text-base mb-4" style="line-height:1.8;">The challenge wasn't just recovery — it was adapting to a fundamentally different search landscape where traditional ranking signals weren't enough.</p>
+        <p class="text-[#4B5563] text-base mb-4" style="line-height:1.8;">To win in AI search, content needs to be structured, authoritative, and written in a format that AI systems can extract and surface. That required a complete rethinking of how pages were written.</p>
+      </section>
+
+      <section id="strategy" class="mb-14 scroll-mt-24">
+        <h2 class="font-display font-bold text-2xl text-ink mb-6">The Strategy</h2>
+        <ul class="space-y-6">
+          <li class="flex gap-3">
+            
+            <div>
+              <strong class="font-display font-semibold text-ink text-base">AI Overview Content Rewrite</strong>
+              <p class="text-[#4B5563] text-base mt-1" style="line-height:1.8;">Rewrote key landing pages to match the structured, answer-forward format that AI Overviews prefer. Clear H2/H3 hierarchies, concise answers to common questions, authoritative language.</p>
+            </div>
+          </li>
+          <li class="flex gap-3">
+            
+            <div>
+              <strong class="font-display font-semibold text-ink text-base">Schema Markup Implementation</strong>
+              <p class="text-[#4B5563] text-base mt-1 mb-4" style="line-height:1.8;">Implemented Hotel, FAQPage, and LocalBusiness schema across property pages. Structured data gives AI systems clear signals about content context and authority.</p>
+              <div class="rounded-2xl overflow-hidden border border-border" style="box-shadow:0 8px 32px -8px rgba(0,0,0,0.10);">
+                <img src="bwcs2.png" alt="Best Western — Hotel schema markup" class="w-full block">
+              </div>
+            </div>
+          </li>
+          <li class="flex gap-3">
+            
+            <div>
+              <strong class="font-display font-semibold text-ink text-base">Topic Cluster & Landing Page Architecture</strong>
+              <p class="text-[#4B5563] text-base mt-1 mb-4" style="line-height:1.8;">I designed a full topic cluster system built around city-level hub pages that link out to targeted subpages — each one capturing a specific traveler need that traditional hotel pages miss entirely.</p>
+              <div class="rounded-2xl overflow-hidden border border-border mb-4" style="box-shadow:0 8px 32px -8px rgba(0,0,0,0.10);">
+                <img src="bwnewww.png" alt="Best Western — content category landing pages" class="w-full block">
+              </div>
+              <p class="text-[#4B5563] text-base mb-3" style="line-height:1.8;">Each city hub links down to three tiers of subpages:</p>
+              <ul class="space-y-2 mb-4">
+                <li class="flex gap-2 text-[#4B5563] text-sm" style="line-height:1.7;"><span class="text-coral font-bold mt-0.5 flex-shrink-0">→</span><span><strong class="text-ink">Hotels Near [Airport]</strong> — dedicated pages for every major airport (e.g., "Hotels Near JFK," "Hotels Near LAX") with distance, shuttle info, and nearby properties.</span></li>
+                <li class="flex gap-2 text-[#4B5563] text-sm" style="line-height:1.7;"><span class="text-coral font-bold mt-0.5 flex-shrink-0">→</span><span><strong class="text-ink">Hotels Near [Attraction]</strong> — pages for key landmarks and venues (e.g., "Hotels Near Madison Square Garden") listing proximity and relevant amenities.</span></li>
+                <li class="flex gap-2 text-[#4B5563] text-sm" style="line-height:1.7;"><span class="text-coral font-bold mt-0.5 flex-shrink-0">→</span><span><strong class="text-ink">Hotels Near [Destination]</strong> — regional subpages (e.g., "Cape Cod Region") covering popular nearby areas.</span></li>
+                <li class="flex gap-2 text-[#4B5563] text-sm" style="line-height:1.7;"><span class="text-coral font-bold mt-0.5 flex-shrink-0">→</span><span><strong class="text-ink">Themed Pages</strong> — intent-specific pages like "Family-Friendly Hotels Near [Attraction]" or "Hotels for Business Travelers in [City]."</span></li>
+              </ul>
+              <p class="text-[#4B5563] text-base mb-3" style="line-height:1.8;">I also built an Events pillar page — a central hub replacing the single overloaded Group &amp; Meeting Reservations page — with dedicated subpages for each event type:</p>
+              <ul class="space-y-2">
+                <li class="flex gap-2 text-[#4B5563] text-sm" style="line-height:1.7;"><span class="text-coral font-bold mt-0.5 flex-shrink-0">→</span><span><strong class="text-ink">Meetings &amp; Conferences</strong> — targeting "conference hotels" and corporate group searches with meeting room details and business-friendly properties.</span></li>
+                <li class="flex gap-2 text-[#4B5563] text-sm" style="line-height:1.7;"><span class="text-coral font-bold mt-0.5 flex-shrink-0">→</span><span><strong class="text-ink">Celebrations</strong> — birthdays, anniversaries, reunions; targeting "hotel party venues" with packages and participating locations.</span></li>
+                <li class="flex gap-2 text-[#4B5563] text-sm" style="line-height:1.7;"><span class="text-coral font-bold mt-0.5 flex-shrink-0">→</span><span><strong class="text-ink">Group Travel</strong> — teams, tour groups, family reunions; group rates, room blocks, and large-group amenities.</span></li>
+                <li class="flex gap-2 text-[#4B5563] text-sm" style="line-height:1.7;"><span class="text-coral font-bold mt-0.5 flex-shrink-0">→</span><span><strong class="text-ink">Weddings</strong> — venues, packages, and guest rooms; targeting "hotel wedding venues" searches.</span></li>
+              </ul>
+            </div>
+          </li>
+          <li class="flex gap-3">
+            
+            <div>
+              <strong class="font-display font-semibold text-ink text-base">Localized Page Copy</strong>
+              <p class="text-[#4B5563] text-base mt-1" style="line-height:1.8;">I rewrote the copy on hotel detail pages to match local search intent — moving beyond generic descriptions to content that references nearby landmarks, popular neighborhoods, and community context specific to each property's location. This gives Google the geographic signals it needs to surface the right hotel for the right local query, and gives travelers the confidence that the property actually understands where it is.</p>
+            </div>
+          </li>
+          <li class="flex gap-3">
+            <div>
+              <strong class="font-display font-semibold text-ink text-base">FAQ Optimization</strong>
+              <p class="text-[#4B5563] text-base mt-1 mb-4" style="line-height:1.8;">Added optimized FAQ sections to core pages targeting the exact questions travelers ask in search — driving featured snippet and AI Overview capture.</p>
+              <div class="rounded-2xl overflow-hidden border border-border" style="box-shadow:0 8px 32px -8px rgba(0,0,0,0.10);">
+                <img src="bwcs3.png" alt="Best Western — FAQ section" class="w-full block">
+              </div>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section id="results" class="mb-14 scroll-mt-24">
+        <h2 class="font-display font-bold text-2xl text-ink mb-6">The Results</h2>
+        <p class="text-[#4B5563] text-base mb-4" style="line-height:1.8;">The content and schema overhaul paid off quickly. AI Overview visibility grew 349% — meaning Best Western pages were now being featured in Google's AI-generated answers for a dramatically larger share of relevant queries.</p>
+        <p class="text-[#4B5563] text-base mb-4" style="line-height:1.8;">Organic traffic recovered and surpassed pre-rollout baselines, and the higher-intent visitors coming in through AI search converted at an improved rate.</p>
+        <div class="mt-8 mb-8 rounded-2xl overflow-hidden border border-border" style="box-shadow:0 8px 32px -8px rgba(0,0,0,0.10);">
+          <img src="bwnew.png" alt="Best Western — organic clicks and impressions growth" class="w-full block">
+          <div style="background:#F9F8FF;padding:12px 18px;border-top:1px solid #E8E8F0;">
+            <p style="font-size:11px;color:#9CA3AF;font-family:'Inter',sans-serif;line-height:1.5;">Google Search Console — organic clicks and impressions, March 2025 to February 2026.</p>
+          </div>
+        </div>
+        <div class="grid grid-cols-3 gap-4 mt-8">
+          <div class="bg-offwhite rounded-xl p-5 text-center">
+            <p class="font-display font-bold text-3xl text-coral">+349%</p>
+            <p class="text-xs text-muted mt-1">AI Overview Visibility</p>
+          </div>
+          <div class="bg-offwhite rounded-xl p-5 text-center">
+            <p class="font-display font-bold text-3xl text-violet">+18.5%</p>
+            <p class="text-xs text-muted mt-1">Organic Traffic</p>
+          </div>
+          <div class="bg-offwhite rounded-xl p-5 text-center">
+            <p class="font-display font-bold text-3xl" style="color:#C4900A;">+8%</p>
+            <p class="text-xs text-muted mt-1">Conversions</p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- RIGHT SIDEBAR -->
+    <div class="sticky top-24 self-start space-y-6">
+
+      <!-- TOC Card -->
+      <div class="border border-border rounded-2xl p-6">
+        <p class="text-xs font-semibold uppercase tracking-widest text-muted mb-4">On This Page</p>
+        <nav class="space-y-2">
+          <a href="#challenge" class="toc-link block text-sm text-muted hover:text-coral py-1 border-l-2 border-transparent pl-3 hover:border-coral">The Challenge</a>
+          <a href="#strategy" class="toc-link block text-sm text-muted hover:text-coral py-1 border-l-2 border-transparent pl-3 hover:border-coral">The Strategy</a>
+          <a href="#results" class="toc-link block text-sm text-muted hover:text-coral py-1 border-l-2 border-transparent pl-3 hover:border-coral">The Results</a>
+        </nav>
+      </div>
+
+      <!-- CTA Card -->
+      <div class="bg-coral rounded-2xl p-6 text-white">
+        <h3 class="font-display font-bold text-lg mb-2">Ready for results like these?</h3>
+        <p class="text-white/80 text-sm mb-4" style="line-height:1.6;">Let's talk about what's possible for your business.</p>
+        <a href="contact.html" class="btn-coral bg-white text-coral font-semibold px-5 py-2.5 rounded-full text-sm inline-block">Start a Conversation →</a>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+
+<!-- RELATED CASE STUDIES -->
+<section class="bg-white py-20 border-t border-border">
+  <div class="max-w-5xl mx-auto px-6">
+    <p class="text-xs font-semibold uppercase tracking-widest text-muted mb-2">More Case Studies</p>
+    <h2 class="font-display font-bold text-2xl text-ink mb-10">See more results</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <!-- XVIVO -->
+      <a href="case-study-xvivo.html" class="border border-border rounded-2xl overflow-hidden group block">
+        <div style="height:160px;overflow:hidden;">
+          <img src="new-xvivo.png" alt="XVIVO" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+        </div>
+        <div class="p-4">
+          <img src="xvivo.png" alt="XVIVO" style="height:18px;object-fit:contain;mix-blend-mode:multiply;margin-bottom:8px;">
+          <p class="text-sm text-muted mb-3">Technical SEO · 27% organic inquiry growth</p>
+          <span class="text-coral text-sm font-semibold">Read More →</span>
+        </div>
+      </a>
+      <!-- Rukkus -->
+      <a href="case-study-rukkus.html" class="border border-border rounded-2xl overflow-hidden group block">
+        <div style="height:160px;overflow:hidden;">
+          <img src="cs3.png" alt="Rukkus" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+        </div>
+        <div class="p-4">
+          <img src="rukkus_logo_Wht_med.png" alt="Rukkus" style="height:18px;object-fit:contain;filter:brightness(0);margin-bottom:8px;">
+          <p class="text-sm text-muted mb-3">Off-site SEO · 1,256% traffic growth</p>
+          <span class="text-coral text-sm font-semibold">Read More →</span>
+        </div>
+      </a>
+      <!-- Chase -->
+      <a href="case-study-chase.html" class="border border-border rounded-2xl overflow-hidden group block">
+        <div style="height:160px;overflow:hidden;">
+          <img src="cccc.png" alt="Chase" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+        </div>
+        <div class="p-4">
+          <img src="chase-logo-png-transparent.png" alt="Chase" style="height:18px;object-fit:contain;mix-blend-mode:multiply;margin-bottom:8px;">
+          <p class="text-sm text-muted mb-3">Content + Technical SEO · 69.8% click growth</p>
+          <span class="text-coral text-sm font-semibold">Read More →</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="bg-ink py-20 text-center">
+  <h2 class="font-display font-bold text-3xl text-white mb-4">Ready to grow your search presence?</h2>
+  <p class="text-muted mb-8">Let's talk about your goals and build a plan that actually works.</p>
+  <a href="contact.html" class="btn-coral bg-coral text-white font-semibold px-8 py-3 rounded-full text-sm inline-block">Start a Conversation →</a>
+</section>
+
+<!-- FOOTER -->
+<footer class="border-t border-border">
+  <div class="max-w-6xl mx-auto px-6 py-10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted">
+    <img src="logo.png" alt="Craig Kleila SEO" class="h-12">
+    <nav class="flex gap-6">
+      <a href="services.html" class="hover:text-coral transition-colors duration-150">Services</a>
+      <a href="case-studies.html" class="hover:text-coral transition-colors duration-150">Case Studies</a>
+      <a href="about.html" class="hover:text-coral transition-colors duration-150">About</a>
+      <a href="contact.html" class="hover:text-coral transition-colors duration-150">Contact</a>
+    </nav>
+    <p>© 2026 Craig Kleila. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- BACK TO TOP -->
+<button onclick="window.scrollTo({top:0,behavior:'smooth'})"
+  class="fixed bottom-6 left-6 z-50 bg-ink text-white w-11 h-11 rounded-full flex items-center justify-center shadow-lg transition-colors duration-150"
+  aria-label="Back to top">
+  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+    <path d="M8 12V4M4 8l4-4 4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</button>
+
+<script>
+  const sections = document.querySelectorAll('#challenge, #strategy, #results, #testimonial');
+  const tocLinks = {
+    'challenge': document.querySelector('a[href="#challenge"]'),
+    'strategy': document.querySelector('a[href="#strategy"]'),
+    'results': document.querySelector('a[href="#results"]'),
+    'testimonial': document.querySelector('a[href="#testimonial"]'),
+  };
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const link = tocLinks[entry.target.id];
+      if (!link) return;
+      if (entry.isIntersecting) {
+        Object.values(tocLinks).forEach(l => { if (l) { l.classList.remove('text-coral','border-coral'); l.classList.add('text-muted','border-transparent'); }});
+        link.classList.remove('text-muted','border-transparent');
+        link.classList.add('text-coral','border-coral');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+  sections.forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>

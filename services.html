@@ -68,33 +68,189 @@
 </header>
 
 <!-- PAGE HEADER -->
-<section class="max-w-6xl mx-auto px-6 pt-20 pb-7">
-  <div class="inline-flex items-center gap-2 bg-coral-light text-coral text-xs font-semibold px-3 py-1.5 rounded-full mb-5">
-    <span class="w-1.5 h-1.5 rounded-full bg-coral"></span>Services
+<section style="background:#F9F8FF;overflow:hidden;">
+  <div class="max-w-6xl mx-auto px-6 py-16">
+    <div class="grid md:grid-cols-[44fr_56fr] gap-12 items-center">
+
+      <!-- LEFT -->
+      <div>
+        <div class="inline-flex items-center gap-2 bg-coral-light text-coral text-xs font-semibold px-3 py-1.5 rounded-full mb-5">
+          <span class="w-1.5 h-1.5 rounded-full bg-coral"></span>Services
+        </div>
+        <h1 class="font-display font-extrabold text-ink leading-tight mb-5" style="font-size:clamp(1.9rem,2.9vw,2.8rem);letter-spacing:-0.02em;">Modern SEO services.</h1>
+        <p class="text-muted mb-8 max-w-sm" style="line-height:1.75;">From traditional search to AI-generated answers, I ensure your brand is discoverable everywhere search is happening.</p>
+        <div id="service-pills" class="flex flex-wrap gap-3">
+          <a href="#content" class="inline-flex items-center gap-2.5 bg-white border border-border text-ink font-semibold px-4 py-2.5 rounded-full text-sm hover:border-coral hover:text-coral transition-colors duration-200">
+            <span class="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0" style="background:#ffe5e4;">
+              <svg width="12" height="12" viewBox="0 0 20 20" fill="none"><path d="M3 4h14M3 8h10M3 12h14M3 16h8" stroke="#F47B5A" stroke-width="1.6" stroke-linecap="round"/></svg>
+            </span>Content Strategy
+          </a>
+          <a href="#technical" class="inline-flex items-center gap-2.5 bg-white border border-border text-ink font-semibold px-4 py-2.5 rounded-full text-sm hover:border-violet hover:text-violet transition-colors duration-200">
+            <span class="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0" style="background:#eae1fe;">
+              <svg width="12" height="12" viewBox="0 0 20 20" fill="none"><path d="M8 4l-4 6 4 6M12 4l4 6-4 6" stroke="#7B68EE" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>Technical SEO
+          </a>
+          <a href="#ai" class="inline-flex items-center gap-2.5 bg-white border border-border text-ink font-semibold px-4 py-2.5 rounded-full text-sm transition-colors duration-200" onmouseover="this.style.borderColor='#C4900A';this.style.color='#C4900A'" onmouseout="this.style.borderColor='';this.style.color=''">
+            <span class="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0" style="background:#fff0cf;">
+              <svg width="12" height="12" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="6" stroke="#C4900A" stroke-width="1.6"/><path d="M10 7v3l2 2" stroke="#C4900A" stroke-width="1.6" stroke-linecap="round"/></svg>
+            </span>AI Search Strategy
+          </a>
+          <a href="#offsite" class="inline-flex items-center gap-2.5 bg-white border border-border text-ink font-semibold px-4 py-2.5 rounded-full text-sm transition-colors duration-200" onmouseover="this.style.borderColor='#5c7a8f';this.style.color='#5c7a8f'" onmouseout="this.style.borderColor='';this.style.color=''">
+            <span class="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0" style="background:#d3dce5;">
+              <svg width="12" height="12" viewBox="0 0 20 20" fill="none"><circle cx="5" cy="10" r="2" stroke="#5E7082" stroke-width="1.6"/><circle cx="15" cy="5" r="2" stroke="#5E7082" stroke-width="1.6"/><circle cx="15" cy="15" r="2" stroke="#5E7082" stroke-width="1.6"/><path d="M7 9l6-3M7 11l6 3" stroke="#5E7082" stroke-width="1.4" stroke-linecap="round"/></svg>
+            </span>Off-site SEO
+          </a>
+        </div>
+      </div>
+
+      <!-- RIGHT: keyword clicks bar table -->
+      <div style="min-width:0;height:425px;display:flex;align-items:center;">
+        <div style="width:100%;background:#ffffff;border-radius:20px;box-shadow:0 24px 64px -12px rgba(0,0,0,0.1),0 4px 16px -4px rgba(0,0,0,0.06);overflow:hidden;">
+
+          <!-- Browser chrome -->
+          <div style="background:#F9F9FC;border-bottom:1px solid #EDEDF3;padding:10px 16px;display:flex;align-items:center;gap:8px;">
+            <div style="display:flex;gap:5px;flex-shrink:0;">
+              <span style="width:10px;height:10px;border-radius:50%;background:#FF5F56;display:block;"></span>
+              <span style="width:10px;height:10px;border-radius:50%;background:#FFBD2E;display:block;"></span>
+              <span style="width:10px;height:10px;border-radius:50%;background:#27C93F;display:block;"></span>
+            </div>
+            <div style="flex:1;background:white;border:1px solid #E8E8F0;border-radius:6px;padding:4px 10px;display:flex;align-items:center;gap:6px;">
+              <svg width="10" height="10" viewBox="0 0 20 20" fill="none"><circle cx="9" cy="9" r="6" stroke="#9CA3AF" stroke-width="2"/><path d="M13.5 13.5l3 3" stroke="#9CA3AF" stroke-width="2" stroke-linecap="round"/></svg>
+              <span style="font-size:10px;color:#6B7280;font-family:'Inter',sans-serif;">nycguitarstore.com — Organic Clicks</span>
+            </div>
+          </div>
+
+          <!-- Column headers -->
+          <div style="display:flex;align-items:center;padding:8px 16px 6px;background:#FAFAFA;border-bottom:1px solid #F1F1F5;">
+            <span style="flex:1;font-size:9px;font-weight:600;color:#9CA3AF;letter-spacing:0.07em;text-transform:uppercase;font-family:'Inter',sans-serif;">Keyword</span>
+            <span style="width:60px;text-align:right;font-size:9px;font-weight:600;color:#9CA3AF;letter-spacing:0.07em;text-transform:uppercase;font-family:'Inter',sans-serif;">Clicks</span>
+            <span style="width:62px;text-align:right;font-size:9px;font-weight:600;color:#9CA3AF;letter-spacing:0.07em;text-transform:uppercase;font-family:'Inter',sans-serif;">Change</span>
+          </div>
+
+          <!-- Rows -->
+          <div id="clicks-table"></div>
+
+        </div>
+      </div>
+
+    </div>
   </div>
-  <h1 class="font-display font-extrabold text-5xl md:text-6xl text-ink leading-tight max-w-2xl">Modern SEO services.</h1>
-  <p class="text-muted text-lg mt-6 max-w-xl" style="line-height:1.7">From traditional search to AI-generated answers, I ensure your brand is discoverable everywhere search is happening.</p>
-  <div id="service-pills" class="flex flex-wrap gap-3 mt-10">
-    <a href="#content" class="inline-flex items-center gap-2.5 bg-offwhite border border-border text-ink font-semibold px-5 py-3 rounded-full text-sm hover:border-coral hover:text-coral transition-colors duration-200">
-      <span class="w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0" style="background:#ffe5e4;">
-        <svg width="14" height="14" viewBox="0 0 20 20" fill="none"><path d="M3 4h14M3 8h10M3 12h14M3 16h8" stroke="#F47B5A" stroke-width="1.6" stroke-linecap="round"/></svg>
-      </span>Content Strategy
-    </a>
-    <a href="#technical" class="inline-flex items-center gap-2.5 bg-offwhite border border-border text-ink font-semibold px-5 py-3 rounded-full text-sm hover:border-violet hover:text-violet transition-colors duration-200">
-      <span class="w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0" style="background:#eae1fe;">
-        <svg width="14" height="14" viewBox="0 0 20 20" fill="none"><path d="M8 4l-4 6 4 6M12 4l4 6-4 6" stroke="#7B68EE" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </span>Technical SEO
-    </a>
-    <a href="#ai" class="inline-flex items-center gap-2.5 bg-offwhite border border-border text-ink font-semibold px-5 py-3 rounded-full text-sm transition-colors duration-200" onmouseover="this.style.borderColor='#C4900A';this.style.color='#C4900A'" onmouseout="this.style.borderColor='';this.style.color=''">
-      <span class="w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0" style="background:#fff0cf;">
-        <svg width="14" height="14" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="6" stroke="#C4900A" stroke-width="1.6"/><path d="M10 7v3l2 2" stroke="#C4900A" stroke-width="1.6" stroke-linecap="round"/></svg>
-      </span>AI Search Strategy
-    </a>
-    <a href="#offsite" class="inline-flex items-center gap-2.5 bg-offwhite border border-border text-ink font-semibold px-5 py-3 rounded-full text-sm transition-colors duration-200" onmouseover="this.style.borderColor='#5c7a8f';this.style.color='#5c7a8f'" onmouseout="this.style.borderColor='';this.style.color=''">
-      <span class="w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0" style="background:#d3dce5;">
-        <svg width="14" height="14" viewBox="0 0 20 20" fill="none"><circle cx="5" cy="10" r="2" stroke="#5E7082" stroke-width="1.6"/><circle cx="15" cy="5" r="2" stroke="#5E7082" stroke-width="1.6"/><circle cx="15" cy="15" r="2" stroke="#5E7082" stroke-width="1.6"/><path d="M7 9l6-3M7 11l6 3" stroke="#5E7082" stroke-width="1.4" stroke-linecap="round"/></svg>
-      </span>Off-site SEO
-    </a>
+</section>
+
+<style>
+  .cr { display:flex;align-items:center;gap:10px;padding:9px 16px;border-bottom:1px solid #F9F9FC;opacity:0;transform:translateY(5px);transition:opacity 0.3s ease,transform 0.3s ease; }
+  .cr.show { opacity:1;transform:translateY(0); }
+  .cr:hover { background:#FAFAFA; }
+  .cr-kw { width:148px;flex-shrink:0;font-size:11px;color:#374151;font-family:'Inter',sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis; }
+  .cr-bar-wrap { flex:1;height:6px;background:#F1F1F5;border-radius:3px;overflow:hidden; }
+  .cr-bar { height:100%;width:0%;background:#F47B5A;border-radius:3px;transition:width 0.9s cubic-bezier(0.22,1,0.36,1); }
+  .cr-num { width:44px;text-align:right;font-size:11px;font-weight:700;color:#1A1A2E;font-family:'Inter',sans-serif;flex-shrink:0; }
+  .cr-chg { width:50px;text-align:right;font-size:10px;font-weight:600;color:#16a34a;font-family:'Inter',sans-serif;flex-shrink:0; }
+</style>
+<script>
+(function() {
+  const rows = [
+    { kw: 'guitar store nyc',         clicks: 1847, pct: 100, chg: '+312%' },
+    { kw: 'buy guitar new york',       clicks: 1203, pct: 65,  chg: '+189%' },
+    { kw: 'guitar lessons nyc',        clicks:  892, pct: 48,  chg: '+241%' },
+    { kw: 'acoustic guitar manhattan', clicks:  645, pct: 35,  chg: '+158%' },
+    { kw: 'electric guitar shop nyc',  clicks:  431, pct: 23,  chg: '+203%' },
+    { kw: 'used guitars new york',     clicks:  387, pct: 21,  chg: '+94%'  },
+    { kw: 'guitar repair nyc',         clicks:  284, pct: 15,  chg: '+127%' },
+  ];
+
+  function countUp(el, target, dur) {
+    let s = null;
+    (function step(ts) {
+      if (!s) s = ts;
+      const p = Math.min((ts - s) / dur, 1);
+      const e = 1 - Math.pow(1 - p, 2.5);
+      el.textContent = Math.round(e * target).toLocaleString();
+      if (p < 1) requestAnimationFrame(step);
+    })(performance.now());
+  }
+
+  function run() {
+    const table = document.getElementById('clicks-table');
+    if (!table) return;
+    table.innerHTML = '';
+    rows.forEach((r, i) => {
+      const row = document.createElement('div');
+      row.className = 'cr';
+      row.innerHTML = `<span class="cr-kw">${r.kw}</span><div class="cr-bar-wrap"><div class="cr-bar" data-pct="${r.pct}"></div></div><span class="cr-num">0</span><span class="cr-chg">${r.chg}</span>`;
+      table.appendChild(row);
+      setTimeout(() => {
+        row.classList.add('show');
+        row.querySelector('.cr-bar').style.width = r.pct + '%';
+        countUp(row.querySelector('.cr-num'), r.clicks, 900);
+      }, i * 150);
+    });
+    setTimeout(run, 7000);
+  }
+
+  run();
+})();
+</script>
+
+<!-- VALUE PROP BAND -->
+<section style="background:#ffffff;padding:56px 0;border-top:1px solid #F1F1F5;">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <h2 style="font-family:'Poppins',sans-serif;font-weight:800;font-size:clamp(1.6rem,2.5vw,2.2rem);color:#1A1A2E;letter-spacing:-0.02em;line-height:1.2;margin-bottom:16px;">
+      SEO strategy that delivers <span style="color:#F47B5A;">measurable results</span>
+    </h2>
+    <p style="font-size:1rem;color:#6B7280;max-width:520px;margin:0 auto 48px;line-height:1.7;font-family:'Inter',sans-serif;">
+      A focused, hands-on approach to search that drives real business outcomes — not vanity metrics.
+    </p>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+
+      <!-- 1 -->
+      <div style="display:flex;flex-direction:column;align-items:center;gap:14px;">
+        <div style="width:56px;height:56px;display:flex;align-items:center;justify-content:center;">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+            <circle cx="21" cy="21" r="11" stroke="#7B68EE" stroke-width="2.5"/>
+            <path d="M29 29l7 7" stroke="#7B68EE" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M17 21h8M21 17v8" stroke="#F47B5A" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <p style="font-size:13px;font-weight:600;color:#1A1A2E;font-family:'Inter',sans-serif;line-height:1.45;text-align:center;">Improve rankings<br>and visibility online</p>
+      </div>
+
+      <!-- 2 -->
+      <div style="display:flex;flex-direction:column;align-items:center;gap:14px;">
+        <div style="width:56px;height:56px;display:flex;align-items:center;justify-content:center;">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+            <path d="M8 34 L18 22 L26 28 L36 16 L44 10" stroke="#7B68EE" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M38 10h6v6" stroke="#F47B5A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <p style="font-size:13px;font-weight:600;color:#1A1A2E;font-family:'Inter',sans-serif;line-height:1.45;text-align:center;">Get more traffic,<br>leads, and revenue</p>
+      </div>
+
+      <!-- 3 -->
+      <div style="display:flex;flex-direction:column;align-items:center;gap:14px;">
+        <div style="width:56px;height:56px;display:flex;align-items:center;justify-content:center;">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+            <path d="M24 8l4 8 9 1.3-6.5 6.3 1.5 9L24 28l-8 4.6 1.5-9L11 17.3l9-1.3z" stroke="#7B68EE" stroke-width="2.5" stroke-linejoin="round"/>
+            <path d="M16 38l8-4 8 4" stroke="#F47B5A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <p style="font-size:13px;font-weight:600;color:#1A1A2E;font-family:'Inter',sans-serif;line-height:1.45;text-align:center;">Beat established<br>competitors</p>
+      </div>
+
+      <!-- 4 -->
+      <div style="display:flex;flex-direction:column;align-items:center;gap:14px;">
+        <div style="width:56px;height:56px;display:flex;align-items:center;justify-content:center;">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+            <rect x="8" y="30" width="7" height="10" rx="2" stroke="#7B68EE" stroke-width="2.5"/>
+            <rect x="20" y="22" width="7" height="18" rx="2" stroke="#7B68EE" stroke-width="2.5"/>
+            <rect x="32" y="14" width="7" height="26" rx="2" stroke="#7B68EE" stroke-width="2.5"/>
+            <path d="M10 20l8-6 8 4 8-10" stroke="#F47B5A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <p style="font-size:13px;font-weight:600;color:#1A1A2E;font-family:'Inter',sans-serif;line-height:1.45;text-align:center;">Long-term return<br>on investment</p>
+      </div>
+
+    </div>
   </div>
 </section>
 
@@ -130,9 +286,11 @@
 </div>
 <script>
   const stickyNav = document.getElementById('sticky-nav');
-  const pills = document.getElementById('service-pills');
-  const observer = new IntersectionObserver(([entry]) => {
-    if (!entry.isIntersecting) {
+  const contentSection = document.getElementById('content');
+
+  function updateNav() {
+    const top = contentSection.getBoundingClientRect().top;
+    if (top < 64) {
       stickyNav.style.opacity = '1';
       stickyNav.style.pointerEvents = 'auto';
       stickyNav.style.transform = 'translateY(0)';
@@ -141,8 +299,10 @@
       stickyNav.style.pointerEvents = 'none';
       stickyNav.style.transform = 'translateY(-4px)';
     }
-  }, { threshold: 0 });
-  observer.observe(pills);
+  }
+
+  window.addEventListener('scroll', updateNav, { passive: true });
+  updateNav();
 
   // Active pill on scroll
   const pillColors = {

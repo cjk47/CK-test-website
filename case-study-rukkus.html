@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rukkus Case Study — Craig Kleila</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          coral:  { DEFAULT: '#F47B5A', light: '#FFF1EC', dark: '#D45F3C' },
+          violet: { DEFAULT: '#7B68EE', light: '#F0EFFE', dark: '#5E4DD6' },
+          ink:    '#323232',
+          muted:  '#6B7280',
+          border: '#E8E8F0',
+          offwhite: '#F9F8FF',
+          gold:   '#C4900A',
+        },
+        fontFamily: {
+          display: ['Poppins', 'sans-serif'],
+          body:    ['Inter', 'sans-serif'],
+        },
+      }
+    }
+  }
+</script>
+<style>
+  body { font-family: 'Inter', sans-serif; background: #ffffff; color: #323232; }
+  .font-display { font-family: 'Poppins', sans-serif; }
+  .btn-coral { transition: transform 0.2s cubic-bezier(0.22,1,0.36,1), box-shadow 0.2s cubic-bezier(0.22,1,0.36,1); }
+  .btn-coral:hover { transform: translateY(-2px); box-shadow: 0 10px 28px -6px rgba(244,123,90,0.45); }
+  .btn-coral:active { transform: translateY(0); }
+  nav a { transition: color 0.15s ease; }
+  nav a:hover { color: #F47B5A; }
+  .breadcrumb-arrow { display: inline-block; transition: transform 0.2s cubic-bezier(0.22,1,0.36,1); }
+  .breadcrumb-link:hover .breadcrumb-arrow { transform: translateX(-4px); }
+  .toc-link { transition: color 0.15s ease, border-color 0.15s ease; }
+</style>
+</head>
+<body class="antialiased">
+
+<!-- NAV -->
+<header class="sticky top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-border">
+  <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+    <a href="index.html"><img src="logo.png" alt="Craig Kleila SEO" class="h-16"></a>
+    <div class="hidden md:flex items-center gap-8 text-sm font-medium text-muted">
+      <a href="services.html">Services</a>
+      <a href="case-studies.html" class="text-coral font-semibold">Case Studies</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="btn-coral bg-coral text-white px-5 py-2 rounded-full font-semibold text-sm">Get in Touch</a>
+    </div>
+    <button class="md:hidden p-2 rounded text-ink" onclick="document.getElementById('mob').classList.toggle('hidden')" aria-label="Toggle menu">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M3 6h16M3 11h16M3 16h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+  </nav>
+  <div id="mob" class="hidden md:hidden border-t border-border bg-white px-6 py-4 flex flex-col gap-4 text-sm font-medium text-muted">
+    <a href="services.html" class="hover:text-coral">Services</a>
+    <a href="case-studies.html" class="text-coral">Case Studies</a>
+    <a href="about.html" class="hover:text-coral">About</a>
+    <a href="contact.html" class="bg-coral text-white text-center px-4 py-2 rounded-full font-semibold">Get in Touch</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section style="background:#ffffff;position:relative;overflow:hidden;">
+  <div class="max-w-5xl mx-auto px-6 pt-14 pb-0" style="position:relative;z-index:2;">
+
+    <!-- Breadcrumb -->
+    <a href="case-studies.html" class="breadcrumb-link inline-flex items-center gap-1.5 text-sm text-ink mb-10">
+      <span class="breadcrumb-arrow">←</span> Case Studies
+    </a>
+
+    <!-- Centered content -->
+    <div class="text-center max-w-3xl mx-auto mb-10">
+      <div class="flex justify-center mb-5">
+        <img src="rukkus_logo_Wht_med.png" alt="Rukkus" style="height:22px;object-fit:contain;filter:brightness(0);">
+      </div>
+      <h1 class="font-display font-bold text-4xl md:text-5xl text-ink leading-tight mb-6">How Rukkus Grew 1,256% and Got Acquired — With Off-Site SEO</h1>
+      <div class="flex justify-center gap-2 flex-wrap">
+        <span style="background:#f8f5ee;color:#323232;" class="text-xs font-semibold px-3 py-1.5 rounded-full">Off-site SEO</span>
+      </div>
+    </div>
+
+    <!-- Hero image — stats repositioned to upper-middle area -->
+    <div class="relative rounded-t-2xl overflow-hidden" style="height:460px;">
+      <img src="cs3.png" alt="Rukkus Case Study" class="w-full h-full object-cover">
+      <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent"></div>
+      <!-- Stats repositioned to sit above the white curve -->
+      <div class="absolute left-0 right-0 p-8 bottom-0">
+        <div class="flex gap-0 divide-x divide-white/20">
+          <div class="flex-1 text-center px-6">
+            <p class="font-display font-bold text-5xl text-white">+1,256%</p>
+            <p class="text-sm text-white/70 mt-1">Traffic Increase</p>
+          </div>
+          <div class="flex-1 text-center px-6">
+            <p class="font-display font-bold text-5xl text-white">121K</p>
+            <p class="text-sm text-white/70 mt-1">New Visitors</p>
+          </div>
+          <div class="flex-1 text-center px-6">
+            <p class="font-display font-bold text-5xl text-white">27</p>
+            <p class="text-sm text-white/70 mt-1">High-DA Links</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- White curved section: arcs UP into the hero image, extends below -->
+  <div style="background:#F1EFED;border-radius:50% 50% 0 0/80px 80px 0 0;margin-top:-280px;position:relative;z-index:1;padding-top:310px;padding-bottom:60px;width:150%;margin-left:-25%;">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="flex justify-center gap-16 flex-wrap">
+        <div class="text-center">
+          <p class="text-[10px] font-bold uppercase tracking-widest mb-1.5" style="color:#8B7E6E;">Industry</p>
+          <p class="font-display font-semibold text-ink text-sm">Live Entertainment</p>
+        </div>
+        <div class="text-center">
+          <p class="text-[10px] font-bold uppercase tracking-widest mb-1.5" style="color:#8B7E6E;">Service</p>
+          <p class="font-display font-semibold text-ink text-sm">Off-site SEO</p>
+        </div>
+        <div class="text-center">
+          <p class="text-[10px] font-bold uppercase tracking-widest mb-1.5" style="color:#8B7E6E;">Timeline</p>
+          <p class="font-display font-semibold text-ink text-sm">6 Months</p>
+        </div>
+        <div class="text-center">
+          <p class="text-[10px] font-bold uppercase tracking-widest mb-1.5" style="color:#8B7E6E;">Region</p>
+          <p class="font-display font-semibold text-ink text-sm">United States</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- BODY -->
+<div class="max-w-5xl mx-auto px-6 pt-20 pb-0">
+  <div class="grid md:grid-cols-[1fr_260px] gap-16">
+
+    <!-- LEFT COLUMN -->
+    <div>
+
+      <section id="challenge" class="mb-14 scroll-mt-24">
+        <h2 class="font-display font-bold text-2xl text-ink mb-6">The Challenge</h2>
+        <p class="text-[#4B5563] text-base mb-4" style="line-height:1.8;">Rukkus launched into one of the most competitive markets on the internet, live event ticketing, as a complete unknown. StubHub, SeatGeek, and Ticketmaster had years of domain authority baked in. Rukkus had none.</p>
+        <p class="text-[#4B5563] text-base mb-4" style="line-height:1.8;">The team had been leaning heavily on paid advertising to drive early growth, but it wasn't sustainable. Organic search was the more efficient long-term channel, but the problem was there was no authority to rank with.</p>
+        <p class="text-[#4B5563] text-base mb-4" style="line-height:1.8;">The only way to earn Google's trust quickly was to earn the trust of publications Google already trusted.</p>
+      </section>
+
+      <section id="strategy" class="mb-14 scroll-mt-24">
+        <h2 class="font-display font-bold text-2xl text-ink mb-8">The Strategy</h2>
+
+        <div class="mb-10">
+          <h3 class="font-display font-semibold text-lg text-ink mb-3">Offer Unique Data to Journalists</h3>
+          <p class="text-[#4B5563] text-base mb-4" style="line-height:1.8;">Rukkus had proprietary ticket price data, so I used it as a PR tool. By pitching data-driven story angles, "When's the Best Time to Buy Coachella Tickets?" or "How Did Jim Harbaugh's Hiring Affect Ticket Prices?", I gave journalists genuinely useful material for stories they were already trying to write.</p>
+          <p class="text-[#4B5563] text-base mb-4" style="line-height:1.8;">I also built a tool that automatically scraped the top news stories each morning, flagging any that matched keywords we had relevant ticket data for. Each story came with a site authority score so I could prioritize the highest-value opportunities. When a story about the Rolling Stones surfaced on a high-DA outlet, I'd have a pitch out the same day. That combination of timing and relevance is what landed links from outlets like CNN and Fox.</p>
+
+          <!-- Press mention: CNN article + magnified callout -->
+          <div class="mt-8" style="position:relative;padding-bottom:40px;">
+            <!-- Base: CNN article screenshot -->
+            <div class="rounded-2xl overflow-hidden border border-border" style="box-shadow:0 8px 32px -8px rgba(0,0,0,0.10);">
+              <img src="cnn.png" alt="CNN — Rukkus coverage" class="w-full block">
+            </div>
+            <!-- Magnified callout -->
+            <div style="position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:100%;z-index:10;border-radius:16px;overflow:hidden;background:#fff;box-shadow:0 24px 64px -8px rgba(0,0,0,0.22),0 4px 16px -4px rgba(0,0,0,0.10);border:1px solid #E8E8F0;">
+              <div style="position:relative;">
+                <img src="cnn2.png" alt="CNN — Rukkus mention" class="w-full block">
+                <!-- Highlight over "rukkus.com" (third line, bottom-left) -->
+                <div style="position:absolute;top:72%;left:18%;width:15%;height:14%;background:rgba(253,224,71,0.6);border-radius:3px;pointer-events:none;"></div>
+              </div>
+              <div style="background:#F9F8FF;padding:9px 16px;border-top:1px solid #E8E8F0;">
+                <p style="font-size:11px;color:#9CA3AF;font-family:'Inter',sans-serif;line-height:1.5;">CNN — Rukkus.com earns a brand mention and link in CNN's coverage of the Grammy Awards.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Press mention: Fox article + magnified callout -->
+          <div class="mt-16" style="position:relative;padding-bottom:40px;">
+            <!-- Base: Fox article screenshot -->
+            <div class="rounded-2xl overflow-hidden border border-border" style="box-shadow:0 8px 32px -8px rgba(0,0,0,0.10);">
+              <img src="fox1.png" alt="Fox Sports — Rukkus coverage" class="w-full block">
+            </div>
+            <!-- Magnified callout -->
+            <div style="position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:100%;z-index:10;border-radius:16px;overflow:hidden;background:#fff;box-shadow:0 24px 64px -8px rgba(0,0,0,0.22),0 4px 16px -4px rgba(0,0,0,0.10);border:1px solid #E8E8F0;">
+              <div style="position:relative;">
+                <img src="fox2.png" alt="Fox Sports — Rukkus mention" class="w-full block">
+                <!-- Highlight over "Rukkus" (after "at" in first line) -->
+                <div style="position:absolute;top:4%;left:16%;width:10%;height:20%;background:rgba(253,224,71,0.6);border-radius:3px;pointer-events:none;"></div>
+              </div>
+              <div style="background:#F9F8FF;padding:9px 16px;border-top:1px solid #E8E8F0;">
+                <p style="font-size:11px;color:#9CA3AF;font-family:'Inter',sans-serif;line-height:1.5;">Fox Sports — Rukkus cited as a data source in coverage of how Jim Harbaugh's hiring shifted the secondary ticket market.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-10">
+          <h3 class="font-display font-semibold text-lg text-ink mb-3">Produce Engaging Visuals</h3>
+          <p class="text-[#4B5563] text-base mb-4" style="line-height:1.8;">Data alone wasn't always enough. Journalists also needed visuals, something they could drop straight into their articles to make them better. I created infographics and visual guides that were designed to be embedded.</p>
+          <p class="text-[#4B5563] text-base" style="line-height:1.8;">One example: I designed an infographic on the value of the #1 pick in the NBA draft and pitched it specifically to sports sites that had covered the draft but published minimal visuals. Sports Illustrated was among those that picked it up. Each placement included a link back to Rukkus.</p>
+
+          <!-- Press mention: SI article + magnified callout -->
+          <div class="mt-8" style="position:relative;padding-bottom:40px;">
+            <!-- Base: article screenshot -->
+            <div class="rounded-2xl overflow-hidden border border-border" style="box-shadow:0 8px 32px -8px rgba(0,0,0,0.10);">
+              <div style="overflow:hidden;">
+                <img src="realrealrukk.png" alt="Sports Illustrated — NBA Draft Lottery article" class="w-full block">
+              </div>
+            </div>
+            <!-- Magnified callout: pops out over the bottom of the article -->
+            <div style="position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:100%;z-index:10;border-radius:16px;overflow:hidden;background:#fff;box-shadow:0 24px 64px -8px rgba(0,0,0,0.22),0 4px 16px -4px rgba(0,0,0,0.10);border:1px solid #E8E8F0;">
+              <div style="position:relative;">
+                <img src="rukkuscs2.png" alt="Rukkus mention — Sports Illustrated" class="w-full block">
+                <!-- Highlight over "Ticket marketplace Rukkus.com" only -->
+                <div style="position:absolute;top:12%;left:0.5%;width:33%;height:36%;background:rgba(253,224,71,0.55);border-radius:3px;pointer-events:none;"></div>
+              </div>
+              <div style="background:#F9F8FF;padding:9px 16px;border-top:1px solid #E8E8F0;">
+                <p style="font-size:11px;color:#9CA3AF;font-family:'Inter',sans-serif;line-height:1.5;">Sports Illustrated, May 2015 — Rukkus earns a brand mention and link in coverage of the NBA Draft Lottery.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-10">
+          <h3 class="font-display font-semibold text-lg text-ink mb-3">Turn the Launch Into a Story</h3>
+          <p class="text-[#4B5563] text-base mb-4" style="line-height:1.8;">A startup launch is newsworthy if you package it correctly. I put together a full press kit: company story, press releases, digital artwork, and team bios, then pitched it to journalists covering concerts, sports, and live entertainment.</p>
+          <p class="text-[#4B5563] text-base mb-4" style="line-height:1.8;">This strategy produced coverage, and links, from Forbes, VentureBeat, Pando, and others.</p>
+
+          <!-- Press mention: Forbes article + magnified callout -->
+          <div class="mt-8" style="position:relative;padding-bottom:40px;">
+            <!-- Base: Forbes article screenshot -->
+            <div class="rounded-2xl overflow-hidden border border-border" style="box-shadow:0 8px 32px -8px rgba(0,0,0,0.10);">
+              <img src="rukforbes.png" alt="Forbes — Rukkus coverage" class="w-full block">
+            </div>
+            <!-- Magnified callout -->
+            <div style="position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:100%;z-index:10;border-radius:16px;overflow:hidden;background:#fff;box-shadow:0 24px 64px -8px rgba(0,0,0,0.22),0 4px 16px -4px rgba(0,0,0,0.10);border:1px solid #E8E8F0;">
+              <div style="position:relative;">
+                <img src="rukforbes1.png" alt="Forbes — Rukkus mention" class="w-full block">
+                <!-- Highlight over "Rukkus" -->
+                <div style="position:absolute;top:42%;left:0%;width:11%;height:16%;background:rgba(253,224,71,0.6);border-radius:3px;pointer-events:none;"></div>
+              </div>
+              <div style="background:#F9F8FF;padding:9px 16px;border-top:1px solid #E8E8F0;">
+                <p style="font-size:11px;color:#9CA3AF;font-family:'Inter',sans-serif;line-height:1.5;">Forbes — Rukkus earns a brand mention in coverage of the best tools for finding live event tickets.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-10">
+          <h3 class="font-display font-semibold text-lg text-ink mb-3">Reverse-Engineer the Competition</h3>
+          <p class="text-[#4B5563] text-base mb-4" style="line-height:1.8;">Rather than starting from scratch, I pulled a list of 1,000+ pages already linking to competitors like StubHub and SeatGeek but not to Rukkus. From there, I filtered for the most authoritative and relevant domains and ran a targeted outreach campaign.</p>
+          <p class="text-[#4B5563] text-base mb-4" style="line-height:1.8;">The logic was simple. If a site was willing to link to a competitor, they might link to us too, especially with a better pitch. This produced links from iMore, CNET, and the Atlanta Journal-Constitution.</p>
+
+          <!-- Press mention: iMore article + magnified callout -->
+          <div class="mt-8" style="position:relative;padding-bottom:40px;">
+            <!-- Base: iMore article screenshot -->
+            <div class="rounded-2xl overflow-hidden border border-border" style="box-shadow:0 8px 32px -8px rgba(0,0,0,0.10);">
+              <img src="imore.png" alt="iMore — Rukkus coverage" class="w-full block">
+            </div>
+            <!-- Magnified callout -->
+            <div style="position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:100%;z-index:10;border-radius:16px;overflow:hidden;background:#fff;box-shadow:0 24px 64px -8px rgba(0,0,0,0.22),0 4px 16px -4px rgba(0,0,0,0.10);border:1px solid #E8E8F0;">
+              <div style="position:relative;">
+                <img src="imore2.png" alt="iMore — Rukkus mention" class="w-full block">
+                <!-- Highlight over "Rukkus" (first word, top-left) -->
+                <div style="position:absolute;top:2%;left:0%;width:10%;height:14%;background:rgba(253,224,71,0.6);border-radius:3px;pointer-events:none;"></div>
+              </div>
+              <div style="background:#F9F8FF;padding:9px 16px;border-top:1px solid #E8E8F0;">
+                <p style="font-size:11px;color:#9CA3AF;font-family:'Inter',sans-serif;line-height:1.5;">iMore — Rukkus earns a brand mention and link in a roundup of the best ticket-finding apps.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-10">
+          <h3 class="font-display font-semibold text-lg text-ink mb-3">Secure University Discount Pages</h3>
+          <p class="text-[#4B5563] text-base mb-4" style="line-height:1.8;">College students are a core audience for live events. Using site operators like <code class="bg-offwhite px-1.5 py-0.5 rounded text-sm font-mono text-ink">site:.edu intitle:discounts</code>, I identified hundreds of university pages dedicated to student and staff discount programs.</p>
+          <p class="text-[#4B5563] text-base mb-4" style="line-height:1.8;">I reached out to propose adding Rukkus to their lists, a genuinely useful addition for students, and a trust signal for Google. This landed links from Harvard, Cornell, the University of Pittsburgh, and more. .edu links carry significant authority weight.</p>
+
+          <!-- Press mention: Harvard page + magnified callout -->
+          <div class="mt-8" style="position:relative;padding-bottom:40px;">
+            <!-- Base: Harvard page screenshot -->
+            <div class="rounded-2xl overflow-hidden border border-border" style="box-shadow:0 8px 32px -8px rgba(0,0,0,0.10);">
+              <img src="harv.png" alt="Harvard T.H. Chan School of Public Health — Student Affairs" class="w-full block">
+            </div>
+            <!-- Magnified callout -->
+            <div style="position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:100%;z-index:10;border-radius:16px;overflow:hidden;background:#fff;box-shadow:0 24px 64px -8px rgba(0,0,0,0.22),0 4px 16px -4px rgba(0,0,0,0.10);border:1px solid #E8E8F0;">
+              <div style="position:relative;">
+                <img src="harv2.png" alt="Harvard — Rukkus.com listing" class="w-full block">
+                <!-- Highlight over "Rukkus.com" (first word, top-left) -->
+                <div style="position:absolute;top:5%;left:0%;width:13%;height:28%;background:rgba(253,224,71,0.6);border-radius:3px;pointer-events:none;"></div>
+              </div>
+              <div style="background:#F9F8FF;padding:9px 16px;border-top:1px solid #E8E8F0;">
+                <p style="font-size:11px;color:#9CA3AF;font-family:'Inter',sans-serif;line-height:1.5;">Harvard T.H. Chan School of Public Health — Rukkus listed as a student discount resource on the Office for Student Affairs page.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <section id="results" class="mb-14 scroll-mt-24">
+        <h2 class="font-display font-bold text-2xl text-ink mb-6">The Results</h2>
+        <p class="text-[#4B5563] text-base mb-4" style="line-height:1.8;">Over six months, these strategies produced backlinks from 27 high-authority domains and thousands of social shares, enough momentum to help position Rukkus for its eventual acquisition in 2018.</p>
+        <p class="text-[#4B5563] text-base mb-6" style="line-height:1.8;">Those "stamps of approval" translated into a <strong class="text-ink">1,256% increase in organic traffic</strong> and <strong class="text-ink">121,420 new visitors</strong>.</p>
+        <p class="text-[#4B5563] text-base mb-4" style="line-height:1.8;">Links &amp; mentions secured in:</p>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:32px;">
+          <div style="border:1px solid #E8E8F0;border-radius:10px;padding:8px 14px;background:#fff;display:flex;align-items:center;gap:7px;">
+            <img src="https://www.google.com/s2/favicons?domain=cnn.com&sz=64" style="height:16px;width:16px;object-fit:contain;"><span style="font-weight:600;font-size:13px;color:#1a1a1a;">CNN</span>
+          </div>
+          <div style="border:1px solid #E8E8F0;border-radius:10px;padding:8px 14px;background:#fff;display:flex;align-items:center;gap:7px;">
+            <img src="https://www.google.com/s2/favicons?domain=foxsports.com&sz=64" style="height:16px;width:16px;object-fit:contain;"><span style="font-weight:600;font-size:13px;color:#1a1a1a;">Fox Sports</span>
+          </div>
+          <div style="border:1px solid #E8E8F0;border-radius:10px;padding:8px 14px;background:#fff;display:flex;align-items:center;gap:7px;">
+            <img src="https://www.google.com/s2/favicons?domain=forbes.com&sz=64" style="height:16px;width:16px;object-fit:contain;"><span style="font-weight:600;font-size:13px;color:#1a1a1a;">Forbes</span>
+          </div>
+          <div style="border:1px solid #E8E8F0;border-radius:10px;padding:8px 14px;background:#fff;display:flex;align-items:center;gap:7px;">
+            <img src="https://www.google.com/s2/favicons?domain=si.com&sz=64" style="height:16px;width:16px;object-fit:contain;"><span style="font-weight:600;font-size:13px;color:#1a1a1a;">Sports Illustrated</span>
+          </div>
+          <div style="border:1px solid #E8E8F0;border-radius:10px;padding:8px 14px;background:#fff;display:flex;align-items:center;gap:7px;">
+            <img src="https://www.google.com/s2/favicons?domain=imore.com&sz=64" style="height:16px;width:16px;object-fit:contain;"><span style="font-weight:600;font-size:13px;color:#1a1a1a;">iMore</span>
+          </div>
+          <div style="border:1px solid #E8E8F0;border-radius:10px;padding:8px 14px;background:#fff;display:flex;align-items:center;gap:7px;">
+            <img src="https://www.google.com/s2/favicons?domain=venturebeat.com&sz=64" style="height:16px;width:16px;object-fit:contain;"><span style="font-weight:600;font-size:13px;color:#1a1a1a;">VentureBeat</span>
+          </div>
+          <div style="border:1px solid #E8E8F0;border-radius:10px;padding:8px 14px;background:#fff;display:flex;align-items:center;gap:7px;">
+            <img src="https://www.google.com/s2/favicons?domain=cnet.com&sz=64" style="height:16px;width:16px;object-fit:contain;"><span style="font-weight:600;font-size:13px;color:#1a1a1a;">CNET</span>
+          </div>
+          <div style="border:1px solid #E8E8F0;border-radius:10px;padding:8px 14px;background:#fff;display:flex;align-items:center;gap:7px;">
+            <img src="https://www.google.com/s2/favicons?domain=harvard.edu&sz=64" style="height:16px;width:16px;object-fit:contain;"><span style="font-weight:600;font-size:13px;color:#1a1a1a;">Harvard</span>
+          </div>
+          <div style="border:1px solid #E8E8F0;border-radius:10px;padding:8px 14px;background:#fff;display:flex;align-items:center;gap:7px;">
+            <img src="https://www.google.com/s2/favicons?domain=ajc.com&sz=64" style="height:16px;width:16px;object-fit:contain;"><span style="font-weight:600;font-size:13px;color:#1a1a1a;">AJC</span>
+          </div>
+          <div style="border:1px solid #E8E8F0;border-radius:10px;padding:8px 14px;background:#fff;display:flex;align-items:center;gap:7px;">
+            <img src="https://www.google.com/s2/favicons?domain=startribune.com&sz=64" style="height:16px;width:16px;object-fit:contain;"><span style="font-weight:600;font-size:13px;color:#1a1a1a;">Star Tribune</span>
+          </div>
+          <div style="border:1px solid #E8E8F0;border-radius:10px;padding:8px 14px;background:#fff;display:flex;align-items:center;gap:7px;">
+            <img src="https://www.google.com/s2/favicons?domain=buzzfeed.com&sz=64" style="height:16px;width:16px;object-fit:contain;"><span style="font-weight:600;font-size:13px;color:#1a1a1a;">BuzzFeed</span>
+          </div>
+          <div style="border:1px solid #E8E8F0;border-radius:10px;padding:8px 14px;background:#fff;display:flex;align-items:center;gap:7px;">
+            <img src="https://www.google.com/s2/favicons?domain=cdbaby.com&sz=64" style="height:16px;width:16px;object-fit:contain;"><span style="font-weight:600;font-size:13px;color:#1a1a1a;">CD Baby</span>
+          </div>
+          <div style="border:1px solid #E8E8F0;border-radius:10px;padding:8px 14px;background:#fff;display:flex;align-items:center;gap:7px;">
+            <img src="https://www.google.com/s2/favicons?domain=geekwire.com&sz=64" style="height:16px;width:16px;object-fit:contain;"><span style="font-weight:600;font-size:13px;color:#1a1a1a;">GeekWire</span>
+          </div>
+          <div style="border:1px solid #E8E8F0;border-radius:10px;padding:8px 14px;background:#fff;display:flex;align-items:center;gap:7px;">
+            <img src="https://www.google.com/s2/favicons?domain=bizjournals.com&sz=64" style="height:16px;width:16px;object-fit:contain;"><span style="font-weight:600;font-size:13px;color:#1a1a1a;">Business Journal</span>
+          </div>
+          <div style="border:1px solid #E8E8F0;border-radius:10px;padding:8px 14px;background:#fff;display:flex;align-items:center;gap:7px;">
+            <img src="https://www.google.com/s2/favicons?domain=pandodaily.com&sz=64" style="height:16px;width:16px;object-fit:contain;"><span style="font-weight:600;font-size:13px;color:#1a1a1a;">Pando Daily</span>
+          </div>
+          <div style="border:1px solid #E8E8F0;border-radius:10px;padding:8px 14px;background:#fff;display:flex;align-items:center;gap:7px;">
+            <img src="https://www.google.com/s2/favicons?domain=ibtimes.com&sz=64" style="height:16px;width:16px;object-fit:contain;"><span style="font-weight:600;font-size:13px;color:#1a1a1a;">Int'l Business Times</span>
+          </div>
+          <div style="border:1px solid #E8E8F0;border-radius:10px;padding:8px 14px;background:#fff;display:flex;align-items:center;gap:7px;">
+            <img src="https://www.google.com/s2/favicons?domain=hypebot.com&sz=64" style="height:16px;width:16px;object-fit:contain;"><span style="font-weight:600;font-size:13px;color:#1a1a1a;">Hypebot</span>
+          </div>
+          <div style="border:1px solid #E8E8F0;border-radius:10px;padding:8px 14px;background:#fff;display:flex;align-items:center;gap:7px;">
+            <img src="https://www.google.com/s2/favicons?domain=democratandchronicle.com&sz=64" style="height:16px;width:16px;object-fit:contain;"><span style="font-weight:600;font-size:13px;color:#1a1a1a;">Democrat &amp; Chronicle</span>
+          </div>
+        </div>
+        <div class="grid grid-cols-3 gap-4 mt-8">
+          <div class="bg-offwhite rounded-xl p-5 text-center">
+            <p class="font-display font-bold text-3xl text-coral">+1,256%</p>
+            <p class="text-xs text-muted mt-1">Organic Traffic</p>
+          </div>
+          <div class="bg-offwhite rounded-xl p-5 text-center">
+            <p class="font-display font-bold text-3xl text-violet">121K</p>
+            <p class="text-xs text-muted mt-1">New Visitors</p>
+          </div>
+          <div class="bg-offwhite rounded-xl p-5 text-center">
+            <p class="font-display font-bold text-3xl" style="color:#C4900A;">27</p>
+            <p class="text-xs text-muted mt-1">High-DA Links</p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- RIGHT SIDEBAR -->
+    <div class="sticky top-24 self-start space-y-6">
+
+      <!-- TOC Card -->
+      <div class="border border-border rounded-2xl p-6">
+        <p class="text-xs font-semibold uppercase tracking-widest text-muted mb-4">On This Page</p>
+        <nav class="space-y-2">
+          <a href="#challenge" class="toc-link block text-sm text-muted hover:text-coral py-1 border-l-2 border-transparent pl-3 hover:border-coral">The Challenge</a>
+          <a href="#strategy" class="toc-link block text-sm text-muted hover:text-coral py-1 border-l-2 border-transparent pl-3 hover:border-coral">The Strategy</a>
+          <a href="#results" class="toc-link block text-sm text-muted hover:text-coral py-1 border-l-2 border-transparent pl-3 hover:border-coral">The Results</a>
+          <a href="#testimonial" class="toc-link block text-sm text-muted hover:text-coral py-1 border-l-2 border-transparent pl-3 hover:border-coral">Takeaway</a>
+        </nav>
+      </div>
+
+      <!-- CTA Card -->
+      <div class="bg-coral rounded-2xl p-6 text-white">
+        <h3 class="font-display font-bold text-lg mb-2">Ready for results like these?</h3>
+        <p class="text-white/80 text-sm mb-4" style="line-height:1.6;">Let's talk about what's possible for your business.</p>
+        <a href="contact.html" class="btn-coral bg-white text-coral font-semibold px-5 py-2.5 rounded-full text-sm inline-block">Start a Conversation →</a>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<!-- TESTIMONIAL SECTION -->
+<section id="testimonial" class="bg-offwhite border-t border-border py-20 mt-16">
+  <div class="max-w-3xl mx-auto px-6 text-center">
+    <p class="font-display text-8xl text-coral leading-none mb-4" style="opacity:0.4;">"</p>
+    <p class="font-display italic text-2xl text-ink leading-relaxed mb-8 max-w-2xl mx-auto">"Craig was a key member in helping launch Rukkus and was an integral part of establishing our SEO &amp; SEM strategies. I always considered him a valuable asset."</p>
+    <div class="flex items-center justify-center gap-4">
+      <div class="text-left">
+        <p class="font-semibold text-ink text-sm">Rukkus Leadership</p>
+        <p class="text-muted text-xs">Co-Founder, Rukkus</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED CASE STUDIES -->
+<section class="bg-white py-20 border-t border-border">
+  <div class="max-w-5xl mx-auto px-6">
+    <p class="text-xs font-semibold uppercase tracking-widest text-muted mb-2">More Case Studies</p>
+    <h2 class="font-display font-bold text-2xl text-ink mb-10">See more results</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <!-- XVIVO -->
+      <a href="case-study-xvivo.html" class="border border-border rounded-2xl overflow-hidden group block">
+        <div style="height:160px;overflow:hidden;">
+          <img src="new-xvivo.png" alt="XVIVO" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+        </div>
+        <div class="p-4">
+          <img src="xvivo.png" alt="XVIVO" style="height:18px;object-fit:contain;mix-blend-mode:multiply;margin-bottom:8px;">
+          <p class="text-sm text-muted mb-3">Technical SEO · 27% organic inquiry growth</p>
+          <span class="text-coral text-sm font-semibold">Read More →</span>
+        </div>
+      </a>
+      <!-- Epic Reads -->
+      <a href="case-study-epic-reads.html" class="border border-border rounded-2xl overflow-hidden group block">
+        <div style="height:160px;overflow:hidden;">
+          <img src="cs4.png" alt="Epic Reads" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+        </div>
+        <div class="p-4">
+          <img src="er-logo-menu-blk.png" alt="Epic Reads" style="height:18px;object-fit:contain;mix-blend-mode:multiply;margin-bottom:8px;">
+          <p class="text-sm text-muted mb-3">Content Strategy · 37% online sales increase</p>
+          <span class="text-coral text-sm font-semibold">Read More →</span>
+        </div>
+      </a>
+      <!-- Chase -->
+      <a href="case-study-chase.html" class="border border-border rounded-2xl overflow-hidden group block">
+        <div style="height:160px;overflow:hidden;">
+          <img src="cccc.png" alt="Chase" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+        </div>
+        <div class="p-4">
+          <img src="chase-logo-png-transparent.png" alt="Chase" style="height:18px;object-fit:contain;mix-blend-mode:multiply;margin-bottom:8px;">
+          <p class="text-sm text-muted mb-3">Content + Technical SEO · 69.8% click growth</p>
+          <span class="text-coral text-sm font-semibold">Read More →</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="bg-ink py-20 text-center">
+  <h2 class="font-display font-bold text-3xl text-white mb-4">Ready to grow your search presence?</h2>
+  <p class="text-muted mb-8">Let's talk about your goals and build a plan that actually works.</p>
+  <a href="contact.html" class="btn-coral bg-coral text-white font-semibold px-8 py-3 rounded-full text-sm inline-block">Start a Conversation →</a>
+</section>
+
+<!-- FOOTER -->
+<footer class="border-t border-border">
+  <div class="max-w-6xl mx-auto px-6 py-10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted">
+    <img src="logo.png" alt="Craig Kleila SEO" class="h-12">
+    <nav class="flex gap-6">
+      <a href="services.html" class="hover:text-coral transition-colors duration-150">Services</a>
+      <a href="case-studies.html" class="hover:text-coral transition-colors duration-150">Case Studies</a>
+      <a href="about.html" class="hover:text-coral transition-colors duration-150">About</a>
+      <a href="contact.html" class="hover:text-coral transition-colors duration-150">Contact</a>
+    </nav>
+    <p>© 2026 Craig Kleila. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- BACK TO TOP -->
+<button onclick="window.scrollTo({top:0,behavior:'smooth'})"
+  class="fixed bottom-6 left-6 z-50 bg-ink text-white w-11 h-11 rounded-full flex items-center justify-center shadow-lg transition-colors duration-150"
+  aria-label="Back to top">
+  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+    <path d="M8 12V4M4 8l4-4 4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</button>
+
+<script>
+  const sections = document.querySelectorAll('#challenge, #strategy, #results, #testimonial');
+  const tocLinks = {
+    'challenge': document.querySelector('a[href="#challenge"]'),
+    'strategy': document.querySelector('a[href="#strategy"]'),
+    'results': document.querySelector('a[href="#results"]'),
+    'testimonial': document.querySelector('a[href="#testimonial"]'),
+  };
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const link = tocLinks[entry.target.id];
+      if (!link) return;
+      if (entry.isIntersecting) {
+        Object.values(tocLinks).forEach(l => { if (l) { l.classList.remove('text-coral','border-coral'); l.classList.add('text-muted','border-transparent'); }});
+        link.classList.remove('text-muted','border-transparent');
+        link.classList.add('text-coral','border-coral');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+  sections.forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>

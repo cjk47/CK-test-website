@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Epic Reads Case Study — Craig Kleila</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          coral:  { DEFAULT: '#F47B5A', light: '#FFF1EC', dark: '#D45F3C' },
+          violet: { DEFAULT: '#7B68EE', light: '#F0EFFE', dark: '#5E4DD6' },
+          ink:    '#323232',
+          muted:  '#6B7280',
+          border: '#E8E8F0',
+          offwhite: '#F9F8FF',
+          gold:   '#C4900A',
+        },
+        fontFamily: {
+          display: ['Poppins', 'sans-serif'],
+          body:    ['Inter', 'sans-serif'],
+        },
+      }
+    }
+  }
+</script>
+<style>
+  body { font-family: 'Inter', sans-serif; background: #ffffff; color: #323232; }
+  .font-display { font-family: 'Poppins', sans-serif; }
+  .btn-coral { transition: transform 0.2s cubic-bezier(0.22,1,0.36,1), box-shadow 0.2s cubic-bezier(0.22,1,0.36,1); }
+  .btn-coral:hover { transform: translateY(-2px); box-shadow: 0 10px 28px -6px rgba(244,123,90,0.45); }
+  .btn-coral:active { transform: translateY(0); }
+  nav a { transition: color 0.15s ease; }
+  nav a:hover { color: #F47B5A; }
+  .breadcrumb-arrow { display: inline-block; transition: transform 0.2s cubic-bezier(0.22,1,0.36,1); }
+  .breadcrumb-link:hover .breadcrumb-arrow { transform: translateX(-4px); }
+  .toc-link { transition: color 0.15s ease, border-color 0.15s ease; }
+</style>
+</head>
+<body class="antialiased">
+
+<!-- NAV -->
+<header class="sticky top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-border">
+  <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+    <a href="index.html"><img src="logo.png" alt="Craig Kleila SEO" class="h-16"></a>
+    <div class="hidden md:flex items-center gap-8 text-sm font-medium text-muted">
+      <a href="services.html">Services</a>
+      <a href="case-studies.html" class="text-coral font-semibold">Case Studies</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="btn-coral bg-coral text-white px-5 py-2 rounded-full font-semibold text-sm">Get in Touch</a>
+    </div>
+    <button class="md:hidden p-2 rounded text-ink" onclick="document.getElementById('mob').classList.toggle('hidden')" aria-label="Toggle menu">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M3 6h16M3 11h16M3 16h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+  </nav>
+  <div id="mob" class="hidden md:hidden border-t border-border bg-white px-6 py-4 flex flex-col gap-4 text-sm font-medium text-muted">
+    <a href="services.html" class="hover:text-coral">Services</a>
+    <a href="case-studies.html" class="text-coral">Case Studies</a>
+    <a href="about.html" class="hover:text-coral">About</a>
+    <a href="contact.html" class="bg-coral text-white text-center px-4 py-2 rounded-full font-semibold">Get in Touch</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section style="background:#ffffff;position:relative;overflow:hidden;">
+  <div class="max-w-5xl mx-auto px-6 pt-14 pb-0" style="position:relative;z-index:2;">
+
+    <!-- Breadcrumb -->
+    <a href="case-studies.html" class="breadcrumb-link inline-flex items-center gap-1.5 text-sm text-ink mb-10">
+      <span class="breadcrumb-arrow">←</span> Case Studies
+    </a>
+
+    <!-- Centered content -->
+    <div class="text-center max-w-3xl mx-auto mb-10">
+      <div class="flex justify-center mb-5">
+        <img src="er-logo-menu-blk.png" alt="Epic Reads" style="height:22px;object-fit:contain;mix-blend-mode:multiply;">
+      </div>
+      <h1 class="font-display font-bold text-4xl md:text-5xl text-ink leading-tight mb-6">How Epic Reads Increased Online Book Sales 37% With Smarter Content</h1>
+      <div class="flex justify-center gap-2 flex-wrap">
+        <span style="background:#f8f5ee;color:#323232;" class="text-xs font-semibold px-3 py-1.5 rounded-full">Content Strategy</span>
+      </div>
+    </div>
+
+    <!-- Hero image — stats at bottom -->
+    <div class="relative rounded-t-2xl overflow-hidden" style="height:460px;">
+      <img src="cs4.png" alt="Epic Reads Case Study" class="w-full h-full object-cover">
+      <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent"></div>
+      <div class="absolute left-0 right-0 p-8 bottom-0">
+        <div class="flex gap-0 divide-x divide-white/20">
+          <div class="flex-1 text-center px-6">
+            <p class="font-display font-bold text-5xl text-white">+37%</p>
+            <p class="text-sm text-white/70 mt-1">Online Sales</p>
+          </div>
+          <div class="flex-1 text-center px-6">
+            <p class="font-display font-bold text-5xl text-white">+97%</p>
+            <p class="text-sm text-white/70 mt-1">Organic Traffic</p>
+          </div>
+          <div class="flex-1 text-center px-6">
+            <p class="font-display font-bold text-5xl text-white">234</p>
+            <p class="text-sm text-white/70 mt-1">New Top-3 Keywords</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- White curved section: arcs UP into the hero image, extends below -->
+  <div style="background:#F1EFED;border-radius:50% 50% 0 0/80px 80px 0 0;margin-top:-280px;position:relative;z-index:1;padding-top:310px;padding-bottom:60px;width:150%;margin-left:-25%;">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="flex justify-center gap-16 flex-wrap">
+        <div class="text-center">
+          <p class="text-[10px] font-bold uppercase tracking-widest mb-1.5" style="color:#8B7E6E;">Industry</p>
+          <p class="font-display font-semibold text-ink text-sm">Publishing</p>
+        </div>
+        <div class="text-center">
+          <p class="text-[10px] font-bold uppercase tracking-widest mb-1.5" style="color:#8B7E6E;">Service</p>
+          <p class="font-display font-semibold text-ink text-sm">Content Strategy</p>
+        </div>
+        <div class="text-center">
+          <p class="text-[10px] font-bold uppercase tracking-widest mb-1.5" style="color:#8B7E6E;">Timeline</p>
+          <p class="font-display font-semibold text-ink text-sm">Ongoing</p>
+        </div>
+        <div class="text-center">
+          <p class="text-[10px] font-bold uppercase tracking-widest mb-1.5" style="color:#8B7E6E;">Region</p>
+          <p class="font-display font-semibold text-ink text-sm">United States</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- BODY -->
+<div class="max-w-5xl mx-auto px-6 pt-20 pb-0">
+  <div class="grid md:grid-cols-[1fr_260px] gap-16">
+
+    <!-- LEFT COLUMN -->
+    <div>
+
+      <section id="challenge" class="mb-14 scroll-mt-24">
+        <h2 class="font-display font-bold text-2xl text-ink mb-6">The Challenge</h2>
+        <p class="text-[#4B5563] text-base mb-4" style="line-height:1.8;">Epic Reads, HarperCollins' young adult book blog, wasn't short on content. They were publishing more than 10 articles a week, including author spotlights, quizzes, and reading lists. The issue wasn't how much they were creating, it was what they were creating.</p>
+        <p class="text-[#4B5563] text-base mb-4" style="line-height:1.8;">Most of the content wasn't built around what people were actually searching for. It worked for existing readers, but it wasn't bringing in new ones, especially people going to Google to figure out what to read next.</p>
+        <p class="text-[#4B5563] text-base mb-4" style="line-height:1.8;">When I was brought in to lead SEO, the goals were simple: show up for popular book-related searches, get more people to the product pages, and ultimately, sell more books.</p>
+      </section>
+
+      <section id="solution" class="mb-14 scroll-mt-24">
+        <h2 class="font-display font-bold text-2xl text-ink mb-8">The Solution</h2>
+
+        <div class="mb-10">
+          <h3 class="font-display font-semibold text-lg text-ink mb-3">Find the Right Keywords</h3>
+          <p class="text-[#4B5563] text-base mb-4" style="line-height:1.8;">The first step was figuring out what readers were actually searching for. A content gap analysis showed that Epic Reads had almost no posts targeting "best books by genre" searches — queries like "best time travel books," "best heist novels," or "best poetry books for teens." These were a logical fit: people searching that way are actively looking for recommendations, which means they're close to buying. High intent, high relevance, and Epic Reads wasn't showing up for any of it.</p>
+
+          <!-- Keyword research screenshot -->
+          <div class="my-6 rounded-2xl overflow-hidden border border-border" style="box-shadow:0 8px 32px -8px rgba(0,0,0,0.10);">
+            <img src="ercasestudy3.png" alt="Keyword research — genre book keywords" class="w-full block">
+            <div style="background:#F9F8FF;padding:12px 18px;border-top:1px solid #E8E8F0;">
+              <p style="font-size:11px;color:#9CA3AF;font-family:'Inter',sans-serif;line-height:1.5;">A sample of the genre keyword targets identified during research — high search volume, manageable difficulty, and strong purchase intent.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="mb-10">
+          <h3 class="font-display font-semibold text-lg text-ink mb-3">Write for Readers, Optimize for Google</h3>
+          <p class="text-[#4B5563] text-base mb-4" style="line-height:1.8;">From 50 priority keywords, I built detailed content briefs for the writing team — not just topic overviews, but precise blueprints: recommended outlines, internal linking anchors, metadata guidance, visual direction, and CTA placement. The goal was articles that readers would genuinely enjoy and that Google would reward.</p>
+          <p class="text-[#4B5563] text-base mb-4" style="line-height:1.8;">Every piece was optimized across the full range of on-page signals to build keyword relevancy, match search intent, and guide readers naturally toward product pages:</p>
+          <ul class="space-y-2 mt-4 mb-2">
+            <li class="flex items-center gap-3 text-[#4B5563] text-base"><span class="w-1.5 h-1.5 rounded-full bg-coral flex-shrink-0"></span>Title tags</li>
+            <li class="flex items-center gap-3 text-[#4B5563] text-base"><span class="w-1.5 h-1.5 rounded-full bg-coral flex-shrink-0"></span>Headers &amp; on-page copy</li>
+            <li class="flex items-center gap-3 text-[#4B5563] text-base"><span class="w-1.5 h-1.5 rounded-full bg-coral flex-shrink-0"></span>Meta descriptions</li>
+            <li class="flex items-center gap-3 text-[#4B5563] text-base"><span class="w-1.5 h-1.5 rounded-full bg-coral flex-shrink-0"></span>Internal links</li>
+            <li class="flex items-center gap-3 text-[#4B5563] text-base"><span class="w-1.5 h-1.5 rounded-full bg-coral flex-shrink-0"></span>Call-to-actions</li>
+            <li class="flex items-center gap-3 text-[#4B5563] text-base"><span class="w-1.5 h-1.5 rounded-full bg-coral flex-shrink-0"></span>Image alt tags</li>
+          </ul>
+
+          <!-- Example article screenshot -->
+          <div class="mt-8 rounded-2xl overflow-hidden border border-border" style="box-shadow:0 8px 32px -8px rgba(0,0,0,0.10);">
+            <div style="overflow:hidden;height:400px;">
+              <img src="ercasesudy.png" alt="Epic Reads — 14 Time Travel Books article" class="w-full block" style="object-fit:cover;object-position:top;height:100%;">
+            </div>
+            <div style="background:#F9F8FF;padding:12px 18px;border-top:1px solid #E8E8F0;">
+              <p style="font-size:11px;color:#9CA3AF;font-family:'Inter',sans-serif;line-height:1.5;">Example: "14 Time Travel Books That'll Make You Wish You Had a Time Machine" — one of 50+ genre list articles built around high-intent keyword targets.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="mb-10">
+          <h3 class="font-display font-semibold text-lg text-ink mb-3">Get the Technical Fundamentals Right</h3>
+          <p class="text-[#4B5563] text-base mb-4" style="line-height:1.8;">I also audited the technical side. Each article needed a clean heading hierarchy, an optimized title tag, and metadata that clearly communicated what the page was about. Small things individually — but the signal they send collectively adds up.</p>
+
+          <!-- Dev tools / semantic HTML screenshot -->
+          <div class="mt-4 rounded-2xl overflow-hidden border border-border" style="box-shadow:0 8px 32px -8px rgba(0,0,0,0.10);">
+            <img src="ercasestudy2.png" alt="Epic Reads — clean semantic HTML structure" class="w-full block">
+            <div style="background:#F9F8FF;padding:12px 18px;border-top:1px solid #E8E8F0;">
+              <p style="font-size:11px;color:#9CA3AF;font-family:'Inter',sans-serif;line-height:1.5;">Each article was built on clean, semantic HTML — proper heading hierarchy, structured post metadata, and optimized title tags signalling relevance to search engines.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-10">
+          <h3 class="font-display font-semibold text-lg text-ink mb-3">Track, Learn, and Adjust</h3>
+          <p class="text-[#4B5563] text-base" style="line-height:1.8;">Publishing was only half the work. Post-launch, I monitored traffic, click-through rates, and conversions on every article. Underperforming pieces got revisited — internal links strengthened from higher-authority pages, meta tags refined, intent re-examined, thin sections expanded, and visual elements added where engagement was dropping off. The strategy stayed alive after publication, not just at the brief stage.</p>
+        </div>
+
+        <div class="rounded-2xl p-6 mb-2" style="background:#F1EFED;">
+          <p class="text-xs font-bold uppercase tracking-widest text-violet mb-2">Bonus</p>
+          <h3 class="font-display font-semibold text-lg text-ink mb-3">Attribution Beyond Google</h3>
+          <p class="text-[#4B5563] text-base" style="line-height:1.8;">These articles were also being shared across Epic Reads' social channels. To close the attribution loop, I implemented UTM codes on all social distribution — making it possible to see exactly which posts were driving traffic and sales, down to the individual tweet or Facebook share. That granularity made future content decisions sharper.</p>
+        </div>
+
+      </section>
+
+      <section id="results" class="mb-14 scroll-mt-24">
+        <h2 class="font-display font-bold text-2xl text-ink mb-6">The Results</h2>
+        <p class="text-[#4B5563] text-base mb-4" style="line-height:1.8;">Three months after the strategy launched, epicreads.com had climbed into the top 3 positions on Google for 234 additional keywords — including the most competitive "genre + books" queries where purchase intent is highest.</p>
+        <p class="text-[#4B5563] text-base mb-6" style="line-height:1.8;">Organic search traffic grew 97%. That wasn't just a vanity metric — it flowed directly into the bottom line. Year-over-year online book sales increased by 37%. The publishing team was already doing the hard work of creating content; pointing it at the right searches turned their cadence into a revenue engine.</p>
+        <!-- Google Analytics organic search chart -->
+        <div class="mt-8 mb-8 rounded-2xl overflow-hidden border border-border" style="box-shadow:0 8px 32px -8px rgba(0,0,0,0.10);">
+          <img src="er-result.png" alt="Google Analytics — Organic Search sessions" class="w-full block">
+          <div style="background:#F9F8FF;padding:12px 18px;border-top:1px solid #E8E8F0;">
+            <p style="font-size:11px;color:#9CA3AF;font-family:'Inter',sans-serif;line-height:1.5;">Google Analytics — organic search sessions from October 2019 to March 2020, showing sustained growth following the content strategy launch.</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-3 gap-4 mt-8">
+          <div class="bg-offwhite rounded-xl p-5 text-center">
+            <p class="font-display font-bold text-3xl text-coral">+37%</p>
+            <p class="text-xs text-muted mt-1">Online Sales YoY</p>
+          </div>
+          <div class="bg-offwhite rounded-xl p-5 text-center">
+            <p class="font-display font-bold text-3xl text-violet">+97%</p>
+            <p class="text-xs text-muted mt-1">Organic Traffic</p>
+          </div>
+          <div class="bg-offwhite rounded-xl p-5 text-center">
+            <p class="font-display font-bold text-3xl" style="color:#C4900A;">234</p>
+            <p class="text-xs text-muted mt-1">New Top-3 Rankings</p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- RIGHT SIDEBAR -->
+    <div class="sticky top-24 self-start space-y-6">
+
+      <!-- TOC Card -->
+      <div class="border border-border rounded-2xl p-6">
+        <p class="text-xs font-semibold uppercase tracking-widest text-muted mb-4">On This Page</p>
+        <nav class="space-y-2">
+          <a href="#challenge" class="toc-link block text-sm text-muted hover:text-coral py-1 border-l-2 border-transparent pl-3 hover:border-coral">The Challenge</a>
+          <a href="#solution" class="toc-link block text-sm text-muted hover:text-coral py-1 border-l-2 border-transparent pl-3 hover:border-coral">The Solution</a>
+          <a href="#results" class="toc-link block text-sm text-muted hover:text-coral py-1 border-l-2 border-transparent pl-3 hover:border-coral">The Results</a>
+        </nav>
+      </div>
+
+      <!-- CTA Card -->
+      <div class="bg-coral rounded-2xl p-6 text-white">
+        <h3 class="font-display font-bold text-lg mb-2">Ready for results like these?</h3>
+        <p class="text-white/80 text-sm mb-4" style="line-height:1.6;">Let's talk about what's possible for your business.</p>
+        <a href="contact.html" class="btn-coral bg-white text-coral font-semibold px-5 py-2.5 rounded-full text-sm inline-block">Start a Conversation →</a>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<!-- TESTIMONIAL SECTION -->
+
+<!-- RELATED CASE STUDIES -->
+<section class="bg-white py-20 border-t border-border">
+  <div class="max-w-5xl mx-auto px-6">
+    <p class="text-xs font-semibold uppercase tracking-widest text-muted mb-2">More Case Studies</p>
+    <h2 class="font-display font-bold text-2xl text-ink mb-10">See more results</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <!-- XVIVO -->
+      <a href="case-study-xvivo.html" class="border border-border rounded-2xl overflow-hidden group block">
+        <div style="height:160px;overflow:hidden;">
+          <img src="new-xvivo.png" alt="XVIVO" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+        </div>
+        <div class="p-4">
+          <img src="xvivo.png" alt="XVIVO" style="height:18px;object-fit:contain;mix-blend-mode:multiply;margin-bottom:8px;">
+          <p class="text-sm text-muted mb-3">Technical SEO · 27% organic inquiry growth</p>
+          <span class="text-coral text-sm font-semibold">Read More →</span>
+        </div>
+      </a>
+      <!-- Best Western -->
+      <a href="case-study-best-western.html" class="border border-border rounded-2xl overflow-hidden group block">
+        <div style="height:160px;overflow:hidden;">
+          <img src="rl.png" alt="Best Western" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+        </div>
+        <div class="p-4">
+          <img src="Best-Western-logo.png" alt="Best Western" style="height:22px;object-fit:contain;mix-blend-mode:multiply;margin-bottom:8px;">
+          <p class="text-sm text-muted mb-3">AI Search Strategy · 349% AI visibility</p>
+          <span class="text-coral text-sm font-semibold">Read More →</span>
+        </div>
+      </a>
+      <!-- Chase -->
+      <a href="case-study-chase.html" class="border border-border rounded-2xl overflow-hidden group block">
+        <div style="height:160px;overflow:hidden;">
+          <img src="cccc.png" alt="Chase" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+        </div>
+        <div class="p-4">
+          <img src="chase-logo-png-transparent.png" alt="Chase" style="height:18px;object-fit:contain;mix-blend-mode:multiply;margin-bottom:8px;">
+          <p class="text-sm text-muted mb-3">Content + Technical SEO · 69.8% click growth</p>
+          <span class="text-coral text-sm font-semibold">Read More →</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="bg-ink py-20 text-center">
+  <h2 class="font-display font-bold text-3xl text-white mb-4">Ready to grow your search presence?</h2>
+  <p class="text-muted mb-8">Let's talk about your goals and build a plan that actually works.</p>
+  <a href="contact.html" class="btn-coral bg-coral text-white font-semibold px-8 py-3 rounded-full text-sm inline-block">Start a Conversation →</a>
+</section>
+
+<!-- FOOTER -->
+<footer class="border-t border-border">
+  <div class="max-w-6xl mx-auto px-6 py-10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted">
+    <img src="logo.png" alt="Craig Kleila SEO" class="h-12">
+    <nav class="flex gap-6">
+      <a href="services.html" class="hover:text-coral transition-colors duration-150">Services</a>
+      <a href="case-studies.html" class="hover:text-coral transition-colors duration-150">Case Studies</a>
+      <a href="about.html" class="hover:text-coral transition-colors duration-150">About</a>
+      <a href="contact.html" class="hover:text-coral transition-colors duration-150">Contact</a>
+    </nav>
+    <p>© 2026 Craig Kleila. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- BACK TO TOP -->
+<button onclick="window.scrollTo({top:0,behavior:'smooth'})"
+  class="fixed bottom-6 left-6 z-50 bg-ink text-white w-11 h-11 rounded-full flex items-center justify-center shadow-lg transition-colors duration-150"
+  aria-label="Back to top">
+  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+    <path d="M8 12V4M4 8l4-4 4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</button>
+
+<script>
+  const sections = document.querySelectorAll('#challenge, #solution, #results');
+  const tocLinks = {
+    'challenge': document.querySelector('a[href="#challenge"]'),
+    'solution': document.querySelector('a[href="#solution"]'),
+    'results': document.querySelector('a[href="#results"]'),
+  };
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const link = tocLinks[entry.target.id];
+      if (!link) return;
+      if (entry.isIntersecting) {
+        Object.values(tocLinks).forEach(l => { if (l) { l.classList.remove('text-coral','border-coral'); l.classList.add('text-muted','border-transparent'); }});
+        link.classList.remove('text-muted','border-transparent');
+        link.classList.add('text-coral','border-coral');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+  sections.forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>

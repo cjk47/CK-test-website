@@ -38,6 +38,9 @@
   .card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 48px -10px rgba(123,104,238,0.15), 0 4px 12px -4px rgba(0,0,0,0.06); }
   nav a { transition: color 0.15s ease; }
   nav a:hover { color: #F47B5A; }
+  @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .ticker-track { display: flex; width: max-content; animation: ticker 28s linear infinite; }
+  .ticker-track:hover { animation-play-state: paused; }
 </style>
 </head>
 <body class="antialiased">
@@ -67,17 +70,109 @@
 </header>
 
 <!-- PAGE HEADER -->
-<section class="max-w-6xl mx-auto px-6 pt-20 pb-20">
-  <div class="inline-flex items-center gap-2 bg-coral-light text-coral text-xs font-semibold px-3 py-1.5 rounded-full mb-5">
-    <span class="w-1.5 h-1.5 rounded-full bg-coral"></span>Case Studies
+<section style="background:#F9F8FF;overflow:hidden;">
+  <div class="max-w-6xl mx-auto px-6 py-16">
+    <div class="grid md:grid-cols-[44fr_56fr] gap-12 items-center">
+
+      <!-- LEFT -->
+      <div>
+        <div class="inline-flex items-center gap-2 bg-coral-light text-coral text-xs font-semibold px-3 py-1.5 rounded-full mb-5">
+          <span class="w-1.5 h-1.5 rounded-full bg-coral"></span>Case Studies
+        </div>
+        <h1 class="font-display font-extrabold text-ink leading-tight mb-6" style="font-size:clamp(1.9rem,2.9vw,2.8rem);letter-spacing:-0.02em;">You're in good company.</h1>
+        <p class="text-muted text-lg max-w-sm" style="line-height:1.7">Work built on strategy, not guesswork. Here's how I've helped brands turn organic search into measurable revenue.</p>
+      </div>
+
+      <!-- RIGHT: photo + stat card mosaic -->
+      <div style="min-width:0;overflow:hidden;display:grid;grid-template-columns:1fr 1.15fr 1fr;grid-template-rows:155px 115px 135px;gap:10px;">
+
+        <!-- Col 1 Row 1-2: tall Rukkus concert image -->
+        <div style="grid-row:1/3;grid-column:1/2;border-radius:14px;overflow:hidden;">
+          <img src="cs3.png" alt="Rukkus" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+
+        <!-- Col 2 Row 1: coral stat card — Rukkus -->
+        <div style="grid-row:1/2;grid-column:2/3;background:#F47B5A;border-radius:14px;padding:16px 18px;display:flex;flex-direction:column;justify-content:flex-end;">
+          <img src="rukkus_logo_Wht_med.png" alt="Rukkus" style="height:14px;object-fit:contain;object-position:left;filter:brightness(0) invert(1);margin-bottom:10px;">
+          <p style="font-family:'Poppins',sans-serif;font-weight:800;font-size:1.7rem;color:#ffffff;line-height:1;">+1,256%</p>
+          <p style="font-size:0.72rem;color:rgba(255,255,255,0.82);margin-top:4px;">Organic traffic</p>
+        </div>
+
+        <!-- Col 3 Row 1: Chase image -->
+        <div style="grid-row:1/2;grid-column:3/4;border-radius:14px;overflow:hidden;">
+          <img src="cccc.png" alt="Chase" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+
+        <!-- Col 2 Row 2: Epic Reads image -->
+        <div style="grid-row:2/3;grid-column:2/3;border-radius:14px;overflow:hidden;">
+          <img src="cs4.png" alt="Epic Reads" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+
+        <!-- Col 3 Row 2-3: violet stat card — Best Western -->
+        <div style="grid-row:2/4;grid-column:3/4;background:#EDE9FB;border-radius:14px;padding:16px 18px;display:flex;flex-direction:column;justify-content:center;">
+          <p style="font-size:0.65rem;font-weight:700;color:#7B68EE;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px;">Best Western</p>
+          <p style="font-family:'Poppins',sans-serif;font-weight:800;font-size:1.55rem;color:#323232;line-height:1.1;">+349%</p>
+          <p style="font-size:0.7rem;color:#6B7280;margin-top:5px;line-height:1.4;">AI Overview<br>visibility</p>
+        </div>
+
+        <!-- Col 1 Row 3: warm stat card — Epic Reads -->
+        <div style="grid-row:3/4;grid-column:1/2;background:#FFF1EC;border-radius:14px;padding:16px 18px;display:flex;flex-direction:column;justify-content:center;">
+          <p style="font-size:0.65rem;font-weight:700;color:#F47B5A;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px;">Epic Reads</p>
+          <p style="font-family:'Poppins',sans-serif;font-weight:800;font-size:1.55rem;color:#323232;line-height:1.1;">+37%</p>
+          <p style="font-size:0.7rem;color:#6B7280;margin-top:5px;line-height:1.4;">Online sales YoY</p>
+        </div>
+
+        <!-- Col 2 Row 3: XVIVO image -->
+        <div style="grid-row:3/4;grid-column:2/3;border-radius:14px;overflow:hidden;">
+          <img src="new-xvivo.png" alt="XVIVO" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+
+      </div>
+    </div>
   </div>
-  <h1 class="font-display font-extrabold text-5xl md:text-6xl text-ink leading-tight whitespace-nowrap">You're in good company.</h1>
-  <p class="text-muted text-lg mt-6 max-w-xl" style="line-height:1.7">I've worked with hundreds of fast-moving startups and established brands to drive organic growth. Take a look at a few projects.</p>
 </section>
 
+<!-- LOGO TICKER -->
+<div class="border-y border-border py-6" style="background:#ffffff;">
+  <div class="max-w-6xl mx-auto px-6">
+  <div style="overflow:hidden;">
+    <div class="ticker-track">
+      <!-- Set 1 -->
+      <div class="flex items-center gap-14 pr-14">
+        <img src="chase.png" alt="Chase" style="height:36px;width:auto;filter:grayscale(1) invert(1) brightness(0.47) invert(1);mix-blend-mode:multiply;">
+        <img src="applebees.png" alt="Applebee's" style="height:34px;width:auto;filter:grayscale(1) invert(1) brightness(0.47) invert(1);mix-blend-mode:multiply;">
+        <img src="ibm.png" alt="IBM" style="height:30px;width:auto;filter:grayscale(1) invert(1) brightness(0.47) invert(1);mix-blend-mode:multiply;">
+        <img src="1hennesee.png" alt="Hennessy" style="height:40px;width:auto;filter:grayscale(1) invert(1) brightness(0.47) invert(1);mix-blend-mode:multiply;">
+        <img src="bestwestern.png" alt="Best Western" style="height:40px;width:auto;filter:grayscale(1) invert(1) brightness(0.47) invert(1);mix-blend-mode:multiply;">
+        <img src="hc.png" alt="HarperCollins" style="height:46px;width:auto;filter:grayscale(1) invert(1) brightness(0.47) invert(1);mix-blend-mode:multiply;">
+        <img src="playstation.png" alt="PlayStation" style="height:36px;width:auto;filter:grayscale(1) invert(1) brightness(0.47) invert(1);mix-blend-mode:multiply;">
+        <img src="2oralb.png" alt="Oral-B" style="height:30px;width:auto;filter:grayscale(1) invert(1) brightness(0.47) invert(1);mix-blend-mode:multiply;">
+        <img src="rukkus_logo_Wht_med.png" alt="Rukkus" style="height:22px;width:auto;filter:grayscale(1) invert(1) brightness(0.47) invert(1);mix-blend-mode:multiply;">
+        <img src="er-logo-menu-blk.png" alt="Epic Reads" style="height:22px;width:auto;filter:grayscale(1) invert(1) brightness(0.47) invert(1);mix-blend-mode:multiply;">
+        <img src="xvivo.png" alt="XVIVO" style="height:22px;width:auto;filter:grayscale(1) invert(1) brightness(0.47) invert(1);mix-blend-mode:multiply;">
+      </div>
+      <!-- Set 2 (duplicate for seamless loop) -->
+      <div class="flex items-center gap-14 pr-14">
+        <img src="chase.png" alt="Chase" style="height:36px;width:auto;filter:grayscale(1) invert(1) brightness(0.47) invert(1);mix-blend-mode:multiply;">
+        <img src="applebees.png" alt="Applebee's" style="height:34px;width:auto;filter:grayscale(1) invert(1) brightness(0.47) invert(1);mix-blend-mode:multiply;">
+        <img src="ibm.png" alt="IBM" style="height:30px;width:auto;filter:grayscale(1) invert(1) brightness(0.47) invert(1);mix-blend-mode:multiply;">
+        <img src="1hennesee.png" alt="Hennessy" style="height:40px;width:auto;filter:grayscale(1) invert(1) brightness(0.47) invert(1);mix-blend-mode:multiply;">
+        <img src="bestwestern.png" alt="Best Western" style="height:40px;width:auto;filter:grayscale(1) invert(1) brightness(0.47) invert(1);mix-blend-mode:multiply;">
+        <img src="hc.png" alt="HarperCollins" style="height:46px;width:auto;filter:grayscale(1) invert(1) brightness(0.47) invert(1);mix-blend-mode:multiply;">
+        <img src="playstation.png" alt="PlayStation" style="height:36px;width:auto;filter:grayscale(1) invert(1) brightness(0.47) invert(1);mix-blend-mode:multiply;">
+        <img src="2oralb.png" alt="Oral-B" style="height:30px;width:auto;filter:grayscale(1) invert(1) brightness(0.47) invert(1);mix-blend-mode:multiply;">
+        <img src="rukkus_logo_Wht_med.png" alt="Rukkus" style="height:22px;width:auto;filter:grayscale(1) invert(1) brightness(0.47) invert(1);mix-blend-mode:multiply;">
+        <img src="er-logo-menu-blk.png" alt="Epic Reads" style="height:22px;width:auto;filter:grayscale(1) invert(1) brightness(0.47) invert(1);mix-blend-mode:multiply;">
+        <img src="xvivo.png" alt="XVIVO" style="height:22px;width:auto;filter:grayscale(1) invert(1) brightness(0.47) invert(1);mix-blend-mode:multiply;">
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
 <!-- GRID -->
-<section class="max-w-6xl mx-auto px-6 pb-20">
-  <div class="grid md:grid-cols-3 gap-x-8 gap-y-12">
+<section class="max-w-6xl mx-auto px-6 pt-12 pb-20">
+  <div class="grid md:grid-cols-3 gap-4">
 
     <!-- Case Study 1 - XVIVO -->
     <div class="flex flex-col border border-border rounded-2xl overflow-hidden">
@@ -91,11 +186,13 @@
       </div>
       <div class="flex flex-col flex-1 p-5">
         <img src="xvivo.png" alt="XVIVO" class="mb-2" style="height:22px;object-fit:contain;object-position:left;mix-blend-mode:multiply;">
-        <p class="text-sm text-muted mb-6 flex-1" style="line-height:1.7">Strong rankings, but poor metadata and a content structure that didn't match user intent. I rebuilt their content strategy and fixed technical issues — driving a 27% lift in organic inquiries in three months.</p>
-        <div class="flex items-end justify-between pt-5 border-t border-border">
-          <div><p class="font-display font-bold text-3xl text-ink">+27%</p><p class="text-xs text-muted mt-1">Organic inquiries</p></div>
-          <a href="contact.html" class="text-sm font-semibold text-ink hover:text-coral transition-colors duration-150">Read story →</a>
+        <p class="text-sm text-muted mb-5 flex-1" style="line-height:1.6">Poor metadata and content structure that didn't match user intent. Rebuilt content strategy and fixed technical issues in three months.</p>
+        <div class="grid grid-cols-3 divide-x divide-border pt-4 border-t border-border mb-4">
+          <div class="pr-3"><p class="font-display font-bold text-xl text-ink">+27%</p><p class="text-xs text-muted mt-0.5">Organic inquiries</p></div>
+          <div class="px-3"><p class="font-display font-bold text-xl text-ink">+45%</p><p class="text-xs text-muted mt-0.5">Organic clicks</p></div>
+          <div class="pl-3"><p class="font-display font-bold text-xl text-ink">+72%</p><p class="text-xs text-muted mt-0.5">Impressions</p></div>
         </div>
+        <a href="case-study-xvivo.html" class="inline-flex items-center gap-2 border border-border text-ink font-semibold px-4 py-2 rounded-full text-sm hover:border-ink transition-colors duration-150 self-start">Read More →</a>
       </div>
     </div>
 
@@ -109,12 +206,14 @@
         </div>
       </div>
       <div class="flex flex-col flex-1 p-5">
-        <p class="font-display font-bold text-base text-ink mb-2">Rukkus</p>
-        <p class="text-sm text-muted mb-6 flex-1" style="line-height:1.7">A newly launched ticket marketplace that needed organic authority fast. Through link outreach and data-driven PR, I secured placements in CNN, Forbes, and Sports Illustrated — driving a 1,256% traffic increase that led to the company's acquisition.</p>
-        <div class="flex items-end justify-between pt-5 border-t border-border">
-          <div><p class="font-display font-bold text-3xl text-ink">121,420</p><p class="text-xs text-muted mt-1">New organic visitors</p></div>
-          <a href="contact.html" class="text-sm font-semibold text-ink hover:text-coral transition-colors duration-150">Read story →</a>
+        <img src="rukkus_logo_Wht_med.png" alt="Rukkus" class="mb-2" style="height:22px;object-fit:contain;object-position:left;filter:brightness(0);">
+        <p class="text-sm text-muted mb-5 flex-1" style="line-height:1.6">A new ticket marketplace needing authority fast. Secured placements in CNN, Forbes, and Sports Illustrated — leading to the company's acquisition.</p>
+        <div class="grid grid-cols-3 divide-x divide-border pt-4 border-t border-border mb-4">
+          <div class="pr-3"><p class="font-display font-bold text-xl text-ink">+1,256%</p><p class="text-xs text-muted mt-0.5">Traffic increase</p></div>
+          <div class="px-3"><p class="font-display font-bold text-xl text-ink">121K</p><p class="text-xs text-muted mt-0.5">New visitors</p></div>
+          <div class="pl-3"><p class="font-display font-bold text-xl text-ink">27</p><p class="text-xs text-muted mt-0.5">High-DA links</p></div>
         </div>
+        <a href="case-study-rukkus.html" class="inline-flex items-center gap-2 border border-border text-ink font-semibold px-4 py-2 rounded-full text-sm hover:border-ink transition-colors duration-150 self-start">Read More →</a>
       </div>
     </div>
 
@@ -129,11 +228,13 @@
       </div>
       <div class="flex flex-col flex-1 p-5">
         <img src="er-logo-menu-blk.png" alt="Epic Reads" class="mb-2" style="height:22px;object-fit:contain;object-position:left;mix-blend-mode:multiply;">
-        <p class="text-sm text-muted mb-6 flex-1" style="line-height:1.7">Publishing 10+ articles a week but targeting topics nobody searched for. I identified high-volume keyword opportunities, built detailed content briefs, and optimised on-page elements to guide readers toward product pages.</p>
-        <div class="flex items-end justify-between pt-5 border-t border-border">
-          <div><p class="font-display font-bold text-3xl text-ink">+37%</p><p class="text-xs text-muted mt-1">Online sales</p></div>
-          <a href="contact.html" class="text-sm font-semibold text-ink hover:text-coral transition-colors duration-150">Read story →</a>
+        <p class="text-sm text-muted mb-5 flex-1" style="line-height:1.6">Publishing 10+ articles a week to the wrong audience. Identified real opportunities and built briefs that guided readers toward product pages.</p>
+        <div class="grid grid-cols-3 divide-x divide-border pt-4 border-t border-border mb-4">
+          <div class="pr-3"><p class="font-display font-bold text-xl text-ink">+37%</p><p class="text-xs text-muted mt-0.5">Online sales</p></div>
+          <div class="px-3"><p class="font-display font-bold text-xl text-ink">50</p><p class="text-xs text-muted mt-0.5">Keywords targeted</p></div>
+          <div class="pl-3"><p class="font-display font-bold text-xl text-ink">10+</p><p class="text-xs text-muted mt-0.5">Articles/week</p></div>
         </div>
+        <a href="case-study-epic-reads.html" class="inline-flex items-center gap-2 border border-border text-ink font-semibold px-4 py-2 rounded-full text-sm hover:border-ink transition-colors duration-150 self-start">Read More →</a>
       </div>
     </div>
 
@@ -149,11 +250,13 @@
       </div>
       <div class="flex flex-col flex-1 p-5">
         <img src="Best-Western-logo.png" alt="Best Western" class="mb-2" style="height:52px;object-fit:contain;object-position:left;mix-blend-mode:multiply;">
-        <p class="text-sm text-muted mb-6 flex-1" style="line-height:1.7">Google's AI Overview rollout hit organic traffic hard. I implemented schema markup, rewrote content to answer queries directly, and built theme-based landing pages for high-intent searches — recovering traffic and surging AI visibility.</p>
-        <div class="flex items-end justify-between pt-5 border-t border-border">
-          <div><p class="font-display font-bold text-3xl text-ink">+349%</p><p class="text-xs text-muted mt-1">AI Overview visibility</p></div>
-          <a href="contact.html" class="text-sm font-semibold text-ink hover:text-coral transition-colors duration-150">Read story →</a>
+        <p class="text-sm text-muted mb-5 flex-1" style="line-height:1.6">Google's AI Overview rollout hit traffic hard. Rewrote content, implemented schema, and built high-intent landing pages to recover and surge AI visibility.</p>
+        <div class="grid grid-cols-3 divide-x divide-border pt-4 border-t border-border mb-4">
+          <div class="pr-3"><p class="font-display font-bold text-xl text-ink">+349%</p><p class="text-xs text-muted mt-0.5">AI Overview visibility</p></div>
+          <div class="px-3"><p class="font-display font-bold text-xl text-ink">+18.5%</p><p class="text-xs text-muted mt-0.5">Organic traffic</p></div>
+          <div class="pl-3"><p class="font-display font-bold text-xl text-ink">+8%</p><p class="text-xs text-muted mt-0.5">Conversions</p></div>
         </div>
+        <a href="case-study-best-western.html" class="inline-flex items-center gap-2 border border-border text-ink font-semibold px-4 py-2 rounded-full text-sm hover:border-ink transition-colors duration-150 self-start">Read More →</a>
       </div>
     </div>
 
@@ -169,11 +272,13 @@
       </div>
       <div class="flex flex-col flex-1 p-5">
         <img src="chase-logo-png-transparent.png" alt="Chase" class="mb-2" style="height:22px;object-fit:contain;object-position:left;mix-blend-mode:multiply;">
-        <p class="text-sm text-muted mb-6 flex-1" style="line-height:1.7">Missing key queries their customers were actually searching for. I surfaced content gaps through keyword and competitive research, then executed on-page updates, metadata fixes, and internal linking improvements.</p>
-        <div class="flex items-end justify-between pt-5 border-t border-border">
-          <div><p class="font-display font-bold text-3xl text-ink">+69.8%</p><p class="text-xs text-muted mt-1">Organic clicks</p></div>
-          <a href="contact.html" class="text-sm font-semibold text-ink hover:text-coral transition-colors duration-150">Read story →</a>
+        <p class="text-sm text-muted mb-5 flex-1" style="line-height:1.6">Missing the queries customers were actually searching for. Surfaced content gaps and executed on-page updates, metadata fixes, and internal linking improvements.</p>
+        <div class="grid grid-cols-3 divide-x divide-border pt-4 border-t border-border mb-4">
+          <div class="pr-3"><p class="font-display font-bold text-xl text-ink">+69.8%</p><p class="text-xs text-muted mt-0.5">Organic clicks</p></div>
+          <div class="px-3"><p class="font-display font-bold text-xl text-ink">+21.3%</p><p class="text-xs text-muted mt-0.5">Impressions</p></div>
+          <div class="pl-3"><p class="font-display font-bold text-xl text-ink">6mo</p><p class="text-xs text-muted mt-0.5">Timeline</p></div>
         </div>
+        <span class="inline-flex items-center gap-2 border border-border text-muted px-4 py-2 rounded-full text-sm self-start cursor-default">Coming Soon</span>
       </div>
     </div>
 
