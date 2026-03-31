@@ -41,8 +41,16 @@
   .btn-coral:active { transform: translateY(0); }
   .btn-outline { transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease; }
   .btn-outline:hover { background: #F9F8FF; border-color: #7B68EE; color: #5E4DD6; }
-  .card-hover { transition: transform 0.25s cubic-bezier(0.22,1,0.36,1), box-shadow 0.25s cubic-bezier(0.22,1,0.36,1); }
-  .card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 48px -10px rgba(123,104,238,0.15), 0 4px 12px -4px rgba(0,0,0,0.06); }
+  .service-card { position: relative; overflow: hidden; transition: box-shadow 0.3s ease; }
+  .service-card:hover { box-shadow: 0 20px 48px -10px rgba(0,0,0,0.12); }
+  /* Dome shape — hidden by default, animates in from 40% of the way on hover */
+  @keyframes blobRise { from { transform: translateY(75%); } to { transform: translateY(30%); } }
+  .card-blob { position: absolute; width: 140%; padding-bottom: 100%; left: -20%; bottom: 0; border-radius: 50%; transform: translateY(110%); transition: transform 0.4s cubic-bezier(0.5,0,0.75,0.85); z-index: 0; }
+  .service-card:hover .card-blob { animation: blobRise 0.35s cubic-bezier(0.5,0,0.75,0.85) forwards; }
+  a.service-card { text-decoration: none; color: inherit; display: block; cursor: pointer; }
+  /* Content sits above the blob, text stays dark */
+  .card-content { position: relative; z-index: 1; }
+.card-icon { display: flex; align-items: center; justify-content: center; }
   nav a { transition: color 0.15s ease; }
   nav a:hover { color: #F47B5A; }
 </style>
@@ -190,37 +198,49 @@
     </div>
     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
 
-      <div class="rounded-2xl p-6 border border-border" style="background:#ffffff;">
-        <div class="w-10 h-10 rounded-full flex items-center justify-center mb-5" style="background:#ffe5e4;">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 4h14M3 8h10M3 12h14M3 16h8" stroke="#F47B5A" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <a href="services.html#content" class="service-card rounded-2xl p-6 border border-border" style="background:#ffffff; min-height:230px;">
+        <div class="card-blob" style="background:#FDDDD6;"></div>
+        <div class="card-content">
+          <div class="card-icon w-10 h-10 rounded-full mb-5" style="background:#ffe5e4;">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 4h14M3 8h10M3 12h14M3 16h8" stroke="#F47B5A" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="font-display text-xl text-ink mb-2 card-title">Content Strategy</h3>
+          <p class="text-sm text-muted card-desc" style="line-height:1.65">Find what people are actually searching for, and build content they'll love and that search engines will reward.</p>
         </div>
-        <h3 class="font-display text-xl text-ink mb-2">Content Strategy</h3>
-        <p class="text-sm text-muted" style="line-height:1.65">Find what people are actually searching for, and build content they'll love, and that search engines will reward.</p>
-      </div>
+      </a>
 
-      <div class="rounded-2xl p-6 border border-border" style="background:#ffffff;">
-        <div class="w-10 h-10 rounded-full flex items-center justify-center mb-5" style="background:#eae1fe;">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M8 4l-4 6 4 6M12 4l4 6-4 6" stroke="#7B68EE" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <a href="services.html#technical" class="service-card rounded-2xl p-6 border border-border" style="background:#ffffff; min-height:230px;">
+        <div class="card-blob" style="background:#E5E2FF;"></div>
+        <div class="card-content">
+          <div class="card-icon w-10 h-10 rounded-full mb-5" style="background:#eae1fe;">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M8 4l-4 6 4 6M12 4l4 6-4 6" stroke="#7B68EE" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="font-display text-xl text-ink mb-2 card-title">Technical SEO</h3>
+          <p class="text-sm text-muted card-desc" style="line-height:1.65">Fix what's holding your site back behind the scenes — from crawl issues to speed to indexation.</p>
         </div>
-        <h3 class="font-display text-xl text-ink mb-2">Technical SEO</h3>
-        <p class="text-sm text-muted" style="line-height:1.65">Fix what's holding your site back behind the scenes, from crawl issues to speed to indexation.</p>
-      </div>
+      </a>
 
-      <div class="rounded-2xl p-6 border border-border" style="background:#ffffff;">
-        <div class="w-10 h-10 rounded-full flex items-center justify-center mb-5" style="background:#fff0cf;">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="6" stroke="#C4900A" stroke-width="1.6"/><path d="M10 7v3l2 2" stroke="#C4900A" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <a href="services.html#ai" class="service-card rounded-2xl p-6 border border-border" style="background:#ffffff; min-height:230px;">
+        <div class="card-blob" style="background:#FBF0C0;"></div>
+        <div class="card-content">
+          <div class="card-icon w-10 h-10 rounded-full mb-5" style="background:#fff0cf;">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="6" stroke="#C4900A" stroke-width="1.6"/><path d="M10 7v3l2 2" stroke="#C4900A" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="font-display text-xl text-ink mb-2 card-title">AI Search Strategy</h3>
+          <p class="text-sm text-muted card-desc" style="line-height:1.65">Make your brand easy for AI to understand, trust, and cite in tools like AI Overviews and ChatGPT.</p>
         </div>
-        <h3 class="font-display text-xl text-ink mb-2">AI Search Strategy</h3>
-        <p class="text-sm text-muted" style="line-height:1.65">Make your brand easy for AI to understand, trust, and cite in tools like AI Overviews and ChatGPT.</p>
-      </div>
+      </a>
 
-      <div class="rounded-2xl p-6 border border-border" style="background:#ffffff;">
-        <div class="w-10 h-10 rounded-full flex items-center justify-center mb-5" style="background:#d3dce5;">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="5" cy="10" r="2" stroke="#5E7082" stroke-width="1.6"/><circle cx="15" cy="5" r="2" stroke="#5E7082" stroke-width="1.6"/><circle cx="15" cy="15" r="2" stroke="#5E7082" stroke-width="1.6"/><path d="M7 9l6-3M7 11l6 3" stroke="#5E7082" stroke-width="1.4" stroke-linecap="round"/></svg>
+      <a href="services.html#offsite" class="service-card rounded-2xl p-6 border border-border" style="background:#ffffff; min-height:230px;">
+        <div class="card-blob" style="background:#DAE8EF;"></div>
+        <div class="card-content">
+          <div class="card-icon w-10 h-10 rounded-full mb-5" style="background:#d3dce5;">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="5" cy="10" r="2" stroke="#5E7082" stroke-width="1.6"/><circle cx="15" cy="5" r="2" stroke="#5E7082" stroke-width="1.6"/><circle cx="15" cy="15" r="2" stroke="#5E7082" stroke-width="1.6"/><path d="M7 9l6-3M7 11l6 3" stroke="#5E7082" stroke-width="1.4" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="font-display text-xl text-ink mb-2 card-title">Off-site SEO</h3>
+          <p class="text-sm text-muted card-desc" style="line-height:1.65">Earn quality backlinks and mentions that signal trust and strengthen your site's authority in search.</p>
         </div>
-        <h3 class="font-display text-xl text-ink mb-2">Off-site SEO</h3>
-        <p class="text-sm text-muted" style="line-height:1.65">Earn quality backlinks and mentions that signal trust, and strengthen your site's authority in search.</p>
-      </div>
+      </a>
 
     </div>
   </div>
@@ -231,12 +251,15 @@
   <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
     <div class="relative">
       <div class="rounded-3xl overflow-hidden" style="box-shadow: 0 24px 64px -12px rgba(244,123,90,0.2), 0 8px 24px -8px rgba(0,0,0,0.08);">
-        <svg width="100%" viewBox="0 63 600 357" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block;background:#fff;">
+        <svg id="chart-svg" width="100%" viewBox="0 63 600 357" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block;background:#fff;">
           <defs>
             <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
               <stop offset="0%" stop-color="#1a73e8" stop-opacity="0.18"/>
               <stop offset="100%" stop-color="#1a73e8" stop-opacity="0.01"/>
             </linearGradient>
+            <clipPath id="revealClip">
+              <rect id="revealRect" x="60" y="63" width="0" height="360"/>
+            </clipPath>
           </defs>
           <!-- Grid lines + Y labels — scale 0–6K -->
           <line x1="60" y1="100" x2="582" y2="100" stroke="#f1f3f4" stroke-width="1"/>
@@ -248,18 +271,20 @@
           <line x1="60" y1="360" x2="582" y2="360" stroke="#dadce0" stroke-width="1"/>
           <text x="52" y="364" font-family="'Inter',sans-serif" font-size="9.5" fill="#80868b" text-anchor="end">0</text>
           <!-- Area fill — 0-6K scale, gradual rise 2K→4.54K (+127%) -->
-          <path d="M 60,360 L 60,273 C 76,273 91,282 107,282 C 124,282 140,269 156,269 C 172,269 188,273 204,273 C 220,273 236,260 252,256 C 268,252 284,252 300,252 C 316,234 332,216 348,212 C 364,203 380,195 396,191 C 412,186 428,182 444,182 C 460,180 476,178 492,180 C 508,178 524,177 540,177 C 556,177 568,177 582,177 L 582,360 Z" fill="url(#areaGrad)"/>
+          <path d="M 60,360 L 60,273 C 76,273 91,282 107,282 C 124,282 140,269 156,269 C 172,269 188,273 204,273 C 220,273 236,260 252,256 C 268,252 284,252 300,252 C 316,234 332,216 348,212 C 364,203 380,195 396,191 C 412,186 428,182 444,182 C 460,180 476,178 492,180 C 508,178 524,177 540,177 C 556,177 568,177 582,177 L 582,360 Z" fill="url(#areaGrad)" clip-path="url(#revealClip)"/>
           <!-- Line -->
-          <path d="M 60,273 C 76,273 91,282 107,282 C 124,282 140,269 156,269 C 172,269 188,273 204,273 C 220,273 236,260 252,256 C 268,252 284,252 300,252 C 316,234 332,216 348,212 C 364,203 380,195 396,191 C 412,186 428,182 444,182 C 460,180 476,178 492,180 C 508,178 524,177 540,177 C 556,177 568,177 582,177" stroke="#1a73e8" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M 60,273 C 76,273 91,282 107,282 C 124,282 140,269 156,269 C 172,269 188,273 204,273 C 220,273 236,260 252,256 C 268,252 284,252 300,252 C 316,234 332,216 348,212 C 364,203 380,195 396,191 C 412,186 428,182 444,182 C 460,180 476,178 492,180 C 508,178 524,177 540,177 C 556,177 568,177 582,177" stroke="#1a73e8" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round" clip-path="url(#revealClip)"/>
           <!-- Optimization marker at Jun (x=300) -->
-          <line x1="300" y1="100" x2="300" y2="360" stroke="#F47B5A" stroke-width="1.5" stroke-dasharray="5,3"/>
-          <circle cx="300" cy="252" r="5" fill="#F47B5A" stroke="white" stroke-width="2.5"/>
-          <!-- Callout -->
-          <line x1="184" y1="153" x2="294" y2="246" stroke="#F47B5A" stroke-width="1" stroke-dasharray="3,2" opacity="0.7"/>
-          <rect x="110" y="105" width="148" height="41" rx="7" fill="white" stroke="#F47B5A" stroke-width="1.5"/>
-          <text x="120" y="120" font-family="'Inter',sans-serif" font-size="10" font-weight="700" fill="#D45F3C">Craig's optimizations</text>
-          <rect x="120" y="126" width="46" height="15" rx="7" fill="#e6f4ea"/>
-          <text x="127" y="137" font-family="'Inter',sans-serif" font-size="9.5" font-weight="600" fill="#137333">↑ 127%</text>
+          <g id="chart-marker" style="opacity:0;transition:opacity 1.2s ease;">
+            <line x1="300" y1="100" x2="300" y2="360" stroke="#F47B5A" stroke-width="1.5" stroke-dasharray="5,3"/>
+            <circle cx="300" cy="252" r="5" fill="#F47B5A" stroke="white" stroke-width="2.5"/>
+            <!-- Callout -->
+            <line x1="184" y1="153" x2="294" y2="246" stroke="#F47B5A" stroke-width="1" stroke-dasharray="3,2" opacity="0.7"/>
+            <rect x="110" y="105" width="148" height="41" rx="7" fill="white" stroke="#F47B5A" stroke-width="1.5"/>
+            <text x="120" y="120" font-family="'Inter',sans-serif" font-size="10" font-weight="700" fill="#D45F3C">Craig's optimizations</text>
+            <rect x="120" y="126" width="46" height="15" rx="7" fill="#e6f4ea"/>
+            <text x="127" y="137" font-family="'Inter',sans-serif" font-size="9.5" font-weight="600" fill="#137333">↑ 127%</text>
+          </g>
           <!-- X labels -->
           <text x="60"  y="378" font-family="'Inter',sans-serif" font-size="9.5" fill="#80868b" text-anchor="middle">Jan</text>
           <text x="107" y="378" font-family="'Inter',sans-serif" font-size="9.5" fill="#80868b" text-anchor="middle">Feb</text>
@@ -321,5 +346,39 @@
 </footer>
 
 
+<script>
+(function() {
+  const svg = document.getElementById('chart-svg');
+  const rect = document.getElementById('revealRect');
+  if (!svg || !rect) return;
+  const fullWidth = 522; // x=60 to x=582
+  const duration = 1600;
+  let animated = false;
+
+  const marker = document.getElementById('chart-marker');
+  // Jun is at x=300, which is 240/522 of the way through = ~735ms
+  const markerDelay = Math.round((240 / 522) * duration);
+
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting && !animated) {
+        animated = true;
+        const start = performance.now();
+        function step(now) {
+          const p = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - p, 3);
+          rect.setAttribute('width', fullWidth * eased);
+          if (p < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+        if (marker) setTimeout(function() { requestAnimationFrame(function() { marker.style.opacity = '1'; }); }, markerDelay);
+        observer.unobserve(svg);
+      }
+    });
+  }, { threshold: 0.4 });
+
+  observer.observe(svg);
+})();
+</script>
 </body>
 </html>
