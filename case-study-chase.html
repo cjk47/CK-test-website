@@ -47,6 +47,16 @@
 </style>
 </head>
 <body class="antialiased">
+<div id="progress-bar" style="position:fixed;top:64px;left:0;width:0%;height:4px;background:#F47B5A;z-index:9999;transition:width 0.1s linear;"></div>
+<script>
+  window.addEventListener('scroll', function() {
+    var start = document.getElementById('challenge').offsetTop - 180;
+    var s = document.documentElement.scrollTop || document.body.scrollTop;
+    var h = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var pct = Math.min(Math.max((s - start) / (h - start) * 100, 0), 100);
+    document.getElementById('progress-bar').style.width = pct + '%';
+  }, { passive: true });
+</script>
 
 <!-- NAV -->
 <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-border">
@@ -149,50 +159,50 @@
     <div>
 
       <section id="challenge" class="mb-14 scroll-mt-24">
-        <h2 class="font-display font-bold text-2xl text-ink mb-6">The Challenge</h2>
-        <p class="text-[#4B5563] text-base mb-4" style="line-height:1.8;">The Chase Sapphire Explorer Card page was ranking — but for the wrong things. Search data revealed significant gaps between the queries potential cardholders were using and the content actually on the page.</p>
-        <p class="text-[#4B5563] text-base mb-4" style="line-height:1.8;">Comparison queries, benefit-specific searches, and 'is it worth it' questions were all sending traffic to competitors. Internal linking left the card page isolated from supporting content that could boost its authority.</p>
-        <p class="text-[#4B5563] text-base mb-4" style="line-height:1.8;">The fix was methodical: surface the gaps, prioritize by search volume and intent, and execute the updates systematically.</p>
+        <h2 class="font-display font-bold text-2xl text-ink mb-8">The Challenge</h2>
+        <p class="text-[#4B5563] text-base mb-8" style="line-height:1.85;">The Chase Sapphire Explorer Card page was ranking — but for the wrong things. Search data revealed significant gaps between the queries potential cardholders were using and the content actually on the page.</p>
+        <p class="text-[#4B5563] text-base mb-8" style="line-height:1.85;">Comparison queries, benefit-specific searches, and 'is it worth it' questions were all sending traffic to competitors. Internal linking left the card page isolated from supporting content that could boost its authority.</p>
+        <p class="text-[#4B5563] text-base mb-8" style="line-height:1.85;">The fix was methodical: surface the gaps, prioritize by search volume and intent, and execute the updates systematically.</p>
       </section>
 
       <section id="strategy" class="mb-14 scroll-mt-24">
-        <h2 class="font-display font-bold text-2xl text-ink mb-6">The Strategy</h2>
-        <ul class="space-y-6">
+        <h2 class="font-display font-bold text-2xl text-ink mb-8">The Strategy</h2>
+        <ul class="space-y-10">
           <li class="flex gap-3">
             
             <div>
               <strong class="font-display font-semibold text-ink text-base">Search Gap Analysis</strong>
-              <p class="text-[#4B5563] text-base mt-1" style="line-height:1.8;">Pulled full search console data and compared ranking queries against the full universe of relevant searches. Identified dozens of high-volume, high-intent queries the page wasn't capturing.</p>
+              <p class="text-[#4B5563] text-base mt-4" style="line-height:1.8;">Pulled full search console data and compared ranking queries against the full universe of relevant searches. Identified dozens of high-volume, high-intent queries the page wasn't capturing.</p>
             </div>
           </li>
           <li class="flex gap-3">
             
             <div>
               <strong class="font-display font-semibold text-ink text-base">On-Page Content Updates</strong>
-              <p class="text-[#4B5563] text-base mt-1" style="line-height:1.8;">Rewrote sections of the card page to address comparison queries, benefit breakdowns, and common cardholder questions. Added structured content blocks targeting featured snippets.</p>
+              <p class="text-[#4B5563] text-base mt-4" style="line-height:1.8;">Rewrote sections of the card page to address comparison queries, benefit breakdowns, and common cardholder questions. Added structured content blocks targeting featured snippets.</p>
             </div>
           </li>
           <li class="flex gap-3">
             
             <div>
               <strong class="font-display font-semibold text-ink text-base">Metadata Optimization</strong>
-              <p class="text-[#4B5563] text-base mt-1" style="line-height:1.8;">Updated title tags and meta descriptions to better match the intent behind high-volume queries — improving click-through rates from existing impressions.</p>
+              <p class="text-[#4B5563] text-base mt-4" style="line-height:1.8;">Updated title tags and meta descriptions to better match the intent behind high-volume queries — improving click-through rates from existing impressions.</p>
             </div>
           </li>
           <li class="flex gap-3">
             
             <div>
               <strong class="font-display font-semibold text-ink text-base">Internal Linking Improvements</strong>
-              <p class="text-[#4B5563] text-base mt-1" style="line-height:1.8;">Built internal links from high-traffic supporting content to the card page. Improved link equity flow to the primary conversion page.</p>
+              <p class="text-[#4B5563] text-base mt-4" style="line-height:1.8;">Built internal links from high-traffic supporting content to the card page. Improved link equity flow to the primary conversion page.</p>
             </div>
           </li>
         </ul>
       </section>
 
       <section id="results" class="mb-14 scroll-mt-24">
-        <h2 class="font-display font-bold text-2xl text-ink mb-6">The Results</h2>
-        <p class="text-[#4B5563] text-base mb-4" style="line-height:1.8;">Six months of systematic execution produced clear results. Organic clicks to the Explorer Card page grew 69.8%, driven by the page now capturing queries it previously missed entirely.</p>
-        <p class="text-[#4B5563] text-base mb-4" style="line-height:1.8;">Impressions grew 21.3% as the page began ranking for a broader set of relevant queries — validating the content gap analysis and the on-page updates that followed.</p>
+        <h2 class="font-display font-bold text-2xl text-ink mb-8">The Results</h2>
+        <p class="text-[#4B5563] text-base mb-8" style="line-height:1.85;">Six months of systematic execution produced clear results. Organic clicks to the Explorer Card page grew 69.8%, driven by the page now capturing queries it previously missed entirely.</p>
+        <p class="text-[#4B5563] text-base mb-8" style="line-height:1.85;">Impressions grew 21.3% as the page began ranking for a broader set of relevant queries — validating the content gap analysis and the on-page updates that followed.</p>
         <div class="grid grid-cols-3 gap-4 mt-8">
           <div class="bg-offwhite rounded-xl p-5 text-center">
             <p class="font-display font-bold text-3xl text-coral">+69.8%</p>
@@ -213,7 +223,7 @@
 
     <!-- RIGHT SIDEBAR -->
     <div class="hidden md:block sticky top-24 self-start">
-      <div style="height:3px;background:#F47B5A;border-radius:2px;margin-bottom:20px;"></div>
+      <div style="height:4px;background:#F47B5A;border-radius:2px;margin-bottom:20px;"></div>
       <h2 class="font-display font-bold text-base text-ink mb-1.5 leading-snug">How Chase's Explorer Card Page Grew Organic Clicks 69.8% in 6 Months</h2>
       <p class="text-sm text-muted mb-6">By Craig Kleila</p>
       <div class="mb-8">

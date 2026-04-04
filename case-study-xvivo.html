@@ -47,6 +47,16 @@
 </style>
 </head>
 <body class="antialiased">
+<div id="progress-bar" style="position:fixed;top:64px;left:0;width:0%;height:4px;background:#F47B5A;z-index:9999;transition:width 0.1s linear;"></div>
+<script>
+  window.addEventListener('scroll', function() {
+    var start = document.getElementById('challenge').offsetTop - 180;
+    var s = document.documentElement.scrollTop || document.body.scrollTop;
+    var h = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var pct = Math.min(Math.max((s - start) / (h - start) * 100, 0), 100);
+    document.getElementById('progress-bar').style.width = pct + '%';
+  }, { passive: true });
+</script>
 
 <!-- NAV -->
 <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-border">
@@ -162,34 +172,34 @@
     <div>
 
       <section id="challenge" class="mb-14 scroll-mt-24">
-        <h2 class="font-display font-bold text-2xl text-ink mb-6">The Challenge</h2>
-        <p class="text-[#4B5563] text-base mb-4" style="line-height:1.8;">XVIVO creates scientific visuals for pharmaceutical and biotech companies, including mechanism of action videos, clinical trial animations, and patient education content. They came to me after a drop in traffic and rankings for key animation-related searches.</p>
-        <p class="text-[#4B5563] text-base mb-4" style="line-height:1.8;">A few things were holding the site back:</p>
-        <ul class="space-y-3 mb-4">
+        <h2 class="font-display font-bold text-2xl text-ink mb-8">The Challenge</h2>
+        <p class="text-[#4B5563] text-base mb-6" style="line-height:1.85;">XVIVO creates scientific visuals for pharmaceutical and biotech companies, including mechanism of action videos, clinical trial animations, and patient education content. They came to me after a drop in traffic and rankings for key animation-related searches.</p>
+        <p class="text-[#4B5563] text-base mb-6" style="line-height:1.85;">A few things were holding the site back:</p>
+        <ul class="space-y-6 mb-8">
           <li class="flex items-start gap-3 text-base text-[#4B5563]"><span class="w-5 h-5 rounded-full bg-coral-light flex items-center justify-center flex-shrink-0 mt-0.5"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#F47B5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Service pages didn't reflect how buyers actually search or evaluate vendors</li>
           <li class="flex items-start gap-3 text-base text-[#4B5563]"><span class="w-5 h-5 rounded-full bg-coral-light flex items-center justify-center flex-shrink-0 mt-0.5"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#F47B5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Most content targeted broad terms instead of specific animation types</li>
           <li class="flex items-start gap-3 text-base text-[#4B5563]"><span class="w-5 h-5 rounded-full bg-coral-light flex items-center justify-center flex-shrink-0 mt-0.5"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#F47B5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>The portfolio generated multiple versions of the same content through URL parameters</li>
           <li class="flex items-start gap-3 text-base text-[#4B5563]"><span class="w-5 h-5 rounded-full bg-coral-light flex items-center justify-center flex-shrink-0 mt-0.5"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#F47B5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Search engines were spending time crawling low-value pages while important ones were harder to find and index</li>
           <li class="flex items-start gap-3 text-base text-[#4B5563]"><span class="w-5 h-5 rounded-full bg-coral-light flex items-center justify-center flex-shrink-0 mt-0.5"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#F47B5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Blog content did not link to service pages, making it difficult for users to move from research to action</li>
         </ul>
-        <p class="text-[#4B5563] text-base mb-4" style="line-height:1.8;">In a niche B2B market where a single client relationship is worth hundreds of thousands of dollars, losing ground in search wasn't a visibility problem — it was a revenue problem.</p>
+        <p class="text-[#4B5563] text-base mb-6" style="line-height:1.85;">In a niche B2B market where a single client relationship is worth hundreds of thousands of dollars, losing ground in search wasn't a visibility problem — it was a revenue problem.</p>
       </section>
 
       <section id="strategy" class="mb-14 scroll-mt-24">
-        <h2 class="font-display font-bold text-2xl text-ink mb-6">The Strategy</h2>
-        <ul class="space-y-6">
+        <h2 class="font-display font-bold text-2xl text-ink mb-8">The Strategy</h2>
+        <ul class="space-y-10">
           <li class="flex gap-3">
             
             <div>
               <strong class="font-display font-semibold text-ink text-base">Fix the Technical Foundation First</strong>
-              <p class="text-[#4B5563] text-base mt-1" style="line-height:1.8;">Before touching a word of content, I crawled the entire site to find what was quietly working against it — redirect chains, indexing gaps, pages draining authority to dead ends. The audit surfaced 30+ technical issues, and I worked through every one of them before moving on. A content strategy built on a broken foundation doesn't hold.</p>
+              <p class="text-[#4B5563] text-base mt-4" style="line-height:1.8;">Before touching a word of content, I crawled the entire site to find what was quietly working against it — redirect chains, indexing gaps, pages draining authority to dead ends. The audit surfaced 30+ technical issues, and I worked through every one of them before moving on. A content strategy built on a broken foundation doesn't hold.</p>
             </div>
           </li>
           <li class="flex gap-3">
             
             <div>
               <strong class="font-display font-semibold text-ink text-base">Rewrite Metadata to Match How Customers Search</strong>
-              <p class="text-[#4B5563] text-base mt-1 mb-4" style="line-height:1.8;">Title tags and meta descriptions across 40+ pages were rewritten to match how customers search. A pharmaceutical team looking to hire an animation studio isn't just searching for a "medical animation company" — they're searching for the specific type of animation they need, whether it's mechanism of action or oncology patient education. Each page needed metadata that spoke to those searches directly, not a one-size-fits-all description of the company.</p>
+              <p class="text-[#4B5563] text-base mt-4 mb-6" style="line-height:1.8;">Title tags and meta descriptions across 40+ pages were rewritten to match how customers search. A pharmaceutical team looking to hire an animation studio isn't just searching for a "medical animation company" — they're searching for the specific type of animation they need, whether it's mechanism of action or oncology patient education. Each page needed metadata that spoke to those searches directly, not a one-size-fits-all description of the company.</p>
               <div style="position:relative;padding:0 8px 8px 0;">
                 <div style="position:absolute;top:8px;left:8px;right:0;bottom:0;background:#F47B5A;border-radius:14px;"></div>
                 <div class="rounded-2xl overflow-hidden border border-border" style="position:relative;">
@@ -202,7 +212,7 @@
             
             <div>
               <strong class="font-display font-semibold text-ink text-base">Build Topic Depth Around Medical Animation</strong>
-              <p class="text-[#4B5563] text-base mt-1 mb-4" style="line-height:1.8;">I built a topic cluster architecture around medical animation, creating dedicated service pages for every major animation type: mechanism of action, neurology, oncology, clinical trial recruitment, patient education, and more. Each page targets its own set of long-tail queries while reinforcing XVIVO's topical authority across the entire medical animation category.</p>
+              <p class="text-[#4B5563] text-base mt-4 mb-6" style="line-height:1.8;">I built a topic cluster architecture around medical animation, creating dedicated service pages for every major animation type: mechanism of action, neurology, oncology, clinical trial recruitment, patient education, and more. Each page targets its own set of long-tail queries while reinforcing XVIVO's topical authority across the entire medical animation category.</p>
               <div style="position:relative;padding:0 8px 8px 0;">
                 <div style="position:absolute;top:8px;left:8px;right:0;bottom:0;background:#F47B5A;border-radius:14px;"></div>
                 <div class="rounded-2xl overflow-hidden border border-border" style="position:relative;">
@@ -215,8 +225,8 @@
             
             <div>
               <strong class="font-display font-semibold text-ink text-base">Turn Portfolio Filters Into Indexable Pages</strong>
-              <p class="text-[#4B5563] text-base mt-1 mb-3" style="line-height:1.8;">XVIVO's portfolio filtered by animation type, but those filtered views relied on URL parameters. Although Google can index parameterized URLs, without unique content it usually treats them as duplicates and skips them — and that's exactly what was happening here.</p>
-              <p class="text-[#4B5563] text-base mt-1 mb-3" style="line-height:1.8;">Converting each filter into its own standalone page fixed that. Clean descriptive URL, unique copy explaining the animation type and typical use cases, titles and metadata aligned to the target search. Pages that were previously getting ignored became direct entry points for searches like "neurology medical animation" or "clinical trial recruitment animation."</p>
+              <p class="text-[#4B5563] text-base mt-4 mb-6" style="line-height:1.8;">XVIVO's portfolio filtered by animation type, but those filtered views relied on URL parameters. Although Google can index parameterized URLs, without unique content it usually treats them as duplicates and skips them — and that's exactly what was happening here.</p>
+              <p class="text-[#4B5563] text-base mt-4 mb-6" style="line-height:1.8;">Converting each filter into its own standalone page fixed that. Clean descriptive URL, unique copy explaining the animation type and typical use cases, titles and metadata aligned to the target search. Pages that were previously getting ignored became direct entry points for searches like "neurology medical animation" or "clinical trial recruitment animation."</p>
               <div style="position:relative;padding:0 8px 8px 0;" class="mb-4">
                 <div style="position:absolute;top:8px;left:8px;right:0;bottom:0;background:#F47B5A;border-radius:14px;"></div>
                 <div class="rounded-2xl overflow-hidden border border-border" style="position:relative;">
@@ -229,7 +239,7 @@
             
             <div>
               <strong class="font-display font-semibold text-ink text-base">Match Each Page to What Searchers Actually Want</strong>
-              <p class="text-[#4B5563] text-base mt-1 mb-4" style="line-height:1.8;">I audited each key page and made changes based on what people searching for that term actually want to see. On the homepage, someone searching for a medical animation company wants to see the work, not read about it. Moving real video examples above the fold reduced bounce rates and gave search engines a stronger signal that the page satisfied the intent of the searcher.</p>
+              <p class="text-[#4B5563] text-base mt-4 mb-6" style="line-height:1.8;">I audited each key page and made changes based on what people searching for that term actually want to see. On the homepage, someone searching for a medical animation company wants to see the work, not read about it. Moving real video examples above the fold reduced bounce rates and gave search engines a stronger signal that the page satisfied the intent of the searcher.</p>
               <div style="position:relative;padding:0 8px 8px 0;">
                 <div style="position:absolute;top:8px;left:8px;right:0;bottom:0;background:#F47B5A;border-radius:14px;"></div>
                 <div class="rounded-2xl overflow-hidden border border-border" style="position:relative;">
@@ -242,16 +252,16 @@
             
             <div>
               <strong class="font-display font-semibold text-ink text-base">Funnel Blog Traffic to Service Pages</strong>
-              <p class="text-[#4B5563] text-base mt-1" style="line-height:1.8;">Blog content was pulling in readers with no clear path forward. I restructured internal links so that posts connected directly to relevant service pages, making it easy for someone doing research to take a next step.</p>
+              <p class="text-[#4B5563] text-base mt-4" style="line-height:1.8;">Blog content was pulling in readers with no clear path forward. I restructured internal links so that posts connected directly to relevant service pages, making it easy for someone doing research to take a next step.</p>
             </div>
           </li>
         </ul>
       </section>
 
       <section id="results" class="mb-14 scroll-mt-24">
-        <h2 class="font-display font-bold text-2xl text-ink mb-6">The Results</h2>
-        <p class="text-[#4B5563] text-base mb-4" style="line-height:1.8;">Within three months of implementation, XVIVO's organic performance showed clear, measurable improvement across every tracked metric.</p>
-        <p class="text-[#4B5563] text-base mb-4" style="line-height:1.8;">The content and technical fixes compounded quickly — more pages indexed correctly meant more impressions, better metadata meant better click-through rates, and better landing pages meant more inquiries.</p>
+        <h2 class="font-display font-bold text-2xl text-ink mb-8">The Results</h2>
+        <p class="text-[#4B5563] text-base mb-6" style="line-height:1.85;">Within three months of implementation, XVIVO's organic performance showed clear, measurable improvement across every tracked metric.</p>
+        <p class="text-[#4B5563] text-base mb-6" style="line-height:1.85;">The content and technical fixes compounded quickly — more pages indexed correctly meant more impressions, better metadata meant better click-through rates, and better landing pages meant more inquiries.</p>
         <div class="grid grid-cols-3 gap-4 mt-8">
           <div class="bg-offwhite rounded-xl p-5 text-center">
             <p class="font-display font-bold text-3xl text-coral">+27%</p>
@@ -272,7 +282,7 @@
 
     <!-- RIGHT SIDEBAR -->
     <div class="hidden md:block sticky top-24 self-start">
-      <div style="height:3px;background:#F47B5A;border-radius:2px;margin-bottom:20px;"></div>
+      <div style="height:4px;background:#F47B5A;border-radius:2px;margin-bottom:20px;"></div>
       <h2 class="font-display font-bold text-base text-ink mb-1.5 leading-snug">How XVIVO Grew Organic Inquiries 27% in Just 3 Months</h2>
       <p class="text-sm text-muted mb-6">By Craig Kleila</p>
       <div class="mb-8">

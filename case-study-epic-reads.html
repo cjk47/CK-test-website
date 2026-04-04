@@ -47,6 +47,16 @@
 </style>
 </head>
 <body class="antialiased">
+<div id="progress-bar" style="position:fixed;top:64px;left:0;width:0%;height:4px;background:#F47B5A;z-index:9999;transition:width 0.1s linear;"></div>
+<script>
+  window.addEventListener('scroll', function() {
+    var start = document.getElementById('challenge').offsetTop - 180;
+    var s = document.documentElement.scrollTop || document.body.scrollTop;
+    var h = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var pct = Math.min(Math.max((s - start) / (h - start) * 100, 0), 100);
+    document.getElementById('progress-bar').style.width = pct + '%';
+  }, { passive: true });
+</script>
 
 <!-- NAV -->
 <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-border">
@@ -160,10 +170,10 @@
     <div>
 
       <section id="challenge" class="mb-14 scroll-mt-24">
-        <h2 class="font-display font-bold text-2xl text-ink mb-6">The Challenge</h2>
-        <p class="text-[#4B5563] text-base mb-4" style="line-height:1.8;">Epic Reads, HarperCollins' young adult book blog, wasn't short on content. They were publishing more than 10 articles a week, including author spotlights, quizzes, and reading lists. The issue wasn't how much they were creating, it was what they were creating.</p>
-        <p class="text-[#4B5563] text-base mb-4" style="line-height:1.8;">Most of the content wasn't built around what people were actually searching for. It worked for existing readers, but it wasn't bringing in new ones, especially people going to Google to figure out what to read next.</p>
-        <p class="text-[#4B5563] text-base mb-4" style="line-height:1.8;">When I was brought in to lead SEO, the goals were simple: show up for popular book-related searches, get more people to the product pages, and ultimately, sell more books.</p>
+        <h2 class="font-display font-bold text-2xl text-ink mb-8">The Challenge</h2>
+        <p class="text-[#4B5563] text-base mb-8" style="line-height:1.85;">Epic Reads, HarperCollins' young adult book blog, wasn't short on content. They were publishing more than 10 articles a week, including author spotlights, quizzes, and reading lists. The issue wasn't how much they were creating, it was what they were creating.</p>
+        <p class="text-[#4B5563] text-base mb-8" style="line-height:1.85;">Most of the content wasn't built around what people were actually searching for. It worked for existing readers, but it wasn't bringing in new ones, especially people going to Google to figure out what to read next.</p>
+        <p class="text-[#4B5563] text-base mb-8" style="line-height:1.85;">When I was brought in to lead SEO, the goals were simple: show up for popular book-related searches, get more people to the product pages, and ultimately, sell more books.</p>
       </section>
 
       <section id="solution" class="mb-14 scroll-mt-24">
@@ -171,7 +181,7 @@
 
         <div class="mb-10">
           <h3 class="font-display font-semibold text-lg text-ink mb-3">Find the Right Keywords</h3>
-          <p class="text-[#4B5563] text-base mb-4" style="line-height:1.8;">The first step was figuring out what readers were actually searching for. A content gap analysis showed that Epic Reads had almost no posts targeting "best books by genre" searches — queries like "best time travel books," "best heist novels," or "best poetry books for teens." These were a logical fit: people searching that way are actively looking for recommendations, which means they're close to buying. High intent, high relevance, and Epic Reads wasn't showing up for any of it.</p>
+          <p class="text-[#4B5563] text-base mb-8" style="line-height:1.85;">The first step was figuring out what readers were actually searching for. A content gap analysis showed that Epic Reads had almost no posts targeting "best books by genre" searches — queries like "best time travel books," "best heist novels," or "best poetry books for teens." These were a logical fit: people searching that way are actively looking for recommendations, which means they're close to buying. High intent, high relevance, and Epic Reads wasn't showing up for any of it.</p>
 
           <!-- Keyword research screenshot -->
           <div style="position:relative;padding:0 8px 8px 0;" class="my-6">
@@ -188,8 +198,8 @@
 
         <div class="mb-10">
           <h3 class="font-display font-semibold text-lg text-ink mb-3">Write for Readers, Optimize for Google</h3>
-          <p class="text-[#4B5563] text-base mb-4" style="line-height:1.8;">From 50 priority keywords, I built detailed content briefs for the writing team — not just topic overviews, but precise blueprints: recommended outlines, internal linking anchors, metadata guidance, visual direction, and CTA placement. The goal was articles that readers would genuinely enjoy and that Google would reward.</p>
-          <p class="text-[#4B5563] text-base mb-4" style="line-height:1.8;">Every piece was optimized across the full range of on-page signals to build keyword relevancy, match search intent, and guide readers naturally toward product pages:</p>
+          <p class="text-[#4B5563] text-base mb-8" style="line-height:1.85;">From 50 priority keywords, I built detailed content briefs for the writing team — not just topic overviews, but precise blueprints: recommended outlines, internal linking anchors, metadata guidance, visual direction, and CTA placement. The goal was articles that readers would genuinely enjoy and that Google would reward.</p>
+          <p class="text-[#4B5563] text-base mb-8" style="line-height:1.85;">Every piece was optimized across the full range of on-page signals to build keyword relevancy, match search intent, and guide readers naturally toward product pages:</p>
           <ul class="space-y-2 mt-4 mb-2">
             <li class="flex items-center gap-3 text-[#4B5563] text-base"><span class="w-1.5 h-1.5 rounded-full bg-coral flex-shrink-0"></span>Title tags</li>
             <li class="flex items-center gap-3 text-[#4B5563] text-base"><span class="w-1.5 h-1.5 rounded-full bg-coral flex-shrink-0"></span>Headers &amp; on-page copy</li>
@@ -216,7 +226,7 @@
 
         <div class="mb-10">
           <h3 class="font-display font-semibold text-lg text-ink mb-3">Get the Technical Fundamentals Right</h3>
-          <p class="text-[#4B5563] text-base mb-4" style="line-height:1.8;">I also audited the technical side. Each article needed a clean heading hierarchy, an optimized title tag, and metadata that clearly communicated what the page was about. Small things individually — but the signal they send collectively adds up.</p>
+          <p class="text-[#4B5563] text-base mb-8" style="line-height:1.85;">I also audited the technical side. Each article needed a clean heading hierarchy, an optimized title tag, and metadata that clearly communicated what the page was about. Small things individually — but the signal they send collectively adds up.</p>
 
           <!-- Dev tools / semantic HTML screenshot -->
           <div style="position:relative;padding:0 8px 8px 0;" class="mt-4">
@@ -244,9 +254,9 @@
       </section>
 
       <section id="results" class="mb-14 scroll-mt-24">
-        <h2 class="font-display font-bold text-2xl text-ink mb-6">The Results</h2>
-        <p class="text-[#4B5563] text-base mb-4" style="line-height:1.8;">Three months after the strategy launched, epicreads.com had climbed into the top 3 positions on Google for 234 additional keywords — including the most competitive "genre + books" queries where purchase intent is highest.</p>
-        <p class="text-[#4B5563] text-base mb-6" style="line-height:1.8;">Organic search traffic grew 97%. That wasn't just a vanity metric — it flowed directly into the bottom line. Year-over-year online book sales increased by 37%. The publishing team was already doing the hard work of creating content; pointing it at the right searches turned their cadence into a revenue engine.</p>
+        <h2 class="font-display font-bold text-2xl text-ink mb-8">The Results</h2>
+        <p class="text-[#4B5563] text-base mb-8" style="line-height:1.85;">Three months after the strategy launched, epicreads.com had climbed into the top 3 positions on Google for 234 additional keywords — including the most competitive "genre + books" queries where purchase intent is highest.</p>
+        <p class="text-[#4B5563] text-base mb-8" style="line-height:1.8;">Organic search traffic grew 97%. That wasn't just a vanity metric — it flowed directly into the bottom line. Year-over-year online book sales increased by 37%. The publishing team was already doing the hard work of creating content; pointing it at the right searches turned their cadence into a revenue engine.</p>
         <!-- Google Analytics organic search chart -->
         <div style="position:relative;padding:0 8px 8px 0;" class="mt-8 mb-8">
           <div style="position:absolute;top:8px;left:8px;right:0;bottom:0;background:#F47B5A;border-radius:14px;"></div>
@@ -278,7 +288,7 @@
 
     <!-- RIGHT SIDEBAR -->
     <div class="hidden md:block sticky top-24 self-start">
-      <div style="height:3px;background:#F47B5A;border-radius:2px;margin-bottom:20px;"></div>
+      <div style="height:4px;background:#F47B5A;border-radius:2px;margin-bottom:20px;"></div>
       <h2 class="font-display font-bold text-base text-ink mb-1.5 leading-snug">How Epic Reads Increased Online Book Sales 37% With Smarter Content</h2>
       <p class="text-sm text-muted mb-6">By Craig Kleila</p>
       <div class="mb-8">
