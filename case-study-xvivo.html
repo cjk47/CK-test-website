@@ -51,9 +51,10 @@
 <script>
   window.addEventListener('scroll', function() {
     var start = document.getElementById('challenge').offsetTop - 180;
+    var resultsEl = document.getElementById('results');
+    var end = resultsEl.offsetTop + resultsEl.offsetHeight - document.documentElement.clientHeight;
     var s = document.documentElement.scrollTop || document.body.scrollTop;
-    var h = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    var pct = Math.min(Math.max((s - start) / (h - start) * 100, 0), 100);
+    var pct = Math.min(Math.max((s - start) / (end - start) * 100, 0), 100);
     document.getElementById('progress-bar').style.width = pct + '%';
   }, { passive: true });
 </script>
@@ -85,9 +86,11 @@
   <div class="max-w-5xl mx-auto px-6 pt-14 pb-0" style="position:relative;z-index:2;">
 
     <!-- Breadcrumb -->
-    <a href="case-studies.html" class="breadcrumb-link inline-flex items-center gap-1.5 text-sm text-ink mb-10">
-      <span class="breadcrumb-arrow">←</span> Case Studies
-    </a>
+    <nav class="flex items-center gap-2 text-sm mb-10">
+      <a href="case-studies.html" class="font-bold text-ink underline hover:text-coral" style="transition:color 0.15s ease;">Case Studies</a>
+      <span class="text-muted">›</span>
+      <span class="text-muted">XVIVO</span>
+    </nav>
 
     <!-- Centered content -->
     <div class="text-center max-w-3xl mx-auto mb-10">
@@ -129,34 +132,49 @@
   <!-- White curved section: arcs UP into the hero image, extends below -->
   <div class="curved-section" style="background:#F9F8FF;border-radius:50% 50% 0 0/80px 80px 0 0;margin-top:-280px;position:relative;z-index:1;padding-top:310px;padding-bottom:60px;width:150%;margin-left:-25%;">
     <div class="max-w-5xl mx-auto px-6">
-      <div class="grid grid-cols-2 gap-8 md:flex md:flex-row md:justify-center md:gap-16">
-        <div class="text-center">
-          <div class="flex justify-center mb-2">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="7" width="16" height="11" rx="2" stroke="#F47B5A" stroke-width="1.6"/><path d="M7 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2" stroke="#F47B5A" stroke-width="1.6"/><line x1="2" y1="11" x2="18" y2="11" stroke="#F47B5A" stroke-width="1.6"/></svg>
+      <div class="flex flex-col md:flex-row gap-10 md:gap-16 items-start">
+        <div class="grid flex-1" style="grid-template-columns:repeat(3,1fr);column-gap:90px;padding-right:40px;">
+          <div>
+            <div class="mb-2">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="7" width="16" height="11" rx="2" stroke="#F47B5A" stroke-width="1.6"/><path d="M7 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2" stroke="#F47B5A" stroke-width="1.6"/><line x1="2" y1="11" x2="18" y2="11" stroke="#F47B5A" stroke-width="1.6"/></svg>
+            </div>
+            <p class="font-display font-bold text-[11px] uppercase tracking-widest mb-1.5 text-ink">Industry</p>
+            <p class="font-display text-ink text-sm whitespace-nowrap">Medical Animation</p>
           </div>
-          <p class="text-[10px] font-bold uppercase tracking-widest mb-1.5" style="color:#323232;">Industry</p>
-          <p class="font-display font-semibold text-ink text-sm">Medical Animation</p>
+          <div>
+            <div class="mb-2">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="#F47B5A" stroke-width="1.6"/><path d="M10 6v4l2.5 2.5" stroke="#F47B5A" stroke-width="1.6" stroke-linecap="round"/></svg>
+            </div>
+            <p class="font-display font-bold text-[11px] uppercase tracking-widest mb-1.5 text-ink">Timeline</p>
+            <p class="font-display text-ink text-sm whitespace-nowrap">3 Months</p>
+          </div>
+          <div>
+            <div class="mb-2">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="#F47B5A" stroke-width="1.6"/><path d="M3 10h14M10 3c-2 2-3 4.5-3 7s1 5 3 7M10 3c2 2 3 4.5 3 7s-1 5-3 7" stroke="#F47B5A" stroke-width="1.6" stroke-linecap="round"/></svg>
+            </div>
+            <p class="font-display font-bold text-[11px] uppercase tracking-widest mb-1.5 text-ink">Region</p>
+            <p class="font-display text-ink text-sm whitespace-nowrap">United States</p>
+          </div>
         </div>
-        <div class="text-center">
-          <div class="flex justify-center mb-2">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M13.5 3.5a4 4 0 0 1-4.9 5.3L4.5 13a1.5 1.5 0 0 0 2.1 2.1l4.2-4.1a4 4 0 0 1 5.3-4.9l-2.6 2.6 1.4 1.4 2.6-2.6z" stroke="#F47B5A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div class="space-y-3 flex-shrink-0" style="width:320px;">
+          <div class="bg-white rounded-xl border border-border overflow-hidden">
+            <button onclick="var p=this.nextElementSibling;var o=p.style.display==='block';p.style.display=o?'none':'block';this.querySelector('.chev').style.transform=o?'rotate(0deg)':'rotate(180deg)';" class="w-full flex items-center justify-between px-5 py-4 font-semibold text-[15px] text-ink text-left">
+              Story Overview
+              <svg class="chev flex-shrink-0" width="18" height="18" viewBox="0 0 18 18" fill="none" style="transition:transform 0.2s;"><path d="M4 7l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div style="display:none;" class="px-5 pb-5 text-[14px] text-[#4B5563] leading-relaxed">
+              XVIVO creates scientific visuals for pharmaceutical and biotech companies. After a drop in organic rankings, I rebuilt their content strategy from scratch — fixing 30+ technical issues, rewriting metadata across 40+ pages, and realigning content to how buyers actually search. Within 3 months, organic inquiries grew 27% and clicks were up 45%.
+            </div>
           </div>
-          <p class="text-[10px] font-bold uppercase tracking-widest mb-1.5" style="color:#323232;">Service</p>
-          <p class="font-display font-semibold text-ink text-sm">Content + Technical SEO</p>
-        </div>
-        <div class="text-center">
-          <div class="flex justify-center mb-2">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="#F47B5A" stroke-width="1.6"/><path d="M10 6v4l2.5 2.5" stroke="#F47B5A" stroke-width="1.6" stroke-linecap="round"/></svg>
+          <div class="bg-white rounded-xl border border-border overflow-hidden">
+            <button onclick="var p=this.nextElementSibling;var o=p.style.display==='block';p.style.display=o?'none':'block';this.querySelector('.chev').style.transform=o?'rotate(0deg)':'rotate(180deg)';" class="w-full flex items-center justify-between px-5 py-4 font-semibold text-[15px] text-ink text-left">
+              About Company
+              <svg class="chev flex-shrink-0" width="18" height="18" viewBox="0 0 18 18" fill="none" style="transition:transform 0.2s;"><path d="M4 7l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div style="display:none;" class="px-5 pb-5 text-[14px] text-[#4B5563] leading-relaxed">
+              XVIVO Scientific Animation is a medical animation studio producing mechanism of action videos, surgical training content, and patient education materials for pharmaceutical and biotech companies worldwide.
+            </div>
           </div>
-          <p class="text-[10px] font-bold uppercase tracking-widest mb-1.5" style="color:#323232;">Timeline</p>
-          <p class="font-display font-semibold text-ink text-sm">3 Months</p>
-        </div>
-        <div class="text-center">
-          <div class="flex justify-center mb-2">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="#F47B5A" stroke-width="1.6"/><path d="M3 10h14M10 3c-2 2-3 4.5-3 7s1 5 3 7M10 3c2 2 3 4.5 3 7s-1 5-3 7" stroke="#F47B5A" stroke-width="1.6" stroke-linecap="round"/></svg>
-          </div>
-          <p class="text-[10px] font-bold uppercase tracking-widest mb-1.5" style="color:#323232;">Region</p>
-          <p class="font-display font-semibold text-ink text-sm">United States</p>
         </div>
       </div>
     </div>
@@ -172,96 +190,84 @@
     <div>
 
       <section id="challenge" class="mb-14 scroll-mt-24">
-        <h2 class="font-display font-bold text-2xl text-ink mb-8">The Challenge</h2>
-        <p class="text-[#4B5563] text-base mb-6" style="line-height:1.85;">XVIVO creates scientific visuals for pharmaceutical and biotech companies, including mechanism of action videos, clinical trial animations, and patient education content. They came to me after a drop in traffic and rankings for key animation-related searches.</p>
-        <p class="text-[#4B5563] text-base mb-6" style="line-height:1.85;">A few things were holding the site back:</p>
+        <h2 class="font-display font-bold text-[30px] text-ink mb-5">The Challenge</h2>
+        <p class="text-[#4B5563] text-[16px] mb-6" style="line-height:1.85;">XVIVO creates scientific visuals for pharmaceutical and biotech companies, including mechanism of action videos, clinical trial animations, and patient education content. They came to me after a drop in traffic and rankings for key animation-related searches.</p>
+        <p class="text-[#4B5563] text-[16px] mb-6" style="line-height:1.85;">A few things were holding the site back:</p>
         <ul class="space-y-6 mb-8">
-          <li class="flex items-start gap-3 text-base text-[#4B5563]"><span class="w-5 h-5 rounded-full bg-coral-light flex items-center justify-center flex-shrink-0 mt-0.5"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#F47B5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Service pages didn't reflect how buyers actually search or evaluate vendors</li>
-          <li class="flex items-start gap-3 text-base text-[#4B5563]"><span class="w-5 h-5 rounded-full bg-coral-light flex items-center justify-center flex-shrink-0 mt-0.5"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#F47B5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Most content targeted broad terms instead of specific animation types</li>
-          <li class="flex items-start gap-3 text-base text-[#4B5563]"><span class="w-5 h-5 rounded-full bg-coral-light flex items-center justify-center flex-shrink-0 mt-0.5"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#F47B5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>The portfolio generated multiple versions of the same content through URL parameters</li>
-          <li class="flex items-start gap-3 text-base text-[#4B5563]"><span class="w-5 h-5 rounded-full bg-coral-light flex items-center justify-center flex-shrink-0 mt-0.5"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#F47B5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Search engines were spending time crawling low-value pages while important ones were harder to find and index</li>
-          <li class="flex items-start gap-3 text-base text-[#4B5563]"><span class="w-5 h-5 rounded-full bg-coral-light flex items-center justify-center flex-shrink-0 mt-0.5"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#F47B5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Blog content did not link to service pages, making it difficult for users to move from research to action</li>
+          <li class="flex items-start gap-3 text-[16px] text-[#4B5563]"><span class="w-5 h-5 rounded-full bg-coral-light flex items-center justify-center flex-shrink-0 mt-0.5"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#F47B5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Service pages didn't reflect how buyers actually search or evaluate vendors</li>
+          <li class="flex items-start gap-3 text-[16px] text-[#4B5563]"><span class="w-5 h-5 rounded-full bg-coral-light flex items-center justify-center flex-shrink-0 mt-0.5"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#F47B5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Most content targeted broad terms instead of specific animation types</li>
+          <li class="flex items-start gap-3 text-[16px] text-[#4B5563]"><span class="w-5 h-5 rounded-full bg-coral-light flex items-center justify-center flex-shrink-0 mt-0.5"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#F47B5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>The portfolio generated multiple versions of the same content through URL parameters</li>
+          <li class="flex items-start gap-3 text-[16px] text-[#4B5563]"><span class="w-5 h-5 rounded-full bg-coral-light flex items-center justify-center flex-shrink-0 mt-0.5"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#F47B5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Search engines were spending time crawling low-value pages while important ones were harder to find and index</li>
+          <li class="flex items-start gap-3 text-[16px] text-[#4B5563]"><span class="w-5 h-5 rounded-full bg-coral-light flex items-center justify-center flex-shrink-0 mt-0.5"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#F47B5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Blog content did not link to service pages, making it difficult for users to move from research to action</li>
         </ul>
-        <p class="text-[#4B5563] text-base mb-6" style="line-height:1.85;">In a niche B2B market where a single client relationship is worth hundreds of thousands of dollars, losing ground in search wasn't a visibility problem — it was a revenue problem.</p>
+        <p class="text-[#4B5563] text-[16px] mb-6" style="line-height:1.85;">In a niche B2B market where a single client relationship is worth hundreds of thousands of dollars, losing ground in search wasn't a visibility problem — it was a revenue problem.</p>
       </section>
 
       <section id="strategy" class="mb-14 scroll-mt-24">
-        <h2 class="font-display font-bold text-2xl text-ink mb-8">The Strategy</h2>
+        <h2 class="font-display font-bold text-[30px] text-ink mb-5">The Strategy</h2>
         <ul class="space-y-10">
           <li class="flex gap-3">
             
             <div>
-              <strong class="font-display font-semibold text-ink text-base">Fix the Technical Foundation First</strong>
-              <p class="text-[#4B5563] text-base mt-4" style="line-height:1.8;">Before touching a word of content, I crawled the entire site to find what was quietly working against it — redirect chains, indexing gaps, pages draining authority to dead ends. The audit surfaced 30+ technical issues, and I worked through every one of them before moving on. A content strategy built on a broken foundation doesn't hold.</p>
+              <h3 class="font-display font-bold text-ink text-[18px] mb-1">Fix the Technical Foundation First</h3>
+              <p class="text-[#4B5563] text-[16px] mt-4" style="line-height:1.8;">Before touching a word of content, I crawled the entire site to find what was quietly working against it — redirect chains, indexing gaps, pages draining authority to dead ends. The audit surfaced 30+ technical issues, and I worked through every one of them before moving on. A content strategy built on a broken foundation doesn't hold.</p>
             </div>
           </li>
           <li class="flex gap-3">
             
             <div>
-              <strong class="font-display font-semibold text-ink text-base">Rewrite Metadata to Match How Customers Search</strong>
-              <p class="text-[#4B5563] text-base mt-4 mb-6" style="line-height:1.8;">Title tags and meta descriptions across 40+ pages were rewritten to match how customers search. A pharmaceutical team looking to hire an animation studio isn't just searching for a "medical animation company" — they're searching for the specific type of animation they need, whether it's mechanism of action or oncology patient education. Each page needed metadata that spoke to those searches directly, not a one-size-fits-all description of the company.</p>
-              <div style="position:relative;padding:0 8px 8px 0;">
-                <div style="position:absolute;top:8px;left:8px;right:0;bottom:0;background:#F47B5A;border-radius:14px;"></div>
-                <div class="rounded-2xl overflow-hidden border border-border" style="position:relative;">
-                  <img src="xcs2.png" alt="XVIVO — page metadata" class="w-full block">
-                </div>
+              <h3 class="font-display font-bold text-ink text-[18px] mb-1">Rewrite Metadata to Match How Customers Search</h3>
+              <p class="text-[#4B5563] text-[16px] mt-4 mb-6" style="line-height:1.8;">Title tags and meta descriptions across 40+ pages were rewritten to match how customers search. A pharmaceutical team looking to hire an animation studio isn't just searching for a "medical animation company" — they're searching for the specific type of animation they need, whether it's mechanism of action or oncology patient education. Each page needed metadata that spoke to those searches directly, not a one-size-fits-all description of the company.</p>
+              <div class="rounded-2xl overflow-hidden">
+                <img src="xcs2.png" alt="XVIVO — page metadata" class="w-full block">
               </div>
             </div>
           </li>
           <li class="flex gap-3">
             
             <div>
-              <strong class="font-display font-semibold text-ink text-base">Build Topic Depth Around Medical Animation</strong>
-              <p class="text-[#4B5563] text-base mt-4 mb-6" style="line-height:1.8;">I built a topic cluster architecture around medical animation, creating dedicated service pages for every major animation type: mechanism of action, neurology, oncology, clinical trial recruitment, patient education, and more. Each page targets its own set of long-tail queries while reinforcing XVIVO's topical authority across the entire medical animation category.</p>
-              <div style="position:relative;padding:0 8px 8px 0;">
-                <div style="position:absolute;top:8px;left:8px;right:0;bottom:0;background:#F47B5A;border-radius:14px;"></div>
-                <div class="rounded-2xl overflow-hidden border border-border" style="position:relative;">
-                  <img src="xcs.png" alt="XVIVO — Types of Medical Animations" class="w-full block">
-                </div>
+              <h3 class="font-display font-bold text-ink text-[18px] mb-1">Build Topic Depth Around Medical Animation</h3>
+              <p class="text-[#4B5563] text-[16px] mt-4 mb-6" style="line-height:1.8;">I built a topic cluster architecture around medical animation, creating dedicated service pages for every major animation type: mechanism of action, neurology, oncology, clinical trial recruitment, patient education, and more. Each page targets its own set of long-tail queries while reinforcing XVIVO's topical authority across the entire medical animation category.</p>
+              <div class="rounded-2xl overflow-hidden">
+                <img src="xcs.png" alt="XVIVO — Types of Medical Animations" class="w-full block">
               </div>
             </div>
           </li>
           <li class="flex gap-3">
             
             <div>
-              <strong class="font-display font-semibold text-ink text-base">Turn Portfolio Filters Into Indexable Pages</strong>
-              <p class="text-[#4B5563] text-base mt-4 mb-6" style="line-height:1.8;">XVIVO's portfolio filtered by animation type, but those filtered views relied on URL parameters. Although Google can index parameterized URLs, without unique content it usually treats them as duplicates and skips them — and that's exactly what was happening here.</p>
-              <p class="text-[#4B5563] text-base mt-4 mb-6" style="line-height:1.8;">Converting each filter into its own standalone page fixed that. Clean descriptive URL, unique copy explaining the animation type and typical use cases, titles and metadata aligned to the target search. Pages that were previously getting ignored became direct entry points for searches like "neurology medical animation" or "clinical trial recruitment animation."</p>
-              <div style="position:relative;padding:0 8px 8px 0;" class="mb-4">
-                <div style="position:absolute;top:8px;left:8px;right:0;bottom:0;background:#F47B5A;border-radius:14px;"></div>
-                <div class="rounded-2xl overflow-hidden border border-border" style="position:relative;">
-                  <img src="xcs4.png" alt="XVIVO — Medical Media Portfolio with filter tabs" class="w-full block">
-                </div>
+              <h3 class="font-display font-bold text-ink text-[18px] mb-1">Turn Portfolio Filters Into Indexable Pages</h3>
+              <p class="text-[#4B5563] text-[16px] mt-4 mb-6" style="line-height:1.8;">XVIVO's portfolio filtered by animation type, but those filtered views relied on URL parameters. Although Google can index parameterized URLs, without unique content it usually treats them as duplicates and skips them — and that's exactly what was happening here.</p>
+              <p class="text-[#4B5563] text-[16px] mt-4 mb-6" style="line-height:1.8;">Converting each filter into its own standalone page fixed that. Clean descriptive URL, unique copy explaining the animation type and typical use cases, titles and metadata aligned to the target search. Pages that were previously getting ignored became direct entry points for searches like "neurology medical animation" or "clinical trial recruitment animation."</p>
+              <div class="rounded-2xl overflow-hidden mb-4">
+                <img src="xcs4.png" alt="XVIVO — Medical Media Portfolio with filter tabs" class="w-full block">
               </div>
             </div>
           </li>
           <li class="flex gap-3">
             
             <div>
-              <strong class="font-display font-semibold text-ink text-base">Match Each Page to What Searchers Actually Want</strong>
-              <p class="text-[#4B5563] text-base mt-4 mb-6" style="line-height:1.8;">I audited each key page and made changes based on what people searching for that term actually want to see. On the homepage, someone searching for a medical animation company wants to see the work, not read about it. Moving real video examples above the fold reduced bounce rates and gave search engines a stronger signal that the page satisfied the intent of the searcher.</p>
-              <div style="position:relative;padding:0 8px 8px 0;">
-                <div style="position:absolute;top:8px;left:8px;right:0;bottom:0;background:#F47B5A;border-radius:14px;"></div>
-                <div class="rounded-2xl overflow-hidden border border-border" style="position:relative;">
-                  <img src="xcs3.png" alt="XVIVO — Our Medical Animation Videos" class="w-full block">
-                </div>
+              <h3 class="font-display font-bold text-ink text-[18px] mb-1">Match Each Page to What Searchers Actually Want</h3>
+              <p class="text-[#4B5563] text-[16px] mt-4 mb-6" style="line-height:1.8;">I audited each key page and made changes based on what people searching for that term actually want to see. On the homepage, someone searching for a medical animation company wants to see the work, not read about it. Moving real video examples above the fold reduced bounce rates and gave search engines a stronger signal that the page satisfied the intent of the searcher.</p>
+              <div class="rounded-2xl overflow-hidden">
+                <img src="xcs3.png" alt="XVIVO — Our Medical Animation Videos" class="w-full block">
               </div>
             </div>
           </li>
           <li class="flex gap-3">
-            
+
             <div>
-              <strong class="font-display font-semibold text-ink text-base">Funnel Blog Traffic to Service Pages</strong>
-              <p class="text-[#4B5563] text-base mt-4" style="line-height:1.8;">Blog content was pulling in readers with no clear path forward. I restructured internal links so that posts connected directly to relevant service pages, making it easy for someone doing research to take a next step.</p>
+              <h3 class="font-display font-bold text-ink text-[18px] mb-1">Funnel Blog Traffic to Service Pages</h3>
+              <p class="text-[#4B5563] text-[16px] mt-4" style="line-height:1.8;">Blog content was pulling in readers with no clear path forward. I restructured internal links so that posts connected directly to relevant service pages, making it easy for someone doing research to take a next step.</p>
             </div>
           </li>
         </ul>
       </section>
 
       <section id="results" class="mb-14 scroll-mt-24">
-        <h2 class="font-display font-bold text-2xl text-ink mb-8">The Results</h2>
-        <p class="text-[#4B5563] text-base mb-6" style="line-height:1.85;">Within three months of implementation, XVIVO's organic performance showed clear, measurable improvement across every tracked metric.</p>
-        <p class="text-[#4B5563] text-base mb-6" style="line-height:1.85;">The content and technical fixes compounded quickly — more pages indexed correctly meant more impressions, better metadata meant better click-through rates, and better landing pages meant more inquiries.</p>
+        <h2 class="font-display font-bold text-[30px] text-ink mb-5">The Results</h2>
+        <p class="text-[#4B5563] text-[16px] mb-6" style="line-height:1.85;">Within three months of implementation, XVIVO's organic performance showed clear, measurable improvement across every tracked metric.</p>
+        <p class="text-[#4B5563] text-[16px] mb-6" style="line-height:1.85;">The content and technical fixes compounded quickly — more pages indexed correctly meant more impressions, better metadata meant better click-through rates, and better landing pages meant more inquiries.</p>
         <div class="grid grid-cols-3 gap-4 mt-8">
           <div class="bg-offwhite rounded-xl p-5 text-center">
             <p class="font-display font-bold text-3xl text-coral">+27%</p>
@@ -281,27 +287,15 @@
     </div>
 
     <!-- RIGHT SIDEBAR -->
-    <div class="hidden md:block sticky top-24 self-start">
-      <div style="height:4px;background:#F47B5A;border-radius:2px;margin-bottom:20px;"></div>
-      <h2 class="font-display font-bold text-base text-ink mb-1.5 leading-snug">How XVIVO Grew Organic Inquiries 27% in Just 3 Months</h2>
-      <p class="text-sm text-muted mb-6">By Craig Kleila</p>
+    <div class="hidden md:block sticky top-24 self-start pl-6">
       <div class="mb-8">
-        <p class="text-sm font-medium text-ink mb-3">Contents</p>
+        <p class="text-[13px] font-semibold uppercase tracking-wider text-muted mb-3">Table of Contents</p>
         <nav class="space-y-0.5">
-          <a href="#challenge" class="toc-link block text-sm text-muted hover:text-coral py-1.5 border-l-2 border-transparent pl-3 hover:border-coral">The Challenge</a>
-          <a href="#strategy" class="toc-link block text-sm text-muted hover:text-coral py-1.5 border-l-2 border-transparent pl-3 hover:border-coral">The Strategy</a>
-          <a href="#results" class="toc-link block text-sm text-muted hover:text-coral py-1.5 border-l-2 border-transparent pl-3 hover:border-coral">The Results</a>
-          <a href="#testimonial" class="toc-link block text-sm text-muted hover:text-coral py-1.5 border-l-2 border-transparent pl-3 hover:border-coral">Testimonial</a>
+          <a href="#challenge" class="toc-link block text-[15px] text-muted hover:text-coral py-1.5 border-l-[3px] border-transparent pl-3 hover:border-coral">The Challenge</a>
+          <a href="#strategy" class="toc-link block text-[15px] text-muted hover:text-coral py-1.5 border-l-[3px] border-transparent pl-3 hover:border-coral">The Strategy</a>
+          <a href="#results" class="toc-link block text-[15px] text-muted hover:text-coral py-1.5 border-l-[3px] border-transparent pl-3 hover:border-coral">The Results</a>
+          <a href="#testimonial" class="toc-link block text-[15px] text-muted hover:text-coral py-1.5 border-l-[3px] border-transparent pl-3 hover:border-coral">Testimonial</a>
         </nav>
-      </div>
-      <div>
-        <p class="text-sm font-medium text-ink mb-3">Share this article</p>
-        <div class="flex gap-3">
-          <a href="#" class="text-muted hover:text-ink transition-colors duration-150" aria-label="Share on X"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.259 5.63 5.905-5.63zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg></a>
-          <a href="#" class="text-muted hover:text-ink transition-colors duration-150" aria-label="Share on LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2V9zm2-6a2 2 0 110 4 2 2 0 010-4z"/></svg></a>
-          <a href="#" class="text-muted hover:text-ink transition-colors duration-150" aria-label="Share on Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3V2z"/></svg></a>
-          <button onclick="navigator.clipboard.writeText(window.location.href)" class="text-muted hover:text-ink transition-colors duration-150" aria-label="Copy link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg></button>
-        </div>
       </div>
     </div>
 
@@ -333,45 +327,102 @@
 <!-- RELATED CASE STUDIES -->
 <section class="bg-white py-20 border-t border-border">
   <div class="max-w-5xl mx-auto px-6">
-    <p class="text-xs font-semibold uppercase tracking-widest text-muted mb-2">More Case Studies</p>
-    <h2 class="font-display font-bold text-2xl text-ink mb-10">See more results</h2>
-    <div class="grid md:grid-cols-3 gap-6">
-      <!-- Rukkus -->
-      <a href="case-study-rukkus.html" class="border border-border rounded-2xl overflow-hidden group block">
-        <div style="height:160px;overflow:hidden;">
-          <img src="cs3.png" alt="Rukkus" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+    <h2 class="text-center font-display font-bold text-[32px] text-ink mb-12">Other success stories</h2>
+    <div class="relative">
+      <button id="cs-prev" class="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-9 h-9 bg-white rounded-full border border-border flex items-center justify-center text-ink hover:bg-offwhite transition-colors" style="box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 2L4 7l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <button id="cs-next" class="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-9 h-9 bg-white rounded-full border border-border flex items-center justify-center text-ink hover:bg-offwhite transition-colors" style="box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 2l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div style="overflow:hidden;margin:0 44px;">
+        <div id="cs-track" class="flex" style="gap:24px;transition:transform 0.35s cubic-bezier(0.4,0,0.2,1);">
+          <a href="case-study-rukkus.html" class="cs-card flex-none bg-white rounded-2xl border border-border block" style="width:calc((100% - 48px) / 3);">
+            <div class="px-6 pt-6 flex flex-col" style="min-height:300px;">
+              <div class="flex justify-center items-center mb-7" style="height:44px;">
+                <img src="rukkus_logo_Wht_med.png" alt="Rukkus" style="max-height:32px;object-fit:contain;filter:brightness(0);">
+              </div>
+              <h3 class="font-display font-bold text-ink text-[15px] leading-snug mb-4">How Rukkus Grew 1,256% and Got Acquired — With Off-Site SEO</h3>
+              <div class="flex flex-wrap gap-2 mb-2">
+                <span class="text-xs text-[#4B5563] bg-[#F3F4F6] px-3 py-1 rounded-full">Off-site SEO</span>
+                <span class="text-xs text-[#4B5563] bg-[#F3F4F6] px-3 py-1 rounded-full">Digital PR</span>
+              </div>
+              <span class="mt-auto py-4 flex items-center gap-1.5 text-xs font-semibold" style="color:#F47B5A;border-top:1px solid #E5E7EB;">Read more <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2.5 6.5h8M7 3l3.5 3.5L7 10" stroke="#F47B5A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </div>
+          </a>
+          <a href="case-study-epic-reads.html" class="cs-card flex-none bg-white rounded-2xl border border-border block" style="width:calc((100% - 48px) / 3);">
+            <div class="px-6 pt-6 flex flex-col" style="min-height:300px;">
+              <div class="flex justify-center items-center mb-7" style="height:44px;">
+                <img src="er-logo-menu-blk.png" alt="Epic Reads" style="max-height:32px;object-fit:contain;mix-blend-mode:multiply;">
+              </div>
+              <h3 class="font-display font-bold text-ink text-[15px] leading-snug mb-4">How Epic Reads Increased Online Book Sales 37% With Smarter Content</h3>
+              <div class="flex flex-wrap gap-2 mb-2">
+                <span class="text-xs text-[#4B5563] bg-[#F3F4F6] px-3 py-1 rounded-full">Content SEO</span>
+                <span class="text-xs text-[#4B5563] bg-[#F3F4F6] px-3 py-1 rounded-full">Keyword Research</span>
+              </div>
+              <span class="mt-auto py-4 flex items-center gap-1.5 text-xs font-semibold" style="color:#F47B5A;border-top:1px solid #E5E7EB;">Read more <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2.5 6.5h8M7 3l3.5 3.5L7 10" stroke="#F47B5A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </div>
+          </a>
+          <a href="case-study-best-western.html" class="cs-card flex-none bg-white rounded-2xl border border-border block" style="width:calc((100% - 48px) / 3);">
+            <div class="px-6 pt-6 flex flex-col" style="min-height:300px;">
+              <div class="flex justify-center items-center mb-7" style="height:44px;">
+                <img src="newbw.webp" alt="Best Western" style="max-height:32px;object-fit:contain;mix-blend-mode:multiply;">
+              </div>
+              <h3 class="font-display font-bold text-ink text-[15px] leading-snug mb-4">How Best Western Achieved 349% More AI Overview Visibility</h3>
+              <div class="flex flex-wrap gap-2 mb-2">
+                <span class="text-xs text-[#4B5563] bg-[#F3F4F6] px-3 py-1 rounded-full">AI Search Strategy</span>
+                <span class="text-xs text-[#4B5563] bg-[#F3F4F6] px-3 py-1 rounded-full">Technical SEO</span>
+              </div>
+              <span class="mt-auto py-4 flex items-center gap-1.5 text-xs font-semibold" style="color:#F47B5A;border-top:1px solid #E5E7EB;">Read more <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2.5 6.5h8M7 3l3.5 3.5L7 10" stroke="#F47B5A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </div>
+          </a>
+          <div class="cs-card flex-none bg-white rounded-2xl border border-border opacity-70" style="width:calc((100% - 48px) / 3);">
+            <div class="px-6 pt-6 flex flex-col" style="min-height:300px;">
+              <div class="flex justify-center items-center mb-7" style="height:44px;">
+                <img src="chase-logo-png-transparent.png" alt="Chase" style="max-height:32px;object-fit:contain;mix-blend-mode:multiply;">
+              </div>
+              <h3 class="font-display font-bold text-ink text-[15px] leading-snug mb-4">How Chase's Explorer Card Page Grew Organic Clicks 69.8% in 6 Months</h3>
+              <div class="flex flex-wrap gap-2 mb-2">
+                <span class="text-xs text-[#4B5563] bg-[#F3F4F6] px-3 py-1 rounded-full">On-page SEO</span>
+                <span class="text-xs text-[#4B5563] bg-[#F3F4F6] px-3 py-1 rounded-full">Metadata Optimization</span>
+              </div>
+              <span class="mt-auto py-4 flex items-center gap-1.5 text-xs font-semibold text-muted" style="border-top:1px solid #E5E7EB;">Coming Soon</span>
+            </div>
+          </div>
         </div>
-        <div class="p-4">
-          <img src="rukkus_logo_Wht_med.png" alt="Rukkus" style="height:18px;object-fit:contain;filter:brightness(0);margin-bottom:8px;">
-          <p class="text-sm text-muted mb-3">Off-site SEO · 1,256% traffic growth</p>
-          <span class="text-coral text-sm font-semibold">Read More →</span>
-        </div>
-      </a>
-      <!-- Epic Reads -->
-      <a href="case-study-epic-reads.html" class="border border-border rounded-2xl overflow-hidden group block">
-        <div style="height:160px;overflow:hidden;">
-          <img src="cs4.png" alt="Epic Reads" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-        </div>
-        <div class="p-4">
-          <img src="er-logo-menu-blk.png" alt="Epic Reads" style="height:18px;object-fit:contain;mix-blend-mode:multiply;margin-bottom:8px;">
-          <p class="text-sm text-muted mb-3">Content Strategy · 37% online sales increase</p>
-          <span class="text-coral text-sm font-semibold">Read More →</span>
-        </div>
-      </a>
-      <!-- Best Western -->
-      <a href="case-study-best-western.html" class="border border-border rounded-2xl overflow-hidden group block">
-        <div style="height:160px;overflow:hidden;">
-          <img src="rl.png" alt="Best Western" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-        </div>
-        <div class="p-4">
-          <img src="Best-Western-logo.png" alt="Best Western" style="height:22px;object-fit:contain;mix-blend-mode:multiply;margin-bottom:8px;">
-          <p class="text-sm text-muted mb-3">AI Search Strategy · 349% AI visibility</p>
-          <span class="text-coral text-sm font-semibold">Read More →</span>
-        </div>
-      </a>
+      </div>
+    </div>
+    <div class="flex justify-center gap-2.5 mt-8">
+      <button class="cs-dot w-2.5 h-2.5 rounded-full" data-index="0" style="background:#F47B5A;"></button>
+      <button class="cs-dot w-2.5 h-2.5 rounded-full" data-index="1" style="background:#D1D5DB;"></button>
     </div>
   </div>
 </section>
+<script>
+(function(){
+  var track=document.getElementById('cs-track');
+  var cards=track.querySelectorAll('.cs-card');
+  var dots=document.querySelectorAll('.cs-dot');
+  var prev=document.getElementById('cs-prev');
+  var next=document.getElementById('cs-next');
+  var current=0;
+  var visible=3;
+  var max=cards.length-visible;
+  function update(){
+    var w=track.parentElement.offsetWidth;
+    var cw=(w-48)/3;
+    track.style.transform='translateX(-'+(current*(cw+24))+'px)';
+    dots.forEach(function(d,i){d.style.background=i===current?'#F47B5A':'#D1D5DB';});
+    prev.style.opacity=current===0?'0.35':'1';
+    next.style.opacity=current===max?'0.35':'1';
+  }
+  prev.addEventListener('click',function(){if(current>0){current--;update();}});
+  next.addEventListener('click',function(){if(current<max){current++;update();}});
+  dots.forEach(function(d){d.addEventListener('click',function(){current=parseInt(d.getAttribute('data-index'));update();});});
+  window.addEventListener('resize',update);
+  update();
+})();
+</script>
 
 <!-- CTA BANNER -->
 <section class="bg-ink py-20 px-6 md:px-0 text-center">
@@ -394,14 +445,6 @@
   </div>
 </footer>
 
-<!-- BACK TO TOP -->
-<button onclick="window.scrollTo({top:0,behavior:'smooth'})"
-  class="fixed bottom-6 left-6 z-50 bg-ink text-white w-11 h-11 rounded-full flex items-center justify-center shadow-lg transition-colors duration-150"
-  aria-label="Back to top">
-  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-    <path d="M8 12V4M4 8l4-4 4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-  </svg>
-</button>
 
 <script>
   const sections = document.querySelectorAll('#challenge, #strategy, #results, #testimonial');

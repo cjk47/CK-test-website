@@ -39,6 +39,19 @@
   nav a { transition: color 0.15s ease; }
   nav a:hover { color: #F47B5A; }
   .service-card { scroll-margin-top: 100px; }
+  .svc-icon path, .svc-icon circle {
+    stroke-dasharray: 200;
+    stroke-dashoffset: 200;
+    transition: stroke-dashoffset 0.5s cubic-bezier(0.22,1,0.36,1);
+  }
+  .svc-icon *:nth-child(1) { transition-delay: 0s; }
+  .svc-icon *:nth-child(2) { transition-delay: 0.18s; }
+  .svc-icon *:nth-child(3) { transition-delay: 0.36s; }
+  .svc-icon *:nth-child(4) { transition-delay: 0.54s; }
+  .svc-icon *:nth-child(5) { transition-delay: 0.72s; }
+  .svc-icon.drawn path, .svc-icon.drawn circle {
+    stroke-dashoffset: 0;
+  }
 </style>
 </head>
 <body class="antialiased">
@@ -490,7 +503,12 @@
       <div class="flex items-start justify-between mb-4">
         <h2 class="font-display font-bold text-2xl text-ink">Content Strategy</h2>
         <div class="flex-shrink-0 ml-4" style="padding-top:4px;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 10h12M4 14h16M4 18h10" stroke="#F47B5A" stroke-width="1.7" stroke-linecap="round"/></svg>
+          <svg class="svc-icon" width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <path d="M4 6h16" stroke="#F47B5A" stroke-width="1.7" stroke-linecap="round"/>
+            <path d="M4 10h12" stroke="#F47B5A" stroke-width="1.7" stroke-linecap="round"/>
+            <path d="M4 14h16" stroke="#F47B5A" stroke-width="1.7" stroke-linecap="round"/>
+            <path d="M4 18h10" stroke="#F47B5A" stroke-width="1.7" stroke-linecap="round"/>
+          </svg>
         </div>
       </div>
       <p class="text-sm mb-6" style="color:#6B7280;line-height:1.7;">The bar for content keeps rising. Visibility today means fully answering the query, addressing real customer pain points, and bringing genuine insight, not just publishing more pages. I start with the questions your audience is asking, identify gaps, and build a content plan designed to drive leads and revenue.</p>
@@ -508,7 +526,7 @@
       <div class="flex items-start justify-between mb-4">
         <h2 class="font-display font-bold text-2xl text-ink">Technical SEO</h2>
         <div class="flex-shrink-0 ml-4" style="padding-top:4px;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M8 6L3 12l5 6" stroke="#7B68EE" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 6l5 6-5 6" stroke="#7B68EE" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg class="svc-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M8 6L3 12l5 6" stroke="#7B68EE" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 6l5 6-5 6" stroke="#7B68EE" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
       </div>
       <p class="text-sm mb-6" style="color:#6B7280;line-height:1.7;">Search performance often comes down to what's "behind the curtain." Weak technical foundations quietly limit growth and usually go unnoticed until traffic drops. I look at how search engines crawl and understand your site, from indexation to speed, and work with your team to fix issues.</p>
@@ -533,7 +551,7 @@
           <span style="background:#FDE9A0;color:#92700A;font-size:10px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;padding:2px 8px;border-radius:20px;font-family:'Inter',sans-serif;">New</span>
         </div>
         <div class="flex-shrink-0 ml-3" style="padding-top:4px;">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 1C10 1 11 8 19 10C11 12 10 19 10 19C10 19 9 12 1 10C9 8 10 1 10 1Z" fill="none" stroke="#b8860b" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          <svg class="svc-icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 1C10 1 11 8 19 10C11 12 10 19 10 19C10 19 9 12 1 10C9 8 10 1 10 1Z" fill="none" stroke="#b8860b" stroke-width="1.5" stroke-linejoin="round"/></svg>
         </div>
       </div>
       <p class="text-sm mb-5" style="color:#6B7280;line-height:1.7;">The way people find answers is shifting fast. Most brands aren't showing up in AI Overviews or ChatGPT yet. Get visible where it's going, not just where it's been.</p>
@@ -550,7 +568,7 @@
       <div class="flex items-start justify-between mb-4">
         <h2 class="font-display font-bold text-xl text-ink">Off-site SEO</h2>
         <div class="flex-shrink-0 ml-3" style="padding-top:4px;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="6" cy="12" r="3" stroke="#5c7a8f" stroke-width="1.7"/><circle cx="18" cy="6" r="3" stroke="#5c7a8f" stroke-width="1.7"/><circle cx="18" cy="18" r="3" stroke="#5c7a8f" stroke-width="1.7"/><path d="M8.7 10.7l6.6-3.4M8.7 13.3l6.6 3.4" stroke="#5c7a8f" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <svg class="svc-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="6" cy="12" r="3" stroke="#5c7a8f" stroke-width="1.7"/><circle cx="18" cy="6" r="3" stroke="#5c7a8f" stroke-width="1.7"/><circle cx="18" cy="18" r="3" stroke="#5c7a8f" stroke-width="1.7"/><path d="M8.7 10.7l6.6-3.4M8.7 13.3l6.6 3.4" stroke="#5c7a8f" stroke-width="1.5" stroke-linecap="round"/></svg>
         </div>
       </div>
       <p class="text-sm mb-5" style="color:#6B7280;line-height:1.7;">Authority isn't claimed, it's earned. Build a backlink profile that holds up through targeted outreach, digital PR, and finding the gaps your competitors missed.</p>
@@ -565,6 +583,21 @@
   </div>
 
 </div>
+
+<script>
+(function(){
+  var icons = document.querySelectorAll('.svc-icon');
+  var obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('drawn');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.7 });
+  icons.forEach(function(icon) { obs.observe(icon); });
+})();
+</script>
 
 <!-- SEO IS EVOLVING -->
 <section style="background:#F9F8FF;padding:60px 0 100px;overflow-x:hidden;">
