@@ -34,8 +34,8 @@
   .btn-coral { transition: transform 0.2s cubic-bezier(0.22,1,0.36,1), box-shadow 0.2s cubic-bezier(0.22,1,0.36,1); }
   .btn-coral:hover { transform: translateY(-2px); box-shadow: 0 10px 28px -6px rgba(244,123,90,0.45); }
   .btn-coral:active { transform: translateY(0); }
-  .card-hover { transition: transform 0.25s cubic-bezier(0.22,1,0.36,1), box-shadow 0.25s cubic-bezier(0.22,1,0.36,1); }
-  .card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 48px -10px rgba(123,104,238,0.15), 0 4px 12px -4px rgba(0,0,0,0.06); }
+  .card-hover { transition: border-color 0.2s ease; }
+  .card-hover:hover { border-color: #F47B5A !important; }
   nav a { transition: color 0.15s ease; }
   nav a:hover { color: #F47B5A; }
   @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
@@ -133,7 +133,7 @@
 </section>
 
 <!-- LOGO TICKER -->
-<div class="border-y border-border py-6" style="background:#ffffff;">
+<div class="py-6" style="background:#ffffff;">
   <div class="max-w-6xl mx-auto px-6">
   <div style="overflow:hidden;">
     <div class="ticker-track">
@@ -187,130 +187,171 @@
 </div>
 
 <!-- GRID -->
-<section class="max-w-6xl mx-auto px-6 pt-12 pb-20">
+<section class="max-w-6xl mx-auto px-6 pt-10 pb-20">
   <div class="grid md:grid-cols-3 gap-4">
 
     <!-- Case Study 1 - XVIVO -->
-    <div class="flex flex-col border border-border rounded-2xl overflow-hidden">
-      <div class="relative overflow-hidden" style="height:200px;">
-        <img src="new-xvivo.png" alt="XVIVO Medical Animation" class="w-full h-full object-cover">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-        <div class="absolute bottom-3 left-3 flex flex-wrap gap-1.5">
-          <span class="text-xs font-semibold text-white bg-white/20 backdrop-blur-sm px-2.5 py-1 rounded-full">Content Strategy</span>
-          <span class="text-xs font-semibold text-white bg-white/20 backdrop-blur-sm px-2.5 py-1 rounded-full">Technical SEO</span>
+    <a href="case-study-xvivo.html" class="card-hover flex flex-col bg-white rounded-2xl overflow-hidden" style="border:1px solid #E8E8F0;">
+      <div style="height:175px;overflow:hidden;position:relative;">
+        <img src="new-xvivo.png" alt="XVIVO" class="w-full h-full object-cover">
+        <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(0,0,0,0.45) 0%, transparent 55%);"></div>
+        <div style="position:absolute;bottom:10px;left:12px;display:flex;gap:5px;flex-wrap:wrap;"><span class="bg-white/20 backdrop-blur-sm text-white font-semibold text-xs px-2.5 py-1 rounded-full">Content Strategy</span><span class="bg-white/20 backdrop-blur-sm text-white font-semibold text-xs px-2.5 py-1 rounded-full">Technical SEO</span></div>
+      </div>
+      <div class="px-5 pt-4 pb-2">
+        <img src="xvivo.png" alt="XVIVO" style="height:22px;object-fit:contain;object-position:left;mix-blend-mode:multiply;">
+      </div>
+      <div class="px-5 pt-2 pb-10 flex-1">
+        <p class="text-ink" style="font-size:0.875rem;line-height:1.6;font-weight:400;color:#6B7280;">XVIVO had a technically broken site that was invisible to its most valuable users — a full rebuild changed that.</p>
+      </div>
+      <div style="border-top:1px solid #E8E8F0;margin:0 20px;"></div>
+      <div class="flex">
+        <div class="flex-1 flex flex-col justify-center px-5 py-4">
+          <p class="font-display font-bold text-ink" style="font-size:1.3rem;line-height:1;letter-spacing:-0.02em;">+27%</p>
+          <p class="text-xs text-muted mt-1">Organic inquiries</p>
+        </div>
+        <div style="width:1px;background:#E8E8F0;margin:12px 0;"></div>
+        <div class="flex-1 flex flex-col justify-center px-5 py-4">
+          <p class="font-display font-bold text-ink" style="font-size:1.3rem;line-height:1;letter-spacing:-0.02em;">+45%</p>
+          <p class="text-xs text-muted mt-1">Organic clicks</p>
         </div>
       </div>
-      <div class="flex flex-col flex-1 p-5">
-        <img src="xvivo.png" alt="XVIVO" class="mb-2" style="height:22px;object-fit:contain;object-position:left;mix-blend-mode:multiply;">
-        <p class="text-sm text-muted mb-5 flex-1" style="line-height:1.6">Poor metadata and content structure that didn't match user intent. Rebuilt content strategy and fixed technical issues in three months.</p>
-        <div class="grid grid-cols-3 divide-x divide-border pt-4 border-t border-border mb-4">
-          <div class="pr-3"><p class="font-display font-bold text-xl text-ink">+27%</p><p class="text-xs text-muted mt-0.5">Organic inquiries</p></div>
-          <div class="px-3"><p class="font-display font-bold text-xl text-ink">+45%</p><p class="text-xs text-muted mt-0.5">Organic clicks</p></div>
-          <div class="pl-3"><p class="font-display font-bold text-xl text-ink">+72%</p><p class="text-xs text-muted mt-0.5">Impressions</p></div>
-        </div>
-        <a href="case-study-xvivo.html" class="inline-flex items-center gap-2 border border-border text-ink font-semibold px-4 py-2 rounded-full text-sm hover:border-ink transition-colors duration-150 self-start">Read More →</a>
+      <div class="px-5 py-4 flex items-center gap-1">
+        <span class="text-sm font-medium text-ink flex items-center gap-1">Read story <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
       </div>
-    </div>
+    </a>
 
     <!-- Case Study 2 - Rukkus -->
-    <div class="flex flex-col border border-border rounded-2xl overflow-hidden">
-      <div class="relative overflow-hidden" style="height:200px;">
-        <img src="cs3.png" alt="Rukkus Live Entertainment" class="w-full h-full object-cover">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-        <div class="absolute bottom-3 left-3 flex flex-wrap gap-1.5">
-          <span class="text-xs font-semibold text-white bg-white/20 backdrop-blur-sm px-2.5 py-1 rounded-full">Off-site SEO</span>
+    <a href="case-study-rukkus.html" class="card-hover flex flex-col bg-white rounded-2xl overflow-hidden" style="border:1px solid #E8E8F0;">
+      <div style="height:175px;overflow:hidden;position:relative;">
+        <img src="cs3.png" alt="Rukkus" class="w-full h-full object-cover">
+        <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(0,0,0,0.45) 0%, transparent 55%);"></div>
+        <div style="position:absolute;bottom:10px;left:12px;"><span class="bg-white/20 backdrop-blur-sm text-white font-semibold text-xs px-2.5 py-1 rounded-full">Off-site SEO</span></div>
+      </div>
+      <div class="px-5 pt-4 pb-2">
+        <img src="rukkus_logo_Wht_med.png" alt="Rukkus" style="height:22px;object-fit:contain;object-position:left;filter:brightness(0);">
+      </div>
+      <div class="px-5 pt-2 pb-10 flex-1">
+        <p class="text-ink" style="font-size:0.875rem;line-height:1.6;font-weight:400;color:#6B7280;">Rukkus entered a competitive live events market with zero authority, grew fast enough to dominate it, and got acquired.</p>
+      </div>
+      <div style="border-top:1px solid #E8E8F0;margin:0 20px;"></div>
+      <div class="flex">
+        <div class="flex-1 flex flex-col justify-center px-5 py-4">
+          <p class="font-display font-bold text-ink" style="font-size:1.3rem;line-height:1;letter-spacing:-0.02em;">+1,256%</p>
+          <p class="text-xs text-muted mt-1">Traffic increase</p>
+        </div>
+        <div style="width:1px;background:#E8E8F0;margin:12px 0;"></div>
+        <div class="flex-1 flex flex-col justify-center px-5 py-4">
+          <p class="font-display font-bold text-ink" style="font-size:1.3rem;line-height:1;letter-spacing:-0.02em;">121K</p>
+          <p class="text-xs text-muted mt-1">New visitors</p>
         </div>
       </div>
-      <div class="flex flex-col flex-1 p-5">
-        <img src="rukkus_logo_Wht_med.png" alt="Rukkus" class="mb-2" style="height:22px;object-fit:contain;object-position:left;filter:brightness(0);">
-        <p class="text-sm text-muted mb-5 flex-1" style="line-height:1.6">A new ticket marketplace needing authority fast. Secured placements in CNN, Forbes, and Sports Illustrated — leading to the company's acquisition.</p>
-        <div class="grid grid-cols-3 divide-x divide-border pt-4 border-t border-border mb-4">
-          <div class="pr-3"><p class="font-display font-bold text-xl text-ink">+1,256%</p><p class="text-xs text-muted mt-0.5">Traffic increase</p></div>
-          <div class="px-3"><p class="font-display font-bold text-xl text-ink">121K</p><p class="text-xs text-muted mt-0.5">New visitors</p></div>
-          <div class="pl-3"><p class="font-display font-bold text-xl text-ink">27</p><p class="text-xs text-muted mt-0.5">High-DA links</p></div>
-        </div>
-        <a href="case-study-rukkus.html" class="inline-flex items-center gap-2 border border-border text-ink font-semibold px-4 py-2 rounded-full text-sm hover:border-ink transition-colors duration-150 self-start">Read More →</a>
+      <div class="px-5 py-4 flex items-center gap-1">
+        <span class="text-sm font-medium text-ink flex items-center gap-1">Read story <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
       </div>
-    </div>
+    </a>
 
     <!-- Case Study 3 - Epic Reads -->
-    <div class="flex flex-col border border-border rounded-2xl overflow-hidden">
-      <div class="relative overflow-hidden" style="height:200px;">
-        <img src="cs4.png" alt="Epic Reads Book Blog" class="w-full h-full object-cover">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-        <div class="absolute bottom-3 left-3 flex flex-wrap gap-1.5">
-          <span class="text-xs font-semibold text-white bg-white/20 backdrop-blur-sm px-2.5 py-1 rounded-full">Content Strategy</span>
+    <a href="case-study-epic-reads.html" class="card-hover flex flex-col bg-white rounded-2xl overflow-hidden" style="border:1px solid #E8E8F0;">
+      <div style="height:175px;overflow:hidden;position:relative;">
+        <img src="cs4.png" alt="Epic Reads" class="w-full h-full object-cover">
+        <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(0,0,0,0.45) 0%, transparent 55%);"></div>
+        <div style="position:absolute;bottom:10px;left:12px;"><span class="bg-white/20 backdrop-blur-sm text-white font-semibold text-xs px-2.5 py-1 rounded-full">Content Strategy</span></div>
+      </div>
+      <div class="px-5 pt-4 pb-2">
+        <img src="er-logo-menu-blk.png" alt="Epic Reads" style="height:22px;object-fit:contain;object-position:left;mix-blend-mode:multiply;">
+      </div>
+      <div class="px-5 pt-2 pb-10 flex-1">
+        <p class="text-ink" style="font-size:0.875rem;line-height:1.6;font-weight:400;color:#6B7280;">Epic Reads had a massive audience but wasn't converting them — the right content strategy unlocked a 37% sales lift.</p>
+      </div>
+      <div style="border-top:1px solid #E8E8F0;margin:0 20px;"></div>
+      <div class="flex">
+        <div class="flex-1 flex flex-col justify-center px-5 py-4">
+          <p class="font-display font-bold text-ink" style="font-size:1.3rem;line-height:1;letter-spacing:-0.02em;">+37%</p>
+          <p class="text-xs text-muted mt-1">Online sales</p>
+        </div>
+        <div style="width:1px;background:#E8E8F0;margin:12px 0;"></div>
+        <div class="flex-1 flex flex-col justify-center px-5 py-4">
+          <p class="font-display font-bold text-ink" style="font-size:1.3rem;line-height:1;letter-spacing:-0.02em;">+97%</p>
+          <p class="text-xs text-muted mt-1">Organic traffic</p>
         </div>
       </div>
-      <div class="flex flex-col flex-1 p-5">
-        <img src="er-logo-menu-blk.png" alt="Epic Reads" class="mb-2" style="height:22px;object-fit:contain;object-position:left;mix-blend-mode:multiply;">
-        <p class="text-sm text-muted mb-5 flex-1" style="line-height:1.6">Publishing 10+ articles a week to the wrong audience. Identified real opportunities and built briefs that guided readers toward product pages.</p>
-        <div class="grid grid-cols-3 divide-x divide-border pt-4 border-t border-border mb-4">
-          <div class="pr-3"><p class="font-display font-bold text-xl text-ink">+37%</p><p class="text-xs text-muted mt-0.5">Online sales</p></div>
-          <div class="px-3"><p class="font-display font-bold text-xl text-ink">50</p><p class="text-xs text-muted mt-0.5">Keywords targeted</p></div>
-          <div class="pl-3"><p class="font-display font-bold text-xl text-ink">10+</p><p class="text-xs text-muted mt-0.5">Articles/week</p></div>
-        </div>
-        <a href="case-study-epic-reads.html" class="inline-flex items-center gap-2 border border-border text-ink font-semibold px-4 py-2 rounded-full text-sm hover:border-ink transition-colors duration-150 self-start">Read More →</a>
+      <div class="px-5 py-4 flex items-center gap-1">
+        <span class="text-sm font-medium text-ink flex items-center gap-1">Read story <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
       </div>
-    </div>
+    </a>
 
     <!-- Case Study 4 - Best Western -->
-    <div class="flex flex-col border border-border rounded-2xl overflow-hidden">
-      <div class="relative overflow-hidden" style="height:200px;">
+    <a href="case-study-best-western.html" class="card-hover flex flex-col bg-white rounded-2xl overflow-hidden" style="border:1px solid #E8E8F0;">
+      <div style="height:175px;overflow:hidden;position:relative;">
         <img src="rl.png" alt="Best Western" class="w-full h-full object-cover">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-        <div class="absolute bottom-3 left-3 flex flex-wrap gap-1.5">
-          <span class="text-xs font-semibold text-white bg-white/20 backdrop-blur-sm px-2.5 py-1 rounded-full">AI Search Strategy</span>
-          <span class="text-xs font-semibold text-white bg-white/20 backdrop-blur-sm px-2.5 py-1 rounded-full">Technical SEO</span>
+        <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(0,0,0,0.45) 0%, transparent 55%);"></div>
+        <div style="position:absolute;bottom:10px;left:12px;display:flex;gap:5px;flex-wrap:wrap;"><span class="bg-white/20 backdrop-blur-sm text-white font-semibold text-xs px-2.5 py-1 rounded-full">AI Search Strategy</span><span class="bg-white/20 backdrop-blur-sm text-white font-semibold text-xs px-2.5 py-1 rounded-full">Technical SEO</span></div>
+      </div>
+      <div class="px-5 pt-4 pb-2">
+        <img src="newbw.webp" alt="Best Western" style="height:22px;object-fit:contain;object-position:left;mix-blend-mode:multiply;">
+      </div>
+      <div class="px-5 pt-2 pb-10 flex-1">
+        <p class="text-ink" style="font-size:0.875rem;line-height:1.6;font-weight:400;color:#6B7280;">Best Western turned Google's AI Overview rollout into a visibility advantage while competitors scrambled to catch up.</p>
+      </div>
+      <div style="border-top:1px solid #E8E8F0;margin:0 20px;"></div>
+      <div class="flex">
+        <div class="flex-1 flex flex-col justify-center px-5 py-4">
+          <p class="font-display font-bold text-ink" style="font-size:1.3rem;line-height:1;letter-spacing:-0.02em;">+349%</p>
+          <p class="text-xs text-muted mt-1">AI Overview visibility</p>
+        </div>
+        <div style="width:1px;background:#E8E8F0;margin:12px 0;"></div>
+        <div class="flex-1 flex flex-col justify-center px-5 py-4">
+          <p class="font-display font-bold text-ink" style="font-size:1.3rem;line-height:1;letter-spacing:-0.02em;">+18.5%</p>
+          <p class="text-xs text-muted mt-1">Organic traffic</p>
         </div>
       </div>
-      <div class="flex flex-col flex-1 p-5">
-        <img src="newbw.webp" alt="Best Western" class="mb-2" style="height:22px;object-fit:contain;object-position:left;mix-blend-mode:multiply;">
-        <p class="text-sm text-muted mb-5 flex-1" style="line-height:1.6">Google's AI Overview rollout hit traffic hard. Rewrote content, implemented schema, and built high-intent landing pages to recover and surge AI visibility.</p>
-        <div class="grid grid-cols-3 divide-x divide-border pt-4 border-t border-border mb-4">
-          <div class="pr-3"><p class="font-display font-bold text-xl text-ink">+349%</p><p class="text-xs text-muted mt-0.5">AI Overview visibility</p></div>
-          <div class="px-3"><p class="font-display font-bold text-xl text-ink">+18.5%</p><p class="text-xs text-muted mt-0.5">Organic traffic</p></div>
-          <div class="pl-3"><p class="font-display font-bold text-xl text-ink">+8%</p><p class="text-xs text-muted mt-0.5">Conversions</p></div>
-        </div>
-        <a href="case-study-best-western.html" class="inline-flex items-center gap-2 border border-border text-ink font-semibold px-4 py-2 rounded-full text-sm hover:border-ink transition-colors duration-150 self-start">Read More →</a>
+      <div class="px-5 py-4 flex items-center gap-1">
+        <span class="text-sm font-medium text-ink flex items-center gap-1">Read story <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
       </div>
-    </div>
+    </a>
 
-    <!-- Case Study 5 - Chase Explorer Card -->
-    <div class="flex flex-col border border-border rounded-2xl overflow-hidden">
-      <div class="relative overflow-hidden" style="height:200px;">
-        <img src="cccc.png" alt="Chase Explorer Card" class="w-full h-full object-cover">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-        <div class="absolute bottom-3 left-3 flex flex-wrap gap-1.5">
-          <span class="text-xs font-semibold text-white bg-white/20 backdrop-blur-sm px-2.5 py-1 rounded-full">Content Strategy</span>
-          <span class="text-xs font-semibold text-white bg-white/20 backdrop-blur-sm px-2.5 py-1 rounded-full">Technical SEO</span>
+    <!-- Case Study 5 - Chase -->
+    <a href="case-study-chase.html" class="card-hover flex flex-col bg-white rounded-2xl overflow-hidden" style="border:1px solid #E8E8F0;">
+      <div style="height:175px;overflow:hidden;position:relative;">
+        <img src="cccc.png" alt="Chase" class="w-full h-full object-cover">
+        <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(0,0,0,0.45) 0%, transparent 55%);"></div>
+        <div style="position:absolute;bottom:10px;left:12px;display:flex;gap:5px;flex-wrap:wrap;"><span class="bg-white/20 backdrop-blur-sm text-white font-semibold text-xs px-2.5 py-1 rounded-full">Content Strategy</span><span class="bg-white/20 backdrop-blur-sm text-white font-semibold text-xs px-2.5 py-1 rounded-full">Technical SEO</span></div>
+      </div>
+      <div class="px-5 pt-4 pb-2">
+        <img src="chase-logo-png-transparent.png" alt="Chase" style="height:22px;object-fit:contain;object-position:left;mix-blend-mode:multiply;">
+      </div>
+      <div class="px-5 pt-2 pb-10 flex-1">
+        <p class="text-ink" style="font-size:0.875rem;line-height:1.6;font-weight:400;color:#6B7280;">Chase was ceding high-intent traffic to competitors on its most valuable pages — a targeted content strategy took it back.</p>
+      </div>
+      <div style="border-top:1px solid #E8E8F0;margin:0 20px;"></div>
+      <div class="flex">
+        <div class="flex-1 flex flex-col justify-center px-5 py-4">
+          <p class="font-display font-bold text-ink" style="font-size:1.3rem;line-height:1;letter-spacing:-0.02em;">+69.8%</p>
+          <p class="text-xs text-muted mt-1">Organic clicks</p>
+        </div>
+        <div style="width:1px;background:#E8E8F0;margin:12px 0;"></div>
+        <div class="flex-1 flex flex-col justify-center px-5 py-4">
+          <p class="font-display font-bold text-ink" style="font-size:1.3rem;line-height:1;letter-spacing:-0.02em;">+21.3%</p>
+          <p class="text-xs text-muted mt-1">Impressions</p>
         </div>
       </div>
-      <div class="flex flex-col flex-1 p-5">
-        <img src="chase-logo-png-transparent.png" alt="Chase" class="mb-2" style="height:22px;object-fit:contain;object-position:left;mix-blend-mode:multiply;">
-        <p class="text-sm text-muted mb-5 flex-1" style="line-height:1.6">Missing the queries customers were actually searching for. Surfaced content gaps and executed on-page updates, metadata fixes, and internal linking improvements.</p>
-        <div class="grid grid-cols-3 divide-x divide-border pt-4 border-t border-border mb-4">
-          <div class="pr-3"><p class="font-display font-bold text-xl text-ink">+69.8%</p><p class="text-xs text-muted mt-0.5">Organic clicks</p></div>
-          <div class="px-3"><p class="font-display font-bold text-xl text-ink">+21.3%</p><p class="text-xs text-muted mt-0.5">Impressions</p></div>
-          <div class="pl-3"><p class="font-display font-bold text-xl text-ink">6mo</p><p class="text-xs text-muted mt-0.5">Timeline</p></div>
-        </div>
-        <span class="inline-flex items-center gap-2 border border-border text-muted px-4 py-2 rounded-full text-sm self-start cursor-default">Coming Soon</span>
+      <div class="px-5 py-4 flex items-center gap-1">
+        <span class="text-sm font-medium text-ink flex items-center gap-1">Read story <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
       </div>
-    </div>
+    </a>
 
     <!-- CTA Card -->
-    <div class="flex flex-col border border-border rounded-2xl overflow-hidden">
-      <div class="flex items-center" style="height:200px;background:#F47B5A;">
-        <div class="text-left p-5">
-          <div class="inline-flex items-center gap-2 bg-white/20 text-white text-xs font-semibold px-3 py-1.5 rounded-full mb-4">Your project here</div>
-          <p class="font-display font-bold text-2xl text-white leading-tight">Want results like these?</p>
-        </div>
+    <div class="flex flex-col rounded-2xl overflow-hidden" style="border:1px solid #E8E8F0;">
+      <div class="bg-coral p-6 flex flex-col" style="flex:1;">
+        <div class="inline-flex items-center bg-white/20 text-white text-xs font-semibold px-3 py-1.5 rounded-full self-start mb-6">Your project here</div>
+        <p class="font-display font-bold text-white" style="font-size:1.55rem;line-height:1.25;letter-spacing:-0.02em;">Want results like these?</p>
       </div>
-      <div class="flex flex-col flex-1 p-5">
-        <p class="font-display font-bold text-base text-ink mb-2">Let's work together</p>
-        <p class="text-sm text-muted mb-6 flex-1" style="line-height:1.7">Every project is different. Send me a note about your situation and let's talk through what's possible.</p>
-        <div class="pt-5 border-t border-border">
-          <a href="contact.html" class="btn-coral inline-block bg-coral text-white font-semibold px-5 py-2.5 rounded-full text-sm">Start a conversation →</a>
+      <div class="bg-white px-6 pt-5 flex flex-col flex-1">
+        <p class="font-display font-bold text-ink mb-2" style="font-size:1rem;">Let's work together</p>
+        <p class="text-sm text-muted flex-1" style="line-height:1.7;">Every project is different. Send me a note about your situation and let's talk through what's possible.</p>
+        <div style="border-top:1px solid #E8E8F0;margin:0 -24px;" class="mt-5"></div>
+        <div class="py-4">
+          <a href="contact.html" class="inline-block bg-coral text-white font-semibold px-5 py-2.5 rounded-full text-sm">Start a conversation →</a>
         </div>
       </div>
     </div>
