@@ -24,6 +24,9 @@
           display: ['Poppins', 'sans-serif'],
           body:    ['Inter', 'sans-serif'],
         },
+        screens: {
+          'hero': '900px',
+        },
       }
     }
   }
@@ -90,44 +93,43 @@
 </header>
 
 <!-- HERO -->
-<section class="relative overflow-hidden bg-white pt-8 md:pt-16 pb-0">
+<section class="relative overflow-hidden bg-white pt-8 hero:pt-16 pb-0">
   <div class="max-w-6xl mx-auto px-6">
-    <div class="grid md:grid-cols-[54%_46%] gap-8 items-start">
+    <div class="grid hero:grid-cols-[54%_46%] gap-8 items-start">
 
       <!-- LEFT COL -->
-      <div class="relative z-10 pt-2 md:pt-8 pb-4 flex flex-col text-center md:text-left items-center md:items-start">
+      <div class="relative z-10 pt-2 hero:pt-8 pb-4 flex flex-col text-center hero:text-left items-stretch hero:items-start">
         <!-- Headline -->
         <div class="fade-up relative">
           <!-- Lavender circle behind H1 -->
-          <div class="absolute rounded-full hero-circle-pulse hero-circle w-14 h-14 md:w-24 md:h-24" style="background:#EDE9FB;left:-44px;top:-30px;z-index:0;"></div>
-          <h1 class="relative leading-[1.15] text-ink mb-5 hero-h1" style="font-family:'Poppins',sans-serif;font-weight:800;font-size:clamp(2.5rem,4vw,2.8rem);letter-spacing:-0.02em;z-index:1;max-width:480px;">
+          <div class="absolute rounded-full hero-circle-pulse hero-circle w-14 h-14 hero:w-24 hero:h-24" style="background:#EDE9FB;left:-44px;top:-30px;z-index:0;"></div>
+          <h1 class="relative leading-[1.15] text-ink mb-5 hero-h1" style="font-family:'Poppins',sans-serif;font-weight:800;font-size:clamp(2.5rem,4vw,2.8rem);letter-spacing:-0.02em;z-index:1;">
             <span style="white-space:nowrap;" class="md-nowrap">Get found <span style="color:#f57b5b;">everywhere</span></span><br>search is happening.
           </h1>
         </div>
 
         <!-- Sub copy -->
-        <p class="fade-up-2 text-base text-muted max-w-sm mb-6" style="line-height:1.7;">
-          Work 1:1 with an experienced SEO lead to grow organic traffic, and turn it into real revenue.
+        <p class="fade-up-2 text-base text-muted hero:max-w-sm mb-6" style="line-height:1.7;">
+          Work 1:1 with an experienced SEO lead<br class="hero:hidden"> to grow organic traffic, and turn it into real revenue.
         </p>
 
         <!-- CTA -->
-        <div class="fade-up-3 mb-6 flex items-center justify-center md:justify-start gap-3 flex-wrap">
+        <div class="fade-up-3 mb-6 flex items-center justify-center hero:justify-start gap-3 flex-wrap">
           <a href="contact.html" class="btn-coral ripple-btn inline-block bg-coral text-white px-7 py-3 rounded-full font-semibold text-sm focus-visible:outline-2 focus-visible:outline-coral">Get in Touch</a>
           <a href="services.html" class="btn-outline ripple-btn inline-block border border-border text-ink px-6 py-3 rounded-full font-semibold text-sm">View Services →</a>
         </div>
 
         <!-- Service tag pills -->
-        <div class="fade-up-4 flex flex-wrap md:flex-nowrap gap-2 justify-center md:justify-start">
+        <div class="fade-up-4 flex flex-wrap gap-2 justify-center hero:justify-start">
           <a href="services.html#content" class="text-xs font-normal px-3 py-1.5 rounded-full text-ink hover:opacity-75 transition-opacity duration-200" style="background:#ffe5e4;">Content Strategy</a>
           <a href="services.html#technical" class="text-xs font-normal px-3 py-1.5 rounded-full text-ink hover:opacity-75 transition-opacity duration-200" style="background:#eae1fe;">Technical SEO</a>
-          <div class="w-full md:hidden"></div>
           <a href="services.html#ai" class="text-xs font-normal px-3 py-1.5 rounded-full text-ink hover:opacity-75 transition-opacity duration-200" style="background:#fff0cf;">AI Search</a>
           <a href="services.html#offsite" class="text-xs font-normal px-3 py-1.5 rounded-full text-ink hover:opacity-75 transition-opacity duration-200" style="background:#d3dce5;">Off-site SEO</a>
         </div>
       </div>
 
       <!-- RIGHT COL -->
-      <div class="hidden md:flex items-start justify-center" style="padding-top:0;">
+      <div class="hidden hero:flex items-start justify-center" style="padding-top:0;">
         <div class="relative flex-shrink-0" style="width: 360px; height: 400px;">
 
           <!-- Availability card — upper-left of circle, matching "Top Rated" position in mockup -->
@@ -153,11 +155,11 @@
     </div>
 
     <!-- BOTTOM ROW: testimonial (left) | trusted brands (right) — both inside hero, matching column widths -->
-    <div class="grid md:grid-cols-[54%_46%] gap-14 md:gap-8 pt-4 md:pt-[72px] pb-8 md:pb-16 items-start">
+    <div class="grid hero:grid-cols-[54%_46%] gap-14 hero:gap-8 pt-4 hero:pt-[72px] pb-8 hero:pb-16 items-start">
 
       <!-- Testimonial card (left — matches Jonathan Doe card in reference) -->
-      <div class="rounded-2xl p-7 max-w-md mx-auto md:mx-0 text-center md:text-left" style="background:#fff4f2;box-shadow: 0 4px 20px -4px rgba(244,123,90,0.14);">
-        <div class="flex items-center justify-center md:justify-start gap-4 mb-5">
+      <div class="rounded-2xl p-7 max-w-md mx-auto hero:max-w-md hero:mx-0 text-center hero:text-left" style="background:#fff4f2;box-shadow: 0 4px 20px -4px rgba(244,123,90,0.14);">
+        <div class="flex items-center justify-center hero:justify-start gap-4 mb-5">
           <img src="mike.jpeg" alt="Michael Astrachan" class="w-11 h-11 rounded-full object-cover flex-shrink-0">
           <div>
             <p class="text-sm font-semibold text-ink leading-tight">Michael Astrachan</p>
@@ -165,7 +167,7 @@
           </div>
         </div>
         <p class="text-xs text-ink/80 leading-relaxed italic">"Every time Craig has analyzed our site and recommended content tweaks, structural improvements, or tag optimizations, we've seen a measurable boost in rankings and traffic. His approach isn't guesswork—it's expertise, and it works."</p>
-        <div class="flex items-center justify-center md:justify-start gap-0.5 mt-5">
+        <div class="flex items-center justify-center hero:justify-start gap-0.5 mt-5">
           <svg width="14" height="14" viewBox="0 0 14 14" fill="#fd7c6e"><path d="M7 1l1.55 3.14L12 4.74l-2.5 2.43.59 3.43L7 8.97l-3.09 1.63.59-3.43L2 4.74l3.45-.6L7 1z"/></svg>
           <svg width="14" height="14" viewBox="0 0 14 14" fill="#fd7c6e"><path d="M7 1l1.55 3.14L12 4.74l-2.5 2.43.59 3.43L7 8.97l-3.09 1.63.59-3.43L2 4.74l3.45-.6L7 1z"/></svg>
           <svg width="14" height="14" viewBox="0 0 14 14" fill="#fd7c6e"><path d="M7 1l1.55 3.14L12 4.74l-2.5 2.43.59 3.43L7 8.97l-3.09 1.63.59-3.43L2 4.74l3.45-.6L7 1z"/></svg>
@@ -175,9 +177,9 @@
       </div>
 
       <!-- Trusted by the brands you love (right — matches reference exactly) -->
-      <div class="pt-0">
-        <p class="text-ink mb-4 text-center md:text-left" style="font-family:'Poppins',sans-serif;font-weight:800;font-size:clamp(1.25rem,2.5vw,1.75rem);line-height:1.2;">Trusted by brands you love.</p>
-        <div class="grid grid-cols-4 gap-x-2 md:gap-x-3 lg:gap-x-5 gap-y-4 items-center">
+      <div class="pt-0 max-w-md mx-auto hero:max-w-none hero:mx-0 hero:pr-8">
+        <p class="text-ink mb-4 text-center hero:text-left" style="font-family:'Poppins',sans-serif;font-weight:800;font-size:clamp(1.25rem,2.5vw,1.75rem);line-height:1.2;">Trusted by brands you love.</p>
+        <div class="grid grid-cols-4 gap-x-4 hero:gap-x-5 gap-y-4 items-center w-full hero:mx-0">
           <img src="chase.png" alt="Chase" style="height:54px;width:auto;max-width:100%;filter:grayscale(1) invert(1) brightness(0.47) invert(1);mix-blend-mode:multiply;">
           <img src="applebees.png" alt="Applebee's" style="height:50px;width:auto;max-width:100%;filter:grayscale(1) invert(1) brightness(0.47) invert(1);mix-blend-mode:multiply;">
           <img src="ibm.png" alt="IBM" style="height:44px;width:auto;max-width:100%;filter:grayscale(1) invert(1) brightness(0.47) invert(1);mix-blend-mode:multiply;">

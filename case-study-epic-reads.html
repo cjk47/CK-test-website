@@ -45,6 +45,10 @@
   @media (max-width: 767px) {
     .curved-section { width: 100% !important; margin-left: 0 !important; }
     .hero-img-container { height: 220px !important; }
+    .cs-meta-grid { column-gap: 20px !important; padding-right: 0 !important; }
+    .cs-meta-grid .whitespace-nowrap { white-space: normal !important; }
+    .cs-meta-row { align-items: stretch !important; }
+    .cs-accordion-col { width: 100% !important; }
   }
 </style>
 </head>
@@ -131,8 +135,8 @@
   <!-- White curved section: arcs UP into the hero image, extends below -->
   <div class="curved-section" style="background:#F9F8FF;border-radius:50% 50% 0 0/80px 80px 0 0;margin-top:-280px;position:relative;z-index:1;padding-top:310px;padding-bottom:60px;width:150%;margin-left:-25%;">
     <div class="max-w-5xl mx-auto px-6">
-      <div class="flex flex-col md:flex-row gap-10 md:gap-16 items-start">
-        <div class="grid flex-1" style="grid-template-columns:repeat(3,1fr);column-gap:90px;padding-right:40px;">
+      <div class="cs-meta-row flex flex-col md:flex-row gap-10 md:gap-16 items-start">
+        <div class="cs-meta-grid grid flex-1" style="grid-template-columns:repeat(3,1fr);column-gap:90px;padding-right:40px;">
           <div>
             <div class="mb-2">
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="7" width="16" height="11" rx="2" stroke="#F47B5A" stroke-width="1.6"/><path d="M7 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2" stroke="#F47B5A" stroke-width="1.6"/><line x1="2" y1="11" x2="18" y2="11" stroke="#F47B5A" stroke-width="1.6"/></svg>
@@ -155,7 +159,7 @@
             <p class="font-display text-ink text-sm whitespace-nowrap">United States</p>
           </div>
         </div>
-        <div class="space-y-3 flex-shrink-0" style="width:320px;">
+        <div class="cs-accordion-col space-y-3 flex-shrink-0" style="width:320px;">
           <div class="bg-white rounded-xl border border-border overflow-hidden">
             <button onclick="var p=this.nextElementSibling;var o=p.style.display==='block';p.style.display=o?'none':'block';this.querySelector('.chev').style.transform=o?'rotate(0deg)':'rotate(180deg)';" class="w-full flex items-center justify-between px-5 py-4 font-semibold text-[15px] text-ink text-left">
               Story Overview
@@ -392,32 +396,68 @@
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 2l5 5-5 5" stroke="#9CA3AF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
     </div>
+    <div id="cs-dots" class="flex justify-center gap-2 mt-5"></div>
   </div>
 </section>
 <script>
 (function(){
   var track=document.getElementById('cs-track');
   var cards=track.querySelectorAll('.cs-card');
-  var dots=[];
   var prev=document.getElementById('cs-prev');
   var next=document.getElementById('cs-next');
+  var dotsWrap=document.getElementById('cs-dots');
   var current=0;
-  var visible=3;
-  var max=cards.length-visible;
-  function update(){
-    var w=track.parentElement.offsetWidth;
-    var cw=(w-48)/3;
-    track.style.transform='translateX(-'+(current*(cw+24))+'px)';
-    dots.forEach(function(d,i){d.style.background=i===current?'#F47B5A':'#D1D5DB';});
-    prev.style.borderColor=current===0?'#E5E7EB':'#9CA3AF';
-    prev.querySelector('path').setAttribute('stroke',current===0?'#D1D5DB':'#9CA3AF');
-    next.style.borderColor=current===max?'#E5E7EB':'#9CA3AF';
-    next.querySelector('path').setAttribute('stroke',current===max?'#D1D5DB':'#9CA3AF');
+  var touchStartX=0;
+  function mob(){ return window.innerWidth<768; }
+  function vis(){ return mob()?1:3; }
+  function gap(){ return mob()?12:24; }
+  function cardW(){ var w=track.parentElement.offsetWidth;var v=vis();var g=gap();if(mob()) return w*0.78;return (w-g*(v-1))/v; }
+  function maxIdx(){ return cards.length-vis(); }
+  function buildDots(){
+    dotsWrap.innerHTML='';
+    if(!mob()) return;
+    cards.forEach(function(_,i){
+      var d=document.createElement('button');
+      d.style.cssText='width:8px;height:8px;border-radius:50%;border:none;padding:0;cursor:pointer;transition:background 0.2s,transform 0.2s;background:#D1D5DB;';
+      d.addEventListener('click',function(){current=i;update();});
+      dotsWrap.appendChild(d);
+    });
   }
+  function update(){
+    var cw=cardW();var g=gap();var mx=maxIdx();
+    if(current>mx) current=mx;
+    cards.forEach(function(c){ c.style.width=cw+'px'; });
+    track.style.gap=g+'px';
+    var translate=current*(cw+g);
+    if(mob()&&current===mx&&mx>0) translate-=(cw/4+g);
+    track.style.transform='translateX(-'+translate+'px)';
+    var m=mob();
+    prev.style.display=m?'none':'flex';
+    next.style.display=m?'none':'flex';
+    if(!m){
+      prev.style.borderColor=current===0?'#E5E7EB':'#9CA3AF';
+      prev.querySelector('path').setAttribute('stroke',current===0?'#D1D5DB':'#9CA3AF');
+      next.style.borderColor=current===mx?'#E5E7EB':'#9CA3AF';
+      next.querySelector('path').setAttribute('stroke',current===mx?'#D1D5DB':'#9CA3AF');
+    }
+    dotsWrap.querySelectorAll('button').forEach(function(d,i){
+      d.style.background=i===current?'#F47B5A':'#D1D5DB';
+      d.style.transform=i===current?'scale(1.3)':'scale(1)';
+    });
+  }
+  track.addEventListener('touchstart',function(e){touchStartX=e.touches[0].clientX;},{passive:true});
+  track.addEventListener('touchend',function(e){
+    var dx=e.changedTouches[0].clientX-touchStartX;
+    if(Math.abs(dx)>40){
+      if(dx<0&&current<maxIdx()) current++;
+      else if(dx>0&&current>0) current--;
+      update();
+    }
+  },{passive:true});
   prev.addEventListener('click',function(){if(current>0){current--;update();}});
-  next.addEventListener('click',function(){if(current<max){current++;update();}});
-  dots.forEach(function(d){d.addEventListener('click',function(){current=parseInt(d.getAttribute('data-index'));update();});});
-  window.addEventListener('resize',update);
+  next.addEventListener('click',function(){if(current<maxIdx()){current++;update();}});
+  window.addEventListener('resize',function(){buildDots();update();});
+  buildDots();
   update();
 })();
 </script>

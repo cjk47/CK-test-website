@@ -24,6 +24,9 @@
           display: ['Poppins', 'sans-serif'],
           body:    ['Inter', 'sans-serif'],
         },
+        screens: {
+          'svcmd': '1000px',
+        },
       }
     }
   }
@@ -42,9 +45,16 @@
   .approach-card { position: relative; overflow: hidden; }
   .approach-blob { position: absolute; width: 0; height: 0; border-radius: 50%; background: #F0EFFE; transform: translate(-50%,-50%); opacity: 0; pointer-events: none; z-index: 0; }
   .approach-card .approach-content { position: relative; z-index: 1; }
+  .svc-card-h2 { font-size: clamp(1.1rem, 2.5vw, 1.5rem) !important; }
   @media (max-width: 767px) {
     .svc-h2 { font-size: 1.875rem !important; }
-    .svc-card-h2 { font-size: 18px !important; }
+    .aim-col { margin-top: -16px; justify-content: flex-start !important; }
+  }
+  @media (min-width: 640px) and (max-width: 767px) {
+    .aim-col { width: 575px !important; max-width: 100%; }
+  }
+  @media (max-width: 639px) {
+    .aim-card { height: 345px !important; }
   }
 </style>
 </head>
@@ -75,25 +85,25 @@
 </header>
 
 <!-- PAGE HEADER -->
-<section style="background:#F9F8FF;overflow:hidden;">
+<section style="background:#F9F8FF;overflow-x:hidden;">
   <div class="max-w-6xl mx-auto px-6 pt-14 pb-8 md:py-20">
-    <div class="grid md:grid-cols-[44fr_56fr] gap-20 items-center">
+    <div class="grid md:grid-cols-[44fr_56fr] gap-6 md:gap-20 items-center">
 
       <!-- LEFT -->
       <div>
         <div class="inline-flex items-center gap-2 bg-coral-light text-coral text-xs font-semibold px-3 py-1.5 rounded-full mb-5">
           <span class="w-1.5 h-1.5 rounded-full bg-coral"></span>Services
         </div>
-        <h1 class="font-display font-extrabold text-ink leading-tight mb-5" style="font-size:clamp(1.9rem,2.9vw,2.8rem);letter-spacing:-0.02em;"><span class="md:block">SEO services built</span><span class="md:block">for what's next.</span></h1>
-        <p class="text-muted mb-8 max-w-sm" style="line-height:1.75;">From traditional search to AI-generated answers, I ensure your brand is discoverable across every modern search experience.</p>
+        <h1 class="font-display font-extrabold text-ink leading-tight mb-5" style="font-size:clamp(2.5rem,4vw,2.8rem);letter-spacing:-0.02em;"><span class="svcmd:block">SEO services built</span> <span class="svcmd:block">for what's next.</span></h1>
+        <p class="text-muted mb-3 md:mb-8 max-w-sm" style="line-height:1.75;">From traditional search to AI-generated answers, I ensure your brand is discoverable across every modern search experience.</p>
         <div class="hidden md:flex flex-wrap gap-3">
           <a href="#what-i-do" class="btn-coral inline-flex items-center gap-2 bg-coral text-white font-semibold px-6 py-3 rounded-full text-sm">Explore all services <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 2v10M2.5 8l4.5 4.5L11.5 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
       </div>
 
       <!-- RIGHT: AI Overview mockup -->
-      <div style="min-width:0;display:flex;align-items:center;justify-content:center;position:relative;align-self:center;">
-        <div style="width:100%;height:316px;background:#ffffff;border-radius:20px;box-shadow:0 24px 64px -12px rgba(0,0,0,0.1),0 4px 16px -4px rgba(0,0,0,0.06);overflow:hidden;display:flex;flex-direction:column;position:relative;z-index:1;">
+      <div class="aim-col" style="min-width:0;display:flex;align-items:center;justify-content:center;position:relative;align-self:center;">
+        <div class="aim-card" style="width:100%;height:316px;background:#ffffff;border-radius:20px;box-shadow:0 24px 64px -12px rgba(0,0,0,0.1),0 4px 16px -4px rgba(0,0,0,0.06);overflow:hidden;display:flex;flex-direction:column;position:relative;z-index:1;">
 
           <!-- Google search bar -->
           <div style="padding:10px 14px 8px;border-bottom:1px solid #EDEDF3;display:flex;align-items:center;gap:10px;flex-shrink:0;">
@@ -129,7 +139,7 @@
 
                 <!-- Main paragraph + thumbnail -->
                 <div id="aim-body" style="display:flex;gap:10px;margin-bottom:9px;opacity:0;transition:opacity 0.5s ease;">
-                  <p style="flex:1;font-size:10px;color:#202124;line-height:1.65;margin:0;font-family:'Inter',sans-serif;">The best high-end record players in 2026 include <span id="aim-brand" style="color:#1558d6;cursor:pointer;border-radius:3px;padding:0 3px 0 0;font-weight:700;background:linear-gradient(90deg,#F47B5A,#F7906F) no-repeat left center;background-size:0% 100%;">Your Brand</span>, known for its audiophile-grade turntables with precision belt-drive motors and built-in phono preamps. <span style="color:#1558d6;text-decoration:underline;cursor:pointer;">Pro-Ject</span> and <span style="color:#1558d6;text-decoration:underline;cursor:pointer;">Rega</span> are widely recommended for their cartridge quality. <img src="hifi.png" style="height:14px;vertical-align:middle;border-radius:3px;display:inline;" alt="What Hi-Fi?"/></p>
+                  <p style="flex:1;font-size:10px;color:#202124;line-height:1.65;margin:0;font-family:'Inter',sans-serif;">The best high-end record players include <span id="aim-brand" style="color:#1558d6;cursor:pointer;border-radius:3px;padding:0 3px 0 0;font-weight:700;background:linear-gradient(90deg,#F47B5A,#F7906F) no-repeat left center;background-size:0% 100%;">Your Brand</span>, known for its audiophile-grade turntables with precision belt-drive motors and built-in phono preamps. <span style="color:#1558d6;text-decoration:underline;cursor:pointer;">Pro-Ject</span> and <span style="color:#1558d6;text-decoration:underline;cursor:pointer;">Rega</span> are widely recommended for their cartridge quality. <img src="hifi.png" style="height:14px;vertical-align:middle;border-radius:3px;display:inline;" alt="What Hi-Fi?"/></p>
                   <div id="aim-thumb" style="width:64px;flex-shrink:0;border-radius:8px;overflow:hidden;height:58px;border:1px solid #E8EAED;">
                     <img src="rppp.png" style="width:100%;height:100%;object-fit:cover;" alt="record player"/>
                   </div>
@@ -616,7 +626,7 @@ Grow your organic traffic<br>&amp; conversions.
   .lt-card:hover { box-shadow:0 8px 32px -8px rgba(123,104,238,0.12);transform:translateY(-2px); }
   .lt-icon { width:40px;height:40px;display:flex;align-items:center;justify-content:center;margin-bottom:16px; }
   @media (max-width: 767px) {
-    .principles-wrap { flex-direction: column !important; gap: 32px !important; }
+    .principles-wrap { flex-direction: column !important; gap: 16px !important; }
     .principles-sticky { width: auto !important; position: static !important; padding-top: 0 !important; top: auto !important; }
     .principles-cards { flex-direction: column !important; gap: 16px !important; }
     .principles-offset { margin-top: 0 !important; }
@@ -629,7 +639,7 @@ Grow your organic traffic<br>&amp; conversions.
       <!-- LEFT: sticky -->
       <div class="principles-sticky" style="width:280px;flex-shrink:0;position:sticky;top:108px;align-self:flex-start;padding-top:44px;">
         <h2 class="font-display font-extrabold text-ink mb-4 svc-h2" style="font-size:clamp(1.875rem,3.5vw,2.4rem);line-height:1.15;letter-spacing:-0.03em;">SEO principles behind the work.</h2>
-        <p class="text-muted mb-8" style="line-height:1.75;font-size:0.9rem;">Six beliefs that shape every engagement I take on.</p>
+        <p class="text-muted mb-3 md:mb-8" style="line-height:1.75;font-size:0.9rem;">Six beliefs that shape every engagement I take on.</p>
         <a href="contact.html" class="btn-coral hidden md:inline-flex items-center gap-2 bg-coral text-white font-semibold px-5 py-2.5 rounded-full text-sm">Get in touch
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
@@ -734,8 +744,9 @@ Grow your organic traffic<br>&amp; conversions.
         </div>
       </div>
       <!-- Arrow 1→2 -->
-      <div class="process-item hidden md:flex items-center justify-center" data-delay="150" style="align-self:center;padding-top:22px;">
-        <svg width="24" height="16" viewBox="0 0 24 16" fill="none"><path d="M1 8h18" stroke="#D1D5DB" stroke-width="1.6" stroke-linecap="round"/><path d="M14 3l5 5-5 5" stroke="#D1D5DB" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div class="process-item flex items-center justify-center" data-delay="150" style="align-self:center;padding-top:22px;">
+        <svg class="hidden md:block" width="24" height="16" viewBox="0 0 24 16" fill="none"><path d="M1 8h18" stroke="#D1D5DB" stroke-width="1.6" stroke-linecap="round"/><path d="M14 3l5 5-5 5" stroke="#D1D5DB" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <svg class="block md:hidden" width="16" height="24" viewBox="0 0 16 24" fill="none"><path d="M8 1v18" stroke="#D1D5DB" stroke-width="1.6" stroke-linecap="round"/><path d="M3 14l5 5 5-5" stroke="#D1D5DB" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
       <!-- Step 2 -->
       <div class="process-item" data-delay="200" style="padding-top:22px;position:relative;display:flex;flex-direction:column;">
@@ -751,8 +762,9 @@ Grow your organic traffic<br>&amp; conversions.
         </div>
       </div>
       <!-- Arrow 2→3 -->
-      <div class="process-item hidden md:flex items-center justify-center" data-delay="350" style="align-self:center;padding-top:22px;">
-        <svg width="24" height="16" viewBox="0 0 24 16" fill="none"><path d="M1 8h18" stroke="#D1D5DB" stroke-width="1.6" stroke-linecap="round"/><path d="M14 3l5 5-5 5" stroke="#D1D5DB" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div class="process-item flex items-center justify-center" data-delay="350" style="align-self:center;padding-top:22px;">
+        <svg class="hidden md:block" width="24" height="16" viewBox="0 0 24 16" fill="none"><path d="M1 8h18" stroke="#D1D5DB" stroke-width="1.6" stroke-linecap="round"/><path d="M14 3l5 5-5 5" stroke="#D1D5DB" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <svg class="block md:hidden" width="16" height="24" viewBox="0 0 16 24" fill="none"><path d="M8 1v18" stroke="#D1D5DB" stroke-width="1.6" stroke-linecap="round"/><path d="M3 14l5 5 5-5" stroke="#D1D5DB" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
       <!-- Step 3 -->
       <div class="process-item" data-delay="400" style="padding-top:22px;position:relative;display:flex;flex-direction:column;">
@@ -768,8 +780,9 @@ Grow your organic traffic<br>&amp; conversions.
         </div>
       </div>
       <!-- Arrow 3→4 -->
-      <div class="process-item hidden md:flex items-center justify-center" data-delay="550" style="align-self:center;padding-top:22px;">
-        <svg width="24" height="16" viewBox="0 0 24 16" fill="none"><path d="M1 8h18" stroke="#D1D5DB" stroke-width="1.6" stroke-linecap="round"/><path d="M14 3l5 5-5 5" stroke="#D1D5DB" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div class="process-item flex items-center justify-center" data-delay="550" style="align-self:center;padding-top:22px;">
+        <svg class="hidden md:block" width="24" height="16" viewBox="0 0 24 16" fill="none"><path d="M1 8h18" stroke="#D1D5DB" stroke-width="1.6" stroke-linecap="round"/><path d="M14 3l5 5-5 5" stroke="#D1D5DB" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <svg class="block md:hidden" width="16" height="24" viewBox="0 0 16 24" fill="none"><path d="M8 1v18" stroke="#D1D5DB" stroke-width="1.6" stroke-linecap="round"/><path d="M3 14l5 5 5-5" stroke="#D1D5DB" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
       <!-- Step 4 -->
       <div class="process-item" data-delay="600" style="padding-top:22px;position:relative;display:flex;flex-direction:column;">
