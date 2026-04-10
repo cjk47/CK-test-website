@@ -8,7 +8,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Caveat:wght@400;600;700&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 <script>
   tailwind.config = {
     theme: {
@@ -201,7 +200,7 @@
 
     <div class="text-center mb-16">
       <div class="inline-flex items-center gap-2 bg-coral-light text-coral text-xs font-semibold px-3 py-1.5 rounded-full mb-5">
-        <span class="w-1.5 h-1.5 rounded-full bg-coral"></span>Career
+        <span class="w-1.5 h-1.5 rounded-full bg-coral"></span>Timeline
       </div>
       <h2 class="font-display font-bold text-ink mb-3" style="font-size:clamp(1.8rem,3vw,2.5rem);letter-spacing:-0.02em;line-height:1.2;">How I got here.</h2>
       <p class="text-muted mx-auto" style="max-width:420px;line-height:1.75;">13+ years of organic search across agencies, in-house teams, and enterprise — a few key moments along the way.</p>
@@ -209,7 +208,9 @@
 
     <!-- Desktop timeline -->
     <div id="tl-desktop" class="hidden md:block" style="position:relative;">
-      <div id="tl-desktop-line" style="position:absolute;left:50%;width:1px;background:#F47B5A;transform:translateX(-50%);"></div>
+      <div id="tl-desktop-line" style="position:absolute;left:50%;width:2px;background:#E5E7EB;transform:translateX(-50%);overflow:hidden;">
+        <div id="tl-desktop-fill" style="position:absolute;top:0;left:0;width:100%;height:0;background:#F47B5A;transition:height 0.1s linear;"></div>
+      </div>
 
       <!-- Item 1: left -->
       <div style="display:flex;align-items:flex-start;margin-bottom:60px;position:relative;">
@@ -267,7 +268,9 @@
 
     <!-- Mobile timeline -->
     <div id="tl-mobile" class="md:hidden" style="position:relative;padding-left:32px;margin-left:10px;">
-      <div id="tl-mobile-line" style="position:absolute;left:0;width:1px;background:#F47B5A;"></div>
+      <div id="tl-mobile-line" style="position:absolute;left:0;width:2px;background:#E5E7EB;overflow:hidden;">
+        <div id="tl-mobile-fill" style="position:absolute;top:0;left:0;width:100%;height:0;background:#F47B5A;transition:height 0.1s linear;"></div>
+      </div>
 
       <div style="margin-bottom:40px;position:relative;">
         <div style="position:absolute;left:-21px;top:0;width:28px;height:28px;border-radius:50%;background:radial-gradient(circle, #fff 18%, #F47B5A 18%);border:2px solid #F47B5A;box-shadow:0 0 0 22px #fff;transform:translateX(-50%);" class="tl-dot-mobile"></div>
@@ -302,7 +305,7 @@
 </section>
 <script>
 (function(){
-  function positionLine(lineEl, dots, offsetX){
+  function positionLine(lineEl, dots){
     if(!lineEl || dots.length < 2) return;
     var container = lineEl.parentElement.getBoundingClientRect();
     var first = dots[0].getBoundingClientRect();
@@ -312,6 +315,24 @@
     lineEl.style.top = top + 'px';
     lineEl.style.height = (bottom - top) + 'px';
   }
+
+  function updateFill(){
+    var wh = window.innerHeight;
+    ['desktop','mobile'].forEach(function(type){
+      var lineEl = document.getElementById('tl-'+type+'-line');
+      var fillEl = document.getElementById('tl-'+type+'-fill');
+      if(!lineEl || !fillEl) return;
+      var rect = lineEl.getBoundingClientRect();
+      var lineH = rect.height;
+      if(!lineH) return;
+      // progress: 0 when top of line hits bottom of viewport, 1 when bottom of line hits center
+      var scrolled = wh - rect.top;
+      var total = lineH + wh * 0.4;
+      var progress = Math.min(Math.max(scrolled / total, 0), 1);
+      fillEl.style.height = (progress * lineH) + 'px';
+    });
+  }
+
   function init(){
     positionLine(
       document.getElementById('tl-desktop-line'),
@@ -321,51 +342,27 @@
       document.getElementById('tl-mobile-line'),
       document.querySelectorAll('#tl-mobile .tl-dot-mobile')
     );
+    updateFill();
   }
+
   if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
   else init();
   window.addEventListener('resize', init);
-})();
-</script>
-
-<!-- BASED IN BROOKLYN -->
-<section class="border-t border-border py-16 bg-white">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="grid md:grid-cols-2 gap-12 items-center">
-      <div>
-        <div class="inline-flex items-center gap-2 bg-coral-light text-coral text-xs font-semibold px-3 py-1.5 rounded-full mb-5">
-          <span class="w-1.5 h-1.5 rounded-full bg-coral"></span>Location
-        </div>
-        <h2 class="font-display font-bold text-4xl text-ink mb-4" style="letter-spacing:-0.02em;">Based in Brooklyn.</h2>
-        <p class="text-muted" style="line-height:1.75;">Working with clients across the US and internationally — but always from Brooklyn, NY.</p>
-      </div>
-      <div class="rounded-2xl overflow-hidden border border-border" style="box-shadow:0 4px 24px -6px rgba(0,0,0,0.08);">
-        <style>#about-map .leaflet-tile-pane { filter: grayscale(1) brightness(1.0); }</style>
-        <div id="about-map" style="height:280px;"></div>
-      </div>
-    </div>
-  </div>
-</section>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script>
-(function(){
-  var map = L.map('about-map', { zoomControl:false, dragging:false, scrollWheelZoom:false, doubleClickZoom:false, touchZoom:false, keyboard:false, attributionControl:false }).setView([40.6944,-73.9213],13);
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',{ maxZoom:19, subdomains:'abcd' }).addTo(map);
-  var pin = L.divIcon({ html:'<svg width="30" height="38" viewBox="0 0 30 38" fill="none"><path d="M15 0C6.716 0 0 6.716 0 15c0 9.5 15 23 15 23S30 24.5 30 15C30 6.716 23.284 0 15 0z" fill="#F47B5A"/><circle cx="15" cy="15" r="5.5" fill="white"/></svg>', iconSize:[30,38], iconAnchor:[15,38], className:'' });
-  L.marker([40.6944,-73.9213],{ icon:pin }).addTo(map);
+  window.addEventListener('scroll', updateFill, { passive: true });
 })();
 </script>
 
 <!-- MUSIC -->
-<section class="border-t border-border py-16" style="background:#F9F8FF;">
+<section class="py-16" style="background:#F9F8FF;">
   <div class="max-w-6xl mx-auto px-6">
     <div class="grid md:grid-cols-2 gap-12 items-center">
       <div>
         <div class="inline-flex items-center gap-2 bg-coral-light text-coral text-xs font-semibold px-3 py-1.5 rounded-full mb-5">
           <span class="w-1.5 h-1.5 rounded-full bg-coral"></span>Music is where I unplug
         </div>
-        <h2 class="font-display font-bold text-4xl text-ink mb-4" style="letter-spacing:-0.02em;">What I'm listening to.</h2>
-        <p class="text-muted" style="line-height:1.75;">A rotating mix of whatever's been stuck in my head lately.</p>
+        <h2 class="font-display font-bold text-4xl text-ink mb-4" style="letter-spacing:-0.02em;">A bit about me outside of work.</h2>
+        <p class="text-muted mb-4" style="line-height:1.75;">I love to cook — especially for the people I care about — usually with a record from my growing vinyl collection spinning in the background. I tend to go deep on artist discographies rather than shuffle through playlists.</p>
+        <p class="text-muted" style="line-height:1.75;">When I'm not cooking or listening to music, you'll find me playing pickup basketball, watching the Knicks, or catching a movie. I'm based in Brooklyn, originally from Long Island.</p>
       </div>
       <div>
         <script>
