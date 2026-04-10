@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Caveat:wght@400;600;700&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 <script>
   tailwind.config = {
     theme: {
@@ -96,7 +97,7 @@
 
 <!-- HERO -->
 <section class="max-w-6xl mx-auto px-6 pt-20 pb-10">
-  <div class="grid md:grid-cols-2 gap-16 items-start">
+  <div class="grid md:grid-cols-2 gap-16 items-center">
     <div>
       <div class="inline-flex items-center gap-2 bg-coral-light text-coral text-xs font-semibold px-3 py-1.5 rounded-full mb-5">
         <span class="w-1.5 h-1.5 rounded-full bg-coral"></span>About me
@@ -105,11 +106,11 @@
   <path d="m466.74 279.48c-14.777 4.7344-26.285 12.125-32.016 26.898-3.2695 8.4297-2.6055 34.996-12.836 38.691-8.668 3.0781-18.941-11.934-23.109-17.477-25.621-34.191-37.887-76.531-64.785-110.06-10.703-13.449-27.516-27.562-45.938-19.227-12.125 5.4922-15.723 17.145-16.387 29.41h0.003906c-5.3711-3.6445-11.676-5.6719-18.164-5.8398-6.4922-0.16797-12.891 1.5312-18.445 4.8945-17.711 10.465-15.676 33.531-6.1562 57.113-4.1836-1.1836-8.6094-1.2227-12.816-0.11328-4.207 1.1055-8.0391 3.3203-11.098 6.4102-21.785 21.027 1.75 57.398 14.727 76.012 1.8477 2.6055 3.7422 5.0664 5.6367 7.5781-27.516-6.4883-34.668 23.062-25.527 45.938 16.434 41.012 63.316 65.496 95.898 92.348 30.879 25.48 67.77 44.328 108.92 38.785h0.003906c17.672-2.4258 34.359-9.582 48.297-20.711 13.938-11.129 24.609-25.816 30.887-42.512 9.4727-23.68 9.7539-48.398 9.1406-73.594-0.37891-16.102-1.3242-32.676 2.3672-48.496 3.125-13.309 10.656-23.68 16.387-36.18 17.379-37.18-5.3516-61.992-44.992-49.871zm17.762 58.629c-7.5273 15.625-11.508 32.719-11.652 50.059-1.7539 41.531 6.7734 85.859-24.391 119.34-21.926 23.68-55.551 28.84-85.625 20.27-32.723-9.4727-56.828-33.859-83.539-53.895-17.332-13.117-35.566-26.566-49.395-43.523-6.4883-7.957-14.68-18.941-14.207-29.93 0.23828-9.4727 1.7539-8.4297 9.8047-6.0625 23.395 6.8203 46.934 34.238 63.223 51.527 1.0352 1.1484 2.3359 2.0273 3.7891 2.5586 8.2891 4.3086 18.66-7.7656 11.176-16.34-12.738-14.539-110.68-109.49-84.676-127.87 5.9688-4.168 16.148 1.7539 27.656 12.312h0.003907c7.7734 12.527 17.348 23.84 28.414 33.578 1.0391 0.76172 2.2109 1.3242 3.457 1.6562 15.723 19.465 29.41 38.551 34.289 44.184 8.3828 9.7539 22.352-4.4062 14.207-14.207-10.465-12.125-36.418-51.527-63.648-76.863-3.5508-6.4414-6.6758-12.93-9.4727-18.941-4.7344-9.8516-23.254-50.77 3.3633-42.34 22.398 7.1055 39.164 41.391 50.719 59.625 11.555 18.234 22.543 39.594 37.176 56.359 8.4297 9.707 22.449-4.4062 14.207-14.207-14.207-16.434-38.551-69.949-67.344-100.97-0.89844-6.7266-2.3203-15.344 0-20.41 8.0977-16.48 21.359-1.0898 28.414 8.0508 7.9688 11.141 15.141 22.836 21.453 34.996 13.449 24.344 24.293 50.246 41.105 72.602 10.465 13.922 26.898 31.824 46.223 23.914 10.797-4.4531 16.008-14.633 18.941-25.383 5.918-21.973 6.7266-37.887 33.152-41.391 31.449-4.4062 9.6641 28.793 3.1758 41.293z" fill="#F47B5A"/>
 </svg> I'm Craig.</h1>
       <p class="text-muted text-lg mb-5" style="line-height:1.7">By day, I lead SEO at Bounteous, managing organic strategy for enterprise brands like Best Western, Chase, KKR, and Gerber. On the side, I work with a select number of freelance clients, bringing that same level of thinking to smaller teams who want SEO done right.</p>
-      <p class="text-muted mb-5" style="line-height:1.7">I've spent 13+ years in organic search across SaaS, e-commerce, media, professional services, and local businesses. I know what works, what doesn't, and how quickly things change.</p>
+      <p class="text-muted mb-5" style="line-height:1.7">I've spent 13+ years in organic search across e-commerce, hospitality, food & beverage, and local businesses. I know what works, what doesn't, and how quickly things change.</p>
       <p class="text-muted mb-8" style="line-height:1.7">My focus is simple: build something that lasts. Not short-term spikes, but sustainable growth that compounds over time.</p>
       <a href="contact.html" class="btn-coral inline-flex items-center gap-2 bg-coral text-white px-6 py-3 rounded-full font-semibold">Get in touch</a>
     </div>
-    <div class="flex items-start justify-end" style="padding-top:120px;">
+    <div class="flex items-center justify-end">
       <div class="relative flex-shrink-0" style="width: 400px; height: 440px;">
 
         <!-- Availability badge -->
@@ -136,7 +137,7 @@
 <!-- STATS BANNER -->
 <section class="pb-8 pt-8" style="background:#ffffff;">
   <div class="max-w-6xl mx-auto px-6">
-    <div class="rounded-2xl px-10 py-12" style="background:linear-gradient(135deg,#8B7DEE,#6E5EDF);" id="stats-banner">
+    <div class="rounded-2xl px-10 py-12" style="background:linear-gradient(135deg,#7B68EE,#5E4DD6);" id="stats-banner">
       <p class="font-display font-bold text-white text-center mb-10" style="font-size:2.4rem;letter-spacing:-0.03em;">By the numbers</p>
       <div class="flex flex-col md:flex-row md:justify-center">
 
@@ -156,8 +157,8 @@
         </div>
 
         <div class="px-8 py-4 md:py-0" style="min-width:260px;">
-          <p class="font-display font-bold text-white mb-1" style="font-size:2.75rem;line-height:1;letter-spacing:-0.03em;">1</p>
-          <p style="color:rgba(255,255,255,0.65);font-size:0.8rem;font-family:'Inter',sans-serif;line-height:1.5;">Work directly with me, always</p>
+          <p class="font-display font-bold text-white mb-1" style="font-size:2.75rem;line-height:1;letter-spacing:-0.03em;"><span class="count-up" data-target="94" data-prefix="" data-suffix="%">0</span></p>
+          <p style="color:rgba(255,255,255,0.65);font-size:0.8rem;font-family:'Inter',sans-serif;line-height:1.5;">Client retention rate</p>
         </div>
 
       </div>
@@ -327,161 +328,105 @@
 })();
 </script>
 
-<!-- MY APPROACH -->
-<section class="border-t border-border py-14 bg-offwhite">
-  <div class="max-w-5xl mx-auto px-6">
-    <h2 class="font-display font-bold text-ink text-3xl mb-1" style="line-height:1.2;">My approach to SEO.</h2>
-    <p class="text-muted text-sm mb-10" style="line-height:1.75;">Three principles that shape every engagement I take on.</p>
-    <div class="grid md:grid-cols-3 gap-6">
-
-      <div class="rounded-2xl p-6" style="background:#fff;">
-        <div class="w-9 h-9 rounded-xl flex items-center justify-center mb-4" style="background:#F0EFFE;">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6L12 2z" stroke="#7B68EE" stroke-width="1.6" stroke-linejoin="round"/></svg>
+<!-- BASED IN BROOKLYN -->
+<section class="border-t border-border py-16 bg-white">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <div class="inline-flex items-center gap-2 bg-coral-light text-coral text-xs font-semibold px-3 py-1.5 rounded-full mb-5">
+          <span class="w-1.5 h-1.5 rounded-full bg-coral"></span>Location
         </div>
-        <p class="font-display font-semibold text-ink mb-2" style="font-size:1rem;letter-spacing:-0.02em;">Focus on what actually matters.</p>
-        <p class="text-sm text-muted" style="line-height:1.75;">Not everything in SEO is worth doing. I focus on the work that has a real impact on your business, not just checking boxes or chasing minor improvements.</p>
+        <h2 class="font-display font-bold text-4xl text-ink mb-4" style="letter-spacing:-0.02em;">Based in Brooklyn.</h2>
+        <p class="text-muted" style="line-height:1.75;">Working with clients across the US and internationally — but always from Brooklyn, NY.</p>
       </div>
-
-      <div class="rounded-2xl p-6" style="background:#fff;">
-        <div class="w-9 h-9 rounded-xl flex items-center justify-center mb-4" style="background:#F0EFFE;">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="#7B68EE" stroke-width="1.6"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke="#7B68EE" stroke-width="1.6" stroke-linecap="round"/></svg>
-        </div>
-        <p class="font-display font-semibold text-ink mb-2" style="font-size:1rem;letter-spacing:-0.02em;">Think like a user, not just a crawler.</p>
-        <p class="text-sm text-muted" style="line-height:1.75;">Visibility follows good experiences. I think about how real people use a site, not just how search engines crawl it — visitors should find what they need quickly.</p>
+      <div class="rounded-2xl overflow-hidden border border-border" style="box-shadow:0 4px 24px -6px rgba(0,0,0,0.08);">
+        <style>#about-map .leaflet-tile-pane { filter: grayscale(1) brightness(1.0); }</style>
+        <div id="about-map" style="height:280px;"></div>
       </div>
-
-      <div class="rounded-2xl p-6" style="background:#fff;">
-        <div class="w-9 h-9 rounded-xl flex items-center justify-center mb-4" style="background:#F0EFFE;">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="#7B68EE" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><rect x="3" y="3" width="18" height="18" rx="4" stroke="#7B68EE" stroke-width="1.6"/></svg>
-        </div>
-        <p class="font-display font-semibold text-ink mb-2" style="font-size:1rem;letter-spacing:-0.02em;">Keep things honest and transparent.</p>
-        <p class="text-sm text-muted" style="line-height:1.75;">No jargon, no inflated reports, no vanity metrics. You'll always know what I'm working on, why it matters, and how it's driving results.</p>
-      </div>
-
     </div>
   </div>
 </section>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+(function(){
+  var map = L.map('about-map', { zoomControl:false, dragging:false, scrollWheelZoom:false, doubleClickZoom:false, touchZoom:false, keyboard:false, attributionControl:false }).setView([40.6944,-73.9213],13);
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',{ maxZoom:19, subdomains:'abcd' }).addTo(map);
+  var pin = L.divIcon({ html:'<svg width="30" height="38" viewBox="0 0 30 38" fill="none"><path d="M15 0C6.716 0 0 6.716 0 15c0 9.5 15 23 15 23S30 24.5 30 15C30 6.716 23.284 0 15 0z" fill="#F47B5A"/><circle cx="15" cy="15" r="5.5" fill="white"/></svg>', iconSize:[30,38], iconAnchor:[15,38], className:'' });
+  L.marker([40.6944,-73.9213],{ icon:pin }).addTo(map);
+})();
+</script>
 
-<!-- INTERESTS -->
-<section class="py-20 border-t border-border bg-white">
-  <div class="max-w-5xl mx-auto px-6">
-
-    <div class="inline-flex items-center gap-2 bg-coral-light text-coral text-xs font-semibold px-3 py-1.5 rounded-full mb-5">
-      <span class="w-1.5 h-1.5 rounded-full bg-coral"></span>Outside of SEO
-    </div>
-    <h2 class="font-display font-bold text-4xl text-ink mb-2" style="line-height:1.2;">Other things I care about.</h2>
-    <p class="text-muted mb-10" style="line-height:1.75;">When I'm not thinking about search, you'll find me here.</p>
-
-    <div class="grid md:grid-cols-2 gap-6">
-
-      <!-- Music Card -->
-      <div class="rounded-2xl overflow-hidden" style="background:#0d0d0d;">
-        <div class="px-6 pt-6 pb-4" style="border-bottom:1px solid rgba(255,255,255,0.07);">
-          <p class="text-xs font-semibold uppercase tracking-widest mb-3" style="color:rgba(255,255,255,0.35);">Now listening</p>
-          <div class="flex items-center gap-3">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="#1DB954"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
-            <p class="font-display font-bold text-white text-base">Craig's Playlist</p>
-            <div class="ml-auto flex items-end gap-0.5" style="height:18px;">
-              <span style="width:3px;background:#F47B5A;border-radius:2px;animation:bar 0.8s ease-in-out infinite alternate;height:8px;display:inline-block;"></span>
-              <span style="width:3px;background:#F47B5A;border-radius:2px;animation:bar 0.8s ease-in-out 0.2s infinite alternate;height:14px;display:inline-block;"></span>
-              <span style="width:3px;background:#F47B5A;border-radius:2px;animation:bar 0.8s ease-in-out 0.4s infinite alternate;height:6px;display:inline-block;"></span>
-              <span style="width:3px;background:#F47B5A;border-radius:2px;animation:bar 0.8s ease-in-out 0.1s infinite alternate;height:16px;display:inline-block;"></span>
-              <span style="width:3px;background:#F47B5A;border-radius:2px;animation:bar 0.8s ease-in-out 0.3s infinite alternate;height:10px;display:inline-block;"></span>
+<!-- MUSIC -->
+<section class="border-t border-border py-16" style="background:#F9F8FF;">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <div class="inline-flex items-center gap-2 bg-coral-light text-coral text-xs font-semibold px-3 py-1.5 rounded-full mb-5">
+          <span class="w-1.5 h-1.5 rounded-full bg-coral"></span>Music is where I unplug
+        </div>
+        <h2 class="font-display font-bold text-4xl text-ink mb-4" style="letter-spacing:-0.02em;">What I'm listening to.</h2>
+        <p class="text-muted" style="line-height:1.75;">A rotating mix of whatever's been stuck in my head lately.</p>
+      </div>
+      <div>
+        <script>
+        var PL_TRACKS = [
+          { id: '2zf1izCOz2F22PF27uhxRF', title: 'Love Takes Miles',          artist: 'Cameron Winter'                  },
+          { id: '6JvhkfpPHGnnJ8FLDSRwc3', title: 'Same',                      artist: 'Courtney Barnett'                },
+          { id: '2waAug1IePTKYs2KhTCYlc', title: 'New Threats From The Soul', artist: 'Ryan Davis & the Roadhouse Band' },
+        ];
+        </script>
+        <div class="rounded-2xl overflow-hidden" style="box-shadow:0 4px 24px -6px rgba(0,0,0,0.08);">
+          <div class="flex items-center gap-2 px-5 py-3" style="background:linear-gradient(135deg,#7B68EE,#F47B5A);">
+            <div class="flex items-end gap-0.5" style="height:14px;">
+              <span style="width:2.5px;background:#fff;border-radius:2px;animation:bar 0.8s ease-in-out infinite alternate;height:6px;display:inline-block;"></span>
+              <span style="width:2.5px;background:#fff;border-radius:2px;animation:bar 0.8s ease-in-out 0.2s infinite alternate;height:11px;display:inline-block;"></span>
+              <span style="width:2.5px;background:#fff;border-radius:2px;animation:bar 0.8s ease-in-out 0.4s infinite alternate;height:5px;display:inline-block;"></span>
+              <span style="width:2.5px;background:#fff;border-radius:2px;animation:bar 0.8s ease-in-out 0.1s infinite alternate;height:13px;display:inline-block;"></span>
             </div>
+            <p class="text-xs font-semibold uppercase tracking-widest" style="color:#fff;letter-spacing:0.1em;">Now listening</p>
+          </div>
+          <div id="pl-list" style="background:#1a1625;"></div>
+          <div style="background:#1a1625;padding:0 12px 12px;">
+            <div id="pl-embed-wrap" style="border-radius:10px;overflow:hidden;"></div>
           </div>
         </div>
-        <div id="sp-list"></div>
-        <div class="px-4 pt-3 pb-4">
-          <iframe id="sp-embed" style="border-radius:10px;width:100%;height:152px;border:none;display:block;" allow="autoplay;clipboard-write;encrypted-media;fullscreen;picture-in-picture" loading="lazy"></iframe>
-        </div>
-      </div>
-      <script>
-      // ── Add your Spotify track URLs here ──────────────────────────
-      var SP_TRACKS = [
-        { url: 'https://open.spotify.com/track/5USmPnSXJVRkYTrplmFJyE', title: 'Train in the Distance', artist: 'Paul Simon' },
-        { url: 'https://open.spotify.com/track/1U8tsFkXjJZgLCEiMEkuPM', title: 'Favourite',             artist: 'Fontaines D.C.' },
-      ];
-      // ─────────────────────────────────────────────────────────────
-
-      (function(){
-        var list  = document.getElementById('sp-list');
-        var embed = document.getElementById('sp-embed');
-        var active = 0;
-
-        function embedUrl(url) {
-          return url.replace('open.spotify.com/', 'open.spotify.com/embed/') + '?utm_source=generator&theme=0';
-        }
-
-        function render() {
-          list.innerHTML = '';
-          SP_TRACKS.forEach(function(t, i) {
-            var isActive = i === active;
-            var row = document.createElement('div');
-            row.style.cssText = 'display:flex;align-items:center;gap:16px;padding:11px 24px;cursor:pointer;transition:background 0.15s;border-bottom:1px solid rgba(255,255,255,0.05);' + (isActive ? 'background:rgba(244,123,90,0.12);' : '');
-            row.innerHTML =
-              '<span style="font-size:0.7rem;width:16px;flex-shrink:0;text-align:center;color:' + (isActive ? '#F47B5A' : 'rgba(255,255,255,0.25)') + ';">' + (isActive ? '▶' : (i+1)) + '</span>' +
-              '<div style="flex:1;min-width:0;">' +
-                '<p style="font-size:0.875rem;font-weight:500;color:' + (isActive ? '#fff' : 'rgba(255,255,255,0.8)') + ';white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">' + t.title + '</p>' +
-                '<p style="font-size:0.75rem;color:rgba(255,255,255,0.4);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">' + t.artist + '</p>' +
-              '</div>';
-            row.addEventListener('mouseenter', function(){ if(i !== active) row.style.background = 'rgba(255,255,255,0.04)'; });
-            row.addEventListener('mouseleave', function(){ if(i !== active) row.style.background = ''; });
-            row.addEventListener('click', function(){
-              active = i;
-              render();
-              embed.src = embedUrl(SP_TRACKS[i].url);
-            });
-            list.appendChild(row);
+        <script src="https://open.spotify.com/embed/iframe-api/v1" async></script>
+        <script>
+        var plController = null, plPendingUri = null;
+        window.onSpotifyIframeApiReady = function(IFrameAPI) {
+          var el = document.getElementById('pl-embed-wrap');
+          IFrameAPI.createController(el, { uri:'spotify:track:'+PL_TRACKS[0].id, height:80 }, function(ctrl){
+            plController = ctrl;
+            if(plPendingUri){ ctrl.loadUri(plPendingUri); ctrl.play(); plPendingUri = null; }
           });
-          // remove border from last row
-          if(list.lastChild) list.lastChild.style.borderBottom = 'none';
-        }
-
-        render();
-        embed.src = embedUrl(SP_TRACKS[0].url);
-      })();
-      </script>
-
-      <!-- Letterboxd Card -->
-      <div class="rounded-2xl overflow-hidden" style="background:#1c2228;">
-        <div class="px-6 pt-6 pb-4" style="border-bottom:1px solid rgba(255,255,255,0.07);">
-          <p class="text-xs font-semibold uppercase tracking-widest mb-3" style="color:rgba(255,255,255,0.35);">Favourite films</p>
-          <div class="flex items-center gap-3">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="#00C030"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.5 14.5l-5-3-5 3V6h10v10.5z"/></svg>
-            <p class="font-display font-bold text-white text-base">Letterboxd</p>
-          </div>
-        </div>
-        <div>
-          <div class="flex items-center gap-4 px-6 py-3.5" style="border-bottom:1px solid rgba(255,255,255,0.05);">
-            <span class="text-xs w-4 flex-shrink-0 text-center" style="color:rgba(255,255,255,0.25);">1</span>
-            <div class="flex-1 min-w-0">
-              <p class="text-sm font-medium text-white truncate">There Will Be Blood</p>
-              <p class="text-xs" style="color:#00C030;">★★★★★</p>
-            </div>
-          </div>
-          <div class="flex items-center gap-4 px-6 py-3.5" style="border-bottom:1px solid rgba(255,255,255,0.05);">
-            <span class="text-xs w-4 flex-shrink-0 text-center" style="color:rgba(255,255,255,0.25);">2</span>
-            <div class="flex-1 min-w-0">
-              <p class="text-sm font-medium text-white truncate">Goodfellas</p>
-              <p class="text-xs" style="color:#00C030;">★★★★★</p>
-            </div>
-          </div>
-          <div class="flex items-center gap-4 px-6 py-3.5">
-            <span class="text-xs w-4 flex-shrink-0 text-center" style="color:rgba(255,255,255,0.25);">3</span>
-            <div class="flex-1 min-w-0">
-              <p class="text-sm font-medium text-white truncate">The Godfather</p>
-              <p class="text-xs" style="color:#00C030;">★★★★★</p>
-            </div>
-          </div>
-        </div>
-        <div class="px-6 py-4" style="border-top:1px solid rgba(255,255,255,0.07);">
-          <a href="https://letterboxd.com" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-xs font-semibold" style="color:#00C030;">
-            <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 5l4 3-4 3" stroke="#00C030" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            View on Letterboxd
-          </a>
-        </div>
+        };
+        (function(){
+          var active = 0;
+          var list = document.getElementById('pl-list');
+          function render(){
+            list.innerHTML = '';
+            PL_TRACKS.forEach(function(t,i){
+              var isActive = i===active;
+              var row = document.createElement('div');
+              row.style.cssText = 'display:flex;align-items:center;gap:12px;padding:10px 14px;cursor:pointer;border-bottom:1px solid rgba(255,255,255,0.06);transition:background 0.15s;'+(isActive?'background:rgba(244,123,90,0.15);':'');
+              row.innerHTML = '<span style="font-size:0.7rem;width:14px;text-align:center;flex-shrink:0;color:'+(isActive?'#F47B5A':'rgba(255,255,255,0.3)')+';">'+(isActive?'▶':(i+1))+'</span>'+
+                '<div style="min-width:0;flex:1;"><p style="font-size:0.8rem;font-weight:500;color:'+(isActive?'#fff':'rgba(255,255,255,0.75)')+';white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">'+t.title+'</p>'+
+                '<p style="font-size:0.7rem;color:rgba(255,255,255,0.4);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">'+t.artist+'</p></div>';
+              row.addEventListener('mouseenter',function(){ if(i!==active) row.style.background='rgba(255,255,255,0.05)'; });
+              row.addEventListener('mouseleave',function(){ if(i!==active) row.style.background=''; });
+              row.addEventListener('click',function(){
+                active=i; render();
+                var uri='spotify:track:'+t.id;
+                if(plController){ plController.loadUri(uri); plController.play(); } else { plPendingUri=uri; }
+              });
+              list.appendChild(row);
+            });
+            if(list.lastChild) list.lastChild.style.borderBottom='none';
+          }
+          render();
+        })();
+        </script>
       </div>
-
     </div>
   </div>
 </section>

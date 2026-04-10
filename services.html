@@ -39,29 +39,19 @@
   nav a { transition: color 0.15s ease; }
   nav a:hover { color: #F47B5A; }
   .service-card { scroll-margin-top: 100px; }
-  .svc-icon path, .svc-icon circle {
-    stroke-dasharray: 200;
-    stroke-dashoffset: 200;
-    transition: stroke-dashoffset 0.5s cubic-bezier(0.22,1,0.36,1);
-  }
-  .svc-icon *:nth-child(1) { transition-delay: 0s; }
-  .svc-icon *:nth-child(2) { transition-delay: 0.18s; }
-  .svc-icon *:nth-child(3) { transition-delay: 0.36s; }
-  .svc-icon *:nth-child(4) { transition-delay: 0.54s; }
-  .svc-icon *:nth-child(5) { transition-delay: 0.72s; }
-  .svc-icon.drawn path, .svc-icon.drawn circle {
-    stroke-dashoffset: 0;
-  }
+  .approach-card { position: relative; overflow: hidden; }
+  .approach-blob { position: absolute; width: 0; height: 0; border-radius: 50%; background: #F0EFFE; transform: translate(-50%,-50%); opacity: 0; pointer-events: none; z-index: 0; }
+  .approach-card .approach-content { position: relative; z-index: 1; }
 </style>
 </head>
 <body class="antialiased">
 
 <!-- NAV -->
-<header class="sticky top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-border">
+<header class="sticky top-0 z-50 bg-white border-b border-border">
   <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
     <a href="index.html"><img src="logo.png" alt="Craig Kleila SEO" class="h-16"></a>
     <div class="hidden md:flex items-center gap-8 text-sm font-medium text-muted">
-      <a href="services.html" class="text-coral font-semibold">Services</a>
+      <a href="services.html" class="text-coral font-semibold">SEO Services</a>
       <a href="case-studies.html">Case Studies</a>
       <a href="about.html">About</a>
       
@@ -72,7 +62,7 @@
     </button>
   </nav>
   <div id="mob" class="hidden md:hidden border-t border-border bg-white px-6 py-4 flex flex-col gap-4 text-sm font-medium text-muted">
-    <a href="services.html" class="text-coral">Services</a>
+    <a href="services.html" class="text-coral">SEO Services</a>
     <a href="case-studies.html" class="hover:text-coral">Case Studies</a>
     <a href="about.html" class="hover:text-coral">About</a>
     
@@ -82,24 +72,24 @@
 
 <!-- PAGE HEADER -->
 <section style="background:#F9F8FF;overflow:hidden;">
-  <div class="max-w-6xl mx-auto px-6 py-16">
-    <div class="grid md:grid-cols-[44fr_56fr] gap-12 items-center">
+  <div class="max-w-6xl mx-auto px-6 py-12">
+    <div class="grid md:grid-cols-[44fr_56fr] gap-20 items-center">
 
       <!-- LEFT -->
       <div>
         <div class="inline-flex items-center gap-2 bg-coral-light text-coral text-xs font-semibold px-3 py-1.5 rounded-full mb-5">
           <span class="w-1.5 h-1.5 rounded-full bg-coral"></span>Services
         </div>
-        <h1 class="font-display font-extrabold text-ink leading-tight mb-5" style="font-size:clamp(1.9rem,2.9vw,2.8rem);letter-spacing:-0.02em;">Modern SEO services.</h1>
-        <p class="text-muted mb-8 max-w-sm" style="line-height:1.75;">From traditional search to AI-generated answers, I ensure your brand is discoverable everywhere search is happening.</p>
+        <h1 class="font-display font-extrabold text-ink leading-tight mb-5" style="font-size:clamp(1.9rem,2.9vw,2.8rem);letter-spacing:-0.02em;">SEO services built for what's next.</h1>
+        <p class="text-muted mb-8 max-w-sm" style="line-height:1.75;">From traditional search to AI-generated answers, I ensure your brand is discoverable across every modern search experience.</p>
         <div class="flex flex-wrap gap-3">
           <a href="#what-i-do" class="btn-coral inline-flex items-center gap-2 bg-coral text-white font-semibold px-6 py-3 rounded-full text-sm">Explore all services <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 2v10M2.5 8l4.5 4.5L11.5 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
       </div>
 
       <!-- RIGHT: AI Overview mockup -->
-      <div style="min-width:0;height:345px;display:flex;align-items:center;">
-        <div style="width:100%;height:100%;background:#ffffff;border-radius:20px;box-shadow:0 24px 64px -12px rgba(0,0,0,0.1),0 4px 16px -4px rgba(0,0,0,0.06);overflow:hidden;display:flex;flex-direction:column;">
+      <div style="min-width:0;display:flex;align-items:center;justify-content:center;position:relative;">
+        <div style="width:100%;height:358px;background:#ffffff;border-radius:20px;box-shadow:0 24px 64px -12px rgba(0,0,0,0.1),0 4px 16px -4px rgba(0,0,0,0.06);overflow:hidden;display:flex;flex-direction:column;position:relative;z-index:1;">
 
           <!-- Browser chrome -->
           <div style="background:#F9F9FC;border-bottom:1px solid #EDEDF3;padding:10px 16px;display:flex;align-items:center;gap:8px;flex-shrink:0;">
@@ -148,7 +138,7 @@
 
                 <!-- Main paragraph + thumbnail -->
                 <div id="aim-body" style="display:flex;gap:10px;margin-bottom:9px;opacity:0;transition:opacity 0.5s ease;">
-                  <p style="flex:1;font-size:10px;color:#202124;line-height:1.65;margin:0;font-family:'Inter',sans-serif;">The best high-end record players in 2026 include <span id="aim-brand" style="color:#1558d6;cursor:pointer;border-radius:3px;padding:0 3px;font-weight:700;background:linear-gradient(#F47B5A,#F47B5A) no-repeat left center;background-size:0% 100%;">Your Brand</span>, known for its audiophile-grade turntables with precision belt-drive motors and built-in phono preamps. <span style="color:#1558d6;text-decoration:underline;cursor:pointer;">Pro-Ject</span> and <span style="color:#1558d6;text-decoration:underline;cursor:pointer;">Rega</span> are widely recommended for their cartridge quality. <img src="hifi.png" style="height:14px;vertical-align:middle;border-radius:3px;display:inline;" alt="What Hi-Fi?"/></p>
+                  <p style="flex:1;font-size:10px;color:#202124;line-height:1.65;margin:0;font-family:'Inter',sans-serif;">The best high-end record players in 2026 include <span id="aim-brand" style="color:#1558d6;cursor:pointer;border-radius:3px;padding:0 3px 0 0;font-weight:700;background:linear-gradient(90deg,#F47B5A,#F7906F) no-repeat left center;background-size:0% 100%;">Your Brand</span>, known for its audiophile-grade turntables with precision belt-drive motors and built-in phono preamps. <span style="color:#1558d6;text-decoration:underline;cursor:pointer;">Pro-Ject</span> and <span style="color:#1558d6;text-decoration:underline;cursor:pointer;">Rega</span> are widely recommended for their cartridge quality. <img src="hifi.png" style="height:14px;vertical-align:middle;border-radius:3px;display:inline;" alt="What Hi-Fi?"/></p>
                   <div id="aim-thumb" style="width:64px;flex-shrink:0;border-radius:8px;overflow:hidden;height:58px;border:1px solid #E8EAED;">
                     <img src="rppp.png" style="width:100%;height:100%;object-fit:cover;" alt="record player"/>
                   </div>
@@ -238,51 +228,6 @@
   </div>
 </section>
 
-<!-- HERO STATS BAR -->
-<div style="background:#ffffff;padding:16px 0;">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="grid grid-cols-2 md:grid-cols-4">
-      <div class="flex flex-col items-center justify-center py-1 px-4 text-center" style="border-right:1px solid #E8E8F0;margin:14px 0;">
-        <div class="mb-3" style="width:40px;height:40px;border-radius:12px;background:#FFF1EC;display:flex;align-items:center;justify-content:center;">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-            <circle cx="8.5" cy="8.5" r="5" stroke="#F47B5A" stroke-width="1.6"/>
-            <path d="M12.5 12.5l3.5 3.5" stroke="#F47B5A" stroke-width="1.6" stroke-linecap="round"/>
-            <path d="M6.5 8.5h4M8.5 6.5v4" stroke="#F47B5A" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <p class="text-sm text-muted" style="line-height:1.4;">Improve rankings &amp;<br>visibility</p>
-      </div>
-      <div class="flex flex-col items-center justify-center py-1 px-4 text-center" style="border-right:1px solid #E8E8F0;margin:14px 0;">
-        <div class="mb-3" style="width:40px;height:40px;border-radius:12px;background:#F0EFFE;display:flex;align-items:center;justify-content:center;">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-            <path d="M3 14l4-4.5 3.5 2.5L15 7l3-3" stroke="#7B68EE" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M15.5 4h3v3" stroke="#7B68EE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <p class="text-sm text-muted" style="line-height:1.4;">More traffic, leads &amp;<br>revenue</p>
-      </div>
-      <div class="flex flex-col items-center justify-center py-1 px-4 text-center" style="border-right:1px solid #E8E8F0;margin:14px 0;">
-        <div class="mb-3" style="width:40px;height:40px;border-radius:12px;background:#fff0cf;display:flex;align-items:center;justify-content:center;">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-            <path d="M10 2C10 2 10.8 7.5 17 10C10.8 12.5 10 18 10 18C10 18 9.2 12.5 3 10C9.2 7.5 10 2 10 2Z" stroke="#C4900A" stroke-width="1.5" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <p class="text-sm text-muted" style="line-height:1.4;">Visible in AI-generated<br>answers</p>
-      </div>
-      <div class="flex flex-col items-center justify-center py-1 px-4 text-center" style="margin:14px 0;">
-        <div class="mb-3" style="width:40px;height:40px;border-radius:12px;background:#FFF1EC;display:flex;align-items:center;justify-content:center;">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-            <rect x="2" y="12" width="4" height="6" rx="1" stroke="#F47B5A" stroke-width="1.5"/>
-            <rect x="8" y="8" width="4" height="10" rx="1" stroke="#F47B5A" stroke-width="1.5"/>
-            <rect x="14" y="4" width="4" height="14" rx="1" stroke="#F47B5A" stroke-width="1.5"/>
-          </svg>
-        </div>
-        <p class="text-sm text-muted" style="line-height:1.4;">Long-term return on<br>investment</p>
-      </div>
-    </div>
-  </div>
-</div>
-
 <style>
   @keyframes aim-blink { 0%,100%{opacity:1} 50%{opacity:0} }
   #aim-cursor { animation: aim-blink 1s step-end infinite; }
@@ -305,7 +250,7 @@
       $(id).style.opacity = '0';
     });
     var brand = $('aim-brand');
-    if(brand){ brand.style.transition = 'none'; brand.style.backgroundSize = '0% 100%'; brand.style.color = '#1558d6'; }
+    if(brand){ brand.style.transition = 'none'; brand.style.backgroundSize = '0% 100%'; brand.style.color = '#1558d6'; brand.style.background = 'linear-gradient(90deg,#F47B5A,#F7906F) no-repeat left center'; brand.style.backgroundSize = '0% 100%'; }
   }
 
   function typeQuery(cb){
@@ -349,9 +294,9 @@
     setTimeout(function(){
       var brand = $('aim-brand');
       if(brand){
-        brand.style.transition = 'background-size 0.45s cubic-bezier(0.4,0,0.2,1)';
+        brand.style.transition = 'background-size 0.7s linear';
         brand.style.backgroundSize = '100% 100%';
-        setTimeout(function(){ brand.style.color = '#ffffff'; }, 300);
+        setTimeout(function(){ brand.style.color = '#ffffff'; }, 800);
       }
     }, 650);
   }
@@ -381,15 +326,15 @@
 </script>
 
 <!-- VALUE PROP BAND -->
-<section id="what-i-do" class="py-12 md:py-14" style="background:#ffffff;">
+<section id="what-i-do" class="pt-12 pb-14 md:pt-14 md:pb-14" style="background:#ffffff;">
   <div class="max-w-6xl mx-auto px-6 text-center flex flex-col items-center">
     <div class="inline-flex items-center gap-2 bg-coral-light text-coral text-xs font-semibold px-3 py-1.5 rounded-full mb-5">
       <span class="w-1.5 h-1.5 rounded-full bg-coral"></span>What I do
     </div>
     <h2 style="font-family:'Poppins',sans-serif;font-weight:800;font-size:clamp(1.6rem,2.5vw,2.2rem);color:#1A1A2E;letter-spacing:-0.02em;line-height:1.2;margin-bottom:12px;">
-      SEO strategy that delivers<br>measurable results.
+Grow your organic traffic<br>&amp; conversions.
     </h2>
-    <p style="font-size:1rem;color:#6B7280;max-width:480px;line-height:1.7;font-family:'Inter',sans-serif;margin-bottom:0;">A focused, hands-on approach to search that drives real&nbsp;business outcomes — not vanity metrics.</p>
+    <p style="font-size:1rem;color:#6B7280;max-width:480px;line-height:1.7;font-family:'Inter',sans-serif;margin-bottom:0;">A hands-on, human-first approach to search that drives real&nbsp;business outcomes.</p>
   </div>
 </section>
 
@@ -479,7 +424,7 @@
 </script>
 
 <!-- SERVICES -->
-<div class="max-w-6xl mx-auto px-6 pb-16 mt-4 md:mt-4">
+<div class="max-w-6xl mx-auto px-6 pb-16 mt-2">
 
   <!-- Top row: 2 cards -->
   <div class="grid md:grid-cols-2 gap-4 mb-4">
@@ -497,7 +442,7 @@
           </svg>
         </div>
       </div>
-      <p class="text-sm mb-6" style="color:#6B7280;line-height:1.7;">The bar for content keeps rising. Visibility today means fully answering the query, addressing customer pain points, and bringing genuine insight. I start with the questions your audience is asking, identify gaps, and build a content plan designed to drive revenue.</p>
+      <p class="text-sm mb-8" style="color:#6B7280;line-height:1.7;">The bar for content keeps rising. Visibility today means fully answering the query, addressing customer pain points, and bringing genuine insight. I start with the questions your audience is asking, identify gaps, and build a content plan designed to drive profits.</p>
       <div class="flex flex-wrap gap-2">
         <span class="inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-full" style="background:rgba(255,255,255,0.65);color:#d4603d;"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" style="flex-shrink:0;"><circle cx="6" cy="6" r="6" fill="#F47B5A"/><path d="M3 6l2 2 4-3.5" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Keyword research</span>
         <span class="inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-full" style="background:rgba(255,255,255,0.65);color:#d4603d;"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" style="flex-shrink:0;"><circle cx="6" cy="6" r="6" fill="#F47B5A"/><path d="M3 6l2 2 4-3.5" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Topic clusters</span>
@@ -515,7 +460,7 @@
           <svg class="svc-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M8 6L3 12l5 6" stroke="#7B68EE" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 6l5 6-5 6" stroke="#7B68EE" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
       </div>
-      <p class="text-sm mb-6" style="color:#6B7280;line-height:1.7;">Search performance often comes down to what's "behind the curtain." Weak technical foundations quietly limit growth and usually go unnoticed until traffic drops. I look at how search engines crawl and understand your site and work with your team to fix issues.</p>
+      <p class="text-sm mb-8" style="color:#6B7280;line-height:1.7;">Search performance often comes down to what's "behind the curtain." Weak technical foundations quietly limit growth and usually go unnoticed until traffic drops. I look at how search engines crawl and understand your site and work with your team to fix issues.</p>
       <div class="flex flex-wrap gap-2">
         <span class="inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-full" style="background:rgba(255,255,255,0.65);color:#6355CC;"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" style="flex-shrink:0;"><circle cx="6" cy="6" r="6" fill="#7B68EE"/><path d="M3 6l2 2 4-3.5" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Technical audit</span>
         <span class="inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-full" style="background:rgba(255,255,255,0.65);color:#6355CC;"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" style="flex-shrink:0;"><circle cx="6" cy="6" r="6" fill="#7B68EE"/><path d="M3 6l2 2 4-3.5" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Core Web Vitals</span>
@@ -537,10 +482,10 @@
           <span style="background:#FDE9A0;color:#92700A;font-size:10px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;padding:2px 8px;border-radius:20px;font-family:'Inter',sans-serif;">New</span>
         </div>
         <div class="flex-shrink-0 ml-3" style="padding-top:4px;">
-          <svg class="svc-icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 1C10 1 11 8 19 10C11 12 10 19 10 19C10 19 9 12 1 10C9 8 10 1 10 1Z" fill="none" stroke="#b8860b" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          <svg class="svc-icon" data-draw-duration="1.6" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 1C10 1 11 8 19 10C11 12 10 19 10 19C10 19 9 12 1 10C9 8 10 1 10 1Z" fill="none" stroke="#b8860b" stroke-width="1.5" stroke-linejoin="round"/></svg>
         </div>
       </div>
-      <p class="text-sm mb-5" style="color:#6B7280;line-height:1.7;">The way people find answers is changing fast. Clicks are shifting to AI Overviews and chat interfaces, and most sites aren't showing up. I audit your visibility across AI platforms and optimize your content to appear where search is heading.</p>
+      <p class="text-sm mb-8" style="color:#6B7280;line-height:1.7;">The way people find answers is shifting fast. Visibility now means showing up in AI-generated results, not just rankings. I analyze how your brand appears across AI platforms and structure your content so it's clear, trusted, and easy to surface in answers.</p>
       <div class="flex flex-wrap gap-2">
         <span class="inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-full" style="background:rgba(255,255,255,0.65);color:#9a700a;"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" style="flex-shrink:0;"><circle cx="6" cy="6" r="6" fill="#b8860b"/><path d="M3 6l2 2 4-3.5" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>LLM visibility audit</span>
         <span class="inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-full" style="background:rgba(255,255,255,0.65);color:#9a700a;"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" style="flex-shrink:0;"><circle cx="6" cy="6" r="6" fill="#b8860b"/><path d="M3 6l2 2 4-3.5" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>E-E-A-T signals</span>
@@ -557,7 +502,7 @@
           <svg class="svc-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="6" cy="12" r="3" stroke="#5c7a8f" stroke-width="1.7"/><circle cx="18" cy="6" r="3" stroke="#5c7a8f" stroke-width="1.7"/><circle cx="18" cy="18" r="3" stroke="#5c7a8f" stroke-width="1.7"/><path d="M8.7 10.7l6.6-3.4M8.7 13.3l6.6 3.4" stroke="#5c7a8f" stroke-width="1.5" stroke-linecap="round"/></svg>
         </div>
       </div>
-      <p class="text-sm mb-5" style="color:#6B7280;line-height:1.7;">Authority isn't claimed, it's earned through what others say about you. I identify where your competitors have an edge, find opportunities they've missed, and build authority through targeted outreach and digital PR.</p>
+      <p class="text-sm mb-8" style="color:#6B7280;line-height:1.7;">Authority is built through what others say about you. I identify where your competitors have an edge, uncover missed opportunities, and earn high-quality mentions that strengthen your credibility across search and AI.</p>
       <div class="flex flex-wrap gap-2">
         <span class="inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-full" style="background:rgba(255,255,255,0.65);color:#4a6475;"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" style="flex-shrink:0;"><circle cx="6" cy="6" r="6" fill="#5c7a8f"/><path d="M3 6l2 2 4-3.5" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Backlink audit</span>
         <span class="inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-full" style="background:rgba(255,255,255,0.65);color:#4a6475;"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" style="flex-shrink:0;"><circle cx="6" cy="6" r="6" fill="#5c7a8f"/><path d="M3 6l2 2 4-3.5" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Digital PR</span>
@@ -570,20 +515,6 @@
 
 </div>
 
-<script>
-(function(){
-  var icons = document.querySelectorAll('.svc-icon');
-  var obs = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('drawn');
-        obs.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.7 });
-  icons.forEach(function(icon) { obs.observe(icon); });
-})();
-</script>
 
 <!-- SEO IS EVOLVING -->
 <section style="background:#F9F8FF;padding:60px 0 100px;overflow-x:hidden;">
@@ -685,6 +616,83 @@
 })();
 </script>
 
+<!-- MY APPROACH -->
+<style>
+  .lt-card { background:#fff;border:1px solid #E8E8F0;border-radius:16px;padding:28px;transition:box-shadow 0.2s ease,transform 0.2s cubic-bezier(0.22,1,0.36,1); }
+  .lt-card:hover { box-shadow:0 8px 32px -8px rgba(123,104,238,0.12);transform:translateY(-2px); }
+  .lt-icon { width:40px;height:40px;display:flex;align-items:center;justify-content:center;margin-bottom:16px; }
+</style>
+<section class="bg-white" style="padding:80px 0;">
+  <div class="max-w-6xl mx-auto px-6">
+    <div style="display:flex;gap:80px;align-items:flex-start;">
+
+      <!-- LEFT: sticky -->
+      <div style="width:280px;flex-shrink:0;position:sticky;top:108px;align-self:flex-start;padding-top:44px;">
+        <h2 class="font-display font-extrabold text-ink mb-4" style="font-size:clamp(1.8rem,2.8vw,2.4rem);line-height:1.15;letter-spacing:-0.03em;">SEO principles behind the work.</h2>
+        <p class="text-muted mb-8" style="line-height:1.75;font-size:0.9rem;">Three principles that shape every engagement I take on.</p>
+        <a href="contact.html" class="btn-coral inline-flex items-center gap-2 bg-coral text-white font-semibold px-5 py-2.5 rounded-full text-sm">Get in touch
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
+      <!-- RIGHT: two explicit flex columns (2 left, 3 right) -->
+      <div style="flex:1;display:flex;gap:20px;align-items:flex-start;">
+
+        <!-- Left col: 2 cards, offset so each sits between two right cards -->
+        <div style="flex:1;display:flex;flex-direction:column;gap:20px;margin-top:100px;">
+
+          <div class="lt-card">
+            <div class="lt-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6L12 2z" stroke="#F47B5A" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="font-display font-semibold text-ink mb-2" style="font-size:1rem;letter-spacing:-0.01em;">Value over vanity</h3>
+            <p class="text-muted text-sm" style="line-height:1.75;">Most SEO tasks don't move the needle. I skip the checkboxes and focus only on the work that drives ROI.</p>
+          </div>
+
+          <div class="lt-card">
+            <div class="lt-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="#F47B5A" stroke-width="1.6"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke="#F47B5A" stroke-width="1.6" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="font-display font-semibold text-ink mb-2" style="font-size:1rem;letter-spacing:-0.01em;">Human-first experiences</h3>
+            <p class="text-muted text-sm" style="line-height:1.75;">Visibility follows good experiences. If real people struggle to find what they need, no amount of optimization will hold your position.</p>
+          </div>
+
+        </div>
+
+        <!-- Right col: 3 cards, starts at top -->
+        <div style="flex:1;display:flex;flex-direction:column;gap:20px;">
+
+          <div class="lt-card">
+            <div class="lt-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M3 17l4-8 4 4 4-6 4 10" stroke="#F47B5A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="font-display font-semibold text-ink mb-2" style="font-size:1rem;letter-spacing:-0.01em;">Build for the long game</h3>
+            <p class="text-muted text-sm" style="line-height:1.75;">Quick wins are nice, but compounding growth is the goal. Everything I do builds lasting authority that keeps paying off down the line.</p>
+          </div>
+
+          <div class="lt-card">
+            <div class="lt-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="#F47B5A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><rect x="3" y="3" width="18" height="18" rx="4" stroke="#F47B5A" stroke-width="1.6"/></svg>
+            </div>
+            <h3 class="font-display font-semibold text-ink mb-2" style="font-size:1rem;letter-spacing:-0.01em;">Straight talk, always</h3>
+            <p class="text-muted text-sm" style="line-height:1.75;">You'll always know what I'm working on and why it matters. Reports reflect real business results, not numbers chosen to look good.</p>
+          </div>
+
+          <div class="lt-card">
+            <div class="lt-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 3C7 3 3 7 3 12s4 9 9 9 9-4 9-9" stroke="#F47B5A" stroke-width="1.6" stroke-linecap="round"/><path d="M17 3l4 4-4 4M21 7h-7" stroke="#F47B5A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="font-display font-semibold text-ink mb-2" style="font-size:1rem;letter-spacing:-0.01em;">Build on solid ground</h3>
+            <p class="text-muted text-sm" style="line-height:1.75;">Technical SEO is the foundation everything else sits on. Like a house with a cracked foundation, great content and strong links can't do their job if crawling, indexation, or site structure are broken underneath.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- SEO PROCESS -->
 <style>
   .process-item {
@@ -697,11 +705,11 @@
     transform: translateY(0);
   }
 </style>
-<section id="process-section" style="background:#ffffff;padding:60px 0 80px;">
+<section id="process-section" style="background:#F9F8FF;padding:60px 0 80px;">
   <div class="max-w-6xl mx-auto px-6">
     <div class="text-center mb-16">
-      <div class="inline-flex items-center gap-2 bg-coral-light text-coral text-xs font-semibold px-3 py-1.5 rounded-full mb-5">
-        <span class="w-1.5 h-1.5 rounded-full bg-coral"></span>How it works
+      <div class="inline-flex items-center gap-2 bg-violet-light text-violet text-xs font-semibold px-3 py-1.5 rounded-full mb-5">
+        <span class="w-1.5 h-1.5 rounded-full bg-violet"></span>How it works
       </div>
       <h2 class="font-display font-bold text-3xl md:text-4xl text-ink tracking-tight mb-4">A transparent SEO process.</h2>
       <p class="text-muted max-w-xl mx-auto" style="line-height:1.7;">We guide you through each step, ensuring you're informed and confident in our approach.</p>
@@ -709,7 +717,7 @@
     <div class="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr_auto_1fr_auto_1fr] gap-x-2 gap-y-6 items-stretch">
       <!-- Step 1 -->
       <div class="process-item" data-delay="0" style="padding-top:22px;position:relative;display:flex;flex-direction:column;">
-        <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);z-index:1;width:44px;height:44px;border-radius:50%;background:#F47B5A;display:flex;align-items:center;justify-content:center;">
+        <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);z-index:1;width:44px;height:44px;border-radius:50%;background:#7B68EE;display:flex;align-items:center;justify-content:center;">
           <span style="font-size:1.1rem;font-weight:800;color:#ffffff;font-family:'Poppins',sans-serif;line-height:1;">1</span>
         </div>
         <div class="rounded-2xl overflow-hidden text-center" style="background:#ffffff;border:1px solid #E5E7EB;flex:1;display:flex;flex-direction:column;">
@@ -726,7 +734,7 @@
       </div>
       <!-- Step 2 -->
       <div class="process-item" data-delay="200" style="padding-top:22px;position:relative;display:flex;flex-direction:column;">
-        <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);z-index:1;width:44px;height:44px;border-radius:50%;background:#F47B5A;display:flex;align-items:center;justify-content:center;">
+        <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);z-index:1;width:44px;height:44px;border-radius:50%;background:#7B68EE;display:flex;align-items:center;justify-content:center;">
           <span style="font-size:1.1rem;font-weight:800;color:#ffffff;font-family:'Poppins',sans-serif;line-height:1;">2</span>
         </div>
         <div class="rounded-2xl overflow-hidden text-center" style="background:#ffffff;border:1px solid #E5E7EB;flex:1;display:flex;flex-direction:column;">
@@ -743,7 +751,7 @@
       </div>
       <!-- Step 3 -->
       <div class="process-item" data-delay="400" style="padding-top:22px;position:relative;display:flex;flex-direction:column;">
-        <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);z-index:1;width:44px;height:44px;border-radius:50%;background:#F47B5A;display:flex;align-items:center;justify-content:center;">
+        <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);z-index:1;width:44px;height:44px;border-radius:50%;background:#7B68EE;display:flex;align-items:center;justify-content:center;">
           <span style="font-size:1.1rem;font-weight:800;color:#ffffff;font-family:'Poppins',sans-serif;line-height:1;">3</span>
         </div>
         <div class="rounded-2xl overflow-hidden text-center" style="background:#ffffff;border:1px solid #E5E7EB;flex:1;display:flex;flex-direction:column;">
@@ -760,7 +768,7 @@
       </div>
       <!-- Step 4 -->
       <div class="process-item" data-delay="600" style="padding-top:22px;position:relative;display:flex;flex-direction:column;">
-        <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);z-index:1;width:44px;height:44px;border-radius:50%;background:#F47B5A;display:flex;align-items:center;justify-content:center;">
+        <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);z-index:1;width:44px;height:44px;border-radius:50%;background:#7B68EE;display:flex;align-items:center;justify-content:center;">
           <span style="font-size:1.1rem;font-weight:800;color:#ffffff;font-family:'Poppins',sans-serif;line-height:1;">4</span>
         </div>
         <div class="rounded-2xl overflow-hidden text-center" style="background:#ffffff;border:1px solid #E5E7EB;flex:1;display:flex;flex-direction:column;">
@@ -795,25 +803,58 @@
 </script>
 
 <!-- CTA -->
-<section class="relative overflow-hidden bg-offwhite border-t border-border py-20 px-6 text-center">
+<section class="relative overflow-hidden bg-white border-t border-border py-20 px-6 text-center">
   <div class="relative z-10 max-w-xl mx-auto">
-    <div class="inline-flex items-center gap-2 text-violet text-xs font-semibold px-3 py-1.5 rounded-full mb-5" style="background:#F0EFFE;">
-      <span class="w-1.5 h-1.5 rounded-full" style="background:#7B68EE;"></span>Let's Talk
+    <div class="inline-flex items-center gap-2 text-coral text-xs font-semibold px-3 py-1.5 rounded-full mb-5" style="background:#FFF1EC;">
+      <span class="w-1.5 h-1.5 rounded-full bg-coral"></span>Let's Talk
     </div>
     <h2 class="font-display font-bold text-4xl text-ink tracking-tight mb-4">Not sure which service fits?</h2>
     <p class="text-muted mb-8" style="line-height:1.7">Drop me a note about your situation and I'll point you in the right direction — no commitment needed.</p>
-    <a href="contact.html" class="btn-coral inline-block bg-coral text-white font-semibold px-8 py-4 rounded-full text-base">Let's Talk</a>
+    <a href="contact.html" id="cta-shimmy-btn" class="btn-coral inline-block bg-coral text-white font-semibold px-8 py-4 rounded-full text-base">Let's Talk</a>
   </div>
   <div class="absolute -left-16 top-1/2 -translate-y-1/2 w-64 h-64 rounded-full" style="background: radial-gradient(circle, #F47B5A18 0%, transparent 70%);"></div>
   <div class="absolute -right-16 top-1/2 -translate-y-1/2 w-64 h-64 rounded-full" style="background: radial-gradient(circle, #7B68EE18 0%, transparent 70%);"></div>
 </section>
+<style>
+  @keyframes shimmy {
+    0%   { transform: translateX(0); }
+    20%  { transform: translateX(-3px); }
+    40%  { transform: translateX(3px); }
+    60%  { transform: translateX(-2px); }
+    80%  { transform: translateX(2px); }
+    100% { transform: translateX(0); }
+  }
+  .shimmy { animation: shimmy 0.5s ease-in-out both; }
+</style>
+<script>
+(function() {
+  var btn = document.getElementById('cta-shimmy-btn');
+  if (!btn) return;
+  var triggered = false;
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting && !triggered) {
+        triggered = true;
+        setTimeout(function() {
+          btn.classList.add('shimmy');
+          btn.addEventListener('animationend', function() {
+            btn.classList.remove('shimmy');
+          }, { once: true });
+        }, 300);
+        observer.unobserve(btn);
+      }
+    });
+  }, { threshold: 0.8 });
+  observer.observe(btn);
+})();
+</script>
 
 <!-- FOOTER -->
 <footer class="border-t border-border">
   <div class="max-w-6xl mx-auto px-6 py-10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted">
     <img src="logo.png" alt="Craig Kleila SEO" class="h-12">
     <nav class="flex gap-6">
-      <a href="services.html" class="hover:text-coral transition-colors duration-150">Services</a>
+      <a href="services.html" class="hover:text-coral transition-colors duration-150">SEO Services</a>
       <a href="case-studies.html" class="hover:text-coral transition-colors duration-150">Case Studies</a>
       <a href="about.html" class="hover:text-coral transition-colors duration-150">About</a>
       <a href="contact.html" class="hover:text-coral transition-colors duration-150">Contact</a>
@@ -822,6 +863,54 @@
   </div>
 </footer>
 
+<script>
+(function(){
+  function initIcon(icon) {
+    var els = Array.from(icon.querySelectorAll('path, circle, polyline, line, rect'));
+    els.forEach(function(el) {
+      var len;
+      try { len = el.getTotalLength(); } catch(e) { return; }
+      if (!len) return;
+      el.setAttribute('stroke-dasharray', len);
+      el.setAttribute('stroke-dashoffset', len);
+    });
+  }
+
+  function drawIcon(icon) {
+    var duration = parseFloat(icon.getAttribute('data-draw-duration') || '0.8');
+    var els = Array.from(icon.querySelectorAll('path, circle, polyline, line, rect'));
+    els.forEach(function(el, i) {
+      var len;
+      try { len = el.getTotalLength(); } catch(e) { return; }
+      if (!len) return;
+      // Double rAF ensures painted hidden state before transition starts
+      requestAnimationFrame(function() {
+        requestAnimationFrame(function() {
+          el.style.transition = 'stroke-dashoffset ' + duration + 's cubic-bezier(0.22,1,0.36,1) ' + (i * 140) + 'ms';
+          el.setAttribute('stroke-dashoffset', '0');
+        });
+      });
+    });
+  }
+
+  // Pre-hide all icons immediately on load so nothing flashes in
+  document.querySelectorAll('.svc-icon').forEach(initIcon);
+
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        var icon = entry.target.querySelector('.svc-icon');
+        if (icon) drawIcon(icon);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  document.querySelectorAll('.service-card').forEach(function(card) {
+    observer.observe(card);
+  });
+})();
+</script>
 
 </body>
 </html>

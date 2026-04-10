@@ -48,11 +48,11 @@
 <body class="antialiased">
 
 <!-- NAV -->
-<header class="sticky top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-border">
+<header class="sticky top-0 z-50 bg-white border-b border-border">
   <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
     <a href="index.html"><img src="logo.png" alt="Craig Kleila SEO" class="h-16"></a>
     <div class="hidden md:flex items-center gap-8 text-sm font-medium text-muted">
-      <a href="services.html">Services</a>
+      <a href="services.html">SEO Services</a>
       <a href="case-studies.html">Case Studies</a>
       <a href="about.html">About</a>
       
@@ -63,7 +63,7 @@
     </button>
   </nav>
   <div id="mob" class="hidden md:hidden border-t border-border bg-white px-6 py-4 flex flex-col gap-4 text-sm font-medium text-muted">
-    <a href="services.html" class="hover:text-coral">Services</a>
+    <a href="services.html" class="hover:text-coral">SEO Services</a>
     <a href="case-studies.html" class="hover:text-coral">Case Studies</a>
     <a href="about.html" class="hover:text-coral">About</a>
     
@@ -122,61 +122,8 @@
   </div>
 </section>
 
-<!-- MAP -->
-<section class="border-t border-border bg-offwhite">
-  <div class="max-w-6xl mx-auto px-6 py-16">
-    <h2 class="font-display font-bold text-3xl text-ink mb-10">Based in New York.</h2>
-    <div class="bg-white rounded-3xl border border-border overflow-hidden" style="box-shadow:0 2px 16px -4px rgba(0,0,0,0.06);">
-      <div class="grid md:grid-cols-[1fr_260px]">
-        <style>#contact-map .leaflet-tile-pane { filter: grayscale(1) brightness(1.08) contrast(0.9); }</style>
-        <div id="contact-map" style="height:360px;"></div>
-        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-        <script>
-        (function(){
-          var map = L.map('contact-map', {
-            zoomControl: false,
-            dragging: false,
-            scrollWheelZoom: false,
-            doubleClickZoom: false,
-            touchZoom: false,
-            keyboard: false,
-            attributionControl: false
-          }).setView([40.6944, -73.9213], 14);
-
-          L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 19
-          }).addTo(map);
-
-          var pin = L.divIcon({
-            html: '<svg width="30" height="38" viewBox="0 0 30 38" fill="none"><path d="M15 0C6.716 0 0 6.716 0 15c0 9.5 15 23 15 23S30 24.5 30 15C30 6.716 23.284 0 15 0z" fill="#F47B5A"/><circle cx="15" cy="15" r="5.5" fill="white"/></svg>',
-            iconSize: [30, 38],
-            iconAnchor: [15, 38],
-            className: ''
-          });
-          L.marker([40.6944, -73.9213], { icon: pin }).addTo(map);
-        })();
-        </script>
-        <div class="p-8 space-y-6 border-l border-border">
-          <div>
-            <p class="font-display font-bold text-sm text-ink mb-1">Location</p>
-            <p class="text-sm text-muted" style="line-height:1.7;">Bushwick, Brooklyn<br>New York, NY 11221<br>United States</p>
-          </div>
-          <div class="border-t border-border pt-6">
-            <p class="font-display font-bold text-sm text-ink mb-1">Phone</p>
-            <p class="text-sm text-muted">+1 (718) 555-0194</p>
-          </div>
-          <div class="border-t border-border pt-6">
-            <p class="font-display font-bold text-sm text-ink mb-1">Email</p>
-            <a href="mailto:hello@craigkleila.com" class="email-link text-sm text-coral font-medium">hello@craigkleila.com</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- FAQ -->
-<section class="py-20 border-t border-border bg-white">
+<section class="py-20 border-t border-border" style="background:#F9F8FF;">
   <div class="max-w-4xl mx-auto px-6">
     <h2 class="font-display font-bold text-center text-ink mb-12" style="font-size:2rem;line-height:1.25;">Frequently asked questions.</h2>
     <div class="grid md:grid-cols-2 gap-3 items-start">
@@ -239,7 +186,7 @@
   <div class="max-w-6xl mx-auto px-6 py-10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted">
     <img src="logo.png" alt="Craig Kleila SEO" class="h-12">
     <nav class="flex gap-6">
-      <a href="services.html" class="hover:text-coral transition-colors duration-150">Services</a>
+      <a href="services.html" class="hover:text-coral transition-colors duration-150">SEO Services</a>
       <a href="case-studies.html" class="hover:text-coral transition-colors duration-150">Case Studies</a>
       <a href="about.html" class="hover:text-coral transition-colors duration-150">About</a>
       <a href="contact.html" class="hover:text-coral transition-colors duration-150">Contact</a>
