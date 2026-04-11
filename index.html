@@ -77,8 +77,8 @@
   @media (max-width:899px) {
     .orbit-wrap { transform:scale(0.72);margin:-82px auto -40px; }
   }
-  #mob:not(.hidden) { display: flex; }
-  @media (min-width: 768px) { #mob { display: none !important; } }
+  #mob { display: none !important; }
+  @media (max-width: 767px) { #mob.mob-open { display: flex !important; } }
 </style>
 </head>
 <body class="antialiased">
@@ -94,14 +94,14 @@
       
       <a href="contact.html" class="btn-coral ripple-btn bg-coral text-white px-5 py-2 rounded-full font-semibold text-sm focus-visible:outline-2 focus-visible:outline-coral">Get in Touch</a>
     </div>
-    <button class="md:hidden p-2 rounded text-ink" onclick="document.getElementById('mob').classList.toggle('hidden')" aria-label="Toggle menu">
+    <button class="md:hidden p-2 rounded text-ink" onclick="document.getElementById('mob').classList.toggle('mob-open')" aria-label="Toggle menu">
       <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M3 6h16M3 11h16M3 16h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
     </button>
   </nav>
-  <div id="mob" class="hidden flex-col fixed inset-0 z-[200]" style="background:#ffffff;">
+  <div id="mob" class="flex-col fixed inset-0 z-[200]" style="background:#ffffff;">
     <div class="flex items-center justify-between px-4 h-16 border-b border-border flex-shrink-0">
       <a href="index.html"><img src="logo.png" alt="Craig Kleila SEO" class="h-16"></a>
-      <button onclick="document.getElementById('mob').classList.add('hidden')" class="p-2 text-ink" aria-label="Close menu">
+      <button onclick="document.getElementById('mob').classList.remove('mob-open')" class="p-2 text-ink" aria-label="Close menu">
         <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M4 4l14 14M18 4L4 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
       </button>
     </div>
