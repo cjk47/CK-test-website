@@ -45,7 +45,10 @@
   @media (max-width: 767px) {
     .curved-section { width: 100% !important; margin-left: 0 !important; }
     .hero-img-container { height: 220px !important; }
-    .cs-meta-grid { column-gap: 20px !important; padding-right: 0 !important; }
+    .cs-meta-grid { column-gap: 20px !important; padding-right: 0 !important; text-align: center !important; justify-items: center !important; }
+    .cs-meta-grid > div { display: flex; flex-direction: column; align-items: center; }
+    #cs-next { right: 4px !important; }
+    #cs-prev { display: none !important; }
     .cs-meta-grid .whitespace-nowrap { white-space: normal !important; }
     .cs-meta-row { align-items: stretch !important; }
     .cs-accordion-col { width: 100% !important; }
@@ -110,7 +113,7 @@
     </div>
 
     <!-- Hero image — stats repositioned to upper-middle area -->
-    <div class="hero-img-container relative rounded-t-2xl overflow-hidden" style="height:460px;">
+    <div class="hero-img-container relative rounded-2xl overflow-hidden" style="height:460px;">
       <img src="rl.png" alt="Best Western Case Study" class="w-full h-full object-cover object-center">
       <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent"></div>
       <!-- Stats repositioned to sit above the white curve -->
@@ -189,7 +192,7 @@
 </section>
 
 <!-- BODY -->
-<div class="max-w-5xl mx-auto px-6 pt-20 pb-0">
+<div class="max-w-5xl mx-auto px-6 pt-14 md:pt-20 pb-0">
   <div class="grid md:grid-cols-[1fr_240px] gap-16">
 
     <!-- LEFT COLUMN -->
@@ -407,7 +410,7 @@
     track.style.transform='translateX(-'+translate+'px)';
     var m=mob();
     prev.style.display=m?'none':'flex';
-    next.style.display=m?'none':'flex';
+    next.style.display=current<maxIdx()?'flex':'none';
     if(!m){
       prev.style.borderColor=current===0?'#E5E7EB':'#9CA3AF';
       prev.querySelector('path').setAttribute('stroke',current===0?'#D1D5DB':'#9CA3AF');

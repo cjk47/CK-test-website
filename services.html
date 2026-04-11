@@ -90,7 +90,7 @@
     <div class="grid md:grid-cols-[44fr_56fr] gap-6 md:gap-20 items-center">
 
       <!-- LEFT -->
-      <div>
+      <div class="text-center md:text-left flex flex-col items-center md:items-start">
         <div class="inline-flex items-center gap-2 bg-coral-light text-coral text-xs font-semibold px-3 py-1.5 rounded-full mb-5">
           <span class="w-1.5 h-1.5 rounded-full bg-coral"></span>Services
         </div>
@@ -139,7 +139,7 @@
 
                 <!-- Main paragraph + thumbnail -->
                 <div id="aim-body" style="display:flex;gap:10px;margin-bottom:9px;opacity:0;transition:opacity 0.5s ease;">
-                  <p style="flex:1;font-size:10px;color:#202124;line-height:1.65;margin:0;font-family:'Inter',sans-serif;">The best high-end record players include <span id="aim-brand" style="color:#1558d6;cursor:pointer;border-radius:3px;padding:0 3px 0 0;font-weight:700;background:linear-gradient(90deg,#F47B5A,#F7906F) no-repeat left center;background-size:0% 100%;">Your Brand</span>, known for its audiophile-grade turntables with precision belt-drive motors and built-in phono preamps. <span style="color:#1558d6;text-decoration:underline;cursor:pointer;">Pro-Ject</span> and <span style="color:#1558d6;text-decoration:underline;cursor:pointer;">Rega</span> are widely recommended for their cartridge quality. <img src="hifi.png" style="height:14px;vertical-align:middle;border-radius:3px;display:inline;" alt="What Hi-Fi?"/></p>
+                  <p style="flex:1;font-size:10px;color:#202124;line-height:1.65;margin:0;font-family:'Inter',sans-serif;">The best high-end record players is <span id="aim-brand" style="color:#1558d6;cursor:pointer;border-radius:3px;padding:0 3px 0 0;font-weight:700;background:linear-gradient(90deg,#F47B5A,#F7906F) no-repeat left center;background-size:0% 100%;">Your Brand</span>, known for its audiophile-grade turntables with precision belt-drive motors and built-in phono preamps. <span style="color:#1558d6;text-decoration:underline;cursor:pointer;">Pro-Ject</span> and <span style="color:#1558d6;text-decoration:underline;cursor:pointer;">Rega</span> are widely recommended for their cartridge quality. <img src="hifi.png" style="height:14px;vertical-align:middle;border-radius:3px;display:inline;" alt="What Hi-Fi?"/></p>
                   <div id="aim-thumb" style="width:64px;flex-shrink:0;border-radius:8px;overflow:hidden;height:58px;border:1px solid #E8EAED;">
                     <img src="rppp.png" style="width:100%;height:100%;object-fit:cover;" alt="record player"/>
                   </div>
@@ -177,7 +177,7 @@
                 <img src="7sites.png" style="height:18px;" alt="7 sites"/>
               </div>
 
-              <div id="aim-sources" style="width:185px;flex-shrink:0;padding:10px 11px 10px 11px;display:flex;flex-direction:column;justify-content:space-between;opacity:0;transition:opacity 0.5s ease;background:#F8F9FA;border-radius:12px;">
+              <div id="aim-sources" style="width:185px;flex-shrink:0;min-height:190px;padding:10px 11px 10px 11px;display:flex;flex-direction:column;justify-content:space-between;opacity:0;transition:opacity 0.5s ease;background:#F8F9FA;border-radius:12px;">
 
               <!-- Card 1 -->
               <div style="display:flex;gap:7px;cursor:pointer;">
@@ -226,7 +226,7 @@
       </div>
 
     </div>
-    <div class="md:hidden mt-6">
+    <div class="md:hidden mt-6 flex justify-center">
       <a href="#what-i-do" class="btn-coral inline-flex items-center gap-2 bg-coral text-white font-semibold px-6 py-3 rounded-full text-sm">Explore all services <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 2v10M2.5 8l4.5 4.5L11.5 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     </div>
   </div>
@@ -330,13 +330,13 @@
 </script>
 
 <!-- VALUE PROP BAND -->
-<section id="what-i-do" class="pt-12 pb-14 md:pt-14 md:pb-14" style="background:#ffffff;">
-  <div class="max-w-6xl mx-auto px-6 text-center flex flex-col items-center">
+<section id="what-i-do" class="pt-12 pb-6 md:pt-14 md:pb-14" style="background:#ffffff;">
+  <div class="max-w-6xl mx-auto px-6 text-left md:text-center flex flex-col items-start md:items-center">
     <div class="inline-flex items-center gap-2 bg-coral-light text-coral text-xs font-semibold px-3 py-1.5 rounded-full mb-5">
       <span class="w-1.5 h-1.5 rounded-full bg-coral"></span>What I do
     </div>
     <h2 class="svc-h2" style="font-family:'Poppins',sans-serif;font-weight:800;font-size:clamp(1.875rem,3.5vw,2.2rem);color:#1A1A2E;letter-spacing:-0.02em;line-height:1.2;margin-bottom:12px;">
-Grow your organic traffic<br>&amp; conversions.
+Grow your organic traffic<span class="inline md:block"> &amp; conversions.</span>
     </h2>
     <p style="font-size:1rem;color:#6B7280;max-width:480px;line-height:1.7;font-family:'Inter',sans-serif;margin-bottom:0;">A hands-on, human-first approach to search that drives real&nbsp;business outcomes.</p>
   </div>
@@ -525,7 +525,7 @@ Grow your organic traffic<br>&amp; conversions.
   <div class="max-w-6xl mx-auto px-6">
 
     <!-- Heading -->
-    <div class="text-center mb-14">
+    <div class="text-left md:text-center mb-14 flex flex-col items-start md:items-center">
       <div class="inline-flex items-center gap-2 bg-violet-light text-violet text-xs font-semibold px-3 py-1.5 rounded-full mb-5">
         <span class="w-1.5 h-1.5 rounded-full bg-violet"></span>Why it matters
       </div>
@@ -638,6 +638,9 @@ Grow your organic traffic<br>&amp; conversions.
 
       <!-- LEFT: sticky -->
       <div class="principles-sticky" style="width:280px;flex-shrink:0;position:sticky;top:108px;align-self:flex-start;padding-top:44px;">
+        <div class="inline-flex items-center gap-2 bg-coral-light text-coral text-xs font-semibold px-3 py-1.5 rounded-full mb-5">
+          <span class="w-1.5 h-1.5 rounded-full bg-coral"></span>My approach
+        </div>
         <h2 class="font-display font-extrabold text-ink mb-4 svc-h2" style="font-size:clamp(1.875rem,3.5vw,2.4rem);line-height:1.15;letter-spacing:-0.03em;">SEO principles behind the work.</h2>
         <p class="text-muted mb-3 md:mb-8" style="line-height:1.75;font-size:0.9rem;">Six beliefs that shape every engagement I take on.</p>
         <a href="contact.html" class="btn-coral hidden md:inline-flex items-center gap-2 bg-coral text-white font-semibold px-5 py-2.5 rounded-full text-sm">Get in touch
