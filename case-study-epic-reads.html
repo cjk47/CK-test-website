@@ -55,6 +55,7 @@
   }
   #mob { display: none !important; }
   @media (max-width: 767px) { #mob.mob-open { display: flex !important; } }
+  h3[id] { scroll-margin-top: 96px; }
 </style>
 </head>
 <body class="antialiased">
@@ -203,7 +204,7 @@
 
 <!-- BODY -->
 <div class="max-w-5xl mx-auto px-6 pt-14 md:pt-20 pb-0">
-  <div class="grid md:grid-cols-[1fr_240px] gap-16">
+  <div class="grid md:grid-cols-[1fr_280px] gap-16">
 
     <!-- LEFT COLUMN -->
     <div>
@@ -219,7 +220,7 @@
         <h2 class="font-display font-bold text-[30px] text-ink mb-5">The Solution</h2>
 
         <div class="mb-10">
-          <h3 class="font-display font-bold text-[18px] text-ink mb-2">Find the Right Keywords</h3>
+          <h3 id="s-1" class="font-display font-bold text-[18px] text-ink mb-2">Find the Right Keywords</h3>
           <p class="text-[#4B5563] text-[16px] mb-8" style="line-height:1.85;">The first step was figuring out what readers were actually searching for. A content gap analysis showed that Epic Reads had almost no posts targeting "best books by genre" searches — queries like "best time travel books," "best heist novels," or "best poetry books for teens." These were a logical fit: people searching that way are actively looking for recommendations, which means they're close to buying. High intent, high relevance, and Epic Reads wasn't showing up for any of it.</p>
 
           <!-- Keyword research screenshot -->
@@ -230,7 +231,7 @@
         </div>
 
         <div class="mb-10">
-          <h3 class="font-display font-bold text-[18px] text-ink mb-2">Write for Readers, Optimize for Google</h3>
+          <h3 id="s-2" class="font-display font-bold text-[18px] text-ink mb-2">Write for Readers, Optimize for Google</h3>
           <p class="text-[#4B5563] text-[16px] mb-8" style="line-height:1.85;">From 50 priority keywords, I built detailed content briefs for the writing team — not just topic overviews, but precise blueprints: recommended outlines, internal linking anchors, metadata guidance, visual direction, and CTA placement. The goal was articles that readers would genuinely enjoy and that Google would reward.</p>
           <p class="text-[#4B5563] text-[16px] mb-8" style="line-height:1.85;">Every piece was optimized across the full range of on-page signals to build keyword relevancy, match search intent, and guide readers naturally toward product pages:</p>
           <ul class="space-y-2 mt-4 mb-2">
@@ -252,7 +253,7 @@
         </div>
 
         <div class="mb-10">
-          <h3 class="font-display font-bold text-[18px] text-ink mb-2">Get the Technical Fundamentals Right</h3>
+          <h3 id="s-3" class="font-display font-bold text-[18px] text-ink mb-2">Get the Technical Fundamentals Right</h3>
           <p class="text-[#4B5563] text-[16px] mb-8" style="line-height:1.85;">I also audited the technical side. Each article needed a clean heading hierarchy, an optimized title tag, and metadata that clearly communicated what the page was about. Small things individually — but the signal they send collectively adds up.</p>
 
           <!-- Dev tools / semantic HTML screenshot -->
@@ -262,13 +263,13 @@
         </div>
 
         <div class="mb-10">
-          <h3 class="font-display font-bold text-[18px] text-ink mb-2">Track, Learn, and Adjust</h3>
+          <h3 id="s-4" class="font-display font-bold text-[18px] text-ink mb-2">Track, Learn, and Adjust</h3>
           <p class="text-[#4B5563] text-[16px]" style="line-height:1.8;">Publishing was only half the work. Post-launch, I monitored traffic, click-through rates, and conversions on every article. Underperforming pieces got revisited — internal links strengthened from higher-authority pages, meta tags refined, intent re-examined, thin sections expanded, and visual elements added where engagement was dropping off. The strategy stayed alive after publication, not just at the brief stage.</p>
         </div>
 
         <div class="rounded-2xl p-6 mb-2" style="background:#F1EFED;">
           <p class="text-xs font-bold uppercase tracking-widest text-violet mb-2">Bonus</p>
-          <h3 class="font-display font-bold text-[18px] text-ink mb-2">Attribution Beyond Google</h3>
+          <h3 id="s-5" class="font-display font-bold text-[18px] text-ink mb-2">Attribution Beyond Google</h3>
           <p class="text-[#4B5563] text-[16px]" style="line-height:1.8;">These articles were also being shared across Epic Reads' social channels. To close the attribution loop, I implemented UTM codes on all social distribution — making it possible to see exactly which posts were driving traffic and sales, down to the individual tweet or Facebook share. That granularity made future content decisions sharper.</p>
         </div>
 
@@ -302,13 +303,33 @@
     </div>
 
     <!-- RIGHT SIDEBAR -->
-    <div class="hidden md:block sticky top-24 self-start pl-6">
+    <div class="hidden md:block sticky top-24 self-start pl-[84px]">
       <div class="mb-8">
-        <p class="text-[13px] font-semibold uppercase tracking-wider text-muted mb-3">Table of Contents</p>
-        <nav class="space-y-0.5">
-          <a href="#challenge" class="toc-link block text-[15px] text-muted hover:text-coral py-1.5 border-l-[3px] border-transparent pl-3 hover:border-coral">The Challenge</a>
-          <a href="#solution" class="toc-link block text-[15px] text-muted hover:text-coral py-1.5 border-l-[3px] border-transparent pl-3 hover:border-coral">The Solution</a>
-          <a href="#results" class="toc-link block text-[15px] text-muted hover:text-coral py-1.5 border-l-[3px] border-transparent pl-3 hover:border-coral">The Results</a>
+        <p class="text-[16px] font-semibold mb-3" style="color:#111;">On this page</p>
+        <nav id="toc-nav">
+          <!-- 1. Challenge -->
+          <div class="toc-section" data-section="challenge">
+            <a href="#challenge" class="toc-h2-link block text-[14px] font-semibold py-1.5 transition-colors duration-200" style="color:#4B5563;">1. The Challenge</a>
+            <div class="toc-children"></div>
+          </div>
+          <!-- 2. Solution -->
+          <div class="toc-section" data-section="solution">
+            <a href="#solution" class="toc-h2-link block text-[14px] font-semibold py-1.5 transition-colors duration-200" style="color:#4B5563;">2. The Solution</a>
+            <div class="toc-children">
+              <div style="margin-left:1.5px;border-left:2px solid #E5E7EB;padding-left:0;">
+                <a href="#s-1" class="toc-h3-link block text-[12.5px] py-1.5 pl-3 border-l-[2px] border-transparent transition-colors duration-150" style="color:#8896A8;margin-left:-2px;">Find the Right Keywords</a>
+                <a href="#s-2" class="toc-h3-link block text-[12.5px] py-1.5 pl-3 border-l-[2px] border-transparent transition-colors duration-150" style="color:#8896A8;margin-left:-2px;">Write for Readers, Optimize for Google</a>
+                <a href="#s-3" class="toc-h3-link block text-[12.5px] py-1.5 pl-3 border-l-[2px] border-transparent transition-colors duration-150" style="color:#8896A8;margin-left:-2px;">Get the Technical Fundamentals Right</a>
+                <a href="#s-4" class="toc-h3-link block text-[12.5px] py-1.5 pl-3 border-l-[2px] border-transparent transition-colors duration-150" style="color:#8896A8;margin-left:-2px;">Track, Learn, and Adjust</a>
+                <a href="#s-5" class="toc-h3-link block text-[12.5px] py-1.5 pl-3 border-l-[2px] border-transparent transition-colors duration-150" style="color:#8896A8;margin-left:-2px;">Attribution Beyond Google</a>
+              </div>
+            </div>
+          </div>
+          <!-- 3. Results -->
+          <div class="toc-section" data-section="results">
+            <a href="#results" class="toc-h2-link block text-[14px] font-semibold py-1.5 transition-colors duration-200" style="color:#4B5563;">3. The Results</a>
+            <div class="toc-children"></div>
+          </div>
         </nav>
       </div>
     </div>
@@ -538,24 +559,55 @@
 
 
 <script>
-  const sections = document.querySelectorAll('#challenge, #solution, #results');
-  const tocLinks = {
-    'challenge': document.querySelector('a[href="#challenge"]'),
-    'solution': document.querySelector('a[href="#solution"]'),
-    'results': document.querySelector('a[href="#results"]'),
-  };
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      const link = tocLinks[entry.target.id];
-      if (!link) return;
-      if (entry.isIntersecting) {
-        Object.values(tocLinks).forEach(l => { if (l) { l.classList.remove('text-coral','border-coral'); l.classList.add('text-muted','border-transparent'); }});
-        link.classList.remove('text-muted','border-transparent');
-        link.classList.add('text-coral','border-coral');
-      }
+(function(){
+  var sectionIds = ['challenge','solution','results'];
+  var h3Ids = ['s-1','s-2','s-3','s-4','s-5'];
+  var activeSection = null;
+  var activeH3 = null;
+
+  function setActiveSection(id){
+    if(activeSection === id) return;
+    activeSection = id;
+    document.querySelectorAll('.toc-section').forEach(function(sec){
+      var h2 = sec.querySelector('.toc-h2-link');
+      var isActive = sec.getAttribute('data-section') === id;
+      h2.style.color = isActive ? '#F47B5A' : '';
+      h2.style.borderLeftColor = 'transparent';
+      h2.style.fontWeight = isActive ? '700' : '600';
     });
-  }, { rootMargin: '-20% 0px -70% 0px' });
-  sections.forEach(s => observer.observe(s));
+    activeH3 = null;
+    document.querySelectorAll('.toc-h3-link').forEach(function(a){ a.style.borderLeftColor = 'transparent'; });
+  }
+
+  function setActiveH3(id){
+    if(activeH3 === id) return;
+    activeH3 = id;
+    document.querySelectorAll('.toc-h3-link').forEach(function(a){
+      a.style.borderLeftColor = a.getAttribute('href') === '#'+id ? '#F47B5A' : 'transparent';
+    });
+  }
+
+  var secObs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting) setActiveSection(e.target.id); });
+  }, { rootMargin: '-15% 0px -70% 0px' });
+  sectionIds.forEach(function(id){ var el = document.getElementById(id); if(el) secObs.observe(el); });
+
+  var h3Obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting) setActiveH3(e.target.id); });
+  }, { rootMargin: '-15% 0px -70% 0px' });
+  h3Ids.forEach(function(id){ var el = document.getElementById(id); if(el) h3Obs.observe(el); });
+
+  document.querySelectorAll('.toc-h3-link').forEach(function(a){
+    a.addEventListener('click', function(){ setActiveH3(a.getAttribute('href').slice(1)); });
+  });
+  document.querySelectorAll('.toc-h2-link').forEach(function(a){
+    a.addEventListener('click', function(){
+      var firstH3 = a.closest('.toc-section').querySelector('.toc-h3-link');
+      if(firstH3) setActiveH3(firstH3.getAttribute('href').slice(1));
+    });
+  });
+  setActiveSection('challenge');
+})();
 </script>
 
 </body>

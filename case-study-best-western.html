@@ -55,6 +55,7 @@
   }
   #mob { display: none !important; }
   @media (max-width: 767px) { #mob.mob-open { display: flex !important; } }
+  h3[id] { scroll-margin-top: 96px; }
 </style>
 </head>
 <body class="antialiased">
@@ -205,7 +206,7 @@
 
 <!-- BODY -->
 <div class="max-w-5xl mx-auto px-6 pt-14 md:pt-20 pb-0">
-  <div class="grid md:grid-cols-[1fr_240px] gap-16">
+  <div class="grid md:grid-cols-[1fr_280px] gap-16">
 
     <!-- LEFT COLUMN -->
     <div>
@@ -223,14 +224,14 @@
           <li class="flex gap-3">
             
             <div>
-              <h3 class="font-display font-bold text-ink text-[18px] mb-1">AI Overview Content Rewrite</h3>
+              <h3 id="s-1" class="font-display font-bold text-ink text-[18px] mb-1">AI Overview Content Rewrite</h3>
               <p class="text-[#4B5563] text-[16px] mt-4" style="line-height:1.8;">Rewrote key landing pages to match the structured, answer-forward format that AI Overviews prefer. Clear H2/H3 hierarchies, concise answers to common questions, authoritative language.</p>
             </div>
           </li>
           <li class="flex gap-3">
             
             <div>
-              <h3 class="font-display font-bold text-ink text-[18px] mb-1">Schema Markup Implementation</h3>
+              <h3 id="s-2" class="font-display font-bold text-ink text-[18px] mb-1">Schema Markup Implementation</h3>
               <p class="text-[#4B5563] text-[16px] mt-4 mb-6" style="line-height:1.8;">Implemented Hotel, FAQPage, and LocalBusiness schema across property pages. Structured data gives AI systems clear signals about content context and authority.</p>
               <div class="rounded-2xl overflow-hidden">
                 <img src="bwcs2.png" alt="Best Western — Hotel schema markup" class="w-full block">
@@ -240,7 +241,7 @@
           <li class="flex gap-3">
             
             <div>
-              <h3 class="font-display font-bold text-ink text-[18px] mb-1">Topic Cluster & Landing Page Architecture</h3>
+              <h3 id="s-3" class="font-display font-bold text-ink text-[18px] mb-1">Topic Cluster & Landing Page Architecture</h3>
               <p class="text-[#4B5563] text-[16px] mt-4 mb-6" style="line-height:1.8;">I designed a full topic cluster system built around city-level hub pages that link out to targeted subpages — each one capturing a specific traveler need that traditional hotel pages miss entirely.</p>
               <div class="rounded-2xl overflow-hidden mb-4">
                 <img src="bwnewww.png" alt="Best Western — content category landing pages" class="w-full block">
@@ -264,13 +265,13 @@
           <li class="flex gap-3">
             
             <div>
-              <h3 class="font-display font-bold text-ink text-[18px] mb-1">Localized Page Copy</h3>
+              <h3 id="s-4" class="font-display font-bold text-ink text-[18px] mb-1">Localized Page Copy</h3>
               <p class="text-[#4B5563] text-[16px] mt-4" style="line-height:1.8;">I rewrote the copy on hotel detail pages to match local search intent — moving beyond generic descriptions to content that references nearby landmarks, popular neighborhoods, and community context specific to each property's location. This gives Google the geographic signals it needs to surface the right hotel for the right local query, and gives travelers the confidence that the property actually understands where it is.</p>
             </div>
           </li>
           <li class="flex gap-3">
             <div>
-              <h3 class="font-display font-bold text-ink text-[18px] mb-1">FAQ Optimization</h3>
+              <h3 id="s-5" class="font-display font-bold text-ink text-[18px] mb-1">FAQ Optimization</h3>
               <p class="text-[#4B5563] text-[16px] mt-4 mb-6" style="line-height:1.8;">Added optimized FAQ sections to core pages targeting the exact questions travelers ask in search — driving featured snippet and AI Overview capture.</p>
               <div class="rounded-2xl overflow-hidden">
                 <img src="bwcs3.png" alt="Best Western — FAQ section" class="w-full block">
@@ -306,13 +307,33 @@
     </div>
 
     <!-- RIGHT SIDEBAR -->
-    <div class="hidden md:block sticky top-24 self-start pl-6">
+    <div class="hidden md:block sticky top-24 self-start pl-[84px]">
       <div class="mb-8">
-        <p class="text-[13px] font-semibold uppercase tracking-wider text-muted mb-3">Table of Contents</p>
-        <nav class="space-y-0.5">
-          <a href="#challenge" class="toc-link block text-[15px] text-muted hover:text-coral py-1.5 border-l-[3px] border-transparent pl-3 hover:border-coral">The Challenge</a>
-          <a href="#strategy" class="toc-link block text-[15px] text-muted hover:text-coral py-1.5 border-l-[3px] border-transparent pl-3 hover:border-coral">The Strategy</a>
-          <a href="#results" class="toc-link block text-[15px] text-muted hover:text-coral py-1.5 border-l-[3px] border-transparent pl-3 hover:border-coral">The Results</a>
+        <p class="text-[16px] font-semibold mb-3" style="color:#111;">On this page</p>
+        <nav id="toc-nav">
+          <!-- 1. Challenge -->
+          <div class="toc-section" data-section="challenge">
+            <a href="#challenge" class="toc-h2-link block text-[14px] font-semibold py-1.5 transition-colors duration-200" style="color:#4B5563;">1. The Challenge</a>
+            <div class="toc-children"></div>
+          </div>
+          <!-- 2. Strategy -->
+          <div class="toc-section" data-section="strategy">
+            <a href="#strategy" class="toc-h2-link block text-[14px] font-semibold py-1.5 transition-colors duration-200" style="color:#4B5563;">2. The Strategy</a>
+            <div class="toc-children">
+              <div style="margin-left:1.5px;border-left:2px solid #E5E7EB;padding-left:0;">
+                <a href="#s-1" class="toc-h3-link block text-[12.5px] py-1.5 pl-3 border-l-[2px] border-transparent transition-colors duration-150" style="color:#8896A8;margin-left:-2px;">AI Overview Content Rewrite</a>
+                <a href="#s-2" class="toc-h3-link block text-[12.5px] py-1.5 pl-3 border-l-[2px] border-transparent transition-colors duration-150" style="color:#8896A8;margin-left:-2px;">Schema Markup Implementation</a>
+                <a href="#s-3" class="toc-h3-link block text-[12.5px] py-1.5 pl-3 border-l-[2px] border-transparent transition-colors duration-150" style="color:#8896A8;margin-left:-2px;">Topic Cluster & Landing Page Architecture</a>
+                <a href="#s-4" class="toc-h3-link block text-[12.5px] py-1.5 pl-3 border-l-[2px] border-transparent transition-colors duration-150" style="color:#8896A8;margin-left:-2px;">Localized Page Copy</a>
+                <a href="#s-5" class="toc-h3-link block text-[12.5px] py-1.5 pl-3 border-l-[2px] border-transparent transition-colors duration-150" style="color:#8896A8;margin-left:-2px;">FAQ Optimization</a>
+              </div>
+            </div>
+          </div>
+          <!-- 3. Results -->
+          <div class="toc-section" data-section="results">
+            <a href="#results" class="toc-h2-link block text-[14px] font-semibold py-1.5 transition-colors duration-200" style="color:#4B5563;">3. The Results</a>
+            <div class="toc-children"></div>
+          </div>
         </nav>
       </div>
     </div>
@@ -518,25 +539,55 @@
 
 
 <script>
-  const sections = document.querySelectorAll('#challenge, #strategy, #results, #testimonial');
-  const tocLinks = {
-    'challenge': document.querySelector('a[href="#challenge"]'),
-    'strategy': document.querySelector('a[href="#strategy"]'),
-    'results': document.querySelector('a[href="#results"]'),
-    'testimonial': document.querySelector('a[href="#testimonial"]'),
-  };
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      const link = tocLinks[entry.target.id];
-      if (!link) return;
-      if (entry.isIntersecting) {
-        Object.values(tocLinks).forEach(l => { if (l) { l.classList.remove('text-coral','border-coral'); l.classList.add('text-muted','border-transparent'); }});
-        link.classList.remove('text-muted','border-transparent');
-        link.classList.add('text-coral','border-coral');
-      }
+(function(){
+  var sectionIds = ['challenge','strategy','results'];
+  var h3Ids = ['s-1','s-2','s-3','s-4','s-5'];
+  var activeSection = null;
+  var activeH3 = null;
+
+  function setActiveSection(id){
+    if(activeSection === id) return;
+    activeSection = id;
+    document.querySelectorAll('.toc-section').forEach(function(sec){
+      var h2 = sec.querySelector('.toc-h2-link');
+      var isActive = sec.getAttribute('data-section') === id;
+      h2.style.color = isActive ? '#F47B5A' : '';
+      h2.style.borderLeftColor = 'transparent';
+      h2.style.fontWeight = isActive ? '700' : '600';
     });
-  }, { rootMargin: '-20% 0px -70% 0px' });
-  sections.forEach(s => observer.observe(s));
+    activeH3 = null;
+    document.querySelectorAll('.toc-h3-link').forEach(function(a){ a.style.borderLeftColor = 'transparent'; });
+  }
+
+  function setActiveH3(id){
+    if(activeH3 === id) return;
+    activeH3 = id;
+    document.querySelectorAll('.toc-h3-link').forEach(function(a){
+      a.style.borderLeftColor = a.getAttribute('href') === '#'+id ? '#F47B5A' : 'transparent';
+    });
+  }
+
+  var secObs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting) setActiveSection(e.target.id); });
+  }, { rootMargin: '-15% 0px -70% 0px' });
+  sectionIds.forEach(function(id){ var el = document.getElementById(id); if(el) secObs.observe(el); });
+
+  var h3Obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting) setActiveH3(e.target.id); });
+  }, { rootMargin: '-15% 0px -70% 0px' });
+  h3Ids.forEach(function(id){ var el = document.getElementById(id); if(el) h3Obs.observe(el); });
+
+  document.querySelectorAll('.toc-h3-link').forEach(function(a){
+    a.addEventListener('click', function(){ setActiveH3(a.getAttribute('href').slice(1)); });
+  });
+  document.querySelectorAll('.toc-h2-link').forEach(function(a){
+    a.addEventListener('click', function(){
+      var firstH3 = a.closest('.toc-section').querySelector('.toc-h3-link');
+      if(firstH3) setActiveH3(firstH3.getAttribute('href').slice(1));
+    });
+  });
+  setActiveSection('challenge');
+})();
 </script>
 
 </body>

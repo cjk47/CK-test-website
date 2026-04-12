@@ -56,6 +56,7 @@
   }
   #mob { display: none !important; }
   @media (max-width: 767px) { #mob.mob-open { display: flex !important; } }
+  h3[id] { scroll-margin-top: 96px; }
 </style>
 </head>
 <body class="antialiased">
@@ -206,7 +207,7 @@
 
 <!-- BODY -->
 <div class="max-w-5xl mx-auto px-6 pt-14 md:pt-20 pb-0">
-  <div class="grid md:grid-cols-[1fr_240px] gap-16">
+  <div class="grid md:grid-cols-[1fr_280px] gap-16">
 
     <!-- LEFT COLUMN -->
     <div>
@@ -231,14 +232,14 @@
           <li class="flex gap-3">
             
             <div>
-              <h3 class="font-display font-bold text-ink text-[18px] mb-1">Fix the Technical Foundation First</h3>
+              <h3 id="s-1" class="font-display font-bold text-ink text-[18px] mb-1">Fix the Technical Foundation First</h3>
               <p class="text-[#4B5563] text-[16px] mt-4" style="line-height:1.8;">Before touching a word of content, I crawled the entire site to find what was quietly working against it — redirect chains, indexing gaps, pages draining authority to dead ends. The audit surfaced 30+ technical issues, and I worked through every one of them before moving on. A content strategy built on a broken foundation doesn't hold.</p>
             </div>
           </li>
           <li class="flex gap-3">
             
             <div>
-              <h3 class="font-display font-bold text-ink text-[18px] mb-1">Rewrite Metadata to Match How Customers Search</h3>
+              <h3 id="s-2" class="font-display font-bold text-ink text-[18px] mb-1">Rewrite Metadata to Match How Customers Search</h3>
               <p class="text-[#4B5563] text-[16px] mt-4 mb-6" style="line-height:1.8;">Title tags and meta descriptions across 40+ pages were rewritten to match how customers search. A pharmaceutical team looking to hire an animation studio isn't just searching for a "medical animation company" — they're searching for the specific type of animation they need, whether it's mechanism of action or oncology patient education. Each page needed metadata that spoke to those searches directly, not a one-size-fits-all description of the company.</p>
               <div class="rounded-2xl overflow-hidden">
                 <img src="xcs2.png" alt="XVIVO — page metadata" class="w-full block">
@@ -248,7 +249,7 @@
           <li class="flex gap-3">
             
             <div>
-              <h3 class="font-display font-bold text-ink text-[18px] mb-1">Build Topic Depth Around Medical Animation</h3>
+              <h3 id="s-3" class="font-display font-bold text-ink text-[18px] mb-1">Build Topic Depth Around Medical Animation</h3>
               <p class="text-[#4B5563] text-[16px] mt-4 mb-6" style="line-height:1.8;">I built a topic cluster architecture around medical animation, creating dedicated service pages for every major animation type: mechanism of action, neurology, oncology, clinical trial recruitment, patient education, and more. Each page targets its own set of long-tail queries while reinforcing XVIVO's topical authority across the entire medical animation category.</p>
               <div class="rounded-2xl overflow-hidden">
                 <img src="xcs.png" alt="XVIVO — Types of Medical Animations" class="w-full block">
@@ -258,7 +259,7 @@
           <li class="flex gap-3">
             
             <div>
-              <h3 class="font-display font-bold text-ink text-[18px] mb-1">Turn Portfolio Filters Into Indexable Pages</h3>
+              <h3 id="s-4" class="font-display font-bold text-ink text-[18px] mb-1">Turn Portfolio Filters Into Indexable Pages</h3>
               <p class="text-[#4B5563] text-[16px] mt-4 mb-6" style="line-height:1.8;">XVIVO's portfolio filtered by animation type, but those filtered views relied on URL parameters. Although Google can index parameterized URLs, without unique content it usually treats them as duplicates and skips them — and that's exactly what was happening here.</p>
               <p class="text-[#4B5563] text-[16px] mt-4 mb-6" style="line-height:1.8;">Converting each filter into its own standalone page fixed that. Clean descriptive URL, unique copy explaining the animation type and typical use cases, titles and metadata aligned to the target search. Pages that were previously getting ignored became direct entry points for searches like "neurology medical animation" or "clinical trial recruitment animation."</p>
               <div class="rounded-2xl overflow-hidden mb-4">
@@ -269,7 +270,7 @@
           <li class="flex gap-3">
             
             <div>
-              <h3 class="font-display font-bold text-ink text-[18px] mb-1">Match Each Page to What Searchers Actually Want</h3>
+              <h3 id="s-5" class="font-display font-bold text-ink text-[18px] mb-1">Match Each Page to What Searchers Actually Want</h3>
               <p class="text-[#4B5563] text-[16px] mt-4 mb-6" style="line-height:1.8;">I audited each key page and made changes based on what people searching for that term actually want to see. On the homepage, someone searching for a medical animation company wants to see the work, not read about it. Moving real video examples above the fold reduced bounce rates and gave search engines a stronger signal that the page satisfied the intent of the searcher.</p>
               <div class="rounded-2xl overflow-hidden">
                 <img src="xcs3.png" alt="XVIVO — Our Medical Animation Videos" class="w-full block">
@@ -279,7 +280,7 @@
           <li class="flex gap-3">
 
             <div>
-              <h3 class="font-display font-bold text-ink text-[18px] mb-1">Funnel Blog Traffic to Service Pages</h3>
+              <h3 id="s-6" class="font-display font-bold text-ink text-[18px] mb-1">Funnel Blog Traffic to Service Pages</h3>
               <p class="text-[#4B5563] text-[16px] mt-4" style="line-height:1.8;">Blog content was pulling in readers with no clear path forward. I restructured internal links so that posts connected directly to relevant service pages, making it easy for someone doing research to take a next step.</p>
             </div>
           </li>
@@ -309,14 +310,34 @@
     </div>
 
     <!-- RIGHT SIDEBAR -->
-    <div class="hidden md:block sticky top-24 self-start pl-6">
+    <div class="hidden md:block sticky top-24 self-start pl-[84px]">
       <div class="mb-8">
-        <p class="text-[13px] font-semibold uppercase tracking-wider text-muted mb-3">Table of Contents</p>
-        <nav class="space-y-0.5">
-          <a href="#challenge" class="toc-link block text-[15px] text-muted hover:text-coral py-1.5 border-l-[3px] border-transparent pl-3 hover:border-coral">The Challenge</a>
-          <a href="#strategy" class="toc-link block text-[15px] text-muted hover:text-coral py-1.5 border-l-[3px] border-transparent pl-3 hover:border-coral">The Strategy</a>
-          <a href="#results" class="toc-link block text-[15px] text-muted hover:text-coral py-1.5 border-l-[3px] border-transparent pl-3 hover:border-coral">The Results</a>
-          <a href="#testimonial" class="toc-link block text-[15px] text-muted hover:text-coral py-1.5 border-l-[3px] border-transparent pl-3 hover:border-coral">Testimonial</a>
+        <p class="text-[16px] font-semibold mb-3" style="color:#111;">On this page</p>
+        <nav id="toc-nav">
+          <!-- 1. Challenge -->
+          <div class="toc-section" data-section="challenge">
+            <a href="#challenge" class="toc-h2-link block text-[14px] font-semibold py-1.5 transition-colors duration-200" style="color:#4B5563;">1. The Challenge</a>
+            <div class="toc-children"></div>
+          </div>
+          <!-- 2. Strategy -->
+          <div class="toc-section" data-section="strategy">
+            <a href="#strategy" class="toc-h2-link block text-[14px] font-semibold py-1.5 transition-colors duration-200" style="color:#4B5563;">2. The Strategy</a>
+            <div class="toc-children">
+              <div style="margin-left:1.5px;border-left:2px solid #E5E7EB;padding-left:0;">
+                <a href="#s-1" class="toc-h3-link block text-[12.5px] py-1.5 pl-3 border-l-[2px] border-transparent transition-colors duration-150" style="color:#8896A8;margin-left:-2px;">Fix the Technical Foundation</a>
+                <a href="#s-2" class="toc-h3-link block text-[12.5px] py-1.5 pl-3 border-l-[2px] border-transparent transition-colors duration-150" style="color:#8896A8;margin-left:-2px;">Rewrite Metadata</a>
+                <a href="#s-3" class="toc-h3-link block text-[12.5px] py-1.5 pl-3 border-l-[2px] border-transparent transition-colors duration-150" style="color:#8896A8;margin-left:-2px;">Build Topic Depth</a>
+                <a href="#s-4" class="toc-h3-link block text-[12.5px] py-1.5 pl-3 border-l-[2px] border-transparent transition-colors duration-150" style="color:#8896A8;margin-left:-2px;">Portfolio Filters → Pages</a>
+                <a href="#s-5" class="toc-h3-link block text-[12.5px] py-1.5 pl-3 border-l-[2px] border-transparent transition-colors duration-150" style="color:#8896A8;margin-left:-2px;">Match Search Intent</a>
+                <a href="#s-6" class="toc-h3-link block text-[12.5px] py-1.5 pl-3 border-l-[2px] border-transparent transition-colors duration-150" style="color:#8896A8;margin-left:-2px;">Funnel Blog Traffic</a>
+              </div>
+            </div>
+          </div>
+          <!-- 3. Results -->
+          <div class="toc-section" data-section="results">
+            <a href="#results" class="toc-h2-link block text-[14px] font-semibold py-1.5 transition-colors duration-200" style="color:#4B5563;">3. The Results</a>
+            <div class="toc-children"></div>
+          </div>
         </nav>
       </div>
     </div>
@@ -562,25 +583,55 @@
 
 
 <script>
-  const sections = document.querySelectorAll('#challenge, #strategy, #results, #testimonial');
-  const tocLinks = {
-    'challenge': document.querySelector('a[href="#challenge"]'),
-    'strategy': document.querySelector('a[href="#strategy"]'),
-    'results': document.querySelector('a[href="#results"]'),
-    'testimonial': document.querySelector('a[href="#testimonial"]'),
-  };
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      const link = tocLinks[entry.target.id];
-      if (!link) return;
-      if (entry.isIntersecting) {
-        Object.values(tocLinks).forEach(l => { if (l) { l.classList.remove('text-coral','border-coral'); l.classList.add('text-muted','border-transparent'); }});
-        link.classList.remove('text-muted','border-transparent');
-        link.classList.add('text-coral','border-coral');
-      }
+(function(){
+  var sectionIds = ['challenge','strategy','results'];
+  var h3Ids = ['s-1','s-2','s-3','s-4','s-5','s-6'];
+  var activeSection = null;
+  var activeH3 = null;
+
+  function setActiveSection(id){
+    if(activeSection === id) return;
+    activeSection = id;
+    document.querySelectorAll('.toc-section').forEach(function(sec){
+      var h2 = sec.querySelector('.toc-h2-link');
+      var isActive = sec.getAttribute('data-section') === id;
+      h2.style.color = isActive ? '#F47B5A' : '';
+      h2.style.borderLeftColor = 'transparent';
+      h2.style.fontWeight = isActive ? '700' : '600';
     });
-  }, { rootMargin: '-20% 0px -70% 0px' });
-  sections.forEach(s => observer.observe(s));
+    activeH3 = null;
+    document.querySelectorAll('.toc-h3-link').forEach(function(a){ a.style.borderLeftColor = 'transparent'; });
+  }
+
+  function setActiveH3(id){
+    if(activeH3 === id) return;
+    activeH3 = id;
+    document.querySelectorAll('.toc-h3-link').forEach(function(a){
+      a.style.borderLeftColor = a.getAttribute('href') === '#'+id ? '#F47B5A' : 'transparent';
+    });
+  }
+
+  var secObs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting) setActiveSection(e.target.id); });
+  }, { rootMargin: '-15% 0px -70% 0px' });
+  sectionIds.forEach(function(id){ var el = document.getElementById(id); if(el) secObs.observe(el); });
+
+  var h3Obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting) setActiveH3(e.target.id); });
+  }, { rootMargin: '-15% 0px -70% 0px' });
+  h3Ids.forEach(function(id){ var el = document.getElementById(id); if(el) h3Obs.observe(el); });
+
+  document.querySelectorAll('.toc-h3-link').forEach(function(a){
+    a.addEventListener('click', function(){ setActiveH3(a.getAttribute('href').slice(1)); });
+  });
+  document.querySelectorAll('.toc-h2-link').forEach(function(a){
+    a.addEventListener('click', function(){
+      var firstH3 = a.closest('.toc-section').querySelector('.toc-h3-link');
+      if(firstH3) setActiveH3(firstH3.getAttribute('href').slice(1));
+    });
+  });
+  setActiveSection('challenge');
+})();
 </script>
 
 </body>

@@ -56,6 +56,7 @@
   }
   #mob { display: none !important; }
   @media (max-width: 767px) { #mob.mob-open { display: flex !important; } }
+  h3[id] { scroll-margin-top: 96px; }
 </style>
 </head>
 <body class="antialiased">
@@ -205,7 +206,7 @@
 
 <!-- BODY -->
 <div class="max-w-5xl mx-auto px-6 pt-14 md:pt-20 pb-0">
-  <div class="grid md:grid-cols-[1fr_240px] gap-16">
+  <div class="grid md:grid-cols-[1fr_280px] gap-16">
 
     <!-- LEFT COLUMN -->
     <div>
@@ -221,7 +222,7 @@
         <h2 class="font-display font-bold text-[30px] text-ink mb-5">The Strategy</h2>
 
         <div class="mb-10">
-          <h3 class="font-display font-bold text-[18px] text-ink mb-2">Offer Unique Data to Journalists</h3>
+          <h3 id="s-1" class="font-display font-bold text-[18px] text-ink mb-2">Offer Unique Data to Journalists</h3>
           <p class="text-[#4B5563] text-[16px] mb-8" style="line-height:1.85;">Rukkus had proprietary ticket price data, so I used it as a PR tool. By pitching data-driven story angles, "When's the Best Time to Buy Coachella Tickets?" or "How Did Jim Harbaugh's Hiring Affect Ticket Prices?", I gave journalists genuinely useful material for stories they were already trying to write.</p>
           <p class="text-[#4B5563] text-[16px] mb-8" style="line-height:1.85;">I also built a tool that automatically scraped the top news stories each morning, flagging any that matched keywords we had relevant ticket data for. Each story came with a site authority score so I could prioritize the highest-value opportunities. When a story about the Rolling Stones surfaced on a high-DA outlet, I'd have a pitch out the same day. That combination of timing and relevance is what landed links from outlets like CNN and Fox.</p>
 
@@ -265,7 +266,7 @@
         </div>
 
         <div class="mb-10">
-          <h3 class="font-display font-bold text-[18px] text-ink mb-2">Produce Engaging Visuals</h3>
+          <h3 id="s-2" class="font-display font-bold text-[18px] text-ink mb-2">Produce Engaging Visuals</h3>
           <p class="text-[#4B5563] text-[16px] mb-8" style="line-height:1.85;">Data alone wasn't always enough. Journalists also needed visuals, something they could drop straight into their articles to make them better. I created infographics and visual guides that were designed to be embedded.</p>
           <p class="text-[#4B5563] text-[16px]" style="line-height:1.8;">One example: I designed an infographic on the value of the #1 pick in the NBA draft and pitched it specifically to sports sites that had covered the draft but published minimal visuals. Sports Illustrated was among those that picked it up. Each placement included a link back to Rukkus.</p>
 
@@ -292,7 +293,7 @@
         </div>
 
         <div class="mb-10">
-          <h3 class="font-display font-bold text-[18px] text-ink mb-2">Turn the Launch Into a Story</h3>
+          <h3 id="s-3" class="font-display font-bold text-[18px] text-ink mb-2">Turn the Launch Into a Story</h3>
           <p class="text-[#4B5563] text-[16px] mb-8" style="line-height:1.85;">A startup launch is newsworthy if you package it correctly. I put together a full press kit: company story, press releases, digital artwork, and team bios, then pitched it to journalists covering concerts, sports, and live entertainment.</p>
           <p class="text-[#4B5563] text-[16px] mb-8" style="line-height:1.85;">This strategy produced coverage, and links, from Forbes, VentureBeat, Pando, and others.</p>
 
@@ -317,7 +318,7 @@
         </div>
 
         <div class="mb-10">
-          <h3 class="font-display font-bold text-[18px] text-ink mb-2">Reverse-Engineer the Competition</h3>
+          <h3 id="s-4" class="font-display font-bold text-[18px] text-ink mb-2">Reverse-Engineer the Competition</h3>
           <p class="text-[#4B5563] text-[16px] mb-8" style="line-height:1.85;">Rather than starting from scratch, I pulled a list of 1,000+ pages already linking to competitors like StubHub and SeatGeek but not to Rukkus. From there, I filtered for the most authoritative and relevant domains and ran a targeted outreach campaign.</p>
           <p class="text-[#4B5563] text-[16px] mb-8" style="line-height:1.85;">The logic was simple. If a site was willing to link to a competitor, they might link to us too, especially with a better pitch. This produced links from iMore, CNET, and the Atlanta Journal-Constitution.</p>
 
@@ -342,7 +343,7 @@
         </div>
 
         <div class="mb-10">
-          <h3 class="font-display font-bold text-[18px] text-ink mb-2">Secure University Discount Pages</h3>
+          <h3 id="s-5" class="font-display font-bold text-[18px] text-ink mb-2">Secure University Discount Pages</h3>
           <p class="text-[#4B5563] text-[16px] mb-8" style="line-height:1.85;">College students are a core audience for live events. Using site operators like <code class="bg-offwhite px-1.5 py-0.5 rounded text-sm font-mono text-ink">site:.edu intitle:discounts</code>, I identified hundreds of university pages dedicated to student and staff discount programs.</p>
           <p class="text-[#4B5563] text-[16px] mb-8" style="line-height:1.85;">I reached out to propose adding Rukkus to their lists, a genuinely useful addition for students, and a trust signal for Google. This landed links from Harvard, Cornell, the University of Pittsburgh, and more. .edu links carry significant authority weight.</p>
 
@@ -448,14 +449,33 @@
     </div>
 
     <!-- RIGHT SIDEBAR -->
-    <div class="hidden md:block sticky top-24 self-start pl-6">
+    <div class="hidden md:block sticky top-24 self-start pl-[84px]">
       <div class="mb-8">
-        <p class="text-[13px] font-semibold uppercase tracking-wider text-muted mb-3">Table of Contents</p>
-        <nav class="space-y-0.5">
-          <a href="#challenge" class="toc-link block text-[15px] text-muted hover:text-coral py-1.5 border-l-[3px] border-transparent pl-3 hover:border-coral">The Challenge</a>
-          <a href="#strategy" class="toc-link block text-[15px] text-muted hover:text-coral py-1.5 border-l-[3px] border-transparent pl-3 hover:border-coral">The Strategy</a>
-          <a href="#results" class="toc-link block text-[15px] text-muted hover:text-coral py-1.5 border-l-[3px] border-transparent pl-3 hover:border-coral">The Results</a>
-          <a href="#testimonial" class="toc-link block text-[15px] text-muted hover:text-coral py-1.5 border-l-[3px] border-transparent pl-3 hover:border-coral">Testimonial</a>
+        <p class="text-[16px] font-semibold mb-3" style="color:#111;">On this page</p>
+        <nav id="toc-nav">
+          <!-- 1. Challenge -->
+          <div class="toc-section" data-section="challenge">
+            <a href="#challenge" class="toc-h2-link block text-[14px] font-semibold py-1.5 transition-colors duration-200" style="color:#4B5563;">1. The Challenge</a>
+            <div class="toc-children"></div>
+          </div>
+          <!-- 2. Strategy -->
+          <div class="toc-section" data-section="strategy">
+            <a href="#strategy" class="toc-h2-link block text-[14px] font-semibold py-1.5 transition-colors duration-200" style="color:#4B5563;">2. The Strategy</a>
+            <div class="toc-children">
+              <div style="margin-left:1.5px;border-left:2px solid #E5E7EB;padding-left:0;">
+                <a href="#s-1" class="toc-h3-link block text-[12.5px] py-1.5 pl-3 border-l-[2px] border-transparent transition-colors duration-150" style="color:#8896A8;margin-left:-2px;">Offer Unique Data to Journalists</a>
+                <a href="#s-2" class="toc-h3-link block text-[12.5px] py-1.5 pl-3 border-l-[2px] border-transparent transition-colors duration-150" style="color:#8896A8;margin-left:-2px;">Produce Engaging Visuals</a>
+                <a href="#s-3" class="toc-h3-link block text-[12.5px] py-1.5 pl-3 border-l-[2px] border-transparent transition-colors duration-150" style="color:#8896A8;margin-left:-2px;">Turn the Launch Into a Story</a>
+                <a href="#s-4" class="toc-h3-link block text-[12.5px] py-1.5 pl-3 border-l-[2px] border-transparent transition-colors duration-150" style="color:#8896A8;margin-left:-2px;">Reverse-Engineer the Competition</a>
+                <a href="#s-5" class="toc-h3-link block text-[12.5px] py-1.5 pl-3 border-l-[2px] border-transparent transition-colors duration-150" style="color:#8896A8;margin-left:-2px;">Secure University Discount Pages</a>
+              </div>
+            </div>
+          </div>
+          <!-- 3. Results -->
+          <div class="toc-section" data-section="results">
+            <a href="#results" class="toc-h2-link block text-[14px] font-semibold py-1.5 transition-colors duration-200" style="color:#4B5563;">3. The Results</a>
+            <div class="toc-children"></div>
+          </div>
         </nav>
       </div>
     </div>
@@ -682,25 +702,55 @@
 
 
 <script>
-  const sections = document.querySelectorAll('#challenge, #strategy, #results, #testimonial');
-  const tocLinks = {
-    'challenge': document.querySelector('a[href="#challenge"]'),
-    'strategy': document.querySelector('a[href="#strategy"]'),
-    'results': document.querySelector('a[href="#results"]'),
-    'testimonial': document.querySelector('a[href="#testimonial"]'),
-  };
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      const link = tocLinks[entry.target.id];
-      if (!link) return;
-      if (entry.isIntersecting) {
-        Object.values(tocLinks).forEach(l => { if (l) { l.classList.remove('text-coral','border-coral'); l.classList.add('text-muted','border-transparent'); }});
-        link.classList.remove('text-muted','border-transparent');
-        link.classList.add('text-coral','border-coral');
-      }
+(function(){
+  var sectionIds = ['challenge','strategy','results'];
+  var h3Ids = ['s-1','s-2','s-3','s-4','s-5'];
+  var activeSection = null;
+  var activeH3 = null;
+
+  function setActiveSection(id){
+    if(activeSection === id) return;
+    activeSection = id;
+    document.querySelectorAll('.toc-section').forEach(function(sec){
+      var h2 = sec.querySelector('.toc-h2-link');
+      var isActive = sec.getAttribute('data-section') === id;
+      h2.style.color = isActive ? '#F47B5A' : '';
+      h2.style.borderLeftColor = 'transparent';
+      h2.style.fontWeight = isActive ? '700' : '600';
     });
-  }, { rootMargin: '-20% 0px -70% 0px' });
-  sections.forEach(s => observer.observe(s));
+    activeH3 = null;
+    document.querySelectorAll('.toc-h3-link').forEach(function(a){ a.style.borderLeftColor = 'transparent'; });
+  }
+
+  function setActiveH3(id){
+    if(activeH3 === id) return;
+    activeH3 = id;
+    document.querySelectorAll('.toc-h3-link').forEach(function(a){
+      a.style.borderLeftColor = a.getAttribute('href') === '#'+id ? '#F47B5A' : 'transparent';
+    });
+  }
+
+  var secObs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting) setActiveSection(e.target.id); });
+  }, { rootMargin: '-15% 0px -70% 0px' });
+  sectionIds.forEach(function(id){ var el = document.getElementById(id); if(el) secObs.observe(el); });
+
+  var h3Obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting) setActiveH3(e.target.id); });
+  }, { rootMargin: '-15% 0px -70% 0px' });
+  h3Ids.forEach(function(id){ var el = document.getElementById(id); if(el) h3Obs.observe(el); });
+
+  document.querySelectorAll('.toc-h3-link').forEach(function(a){
+    a.addEventListener('click', function(){ setActiveH3(a.getAttribute('href').slice(1)); });
+  });
+  document.querySelectorAll('.toc-h2-link').forEach(function(a){
+    a.addEventListener('click', function(){
+      var firstH3 = a.closest('.toc-section').querySelector('.toc-h3-link');
+      if(firstH3) setActiveH3(firstH3.getAttribute('href').slice(1));
+    });
+  });
+  setActiveSection('challenge');
+})();
 </script>
 
 </body>
