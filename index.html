@@ -80,6 +80,11 @@
   }
   #mob { display: none !important; }
   @media (max-width: 767px) { #mob.mob-open { display: flex !important; } }
+  @media (max-width: 767px) {
+    .portrait-wrap { width: 320px !important; height: 360px !important; transform: none; margin-bottom: 0; }
+    .portrait-circle { width: 320px !important; height: 320px !important; }
+    .portrait-badge { left: 50% !important; transform: translateX(-50%) !important; top: auto !important; bottom: 0px !important; }
+  }
 </style>
 </head>
 <body class="antialiased">
@@ -272,7 +277,7 @@
 
       <!-- Trusted by the brands you love (right — matches reference exactly) -->
       <div class="pt-0 max-w-md mx-auto md:max-w-none md:mx-0 md:pr-8">
-        <p class="text-ink mb-4 text-center md:text-left" style="font-family:'Poppins',sans-serif;font-weight:800;font-size:clamp(1.45rem,2.5vw,1.75rem);line-height:1.2;">Trusted by brands you love.</p>
+        <p class="text-ink mb-4 text-center md:text-left" style="font-family:'Poppins',sans-serif;font-weight:800;font-size:clamp(1.45rem,5.8vw,1.75rem);white-space:nowrap;line-height:1.2;">Trusted by brands you love.</p>
         <div class="grid grid-cols-4 gap-x-4 hero:gap-x-5 gap-y-4 items-center w-full hero:mx-0">
           <img src="chase.png" alt="Chase" style="height:54px;width:auto;max-width:100%;filter:grayscale(1) invert(1) brightness(0.47) invert(1);mix-blend-mode:multiply;">
           <img src="applebees.png" alt="Applebee's" style="height:50px;width:auto;max-width:100%;filter:grayscale(1) invert(1) brightness(0.47) invert(1);mix-blend-mode:multiply;">
@@ -304,7 +309,6 @@
     <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
 
       <div class="service-card rounded-2xl p-6 border border-border" style="background:#ffffff; min-height:230px;">
-        <div class="card-blob" style="background:#FDDDD6;"></div>
         <div class="card-content">
           <div class="card-icon w-10 h-10 rounded-full mb-5" style="background:#ffe5e4;">
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 4h14M3 8h10M3 12h14M3 16h8" stroke="#F47B5A" stroke-width="1.6" stroke-linecap="round"/></svg>
@@ -315,7 +319,6 @@
       </div>
 
       <div class="service-card rounded-2xl p-6 border border-border" style="background:#ffffff; min-height:230px;">
-        <div class="card-blob" style="background:#E5E2FF;"></div>
         <div class="card-content">
           <div class="card-icon w-10 h-10 rounded-full mb-5" style="background:#eae1fe;">
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M8 4l-4 6 4 6M12 4l4 6-4 6" stroke="#7B68EE" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -326,7 +329,6 @@
       </div>
 
       <div class="service-card rounded-2xl p-6 border border-border" style="background:#ffffff; min-height:230px;">
-        <div class="card-blob" style="background:#FBF0C0;"></div>
         <div class="card-content">
           <div class="card-icon w-10 h-10 rounded-full mb-5" style="background:#fff0cf;">
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="6" stroke="#C4900A" stroke-width="1.6"/><path d="M10 7v3l2 2" stroke="#C4900A" stroke-width="1.6" stroke-linecap="round"/></svg>
@@ -337,7 +339,6 @@
       </div>
 
       <div class="service-card rounded-2xl p-6 border border-border" style="background:#ffffff; min-height:230px;">
-        <div class="card-blob" style="background:#DAE8EF;"></div>
         <div class="card-content">
           <div class="card-icon w-10 h-10 rounded-full mb-5" style="background:#d3dce5;">
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="5" cy="10" r="2" stroke="#5E7082" stroke-width="1.6"/><circle cx="15" cy="5" r="2" stroke="#5E7082" stroke-width="1.6"/><circle cx="15" cy="15" r="2" stroke="#5E7082" stroke-width="1.6"/><path d="M7 9l6-3M7 11l6 3" stroke="#5E7082" stroke-width="1.4" stroke-linecap="round"/></svg>
@@ -360,10 +361,10 @@
 
     <!-- Mobile: order 1 | Desktop: col 2 row 1 — label + heading -->
     <div class="order-1 md:col-start-2 md:row-start-1">
-      <div class="inline-flex items-center gap-2 bg-coral-light text-coral text-xs font-semibold px-3 py-1.5 rounded-full mb-5">
-        <span class="w-1.5 h-1.5 rounded-full bg-coral"></span>Track record
+      <div class="inline-flex items-center gap-2 bg-violet-light text-violet text-xs font-semibold px-3 py-1.5 rounded-full mb-5">
+        <span class="w-1.5 h-1.5 rounded-full bg-violet"></span>Track record
       </div>
-      <h2 class="font-display font-extrabold text-3xl md:text-4xl text-ink tracking-tight leading-tight">10+ years helping brands drive millions in incremental revenue.</h2>
+      <h2 class="font-display font-extrabold text-3xl md:text-4xl text-ink tracking-tight leading-tight">Results that speak for themselves.</h2>
     </div>
 
     <!-- Mobile: order 2 | Desktop: col 1 rows 1–2 — graph -->
@@ -372,8 +373,8 @@
         <svg id="chart-svg" width="100%" viewBox="22 63 576 313" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block;background:#fff;">
           <defs>
             <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#1a73e8" stop-opacity="0.14"/>
-              <stop offset="100%" stop-color="#1a73e8" stop-opacity="0.01"/>
+              <stop offset="0%" stop-color="#7B68EE" stop-opacity="0.14"/>
+              <stop offset="100%" stop-color="#7B68EE" stop-opacity="0.01"/>
             </linearGradient>
             <clipPath id="revealClip">
               <rect id="revealRect" x="60" y="0" width="0" height="390"/>
@@ -397,7 +398,7 @@
           <path d="M 60,330 L 60,252 C 76,252 91,261 107,261 C 124,261 140,242 156,242 C 172,242 188,249 204,249 C 220,249 236,245 252,245 C 268,245 284,252 300,252 C 316,241 332,233 348,228 C 364,218 380,208 396,204 C 412,204 428,207 444,200 C 460,188 476,173 492,168 C 508,162 524,150 540,144 C 556,139 568,136 582,136 L 582,330 Z" fill="url(#areaGrad)" clip-path="url(#revealClip)"/>
 
           <!-- ── Line ── -->
-          <path d="M 60,252 C 76,252 91,261 107,261 C 124,261 140,242 156,242 C 172,242 188,249 204,249 C 220,249 236,245 252,245 C 268,245 284,252 300,252 C 316,241 332,233 348,228 C 364,218 380,208 396,204 C 412,204 428,207 444,200 C 460,188 476,173 492,168 C 508,162 524,150 540,144 C 556,139 568,136 582,136" stroke="#1a73e8" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" clip-path="url(#revealClip)"/>
+          <path d="M 60,252 C 76,252 91,261 107,261 C 124,261 140,242 156,242 C 172,242 188,249 204,249 C 220,249 236,245 252,245 C 268,245 284,252 300,252 C 316,241 332,233 348,228 C 364,218 380,208 396,204 C 412,204 428,207 444,200 C 460,188 476,173 492,168 C 508,162 524,150 540,144 C 556,139 568,136 582,136" stroke="#7B68EE" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" clip-path="url(#revealClip)"/>
 
           <!-- ── Jun marker ── -->
           <g id="chart-marker" style="opacity:0;transition:opacity 1.2s ease;">
@@ -427,17 +428,97 @@
           <text x="540" y="352" font-family="'Inter',sans-serif" font-size="9" fill="#D1D5DB" text-anchor="middle">Nov</text>
           <text x="582" y="352" font-family="'Inter',sans-serif" font-size="9" fill="#D1D5DB" text-anchor="middle">Dec</text>
         </svg>
-        <div class="absolute inset-0 bg-gradient-to-t from-coral/[0.04] to-transparent mix-blend-multiply pointer-events-none"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-violet/[0.04] to-transparent mix-blend-multiply pointer-events-none"></div>
       </div>
     </div>
 
     <!-- Mobile: order 3 | Desktop: col 2 row 2 — subcopy + button -->
     <div class="order-3 md:col-start-2 md:row-start-2">
       <p class="text-muted mb-4" style="line-height:1.7">Organic traffic only matters when it converts. I help brands show up for the topics that matter most, and create experiences that turn those clicks into action.</p>
-      <p class="text-muted mb-8" style="line-height:1.7">After more than a decade in SEO, I've learned what to focus on and what to ignore, so I can find real opportunities and build growth that compounds over time. That's what I bring to every engagement.</p>
+      <p class="text-muted mb-8" style="line-height:1.7">Discover how I've helped businesses like yours turn SEO into a powerful marketing pipeline.</p>
       <a href="case-studies.html" class="btn-outline ripple-btn inline-flex items-center gap-2 border border-border text-ink px-5 py-2.5 rounded-full text-sm font-semibold focus-visible:outline-2 focus-visible:outline-violet">View case studies →</a>
     </div>
 
+  </div>
+</section>
+
+<!-- ABOUT SECTION -->
+<section class="bg-white border-t border-border py-12 md:py-20">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+
+      <!-- Copy (text only, no button on mobile — button comes after portrait) -->
+      <div class="text-center md:text-left order-1 md:order-1">
+        <div class="inline-flex items-center gap-2 bg-coral-light text-coral text-xs font-semibold px-3 py-1.5 rounded-full mb-5">
+          <span class="w-1.5 h-1.5 rounded-full bg-coral"></span>About me
+        </div>
+        <h2 class="font-display font-extrabold text-3xl md:text-4xl text-ink tracking-tight leading-tight mb-5">10+ years helping brands drive millions in incremental revenue.</h2>
+        <p class="text-muted mb-4" style="line-height:1.7;">I'm Craig Kleila, a data-driven SEO consultant who grows qualified website traffic with evidence-backed testing and clear, actionable strategies.</p>
+        <p class="text-muted md:mb-8 mb-0" style="line-height:1.7;">Over the last decade, I've successfully led SEO for businesses of all sizes, working in-house, at agencies, and independently. Each engagement has sharpened how I think about organic growth across different contexts and constraints.</p>
+        <!-- Button: desktop only here -->
+        <a href="about.html" class="hidden md:inline-flex btn-outline ripple-btn items-center gap-2 border border-border text-ink px-5 py-2.5 rounded-full text-sm font-semibold focus-visible:outline-2 focus-visible:outline-violet">More about me →</a>
+      </div>
+
+      <!-- Portrait -->
+      <div class="flex justify-center md:justify-end order-2 md:order-2" style="margin-right:20px;">
+        <!-- Mobile: exact same structure as about page -->
+        <div class="md:hidden flex flex-col items-center mb-2" style="margin-top:-20px;">
+          <div class="relative flex-shrink-0 portrait-wrap" style="width:400px;height:440px;">
+            <div class="portrait-badge absolute bg-white rounded-2xl px-5 py-3.5 border border-border" style="left:-128px;top:170px;z-index:25;box-shadow:0 8px 28px -6px rgba(0,0,0,0.12);">
+              <div class="flex items-center gap-2 mb-1">
+                <div class="w-2 h-2 rounded-full bg-green-400 flex-shrink-0"></div>
+                <span class="text-xs font-semibold text-ink" style="white-space:nowrap;">Available for new projects</span>
+              </div>
+              <p class="text-xs text-muted pl-4">Q2 2026 slots open</p>
+            </div>
+            <div class="portrait-circle absolute rounded-full overflow-hidden" style="width:400px;height:400px;top:0;left:0;background:#fe7d6d;">
+              <img src="1craig-photo.png" alt="Craig Kleila" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center top;transform:translateX(-3%);filter:contrast(1.12) brightness(0.93) saturate(0.82);">
+              <div style="position:absolute;inset:0;background:#fe7d6d;opacity:0.18;mix-blend-mode:multiply;"></div>
+            </div>
+          </div>
+          <a href="about.html" class="btn-outline ripple-btn inline-flex items-center gap-2 border border-border text-ink px-5 py-2.5 rounded-full text-sm font-semibold focus-visible:outline-2 focus-visible:outline-violet" style="margin-top:32px;">More about me →</a>
+        </div>
+        <!-- Desktop: badge left + portrait right -->
+        <div class="hidden md:block relative flex-shrink-0" style="width:468px;height:340px;">
+          <div class="absolute bg-white rounded-2xl px-5 py-3.5 border border-border" style="left:0;top:150px;z-index:25;box-shadow:0 8px 28px -6px rgba(0,0,0,0.12);">
+            <div class="flex items-center gap-2 mb-1">
+              <div class="w-2 h-2 rounded-full bg-green-400 flex-shrink-0"></div>
+              <span class="text-xs font-semibold text-ink" style="white-space:nowrap;">Available for new projects</span>
+            </div>
+            <p class="text-xs text-muted pl-4">Q2 2026 slots open</p>
+          </div>
+          <div class="absolute rounded-full overflow-hidden" style="left:128px;top:0;width:340px;height:340px;background:#fe7d6d;">
+            <img src="1craig-photo.png" alt="Craig Kleila" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center top;transform:translateX(-3%);filter:contrast(1.12) brightness(0.93) saturate(0.82);">
+            <div style="position:absolute;inset:0;background:#fe7d6d;opacity:0.18;mix-blend-mode:multiply;"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- STATS STRIP -->
+<section class="border-t border-border py-10" style="background:#F0EFFE;">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 text-center">
+      <div>
+        <p class="font-display font-extrabold text-4xl text-ink tracking-tight" style="color:#5E4DD6;">13+</p>
+        <p class="text-sm text-muted mt-1">Years in SEO</p>
+      </div>
+      <div>
+        <p class="font-display font-extrabold text-4xl text-ink tracking-tight" style="color:#5E4DD6;">50M+</p>
+        <p class="text-sm text-muted mt-1">Organic visits driven</p>
+      </div>
+      <div>
+        <p class="font-display font-extrabold text-4xl text-ink tracking-tight" style="color:#5E4DD6;">30+</p>
+        <p class="text-sm text-muted mt-1">Brands worked with</p>
+      </div>
+      <div>
+        <p class="font-display font-extrabold text-4xl text-ink tracking-tight" style="color:#5E4DD6;">$100M+</p>
+        <p class="text-sm text-muted mt-1">In incremental revenue</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -538,39 +619,6 @@
 })();
 </script>
 
-<script>
-(function(){
-  document.querySelectorAll('.service-card').forEach(function(card) {
-    var blob = card.querySelector('.card-blob');
-    if (!blob) return;
-
-    card.addEventListener('mouseenter', function(e) {
-      var rect = card.getBoundingClientRect();
-      var x = e.clientX - rect.left;
-      var y = e.clientY - rect.top;
-      // Snap to entry point at size 0, no transition
-      blob.style.transition = 'none';
-      blob.style.left = x + 'px';
-      blob.style.top  = y + 'px';
-      blob.style.width  = '0px';
-      blob.style.height = '0px';
-      blob.style.opacity = '1';
-      blob.offsetHeight; // force reflow
-      // Expand to fill entire card from entry point
-      blob.style.transition = 'width 0.7s ease-out, height 0.7s ease-out';
-      blob.style.width  = '800px';
-      blob.style.height = '800px';
-    });
-
-    card.addEventListener('mouseleave', function() {
-      blob.style.transition = 'width 0.4s ease-in, height 0.4s ease-in, opacity 0.3s ease';
-      blob.style.width  = '0px';
-      blob.style.height = '0px';
-      blob.style.opacity = '0';
-    });
-  });
-})();
-</script>
 
 <script>
 (function(){
