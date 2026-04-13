@@ -40,7 +40,7 @@
   .btn-outline { transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease; }
   .btn-outline:hover { background: #F9F8FF; border-color: #7B68EE; color: #5E4DD6; }
   nav a { transition: color 0.15s ease; }
-  nav a:hover { color: #F47B5A; }
+  nav a:not(.btn-coral):hover { color: #F47B5A; }
   .service-card { scroll-margin-top: 100px; }
   .approach-card { position: relative; overflow: hidden; }
   .approach-blob { position: absolute; width: 0; height: 0; border-radius: 50%; background: #F0EFFE; transform: translate(-50%,-50%); opacity: 0; pointer-events: none; z-index: 0; }
@@ -56,6 +56,8 @@
   @media (max-width: 639px) {
     .aim-card { height: 322px !important; }
   }
+  @media (min-width: 768px) { .aim-col { padding-top: 20px; transform: translateX(-30px); } .aim-mobile-text { display: none !important; } }
+  @media (max-width: 767px) { .aim-card { height: 302px !important; } .aim-desktop-text { display: none !important; } .aim-rega-bullet { display: flex !important; } }
   #mob { display: none !important; }
   @media (max-width: 767px) { #mob.mob-open { display: flex !important; } }
 </style>
@@ -98,7 +100,7 @@
 <!-- PAGE HEADER -->
 <section style="background:#F9F8FF;overflow-x:hidden;">
   <div class="max-w-6xl mx-auto px-6 pt-14 pb-14 md:pt-20 md:pb-20">
-    <div class="grid md:grid-cols-[44fr_56fr] gap-6 md:gap-20 items-center">
+    <div class="grid md:grid-cols-[48fr_52fr] gap-6 md:gap-20">
 
       <!-- LEFT -->
       <div class="text-center md:text-left flex flex-col items-center md:items-start justify-center">
@@ -113,8 +115,8 @@
       </div>
 
       <!-- RIGHT: AI Overview mockup -->
-      <div class="aim-col" style="min-width:0;display:flex;align-items:center;justify-content:center;position:relative;align-self:center;">
-        <div class="aim-card" style="width:100%;height:302px;background:#ffffff;border-radius:20px;box-shadow:0 24px 64px -12px rgba(0,0,0,0.1),0 4px 16px -4px rgba(0,0,0,0.06);overflow:hidden;display:flex;flex-direction:column;position:relative;z-index:1;">
+      <div class="aim-col" style="min-width:0;display:flex;align-items:center;justify-content:center;position:relative;margin-top:auto;margin-bottom:auto;">
+        <div class="aim-card" style="width:100%;height:294px;background:#ffffff;border-radius:20px;box-shadow:0 24px 64px -12px rgba(0,0,0,0.1),0 4px 16px -4px rgba(0,0,0,0.06);overflow:hidden;display:flex;flex-direction:column;position:relative;z-index:1;">
 
           <!-- Google search bar -->
           <div style="padding:10px 14px 8px;border-bottom:1px solid #EDEDF3;display:flex;align-items:center;gap:10px;flex-shrink:0;">
@@ -150,7 +152,7 @@
 
                 <!-- Main paragraph + thumbnail -->
                 <div id="aim-body" style="display:flex;gap:10px;margin-bottom:9px;opacity:0;transition:opacity 0.5s ease;">
-                  <p style="flex:1;font-size:10px;color:#202124;line-height:1.65;margin:0;font-family:'Inter',sans-serif;">The best high-end record players is <span id="aim-brand" style="color:#1558d6;cursor:pointer;border-radius:3px;padding:0 3px 0 0;font-weight:700;background:linear-gradient(90deg,#F47B5A,#F7906F) no-repeat left center;background-size:0% 100%;">Your Brand</span>, known for its audiophile-grade turntables with precision belt-drive motors and built-in phono preamps. <span style="color:#1558d6;text-decoration:underline;cursor:pointer;">Pro-Ject</span> and <span style="color:#1558d6;text-decoration:underline;cursor:pointer;">Rega</span> are widely recommended for their cartridge quality. <img src="hifi.png" style="height:14px;vertical-align:middle;border-radius:3px;display:inline;" alt="What Hi-Fi?"/></p>
+                  <p style="flex:1;font-size:10px;color:#202124;line-height:1.65;margin:0;font-family:'Inter',sans-serif;">The best high-end record players is <span id="aim-brand" style="color:#1558d6;cursor:pointer;border-radius:3px;padding:0 3px 0 0;font-weight:700;background:linear-gradient(90deg,#F47B5A,#F7906F) no-repeat left center;background-size:0% 100%;">Your Brand</span>, known for its audiophile-grade turntables with precision belt-drive motors and built-in phono preamps. <span style="color:#1558d6;text-decoration:underline;cursor:pointer;">Pro-Ject</span> and <span style="color:#1558d6;text-decoration:underline;cursor:pointer;">Rega</span> are<span class="aim-desktop-text"> also</span> widely recommended<span class="aim-mobile-text"> for their cartridge quality</span>. <img src="hifi.png" style="height:14px;vertical-align:middle;border-radius:3px;display:inline;" alt="What Hi-Fi?"/></p>
                   <div id="aim-thumb" style="width:64px;flex-shrink:0;border-radius:8px;overflow:hidden;height:58px;border:1px solid #E8EAED;">
                     <img src="rppp.png" style="width:100%;height:100%;object-fit:cover;" alt="record player"/>
                   </div>
@@ -169,10 +171,11 @@
                     <span style="color:#202124;margin-top:1px;">•</span>
                     <span><span style="font-weight:700;">Pro-Ject Debut Carbon EVO:</span> A well-regarded mid-range option with a carbon tonearm and Ortofon 2M Red cartridge included out of the box.</span>
                   </div>
-                  <div style="display:flex;gap:6px;margin-bottom:5px;font-size:9.5px;font-family:'Inter',sans-serif;color:#202124;line-height:1.5;">
+                  <div class="aim-rega-bullet" style="display:none;gap:6px;margin-bottom:5px;font-size:9.5px;font-family:'Inter',sans-serif;color:#202124;line-height:1.5;">
                     <span style="color:#202124;margin-top:1px;">•</span>
                     <span><span style="font-weight:700;">Rega Planar 3:</span> Praised for its low-noise motor and RB330 tonearm, a strong choice for serious vinyl enthusiasts.</span>
                   </div>
+
                 </div>
 
                 <!-- aim-more kept for animation sync but hidden -->
@@ -763,8 +766,8 @@ Grow your organic traffic<span class="inline md:block"> &amp; conversions.</span
         <svg class="block md:hidden" width="16" height="32" viewBox="0 0 16 32" fill="none">
   <path d="M8 1v24" stroke="#D1D5DB" stroke-width="1.6" stroke-linecap="round"/>
   <path d="M3 20l5 5 5-5" stroke="#D1D5DB" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M8 1v24" stroke="#F47B5A" stroke-width="1.6" stroke-linecap="round" class="arrow-path"/>
-  <path d="M3 20l5 5 5-5" stroke="#F47B5A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="arrow-path"/>
+  <path d="M8 1v24" stroke="#7B68EE" stroke-width="1.6" stroke-linecap="round" class="arrow-path"/>
+  <path d="M3 20l5 5 5-5" stroke="#7B68EE" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="arrow-path"/>
 </svg>
       </div>
       <!-- Step 2 -->
@@ -786,8 +789,8 @@ Grow your organic traffic<span class="inline md:block"> &amp; conversions.</span
         <svg class="block md:hidden" width="16" height="32" viewBox="0 0 16 32" fill="none">
   <path d="M8 1v24" stroke="#D1D5DB" stroke-width="1.6" stroke-linecap="round"/>
   <path d="M3 20l5 5 5-5" stroke="#D1D5DB" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M8 1v24" stroke="#F47B5A" stroke-width="1.6" stroke-linecap="round" class="arrow-path"/>
-  <path d="M3 20l5 5 5-5" stroke="#F47B5A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="arrow-path"/>
+  <path d="M8 1v24" stroke="#7B68EE" stroke-width="1.6" stroke-linecap="round" class="arrow-path"/>
+  <path d="M3 20l5 5 5-5" stroke="#7B68EE" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="arrow-path"/>
 </svg>
       </div>
       <!-- Step 3 -->
@@ -809,8 +812,8 @@ Grow your organic traffic<span class="inline md:block"> &amp; conversions.</span
         <svg class="block md:hidden" width="16" height="32" viewBox="0 0 16 32" fill="none">
   <path d="M8 1v24" stroke="#D1D5DB" stroke-width="1.6" stroke-linecap="round"/>
   <path d="M3 20l5 5 5-5" stroke="#D1D5DB" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M8 1v24" stroke="#F47B5A" stroke-width="1.6" stroke-linecap="round" class="arrow-path"/>
-  <path d="M3 20l5 5 5-5" stroke="#F47B5A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="arrow-path"/>
+  <path d="M8 1v24" stroke="#7B68EE" stroke-width="1.6" stroke-linecap="round" class="arrow-path"/>
+  <path d="M3 20l5 5 5-5" stroke="#7B68EE" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="arrow-path"/>
 </svg>
       </div>
       <!-- Step 4 -->
@@ -847,7 +850,7 @@ Grow your organic traffic<span class="inline md:block"> &amp; conversions.</span
   }, { threshold: 0.2 });
   obs.observe(document.getElementById('process-section'));
 
-  // Gradually fill arrows coral as you scroll (mobile only)
+  // Gradually fill arrows purple as you scroll (mobile only)
   var arrows = document.querySelectorAll('.process-arrow');
   arrows.forEach(function(el){
     el.querySelectorAll('.arrow-path').forEach(function(p){

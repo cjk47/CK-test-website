@@ -38,7 +38,7 @@
   .card-hover { transition: box-shadow 0.2s ease, transform 0.2s cubic-bezier(0.22,1,0.36,1); }
   .card-hover:hover { box-shadow: 0 8px 32px -8px rgba(123,104,238,0.12); transform: translateY(-2px); }
   nav a { transition: color 0.15s ease; }
-  nav a:hover { color: #F47B5A; }
+  nav a:not(.btn-coral):hover { color: #F47B5A; }
   .breadcrumb-arrow { display: inline-block; transition: transform 0.2s cubic-bezier(0.22,1,0.36,1); }
   .breadcrumb-link:hover .breadcrumb-arrow { transform: translateX(-4px); }
   .toc-link { transition: color 0.15s ease, border-color 0.15s ease; }
@@ -60,7 +60,6 @@
 </style>
 </head>
 <body class="antialiased">
-<div id="progress-bar" style="position:fixed;top:64px;left:0;width:0%;height:4px;background:#F47B5A;z-index:9999;transition:width 0.1s linear;"></div>
 <script>
   window.addEventListener('scroll', function() {
     var start = document.getElementById('challenge').offsetTop - 180;
@@ -73,7 +72,8 @@
 </script>
 
 <!-- NAV -->
-<header class="sticky top-0 z-50 bg-white border-b border-border">
+<div class="sticky top-0 z-50">
+<header class="bg-white border-b border-border" style="position:relative;">
   <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
     <a href="index.html"><img src="newlogo.png" alt="Craig Kleila SEO" class="h-7"></a>
     <div class="hidden md:flex items-center gap-8 text-sm font-medium text-muted">
@@ -102,7 +102,9 @@
       <a href="contact.html" class="bg-coral text-white block text-center px-6 py-3 rounded-full font-semibold">Get in Touch</a>
     </div>
   </div>
+  <div id="progress-bar" style="position:absolute;bottom:0;left:0;width:0%;height:3px;background:#F47B5A;z-index:9999;transition:width 0.1s linear;"></div>
 </header>
+</div>
 
 <!-- HERO -->
 <section style="background:#ffffff;position:relative;overflow:hidden;">
@@ -215,20 +217,15 @@
 
       <section id="challenge" class="mb-8 scroll-mt-24">
         <h2 class="font-display font-bold text-[28px] text-ink mb-4">The Challenge</h2>
-        <p class="text-[#4B5563] text-[16px] mb-6" style="line-height:1.85;">XVIVO creates scientific visuals for pharmaceutical and biotech companies, including mechanism of action videos, clinical trial animations, and patient education content. They came to me after a drop in traffic and rankings for key animation-related searches.</p>
-        <p class="text-[#4B5563] text-[16px] mb-6" style="line-height:1.85;">A few things were holding the site back:</p>
-        <ul class="space-y-6 mb-8">
-          <li class="flex items-start gap-3 text-[16px] text-[#4B5563]"><span class="w-5 h-5 rounded-full bg-coral-light flex items-center justify-center flex-shrink-0 mt-0.5"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#F47B5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Service pages didn't reflect how buyers actually search or evaluate vendors</li>
-          <li class="flex items-start gap-3 text-[16px] text-[#4B5563]"><span class="w-5 h-5 rounded-full bg-coral-light flex items-center justify-center flex-shrink-0 mt-0.5"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#F47B5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Most content targeted broad terms instead of specific animation types</li>
-          <li class="flex items-start gap-3 text-[16px] text-[#4B5563]"><span class="w-5 h-5 rounded-full bg-coral-light flex items-center justify-center flex-shrink-0 mt-0.5"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#F47B5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>The portfolio generated multiple versions of the same content through URL parameters</li>
-          <li class="flex items-start gap-3 text-[16px] text-[#4B5563]"><span class="w-5 h-5 rounded-full bg-coral-light flex items-center justify-center flex-shrink-0 mt-0.5"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#F47B5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Search engines were spending time crawling low-value pages while important ones were harder to find and index</li>
-          <li class="flex items-start gap-3 text-[16px] text-[#4B5563]"><span class="w-5 h-5 rounded-full bg-coral-light flex items-center justify-center flex-shrink-0 mt-0.5"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#F47B5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Blog content did not link to service pages, making it difficult for users to move from research to action</li>
-        </ul>
-        <p class="text-[#4B5563] text-[16px] mb-6" style="line-height:1.85;">In a niche B2B market where a single client relationship is worth hundreds of thousands of dollars, losing ground in search wasn't a visibility problem — it was a revenue problem.</p>
+        <p class="text-[#4B5563] text-[16px] mb-6" style="line-height:1.85;">XVIVO, a leading medical animation company, came to me after seeing declines in rankings and traffic for key animation-related queries.</p>
+        <p class="text-[#4B5563] text-[16px] mb-6" style="line-height:1.85;">Despite their strong reputation, the site wasn't showing up for many of the searches that matter most to their business.</p>
+        <p class="text-[#4B5563] text-[16px] mb-6" style="line-height:1.85;">Service pages were too broad, limiting visibility for more specific, high-intent queries. Coverage across key animation types and use cases was also limited, making it harder to compete across the full category.</p>
+        <p class="text-[#4B5563] text-[16px] mb-6" style="line-height:1.85;">Even when users landed on the site, pages didn't always match expectations. The result was lower visibility, fewer inquiries, and lost ground to competitors.</p>
       </section>
 
       <section id="strategy" class="mb-8 scroll-mt-24">
         <h2 class="font-display font-bold text-[28px] text-ink mb-4">The Strategy</h2>
+        <p class="text-[#4B5563] text-[16px] mb-6" style="line-height:1.85;">The strategy focused on improving how the site was crawled, expanding coverage across key areas, and making each page more aligned with how prospects search and evaluate vendors.</p>
         <ul class="space-y-10">
           <li>
             <div>
@@ -291,8 +288,9 @@
 
       <section id="results" class="mb-8 scroll-mt-24">
         <h2 class="font-display font-bold text-[28px] text-ink mb-4">The Results</h2>
-        <p class="text-[#4B5563] text-[16px] mb-6" style="line-height:1.85;">Within three months of implementation, XVIVO's organic performance showed clear, measurable improvement across every tracked metric.</p>
-        <p class="text-[#4B5563] text-[16px] mb-6" style="line-height:1.85;">The content and technical fixes compounded quickly — more pages indexed correctly meant more impressions, better metadata meant better click-through rates, and better landing pages meant more inquiries.</p>
+        <p class="text-[#4B5563] text-[16px] mb-6" style="line-height:1.85;">Within six months, XVIVO saw clear improvements across every tracked metric.</p>
+        <p class="text-[#4B5563] text-[16px] mb-6" style="line-height:1.85;">More high-value pages were being properly crawled and indexed, deeper content coverage helped the site rank for a broader set of relevant queries, updates to metadata improved CTRs, and on-page improvements boosted engagement.</p>
+        <p class="text-[#4B5563] text-[16px] mb-6" style="line-height:1.85;">The impact wasn't driven by a single change. It came from technical, content, and user experience improvements all working together.</p>
         <div class="grid grid-cols-3 gap-4 mt-8">
           <div class="bg-offwhite rounded-xl p-5 text-center">
             <p class="font-display font-bold text-3xl text-coral">+27%</p>
@@ -363,6 +361,31 @@
           </div>
           <img src="xvivo.png" alt="XVIVO" style="height:22px;object-fit:contain;mix-blend-mode:multiply;flex-shrink:0;">
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section style="background:#ffffff;padding:24px 0 48px;">
+  <div class="max-w-5xl mx-auto px-6">
+    <div style="position:relative;overflow:hidden;border-radius:20px;background:#323232;padding:48px 56px;display:flex;align-items:center;min-height:160px;">
+      <div style="position:relative;z-index:2;max-width:400px;">
+        <p class="font-display" style="font-size:1.55rem;line-height:1.35;color:#ffffff;margin-bottom:24px;"><strong>Ready to grow</strong> your organic traffic and turn it into real revenue?</p>
+        <a href="contact.html" style="display:inline-flex;align-items:center;gap:6px;background:#ffffff;color:#323232;font-family:'Inter',sans-serif;font-weight:600;font-size:0.875rem;padding:10px 22px;border-radius:999px;text-decoration:none;">Get in touch →</a>
+      </div>
+      <div style="position:absolute;right:-150px;top:50%;transform:translateY(-43%);width:420px;height:420px;z-index:1;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="420" height="420" viewBox="0 0 790 790" fill="none">
+          <circle cx="408.489" cy="400.489" r="312.489" fill="#7B68EE"/>
+          <path d="M709.086 155.469C677.631 114.223 638.359 79.5761 593.513 53.5069C548.668 27.4378 499.127 10.4569 447.719 3.53386C396.311 -3.38923 344.042 -0.118944 293.898 13.158C243.754 26.4349 196.716 49.4585 155.469 80.9141C114.223 112.37 79.576 151.641 53.5069 196.487C27.4378 241.333 10.4569 290.874 3.53385 342.282C-3.38923 393.69 -0.118938 445.958 13.158 496.102C26.4349 546.247 49.4585 593.285 80.9142 634.531L106.583 614.955C77.6979 577.08 56.5559 533.886 44.3641 487.84C32.1722 441.794 29.1692 393.797 35.5265 346.59C41.8837 299.383 57.4768 253.891 81.4155 212.711C105.354 171.53 137.169 135.468 175.045 106.583C212.92 77.6979 256.114 56.5559 302.161 44.3641C348.207 32.1722 396.203 29.1692 443.41 35.5265C490.617 41.8838 536.109 57.4769 577.29 81.4155C618.47 105.354 654.533 137.169 683.418 175.045L709.086 155.469Z" fill="url(#brandGradXvivo)"/>
+          <circle cx="83.5006" cy="177.5" r="15.8939" transform="rotate(169.609 83.5006 177.5)" fill="#B8AEFF"/>
+          <defs>
+            <linearGradient id="brandGradXvivo" x1="-64" y1="204.5" x2="128.5" y2="156" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#A599FF"/>
+              <stop offset="1" stop-color="#A599FF" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+        </svg>
       </div>
     </div>
   </div>
@@ -496,32 +519,6 @@
   update();
 })();
 </script>
-
-
-<!-- CTA BANNER -->
-<section style="background:#ffffff;padding:24px 0 48px;">
-  <div class="max-w-5xl mx-auto px-6">
-    <div style="position:relative;overflow:hidden;border-radius:20px;background:#323232;padding:48px 56px;display:flex;align-items:center;min-height:160px;">
-      <div style="position:relative;z-index:2;max-width:400px;">
-        <p class="font-display" style="font-size:1.55rem;line-height:1.35;color:#ffffff;margin-bottom:24px;"><strong>Ready to grow</strong> your organic traffic and turn it into real revenue?</p>
-        <a href="contact.html" style="display:inline-flex;align-items:center;gap:6px;background:#ffffff;color:#323232;font-family:'Inter',sans-serif;font-weight:600;font-size:0.875rem;padding:10px 22px;border-radius:999px;text-decoration:none;">Get in touch →</a>
-      </div>
-      <div style="position:absolute;right:-150px;top:50%;transform:translateY(-43%);width:420px;height:420px;z-index:1;">
-        <svg xmlns="http://www.w3.org/2000/svg" width="420" height="420" viewBox="0 0 790 790" fill="none">
-          <circle cx="408.489" cy="400.489" r="312.489" fill="#7B68EE"/>
-          <path d="M709.086 155.469C677.631 114.223 638.359 79.5761 593.513 53.5069C548.668 27.4378 499.127 10.4569 447.719 3.53386C396.311 -3.38923 344.042 -0.118944 293.898 13.158C243.754 26.4349 196.716 49.4585 155.469 80.9141C114.223 112.37 79.576 151.641 53.5069 196.487C27.4378 241.333 10.4569 290.874 3.53385 342.282C-3.38923 393.69 -0.118938 445.958 13.158 496.102C26.4349 546.247 49.4585 593.285 80.9142 634.531L106.583 614.955C77.6979 577.08 56.5559 533.886 44.3641 487.84C32.1722 441.794 29.1692 393.797 35.5265 346.59C41.8837 299.383 57.4768 253.891 81.4155 212.711C105.354 171.53 137.169 135.468 175.045 106.583C212.92 77.6979 256.114 56.5559 302.161 44.3641C348.207 32.1722 396.203 29.1692 443.41 35.5265C490.617 41.8838 536.109 57.4769 577.29 81.4155C618.47 105.354 654.533 137.169 683.418 175.045L709.086 155.469Z" fill="url(#brandGradXvivo)"/>
-          <circle cx="83.5006" cy="177.5" r="15.8939" transform="rotate(169.609 83.5006 177.5)" fill="#B8AEFF"/>
-          <defs>
-            <linearGradient id="brandGradXvivo" x1="-64" y1="204.5" x2="128.5" y2="156" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#A599FF"/>
-              <stop offset="1" stop-color="#A599FF" stop-opacity="0"/>
-            </linearGradient>
-          </defs>
-        </svg>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- BACK TO TOP -->
 <style>

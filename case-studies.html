@@ -39,7 +39,7 @@
   .card-arrow { display: inline-flex; transition: transform 0.2s cubic-bezier(0.22,1,0.36,1); }
   .card-hover:hover .card-arrow { transform: translateX(4px); }
   nav a { transition: color 0.15s ease; }
-  nav a:hover { color: #F47B5A; }
+  nav a:not(.btn-coral):hover { color: #F47B5A; }
   @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
   .ticker-track { display: flex; width: max-content; animation: ticker 48s linear infinite; }
   .ticker-track:hover { animation-play-state: paused; }
@@ -324,7 +324,7 @@
     </a>
 
     <!-- Case Study 5 - Chase -->
-    <a href="case-study-chase.html" class="card-hover flex flex-col bg-white rounded-2xl overflow-hidden" style="border:1px solid #E8E8F0;">
+    <div class="flex flex-col bg-white rounded-2xl overflow-hidden" style="border:1px solid #E8E8F0;cursor:default;">
       <div style="height:175px;overflow:hidden;position:relative;">
         <img src="cccc.png" alt="Chase" class="w-full h-full object-cover">
         <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(0,0,0,0.45) 0%, transparent 55%);"></div>
@@ -349,9 +349,9 @@
         </div>
       </div>
       <div class="px-5 py-4 flex items-center gap-1">
-        <span class="text-sm font-medium text-ink flex items-center gap-2">Read story <span class="card-arrow"><svg width="14" height="11" viewBox="0 3.5 32 25" fill="currentColor"><path d="M30.71 17.57H1a1.14 1.14 0 1 1 0-2.28h29.71a1.14 1.14 0 1 1 0 2.28"></path><path d="M19.29 29c-.29 0-.58-.11-.81-.33a1.14 1.14 0 0 1 0-1.62L29.1 16.43 18.48 5.81a1.14 1.14 0 0 1 0-1.62 1.14 1.14 0 0 1 1.62 0l11.43 11.43c.45.45.45 1.17 0 1.62L20.1 28.67c-.22.22-.52.33-.81.33"></path></svg></span></span>
+        <span class="text-sm font-medium text-muted flex items-center gap-2">Coming soon</span>
       </div>
-    </a>
+    </div>
 
     <!-- CTA Card -->
     <div class="flex flex-col rounded-2xl overflow-hidden" style="border:1px solid #E8E8F0;">

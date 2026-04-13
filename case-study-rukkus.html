@@ -38,7 +38,7 @@
   .btn-coral:hover { transform: translateY(-2px); box-shadow: 0 10px 28px -6px rgba(244,123,90,0.45); }
   .btn-coral:active { transform: translateY(0); }
   nav a { transition: color 0.15s ease; }
-  nav a:hover { color: #F47B5A; }
+  nav a:not(.btn-coral):hover { color: #F47B5A; }
   .breadcrumb-arrow { display: inline-block; transition: transform 0.2s cubic-bezier(0.22,1,0.36,1); }
   .breadcrumb-link:hover .breadcrumb-arrow { transform: translateX(-4px); }
   .toc-link { transition: color 0.15s ease, border-color 0.15s ease; }
@@ -60,7 +60,6 @@
 </style>
 </head>
 <body class="antialiased">
-<div id="progress-bar" style="position:fixed;top:64px;left:0;width:0%;height:4px;background:#F47B5A;z-index:9999;transition:width 0.1s linear;"></div>
 <script>
   window.addEventListener('scroll', function() {
     var start = document.getElementById('challenge').offsetTop - 180;
@@ -72,7 +71,8 @@
 </script>
 
 <!-- NAV -->
-<header class="sticky top-0 z-50 bg-white border-b border-border">
+<div class="sticky top-0 z-50">
+<header class="bg-white border-b border-border" style="position:relative;">
   <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
     <a href="index.html"><img src="newlogo.png" alt="Craig Kleila SEO" class="h-7"></a>
     <div class="hidden md:flex items-center gap-8 text-sm font-medium text-muted">
@@ -101,7 +101,9 @@
       <a href="contact.html" class="bg-coral text-white block text-center px-6 py-3 rounded-full font-semibold">Get in Touch</a>
     </div>
   </div>
+  <div id="progress-bar" style="position:absolute;bottom:0;left:0;width:0%;height:3px;background:#F47B5A;z-index:9999;transition:width 0.1s linear;"></div>
 </header>
+</div>
 
 <!-- HERO -->
 <section style="background:#ffffff;position:relative;overflow:hidden;">
@@ -214,9 +216,9 @@
 
       <section id="challenge" class="mb-8 scroll-mt-24">
         <h2 class="font-display font-bold text-[28px] text-ink mb-4">The Challenge</h2>
-        <p class="text-[#4B5563] text-[16px] mb-8" style="line-height:1.85;">Rukkus launched into one of the most competitive markets on the internet, live event ticketing, as a complete unknown. StubHub, SeatGeek, and Ticketmaster had years of domain authority baked in. Rukkus had none.</p>
-        <p class="text-[#4B5563] text-[16px] mb-8" style="line-height:1.85;">The team had been leaning heavily on paid advertising to drive early growth, but it wasn't sustainable. Organic search was the more efficient long-term channel, but the problem was there was no authority to rank with.</p>
-        <p class="text-[#4B5563] text-[16px] mb-8" style="line-height:1.85;">The only way to earn Google's trust quickly was to earn the trust of publications Google already trusted.</p>
+        <p class="text-[#4B5563] text-[16px] mb-6" style="line-height:1.85;">Rukkus launched into one of the most competitive markets on the internet, live event ticketing, as a complete unknown. StubHub, SeatGeek, and Ticketmaster had years of domain authority baked in. Rukkus had none.</p>
+        <p class="text-[#4B5563] text-[16px] mb-6" style="line-height:1.85;">The team had been leaning heavily on paid advertising to drive early growth, but it wasn't sustainable. Organic search was the more efficient long-term channel, but the problem was there was no authority to rank with.</p>
+        <p class="text-[#4B5563] text-[16px] mb-6" style="line-height:1.85;">The only way to earn Google's trust quickly was to earn the trust of publications Google already trusted.</p>
       </section>
 
       <section id="strategy" class="mb-8 scroll-mt-24">
@@ -224,8 +226,8 @@
 
         <div class="mb-10">
           <h3 id="s-1" class="font-display font-semibold text-[20px] text-ink mb-3">Offer Unique Data to Journalists</h3>
-          <p class="text-[#4B5563] text-[16px] mb-8" style="line-height:1.85;">Rukkus had proprietary ticket price data, so I used it as a PR tool. By pitching data-driven story angles, "When's the Best Time to Buy Coachella Tickets?" or "How Did Jim Harbaugh's Hiring Affect Ticket Prices?", I gave journalists genuinely useful material for stories they were already trying to write.</p>
-          <p class="text-[#4B5563] text-[16px] mb-8" style="line-height:1.85;">I also built a tool that automatically scraped the top news stories each morning, flagging any that matched keywords we had relevant ticket data for. Each story came with a site authority score so I could prioritize the highest-value opportunities. When a story about the Rolling Stones surfaced on a high-DA outlet, I'd have a pitch out the same day. That combination of timing and relevance is what landed links from outlets like CNN and Fox.</p>
+          <p class="text-[#4B5563] text-[16px] mb-6" style="line-height:1.85;">Rukkus had proprietary ticket price data, so I used it as a PR tool. By pitching data-driven story angles, "When's the Best Time to Buy Coachella Tickets?" or "How Did Jim Harbaugh's Hiring Affect Ticket Prices?", I gave journalists genuinely useful material for stories they were already trying to write.</p>
+          <p class="text-[#4B5563] text-[16px] mb-6" style="line-height:1.85;">I also built a tool that automatically scraped the top news stories each morning, flagging any that matched keywords we had relevant ticket data for. Each story came with a site authority score so I could prioritize the highest-value opportunities. When a story about the Rolling Stones surfaced on a high-DA outlet, I'd have a pitch out the same day. That combination of timing and relevance is what landed links from outlets like CNN and Fox.</p>
 
           <!-- Press mention: CNN article + magnified callout -->
           <div class="mt-8" style="position:relative;padding-bottom:40px;">
@@ -268,7 +270,7 @@
 
         <div class="mb-10">
           <h3 id="s-2" class="font-display font-semibold text-[20px] text-ink mb-3">Produce Engaging Visuals</h3>
-          <p class="text-[#4B5563] text-[16px] mb-8" style="line-height:1.85;">Data alone wasn't always enough. Journalists also needed visuals, something they could drop straight into their articles to make them better. I created infographics and visual guides that were designed to be embedded.</p>
+          <p class="text-[#4B5563] text-[16px] mb-6" style="line-height:1.85;">Data alone wasn't always enough. Journalists also needed visuals, something they could drop straight into their articles to make them better. I created infographics and visual guides that were designed to be embedded.</p>
           <p class="text-[#4B5563] text-[16px]" style="line-height:1.8;">One example: I designed an infographic on the value of the #1 pick in the NBA draft and pitched it specifically to sports sites that had covered the draft but published minimal visuals. Sports Illustrated was among those that picked it up. Each placement included a link back to Rukkus.</p>
 
           <!-- Press mention: SI article + magnified callout -->
@@ -295,8 +297,8 @@
 
         <div class="mb-10">
           <h3 id="s-3" class="font-display font-semibold text-[20px] text-ink mb-3">Turn the Launch Into a Story</h3>
-          <p class="text-[#4B5563] text-[16px] mb-8" style="line-height:1.85;">A startup launch is newsworthy if you package it correctly. I put together a full press kit: company story, press releases, digital artwork, and team bios, then pitched it to journalists covering concerts, sports, and live entertainment.</p>
-          <p class="text-[#4B5563] text-[16px] mb-8" style="line-height:1.85;">This strategy produced coverage, and links, from Forbes, VentureBeat, Pando, and others.</p>
+          <p class="text-[#4B5563] text-[16px] mb-6" style="line-height:1.85;">A startup launch is newsworthy if you package it correctly. I put together a full press kit: company story, press releases, digital artwork, and team bios, then pitched it to journalists covering concerts, sports, and live entertainment.</p>
+          <p class="text-[#4B5563] text-[16px] mb-6" style="line-height:1.85;">This strategy produced coverage, and links, from Forbes, VentureBeat, Pando, and others.</p>
 
           <!-- Press mention: Forbes article + magnified callout -->
           <div class="mt-8" style="position:relative;padding-bottom:40px;">
@@ -320,8 +322,8 @@
 
         <div class="mb-10">
           <h3 id="s-4" class="font-display font-semibold text-[20px] text-ink mb-3">Reverse-Engineer the Competition</h3>
-          <p class="text-[#4B5563] text-[16px] mb-8" style="line-height:1.85;">Rather than starting from scratch, I pulled a list of 1,000+ pages already linking to competitors like StubHub and SeatGeek but not to Rukkus. From there, I filtered for the most authoritative and relevant domains and ran a targeted outreach campaign.</p>
-          <p class="text-[#4B5563] text-[16px] mb-8" style="line-height:1.85;">The logic was simple. If a site was willing to link to a competitor, they might link to us too, especially with a better pitch. This produced links from iMore, CNET, and the Atlanta Journal-Constitution.</p>
+          <p class="text-[#4B5563] text-[16px] mb-6" style="line-height:1.85;">Rather than starting from scratch, I pulled a list of 1,000+ pages already linking to competitors like StubHub and SeatGeek but not to Rukkus. From there, I filtered for the most authoritative and relevant domains and ran a targeted outreach campaign.</p>
+          <p class="text-[#4B5563] text-[16px] mb-6" style="line-height:1.85;">The logic was simple. If a site was willing to link to a competitor, they might link to us too, especially with a better pitch. This produced links from iMore, CNET, and the Atlanta Journal-Constitution.</p>
 
           <!-- Press mention: iMore article + magnified callout -->
           <div class="mt-8" style="position:relative;padding-bottom:40px;">
@@ -345,8 +347,8 @@
 
         <div class="mb-10">
           <h3 id="s-5" class="font-display font-semibold text-[20px] text-ink mb-3">Secure University Discount Pages</h3>
-          <p class="text-[#4B5563] text-[16px] mb-8" style="line-height:1.85;">College students are a core audience for live events. Using site operators like <code class="bg-offwhite px-1.5 py-0.5 rounded text-sm font-mono text-ink">site:.edu intitle:discounts</code>, I identified hundreds of university pages dedicated to student and staff discount programs.</p>
-          <p class="text-[#4B5563] text-[16px] mb-8" style="line-height:1.85;">I reached out to propose adding Rukkus to their lists, a genuinely useful addition for students, and a trust signal for Google. This landed links from Harvard, Cornell, the University of Pittsburgh, and more. .edu links carry significant authority weight.</p>
+          <p class="text-[#4B5563] text-[16px] mb-6" style="line-height:1.85;">College students are a core audience for live events. Using site operators like <code class="bg-offwhite px-1.5 py-0.5 rounded text-sm font-mono text-ink">site:.edu intitle:discounts</code>, I identified hundreds of university pages dedicated to student and staff discount programs.</p>
+          <p class="text-[#4B5563] text-[16px] mb-6" style="line-height:1.85;">I reached out to propose adding Rukkus to their lists, a genuinely useful addition for students, and a trust signal for Google. This landed links from Harvard, Cornell, the University of Pittsburgh, and more. .edu links carry significant authority weight.</p>
 
           <!-- Press mention: Harvard page + magnified callout -->
           <div class="mt-8" style="position:relative;padding-bottom:40px;">
@@ -372,9 +374,9 @@
 
       <section id="results" class="mb-8 scroll-mt-24">
         <h2 class="font-display font-bold text-[28px] text-ink mb-4">The Results</h2>
-        <p class="text-[#4B5563] text-[16px] mb-8" style="line-height:1.85;">Over six months, these strategies produced backlinks from 27 high-authority domains and thousands of social shares, enough momentum to help position Rukkus for its eventual acquisition in 2018.</p>
-        <p class="text-[#4B5563] text-[16px] mb-8" style="line-height:1.8;">Those "stamps of approval" translated into a <strong class="text-ink">1,256% increase in organic traffic</strong> and <strong class="text-ink">121,420 new visitors</strong>.</p>
-        <p class="text-[#4B5563] text-[16px] mb-8" style="line-height:1.85;">Links &amp; mentions secured in:</p>
+        <p class="text-[#4B5563] text-[16px] mb-6" style="line-height:1.85;">Over six months, these strategies produced backlinks from 27 high-authority domains and thousands of social shares, enough momentum to help position Rukkus for its eventual acquisition in 2018.</p>
+        <p class="text-[#4B5563] text-[16px] mb-6" style="line-height:1.8;">Those "stamps of approval" translated into a <strong class="text-ink">1,256% increase in organic traffic</strong> and <strong class="text-ink">121,420 new visitors</strong>.</p>
+        <p class="text-[#4B5563] text-[16px] mb-6" style="line-height:1.85;">Links &amp; mentions secured in:</p>
         <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:32px;">
           <div style="border:1px solid #E8E8F0;border-radius:10px;padding:8px 14px;background:#fff;display:flex;align-items:center;gap:7px;">
             <img src="https://www.google.com/s2/favicons?domain=cnn.com&sz=64" style="height:16px;width:16px;object-fit:contain;"><span style="font-weight:600;font-size:13px;color:#1a1a1a;">CNN</span>

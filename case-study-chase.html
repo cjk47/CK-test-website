@@ -38,7 +38,7 @@
   .btn-coral:hover { transform: translateY(-2px); box-shadow: 0 10px 28px -6px rgba(244,123,90,0.45); }
   .btn-coral:active { transform: translateY(0); }
   nav a { transition: color 0.15s ease; }
-  nav a:hover { color: #F47B5A; }
+  nav a:not(.btn-coral):hover { color: #F47B5A; }
   .breadcrumb-arrow { display: inline-block; transition: transform 0.2s cubic-bezier(0.22,1,0.36,1); }
   .breadcrumb-link:hover .breadcrumb-arrow { transform: translateX(-4px); }
   .toc-link { transition: color 0.15s ease, border-color 0.15s ease; }
@@ -60,7 +60,6 @@
 </style>
 </head>
 <body class="antialiased">
-<div id="progress-bar" style="position:fixed;top:64px;left:0;width:0%;height:4px;background:#F47B5A;z-index:9999;transition:width 0.1s linear;"></div>
 <script>
   window.addEventListener('scroll', function() {
     var start = document.getElementById('challenge').offsetTop - 180;
@@ -72,7 +71,8 @@
 </script>
 
 <!-- NAV -->
-<header class="sticky top-0 z-50 bg-white border-b border-border">
+<div class="sticky top-0 z-50">
+<header class="bg-white border-b border-border" style="position:relative;">
   <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
     <a href="index.html"><img src="newlogo.png" alt="Craig Kleila SEO" class="h-7"></a>
     <div class="hidden md:flex items-center gap-8 text-sm font-medium text-muted">
@@ -101,7 +101,9 @@
       <a href="contact.html" class="bg-coral text-white block text-center px-6 py-3 rounded-full font-semibold">Get in Touch</a>
     </div>
   </div>
+  <div id="progress-bar" style="position:absolute;bottom:0;left:0;width:0%;height:3px;background:#F47B5A;z-index:9999;transition:width 0.1s linear;"></div>
 </header>
+</div>
 
 <!-- HERO -->
 <section style="background:#ffffff;position:relative;overflow:hidden;">
@@ -213,9 +215,9 @@
 
       <section id="challenge" class="mb-8 scroll-mt-24">
         <h2 class="font-display font-bold text-[28px] text-ink mb-4">The Challenge</h2>
-        <p class="text-[#4B5563] text-[16px] mb-8" style="line-height:1.85;">The Chase Sapphire Explorer Card page was ranking — but for the wrong things. Search data revealed significant gaps between the queries potential cardholders were using and the content actually on the page.</p>
-        <p class="text-[#4B5563] text-[16px] mb-8" style="line-height:1.85;">Comparison queries, benefit-specific searches, and 'is it worth it' questions were all sending traffic to competitors. Internal linking left the card page isolated from supporting content that could boost its authority.</p>
-        <p class="text-[#4B5563] text-[16px] mb-8" style="line-height:1.85;">The fix was methodical: surface the gaps, prioritize by search volume and intent, and execute the updates systematically.</p>
+        <p class="text-[#4B5563] text-[16px] mb-6" style="line-height:1.85;">The Chase Sapphire Explorer Card page was ranking — but for the wrong things. Search data revealed significant gaps between the queries potential cardholders were using and the content actually on the page.</p>
+        <p class="text-[#4B5563] text-[16px] mb-6" style="line-height:1.85;">Comparison queries, benefit-specific searches, and 'is it worth it' questions were all sending traffic to competitors. Internal linking left the card page isolated from supporting content that could boost its authority.</p>
+        <p class="text-[#4B5563] text-[16px] mb-6" style="line-height:1.85;">The fix was methodical: surface the gaps, prioritize by search volume and intent, and execute the updates systematically.</p>
       </section>
 
       <section id="strategy" class="mb-8 scroll-mt-24">
@@ -254,8 +256,8 @@
 
       <section id="results" class="mb-8 scroll-mt-24">
         <h2 class="font-display font-bold text-[28px] text-ink mb-4">The Results</h2>
-        <p class="text-[#4B5563] text-[16px] mb-8" style="line-height:1.85;">Six months of systematic execution produced clear results. Organic clicks to the Explorer Card page grew 69.8%, driven by the page now capturing queries it previously missed entirely.</p>
-        <p class="text-[#4B5563] text-[16px] mb-8" style="line-height:1.85;">Impressions grew 21.3% as the page began ranking for a broader set of relevant queries — validating the content gap analysis and the on-page updates that followed.</p>
+        <p class="text-[#4B5563] text-[16px] mb-6" style="line-height:1.85;">Six months of systematic execution produced clear results. Organic clicks to the Explorer Card page grew 69.8%, driven by the page now capturing queries it previously missed entirely.</p>
+        <p class="text-[#4B5563] text-[16px] mb-6" style="line-height:1.85;">Impressions grew 21.3% as the page began ranking for a broader set of relevant queries — validating the content gap analysis and the on-page updates that followed.</p>
         <div class="grid grid-cols-3 gap-4 mt-8">
           <div class="bg-offwhite rounded-xl p-5 text-center">
             <p class="font-display font-bold text-3xl text-coral">+69.8%</p>

@@ -65,7 +65,7 @@
     transform-origin: center center;
   }
   nav a { transition: color 0.15s ease; }
-  nav a:hover { color: #F47B5A; }
+  nav a:not(.btn-coral):hover { color: #F47B5A; }
   @keyframes orbit-ring { from { transform: translate(-50%,-50%) rotate(0deg); } to { transform: translate(-50%,-50%) rotate(360deg); } }
   @keyframes orbit-ccw { from { transform: rotate(0deg); } to { transform: rotate(-360deg); } }
   .orbit-r1 { animation: orbit-ring 18s linear infinite; }
@@ -74,7 +74,7 @@
   .orbit-i1 { animation: orbit-ccw 18s linear infinite; }
   .orbit-i2 { animation: orbit-ccw 45s linear infinite; }
   .orbit-i3 { animation: orbit-ccw 70s linear infinite; }
-  .orbit-wrap { position:relative;width:360px;height:360px;flex-shrink:0;transform:translateX(-24px); }
+  .orbit-wrap { position:relative;width:360px;height:360px;flex-shrink:0;transform:translateX(-28px); }
   @media (max-width:899px) {
     .orbit-wrap { transform:scale(0.78);margin:-82px auto -40px; }
   }
@@ -133,7 +133,7 @@
         <div class="fade-up relative">
           <h1 class="relative leading-[1.15] text-ink mb-5 hero-h1" style="font-family:'Poppins',sans-serif;font-weight:800;font-size:clamp(2.5rem,4vw,2.8rem);letter-spacing:-0.02em;z-index:1;">
             <span class="absolute rounded-full hero-circle-pulse hero-circle w-16 h-16 md:w-24 md:h-24 top-[-14px] md:top-[-30px] left-8 md:left-[-44px]" style="background:#EDE9FB;z-index:-1;display:block;"></span>
-            <span style="white-space:nowrap;" class="md-nowrap">Get found <span style="color:#f57b5b;">everywhere</span></span><br>search is happening.
+            Get found <span style="color:#f57b5b;">wherever</span><br class="hidden md:block"> your customers search.
           </h1>
         </div>
 
@@ -150,10 +150,10 @@
 
         <!-- Service tag pills -->
         <div class="fade-up-4 hidden md:flex flex-wrap gap-2 justify-center md:justify-start">
-          <a href="services.html#content" class="text-xs font-normal px-3 py-1.5 rounded-full text-ink hover:opacity-75 transition-opacity duration-200" style="background:#ffe5e4;">Content Strategy</a>
-          <a href="services.html#technical" class="text-xs font-normal px-3 py-1.5 rounded-full text-ink hover:opacity-75 transition-opacity duration-200" style="background:#eae1fe;">Technical SEO</a>
-          <a href="services.html#ai" class="text-xs font-normal px-3 py-1.5 rounded-full text-ink hover:opacity-75 transition-opacity duration-200" style="background:#fff0cf;">AI Search</a>
-          <a href="services.html#offsite" class="text-xs font-normal px-3 py-1.5 rounded-full text-ink hover:opacity-75 transition-opacity duration-200" style="background:#d3dce5;">Off-site SEO</a>
+          <span class="text-xs font-normal px-3 py-1.5 rounded-full text-ink" style="background:#ffe5e4;">Content Strategy</span>
+          <span class="text-xs font-normal px-3 py-1.5 rounded-full text-ink" style="background:#eae1fe;">Technical SEO</span>
+          <span class="text-xs font-normal px-3 py-1.5 rounded-full text-ink" style="background:#fff0cf;">AI Search</span>
+          <span class="text-xs font-normal px-3 py-1.5 rounded-full text-ink" style="background:#d3dce5;">Off-site SEO</span>
         </div>
       </div>
 
@@ -164,11 +164,10 @@
           <!-- Center -->
           <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:10;">
             <div style="width:80px;height:80px;border-radius:50%;background:rgba(244,123,90,0.12);display:flex;align-items:center;justify-content:center;">
-              <div style="width:68px;height:68px;border-radius:50%;background:linear-gradient(145deg,#F5906E,#F06644);box-shadow:0 1px 4px rgba(0,0,0,0.08);display:flex;align-items:center;justify-content:center;">
-                <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-                  <circle cx="12" cy="12" r="7" fill="rgba(255,255,255,0.15)" stroke="white" stroke-width="2"/>
-                  <circle cx="10" cy="10" r="1.5" fill="rgba(255,255,255,0.5)"/>
-                  <path d="M17.5 17.5L23 23" stroke="white" stroke-width="2.4" stroke-linecap="round"/>
+              <div style="width:68px;height:68px;border-radius:50%;background:#FFF1EC;display:flex;align-items:center;justify-content:center;">
+                <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+                  <circle cx="11" cy="11" r="7" stroke="#F47B5A" stroke-width="2"/>
+                  <path d="M16.5 16.5L22 22" stroke="#F47B5A" stroke-width="2" stroke-linecap="round"/>
                 </svg>
               </div>
             </div>
@@ -498,6 +497,53 @@
   </div>
 </section>
 
+<!-- ORBIT REPULSION -->
+<script>
+(function() {
+  var mouseX = -9999, mouseY = -9999;
+  window.addEventListener('mousemove', function(e) {
+    mouseX = e.clientX; mouseY = e.clientY;
+  }, { passive: true });
+
+  var state = new WeakMap();
+  function getState(el) {
+    if (!state.has(el)) state.set(el, { ox: 0, oy: 0, vx: 0, vy: 0 });
+    return state.get(el);
+  }
+
+  function loop() {
+    var icons = document.querySelectorAll('.orbit-i2 > div, .orbit-i3 > div');
+    for (var i = 0; i < icons.length; i++) {
+      var el = icons[i];
+      var rect = el.getBoundingClientRect();
+      var cx = rect.left + rect.width / 2;
+      var cy = rect.top + rect.height / 2;
+      var dx = mouseX - cx;
+      var dy = mouseY - cy;
+      var dist = Math.sqrt(dx * dx + dy * dy);
+      var RADIUS = 110, FORCE = 38;
+      var targetX = 0, targetY = 0;
+      if (dist < RADIUS && dist > 0) {
+        var angle = Math.atan2(dy, dx);
+        var strength = (1 - dist / RADIUS) * FORCE;
+        targetX = -Math.cos(angle) * strength;
+        targetY = -Math.sin(angle) * strength;
+      }
+      var s = getState(el);
+      var ax = (targetX - s.ox) * 0.1;
+      var ay = (targetY - s.oy) * 0.1;
+      s.vx = s.vx * 0.62 + ax;
+      s.vy = s.vy * 0.62 + ay;
+      s.ox += s.vx;
+      s.oy += s.vy;
+      el.style.transform = 'translate(' + s.ox.toFixed(2) + 'px,' + s.oy.toFixed(2) + 'px)';
+    }
+    requestAnimationFrame(loop);
+  }
+  requestAnimationFrame(loop);
+})();
+</script>
+
 <!-- STATS STRIP -->
 <section class="border-t border-border py-10" style="background:#F0EFFE;">
   <div class="max-w-6xl mx-auto px-6">
@@ -515,7 +561,7 @@
         <p class="text-sm text-muted mt-1">Brands worked with</p>
       </div>
       <div>
-        <p class="font-display font-extrabold text-4xl text-ink tracking-tight" style="color:#5E4DD6;">$100M+</p>
+        <p class="font-display font-extrabold text-4xl text-ink tracking-tight" style="color:#5E4DD6;">$10M+</p>
         <p class="text-sm text-muted mt-1">In incremental revenue</p>
       </div>
     </div>

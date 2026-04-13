@@ -38,7 +38,7 @@
   .btn-coral:hover { transform: translateY(-2px); box-shadow: 0 10px 28px -6px rgba(244,123,90,0.45); }
   .btn-coral:active { transform: translateY(0); }
   nav a { transition: color 0.15s ease; }
-  nav a:hover { color: #F47B5A; }
+  nav a:not(.btn-coral):hover { color: #F47B5A; }
   .breadcrumb-arrow { display: inline-block; transition: transform 0.2s cubic-bezier(0.22,1,0.36,1); }
   .breadcrumb-link:hover .breadcrumb-arrow { transform: translateX(-4px); }
   .toc-link { transition: color 0.15s ease, border-color 0.15s ease; }
@@ -59,7 +59,6 @@
 </style>
 </head>
 <body class="antialiased">
-<div id="progress-bar" style="position:fixed;top:64px;left:0;width:0%;height:4px;background:#F47B5A;z-index:9999;transition:width 0.1s linear;"></div>
 <script>
   window.addEventListener('scroll', function() {
     var start = document.getElementById('challenge').offsetTop - 180;
@@ -71,7 +70,8 @@
 </script>
 
 <!-- NAV -->
-<header class="sticky top-0 z-50 bg-white border-b border-border">
+<div class="sticky top-0 z-50">
+<header class="bg-white border-b border-border" style="position:relative;">
   <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
     <a href="index.html"><img src="newlogo.png" alt="Craig Kleila SEO" class="h-7"></a>
     <div class="hidden md:flex items-center gap-8 text-sm font-medium text-muted">
@@ -100,7 +100,9 @@
       <a href="contact.html" class="bg-coral text-white block text-center px-6 py-3 rounded-full font-semibold">Get in Touch</a>
     </div>
   </div>
+  <div id="progress-bar" style="position:absolute;bottom:0;left:0;width:0%;height:3px;background:#F47B5A;z-index:9999;transition:width 0.1s linear;"></div>
 </header>
+</div>
 
 <!-- HERO -->
 <section style="background:#ffffff;position:relative;overflow:hidden;">
@@ -117,7 +119,7 @@
     <!-- Centered content -->
     <div class="text-center max-w-3xl mx-auto mb-10 pt-8">
       <div class="flex justify-center mb-5">
-        <img src="Best-Western-logo.png" alt="Best Western" style="height:46px;object-fit:contain;mix-blend-mode:multiply;">
+        <img src="Best-Western-logo.png" alt="Best Western" style="height:58px;object-fit:contain;mix-blend-mode:multiply;">
       </div>
       <h1 class="font-display font-bold text-4xl md:text-5xl text-ink leading-tight mb-6">How Best Western Achieved 349% More AI Overview Visibility</h1>
       <div class="flex justify-center gap-2 flex-wrap">
@@ -214,26 +216,31 @@
 
       <section id="challenge" class="mb-8 scroll-mt-24">
         <h2 class="font-display font-bold text-[28px] text-ink mb-4">The Challenge</h2>
-        <p class="text-[#4B5563] text-[16px] mb-8" style="line-height:1.85;">When Google began rolling out AI Overviews across travel and hospitality queries, Best Western's organic traffic took an immediate hit. Pages that had ranked consistently for years were suddenly displaced by AI-generated answers that didn't reference their content.</p>
-        <p class="text-[#4B5563] text-[16px] mb-8" style="line-height:1.85;">The challenge wasn't just recovery — it was adapting to a fundamentally different search landscape where traditional ranking signals weren't enough.</p>
-        <p class="text-[#4B5563] text-[16px] mb-8" style="line-height:1.85;">To win in AI search, content needs to be structured, authoritative, and written in a format that AI systems can extract and surface. That required a complete rethinking of how pages were written.</p>
+        <p class="text-[#4B5563] text-[16px] mb-6" style="line-height:1.85;">Best Western, one of the largest hotel brands in the world, saw a drop in visibility when Google rolled out AI Overviews across travel and hospitality queries.</p>
+        <p class="text-[#4B5563] text-[16px] mb-6" style="line-height:1.85;">Pages that had ranked consistently for years were pushed down by AI-generated answers that didn't reference their content. Search results were changing, and traditional rankings no longer guaranteed visibility.</p>
+        <p class="text-[#4B5563] text-[16px] mb-6" style="line-height:1.85;">The same SEO fundamentals still applied, but content needed to be easier for AI systems to extract, understand, and trust, which required clearer structure and stronger alignment to specific queries.</p>
       </section>
 
       <section id="strategy" class="mb-8 scroll-mt-24">
         <h2 class="font-display font-bold text-[28px] text-ink mb-4">The Strategy</h2>
+        <p class="text-[#4B5563] text-[16px] mb-6" style="line-height:1.85;">The approach focused on restructuring content, expanding coverage, and making pages easier for both search engines and AI systems to interpret and surface.</p>
         <ul class="space-y-10">
           <li class="flex gap-3">
             
             <div>
-              <h3 id="s-1" class="font-display font-semibold text-[20px] text-ink mb-3">AI Overview Content Rewrite</h3>
-              <p class="text-[#4B5563] text-[16px] mt-4" style="line-height:1.8;">Rewrote key landing pages to match the structured, answer-forward format that AI Overviews prefer. Clear H2/H3 hierarchies, concise answers to common questions, authoritative language.</p>
+              <h3 id="s-1" class="font-display font-semibold text-[20px] text-ink mb-3">Restructure Pages for AI Overviews</h3>
+              <p class="text-[#4B5563] text-[16px] mt-4" style="line-height:1.8;">Key landing pages were rewritten to better match how AI systems process and extract information.</p>
+              <p class="text-[#4B5563] text-[16px] mt-4" style="line-height:1.8;">Content was reorganized with clear H2 and H3 hierarchies, concise answer-first sections, and direct responses to common traveler questions. Instead of long, generic copy, pages were structured to surface key information quickly and clearly.</p>
+              <p class="text-[#4B5563] text-[16px] mt-4" style="line-height:1.8;">This made it easier for AI Overviews to pull content into answers while also improving usability for visitors.</p>
             </div>
           </li>
           <li class="flex gap-3">
             
             <div>
-              <h3 id="s-2" class="font-display font-semibold text-[20px] text-ink mb-3">Schema Markup Implementation</h3>
-              <p class="text-[#4B5563] text-[16px] mt-4 mb-6" style="line-height:1.8;">Implemented Hotel, FAQPage, and LocalBusiness schema across property pages. Structured data gives AI systems clear signals about content context and authority.</p>
+              <h3 id="s-2" class="font-display font-semibold text-[20px] text-ink mb-3">Strengthen Structured Data</h3>
+              <p class="text-[#4B5563] text-[16px] mt-4" style="line-height:1.8;">Structured data was expanded across key templates, including Hotel, FAQPage, and BreadcrumbList schema.</p>
+              <p class="text-[#4B5563] text-[16px] mt-4" style="line-height:1.8;">This gave search engines clearer context around each page, from property details to how pages relate within the broader site structure, and reinforced the authority and purpose of the content.</p>
+              <p class="text-[#4B5563] text-[16px] mt-4 mb-6" style="line-height:1.8;">Rather than relying on page copy alone, structured data helped ensure key information could be consistently understood and surfaced across search experiences.</p>
               <div class="rounded-2xl overflow-hidden">
                 <img src="bwcs2.png" alt="Best Western — Hotel schema markup" class="w-full block">
               </div>
@@ -242,38 +249,36 @@
           <li class="flex gap-3">
             
             <div>
-              <h3 id="s-3" class="font-display font-semibold text-[20px] text-ink mb-3">Topic Cluster & Landing Page Architecture</h3>
-              <p class="text-[#4B5563] text-[16px] mt-4 mb-6" style="line-height:1.8;">I designed a full topic cluster system built around city-level hub pages that link out to targeted subpages — each one capturing a specific traveler need that traditional hotel pages miss entirely.</p>
+              <h3 id="s-3" class="font-display font-semibold text-[20px] text-ink mb-3">Expand Coverage Across Traveler Searches</h3>
+              <p class="text-[#4B5563] text-[16px] mt-4" style="line-height:1.8;">The next step was expanding coverage across high-intent traveler searches.</p>
+              <p class="text-[#4B5563] text-[16px] mt-4" style="line-height:1.8;">To do this, I built a structured set of location-based pages and pages built around specific traveler needs to capture more specific queries.</p>
+              <p class="text-[#4B5563] text-[16px] mt-4 mb-4" style="line-height:1.8;">These pages were linked from existing city pages and included:</p>
+              <ul class="space-y-4 mb-6">
+                <li class="flex items-start gap-3 text-[16px] text-[#4B5563]"><span class="w-5 h-5 rounded-full bg-coral-light flex items-center justify-center flex-shrink-0 mt-0.5"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#F47B5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><strong class="text-ink">Hotels Near Airports:</strong> pages for major airports that highlight distance, shuttle availability, and nearby properties</span></li>
+                <li class="flex items-start gap-3 text-[16px] text-[#4B5563]"><span class="w-5 h-5 rounded-full bg-coral-light flex items-center justify-center flex-shrink-0 mt-0.5"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#F47B5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><strong class="text-ink">Hotels Near Attractions:</strong> pages built around landmarks and venues, with proximity details and relevant amenities</span></li>
+                <li class="flex items-start gap-3 text-[16px] text-[#4B5563]"><span class="w-5 h-5 rounded-full bg-coral-light flex items-center justify-center flex-shrink-0 mt-0.5"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#F47B5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><strong class="text-ink">Regional Destination Pages:</strong> broader pages covering popular nearby areas and travel hubs</span></li>
+                <li class="flex items-start gap-3 text-[16px] text-[#4B5563]"><span class="w-5 h-5 rounded-full bg-coral-light flex items-center justify-center flex-shrink-0 mt-0.5"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#F47B5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><strong class="text-ink">Themed Pages:</strong> pages for specific needs like family-friendly stays or business travel, with curated property recommendations</span></li>
+              </ul>
               <div class="rounded-2xl overflow-hidden mb-4">
                 <img src="bwnewww.png" alt="Best Western — content category landing pages" class="w-full block">
               </div>
-              <p class="text-[#4B5563] text-[16px] mb-8" style="line-height:1.85;">Each city hub links down to three tiers of subpages:</p>
-              <ul class="space-y-2 mb-4">
-                <li class="flex gap-2 text-[#4B5563] text-[16px]" style="line-height:1.7;"><span class="text-coral font-bold mt-0.5 flex-shrink-0">→</span><span><strong class="text-ink">Hotels Near [Airport]</strong> — dedicated pages for every major airport (e.g., "Hotels Near JFK," "Hotels Near LAX") with distance, shuttle info, and nearby properties.</span></li>
-                <li class="flex gap-2 text-[#4B5563] text-[16px]" style="line-height:1.7;"><span class="text-coral font-bold mt-0.5 flex-shrink-0">→</span><span><strong class="text-ink">Hotels Near [Attraction]</strong> — pages for key landmarks and venues (e.g., "Hotels Near Madison Square Garden") listing proximity and relevant amenities.</span></li>
-                <li class="flex gap-2 text-[#4B5563] text-[16px]" style="line-height:1.7;"><span class="text-coral font-bold mt-0.5 flex-shrink-0">→</span><span><strong class="text-ink">Hotels Near [Destination]</strong> — regional subpages (e.g., "Cape Cod Region") covering popular nearby areas.</span></li>
-                <li class="flex gap-2 text-[#4B5563] text-[16px]" style="line-height:1.7;"><span class="text-coral font-bold mt-0.5 flex-shrink-0">→</span><span><strong class="text-ink">Themed Pages</strong> — intent-specific pages like "Family-Friendly Hotels Near [Attraction]" or "Hotels for Business Travelers in [City]."</span></li>
-              </ul>
-              <p class="text-[#4B5563] text-[16px] mb-8" style="line-height:1.85;">I also built an Events pillar page — a central hub replacing the single overloaded Group &amp; Meeting Reservations page — with dedicated subpages for each event type:</p>
-              <ul class="space-y-2">
-                <li class="flex gap-2 text-[#4B5563] text-[16px]" style="line-height:1.7;"><span class="text-coral font-bold mt-0.5 flex-shrink-0">→</span><span><strong class="text-ink">Meetings &amp; Conferences</strong> — targeting "conference hotels" and corporate group searches with meeting room details and business-friendly properties.</span></li>
-                <li class="flex gap-2 text-[#4B5563] text-[16px]" style="line-height:1.7;"><span class="text-coral font-bold mt-0.5 flex-shrink-0">→</span><span><strong class="text-ink">Celebrations</strong> — birthdays, anniversaries, reunions; targeting "hotel party venues" with packages and participating locations.</span></li>
-                <li class="flex gap-2 text-[#4B5563] text-[16px]" style="line-height:1.7;"><span class="text-coral font-bold mt-0.5 flex-shrink-0">→</span><span><strong class="text-ink">Group Travel</strong> — teams, tour groups, family reunions; group rates, room blocks, and large-group amenities.</span></li>
-                <li class="flex gap-2 text-[#4B5563] text-[16px]" style="line-height:1.7;"><span class="text-coral font-bold mt-0.5 flex-shrink-0">→</span><span><strong class="text-ink">Weddings</strong> — venues, packages, and guest rooms; targeting "hotel wedding venues" searches.</span></li>
-              </ul>
             </div>
           </li>
           <li class="flex gap-3">
             
             <div>
-              <h3 id="s-4" class="font-display font-semibold text-[20px] text-ink mb-3">Localized Page Copy</h3>
-              <p class="text-[#4B5563] text-[16px] mt-4" style="line-height:1.8;">I rewrote the copy on hotel detail pages to match local search intent — moving beyond generic descriptions to content that references nearby landmarks, popular neighborhoods, and community context specific to each property's location. This gives Google the geographic signals it needs to surface the right hotel for the right local query, and gives travelers the confidence that the property actually understands where it is.</p>
+              <h3 id="s-4" class="font-display font-semibold text-[20px] text-ink mb-3">Align Hotel Pages to Local Intent</h3>
+              <p class="text-[#4B5563] text-[16px] mt-4" style="line-height:1.8;">Hotel detail pages were rewritten to better reflect their specific location.</p>
+              <p class="text-[#4B5563] text-[16px] mt-4" style="line-height:1.8;">Instead of generic descriptions, content was updated to highlight nearby landmarks, neighborhoods, and relevant local details.</p>
+              <p class="text-[#4B5563] text-[16px] mt-4" style="line-height:1.8;">This made each page more relevant for location-based searches and helped users better understand what to expect from the property.</p>
             </div>
           </li>
           <li class="flex gap-3">
             <div>
-              <h3 id="s-5" class="font-display font-semibold text-[20px] text-ink mb-3">FAQ Optimization</h3>
-              <p class="text-[#4B5563] text-[16px] mt-4 mb-6" style="line-height:1.8;">Added optimized FAQ sections to core pages targeting the exact questions travelers ask in search — driving featured snippet and AI Overview capture.</p>
+              <h3 id="s-5" class="font-display font-semibold text-[20px] text-ink mb-3">Capture High-Intent Questions</h3>
+              <p class="text-[#4B5563] text-[16px] mt-4" style="line-height:1.8;">Key pages were expanded to cover the types of questions people have when searching for that topic.</p>
+              <p class="text-[#4B5563] text-[16px] mt-4" style="line-height:1.8;">For example, on the NYC hotel listings page, content was added to address queries like <em>"What Best Western hotels are near Times Square?"</em>, and on the Las Vegas page, questions like <em>"Which Best Western hotels are on or near the Las Vegas Strip?"</em>.</p>
+              <p class="text-[#4B5563] text-[16px] mt-4 mb-6" style="line-height:1.8;">Answers were written clearly and directly, making them easier to surface in featured snippets and AI Overviews while also making it easier for users to find the right hotel.</p>
               <div class="rounded-2xl overflow-hidden">
                 <img src="bwcs3.png" alt="Best Western — FAQ section" class="w-full block">
               </div>
@@ -284,8 +289,8 @@
 
       <section id="results" class="mb-8 scroll-mt-24">
         <h2 class="font-display font-bold text-[28px] text-ink mb-4">The Results</h2>
-        <p class="text-[#4B5563] text-[16px] mb-8" style="line-height:1.85;">The content and schema overhaul paid off quickly. AI Overview visibility grew 349% — meaning Best Western pages were now being featured in Google's AI-generated answers for a dramatically larger share of relevant queries.</p>
-        <p class="text-[#4B5563] text-[16px] mb-8" style="line-height:1.85;">Organic traffic recovered and surpassed pre-rollout baselines, and the higher-intent visitors coming in through AI search converted at an improved rate.</p>
+        <p class="text-[#4B5563] text-[16px] mb-6" style="line-height:1.85;">The content and schema overhaul paid off quickly. AI Overview visibility grew 349% — meaning Best Western pages were now being featured in Google's AI-generated answers for a dramatically larger share of relevant queries.</p>
+        <p class="text-[#4B5563] text-[16px] mb-6" style="line-height:1.85;">Organic traffic recovered and surpassed pre-rollout baselines, and the higher-intent visitors coming in through AI search converted at an improved rate.</p>
         <div class="rounded-2xl overflow-hidden mt-8 mb-8">
           <img src="bwnew.png" alt="Best Western — organic clicks and impressions growth" class="w-full block">
         </div>
@@ -323,10 +328,10 @@
             <div class="toc-children">
               <div style="margin-left:1.5px;border-left:2px solid #E5E7EB;padding-left:0;">
                 <a href="#s-1" class="toc-h3-link block text-[12.5px] py-2 pl-3 border-l-[2px] border-transparent transition-colors duration-150" style="color:#8896A8;margin-left:-2px;">AI Overview Content Rewrite</a>
-                <a href="#s-2" class="toc-h3-link block text-[12.5px] py-2 pl-3 border-l-[2px] border-transparent transition-colors duration-150" style="color:#8896A8;margin-left:-2px;">Schema Markup Implementation</a>
-                <a href="#s-3" class="toc-h3-link block text-[12.5px] py-2 pl-3 border-l-[2px] border-transparent transition-colors duration-150" style="color:#8896A8;margin-left:-2px;">Topic Cluster & Landing Page Architecture</a>
+                <a href="#s-2" class="toc-h3-link block text-[12.5px] py-2 pl-3 border-l-[2px] border-transparent transition-colors duration-150" style="color:#8896A8;margin-left:-2px;">Expand Schema Markup</a>
+                <a href="#s-3" class="toc-h3-link block text-[12.5px] py-2 pl-3 border-l-[2px] border-transparent transition-colors duration-150" style="color:#8896A8;margin-left:-2px;">Create Topic Clusters</a>
                 <a href="#s-4" class="toc-h3-link block text-[12.5px] py-2 pl-3 border-l-[2px] border-transparent transition-colors duration-150" style="color:#8896A8;margin-left:-2px;">Localized Page Copy</a>
-                <a href="#s-5" class="toc-h3-link block text-[12.5px] py-2 pl-3 border-l-[2px] border-transparent transition-colors duration-150" style="color:#8896A8;margin-left:-2px;">FAQ Optimization</a>
+                <a href="#s-5" class="toc-h3-link block text-[12.5px] py-2 pl-3 border-l-[2px] border-transparent transition-colors duration-150" style="color:#8896A8;margin-left:-2px;">Capture High-Intent Questions</a>
               </div>
             </div>
           </div>
@@ -342,6 +347,31 @@
   </div>
 </div>
 
+
+<!-- CTA BANNER -->
+<section style="background:#ffffff;padding:24px 0 48px;">
+  <div class="max-w-5xl mx-auto px-6">
+    <div style="position:relative;overflow:hidden;border-radius:20px;background:#323232;padding:48px 56px;display:flex;align-items:center;min-height:160px;">
+      <div style="position:relative;z-index:2;max-width:400px;">
+        <p class="font-display" style="font-size:1.55rem;line-height:1.35;color:#ffffff;margin-bottom:24px;"><strong>Ready to grow</strong> your organic traffic and turn it into real revenue?</p>
+        <a href="contact.html" style="display:inline-flex;align-items:center;gap:6px;background:#ffffff;color:#323232;font-family:'Inter',sans-serif;font-weight:600;font-size:0.875rem;padding:10px 22px;border-radius:999px;text-decoration:none;">Get in touch →</a>
+      </div>
+      <div style="position:absolute;right:-150px;top:50%;transform:translateY(-43%);width:420px;height:420px;z-index:1;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="420" height="420" viewBox="0 0 790 790" fill="none">
+          <circle cx="408.489" cy="400.489" r="312.489" fill="#7B68EE"/>
+          <path d="M709.086 155.469C677.631 114.223 638.359 79.5761 593.513 53.5069C548.668 27.4378 499.127 10.4569 447.719 3.53386C396.311 -3.38923 344.042 -0.118944 293.898 13.158C243.754 26.4349 196.716 49.4585 155.469 80.9141C114.223 112.37 79.576 151.641 53.5069 196.487C27.4378 241.333 10.4569 290.874 3.53385 342.282C-3.38923 393.69 -0.118938 445.958 13.158 496.102C26.4349 546.247 49.4585 593.285 80.9142 634.531L106.583 614.955C77.6979 577.08 56.5559 533.886 44.3641 487.84C32.1722 441.794 29.1692 393.797 35.5265 346.59C41.8837 299.383 57.4768 253.891 81.4155 212.711C105.354 171.53 137.169 135.468 175.045 106.583C212.92 77.6979 256.114 56.5559 302.161 44.3641C348.207 32.1722 396.203 29.1692 443.41 35.5265C490.617 41.8838 536.109 57.4769 577.29 81.4155C618.47 105.354 654.533 137.169 683.418 175.045L709.086 155.469Z" fill="url(#brandGradBW)"/>
+          <circle cx="83.5006" cy="177.5" r="15.8939" transform="rotate(169.609 83.5006 177.5)" fill="#B8AEFF"/>
+          <defs>
+            <linearGradient id="brandGradBW" x1="-64" y1="204.5" x2="128.5" y2="156" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#A599FF"/>
+              <stop offset="1" stop-color="#A599FF" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- RELATED CASE STUDIES -->
 <section class="bg-white py-20 border-t border-border">
@@ -471,13 +501,6 @@
   update();
 })();
 </script>
-
-<!-- CTA BANNER -->
-<section class="bg-ink py-20 px-6 md:px-0 text-center">
-  <h2 class="font-display font-bold text-3xl text-white mb-4">Ready to grow your search presence?</h2>
-  <p class="text-muted mb-8">Let's talk about your goals and build a plan that actually works.</p>
-  <a href="contact.html" class="btn-coral bg-coral text-white font-semibold px-8 py-3 rounded-full text-sm inline-block">Start a Conversation →</a>
-</section>
 
 <!-- BACK TO TOP -->
 <style>
