@@ -56,7 +56,7 @@
   @media (max-width: 639px) {
     .aim-card { height: 322px !important; }
   }
-  @media (min-width: 768px) { .aim-col { padding-top: 34px; padding-bottom: 6px; transform: translateX(-32px) translateY(-3px); } .aim-mobile-text { display: none !important; } }
+  @media (min-width: 768px) { .aim-col { padding-top: 34px; padding-bottom: 6px; transform: translateX(-32px) translateY(3px); } .aim-mobile-text { display: none !important; } }
   @media (max-width: 767px) { .aim-card { height: 302px !important; } .aim-desktop-text { display: none !important; } .aim-rega-bullet { display: flex !important; } }
   #mob { display: none !important; }
   @media (max-width: 767px) { #mob.mob-open { display: flex !important; } }
@@ -282,23 +282,21 @@
     var t = setInterval(function(){
       el.textContent = QUERY.slice(0, ++i);
       if(i >= QUERY.length){ clearInterval(t); cb(); }
-    }, 14);
+    }, 8);
   }
 
   function showLoad(cb){
     $('aim-loadbar').style.background = '#F1F3F4';
-    setTimeout(function(){
-      $('aim-progress').style.transition = 'width 0.22s ease';
-      $('aim-progress').style.width = '65%';
-      setTimeout(function(){
-        $('aim-progress').style.transition = 'width 0.1s ease';
+    requestAnimationFrame(function(){
+      requestAnimationFrame(function(){
+        $('aim-progress').style.transition = 'width 0.4s cubic-bezier(0.4,0,0.2,1)';
         $('aim-progress').style.width = '100%';
         setTimeout(function(){
           $('aim-loadbar').style.background = 'transparent';
           cb();
-        }, 90);
-      }, 230);
-    }, 20);
+        }, 420);
+      });
+    });
   }
 
   function showResponse(){
@@ -307,21 +305,21 @@
       setTimeout(function(){ $(id).style.opacity = '1'; }, delay);
     }
     fade('aim-header',   0);
-    fade('aim-body',    60);
-    fade('aim-section', 160);
-    fade('aim-bullets', 280);
-    fade('aim-more',    400);
-    fade('aim-sources-label', 140);
-    fade('aim-sources', 220);
+    fade('aim-body',    40);
+    fade('aim-section', 100);
+    fade('aim-bullets', 180);
+    fade('aim-more',    260);
+    fade('aim-sources-label', 90);
+    fade('aim-sources', 140);
     // highlight "Your Brand" left-to-right after content has settled
     setTimeout(function(){
       var brand = $('aim-brand');
       if(brand){
-        brand.style.transition = 'background-size 0.7s linear';
+        brand.style.transition = 'background-size 0.4s linear';
         brand.style.backgroundSize = '100% 100%';
-        setTimeout(function(){ brand.style.color = '#ffffff'; brand.style.fontWeight = '700'; }, 800);
+        setTimeout(function(){ brand.style.color = '#ffffff'; brand.style.fontWeight = '700'; }, 450);
       }
-    }, 650);
+    }, 420);
   }
 
   function matchRightHeight(){
@@ -746,10 +744,10 @@ Grow your organic traffic<span class="inline md:block"> &amp; conversions.</span
   <div class="max-w-6xl mx-auto px-6">
     <div class="text-center mb-16">
       <div class="inline-flex items-center gap-2 bg-violet-light text-violet text-xs font-semibold px-3 py-1.5 rounded-full mb-5">
-        <span class="w-1.5 h-1.5 rounded-full bg-violet"></span>How it works
+        <span class="w-1.5 h-1.5 rounded-full bg-violet"></span>SEO process
       </div>
-      <h2 class="font-display font-bold text-3xl md:text-4xl text-ink tracking-tight mb-4 svc-h2">A transparent SEO process.</h2>
-      <p class="text-muted max-w-xl mx-auto" style="line-height:1.7;">We guide you through each step, ensuring you're informed and confident in our approach.</p>
+      <h2 class="font-display font-bold text-3xl md:text-4xl text-ink tracking-tight mb-4 svc-h2">What working together looks like.</h2>
+      <p class="text-muted max-w-xl mx-auto" style="line-height:1.7;">I'll guide you through each step, ensuring you're informed and confident in my approach.</p>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr_auto_1fr_auto_1fr] gap-x-2 gap-y-6 items-stretch">
       <!-- Step 1 -->
@@ -887,8 +885,8 @@ Grow your organic traffic<span class="inline md:block"> &amp; conversions.</span
     <div class="inline-flex items-center gap-2 text-coral text-xs font-semibold px-3 py-1.5 rounded-full mb-5" style="background:#FFF1EC;">
       <span class="w-1.5 h-1.5 rounded-full bg-coral"></span>Let's Talk
     </div>
-    <h2 class="font-display font-bold text-4xl text-ink tracking-tight mb-4 svc-h2">Not sure which service fits?</h2>
-    <p class="text-muted mb-8" style="line-height:1.7">Drop me a note about your situation and I'll point you in the right direction — no commitment needed.</p>
+    <h2 class="font-display font-bold text-4xl text-ink tracking-tight mb-4 svc-h2">Ready to get discovered?</h2>
+    <p class="text-muted mb-8" style="line-height:1.7">Drop me a note and I'll show you how to improve visibility, trust, and demand across modern buying journeys.</p>
     <a href="contact.html" id="cta-shimmy-btn" class="btn-coral inline-block bg-coral text-white font-semibold px-8 py-4 rounded-full text-base">Let's Talk</a>
   </div>
   <div class="absolute -left-16 top-1/2 -translate-y-1/2 w-64 h-64 rounded-full" style="background: radial-gradient(circle, #F47B5A18 0%, transparent 70%);"></div>
