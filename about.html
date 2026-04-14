@@ -145,7 +145,7 @@
 
       <p class="text-muted text-lg mb-5" style="line-height:1.7">By day, I lead SEO at Bounteous, managing organic strategy for enterprise brands like Best Western, Chase, KKR, and Gerber. On the side, I work with a select number of freelance clients, bringing that same level of thinking to smaller teams who want SEO done right.</p>
       <p class="text-muted mb-5" style="line-height:1.7">I've spent 13+ years in organic search across e-commerce, hospitality, food & beverage, and local businesses. I know what works, what doesn't, and how quickly things change.</p>
-      <p class="text-muted mb-8" style="line-height:1.7">My focus is simple: build something that lasts. Not short-term spikes, but sustainable growth that compounds over time.</p>
+      <p class="text-muted mb-8" style="line-height:1.7">It all comes together in a left brain, right brain, and a bit of a robot brain approach, using data to guide decisions, designing content that connects, and ensuring search engines can properly surface your site.</p>
       <a href="contact.html" class="btn-coral inline-flex items-center gap-2 bg-coral text-white px-6 py-3 rounded-full font-semibold">Get in touch</a>
     </div>
     <div class="hidden md:flex items-center justify-center md:justify-end portrait-outer">
@@ -299,7 +299,7 @@
             <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><rect x="2" y="13" width="4" height="8" rx="1" stroke="#F47B5A" stroke-width="1.5"/><rect x="10" y="9" width="4" height="12" rx="1" stroke="#F9B49A" stroke-width="1.5"/><rect x="18" y="4" width="4" height="17" rx="1" stroke="#F47B5A" stroke-width="1.5"/></svg>
           </div>
           <p class="font-display font-semibold text-ink mb-1" style="font-size:0.95rem;letter-spacing:-0.01em;">2023 – Present</p>
-          <p class="text-sm text-muted" style="line-height:1.7;">Joined Bounteous leading SEO for enterprise brands, while continuing to take on freelance clients.</p>
+          <p class="text-sm text-muted" style="line-height:1.7;">Joined Bounteous to lead the SEO department, while continuing to take on freelance clients.</p>
         </div>
       </div>
 
@@ -359,7 +359,7 @@
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="3" y="14" width="4" height="7" rx="1" stroke="#F47B5A" stroke-width="1.6"/><rect x="10" y="9" width="4" height="12" rx="1" stroke="#F9B49A" stroke-width="1.6"/><rect x="17" y="4" width="4" height="17" rx="1" stroke="#F47B5A" stroke-width="1.6"/></svg>
           </div>
           <p class="font-display font-semibold text-ink mb-1" style="font-size:0.9rem;letter-spacing:-0.01em;">2023 – Present</p>
-          <p class="text-sm text-muted" style="line-height:1.7;">Joined Bounteous leading SEO for enterprise brands, while continuing to take on freelance clients.</p>
+          <p class="text-sm text-muted" style="line-height:1.7;">Joined Bounteous to lead the SEO department, while continuing to take on freelance clients.</p>
         </div>
       </div>
 
@@ -462,8 +462,16 @@
 
   function getCtx(){
     if(!audioCtx) audioCtx = new (window.AudioContext||window.webkitAudioContext)();
+    if(audioCtx.state === 'suspended') audioCtx.resume();
     return audioCtx;
   }
+
+  // Unlock AudioContext on first click anywhere
+  document.addEventListener('click', function unlock(){
+    if(!audioCtx) audioCtx = new (window.AudioContext||window.webkitAudioContext)();
+    audioCtx.resume();
+    document.removeEventListener('click', unlock);
+  }, {once:true});
 
   function showLabel(name){
     label.textContent = name;
@@ -501,7 +509,6 @@
 
   wrap.addEventListener('mouseenter', function(){
     chordIdx = (chordIdx + 1) % chords.length;
-    showLabel(chords[chordIdx].name);
   });
 
   wrap.addEventListener('mousemove', function(e){
@@ -525,9 +532,231 @@
           <span class="w-1.5 h-1.5 rounded-full bg-violet"></span>Beyond SEO
         </div>
         <h2 class="font-display font-bold text-4xl text-ink mb-4" style="letter-spacing:-0.02em;">A bit about me outside of work.</h2>
-        <p class="text-muted mb-4" style="line-height:1.75;">I'm really into music. I play guitar, collect vinyl and love doing deep discography dives of my favorite artists, listening to their entire discography from start to finish.</p>
-        <p class="text-muted mb-4" style="line-height:1.75;">Besides music, I love playing pickup basketball <span style="display:inline-block;animation:bounce-ball 0.6s ease-in-out infinite alternate;">🏀</span>, watching the Knicks, or catching a movie (these are some of my favorites)</p>
-        <p class="text-muted" style="line-height:1.75;">I'm based in Brooklyn, and am originally from Long Island.</p>
+        <p class="text-muted mb-2" style="line-height:1.75;">When I'm not delivering SEO results, here are a few things I enjoy:</p>
+        <ul class="mb-4 space-y-3" style="list-style:none;padding:0;margin-top:0;margin-bottom:1rem;">
+          <li class="flex items-start gap-3 text-muted"><span class="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style="background:rgba(123,104,238,0.12);margin-top:2px;"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#7B68EE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Playing guitar, collecting vinyl, and doing discography deep-dives of my <span id="music-tooltip-trigger" style="text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:default;">favorite artists 🎵</span></span></li>
+          <li class="flex items-start gap-3 text-muted"><span class="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style="background:rgba(123,104,238,0.12);margin-top:2px;"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#7B68EE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Playing and watching <span id="bball-tooltip-trigger" style="text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:default;">basketball 🏀</span></span></li>
+          <li class="flex items-start gap-3 text-muted"><span class="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style="background:rgba(123,104,238,0.12);margin-top:2px;"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#7B68EE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Catching a good <span id="movie-tooltip-trigger" style="text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:default;">movie 🎥</span></span></li>
+          <li class="flex items-start gap-3 text-muted"><span class="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style="background:rgba(123,104,238,0.12);margin-top:2px;"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#7B68EE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Walking around my Brooklyn <span id="hood-tooltip-trigger" style="text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:default;">neighborhood 📍</span></span></li>
+        </ul>
+<div id="movie-tooltip" style="position:fixed;background:#000;border-radius:14px;padding:0;font-size:13px;font-family:'Inter',sans-serif;box-shadow:0 8px 32px -4px rgba(0,0,0,0.36),0 2px 8px rgba(0,0,0,0.16);opacity:0;pointer-events:none;transition:opacity 0.16s ease;z-index:9999;transform:translateY(0) translateX(0) rotate(0deg);width:220px;height:260px;overflow:hidden;">
+  <div style="margin-top:-80px;">
+    <iframe id="movie-iframe" src="" width="440" height="900" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="display:block;border:none;transform:scale(0.5);transform-origin:top left;"></iframe>
+  </div>
+</div>
+<script>
+(function(){
+  var trigger = document.getElementById('movie-tooltip-trigger');
+  var tip = document.getElementById('movie-tooltip');
+  var iframe = document.getElementById('movie-iframe');
+  if(!trigger||!tip||!iframe) return;
+  var SRC = 'https://www.youtube.com/embed/kStzFP3Agsw?autoplay=1&mute=1&loop=1&playlist=kStzFP3Agsw&controls=0&modestbranding=1&playsinline=1';
+
+  // Spring state
+  var rotCur=0, rotVel=0, rotTarget=0;
+  var txCur=0, txVel=0, txTarget=0;
+  var visible = false;
+  var raf = null;
+  var stiffness=120, damping=14, dt=1/60;
+
+  function springTick(){
+    var rf = -stiffness*(rotCur-rotTarget) - damping*rotVel;
+    rotVel += rf*dt; rotCur += rotVel*dt;
+    var tf = -stiffness*(txCur-txTarget) - damping*txVel;
+    txVel += tf*dt; txCur += txVel*dt;
+    tip.style.transform = 'translateY(0) translateX('+txCur.toFixed(2)+'px) rotate('+rotCur.toFixed(2)+'deg)';
+    var done = Math.abs(rotCur-rotTarget)<0.01 && Math.abs(rotVel)<0.01 &&
+               Math.abs(txCur-txTarget)<0.01 && Math.abs(txVel)<0.01;
+    if(!done) raf = requestAnimationFrame(springTick);
+    else raf = null;
+  }
+
+  function startSpring(){
+    if(!raf) raf = requestAnimationFrame(springTick);
+  }
+
+  function position(){
+    var r = trigger.getBoundingClientRect();
+    var tw = tip.offsetWidth, th = tip.offsetHeight;
+    tip.style.left = (r.left + r.width/2 - tw/2) + 'px';
+    tip.style.top  = (r.top - th - 10) + 'px';
+  }
+
+  trigger.addEventListener('mouseenter', function(){
+    visible = true;
+    iframe.src = SRC;
+    position();
+    rotCur=0; rotVel=0; txCur=0; txVel=0;
+    rotTarget=0; txTarget=0;
+    tip.style.opacity = '1';
+    tip.style.transform = 'translateY(0) translateX(0) rotate(0deg)';
+  });
+
+  trigger.addEventListener('mousemove', function(e){
+    if(!visible) return;
+    position();
+    var r = trigger.getBoundingClientRect();
+    var x = e.clientX - r.left - r.width/2;
+    var norm = x / (r.width/2);
+    rotTarget  = norm * 12;
+    txTarget   = norm * 18;
+    startSpring();
+  });
+
+  trigger.addEventListener('mouseleave', function(){
+    visible = false;
+    iframe.src = '';
+    tip.style.opacity = '0';
+    rotTarget=0; txTarget=0;
+    startSpring();
+  });
+})();
+</script>
+<div id="bball-tooltip" style="position:fixed;background:#000;border-radius:14px;font-size:13px;font-family:'Inter',sans-serif;box-shadow:0 8px 32px -4px rgba(0,0,0,0.36),0 2px 8px rgba(0,0,0,0.16);opacity:0;pointer-events:none;transition:opacity 0.16s ease;z-index:9999;transform:translateY(0) translateX(0) rotate(0deg);width:220px;height:210px;overflow:hidden;padding:0;">
+  <div style="margin-top:-120px;">
+    <iframe id="bball-iframe" src="" width="440" height="900" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="display:block;border:none;transform:scale(0.5);transform-origin:top left;"></iframe>
+  </div>
+</div>
+<script>
+(function(){
+  var trigger = document.getElementById('bball-tooltip-trigger');
+  var tip = document.getElementById('bball-tooltip');
+  var iframe = document.getElementById('bball-iframe');
+  if(!trigger||!tip||!iframe) return;
+  var SRC = 'https://www.youtube.com/embed/MseAMFBtjag?autoplay=1&mute=1&loop=1&playlist=MseAMFBtjag&controls=0&modestbranding=1&playsinline=1';
+
+  var rotCur=0, rotVel=0, rotTarget=0;
+  var txCur=0, txVel=0, txTarget=0;
+  var visible=false, raf=null;
+  var stiffness=120, damping=14, dt=1/60;
+
+  function springTick(){
+    var rf=-stiffness*(rotCur-rotTarget)-damping*rotVel;
+    rotVel+=rf*dt; rotCur+=rotVel*dt;
+    var tf=-stiffness*(txCur-txTarget)-damping*txVel;
+    txVel+=tf*dt; txCur+=txVel*dt;
+    tip.style.transform='translateY(0) translateX('+txCur.toFixed(2)+'px) rotate('+rotCur.toFixed(2)+'deg)';
+    var done=Math.abs(rotCur-rotTarget)<0.01&&Math.abs(rotVel)<0.01&&Math.abs(txCur-txTarget)<0.01&&Math.abs(txVel)<0.01;
+    if(!done) raf=requestAnimationFrame(springTick); else raf=null;
+  }
+
+  function startSpring(){ if(!raf) raf=requestAnimationFrame(springTick); }
+
+  function position(){
+    var r=trigger.getBoundingClientRect();
+    var tw=tip.offsetWidth, th=tip.offsetHeight;
+    tip.style.left=(r.left+r.width/2-tw/2)+'px';
+    tip.style.top=(r.top-th-10)+'px';
+  }
+
+  trigger.addEventListener('mouseenter', function(){
+    visible=true;
+    iframe.src=SRC;
+    position();
+    rotCur=0; rotVel=0; txCur=0; txVel=0;
+    rotTarget=0; txTarget=0;
+    tip.style.opacity='1';
+    tip.style.transform='translateY(0) translateX(0) rotate(0deg)';
+  });
+
+  trigger.addEventListener('mousemove', function(e){
+    if(!visible) return;
+    position();
+    var r=trigger.getBoundingClientRect();
+    var norm=(e.clientX-r.left-r.width/2)/(r.width/2);
+    rotTarget=norm*12; txTarget=norm*18;
+    startSpring();
+  });
+
+  trigger.addEventListener('mouseleave', function(){
+    visible=false;
+    tip.style.opacity='0';
+    iframe.src='';
+    rotTarget=0; txTarget=0;
+    startSpring();
+  });
+})();
+</script>
+<div id="music-tooltip" style="position:fixed;background:#000;border-radius:14px;padding:0;font-size:13px;font-family:'Inter',sans-serif;box-shadow:0 8px 32px -4px rgba(0,0,0,0.36),0 2px 8px rgba(0,0,0,0.16);opacity:0;pointer-events:none;transition:opacity 0.16s ease;z-index:9999;transform:translateY(0) translateX(0) rotate(0deg);width:280px;height:158px;overflow:hidden;">
+  <div style="margin-top:-30px;">
+    <iframe id="music-iframe" src="" width="280" height="218" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="display:block;border:none;"></iframe>
+  </div>
+</div>
+<script>
+(function(){
+  var trigger = document.getElementById('music-tooltip-trigger');
+  var tip = document.getElementById('music-tooltip');
+  var iframe = document.getElementById('music-iframe');
+  if(!trigger||!tip||!iframe) return;
+  var SRC = 'https://www.youtube.com/embed/Hk7MCvCHNQA?autoplay=1&mute=1&loop=1&playlist=Hk7MCvCHNQA&controls=0&modestbranding=1&playsinline=1';
+  var rotCur=0,rotVel=0,rotTarget=0,txCur=0,txVel=0,txTarget=0,visible=false,raf=null;
+  var stiffness=120,damping=14,dt=1/60;
+  function springTick(){
+    var rf=-stiffness*(rotCur-rotTarget)-damping*rotVel; rotVel+=rf*dt; rotCur+=rotVel*dt;
+    var tf=-stiffness*(txCur-txTarget)-damping*txVel; txVel+=tf*dt; txCur+=txVel*dt;
+    tip.style.transform='translateY(0) translateX('+txCur.toFixed(2)+'px) rotate('+rotCur.toFixed(2)+'deg)';
+    var done=Math.abs(rotCur-rotTarget)<0.01&&Math.abs(rotVel)<0.01&&Math.abs(txCur-txTarget)<0.01&&Math.abs(txVel)<0.01;
+    if(!done) raf=requestAnimationFrame(springTick); else raf=null;
+  }
+  function startSpring(){ if(!raf) raf=requestAnimationFrame(springTick); }
+  function position(){
+    var r=trigger.getBoundingClientRect(),tw=tip.offsetWidth,th=tip.offsetHeight;
+    tip.style.left=(r.left+r.width/2-tw/2)+'px';
+    tip.style.top=(r.top-th-10)+'px';
+  }
+  trigger.addEventListener('mouseenter',function(){
+    visible=true; iframe.src=SRC; position();
+    rotCur=0;rotVel=0;txCur=0;txVel=0;rotTarget=0;txTarget=0;
+    tip.style.opacity='1'; tip.style.transform='translateY(0) translateX(0) rotate(0deg)';
+  });
+  trigger.addEventListener('mousemove',function(e){
+    if(!visible) return; position();
+    var r=trigger.getBoundingClientRect(),norm=(e.clientX-r.left-r.width/2)/(r.width/2);
+    rotTarget=norm*12; txTarget=norm*18; startSpring();
+  });
+  trigger.addEventListener('mouseleave',function(){
+    visible=false; tip.style.opacity='0'; iframe.src=''; rotTarget=0; txTarget=0; startSpring();
+  });
+})();
+</script>
+<div id="hood-tooltip" style="position:fixed;background:#1c1c20;color:#fff;border-radius:14px;padding:16px;font-size:13px;font-family:'Inter',sans-serif;box-shadow:0 8px 32px -4px rgba(0,0,0,0.36),0 2px 8px rgba(0,0,0,0.16);opacity:0;pointer-events:none;transition:opacity 0.16s ease;z-index:9999;transform:translateY(0) translateX(0) rotate(0deg);width:200px;">
+  <p style="color:rgba(255,255,255,0.5);font-size:11px;margin:0;">TBD</p>
+</div>
+<script>
+(function(){
+  var trigger = document.getElementById('hood-tooltip-trigger');
+  var tip = document.getElementById('hood-tooltip');
+  if(!trigger||!tip) return;
+  var rotCur=0,rotVel=0,rotTarget=0,txCur=0,txVel=0,txTarget=0,visible=false,raf=null;
+  var stiffness=120,damping=14,dt=1/60;
+  function springTick(){
+    var rf=-stiffness*(rotCur-rotTarget)-damping*rotVel; rotVel+=rf*dt; rotCur+=rotVel*dt;
+    var tf=-stiffness*(txCur-txTarget)-damping*txVel; txVel+=tf*dt; txCur+=txVel*dt;
+    tip.style.transform='translateY(0) translateX('+txCur.toFixed(2)+'px) rotate('+rotCur.toFixed(2)+'deg)';
+    var done=Math.abs(rotCur-rotTarget)<0.01&&Math.abs(rotVel)<0.01&&Math.abs(txCur-txTarget)<0.01&&Math.abs(txVel)<0.01;
+    if(!done) raf=requestAnimationFrame(springTick); else raf=null;
+  }
+  function startSpring(){ if(!raf) raf=requestAnimationFrame(springTick); }
+  function position(){
+    var r=trigger.getBoundingClientRect(),tw=tip.offsetWidth,th=tip.offsetHeight;
+    tip.style.left=(r.left+r.width/2-tw/2)+'px';
+    tip.style.top=(r.top-th-10)+'px';
+  }
+  trigger.addEventListener('mouseenter',function(){
+    visible=true; position();
+    rotCur=0;rotVel=0;txCur=0;txVel=0;rotTarget=0;txTarget=0;
+    tip.style.opacity='1'; tip.style.transform='translateY(0) translateX(0) rotate(0deg)';
+  });
+  trigger.addEventListener('mousemove',function(e){
+    if(!visible) return; position();
+    var r=trigger.getBoundingClientRect(),norm=(e.clientX-r.left-r.width/2)/(r.width/2);
+    rotTarget=norm*12; txTarget=norm*18; startSpring();
+  });
+  trigger.addEventListener('mouseleave',function(){
+    visible=false; tip.style.opacity='0'; rotTarget=0; txTarget=0; startSpring();
+  });
+})();
+</script>
       </div>
       <div>
         <script>
@@ -537,8 +766,8 @@
           { id: '2waAug1IePTKYs2KhTCYlc', title: 'New Threats From The Soul', artist: 'Ryan Davis & the Roadhouse Band' },
         ];
         </script>
-        <div class="rounded-2xl overflow-hidden" style="box-shadow:0 4px 24px -6px rgba(0,0,0,0.08);">
-          <div class="flex items-center gap-2 px-5 py-3" style="background:linear-gradient(135deg,#7B68EE,#F47B5A);">
+        <div class="rounded-2xl overflow-hidden" style="box-shadow:0 4px 24px -6px rgba(0,0,0,0.08);background:linear-gradient(135deg,#7B68EE,#F47B5A);">
+          <div class="flex items-center gap-2 px-5 py-3">
             <div class="flex items-end gap-0.5" style="height:14px;">
               <span style="width:2.5px;background:#fff;border-radius:2px;animation:bar 0.8s ease-in-out infinite alternate;height:6px;display:inline-block;"></span>
               <span style="width:2.5px;background:#fff;border-radius:2px;animation:bar 0.8s ease-in-out 0.2s infinite alternate;height:11px;display:inline-block;"></span>
@@ -547,8 +776,8 @@
             </div>
             <p class="text-xs font-semibold uppercase tracking-widest" style="color:#fff;letter-spacing:0.1em;">Now listening</p>
           </div>
-          <div id="pl-list" style="background:#1a1625;"></div>
-          <div style="background:#1a1625;padding:0 12px 12px;">
+          <div id="pl-list"></div>
+          <div style="padding:0 12px 12px;">
             <div id="pl-embed-wrap" style="border-radius:10px;overflow:hidden;"></div>
           </div>
         </div>
@@ -571,9 +800,9 @@
               var isActive = i===active;
               var row = document.createElement('div');
               row.style.cssText = 'display:flex;align-items:center;gap:12px;padding:10px 14px;cursor:pointer;border-bottom:1px solid rgba(255,255,255,0.06);transition:background 0.15s;'+(isActive?'background:rgba(244,123,90,0.15);':'');
-              row.innerHTML = '<span style="font-size:0.7rem;width:14px;text-align:center;flex-shrink:0;color:'+(isActive?'#F47B5A':'rgba(255,255,255,0.3)')+';">'+(isActive?'▶':(i+1))+'</span>'+
-                '<div style="min-width:0;flex:1;"><p style="font-size:0.8rem;font-weight:500;color:'+(isActive?'#fff':'rgba(255,255,255,0.75)')+';white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">'+t.title+'</p>'+
-                '<p style="font-size:0.7rem;color:rgba(255,255,255,0.4);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">'+t.artist+'</p></div>';
+              row.innerHTML = '<span style="font-size:0.7rem;width:14px;text-align:center;flex-shrink:0;color:'+(isActive?'#fff':'rgba(255,255,255,0.5)')+';text-shadow:0 1px 4px rgba(0,0,0,0.4);">'+(isActive?'▶':(i+1))+'</span>'+
+                '<div style="min-width:0;flex:1;"><p style="font-size:0.8rem;font-weight:600;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-shadow:0 1px 4px rgba(0,0,0,0.35);">'+t.title+'</p>'+
+                '<p style="font-size:0.7rem;color:rgba(255,255,255,0.7);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-shadow:0 1px 3px rgba(0,0,0,0.3);">'+t.artist+'</p></div>';
               row.addEventListener('mouseenter',function(){ if(i!==active) row.style.background='rgba(255,255,255,0.05)'; });
               row.addEventListener('mouseleave',function(){ if(i!==active) row.style.background=''; });
               row.addEventListener('click',function(){
