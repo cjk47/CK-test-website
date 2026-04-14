@@ -131,11 +131,11 @@
 
 <!-- HERO -->
 <section class="relative overflow-x-hidden pt-0 pb-0" style="background:#ffffff;">
-  <div class="relative" style="padding-bottom:112px;background:radial-gradient(ellipse 70% 60% at 15% 10%, rgba(244,123,90,0.10) 0%, transparent 70%), radial-gradient(ellipse 60% 50% at 85% 90%, rgba(123,104,238,0.09) 0%, transparent 70%);">
+  <div class="relative" style="padding-bottom:105px;background:radial-gradient(ellipse 70% 60% at 15% 10%, rgba(244,123,90,0.10) 0%, transparent 70%), radial-gradient(ellipse 60% 50% at 85% 90%, rgba(123,104,238,0.09) 0%, transparent 70%);">
   <div class="max-w-6xl mx-auto px-6">
 
     <!-- CENTERED HERO CONTENT -->
-    <div class="flex flex-col items-center text-center max-w-4xl mx-auto pt-12 md:pt-20">
+    <div class="flex flex-col items-center text-center max-w-4xl mx-auto pt-12 md:pt-[105px]">
 
       <!-- Headline -->
       <h1 class="fade-up leading-[1.12] hero-h1-mobile text-ink mb-5" style="font-family:'Poppins',sans-serif;font-weight:800;font-size:clamp(2.6rem,5.5vw,4.2rem);letter-spacing:-0.025em;">
@@ -170,7 +170,7 @@
 
       <!-- CTA -->
       <div class="fade-up-3 mb-7 flex items-center justify-center gap-3 flex-wrap">
-        <a href="contact.html" class="btn-coral ripple-btn inline-block bg-coral text-white px-7 py-3 rounded-full font-semibold text-sm focus-visible:outline-2 focus-visible:outline-coral">Get in Touch</a>
+        <a href="contact.html" class="btn-coral ripple-btn inline-block bg-coral text-white px-7 py-3 rounded-full font-semibold text-sm focus-visible:outline-2 focus-visible:outline-coral">Let's Talk</a>
         <a href="services.html" class="btn-outline ripple-btn inline-block border border-border text-ink px-6 py-3 rounded-full font-semibold text-sm">View Services →</a>
       </div>
 
@@ -389,7 +389,7 @@
         </div>
         <h2 class="font-display font-extrabold text-3xl md:text-4xl text-ink tracking-tight leading-tight mb-5">10+ years helping brands drive millions in incremental revenue.</h2>
         <p class="text-muted mb-4" style="line-height:1.7;">I'm Craig Kleila, a data-driven SEO consultant who grows qualified website traffic with evidence-backed testing and clear, actionable strategies.</p>
-        <p class="text-muted md:mb-8 mb-0" style="line-height:1.7;">Over the last decade, I've successfully led SEO for businesses of all sizes, working in-house, at agencies, and independently. Each engagement has sharpened how I think about organic growth across different contexts and constraints.</p>
+        <p class="text-muted md:mb-8 mb-0" style="line-height:1.7;">Over the last decade, I've successfully led SEO for businesses of all sizes, working in-house, at agencies, and independently. Each engagement has exposed me to different contexts and constraints, so I can work effectively in any SEO environment.</p>
         <!-- Button: desktop only here -->
         <a href="about.html" class="hidden md:inline-flex btn-outline ripple-btn items-center gap-2 border border-border text-ink px-5 py-2.5 rounded-full text-sm font-semibold focus-visible:outline-2 focus-visible:outline-violet">More about me →</a>
       </div>
@@ -481,28 +481,63 @@
 </script>
 
 <!-- STATS STRIP -->
+<!-- STATS STRIP -->
 <section class="border-t border-border py-10" style="background:#F0EFFE;">
   <div class="max-w-6xl mx-auto px-6">
     <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 text-center">
       <div>
-        <p class="font-display font-extrabold text-4xl text-ink tracking-tight" style="color:#5E4DD6;">13+</p>
+        <p class="font-display font-extrabold text-4xl tracking-tight stat-num" data-target="13" data-prefix="" data-suffix="+" style="color:#5E4DD6;">0</p>
         <p class="text-sm text-muted mt-1">Years in SEO</p>
       </div>
       <div>
-        <p class="font-display font-extrabold text-4xl text-ink tracking-tight" style="color:#5E4DD6;">50M+</p>
+        <p class="font-display font-extrabold text-4xl tracking-tight stat-num" data-target="50" data-prefix="" data-suffix="M+" style="color:#5E4DD6;">0</p>
         <p class="text-sm text-muted mt-1">Organic visits driven</p>
       </div>
       <div>
-        <p class="font-display font-extrabold text-4xl text-ink tracking-tight" style="color:#5E4DD6;">30+</p>
+        <p class="font-display font-extrabold text-4xl tracking-tight stat-num" data-target="30" data-prefix="" data-suffix="+" style="color:#5E4DD6;">0</p>
         <p class="text-sm text-muted mt-1">Brands worked with</p>
       </div>
       <div>
-        <p class="font-display font-extrabold text-4xl text-ink tracking-tight" style="color:#5E4DD6;">$10M+</p>
+        <p class="font-display font-extrabold text-4xl tracking-tight stat-num" data-target="10" data-prefix="$" data-suffix="M+" style="color:#5E4DD6;">0</p>
         <p class="text-sm text-muted mt-1">In incremental revenue</p>
       </div>
     </div>
   </div>
 </section>
+<script>
+(function() {
+  function countUp(el) {
+    var target = parseInt(el.dataset.target);
+    var prefix = el.dataset.prefix || '';
+    var suffix = el.dataset.suffix || '';
+    var duration = 1600;
+    var start = performance.now();
+    function step(now) {
+      var elapsed = now - start;
+      var progress = Math.min(elapsed / duration, 1);
+      var ease = 1 - Math.pow(1 - progress, 3);
+      var val = Math.round(ease * target);
+      el.textContent = prefix + val + suffix;
+      if (progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  var nums = document.querySelectorAll('.stat-num');
+  var triggered = false;
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting && !triggered) {
+        triggered = true;
+        nums.forEach(function(el, i) {
+          setTimeout(function() { countUp(el); }, i * 100);
+        });
+        observer.disconnect();
+      }
+    });
+  }, { threshold: 0.3 });
+  if (nums.length) observer.observe(nums[0]);
+})();
+</script>
 
 <!-- CTA BANNER -->
 <section class="relative overflow-hidden bg-white border-t border-border py-20 px-6 text-center">
@@ -512,44 +547,11 @@
     <div class="inline-flex items-center gap-2 text-coral text-xs font-semibold px-3 py-1.5 rounded-full mb-5" style="background:#FFF1EC;">
       <span class="w-1.5 h-1.5 rounded-full bg-coral"></span>Let's Talk
     </div>
-    <h2 class="font-display font-bold text-3xl md:text-4xl text-ink tracking-tight mb-4">Ready to grow your organic traffic?</h2>
+    <h2 class="font-display font-bold text-3xl md:text-4xl text-ink tracking-tight mb-4">Ready to future-proof your SEO strategy?</h2>
     <p class="text-muted mb-8" style="line-height:1.7">Drop me an email and let's figure out if we're a good fit. No pressure, no sales scripts.</p>
     <a href="contact.html" id="home-cta-shimmy-btn" class="btn-coral ripple-btn inline-block bg-coral text-white font-semibold px-8 py-4 rounded-full text-base">Let's Talk</a>
   </div>
 </section>
-<style>
-  @keyframes shimmy {
-    0%   { transform: translateX(0); }
-    20%  { transform: translateX(-3px); }
-    40%  { transform: translateX(3px); }
-    60%  { transform: translateX(-2px); }
-    80%  { transform: translateX(2px); }
-    100% { transform: translateX(0); }
-  }
-  .shimmy { animation: shimmy 0.5s ease-in-out both; }
-</style>
-<script>
-(function() {
-  var btn = document.getElementById('home-cta-shimmy-btn');
-  if (!btn) return;
-  var triggered = false;
-  var observer = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-      if (entry.isIntersecting && !triggered) {
-        triggered = true;
-        setTimeout(function() {
-          btn.classList.add('shimmy');
-          btn.addEventListener('animationend', function() {
-            btn.classList.remove('shimmy');
-          }, { once: true });
-        }, 300);
-        observer.unobserve(btn);
-      }
-    });
-  }, { threshold: 0.8 });
-  observer.observe(btn);
-})();
-</script>
 
 <!-- FOOTER -->
 <footer class="border-t border-border">

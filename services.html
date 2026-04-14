@@ -56,7 +56,7 @@
   @media (max-width: 639px) {
     .aim-card { height: 322px !important; }
   }
-  @media (min-width: 768px) { .aim-col { padding-top: 34px; padding-bottom: 6px; transform: translateX(-10px); } .aim-mobile-text { display: none !important; } }
+  @media (min-width: 768px) { .aim-col { padding-top: 34px; padding-bottom: 6px; transform: translateX(-32px) translateY(-3px); } .aim-mobile-text { display: none !important; } }
   @media (max-width: 767px) { .aim-card { height: 302px !important; } .aim-desktop-text { display: none !important; } .aim-rega-bullet { display: flex !important; } }
   #mob { display: none !important; }
   @media (max-width: 767px) { #mob.mob-open { display: flex !important; } }
@@ -101,7 +101,7 @@
 <section style="background:#FDFCFF;overflow-x:hidden;">
   <div style="background:radial-gradient(ellipse 75% 65% at 5% 0%, rgba(123,104,238,0.05) 0%, transparent 65%), radial-gradient(ellipse 55% 55% at 95% 100%, rgba(94,77,214,0.04) 0%, transparent 60%);">
   <div class="max-w-6xl mx-auto px-6 pt-14 pb-14 md:pt-20 md:pb-20">
-    <div class="grid md:grid-cols-[48fr_52fr] gap-6 md:gap-20">
+    <div class="grid md:grid-cols-[53fr_47fr] gap-6 md:gap-17">
 
       <!-- LEFT -->
       <div class="text-center md:text-left flex flex-col items-center md:items-start justify-center">
@@ -138,11 +138,9 @@
           <div style="flex:1;overflow:hidden;display:flex;flex-direction:column;">
 
             <!-- Header row: full width -->
-            <div id="aim-header" style="display:flex;align-items:center;padding:18px 12px 0;margin-bottom:0;opacity:0;transition:opacity 0.4s ease;">
-              <div style="display:flex;align-items:center;gap:5px;">
-                <img src="aiucon.png" style="width:14px;height:14px;display:block;" alt=""/>
-                <span style="font-size:10.5px;font-weight:600;color:#1a73e8;font-family:'Inter',sans-serif;">AI Overview</span>
-              </div>
+            <div id="aim-header" style="display:flex;align-items:center;gap:5px;padding:14px 12px 0 9px;margin-bottom:0;opacity:0;transition:opacity 0.4s ease;">
+              <img src="aiucon.png" style="width:14px;height:14px;display:block;" alt=""/>
+              <span style="font-size:10.5px;font-weight:600;color:#1a73e8;font-family:'Inter',sans-serif;">AI Overview</span>
             </div>
 
             <!-- Two-column body: starts below header -->
@@ -170,7 +168,7 @@
                   </div>
                   <div style="display:flex;gap:6px;margin-bottom:5px;font-size:9.5px;font-family:'Inter',sans-serif;color:#202124;line-height:1.5;">
                     <span style="color:#202124;margin-top:1px;">•</span>
-                    <span><span style="font-weight:700;">Pro-Ject Debut Carbon EVO:</span> A well-regarded mid-range option with a carbon tonearm and Ortofon 2M Red cartridge included out of the box.</span>
+                    <span><span style="font-weight:700;">Pro-Ject Debut Carbon EVO:</span> A well-regarded mid-range option with a carbon tonearm and Ortofon 2M Red cartridge.</span>
                   </div>
                   <div class="aim-rega-bullet" style="display:none;gap:6px;margin-bottom:5px;font-size:9.5px;font-family:'Inter',sans-serif;color:#202124;line-height:1.5;">
                     <span style="color:#202124;margin-top:1px;">•</span>
@@ -185,53 +183,57 @@
               </div>
 
             <!-- Right: source cards -->
-            <div class="hidden md:flex" style="flex-direction:column;align-self:flex-start;margin:4px 8px 0 0;gap:4px;width:185px;flex-shrink:0;">
+            <div class="hidden md:flex" style="flex-direction:column;align-self:flex-start;margin:8px 8px 0 0;gap:4px;width:167px;flex-shrink:0;">
 
               <!-- 7 sites label -->
               <div id="aim-sources-label" style="opacity:0;transition:opacity 0.5s ease;padding:0 2px;">
                 <img src="7sites.png" style="height:18px;" alt="7 sites"/>
               </div>
 
-              <div id="aim-sources" style="width:185px;flex-shrink:0;padding:14px;display:flex;flex-direction:column;justify-content:space-between;opacity:0;transition:opacity 0.5s ease;background:#F8F9FA;border-radius:12px;">
+              <div id="aim-sources" style="width:167px;flex-shrink:0;padding:14px;display:flex;flex-direction:column;opacity:0;transition:opacity 0.5s ease;background:#F8F9FA;border-radius:12px;">
 
-              <!-- Card 1 -->
-              <div style="display:flex;gap:7px;cursor:pointer;">
-                <div style="flex:1;min-width:0;">
-                  <div style="font-size:8.5px;color:#1558d6;font-family:'Inter',sans-serif;line-height:1.4;margin-bottom:3px;font-weight:400;">Best High-End Turntables 2026</div>
-                  <div style="display:flex;align-items:center;gap:3px;">
-                    <img src="ttl.png" style="width:11px;height:11px;border-radius:2px;object-fit:cover;flex-shrink:0;" alt=""/>
-                    <span style="font-size:7.5px;color:#5f6368;font-family:'Inter',sans-serif;">clientsbrand.com</span>
+              <!-- Card 1 wrapper -->
+              <div style="flex:1;display:flex;align-items:center;">
+                <div style="display:flex;gap:7px;cursor:pointer;width:100%;">
+                  <div style="flex:1;min-width:0;">
+                    <div style="font-size:8.5px;color:#1558d6;font-family:'Inter',sans-serif;line-height:1.4;margin-bottom:3px;font-weight:400;">Best High-End Turntables 2026</div>
+                    <div style="display:flex;align-items:center;gap:3px;">
+                      <img src="ttl.png" style="width:11px;height:11px;border-radius:2px;object-fit:cover;flex-shrink:0;" alt=""/>
+                      <span style="font-size:7.5px;color:#5f6368;font-family:'Inter',sans-serif;">clientsbrand.com</span>
+                    </div>
                   </div>
-                </div>
-                <div style="width:48px;height:48px;border-radius:8px;overflow:hidden;flex-shrink:0;">
-                  <img src="ai4.png" style="width:100%;height:100%;object-fit:cover;" alt=""/>
+                  <div style="width:48px;height:48px;border-radius:8px;overflow:hidden;flex-shrink:0;">
+                    <img src="ai4.png" style="width:100%;height:100%;object-fit:cover;" alt=""/>
+                  </div>
                 </div>
               </div>
 
               <!-- Divider -->
-              <div style="height:0.5px;background:#E0E0E0;margin:0 2px;"></div>
+              <div style="height:0.5px;background:#E0E0E0;margin:0 2px;flex-shrink:0;"></div>
 
-              <!-- Card 2: YouTube -->
-              <div style="display:flex;gap:7px;cursor:pointer;">
-                <div style="flex:1;min-width:0;">
-                  <div style="font-size:8.5px;color:#1558d6;font-family:'Inter',sans-serif;line-height:1.4;margin-bottom:3px;font-weight:400;">Best Vinyl Turntable 2026</div>
-                  <div style="display:flex;align-items:center;gap:3px;">
-                    <svg width="11" height="11" viewBox="0 0 24 24" style="flex-shrink:0;"><rect width="24" height="24" rx="4" fill="#FF0000"/><path d="M9.5 7.5v9l7-4.5-7-4.5z" fill="white"/></svg>
-                    <span style="font-size:7.5px;color:#5f6368;font-family:'Inter',sans-serif;">youtube.com</span>
+              <!-- Card 2 wrapper -->
+              <div style="flex:1.2;display:flex;align-items:center;">
+                <div style="display:flex;gap:7px;cursor:pointer;width:100%;">
+                  <div style="flex:1;min-width:0;">
+                    <div style="font-size:8.5px;color:#1558d6;font-family:'Inter',sans-serif;line-height:1.4;margin-bottom:3px;font-weight:400;">Best Vinyl Turntable 2026</div>
+                    <div style="display:flex;align-items:center;gap:3px;">
+                      <svg width="11" height="11" viewBox="0 0 24 24" style="flex-shrink:0;"><rect width="24" height="24" rx="4" fill="#FF0000"/><path d="M9.5 7.5v9l7-4.5-7-4.5z" fill="white"/></svg>
+                      <span style="font-size:7.5px;color:#5f6368;font-family:'Inter',sans-serif;">youtube.com</span>
+                    </div>
                   </div>
-                </div>
-                <div style="width:48px;height:36px;border-radius:6px;overflow:hidden;flex-shrink:0;position:relative;">
-                  <img src="utube.jpeg" style="width:100%;height:100%;object-fit:cover;" alt=""/>
-                  <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
-                    <div style="width:14px;height:14px;background:rgba(0,0,0,0.65);border-radius:50%;display:flex;align-items:center;justify-content:center;">
-                      <svg width="6" height="6" viewBox="0 0 8 8"><path d="M2 1.5l5 2.5-5 2.5z" fill="white"/></svg>
+                  <div style="width:48px;height:36px;border-radius:6px;overflow:hidden;flex-shrink:0;position:relative;">
+                    <img src="utube.jpeg" style="width:100%;height:100%;object-fit:cover;" alt=""/>
+                    <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
+                      <div style="width:14px;height:14px;background:rgba(0,0,0,0.65);border-radius:50%;display:flex;align-items:center;justify-content:center;">
+                        <svg width="6" height="6" viewBox="0 0 8 8"><path d="M2 1.5l5 2.5-5 2.5z" fill="white"/></svg>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
 
               <!-- Show all -->
-              <div style="border:1px solid #DADCE0;border-radius:20px;padding:5px 0;text-align:center;font-size:9px;color:#202124;font-family:'Inter',sans-serif;cursor:pointer;">Show all</div>
+              <div style="border:1px solid #DADCE0;border-radius:20px;padding:5px 0;text-align:center;font-size:9px;color:#202124;font-family:'Inter',sans-serif;cursor:pointer;flex-shrink:0;">Show all</div>
 
             </div><!-- end aim-sources grey card -->
             </div><!-- end right wrapper -->
@@ -347,7 +349,7 @@
 </script>
 
 <!-- VALUE PROP BAND -->
-<section id="what-i-do" class="pt-12 pb-6 md:pt-14 md:pb-14" style="background:#ffffff;">
+<section id="what-i-do" class="pt-12 pb-6 md:pt-10 md:pb-14" style="background:#ffffff;">
   <div class="max-w-6xl mx-auto px-6 text-left md:text-center flex flex-col items-start md:items-center">
     <div class="inline-flex items-center gap-2 bg-coral-light text-coral text-xs font-semibold px-3 py-1.5 rounded-full mb-5">
       <span class="w-1.5 h-1.5 rounded-full bg-coral"></span>What I do
@@ -355,7 +357,7 @@
     <h2 class="svc-h2" style="font-family:'Poppins',sans-serif;font-weight:800;font-size:clamp(1.875rem,3.5vw,2.2rem);color:#1A1A2E;letter-spacing:-0.02em;line-height:1.2;margin-bottom:12px;">
 Grow your organic traffic<span class="inline md:block"> &amp; conversions.</span>
     </h2>
-    <p style="font-size:1rem;color:#6B7280;max-width:480px;line-height:1.7;font-family:'Inter',sans-serif;margin-bottom:0;">A hands-on, human-first approach to search that drives real&nbsp;business outcomes.</p>
+    <p style="font-size:1rem;color:#6B7280;max-width:480px;line-height:1.7;font-family:'Inter',sans-serif;margin-bottom:0;">A human-first approach to search, built around better experiences that move people to act.</p>
   </div>
 </section>
 
@@ -445,7 +447,7 @@ Grow your organic traffic<span class="inline md:block"> &amp; conversions.</span
 </script>
 
 <!-- SERVICES -->
-<div class="max-w-6xl mx-auto px-6 pb-16 mt-2">
+<div class="max-w-6xl mx-auto px-6 pb-16 mt-2 md:-mt-2">
 
   <!-- Top row: 2 cards -->
   <div class="grid md:grid-cols-2 gap-4 mb-4">
@@ -544,10 +546,10 @@ Grow your organic traffic<span class="inline md:block"> &amp; conversions.</span
     <!-- Heading -->
     <div class="text-left md:text-center mb-14 flex flex-col items-start md:items-center">
       <div class="inline-flex items-center gap-2 bg-violet-light text-violet text-xs font-semibold px-3 py-1.5 rounded-full mb-5">
-        <span class="w-1.5 h-1.5 rounded-full bg-violet"></span>Why it matters
+        <span class="w-1.5 h-1.5 rounded-full bg-violet"></span>SEO is evolving
       </div>
-      <h2 class="font-display font-extrabold text-ink svc-h2" style="font-size:clamp(1.875rem,3.5vw,2.2rem);letter-spacing:-0.02em;line-height:1.2;">SEO is evolving.</h2>
-      <p class="text-muted mt-3" style="font-size:1rem;line-height:1.7;">SEO has changed. I use a mix of old and new methods to get results.</p>
+      <h2 class="font-display font-extrabold text-ink svc-h2" style="font-size:clamp(1.875rem,3.5vw,2.2rem);letter-spacing:-0.02em;line-height:1.2;">The game has changed.</h2>
+      <p class="text-muted mt-3" style="font-size:1rem;line-height:1.7;max-width:480px;">Future-proof your SEO with a mix of proven fundamentals and modern search strategies.</p>
     </div>
 
     <!-- Two-card comparison -->
@@ -555,7 +557,7 @@ Grow your organic traffic<span class="inline md:block"> &amp; conversions.</span
 
       <!-- Left: Old way -->
       <div id="evolve-left" class="flex-1 rounded-3xl p-10" style="background:#F3F4F6;border:1px solid #E5E7EB;transform:rotate(-4deg) translateX(55%);transition:transform 1s cubic-bezier(0.22,1,0.36,1);">
-        <p class="font-display font-bold text-base mb-7" style="color:#9CA3AF;letter-spacing:0.01em;">The old way</p>
+        <p class="font-display text-base mb-7" style="font-weight:600;font-size:1.05rem;color:#9CA3AF;letter-spacing:0.01em;">The old way</p>
         <ul class="flex flex-col gap-4">
           <li class="flex items-center gap-3">
             <span class="flex-shrink-0"><img src="https://www.animalz.co/assets/face-frown.svg" width="18" height="18" style="filter:brightness(0) opacity(0.4);" alt=""/></span>
@@ -587,7 +589,7 @@ Grow your organic traffic<span class="inline md:block"> &amp; conversions.</span
 
       <!-- Right: Craig Kleila way -->
       <div id="evolve-right" class="flex-1 rounded-3xl p-10" style="background:#7B68EE;border:1px solid #7B68EE;transform:rotate(3deg) translateX(-55%);transition:transform 1s cubic-bezier(0.22,1,0.36,1);">
-        <p class="font-display font-bold text-base mb-7" style="color:rgba(255,255,255,0.65);letter-spacing:0.01em;">My way</p>
+        <p class="font-display text-base mb-7" style="font-weight:600;font-size:1.05rem;color:rgba(255,255,255,0.65);letter-spacing:0.01em;">My way</p>
         <ul class="flex flex-col gap-4">
           <li class="flex items-center gap-3">
             <span class="flex-shrink-0"><img src="https://www.animalz.co/assets/face-laugh-wink.svg" width="18" height="18" style="filter:brightness(0) invert(1) opacity(0.85);" alt=""/></span>
@@ -641,7 +643,7 @@ Grow your organic traffic<span class="inline md:block"> &amp; conversions.</span
 <style>
   .lt-card { background:#fff;border:1px solid #E8E8F0;border-radius:16px;padding:28px;transition:box-shadow 0.2s ease,transform 0.2s cubic-bezier(0.22,1,0.36,1); }
   .lt-card:hover { box-shadow:0 8px 32px -8px rgba(123,104,238,0.12);transform:translateY(-2px); }
-  .lt-icon { width:40px;height:40px;display:flex;align-items:center;justify-content:center;margin-bottom:16px; }
+  .lt-icon { width:40px;height:40px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;overflow:visible; }
   @media (max-width: 767px) {
     .principles-wrap { flex-direction: column !important; gap: 16px !important; }
     .principles-sticky { width: auto !important; position: static !important; padding-top: 0 !important; top: auto !important; }
@@ -694,7 +696,7 @@ Grow your organic traffic<span class="inline md:block"> &amp; conversions.</span
 
           <div class="lt-card">
             <div class="lt-icon">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 3C7 3 3 7 3 12s4 9 9 9 9-4 9-9" stroke="#F47B5A" stroke-width="1.6" stroke-linecap="round"/><path d="M17 3l4 4-4 4M21 7h-7" stroke="#F47B5A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="3" y="15" width="18" height="4" rx="1" stroke="#F47B5A" stroke-width="1.6"/><rect x="6" y="10" width="12" height="4" rx="1" stroke="#F47B5A" stroke-width="1.6"/><rect x="9" y="5" width="6" height="4" rx="1" stroke="#F47B5A" stroke-width="1.6"/></svg>
             </div>
             <h3 class="font-display font-semibold text-ink mb-2" style="font-size:1rem;letter-spacing:-0.01em;">Build on solid ground</h3>
             <p class="text-muted text-sm" style="line-height:1.75;">Technical SEO is the foundation it all sits on. Great content and strong links won't matter if bots can't crawl or index your site.</p>
@@ -702,7 +704,7 @@ Grow your organic traffic<span class="inline md:block"> &amp; conversions.</span
 
           <div class="lt-card">
             <div class="lt-icon">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M3 17l4-8 4 4 4-6 4 10" stroke="#F47B5A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M5 3v18" stroke="#F47B5A" stroke-width="1.6" stroke-linecap="round"/><path d="M5 4h11l-2.5 3.5L16 11H5" stroke="#F47B5A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </div>
             <h3 class="font-display font-semibold text-ink mb-2" style="font-size:1rem;letter-spacing:-0.01em;">Marathon, not a sprint</h3>
             <p class="text-muted text-sm" style="line-height:1.75;">SEO takes consistency. Staying active keeps you competitive and ready for changes in algorithms, competitors, and search behavior.</p>
@@ -781,8 +783,8 @@ Grow your organic traffic<span class="inline md:block"> &amp; conversions.</span
         <div class="rounded-2xl overflow-hidden text-center" style="background:#ffffff;border:1px solid #E5E7EB;flex:1;display:flex;flex-direction:column;">
           <div style="height:22px;"></div>
           <div style="padding:18px 24px 24px;">
-            <h3 class="font-display font-bold text-base mb-2 text-ink">In-Depth Website Audit</h3>
-            <p class="text-sm text-muted" style="line-height:1.65;">A comprehensive audit of your site's technical and content aspects to identify opportunities.</p>
+            <h3 class="font-display font-bold text-base mb-2 text-ink">In-Depth Website<br>Audit</h3>
+            <p class="text-sm text-muted" style="line-height:1.65;">A comprehensive SEO audit of your site's technical setup, content, and authority.</p>
           </div>
         </div>
       </div>
@@ -805,7 +807,7 @@ Grow your organic traffic<span class="inline md:block"> &amp; conversions.</span
           <div style="height:22px;"></div>
           <div style="padding:18px 24px 24px;">
             <h3 class="font-display font-bold text-base mb-2 text-ink">Custom Strategy Development</h3>
-            <p class="text-sm text-muted" style="line-height:1.65;">A tailored SEO strategy built around keyword research and on-page optimisation.</p>
+            <p class="text-sm text-muted" style="line-height:1.65;">Based on the findings, I build a strategy focused on your biggest growth opportunities.</p>
           </div>
         </div>
       </div>
@@ -827,8 +829,8 @@ Grow your organic traffic<span class="inline md:block"> &amp; conversions.</span
         <div class="rounded-2xl overflow-hidden text-center" style="background:#ffffff;border:1px solid #E5E7EB;flex:1;display:flex;flex-direction:column;">
           <div style="height:22px;"></div>
           <div style="padding:18px 24px 24px;">
-            <h3 class="font-display font-bold text-base mb-2 text-ink">Implementation</h3>
-            <p class="text-sm text-muted" style="line-height:1.65;">I execute the strategy, optimising content, technical setup, and off-site presence.</p>
+            <h3 class="font-display font-bold text-base mb-2 text-ink">Implementation & Refinement</h3>
+            <p class="text-sm text-muted" style="line-height:1.65;">Execute the strategy, measure performance, and continuously improve results.</p>
           </div>
         </div>
       </div>
