@@ -56,7 +56,7 @@
   @media (max-width: 639px) {
     .aim-card { height: 322px !important; }
   }
-  @media (min-width: 768px) { .aim-col { padding-top: 34px; padding-bottom: 6px; transform: translateX(-30px); } .aim-mobile-text { display: none !important; } }
+  @media (min-width: 768px) { .aim-col { padding-top: 34px; padding-bottom: 6px; transform: translateX(-10px); } .aim-mobile-text { display: none !important; } }
   @media (max-width: 767px) { .aim-card { height: 302px !important; } .aim-desktop-text { display: none !important; } .aim-rega-bullet { display: flex !important; } }
   #mob { display: none !important; }
   @media (max-width: 767px) { #mob.mob-open { display: flex !important; } }
@@ -98,7 +98,8 @@
 </header>
 
 <!-- PAGE HEADER -->
-<section style="background:#F9F8FF;overflow-x:hidden;">
+<section style="background:#FDFCFF;overflow-x:hidden;">
+  <div style="background:radial-gradient(ellipse 75% 65% at 5% 0%, rgba(123,104,238,0.05) 0%, transparent 65%), radial-gradient(ellipse 55% 55% at 95% 100%, rgba(94,77,214,0.04) 0%, transparent 60%);">
   <div class="max-w-6xl mx-auto px-6 pt-14 pb-14 md:pt-20 md:pb-20">
     <div class="grid md:grid-cols-[48fr_52fr] gap-6 md:gap-20">
 
@@ -107,7 +108,7 @@
         <div class="inline-flex items-center gap-2 bg-coral-light text-coral text-xs font-semibold px-3 py-1.5 rounded-full mb-5">
           <span class="w-1.5 h-1.5 rounded-full bg-coral"></span>Services
         </div>
-        <h1 class="font-display font-extrabold text-ink leading-tight mb-5" style="font-size:clamp(2.5rem,4vw,2.8rem);letter-spacing:-0.02em;"><span class="svcmd:block">SEO services built</span> <span class="svcmd:block">for what's next.</span></h1>
+        <h1 class="font-display font-extrabold text-ink leading-tight mb-5" style="font-size:clamp(2.5rem,4vw,3.0rem);letter-spacing:-0.02em;"><span class="svcmd:block">SEO services built</span> <span class="svcmd:block">for what's next.</span></h1>
         <p class="text-muted mb-3 md:mb-8 max-w-sm" style="line-height:1.75;">From traditional search to AI-generated answers, I ensure your brand is discoverable across every modern search experience.</p>
         <div class="hidden md:flex flex-wrap gap-3">
           <a href="#what-i-do" class="btn-coral inline-flex items-center gap-2 bg-coral text-white font-semibold px-6 py-3 rounded-full text-sm">Explore all services <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 2v10M2.5 8l4.5 4.5L11.5 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
@@ -152,7 +153,7 @@
 
                 <!-- Main paragraph + thumbnail -->
                 <div id="aim-body" style="display:flex;gap:10px;margin-bottom:9px;opacity:0;transition:opacity 0.5s ease;">
-                  <p style="flex:1;font-size:10px;color:#202124;line-height:1.65;margin:0;font-family:'Inter',sans-serif;">The best high-end record players is <span id="aim-brand" style="color:#1558d6;cursor:pointer;border-radius:3px;padding:0 3px 0 0;font-weight:700;background:linear-gradient(90deg,#F47B5A,#F7906F) no-repeat left center;background-size:0% 100%;">Your Brand</span>, known for its audiophile-grade turntables with precision belt-drive motors and built-in phono preamps. <span style="color:#1558d6;text-decoration:underline;cursor:pointer;">Pro-Ject</span> and <span style="color:#1558d6;text-decoration:underline;cursor:pointer;">Rega</span> are<span class="aim-desktop-text"> also</span> widely recommended<span class="aim-mobile-text"> for their cartridge quality</span>. <img src="hifi.png" style="height:14px;vertical-align:middle;border-radius:3px;display:inline;" alt="What Hi-Fi?"/></p>
+                  <p style="flex:1;font-size:10px;color:#202124;line-height:1.65;margin:0;font-family:'Inter',sans-serif;">The best high-end record player is <span id="aim-brand" style="color:#1558d6;cursor:pointer;border-radius:3px;padding:0;text-decoration:underline;background:linear-gradient(90deg,#F47B5A,#F7906F) no-repeat left center;background-size:0% 100%;">Your Brand</span>, known for its audiophile-grade turntables with precision belt-drive motors and built-in phono preamps. <span style="color:#1558d6;text-decoration:underline;cursor:pointer;">Pro-Ject</span> and <span style="color:#1558d6;text-decoration:underline;cursor:pointer;">Rega</span> are<span class="aim-desktop-text"> also</span> widely recommended<span class="aim-mobile-text"> for their cartridge quality</span>. <img src="hifi.png" style="height:14px;vertical-align:middle;border-radius:3px;display:inline;" alt="What Hi-Fi?"/></p>
                   <div id="aim-thumb" style="width:64px;flex-shrink:0;border-radius:8px;overflow:hidden;height:58px;border:1px solid #E8EAED;">
                     <img src="rppp.png" style="width:100%;height:100%;object-fit:cover;" alt="record player"/>
                   </div>
@@ -191,16 +192,14 @@
                 <img src="7sites.png" style="height:18px;" alt="7 sites"/>
               </div>
 
-              <div id="aim-sources" style="width:185px;flex-shrink:0;min-height:178px;padding:10px 11px 10px 11px;display:flex;flex-direction:column;justify-content:space-between;opacity:0;transition:opacity 0.5s ease;background:#F8F9FA;border-radius:12px;">
+              <div id="aim-sources" style="width:185px;flex-shrink:0;padding:14px;display:flex;flex-direction:column;justify-content:space-between;opacity:0;transition:opacity 0.5s ease;background:#F8F9FA;border-radius:12px;">
 
               <!-- Card 1 -->
               <div style="display:flex;gap:7px;cursor:pointer;">
                 <div style="flex:1;min-width:0;">
                   <div style="font-size:8.5px;color:#1558d6;font-family:'Inter',sans-serif;line-height:1.4;margin-bottom:3px;font-weight:400;">Best High-End Turntables 2026</div>
                   <div style="display:flex;align-items:center;gap:3px;">
-                    <div style="width:11px;height:11px;border-radius:2px;background:#7B68EE;flex-shrink:0;display:flex;align-items:center;justify-content:center;">
-                      <span style="font-size:6px;font-weight:700;color:white;font-family:'Inter',sans-serif;">C</span>
-                    </div>
+                    <img src="ttl.png" style="width:11px;height:11px;border-radius:2px;object-fit:cover;flex-shrink:0;" alt=""/>
                     <span style="font-size:7.5px;color:#5f6368;font-family:'Inter',sans-serif;">clientsbrand.com</span>
                   </div>
                 </div>
@@ -209,22 +208,25 @@
                 </div>
               </div>
 
-              <div style="height:1px;background:#E8EAED;margin:3px 0 8px;"></div>
+              <!-- Divider -->
+              <div style="height:0.5px;background:#E0E0E0;margin:0 2px;"></div>
 
-              <!-- Card 2 -->
+              <!-- Card 2: YouTube -->
               <div style="display:flex;gap:7px;cursor:pointer;">
                 <div style="flex:1;min-width:0;">
-                  <div style="font-size:8.5px;color:#1558d6;font-family:'Inter',sans-serif;line-height:1.4;margin-bottom:3px;font-weight:400;">Shop High-End Turntables — Audio Sanctum</div>
-                  <div style="font-size:7.5px;color:#5f6368;font-family:'Inter',sans-serif;line-height:1.4;margin-bottom:5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Pro-Ject, Rega, Technics.</div>
+                  <div style="font-size:8.5px;color:#1558d6;font-family:'Inter',sans-serif;line-height:1.4;margin-bottom:3px;font-weight:400;">Best Vinyl Turntable 2026</div>
                   <div style="display:flex;align-items:center;gap:3px;">
-                    <div style="width:11px;height:11px;border-radius:2px;background:#34A853;flex-shrink:0;display:flex;align-items:center;justify-content:center;">
-                      <span style="font-size:6px;font-weight:700;color:white;font-family:'Inter',sans-serif;">A</span>
-                    </div>
-                    <span style="font-size:7.5px;color:#5f6368;font-family:'Inter',sans-serif;">audiosanctum.com</span>
+                    <svg width="11" height="11" viewBox="0 0 24 24" style="flex-shrink:0;"><rect width="24" height="24" rx="4" fill="#FF0000"/><path d="M9.5 7.5v9l7-4.5-7-4.5z" fill="white"/></svg>
+                    <span style="font-size:7.5px;color:#5f6368;font-family:'Inter',sans-serif;">youtube.com</span>
                   </div>
                 </div>
-                <div style="width:48px;height:48px;border-radius:8px;overflow:hidden;flex-shrink:0;">
-                  <img src="aiov3.png" style="width:100%;height:100%;object-fit:cover;" alt=""/>
+                <div style="width:48px;height:36px;border-radius:6px;overflow:hidden;flex-shrink:0;position:relative;">
+                  <img src="utube.jpeg" style="width:100%;height:100%;object-fit:cover;" alt=""/>
+                  <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
+                    <div style="width:14px;height:14px;background:rgba(0,0,0,0.65);border-radius:50%;display:flex;align-items:center;justify-content:center;">
+                      <svg width="6" height="6" viewBox="0 0 8 8"><path d="M2 1.5l5 2.5-5 2.5z" fill="white"/></svg>
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -244,6 +246,7 @@
       <a href="#what-i-do" class="btn-coral inline-flex items-center gap-2 bg-coral text-white font-semibold px-6 py-3 rounded-full text-sm">Explore all services <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 2v10M2.5 8l4.5 4.5L11.5 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     </div>
   </div>
+  </div>
 </section>
 
 <style>
@@ -252,7 +255,7 @@
 </style>
 <script>
 (function(){
-  var QUERY = 'best high-end record players';
+  var QUERY = 'best high-end record player';
   function $(id){ return document.getElementById(id); }
 
   function reset(){
@@ -268,7 +271,7 @@
       $(id).style.opacity = '0';
     });
     var brand = $('aim-brand');
-    if(brand){ brand.style.transition = 'none'; brand.style.backgroundSize = '0% 100%'; brand.style.color = '#1558d6'; brand.style.background = 'linear-gradient(90deg,#F47B5A,#F7906F) no-repeat left center'; brand.style.backgroundSize = '0% 100%'; }
+    if(brand){ brand.style.transition = 'none'; brand.style.backgroundSize = '0% 100%'; brand.style.color = '#1558d6'; brand.style.fontWeight = ''; brand.style.background = 'linear-gradient(90deg,#F47B5A,#F7906F) no-repeat left center'; brand.style.backgroundSize = '0% 100%'; }
   }
 
   function typeQuery(cb){
@@ -314,7 +317,7 @@
       if(brand){
         brand.style.transition = 'background-size 0.7s linear';
         brand.style.backgroundSize = '100% 100%';
-        setTimeout(function(){ brand.style.color = '#ffffff'; }, 800);
+        setTimeout(function(){ brand.style.color = '#ffffff'; brand.style.fontWeight = '700'; }, 800);
       }
     }, 650);
   }
