@@ -42,7 +42,7 @@
   .fade-up-2 { animation: fadeUp 0.55s 0.1s cubic-bezier(0.22,1,0.36,1) both; }
   .fade-up-3 { animation: fadeUp 0.55s 0.2s cubic-bezier(0.22,1,0.36,1) both; }
   .fade-up-4 { animation: fadeUp 0.55s 0.3s cubic-bezier(0.22,1,0.36,1) both; }
-  @media (min-width: 768px) { .brand-logos img { transform: scale(1.06); transform-origin: left center; } .brand-logos .logo-row { gap: 1.8rem; } }
+  @media (min-width: 768px) { .brand-logos img { transform: scale(1.06); transform-origin: left center; } .brand-logos .logo-row { gap: 1.8rem; } .brands-col { margin-top: -8px !important; } }
   .btn-coral { transition: filter 0.18s ease, transform 0.15s cubic-bezier(0.34,1.56,0.64,1); }
   .btn-coral:hover { filter: brightness(0.92); }
   .btn-coral:active { transform: scale(0.96); filter: brightness(0.88); }
@@ -211,7 +211,7 @@
       </div>
 
       <!-- Trusted by the brands you love (right — matches reference exactly) -->
-      <div class="pt-0 mt-4 md:mt-0 max-w-md mx-auto md:max-w-none md:mx-0 md:pr-8">
+      <div class="brands-col pt-0 mt-4 md:mt-0 max-w-md mx-auto md:max-w-none md:mx-0 md:pr-8">
         <p class="text-ink mb-7 md:mb-[30px] text-center md:text-left" style="font-family:'Poppins',sans-serif;font-weight:800;font-size:clamp(1.45rem,5.8vw,1.75rem);white-space:nowrap;line-height:1.2;">Trusted by brands you love.</p>
         <div class="brand-logos" style="display:flex;flex-direction:column;gap:2rem;width:100%;">
           <div class="logo-row" style="display:flex;align-items:center;gap:1rem;">
@@ -346,16 +346,15 @@
 
           <!-- ── Jun marker ── -->
           <g id="chart-marker" style="opacity:0;transition:opacity 1.2s ease;">
-            <line x1="300" y1="95" x2="300" y2="330" stroke="#F4956F" stroke-width="1" stroke-dasharray="4,3"/>
             <circle cx="300" cy="245" r="5" fill="#F4956F" stroke="white" stroke-width="2.5"/>
-            <!-- Tooltip -->
-            <rect x="108" y="105" width="102" height="50" rx="10" fill="transparent" stroke="#FFCFBE" stroke-width="1"/>
-            <text x="118" y="121" font-family="'Poppins',sans-serif" font-size="9.5" font-weight="600" fill="#F47B5A">My optimizations</text>
-            <rect x="118" y="128" width="44" height="17" rx="5" fill="#dcfce7" stroke="#bbf7d0" stroke-width="0.8"/>
-            <polygon points="125,139 128.5,134.5 132,139" fill="#15803d"/>
-            <text x="134" y="139.5" font-family="'Inter',sans-serif" font-size="8.5" font-weight="700" fill="#15803d">37%</text>
-            <!-- Connector -->
-            <line x1="210" y1="155" x2="296" y2="240" stroke="#F4956F" stroke-width="1" stroke-dasharray="3,2"/>
+            <!-- Short upward vertical line centered on circle and label -->
+            <line x1="300" y1="245" x2="300" y2="155" stroke="#F4956F" stroke-width="1" stroke-dasharray="3,2"/>
+            <!-- Tooltip centered at x=300 -->
+            <rect x="249" y="105" width="102" height="50" rx="10" fill="transparent" stroke="#FFCFBE" stroke-width="1"/>
+            <text x="259" y="121" font-family="'Poppins',sans-serif" font-size="9.5" font-weight="600" fill="#F47B5A">My optimizations</text>
+            <rect x="259" y="128" width="44" height="17" rx="5" fill="#dcfce7" stroke="#bbf7d0" stroke-width="0.8"/>
+            <polygon points="266,139 269.5,134.5 273,139" fill="#15803d"/>
+            <text x="275" y="139.5" font-family="'Inter',sans-serif" font-size="8.5" font-weight="700" fill="#15803d">37%</text>
           </g>
 
           <!-- ── X labels ── -->
