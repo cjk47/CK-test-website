@@ -101,7 +101,7 @@
         <div class="inline-flex items-center gap-2 bg-coral-light text-coral text-xs font-semibold px-3 py-1.5 rounded-full mb-5">
           <span class="w-1.5 h-1.5 rounded-full bg-coral"></span>Case Studies
         </div>
-        <h1 class="font-display font-extrabold text-ink leading-tight md:leading-[1.12] mb-6" style="font-size:clamp(2.5rem,4.3vw,3.3rem);letter-spacing:-0.02em;">You're in good company.</h1>
+        <h1 class="font-display font-extrabold text-ink leading-tight md:leading-[1.12] mb-6" style="font-size:clamp(2.5rem,4.3vw,3.3rem);letter-spacing:-0.02em;">You're in good company</h1>
         <p class="text-muted max-w-sm md:max-w-md" style="line-height:1.75">From startups to big brands, I've helped businesses<br class="hidden md:block"> like yours grow organic traffic and revenue.</p>
       </div>
 
@@ -115,11 +115,47 @@
         </div>
 
         <!-- Col 1 Row 3-4: Rukkus stat card -->
-        <div class="mosaic-stat" style="grid-row:3/5;grid-column:1/2;background:#EDE9FB;border-radius:14px;padding:14px 16px;display:flex;flex-direction:column;justify-content:center;gap:10px;overflow:hidden;">
-          <img src="400x400ia-75.webp" alt="Rukkus" style="height:28px;width:28px;border-radius:8px;object-fit:cover;filter:hue-rotate(105deg) saturate(0.45) brightness(1.15);">
+        <div class="mosaic-stat" style="grid-row:3/5;grid-column:1/2;background:#FCC5B4;border-radius:14px;padding:14px 16px;display:flex;flex-direction:column;justify-content:center;gap:10px;overflow:hidden;">
+          <canvas id="rukkus-symbol" width="84" height="84" style="flex-shrink:0;width:28px;height:28px;"></canvas>
+          <script>
+          (function(){
+            var canvas = document.getElementById('rukkus-symbol');
+            var ctx = canvas.getContext('2d');
+            var img = new Image();
+            img.crossOrigin = 'anonymous';
+            img.onload = function(){
+              var off = document.createElement('canvas');
+              var sw = img.naturalWidth, sh = img.naturalHeight;
+              var crop = Math.round(sw * 0.12);
+              var cw = sw - crop*2, ch = sh - crop*2;
+              off.width = cw; off.height = ch;
+              var octx = off.getContext('2d');
+              octx.drawImage(img, -crop, -crop);
+              var d = octx.getImageData(0,0,cw,ch);
+              var px = d.data;
+              for(var i=0;i<px.length;i+=4){
+                var idx = i/4;
+                var x = idx % cw, y = Math.floor(idx/cw);
+                var lum = (0.2126*px[i] + 0.7152*px[i+1] + 0.0722*px[i+2])/255;
+                if(lum > 0.68){
+                  var t = (x/cw*0.5 + y/ch*0.5);
+                  px[i]   = Math.round(200 + (95-200)*t);
+                  px[i+1] = Math.round(90  + (35-90)*t);
+                  px[i+2] = Math.round(65  + (18-65)*t);
+                  px[i+3] = Math.round(((lum-0.68)/0.32)*255);
+                } else {
+                  px[i+3] = 0;
+                }
+              }
+              octx.putImageData(d,0,0);
+              ctx.drawImage(off,0,0,84,84);
+            };
+            img.src = '400x400ia-75.webp';
+          })();
+          </script>
           <div>
-            <p style="font-family:'Poppins',sans-serif;font-weight:500;font-size:1.55rem;color:#4B35C8;line-height:1;">+1,256%</p>
-            <p style="font-size:0.68rem;color:#4B35C8;margin-top:4px;opacity:0.75;">Traffic increase</p>
+            <p style="font-family:'Poppins',sans-serif;font-weight:500;font-size:1.55rem;color:#5A2008;line-height:1;">+1,256%</p>
+            <p style="font-size:0.68rem;color:#5A2008;margin-top:4px;opacity:0.85;">Traffic increase</p>
           </div>
         </div>
 
@@ -132,46 +168,34 @@
           </div>
         </div>
 
-        <!-- Col 2 Row 2: Search icon accent card (thin, coral) -->
-        <div style="grid-row:2/3;grid-column:2/3;background:#FCC9B3;border-radius:14px;display:flex;align-items:center;justify-content:center;">
+        <!-- Col 2 Row 2: Search icon accent card (thin, violet) -->
+        <div style="grid-row:2/3;grid-column:2/3;background:#EDE9FB;border-radius:14px;display:flex;align-items:center;justify-content:center;">
           <svg viewBox="0 0 32 32" style="height:24px;width:auto;" fill="none">
             <!-- magnifying glass -->
-            <circle cx="12" cy="12" r="7" stroke="#F47B5A" stroke-width="2.5"/>
-            <line x1="17.5" y1="17.5" x2="24" y2="24" stroke="#F47B5A" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="12" cy="12" r="7" stroke="#7B68EE" stroke-width="2.5"/>
+            <line x1="17.5" y1="17.5" x2="24" y2="24" stroke="#7B68EE" stroke-width="2.5" stroke-linecap="round"/>
             <!-- large sparkle top-right -->
-            <path d="M26 2 L27.2 5.8 L31 7 L27.2 8.2 L26 12 L24.8 8.2 L21 7 L24.8 5.8 Z" fill="#F47B5A" opacity="0.75"/>
+            <path d="M26 2 L27.2 5.8 L31 7 L27.2 8.2 L26 12 L24.8 8.2 L21 7 L24.8 5.8 Z" fill="#7B68EE" opacity="0.75"/>
             <!-- medium sparkle bottom-left -->
-            <path d="M4 22 L4.8 24.5 L7.5 25 L4.8 25.5 L4 28 L3.2 25.5 L0.5 25 L3.2 24.5 Z" fill="#F47B5A" opacity="0.5"/>
+            <path d="M4 22 L4.8 24.5 L7.5 25 L4.8 25.5 L4 28 L3.2 25.5 L0.5 25 L3.2 24.5 Z" fill="#7B68EE" opacity="0.5"/>
             <!-- small sparkle mid-right -->
-            <path d="M29 16 L29.5 17.5 L31 18 L29.5 18.5 L29 20 L28.5 18.5 L27 18 L28.5 17.5 Z" fill="#F47B5A" opacity="0.4"/>
+            <path d="M29 16 L29.5 17.5 L31 18 L29.5 18.5 L29 20 L28.5 18.5 L27 18 L28.5 17.5 Z" fill="#7B68EE" opacity="0.4"/>
           </svg>
         </div>
 
         <!-- Col 2 Row 3-4: Organic traffic chart -->
         <div style="grid-row:3/5;grid-column:2/3;background:#EBF0F5;border-radius:14px;padding:8px 2px;overflow:hidden;display:flex;align-items:center;justify-content:center;">
-          <svg viewBox="0 0 115 82" preserveAspectRatio="xMidYMid meet" style="width:100%;height:92%;overflow:visible;">
-            <line x1="2" y1="7"  x2="113" y2="7"  stroke="#B5CCDA" stroke-width="0.5" stroke-dasharray="1.5 3"/>
-            <line x1="2" y1="17" x2="113" y2="17" stroke="#B5CCDA" stroke-width="0.5" stroke-dasharray="1.5 3"/>
-            <line x1="2" y1="27" x2="113" y2="27" stroke="#B5CCDA" stroke-width="0.5" stroke-dasharray="1.5 3"/>
-            <line x1="2" y1="37" x2="113" y2="37" stroke="#B5CCDA" stroke-width="0.5" stroke-dasharray="1.5 3"/>
-            <line x1="2" y1="47" x2="113" y2="47" stroke="#B5CCDA" stroke-width="0.5" stroke-dasharray="1.5 3"/>
-            <line x1="2" y1="57" x2="113" y2="57" stroke="#B5CCDA" stroke-width="0.5" stroke-dasharray="1.5 3"/>
-            <line x1="2" y1="67" x2="113" y2="67" stroke="#B5CCDA" stroke-width="0.8" stroke-dasharray="1.5 3"/>
-            <rect x="4"  y="53" width="6" height="14" rx="2" fill="#6B8FAD"/>
-            <rect x="14" y="46" width="6" height="21" rx="2" fill="#A8C4D8"/>
-            <rect x="25" y="36" width="6" height="31" rx="2" fill="#6B8FAD"/>
-            <rect x="35" y="18" width="6" height="49" rx="2" fill="#A8C4D8"/>
-            <rect x="46" y="30" width="6" height="37" rx="2" fill="#6B8FAD"/>
-            <rect x="56" y="40" width="6" height="27" rx="2" fill="#A8C4D8"/>
-            <rect x="67" y="12" width="6" height="55" rx="2" fill="#6B8FAD"/>
-            <rect x="77" y="43" width="6" height="24" rx="2" fill="#A8C4D8"/>
-            <rect x="88" y="33" width="6" height="34" rx="2" fill="#6B8FAD"/>
-            <rect x="98" y="23" width="6" height="44" rx="2" fill="#A8C4D8"/>
-            <text x="7"  y="76" text-anchor="middle" font-size="4" fill="#8A9EAF">1</text>
-            <text x="28" y="76" text-anchor="middle" font-size="4" fill="#8A9EAF">2</text>
-            <text x="49" y="76" text-anchor="middle" font-size="4" fill="#8A9EAF">3</text>
-            <text x="70" y="76" text-anchor="middle" font-size="4" fill="#8A9EAF">4</text>
-            <text x="91" y="76" text-anchor="middle" font-size="4" fill="#8A9EAF">5</text>
+          <svg viewBox="0 0 115 75" preserveAspectRatio="xMidYMid meet" style="width:82%;height:92%;overflow:visible;">
+            <rect x="4"  y="55" width="6" height="12" rx="2" fill="#6B8FAD"/>
+            <rect x="14" y="45" width="6" height="22" rx="2" fill="#A8C4D8"/>
+            <rect x="25" y="50" width="6" height="17" rx="2" fill="#6B8FAD"/>
+            <rect x="35" y="30" width="6" height="37" rx="2" fill="#A8C4D8"/>
+            <rect x="46" y="38" width="6" height="29" rx="2" fill="#6B8FAD"/>
+            <rect x="56" y="22" width="6" height="45" rx="2" fill="#A8C4D8"/>
+            <rect x="67" y="14" width="6" height="53" rx="2" fill="#6B8FAD"/>
+            <rect x="77" y="25" width="6" height="42" rx="2" fill="#A8C4D8"/>
+            <rect x="88" y="8"  width="6" height="59" rx="2" fill="#6B8FAD"/>
+            <rect x="98" y="4"  width="6" height="63" rx="2" fill="#A8C4D8"/>
           </svg>
         </div>
 
@@ -180,9 +204,7 @@
 
           <!-- Funnel icon card -->
           <div style="height:60px;flex-shrink:0;background:#EDE9FB;border-radius:14px;display:flex;align-items:center;justify-content:center;overflow:hidden;">
-            <svg viewBox="0 0 40 44" style="height:26px;width:auto;">
-              <path d="M3 2 Q2 0 4 0 L36 0 Q38 0 37 2 L22 24 L22 32 L18 32 L18 24 Z" fill="rgba(123,104,238,0.12)" stroke="#7B68EE" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-            </svg>
+            <img src="funnel.webp" alt="Funnel" style="height:30px;width:auto;filter:hue-rotate(128deg) saturate(2.5) brightness(0.85);">
           </div>
 
           <!-- Crowd/concert photo — fills remaining space -->
