@@ -122,12 +122,12 @@
       <!-- RIGHT: AI Overview mockup -->
       <div class="aim-col" style="min-width:0;display:flex;align-items:flex-end;justify-content:flex-end;position:relative;margin-top:auto;margin-bottom:auto;padding-bottom:0;padding-top:20px;">
 
-        <div class="aim-card" style="width:100%;height:294px;background:#ffffff;border-radius:20px;box-shadow:0 24px 64px -12px rgba(0,0,0,0.1),0 4px 16px -4px rgba(0,0,0,0.06);overflow:hidden;display:flex;flex-direction:column;position:relative;">
+        <div class="aim-card" style="width:100%;height:294px;background:radial-gradient(ellipse 80% 70% at 10% 10%, rgba(244,123,90,0.07) 0%, transparent 60%), radial-gradient(ellipse 70% 60% at 90% 90%, rgba(123,104,238,0.07) 0%, transparent 60%), #ffffff;border-radius:20px;box-shadow:0 6px 24px -6px rgba(123,104,238,0.08),0 2px 8px -2px rgba(0,0,0,0.04);overflow:hidden;display:flex;flex-direction:column;position:relative;">
 
           <!-- Google search bar -->
-          <div style="padding:10px 14px 8px;border-bottom:1px solid #EDEDF3;display:flex;align-items:center;gap:10px;flex-shrink:0;">
+          <div style="padding:10px 14px 8px;border-bottom:1px solid #EEEBFF;background:radial-gradient(ellipse 80% 70% at 10% 10%, rgba(244,123,90,0.07) 0%, transparent 60%), radial-gradient(ellipse 70% 60% at 90% 90%, rgba(123,104,238,0.07) 0%, transparent 60%), #ffffff;display:flex;align-items:center;gap:10px;flex-shrink:0;">
             <svg width="18" height="18" viewBox="0 0 24 24" style="flex-shrink:0;"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-            <div style="flex:1;background:#F1F3F4;border-radius:20px;padding:5px 14px;display:flex;align-items:center;gap:4px;">
+            <div style="flex:1;background:#ffffff;border-radius:20px;padding:5px 14px;display:flex;align-items:center;gap:4px;">
               <span id="aim-query" style="font-size:10.5px;color:#202124;font-family:'Inter',sans-serif;flex:1;min-width:0;"></span>
               <span id="aim-cursor" style="display:inline-block;width:1.5px;height:12px;background:#202124;vertical-align:middle;"></span>
               <svg width="12" height="12" viewBox="0 0 20 20" fill="none" style="flex-shrink:0;margin-left:4px;"><circle cx="9" cy="9" r="6" stroke="#9AA0A6" stroke-width="2"/><path d="M13.5 13.5l3 3" stroke="#9AA0A6" stroke-width="2" stroke-linecap="round"/></svg>
@@ -144,7 +144,7 @@
 
             <!-- Header row: full width -->
             <div id="aim-header" style="display:flex;align-items:center;gap:5px;padding:14px 12px 0 9px;margin-bottom:0;opacity:0;transition:opacity 0.4s ease;">
-              <img src="aiucon.png" style="width:14px;height:14px;display:block;" alt=""/>
+              <img src="aiucon.png" style="width:14px;height:14px;display:block;mix-blend-mode:multiply;" alt=""/>
               <span style="font-size:10.5px;font-weight:600;color:#1a73e8;font-family:'Inter',sans-serif;">AI Overview</span>
             </div>
 
@@ -156,9 +156,9 @@
 
                 <!-- Main paragraph + thumbnail -->
                 <div id="aim-body" style="display:flex;gap:10px;margin-bottom:9px;opacity:0;transition:opacity 0.5s ease;">
-                  <p style="flex:1;font-size:10px;color:#202124;line-height:1.65;margin:0;font-family:'Inter',sans-serif;">The best high-end record player is <span id="aim-brand" style="color:#1558d6;cursor:pointer;border-radius:3px;padding:0;text-decoration:underline;background:linear-gradient(90deg,#F47B5A,#F7906F) no-repeat left center;background-size:0% 100%;">Your Brand</span>, known for its audiophile-grade turntables with precision belt-drive motors and built-in phono preamps. <span style="color:#1558d6;text-decoration:underline;cursor:pointer;">Pro-Ject</span> and <span style="color:#1558d6;text-decoration:underline;cursor:pointer;">Rega</span> are<span class="aim-desktop-text"> also</span> widely recommended<span class="aim-mobile-text"> for their cartridge quality</span>. <img src="hifi.png" style="height:14px;vertical-align:middle;border-radius:3px;display:inline;" alt="What Hi-Fi?"/></p>
-                  <div id="aim-thumb" style="width:64px;flex-shrink:0;border-radius:8px;overflow:hidden;height:58px;border:1px solid #E8EAED;">
-                    <img src="rppp.png" style="width:100%;height:100%;object-fit:cover;" alt="record player"/>
+                  <p style="flex:1;font-size:10px;color:#202124;line-height:1.65;margin:0;font-family:'Inter',sans-serif;">The best high-end record player is <span id="aim-brand" style="color:#1558d6;cursor:pointer;border-radius:3px;padding:0;text-decoration:underline;background:linear-gradient(90deg,#F47B5A,#F7906F) no-repeat left center;background-size:0% 100%;">Your Brand</span>, known for its audiophile-grade turntables with precision belt-drive motors and built-in phono preamps. <span>Pro-Ject</span> and <span>Rega</span> are<span class="aim-desktop-text"> also</span> widely recommended<span class="aim-mobile-text"> for their cartridge quality</span>. <img src="hifi.png" style="height:14px;vertical-align:middle;display:inline;border-radius:3px;mix-blend-mode:multiply;" alt="What Hi-Fi?"/></p>
+                  <div id="aim-thumb" style="width:64px;flex-shrink:0;border-radius:8px;overflow:hidden;height:58px;border:1px solid #E8EAED;position:relative;">
+                    <img src="vpiplayer-black-1.webp" style="width:100%;height:100%;object-fit:cover;" alt="record player"/>
                   </div>
                 </div>
 
