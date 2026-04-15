@@ -92,62 +92,123 @@
 <!-- PAGE HEADER -->
 <section style="background:#FDFCFF;overflow-x:hidden;">
   <div style="background:radial-gradient(ellipse 75% 65% at 5% 0%, rgba(123,104,238,0.05) 0%, transparent 65%), radial-gradient(ellipse 55% 55% at 95% 100%, rgba(94,77,214,0.04) 0%, transparent 60%);">
-  <div class="max-w-6xl mx-auto px-6 py-16">
+  <div class="max-w-6xl mx-auto px-6 py-14">
     <div class="grid md:grid-cols-[44fr_56fr] gap-12 items-center">
 
       <!-- LEFT -->
-      <div>
+      <div class="text-center md:text-left flex flex-col items-center md:items-start">
         <div class="inline-flex items-center gap-2 bg-coral-light text-coral text-xs font-semibold px-3 py-1.5 rounded-full mb-5">
           <span class="w-1.5 h-1.5 rounded-full bg-coral"></span>Case Studies
         </div>
-        <h1 class="font-display font-extrabold text-ink leading-tight mb-6" style="font-size:clamp(2.2rem,4vw,3.0rem);letter-spacing:-0.02em;">You're in good company.</h1>
-        <p class="text-muted max-w-sm" style="line-height:1.75">From startups to big brands, I've helped businesses like yours grow organic traffic and revenue.</p>
+        <h1 class="font-display font-extrabold text-ink leading-tight md:leading-[1.12] mb-6" style="font-size:clamp(2.5rem,4.3vw,3.3rem);letter-spacing:-0.02em;">You're in good company.</h1>
+        <p class="text-muted max-w-sm md:max-w-md" style="line-height:1.75">From startups to big brands, I've helped businesses<br class="hidden md:block"> like yours grow organic traffic and revenue.</p>
       </div>
 
       <!-- RIGHT: photo + stat card mosaic -->
-      <div style="min-width:0;width:100%;overflow:hidden;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr) minmax(0,1fr);grid-template-rows:155px 115px 135px;gap:10px;">
+      <div class="md:pl-8">
+      <div style="min-width:0;width:100%;max-width:100%;margin:0 auto;overflow:hidden;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr) minmax(0,1fr);grid-template-rows:128px 55px 105px 75px;gap:18px;">
 
-        <!-- Col 1 Row 1-2: tall Rukkus concert image -->
+        <!-- Col 1 Row 1-2: Chase credit card image -->
         <div style="grid-row:1/3;grid-column:1/2;border-radius:14px;overflow:hidden;">
           <img src="cs3.png" alt="Rukkus" style="width:100%;height:100%;object-fit:cover;">
         </div>
 
-        <!-- Col 2 Row 1: coral stat card — Rukkus -->
-        <div class="mosaic-stat" style="grid-row:1/2;grid-column:2/3;background:#F47B5A;border-radius:14px;padding:16px 18px;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;">
-          <img class="stat-logo" src="rukkus_logo_Wht_med.png" alt="Rukkus" style="height:14px;object-fit:contain;object-position:left;filter:brightness(0) invert(1);margin-bottom:10px;">
-          <p class="stat-num" style="font-family:'Poppins',sans-serif;font-weight:800;font-size:1.7rem;color:#ffffff;line-height:1;">+1,256%</p>
-          <p class="stat-label" style="font-size:0.72rem;color:rgba(255,255,255,0.82);margin-top:4px;">Organic traffic</p>
+        <!-- Col 1 Row 3-4: Organic traffic chart -->
+        <div style="grid-row:3/5;grid-column:1/2;background:#EBF0F5;border-radius:14px;padding:8px 12px 8px 8px;overflow:hidden;display:flex;align-items:center;justify-content:center;">
+          <svg viewBox="0 0 76 95" style="width:100%;height:100%;">
+            <!-- Horizontal dot gridlines (balanced left=12, right=64) -->
+            <line x1="12" y1="7"  x2="73" y2="7"  stroke="#B5CCDA" stroke-width="0.5" stroke-dasharray="1.5 3"/>
+            <line x1="12" y1="17" x2="73" y2="17" stroke="#B5CCDA" stroke-width="0.5" stroke-dasharray="1.5 3"/>
+            <line x1="12" y1="27" x2="73" y2="27" stroke="#B5CCDA" stroke-width="0.5" stroke-dasharray="1.5 3"/>
+            <line x1="12" y1="37" x2="73" y2="37" stroke="#B5CCDA" stroke-width="0.5" stroke-dasharray="1.5 3"/>
+            <line x1="12" y1="47" x2="73" y2="47" stroke="#B5CCDA" stroke-width="0.5" stroke-dasharray="1.5 3"/>
+            <line x1="12" y1="57" x2="73" y2="57" stroke="#B5CCDA" stroke-width="0.5" stroke-dasharray="1.5 3"/>
+            <line x1="12" y1="67" x2="73" y2="67" stroke="#B5CCDA" stroke-width="0.5" stroke-dasharray="1.5 3"/>
+            <line x1="12" y1="77" x2="73" y2="77" stroke="#B5CCDA" stroke-width="0.8" stroke-dasharray="1.5 3"/>
+            <!-- Y-axis labels -->
+            <text x="10" y="9"  text-anchor="end" font-size="4" fill="#8A9EAF">70</text>
+            <text x="10" y="19" text-anchor="end" font-size="4" fill="#8A9EAF">60</text>
+            <text x="10" y="29" text-anchor="end" font-size="4" fill="#8A9EAF">50</text>
+            <text x="10" y="39" text-anchor="end" font-size="4" fill="#8A9EAF">40</text>
+            <text x="10" y="49" text-anchor="end" font-size="4" fill="#8A9EAF">30</text>
+            <text x="10" y="59" text-anchor="end" font-size="4" fill="#8A9EAF">20</text>
+            <text x="10" y="69" text-anchor="end" font-size="4" fill="#8A9EAF">10</text>
+            <text x="10" y="79" text-anchor="end" font-size="4" fill="#8A9EAF">0</text>
+            <!-- Group 1 -->
+            <rect x="13" y="53" width="4" height="24" rx="2" fill="#6B8FAD"/>
+            <rect x="18" y="46" width="4" height="31" rx="2" fill="#A8C4D8"/>
+            <!-- Group 2 -->
+            <rect x="25" y="36" width="4" height="41" rx="2" fill="#6B8FAD"/>
+            <rect x="30" y="18" width="4" height="59" rx="2" fill="#A8C4D8"/>
+            <!-- Group 3 -->
+            <rect x="38" y="30" width="4" height="47" rx="2" fill="#6B8FAD"/>
+            <rect x="43" y="40" width="4" height="37" rx="2" fill="#A8C4D8"/>
+            <!-- Group 4 -->
+            <rect x="50" y="12" width="4" height="65" rx="2" fill="#6B8FAD"/>
+            <rect x="55" y="53" width="4" height="24" rx="2" fill="#A8C4D8"/>
+            <!-- Group 5 -->
+            <rect x="63" y="43" width="4" height="34" rx="2" fill="#6B8FAD"/>
+            <rect x="68" y="33" width="4" height="44" rx="2" fill="#A8C4D8"/>
+            <!-- X-axis labels -->
+            <text x="17" y="88" text-anchor="middle" font-size="4" fill="#8A9EAF">1</text>
+            <text x="29" y="88" text-anchor="middle" font-size="4" fill="#8A9EAF">2</text>
+            <text x="42" y="88" text-anchor="middle" font-size="4" fill="#8A9EAF">3</text>
+            <text x="54" y="88" text-anchor="middle" font-size="4" fill="#8A9EAF">4</text>
+            <text x="67" y="88" text-anchor="middle" font-size="4" fill="#8A9EAF">5</text>
+          </svg>
         </div>
 
-        <!-- Col 3 Row 1: Chase image -->
-        <div style="grid-row:1/2;grid-column:3/4;border-radius:14px;overflow:hidden;">
-          <img src="cccc.png" alt="Chase" style="width:100%;height:100%;object-fit:cover;">
+        <!-- Col 2 Row 1: Epic Reads stat card (tall) -->
+        <div class="mosaic-stat" style="grid-row:1/2;grid-column:2/3;background:#FFF1EC;border-radius:14px;padding:18px 20px;display:flex;flex-direction:column;justify-content:center;gap:14px;overflow:hidden;">
+          <img class="stat-logo" src="er-logo-menu-blk.png" alt="Epic Reads" style="height:24px;width:auto;object-fit:contain;object-position:left;">
+          <div>
+            <p class="stat-num" style="font-family:'Poppins',sans-serif;font-weight:500;font-size:1.55rem;color:#ed7526;line-height:1;">+37%</p>
+            <p class="stat-label" style="font-size:0.72rem;color:#6B7280;margin-top:5px;">Online sales</p>
+          </div>
         </div>
 
-        <!-- Col 2 Row 2: Epic Reads image -->
-        <div style="grid-row:2/3;grid-column:2/3;border-radius:14px;overflow:hidden;">
-          <img src="original.avif" alt="Epic Reads" style="width:100%;height:100%;object-fit:cover;filter:hue-rotate(150deg);">
+        <!-- Col 2 Row 2: Search icon accent card (thin, coral) -->
+        <div style="grid-row:2/3;grid-column:2/3;background:#F47B5A;border-radius:14px;display:flex;align-items:center;justify-content:center;">
+          <svg viewBox="0 0 28 28" style="height:22px;width:auto;">
+            <circle cx="11" cy="11" r="7" fill="none" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="14 30" stroke-dashoffset="0" opacity="1"/>
+            <circle cx="11" cy="11" r="7" fill="none" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="14 30" stroke-dashoffset="-16" opacity="0.6"/>
+            <circle cx="11" cy="11" r="7" fill="none" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="14 30" stroke-dashoffset="-32" opacity="0.3"/>
+            <line x1="16.5" y1="16.5" x2="23" y2="23" stroke="white" stroke-width="3.5" stroke-linecap="round" opacity="1"/>
+          </svg>
         </div>
 
-        <!-- Col 3 Row 2-3: violet stat card — Best Western -->
-        <div class="mosaic-stat" style="grid-row:2/4;grid-column:3/4;background:#EDE9FB;border-radius:14px;padding:16px 18px;display:flex;flex-direction:column;justify-content:center;overflow:hidden;">
-          <img class="stat-logo" src="newbw.webp" alt="Best Western" style="height:14px;width:auto;object-fit:contain;object-position:left;margin-bottom:8px;filter:grayscale(1) sepia(1) hue-rotate(220deg) saturate(3) brightness(0.75) contrast(1.1);">
-          <p class="stat-num" style="font-family:'Poppins',sans-serif;font-weight:800;font-size:1.55rem;color:#323232;line-height:1.1;">+349%</p>
-          <p class="stat-label" style="font-size:0.7rem;color:#6B7280;margin-top:5px;line-height:1.4;">AI Overview<br>visibility</p>
+        <!-- Col 2 Row 3-4: Books image -->
+        <div style="grid-row:3/5;grid-column:2/3;border-radius:14px;overflow:hidden;">
+          <img src="great-books.jpg" alt="Epic Reads" style="width:100%;height:100%;object-fit:cover;">
         </div>
 
-        <!-- Col 1 Row 3: warm stat card — Epic Reads -->
-        <div class="mosaic-stat" style="grid-row:3/4;grid-column:1/2;background:#FFF1EC;border-radius:14px;padding:16px 18px;display:flex;flex-direction:column;justify-content:center;overflow:hidden;">
-          <img class="stat-logo" src="er-logo-menu-blk.png" alt="Epic Reads" style="height:14px;width:auto;object-fit:contain;object-position:left;margin-bottom:8px;filter:brightness(0) invert(66%) sepia(56%) saturate(600%) hue-rotate(330deg) brightness(103%) contrast(92%);">
-          <p class="stat-num" style="font-family:'Poppins',sans-serif;font-weight:800;font-size:1.55rem;color:#323232;line-height:1.1;">+37%</p>
-          <p class="stat-label" style="font-size:0.7rem;color:#6B7280;margin-top:5px;line-height:1.4;">Online sales YoY</p>
+        <!-- Col 3: nested flex column -->
+        <div style="grid-row:1/5;grid-column:3/4;display:flex;flex-direction:column;gap:18px;">
+
+          <!-- Funnel icon card -->
+          <div style="height:60px;flex-shrink:0;background:#EDE9FB;border-radius:14px;display:flex;align-items:center;justify-content:center;overflow:hidden;">
+            <svg viewBox="0 0 40 44" style="height:26px;width:auto;">
+              <path d="M3 2 Q2 0 4 0 L36 0 Q38 0 37 2 L22 24 L22 32 L18 32 L18 24 Z" fill="rgba(123,104,238,0.12)" stroke="#7B68EE" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+            </svg>
+          </div>
+
+          <!-- Crowd/concert photo — fills remaining space -->
+          <div style="flex:1;border-radius:14px;overflow:hidden;">
+            <img src="cccc.png" alt="Chase" style="width:100%;height:100%;object-fit:cover;object-position:52% center;">
+          </div>
+
+          <!-- XVIVO stat card -->
+          <div style="height:112px;flex-shrink:0;background:#D8F5F2;border-radius:14px;padding:14px 16px;display:flex;flex-direction:column;justify-content:center;gap:10px;overflow:hidden;">
+            <img src="xvivo.png" alt="XVIVO" style="height:18px;width:auto;object-fit:contain;object-position:left;mix-blend-mode:multiply;">
+            <div>
+              <p style="font-family:'Poppins',sans-serif;font-weight:600;font-size:1.4rem;color:#1a4a47;line-height:1;">+45%</p>
+              <p style="font-size:0.68rem;color:#1a4a47;margin-top:4px;opacity:0.8;">Organic traffic</p>
+            </div>
+          </div>
+
         </div>
 
-        <!-- Col 2 Row 3: XVIVO image -->
-        <div style="grid-row:3/4;grid-column:2/3;border-radius:14px;overflow:hidden;">
-          <img src="3D-medical-animation-immersive-experience-for-viewers-1.jpg" alt="XVIVO" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-
+      </div>
       </div>
     </div>
   </div>

@@ -46,7 +46,8 @@
   .approach-card { position: relative; overflow: hidden; }
   .approach-blob { position: absolute; width: 0; height: 0; border-radius: 50%; background: #F0EFFE; transform: translate(-50%,-50%); opacity: 0; pointer-events: none; z-index: 0; }
   .approach-card .approach-content { position: relative; z-index: 1; }
-  .svc-card-h2 { font-size: clamp(1.1rem, 2.5vw, 1.5rem) !important; }
+  .svc-card-h2 { font-size: clamp(1.1rem, 2.6vw, 1.56rem) !important; }
+  @media (min-width: 768px) { .svc-h2 { font-size: 2.25rem !important; } }
   @media (max-width: 767px) {
     .svc-h2 { font-size: 1.875rem !important; }
     .aim-col { margin-top: -16px; justify-content: flex-start !important; }
@@ -57,7 +58,7 @@
   @media (max-width: 639px) {
     .aim-card { height: 322px !important; }
   }
-  @media (min-width: 768px) { .aim-col { padding-top: 34px; padding-bottom: 6px; transform: translateX(-32px) translateY(3px); } .aim-mobile-text { display: none !important; } }
+  @media (min-width: 768px) { .aim-col { padding-top: 34px; padding-bottom: 6px; transform: translateY(3px); } .aim-mobile-text { display: none !important; } }
   @media (max-width: 767px) { .aim-card { height: 302px !important; } .aim-desktop-text { display: none !important; } .aim-rega-bullet { display: flex !important; } }
   #mob { display: none !important; }
   @media (max-width: 767px) { #mob.mob-open { display: flex !important; } }
@@ -109,8 +110,8 @@
         <div class="inline-flex items-center gap-2 bg-coral-light text-coral text-xs font-semibold px-3 py-1.5 rounded-full mb-5">
           <span class="w-1.5 h-1.5 rounded-full bg-coral"></span>Services
         </div>
-        <h1 class="font-display font-extrabold text-ink leading-tight mb-5" style="font-size:clamp(2.5rem,4vw,3.0rem);letter-spacing:-0.02em;"><span class="svcmd:block">SEO services built</span> <span class="svcmd:block">for what's next.</span></h1>
-        <p class="text-muted mb-3 md:mb-8 max-w-sm" style="line-height:1.75;">From traditional SERPs to AI-generated answers, I ensure your brand is discoverable across every modern search experience.</p>
+        <h1 class="font-display font-extrabold text-ink leading-tight md:leading-[1.12] mb-5" style="font-size:clamp(2.5rem,4.3vw,3.3rem);letter-spacing:-0.02em;"><span class="svcmd:block">SEO services built</span> <span class="svcmd:block">for what's next.</span></h1>
+        <p class="text-muted mb-3 md:mb-8 max-w-sm md:max-w-lg" style="line-height:1.75;">From traditional SERPs to AI-generated answers, I ensure your brand is discoverable across every modern search experience.</p>
         <div class="hidden md:flex flex-wrap gap-3">
           <a href="#what-i-do" class="btn-coral inline-flex items-center gap-2 bg-coral text-white font-semibold px-6 py-3 rounded-full text-sm">Explore all services <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 2v10M2.5 8l4.5 4.5L11.5 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
@@ -353,7 +354,7 @@
     <div class="inline-flex items-center gap-2 bg-coral-light text-coral text-xs font-semibold px-3 py-1.5 rounded-full mb-5">
       <span class="w-1.5 h-1.5 rounded-full bg-coral"></span>What I do
     </div>
-    <h2 class="svc-h2" style="font-family:'Poppins',sans-serif;font-weight:800;font-size:clamp(1.875rem,3.5vw,2.2rem);color:#1A1A2E;letter-spacing:-0.02em;line-height:1.2;margin-bottom:12px;">
+    <h2 class="svc-h2" style="font-family:'Poppins',sans-serif;font-weight:800;font-size:clamp(1.875rem,3.6vw,2.26rem);color:#1A1A2E;letter-spacing:-0.02em;line-height:1.2;margin-bottom:12px;">
 Grow your organic traffic<span class="inline md:block"> &amp; conversions.</span>
     </h2>
     <p style="font-size:1rem;color:#6B7280;max-width:480px;line-height:1.7;font-family:'Inter',sans-serif;margin-bottom:0;">A human-first approach to search, built around better experiences that move people to act.</p>
@@ -547,7 +548,7 @@ Grow your organic traffic<span class="inline md:block"> &amp; conversions.</span
       <div class="inline-flex items-center gap-2 bg-violet-light text-violet text-xs font-semibold px-3 py-1.5 rounded-full mb-5">
         <span class="w-1.5 h-1.5 rounded-full bg-violet"></span>SEO is evolving
       </div>
-      <h2 class="font-display font-extrabold text-ink svc-h2" style="font-size:clamp(1.875rem,3.5vw,2.2rem);letter-spacing:-0.02em;line-height:1.2;">The game has changed.</h2>
+      <h2 class="font-display font-extrabold text-ink svc-h2" style="font-size:clamp(1.875rem,3.6vw,2.26rem);letter-spacing:-0.02em;line-height:1.2;">The game has changed.</h2>
       <p class="text-muted mt-3" style="font-size:1rem;line-height:1.7;max-width:480px;">Future-proof your SEO with a mix of proven fundamentals and modern search strategies.</p>
     </div>
 
@@ -640,8 +641,7 @@ Grow your organic traffic<span class="inline md:block"> &amp; conversions.</span
 
 <!-- MY APPROACH -->
 <style>
-  .lt-card { background:#fff;border:1px solid #E8E8F0;border-radius:16px;padding:28px;transition:box-shadow 0.2s ease,transform 0.2s cubic-bezier(0.22,1,0.36,1); }
-  .lt-card:hover { box-shadow:0 8px 32px -8px rgba(123,104,238,0.12);transform:translateY(-2px); }
+  .lt-card { background:#fff;border:1px solid #E8E8F0;border-radius:16px;padding:28px; }
   .lt-icon { width:40px;height:40px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;overflow:visible; }
   @media (max-width: 767px) {
     .principles-wrap { flex-direction: column !important; gap: 16px !important; }
@@ -659,7 +659,7 @@ Grow your organic traffic<span class="inline md:block"> &amp; conversions.</span
         <div class="inline-flex items-center gap-2 bg-coral-light text-coral text-xs font-semibold px-3 py-1.5 rounded-full mb-5">
           <span class="w-1.5 h-1.5 rounded-full bg-coral"></span>My approach
         </div>
-        <h2 class="font-display font-extrabold text-ink mb-4 svc-h2" style="font-size:clamp(1.875rem,3.5vw,2.4rem);line-height:1.15;letter-spacing:-0.03em;">SEO principles behind the work.</h2>
+        <h2 class="font-display font-extrabold text-ink mb-4 svc-h2" style="font-size:clamp(1.875rem,3.6vw,2.46rem);line-height:1.15;letter-spacing:-0.03em;">SEO principles behind the work.</h2>
         <p class="text-muted mb-3 md:mb-8" style="line-height:1.75;font-size:0.9rem;">Six beliefs that shape every engagement I take on.</p>
         <a href="contact.html" class="btn-coral hidden md:inline-flex items-center gap-2 bg-coral text-white font-semibold px-5 py-2.5 rounded-full text-sm">Get in touch
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -720,11 +720,6 @@ Grow your organic traffic<span class="inline md:block"> &amp; conversions.</span
         </div>
 
       </div>
-    </div>
-    <div class="md:hidden mt-8">
-      <a href="contact.html" class="btn-coral inline-flex items-center gap-2 bg-coral text-white font-semibold px-5 py-2.5 rounded-full text-sm">Get in touch
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
     </div>
   </div>
 </section>
