@@ -58,8 +58,10 @@
   @media (max-width: 639px) {
     .aim-card { height: 322px !important; }
   }
-  @media (min-width: 768px) { .aim-col { padding-top: 34px; padding-bottom: 6px; transform: translateY(3px); } .aim-mobile-text { display: none !important; } }
-  @media (max-width: 767px) { .aim-card { height: 302px !important; } .aim-desktop-text { display: none !important; } .aim-rega-bullet { display: flex !important; } }
+  .aim-card { height: 298px !important; }
+  .aim-desktop-text { display: none !important; }
+  .aim-rega-bullet { display: flex !important; }
+  @media (min-width: 768px) { .aim-col { width: 435px !important; margin-left: auto; margin-right: 30px; max-width: 100%; padding: 0; box-sizing: border-box; } }
   #mob { display: none !important; }
   @media (max-width: 767px) { #mob.mob-open { display: flex !important; } }
 </style>
@@ -118,8 +120,9 @@
       </div>
 
       <!-- RIGHT: AI Overview mockup -->
-      <div class="aim-col" style="min-width:0;display:flex;align-items:center;justify-content:center;position:relative;margin-top:auto;margin-bottom:auto;">
-        <div class="aim-card" style="width:100%;height:294px;background:#ffffff;border-radius:20px;box-shadow:0 24px 64px -12px rgba(0,0,0,0.1),0 4px 16px -4px rgba(0,0,0,0.06);overflow:hidden;display:flex;flex-direction:column;position:relative;z-index:1;">
+      <div class="aim-col" style="min-width:0;display:flex;align-items:flex-end;justify-content:flex-end;position:relative;margin-top:auto;margin-bottom:auto;padding-bottom:0;padding-top:20px;">
+
+        <div class="aim-card" style="width:100%;height:294px;background:#ffffff;border-radius:20px;box-shadow:0 24px 64px -12px rgba(0,0,0,0.1),0 4px 16px -4px rgba(0,0,0,0.06);overflow:hidden;display:flex;flex-direction:column;position:relative;">
 
           <!-- Google search bar -->
           <div style="padding:10px 14px 8px;border-bottom:1px solid #EDEDF3;display:flex;align-items:center;gap:10px;flex-shrink:0;">
@@ -184,8 +187,8 @@
 
               </div>
 
-            <!-- Right: source cards -->
-            <div class="hidden md:flex" style="flex-direction:column;align-self:flex-start;margin:8px 8px 0 0;gap:4px;width:167px;flex-shrink:0;">
+            <!-- Right: source cards (hidden on all sizes to match mobile view) -->
+            <div class="hidden" style="flex-direction:column;align-self:flex-start;margin:8px 8px 0 0;gap:4px;width:167px;flex-shrink:0;">
 
               <!-- 7 sites label -->
               <div id="aim-sources-label" style="opacity:0;transition:opacity 0.5s ease;padding:0 2px;">
