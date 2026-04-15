@@ -247,7 +247,7 @@
     </div>
     <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
 
-      <div class="service-card rounded-2xl p-6" style="background:#ffffff;box-shadow:0 2px 16px -4px rgba(244,123,90,0.10),0 1px 4px rgba(0,0,0,0.04);min-height:220px;">
+      <div class="service-card rounded-2xl p-6" style="background:#ffffff;box-shadow:0 2px 12px -4px rgba(0,0,0,0.07),0 1px 3px rgba(0,0,0,0.03);min-height:220px;">
         <div class="card-content flex flex-col h-full">
           <div class="card-icon rounded-xl mb-5 flex items-center justify-center" style="background:#fff0ed;width:42px;height:42px;">
             <svg width="19" height="19" viewBox="0 0 20 20" fill="none"><path d="M3 4h14M3 8h10M3 12h14M3 16h8" stroke="#F47B5A" stroke-width="1.6" stroke-linecap="round"/></svg>
@@ -257,7 +257,7 @@
         </div>
       </div>
 
-      <div class="service-card rounded-2xl p-6" style="background:#ffffff;box-shadow:0 2px 16px -4px rgba(123,104,238,0.10),0 1px 4px rgba(0,0,0,0.04);min-height:220px;">
+      <div class="service-card rounded-2xl p-6" style="background:#ffffff;box-shadow:0 2px 12px -4px rgba(0,0,0,0.07),0 1px 3px rgba(0,0,0,0.03);min-height:220px;">
         <div class="card-content flex flex-col h-full">
           <div class="card-icon rounded-xl mb-5 flex items-center justify-center" style="background:#edeafd;width:42px;height:42px;">
             <svg width="19" height="19" viewBox="0 0 20 20" fill="none"><path d="M8 4l-4 6 4 6M12 4l4 6-4 6" stroke="#7B68EE" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -267,7 +267,7 @@
         </div>
       </div>
 
-      <div class="service-card rounded-2xl p-6" style="background:#ffffff;box-shadow:0 2px 16px -4px rgba(196,144,10,0.10),0 1px 4px rgba(0,0,0,0.04);min-height:220px;">
+      <div class="service-card rounded-2xl p-6" style="background:#ffffff;box-shadow:0 2px 12px -4px rgba(0,0,0,0.07),0 1px 3px rgba(0,0,0,0.03);min-height:220px;">
         <div class="card-content flex flex-col h-full">
           <div class="card-icon rounded-xl mb-5 flex items-center justify-center" style="background:#fef3d0;width:42px;height:42px;">
             <svg width="15" height="15" viewBox="0 0 20 20" fill="none"><path d="M10 1C10 1 11 8 19 10C11 12 10 19 10 19C10 19 9 12 1 10C9 8 10 1 10 1Z" fill="none" stroke="#C4900A" stroke-width="1.4" stroke-linejoin="round"/></svg>
@@ -277,7 +277,7 @@
         </div>
       </div>
 
-      <div class="service-card rounded-2xl p-6" style="background:#ffffff;box-shadow:0 2px 16px -4px rgba(94,112,130,0.10),0 1px 4px rgba(0,0,0,0.04);min-height:220px;">
+      <div class="service-card rounded-2xl p-6" style="background:#ffffff;box-shadow:0 2px 12px -4px rgba(0,0,0,0.07),0 1px 3px rgba(0,0,0,0.03);min-height:220px;">
         <div class="card-content flex flex-col h-full">
           <div class="card-icon rounded-xl mb-5 flex items-center justify-center" style="background:#dce5ec;width:42px;height:42px;">
             <svg width="19" height="19" viewBox="0 0 20 20" fill="none"><circle cx="5" cy="10" r="2" stroke="#5E7082" stroke-width="1.6"/><circle cx="15" cy="5" r="2" stroke="#5E7082" stroke-width="1.6"/><circle cx="15" cy="15" r="2" stroke="#5E7082" stroke-width="1.6"/><path d="M7 9l6-3M7 11l6 3" stroke="#5E7082" stroke-width="1.4" stroke-linecap="round"/></svg>
@@ -295,8 +295,8 @@
 </section>
 
 <!-- ABOUT TEASER -->
-<section class="bg-offwhite border-y border-border py-12 md:py-20">
-  <div class="max-w-6xl mx-auto px-6 flex flex-col md:grid md:grid-cols-2 md:gap-x-16 md:gap-y-6 md:items-center gap-6">
+<section class="bg-offwhite py-12 md:py-20">
+  <div class="max-w-6xl mx-auto px-6 flex flex-col md:grid md:grid-cols-2 md:gap-x-16 md:gap-y-4 md:items-center gap-6">
 
     <!-- Mobile: order 1 | Desktop: col 2 row 1 — label + heading -->
     <div class="order-1 md:col-start-2 md:row-start-1">
@@ -308,8 +308,8 @@
 
     <!-- Mobile: order 2 | Desktop: col 1 rows 1–2 — graph -->
     <div class="relative order-2 md:col-start-1 md:row-start-1 md:row-span-2">
-      <div class="relative rounded-2xl overflow-hidden border border-border" style="box-shadow:0 4px 24px -4px rgba(0,0,0,0.07);">
-        <svg id="chart-svg" width="100%" viewBox="22 63 576 313" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block;background:#fff;">
+      <div class="relative">
+        <svg id="chart-svg" width="100%" viewBox="38 63 558 313" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block;background:transparent;" class="md:min-h-[320px]">
           <defs>
             <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
               <stop offset="0%" stop-color="#7B68EE" stop-opacity="0.14"/>
@@ -321,40 +321,45 @@
             <filter id="tipShadow" x="-20%" y="-20%" width="140%" height="140%">
               <feDropShadow dx="0" dy="2" stdDeviation="6" flood-color="#00000012"/>
             </filter>
+            <linearGradient id="fadeRight" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#F9F8FF" stop-opacity="0"/>
+              <stop offset="100%" stop-color="#F9F8FF" stop-opacity="0.9"/>
+            </linearGradient>
           </defs>
 
           <!-- ── Grid lines (y: 95=3K, 173=2.5K, 251=2K, 330=1.5K) ── -->
-          <line x1="60" y1="95"  x2="582" y2="95"  stroke="#F3F4F6" stroke-width="1"/>
-          <text x="50" y="99"  font-family="'Inter',sans-serif" font-size="9" fill="#D1D5DB" text-anchor="end">3K</text>
-          <line x1="60" y1="173" x2="582" y2="173" stroke="#F3F4F6" stroke-width="1"/>
-          <text x="50" y="177" font-family="'Inter',sans-serif" font-size="9" fill="#D1D5DB" text-anchor="end">2.5K</text>
-          <line x1="60" y1="251" x2="582" y2="251" stroke="#F3F4F6" stroke-width="1"/>
-          <text x="50" y="255" font-family="'Inter',sans-serif" font-size="9" fill="#D1D5DB" text-anchor="end">2K</text>
-          <line x1="60" y1="330" x2="582" y2="330" stroke="#F3F4F6" stroke-width="1"/>
-          <text x="50" y="334" font-family="'Inter',sans-serif" font-size="9" fill="#D1D5DB" text-anchor="end">1.5K</text>
+          <line x1="70" y1="95"  x2="582" y2="95"  stroke="#F3F4F6" stroke-width="1"/>
+          <text x="57" y="99"  font-family="'Inter',sans-serif" font-size="9" fill="#D1D5DB" text-anchor="end">3K</text>
+          <line x1="70" y1="173" x2="582" y2="173" stroke="#F3F4F6" stroke-width="1"/>
+          <text x="57" y="177" font-family="'Inter',sans-serif" font-size="9" fill="#D1D5DB" text-anchor="end">2.5K</text>
+          <line x1="70" y1="251" x2="582" y2="251" stroke="#F3F4F6" stroke-width="1"/>
+          <text x="57" y="255" font-family="'Inter',sans-serif" font-size="9" fill="#D1D5DB" text-anchor="end">2K</text>
+          <line x1="70" y1="330" x2="582" y2="330" stroke="#F3F4F6" stroke-width="1"/>
+          <text x="57" y="334" font-family="'Inter',sans-serif" font-size="9" fill="#D1D5DB" text-anchor="end">1.5K</text>
+
 
           <!-- ── Area fill ── -->
-          <path d="M 60,330 L 60,252 C 76,252 91,261 107,261 C 124,261 140,242 156,242 C 172,242 188,249 204,249 C 220,249 236,245 252,245 C 268,245 284,252 300,252 C 316,241 332,233 348,228 C 364,218 380,208 396,204 C 412,204 428,207 444,200 C 460,188 476,173 492,168 C 508,162 524,150 540,144 C 556,139 568,136 582,136 L 582,330 Z" fill="url(#areaGrad)" clip-path="url(#revealClip)"/>
+          <path d="M 60,330 L 60,272 C 76,272 91,255 107,255 C 124,255 140,263 156,263 C 172,263 188,248 204,248 C 220,248 236,247 252,247 C 268,247 284,245 300,245 C 316,238 332,226 348,224 C 364,220 380,214 396,214 C 412,214 428,219 444,219 C 460,219 476,200 492,186 C 508,172 524,154 540,148 C 556,143 568,138 582,136 L 582,330 Z" fill="url(#areaGrad)" clip-path="url(#revealClip)"/>
 
           <!-- ── Line ── -->
-          <path d="M 60,252 C 76,252 91,261 107,261 C 124,261 140,242 156,242 C 172,242 188,249 204,249 C 220,249 236,245 252,245 C 268,245 284,252 300,252 C 316,241 332,233 348,228 C 364,218 380,208 396,204 C 412,204 428,207 444,200 C 460,188 476,173 492,168 C 508,162 524,150 540,144 C 556,139 568,136 582,136" stroke="#7B68EE" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" clip-path="url(#revealClip)"/>
+          <path d="M 60,272 C 76,272 91,255 107,255 C 124,255 140,263 156,263 C 172,263 188,248 204,248 C 220,248 236,247 252,247 C 268,247 284,245 300,245 C 316,238 332,226 348,224 C 364,220 380,214 396,214 C 412,214 428,219 444,219 C 460,219 476,200 492,186 C 508,172 524,154 540,148 C 556,143 568,138 582,136" stroke="#7B68EE" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" clip-path="url(#revealClip)"/>
 
           <!-- ── Jun marker ── -->
           <g id="chart-marker" style="opacity:0;transition:opacity 1.2s ease;">
-            <line x1="300" y1="95" x2="300" y2="330" stroke="#f9b49d" stroke-width="1" stroke-dasharray="4,3"/>
-            <circle cx="300" cy="252" r="5" fill="#f9b49d" stroke="white" stroke-width="2.5"/>
+            <line x1="300" y1="95" x2="300" y2="330" stroke="#F4956F" stroke-width="1" stroke-dasharray="4,3"/>
+            <circle cx="300" cy="245" r="5" fill="#F4956F" stroke="white" stroke-width="2.5"/>
             <!-- Tooltip -->
-            <rect x="110" y="108" width="112" height="44" rx="8" fill="white" filter="url(#tipShadow)" stroke="#f9b49d" stroke-width="1.2"/>
-            <text x="122" y="123" font-family="'Inter',sans-serif" font-size="10" font-weight="600" fill="#d4836a">My optimizations</text>
-            <rect x="122" y="130" width="37" height="14" rx="3" fill="#dcfce7" stroke="#bbf7d0" stroke-width="0.8"/>
-            <polygon points="128,138 131.5,134 135,138" fill="#15803d"/>
-            <text x="137" y="139.5" font-family="'Inter',sans-serif" font-size="8" font-weight="600" fill="#15803d">37%</text>
+            <rect x="108" y="105" width="102" height="50" rx="10" fill="transparent" stroke="#FFCFBE" stroke-width="1"/>
+            <text x="118" y="121" font-family="'Poppins',sans-serif" font-size="9.5" font-weight="600" fill="#F47B5A">My optimizations</text>
+            <rect x="118" y="128" width="44" height="17" rx="5" fill="#dcfce7" stroke="#bbf7d0" stroke-width="0.8"/>
+            <polygon points="125,139 128.5,134.5 132,139" fill="#15803d"/>
+            <text x="134" y="139.5" font-family="'Inter',sans-serif" font-size="8.5" font-weight="700" fill="#15803d">37%</text>
             <!-- Connector -->
-            <line x1="220" y1="152" x2="296" y2="247" stroke="#f9b49d" stroke-width="1" stroke-dasharray="3,2"/>
+            <line x1="210" y1="155" x2="296" y2="240" stroke="#F4956F" stroke-width="1" stroke-dasharray="3,2"/>
           </g>
 
           <!-- ── X labels ── -->
-          <text x="60"  y="352" font-family="'Inter',sans-serif" font-size="9" fill="#D1D5DB" text-anchor="middle">Jan</text>
+          <text x="70"  y="352" font-family="'Inter',sans-serif" font-size="9" fill="#D1D5DB" text-anchor="middle">Jan</text>
           <text x="107" y="352" font-family="'Inter',sans-serif" font-size="9" fill="#D1D5DB" text-anchor="middle">Feb</text>
           <text x="156" y="352" font-family="'Inter',sans-serif" font-size="9" fill="#D1D5DB" text-anchor="middle">Mar</text>
           <text x="204" y="352" font-family="'Inter',sans-serif" font-size="9" fill="#D1D5DB" text-anchor="middle">Apr</text>
@@ -366,8 +371,9 @@
           <text x="492" y="352" font-family="'Inter',sans-serif" font-size="9" fill="#D1D5DB" text-anchor="middle">Oct</text>
           <text x="540" y="352" font-family="'Inter',sans-serif" font-size="9" fill="#D1D5DB" text-anchor="middle">Nov</text>
           <text x="582" y="352" font-family="'Inter',sans-serif" font-size="9" fill="#D1D5DB" text-anchor="middle">Dec</text>
+          <!-- Right fade -->
+          <rect x="510" y="63" width="86" height="313" fill="url(#fadeRight)"/>
         </svg>
-        <div class="absolute inset-0 bg-gradient-to-t from-violet/[0.04] to-transparent mix-blend-multiply pointer-events-none"></div>
       </div>
     </div>
 
@@ -382,7 +388,7 @@
 </section>
 
 <!-- ABOUT SECTION -->
-<section class="bg-white border-t border-border py-12 md:py-20">
+<section class="bg-white py-12 md:py-20">
   <div class="max-w-6xl mx-auto px-6">
     <div class="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
 
@@ -486,7 +492,7 @@
 
 <!-- STATS STRIP -->
 <!-- STATS STRIP -->
-<section class="border-t border-border py-10" style="background:#F0EFFE;">
+<section class="py-10" style="background:#F0EFFE;">
   <div class="max-w-6xl mx-auto px-6">
     <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 text-center">
       <div>
@@ -544,7 +550,7 @@
 </script>
 
 <!-- CTA BANNER -->
-<section class="relative overflow-hidden bg-white border-t border-border py-20 px-6 text-center">
+<section class="relative overflow-hidden bg-white py-20 px-6 text-center">
   <div class="absolute -left-16 top-1/2 -translate-y-1/2 w-64 h-64 rounded-full" style="background: radial-gradient(circle, #F47B5A18 0%, transparent 70%);"></div>
   <div class="absolute -right-16 top-1/2 -translate-y-1/2 w-64 h-64 rounded-full" style="background: radial-gradient(circle, #7B68EE18 0%, transparent 70%);"></div>
   <div class="relative z-10 max-w-xl mx-auto">
