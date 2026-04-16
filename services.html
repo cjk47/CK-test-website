@@ -78,7 +78,7 @@
   #aim-header { padding-left: 16px !important; padding-right: 16px !important; }
   #aim-left-col { padding-left: 16px !important; padding-right: 16px !important; }
   @media (min-width: 1024px) { .aim-col { width: 435px !important; margin-left: auto; margin-right: 30px; max-width: 100%; padding: 0; box-sizing: border-box; justify-content: flex-end !important; } .aim-card { height: 294px !important; } }
-  #mob { display: flex; flex-direction: column; position: fixed; inset: 0; z-index: 200; background: #fff; transform: translateY(-105%); transition: transform 0.4s cubic-bezier(0.4,0,0.2,1); pointer-events: none; }
+  #mob { display: flex; flex-direction: column; position: fixed; top: 64px; left: 0; right: 0; bottom: 0; z-index: 40; background: #fff; transform: translateY(-105%); transition: transform 0.4s cubic-bezier(0.4,0,0.2,1); pointer-events: none; overflow-y: auto; }
   #mob.mob-open { transform: translateY(0) !important; pointer-events: auto; }
   @media (min-width: 768px) { #mob { display: none !important; } }
   .mob-nav-link:active { background: #f3f4f6 !important; }
@@ -106,19 +106,13 @@
       <span class="mob-bar"></span>
     </button>
   </nav>
-  <div id="mob">
-    <div class="flex items-center justify-between px-6 h-16 border-b border-[#e5e7eb] flex-shrink-0">
-      <a href="index.html"><img src="newlogo.png" alt="Craig Kleila SEO" class="h-7"></a>
-      <button onclick="toggleMob()" class="p-2 text-ink" aria-label="Close menu">
-        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M4 4l14 14M18 4L4 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-      </button>
-    </div>
-    <a href="services.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;">SEO Services</a>
-    <a href="case-studies.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;">Case Studies</a>
-    <a href="about.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;">About</a>
-    <a href="contact.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;">Get in Touch</a>
-  </div>
 </header>
+<div id="mob">
+  <a href="services.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;">SEO Services</a>
+  <a href="case-studies.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;">Case Studies</a>
+  <a href="about.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;">About</a>
+  <a href="contact.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;">Get in Touch</a>
+</div>
 <script>
 function toggleMob() {
   var mob = document.getElementById('mob');

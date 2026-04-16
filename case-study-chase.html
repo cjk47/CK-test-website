@@ -55,7 +55,7 @@
     .cs-meta-row { align-items: stretch !important; }
     .cs-accordion-col { width: 100% !important; }
   }
-  #mob { display: flex; flex-direction: column; position: fixed; inset: 0; z-index: 200; background: #fff; transform: translateY(-105%); transition: transform 0.4s cubic-bezier(0.4,0,0.2,1); pointer-events: none; }
+  #mob { display: flex; flex-direction: column; position: fixed; top: 64px; left: 0; right: 0; bottom: 0; z-index: 40; background: #fff; transform: translateY(-105%); transition: transform 0.4s cubic-bezier(0.4,0,0.2,1); pointer-events: none; overflow-y: auto; }
   #mob.mob-open { transform: translateY(0) !important; pointer-events: auto; }
   @media (min-width: 768px) { #mob { display: none !important; } }
   .mob-nav-link:active { background: #f3f4f6 !important; }
