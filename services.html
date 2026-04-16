@@ -55,13 +55,15 @@
   @media (min-width: 640px) and (max-width: 767px) {
     .aim-col { width: 575px !important; max-width: 100%; }
   }
-  @media (max-width: 639px) {
-    .aim-card { height: 322px !important; }
-  }
   .aim-card { height: 298px !important; }
+  @media (max-width: 639px) {
+    .aim-card { height: 312px !important; }
+  }
   .aim-desktop-text { display: none !important; }
   .aim-rega-bullet { display: flex !important; }
-  @media (min-width: 768px) { .aim-col { width: 435px !important; margin-left: auto; margin-right: 30px; max-width: 100%; padding: 0; box-sizing: border-box; } #aim-header { padding-left: 16px !important; padding-right: 16px !important; } #aim-left-col { padding-left: 16px !important; padding-right: 16px !important; } .aim-card { height: 294px !important; } }
+  #aim-header { padding-left: 16px !important; padding-right: 16px !important; }
+  #aim-left-col { padding-left: 16px !important; padding-right: 16px !important; }
+  @media (min-width: 768px) { .aim-col { width: 435px !important; margin-left: auto; margin-right: 30px; max-width: 100%; padding: 0; box-sizing: border-box; } .aim-card { height: 294px !important; } }
   #mob { display: none !important; }
   @media (max-width: 767px) { #mob.mob-open { display: flex !important; } }
 </style>
@@ -266,57 +268,18 @@
   function $(id){ return document.getElementById(id); }
 
   function reset(){
-    $('aim-query').textContent = '';
-    $('aim-query').style.transition = 'none';
-    $('aim-query').style.opacity = '1';
-    $('aim-cursor').style.display = 'inline-block';
+    $('aim-query').textContent = QUERY;
+    $('aim-cursor').style.display = 'none';
     $('aim-loadbar').style.background = 'transparent';
-    $('aim-progress').style.transition = 'none';
-    $('aim-progress').style.width = '0%';
     ['aim-header','aim-body','aim-section','aim-bullets','aim-more','aim-sources','aim-sources-label'].forEach(function(id){
       $(id).style.transition = 'none';
-      $(id).style.opacity = '0';
+      $(id).style.opacity = '1';
     });
     var brand = $('aim-brand');
     if(brand){ brand.style.transition = 'none'; brand.style.backgroundSize = '0% 100%'; brand.style.color = '#1558d6'; brand.style.fontWeight = ''; brand.style.background = 'linear-gradient(90deg,#F47B5A,#F7906F) no-repeat left center'; brand.style.backgroundSize = '0% 100%'; }
   }
 
-  function typeQuery(cb){
-    var i = 0;
-    var el = $('aim-query');
-    var t = setInterval(function(){
-      el.textContent = QUERY.slice(0, ++i);
-      if(i >= QUERY.length){ clearInterval(t); cb(); }
-    }, 8);
-  }
-
-  function showLoad(cb){
-    $('aim-loadbar').style.background = '#F1F3F4';
-    requestAnimationFrame(function(){
-      requestAnimationFrame(function(){
-        $('aim-progress').style.transition = 'width 0.4s cubic-bezier(0.4,0,0.2,1)';
-        $('aim-progress').style.width = '100%';
-        setTimeout(function(){
-          $('aim-loadbar').style.background = 'transparent';
-          cb();
-        }, 420);
-      });
-    });
-  }
-
-  function showResponse(){
-    $('aim-cursor').style.display = 'none';
-    function fade(id, delay){
-      setTimeout(function(){ $(id).style.opacity = '1'; }, delay);
-    }
-    fade('aim-header',   0);
-    fade('aim-body',    40);
-    fade('aim-section', 100);
-    fade('aim-bullets', 180);
-    fade('aim-more',    260);
-    fade('aim-sources-label', 90);
-    fade('aim-sources', 140);
-    // highlight "Your Brand" left-to-right after content has settled
+  function showHighlight(){
     setTimeout(function(){
       var brand = $('aim-brand');
       if(brand){
@@ -324,7 +287,7 @@
         brand.style.backgroundSize = '100% 100%';
         setTimeout(function(){ brand.style.color = '#ffffff'; brand.style.fontWeight = '700'; }, 450);
       }
-    }, 420);
+    }, 200);
   }
 
   function matchRightHeight(){
@@ -340,11 +303,7 @@
   function run(){
     reset();
     matchRightHeight();
-    typeQuery(function(){
-      showLoad(function(){
-        showResponse();
-      });
-    });
+    showHighlight();
   }
 
   run();
