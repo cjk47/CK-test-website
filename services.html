@@ -55,18 +55,15 @@
   @media (min-width: 640px) and (max-width: 767px) {
     .aim-col { width: 575px !important; max-width: 100%; }
   }
+  .aim-card { height: 298px !important; }
+  @media (max-width: 639px) {
+    .aim-card { height: 307px !important; }
+  }
   .aim-desktop-text { display: none !important; }
   .aim-rega-bullet { display: flex !important; }
   #aim-header { padding-left: 16px !important; padding-right: 16px !important; }
   #aim-left-col { padding-left: 16px !important; padding-right: 16px !important; }
-  /* Fixed-size card that scales down on mobile — content always looks identical */
-  .aim-card { width: 435px !important; height: 294px !important; transform-origin: top left; }
-  .aim-col { position: relative; }
-  @media (max-width: 767px) {
-    .aim-col { overflow: hidden; }
-    .aim-card-scaler { width: 100%; overflow: hidden; }
-  }
-  @media (min-width: 768px) { .aim-col { width: 435px !important; margin-left: auto; margin-right: 30px; max-width: 100%; padding: 0; box-sizing: border-box; } }
+  @media (min-width: 768px) { .aim-col { width: 435px !important; margin-left: auto; margin-right: 30px; max-width: 100%; padding: 0; box-sizing: border-box; } .aim-card { height: 294px !important; } }
   #mob { display: none !important; }
   @media (max-width: 767px) { #mob.mob-open { display: flex !important; } }
 </style>
@@ -126,8 +123,7 @@
 
       <!-- RIGHT: AI Overview mockup -->
       <div class="aim-col" style="min-width:0;display:flex;align-items:flex-end;justify-content:flex-end;position:relative;margin-top:auto;margin-bottom:auto;padding-bottom:0;padding-top:24px;">
-        <div class="aim-card-scaler" style="width:100%;">
-        <div class="aim-card" id="aim-card" style="width:435px;height:294px;background:radial-gradient(ellipse 80% 70% at 10% 10%, rgba(244,123,90,0.07) 0%, transparent 60%), radial-gradient(ellipse 70% 60% at 90% 90%, rgba(123,104,238,0.07) 0%, transparent 60%), #ffffff;border-radius:20px;box-shadow:0 6px 24px -6px rgba(123,104,238,0.08),0 2px 8px -2px rgba(0,0,0,0.04);overflow:hidden;display:flex;flex-direction:column;position:relative;">
+        <div class="aim-card" id="aim-card" style="width:100%;height:294px;background:radial-gradient(ellipse 80% 70% at 10% 10%, rgba(244,123,90,0.07) 0%, transparent 60%), radial-gradient(ellipse 70% 60% at 90% 90%, rgba(123,104,238,0.07) 0%, transparent 60%), #ffffff;border-radius:20px;box-shadow:0 6px 24px -6px rgba(123,104,238,0.08),0 2px 8px -2px rgba(0,0,0,0.04);overflow:hidden;display:flex;flex-direction:column;position:relative;">
 
           <!-- Google search bar -->
           <div style="padding:10px 14px 8px;border-bottom:1px solid #EEEBFF;background:radial-gradient(ellipse 80% 70% at 10% 10%, rgba(244,123,90,0.07) 0%, transparent 60%), radial-gradient(ellipse 70% 60% at 90% 90%, rgba(123,104,238,0.07) 0%, transparent 60%), #ffffff;display:flex;align-items:center;gap:10px;flex-shrink:0;">
@@ -251,7 +247,6 @@
             </div><!-- end two-column body -->
           </div><!-- end AI content flex column -->
         </div>
-        </div><!-- end aim-card-scaler -->
       </div>
 
     </div>
@@ -312,19 +307,6 @@
 
   run();
 
-  // Scale card to fit container on mobile
-  function scaleCard(){
-    var scaler = document.querySelector('.aim-card-scaler');
-    var card = document.getElementById('aim-card');
-    if(!scaler || !card) return;
-    if(window.innerWidth >= 768){ card.style.transform = ''; return; }
-    var ratio = scaler.offsetWidth / 435;
-    card.style.transform = 'scale(' + ratio + ')';
-    card.style.transformOrigin = 'top left';
-    scaler.style.height = (294 * ratio) + 'px';
-  }
-  scaleCard();
-  window.addEventListener('resize', scaleCard);
 })();
 </script>
 
