@@ -50,7 +50,7 @@
   @media (min-width: 768px) { .svc-h2 { font-size: 2.25rem !important; } }
   @media (max-width: 767px) {
     .svc-h2 { font-size: 1.875rem !important; }
-    .aim-col { margin-top: -16px; justify-content: flex-start !important; }
+    .aim-col { margin-top: -28px !important; justify-content: flex-start !important; }
   }
   @media (min-width: 640px) and (max-width: 767px) {
     .aim-col { width: 575px !important; max-width: 100%; }
@@ -104,7 +104,7 @@
 <!-- PAGE HEADER -->
 <section style="background:#FDFCFF;overflow-x:hidden;">
   <div style="background:radial-gradient(ellipse 75% 65% at 5% 0%, rgba(123,104,238,0.05) 0%, transparent 65%), radial-gradient(ellipse 55% 55% at 95% 100%, rgba(94,77,214,0.04) 0%, transparent 60%);">
-  <div class="max-w-6xl mx-auto px-6 pt-14 pb-14 md:pt-20 md:pb-20">
+  <div class="max-w-6xl mx-auto px-6 pt-16 pb-16 md:pt-20 md:pb-20">
     <div class="grid md:grid-cols-[53fr_47fr] gap-6 md:gap-17">
 
       <!-- LEFT -->
@@ -352,7 +352,7 @@
 </script>
 
 <!-- VALUE PROP BAND -->
-<section id="what-i-do" class="pt-12 pb-6 md:pt-10 md:pb-14" style="background:#ffffff;">
+<section id="what-i-do" class="pt-16 pb-6 md:pt-10 md:pb-14" style="background:#ffffff;">
   <div class="max-w-6xl mx-auto px-6 text-left md:text-center flex flex-col items-start md:items-center">
     <div class="inline-flex items-center gap-2 bg-coral-light text-coral text-xs font-semibold px-3 py-1.5 rounded-full mb-5">
       <span class="w-1.5 h-1.5 rounded-full bg-coral"></span>What I do
@@ -653,6 +653,8 @@ Grow your organic traffic<span class="inline md:block"> &amp; conversions</span>
     .principles-sticky { width: auto !important; position: static !important; padding-top: 0 !important; top: auto !important; }
     .principles-cards { flex-direction: column !important; gap: 16px !important; }
     .principles-offset { margin-top: 0 !important; }
+    #evolve-left, #evolve-right { transition-duration: 0.8s !important; }
+    #evolve-vs { transition: opacity 0.3s ease 0.55s !important; }
   }
 </style>
 <section class="bg-white" style="padding:80px 0;">
@@ -703,7 +705,7 @@ Grow your organic traffic<span class="inline md:block"> &amp; conversions</span>
               <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="3" y="15" width="18" height="4" rx="1" stroke="#F47B5A" stroke-width="1.6"/><rect x="6" y="10" width="12" height="4" rx="1" stroke="#F47B5A" stroke-width="1.6"/><rect x="9" y="5" width="6" height="4" rx="1" stroke="#F47B5A" stroke-width="1.6"/></svg>
             </div>
             <h3 class="font-display font-semibold text-ink mb-2" style="font-size:1rem;letter-spacing:-0.01em;">Build on solid ground</h3>
-            <p class="text-muted text-sm" style="line-height:1.75;">Technical SEO is the foundation it all sits on. Great content and strong links won't matter if bots can't crawl or index your site.</p>
+            <p class="text-muted text-sm" style="line-height:1.75;">Technical SEO is the foundation. If search engines can't properly crawl and index your site, nothing else matters.</p>
           </div>
 
           <div class="lt-card">
@@ -711,7 +713,7 @@ Grow your organic traffic<span class="inline md:block"> &amp; conversions</span>
               <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M5 3v18" stroke="#F47B5A" stroke-width="1.6" stroke-linecap="round"/><path d="M5 4h11l-2.5 3.5L16 11H5" stroke="#F47B5A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </div>
             <h3 class="font-display font-semibold text-ink mb-2" style="font-size:1rem;letter-spacing:-0.01em;">Marathon, not a sprint</h3>
-            <p class="text-muted text-sm" style="line-height:1.75;">SEO takes consistency. Staying active keeps you competitive and ready for changes in algorithms, competitors, and search behavior.</p>
+            <p class="text-muted text-sm" style="line-height:1.75;">SEO requires consistency. Staying active keeps you competitive as algorithms, competitors, and search behavior evolve.</p>
           </div>
 
           <div class="lt-card">
@@ -735,6 +737,9 @@ Grow your organic traffic<span class="inline md:block"> &amp; conversions</span>
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.45s cubic-bezier(0.22,1,0.36,1), transform 0.45s cubic-bezier(0.22,1,0.36,1);
+  }
+  @media (max-width: 767px) {
+    .process-item { transition-duration: 0.25s !important; }
   }
   .process-item.visible {
     opacity: 1;
@@ -782,7 +787,7 @@ Grow your organic traffic<span class="inline md:block"> &amp; conversions</span>
         <div class="rounded-2xl overflow-hidden text-center" style="background:#ffffff;border:1px solid #E5E7EB;flex:1;display:flex;flex-direction:column;">
           <div style="height:22px;"></div>
           <div style="padding:18px 24px 24px;">
-            <h3 class="font-display font-bold text-base mb-2 text-ink">In-Depth Website<br>Audit</h3>
+            <h3 class="font-display font-bold text-base mb-2 text-ink">In-Depth Website<br class="hidden md:block"> Audit</h3>
             <p class="text-sm text-muted" style="line-height:1.65;">A comprehensive SEO audit of your site's technical setup, content, and authority.</p>
           </div>
         </div>
