@@ -92,6 +92,12 @@
     .hero-icon-search { display: inline !important; }
     .hero-h1-mobile { line-height: 1.22 !important; }
   @media (max-width: 767px) { .hero-h1-mobile { font-size: 9vw !important; } #hero-br { display: none !important; } }
+  @media (max-width: 767px) {
+    .hero-section { min-height: 100dvh; display: flex; flex-direction: column; justify-content: center; }
+    .hero-inner { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+    .hero-bottom { padding-bottom: 0 !important; }
+    .hero-top { padding-top: 0 !important; }
+  }
   @media (max-width: 390px) { .hero-h1-mobile { font-size: 8.95vw !important; } }
   @media (min-width: 428px) and (max-width: 432px) { .hero-h1-mobile { font-size: 9.05vw !important; } .hero-top { padding-top: 120px !important; } .hero-bottom { padding-bottom: 120px !important; } }
   }
@@ -133,9 +139,9 @@
 </header>
 
 <!-- HERO -->
-<section class="relative overflow-x-hidden pt-0 pb-0" style="background:#ffffff;">
+<section class="hero-section relative overflow-x-hidden pt-0 pb-0" style="background:#ffffff;">
   <div class="hero-bottom relative pb-24 md:pb-[103px]" style="background:radial-gradient(ellipse 70% 60% at 15% 10%, rgba(244,123,90,0.10) 0%, transparent 70%), radial-gradient(ellipse 60% 50% at 85% 90%, rgba(123,104,238,0.09) 0%, transparent 70%);">
-  <div class="max-w-6xl mx-auto px-6">
+  <div class="hero-inner max-w-6xl mx-auto px-6">
 
     <!-- CENTERED HERO CONTENT -->
     <div class="hero-top flex flex-col items-center text-center max-w-4xl mx-auto pt-24 md:pt-[103px]">
