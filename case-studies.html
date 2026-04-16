@@ -50,8 +50,14 @@
     .mosaic-stat .stat-label { font-size: 0.64rem !important; }
     .mosaic-stat .stat-logo { height: 10px !important; margin-bottom: 6px !important; }
   }
-  #mob { display: none !important; }
-  @media (max-width: 767px) { #mob.mob-open { display: flex !important; } }
+  #mob { display: flex; flex-direction: column; position: fixed; inset: 0; z-index: 200; background: #fff; transform: translateY(-105%); transition: transform 0.4s cubic-bezier(0.4,0,0.2,1); pointer-events: none; }
+  #mob.mob-open { transform: translateY(0) !important; pointer-events: auto; }
+  @media (min-width: 768px) { #mob { display: none !important; } }
+  .mob-nav-link:active { background: #f3f4f6 !important; }
+  #mob-btn .mob-bar { display: block; width: 22px; height: 2px; background: currentColor; border-radius: 1px; transition: transform 0.3s ease; }
+  #mob-btn .mob-bar:first-child { margin-bottom: 6px; }
+  #mob-btn.mob-open .mob-bar:first-child { transform: translateY(4px) rotate(45deg); }
+  #mob-btn.mob-open .mob-bar:last-child { transform: translateY(-4px) rotate(-45deg); }
   @media (max-width: 767px) { .mosaic-grid { gap: 12px !important; } .mosaic-col3 { gap: 12px !important; } }
 </style>
 </head>
@@ -68,27 +74,33 @@
       
       <a href="contact.html" class="btn-coral bg-coral text-white px-5 py-2 rounded-full font-semibold text-sm">Get in Touch</a>
     </div>
-    <button class="md:hidden p-2 rounded text-ink" onclick="document.getElementById('mob').classList.toggle('mob-open')" aria-label="Toggle menu">
-      <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M3 6h16M3 11h16M3 16h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    <button class="md:hidden flex flex-col justify-center text-ink" id="mob-btn" onclick="toggleMob()" aria-label="Toggle menu" style="width:36px;height:28px;padding:3px 7px;">
+      <span class="mob-bar"></span>
+      <span class="mob-bar"></span>
     </button>
   </nav>
-  <div id="mob" class="flex-col fixed inset-0 z-[200]" style="background:#ffffff;">
-    <div class="flex items-center justify-between px-4 h-16 border-b border-border flex-shrink-0">
+  <div id="mob">
+    <div class="flex items-center justify-between px-6 h-16 border-b border-[#e5e7eb] flex-shrink-0">
       <a href="index.html"><img src="newlogo.png" alt="Craig Kleila SEO" class="h-7"></a>
-      <button onclick="document.getElementById('mob').classList.remove('mob-open')" class="p-2 text-ink" aria-label="Close menu">
+      <button onclick="toggleMob()" class="p-2 text-ink" aria-label="Close menu">
         <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M4 4l14 14M18 4L4 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
       </button>
     </div>
-    <div class="flex flex-col px-8 pt-10 gap-7">
-      <a href="services.html" class="font-display font-semibold text-2xl text-ink">SEO Services</a>
-      <a href="case-studies.html" class="font-display font-semibold text-2xl text-coral font-bold">Case Studies</a>
-      <a href="about.html" class="font-display font-semibold text-2xl text-ink">About</a>
-    </div>
-    <div class="px-8 mt-10">
-      <a href="contact.html" class="bg-coral text-white block text-center px-6 py-3 rounded-full font-semibold">Get in Touch</a>
-    </div>
+    <a href="services.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;">SEO Services</a>
+    <a href="case-studies.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;">Case Studies</a>
+    <a href="about.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;">About</a>
+    <a href="contact.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;">Get in Touch</a>
   </div>
 </header>
+<script>
+function toggleMob() {
+  var mob = document.getElementById('mob');
+  var btn = document.getElementById('mob-btn');
+  mob.classList.toggle('mob-open');
+  btn.classList.toggle('mob-open');
+  document.body.style.overflow = mob.classList.contains('mob-open') ? 'hidden' : '';
+}
+</script>
 
 <!-- PAGE HEADER -->
 <section style="background:#FDFCFF;overflow-x:hidden;">
