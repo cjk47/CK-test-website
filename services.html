@@ -52,18 +52,32 @@
     .svc-h2 { font-size: 1.875rem !important; }
     .aim-col { margin-top: -28px !important; justify-content: flex-start !important; }
   }
+  @media (max-width: 390px) {
+    .svc-hero-h1 { font-size: 2.2rem !important; }
+    .aim-col { margin-top: -28px !important; }
+  }
   @media (min-width: 640px) and (max-width: 767px) {
     .aim-col { width: 575px !important; max-width: 100%; }
+  }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .svc-tablet-btn { display: flex !important; }
+    #svc-hero-grid { grid-template-columns: 1fr !important; }
+    #svc-hero-left { text-align: center !important; align-items: center !important; }
+    .aim-col { width: 100% !important; margin-left: 0 !important; margin-right: 0 !important; margin-top: -28px !important; display: flex !important; justify-content: center !important; align-items: center !important; }
+    .aim-mobile-img { width: auto !important; max-width: 500px !important; margin-left: auto !important; margin-right: auto !important; }
   }
   .aim-card { height: 298px !important; }
   @media (max-width: 639px) {
     .aim-card { height: 307px !important; }
   }
+  /* Static image: show on mobile + tablet only */
+  .aim-mobile-img { display: none; width: 100%; }
+  @media (max-width: 1023px) { .aim-mobile-img { display: block !important; } }
   .aim-desktop-text { display: none !important; }
   .aim-rega-bullet { display: flex !important; }
   #aim-header { padding-left: 16px !important; padding-right: 16px !important; }
   #aim-left-col { padding-left: 16px !important; padding-right: 16px !important; }
-  @media (min-width: 768px) { .aim-col { width: 435px !important; margin-left: auto; margin-right: 30px; max-width: 100%; padding: 0; box-sizing: border-box; } .aim-card { height: 294px !important; } }
+  @media (min-width: 1024px) { .aim-col { width: 435px !important; margin-left: auto; margin-right: 30px; max-width: 100%; padding: 0; box-sizing: border-box; justify-content: flex-end !important; } .aim-card { height: 294px !important; } }
   #mob { display: none !important; }
   @media (max-width: 767px) { #mob.mob-open { display: flex !important; } }
 </style>
@@ -107,28 +121,28 @@
 <section style="background:#FDFCFF;overflow-x:hidden;">
   <div style="background:radial-gradient(ellipse 75% 65% at 5% 0%, rgba(123,104,238,0.05) 0%, transparent 65%), radial-gradient(ellipse 55% 55% at 95% 100%, rgba(94,77,214,0.04) 0%, transparent 60%);">
   <div class="max-w-6xl mx-auto px-6 pt-[40px] pb-[40px] md:pt-[103px] md:pb-[103px]">
-    <div class="grid md:grid-cols-[53fr_47fr] gap-3 md:gap-17">
+    <div id="svc-hero-grid" class="grid md:grid-cols-[53fr_47fr] gap-3 md:gap-17">
 
       <!-- LEFT -->
-      <div class="text-center md:text-left flex flex-col items-center md:items-start justify-center">
+      <div id="svc-hero-left" class="text-center md:text-left flex flex-col items-center md:items-start justify-center">
         <div class="inline-flex items-center gap-2 bg-coral-light text-coral text-xs font-semibold px-3 py-1.5 rounded-full mb-5">
           <span class="w-1.5 h-1.5 rounded-full bg-coral"></span>Services
         </div>
-        <h1 class="font-display font-extrabold text-ink leading-tight md:leading-[1.12] mb-5" style="font-size:clamp(2.5rem,4.3vw,3.3rem);letter-spacing:-0.02em;"><span class="svcmd:block">SEO services built</span> <span class="svcmd:block">for what's next</span></h1>
+        <h1 class="svc-hero-h1 font-display font-extrabold text-ink leading-tight md:leading-[1.12] mb-5" style="font-size:clamp(2.5rem,4.3vw,3.3rem);letter-spacing:-0.02em;"><span class="svcmd:block">SEO services built</span> <span class="svcmd:block">for what's next</span></h1>
         <p class="text-muted mb-3 md:mb-8 max-w-sm md:max-w-lg" style="line-height:1.75;">From traditional SERPs to AI-generated answers, I ensure your brand is discoverable across every modern search experience.</p>
-        <div class="hidden md:flex flex-wrap gap-3">
+        <div class="hidden lg:flex flex-wrap gap-3">
           <a href="#what-i-do" class="btn-coral inline-flex items-center gap-2 bg-coral text-white font-semibold px-6 py-3 rounded-full text-sm">Explore all services <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 2v10M2.5 8l4.5 4.5L11.5 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
       </div>
 
       <!-- RIGHT: AI Overview mockup -->
-      <div class="aim-col" style="min-width:0;display:flex;align-items:flex-end;justify-content:flex-end;position:relative;margin-top:auto;margin-bottom:auto;padding-bottom:0;padding-top:24px;">
+      <div class="aim-col" style="min-width:0;display:flex;align-items:flex-start;justify-content:center;position:relative;margin-top:auto;margin-bottom:auto;padding-bottom:0;padding-top:24px;">
 
         <!-- Static image for mobile/tablet -->
-        <img src="aim-mobile-static.png" alt="AI Overview" class="md:hidden w-full block rounded-[20px]" style="box-shadow:0 6px 24px -6px rgba(123,104,238,0.08),0 2px 8px -2px rgba(0,0,0,0.04);">
+        <img src="aim-mobile-static.png" alt="AI Overview" class="aim-mobile-img rounded-[20px]" style="box-shadow:0 6px 24px -6px rgba(123,104,238,0.08),0 2px 8px -2px rgba(0,0,0,0.04);">
 
         <!-- Live animated card for desktop only -->
-        <div class="aim-card hidden md:flex" id="aim-card" style="width:100%;height:294px;background:radial-gradient(ellipse 80% 70% at 10% 10%, rgba(244,123,90,0.07) 0%, transparent 60%), radial-gradient(ellipse 70% 60% at 90% 90%, rgba(123,104,238,0.07) 0%, transparent 60%), #ffffff;border-radius:20px;box-shadow:0 6px 24px -6px rgba(123,104,238,0.08),0 2px 8px -2px rgba(0,0,0,0.04);overflow:hidden;display:flex;flex-direction:column;position:relative;">
+        <div class="aim-card hidden lg:flex" id="aim-card" style="width:100%;height:294px;background:radial-gradient(ellipse 80% 70% at 10% 10%, rgba(244,123,90,0.07) 0%, transparent 60%), radial-gradient(ellipse 70% 60% at 90% 90%, rgba(123,104,238,0.07) 0%, transparent 60%), #ffffff;border-radius:20px;box-shadow:0 6px 24px -6px rgba(123,104,238,0.08),0 2px 8px -2px rgba(0,0,0,0.04);overflow:hidden;flex-direction:column;position:relative;">
 
           <!-- Google search bar -->
           <div style="padding:10px 14px 8px;border-bottom:1px solid #EEEBFF;background:radial-gradient(ellipse 80% 70% at 10% 10%, rgba(244,123,90,0.07) 0%, transparent 60%), radial-gradient(ellipse 70% 60% at 90% 90%, rgba(123,104,238,0.07) 0%, transparent 60%), #ffffff;display:flex;align-items:center;gap:10px;flex-shrink:0;">
@@ -256,6 +270,10 @@
 
     </div>
     <div class="md:hidden mt-6 flex justify-center">
+      <a href="#what-i-do" class="btn-coral inline-flex items-center gap-2 bg-coral text-white font-semibold px-6 py-3 rounded-full text-sm">Explore all services <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 2v10M2.5 8l4.5 4.5L11.5 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+    <!-- Tablet-only button below AI overview -->
+    <div class="hidden svc-tablet-btn mt-6 justify-center">
       <a href="#what-i-do" class="btn-coral inline-flex items-center gap-2 bg-coral text-white font-semibold px-6 py-3 rounded-full text-sm">Explore all services <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 2v10M2.5 8l4.5 4.5L11.5 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     </div>
   </div>
