@@ -58,11 +58,12 @@
     .mosaic-xvivo { height: 80px !important; }
     .organic-growth-label { display: none !important; }
     .organic-growth-strip { justify-content: center !important; }
+    .mosaic-photo-wrap { box-shadow: 0 0 0 1.5px #E8E8F0 !important; }
   }
   #mob { display: flex; flex-direction: column; position: fixed; top: 64px; left: 0; right: 0; bottom: 0; z-index: 40; background: #fff; transform: translateY(-105%); transition: transform 0.4s cubic-bezier(0.4,0,0.2,1); pointer-events: none; overflow-y: auto; }
   #mob.mob-open { transform: translateY(0) !important; pointer-events: auto; }
   @media (min-width: 768px) { #mob { display: none !important; } }
-  .mob-nav-link { cursor: pointer; -webkit-tap-highlight-color: transparent; }
+  .mob-nav-link { cursor: pointer; -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
   .mob-nav-link:active { background: #f3f4f6 !important; color: #1A1A2E !important; }
   #mob-btn .mob-bar { display: block; width: 22px; height: 2px; background: currentColor; border-radius: 1px; transition: transform 0.3s ease; }
   #mob-btn .mob-bar:first-child { margin-bottom: 6px; }
@@ -134,7 +135,7 @@ document.querySelectorAll(".mob-nav-link").forEach(function(l){
       <div class="mosaic-grid" style="min-width:0;width:100%;max-width:100%;margin:0 auto;overflow:hidden;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr) minmax(0,1fr);grid-template-rows:152px 55px 80px 56px;gap:12px;">
 
         <!-- Col 1 Row 1-2: photo with gradient overlay -->
-        <div class="mosaic-photo-wrap" style="grid-row:1/3;grid-column:1/2;border-radius:18px;overflow:hidden;position:relative;background:#5bc8d0;border:1px solid #E8E8F0;">
+        <div class="mosaic-photo-wrap" style="grid-row:1/3;grid-column:1/2;border-radius:18px;overflow:hidden;position:relative;background:#5bc8d0;">
           <img class="mosaic-photo-img" src="1rahrahhhh.jpeg" alt="Rukkus" style="width:100%;height:100%;object-fit:cover;object-position:center;filter:contrast(1.2) saturate(1.1) url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg'><filter id='s'><feConvolveMatrix order='3' kernelMatrix='0 -0.5 0 -0.5 3 -0.5 0 -0.5 0'/></filter></svg>#s");">
           <div style="position:absolute;inset:0;background:rgba(0,0,0,0.12);border-radius:18px;"></div>
         </div>

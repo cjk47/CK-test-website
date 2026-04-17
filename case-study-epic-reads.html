@@ -57,7 +57,7 @@
   #mob { display: flex; flex-direction: column; position: fixed; top: 64px; left: 0; right: 0; bottom: 0; z-index: 40; background: #fff; transform: translateY(-105%); transition: transform 0.4s cubic-bezier(0.4,0,0.2,1); pointer-events: none; overflow-y: auto; }
   #mob.mob-open { transform: translateY(0) !important; pointer-events: auto; }
   @media (min-width: 768px) { #mob { display: none !important; } }
-  .mob-nav-link { cursor: pointer; -webkit-tap-highlight-color: transparent; }
+  .mob-nav-link { cursor: pointer; -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
   .mob-nav-link:active { background: #f3f4f6 !important; color: #1A1A2E !important; }
   #mob-btn .mob-bar { display: block; width: 22px; height: 2px; background: currentColor; border-radius: 1px; transition: transform 0.3s ease; }
   #mob-btn .mob-bar:first-child { margin-bottom: 6px; }
@@ -432,7 +432,7 @@ function toggleMob() {
   <div class="max-w-5xl mx-auto px-6">
     <h2 class="text-center font-display font-bold text-[32px] text-ink mb-12">Other success stories</h2>
     <div style="position:relative;">
-      <div style="overflow:hidden;">
+      <div style="overflow:hidden;padding:1px;margin:-1px;">
         <div id="cs-track" class="flex" style="gap:24px;transition:transform 0.35s cubic-bezier(0.4,0,0.2,1);">
           <a href="case-study-xvivo.html" class="cs-card card-hover flex flex-col bg-white rounded-2xl overflow-hidden flex-none" style="width:calc((100% - 48px) / 3);border:1px solid #E8E8F0;">
             <div style="height:145px;overflow:hidden;position:relative;">
@@ -541,7 +541,7 @@ function toggleMob() {
     cards.forEach(function(c){ c.style.width=cw+'px'; });
     track.style.gap=g+'px';
     var translate=current*(cw+g);
-    if(mob()&&current===mx&&mx>0) translate-=(cw/4+g);
+    if(mob()&&current===mx&&mx>0){var containerW=track.parentElement.offsetWidth;translate=current*(cw+g)+cw-(containerW-2);}
     track.style.transform='translateX(-'+translate+'px)';
     var m=mob();
     prev.style.display=(current===0)?'none':'flex';
@@ -558,7 +558,7 @@ function toggleMob() {
   track.addEventListener('touchstart',function(e){touchStartX=e.touches[0].clientX;touchStartY=e.touches[0].clientY;},{passive:true});
   track.addEventListener('touchend',function(e){
     var dx=e.changedTouches[0].clientX-touchStartX;var dy=e.changedTouches[0].clientY-touchStartY;
-    if(Math.abs(dx)>15&&Math.abs(dx)>Math.abs(dy)){
+    if(Math.abs(dx)>5&&Math.abs(dx)>Math.abs(dy)){
       if(dx<0&&current<maxIdx()) current++;
       else if(dx>0&&current>0) current--;
       update();
