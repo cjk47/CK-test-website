@@ -46,7 +46,7 @@
   #mob { display: flex; flex-direction: column; position: fixed; top: 64px; left: 0; right: 0; bottom: 0; z-index: 40; background: #fff; transform: translateY(-105%); transition: transform 0.4s cubic-bezier(0.4,0,0.2,1); pointer-events: none; overflow-y: auto; }
   #mob.mob-open { transform: translateY(0) !important; pointer-events: auto; }
   @media (min-width: 768px) { #mob { display: none !important; } }
-  .mob-nav-link { cursor: pointer; -webkit-tap-highlight-color: transparent; }
+  .mob-nav-link { cursor: pointer; -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
   .mob-nav-link:active { background: #f3f4f6 !important; color: #1A1A2E !important; }
   #mob-btn .mob-bar { display: block; width: 22px; height: 2px; background: currentColor; border-radius: 1px; transition: transform 0.3s ease; }
   #mob-btn .mob-bar:first-child { margin-bottom: 6px; }
@@ -75,9 +75,9 @@
   </nav>
 </header>
 <div id="mob">
-  <a href="services.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;">SEO Services</a>
-  <a href="case-studies.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;">Case Studies</a>
-  <a href="about.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;">About</a>
+  <a href="services.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;" ontouchstart="this.style.background='#f3f4f6'" ontouchend="this.style.background=''" ontouchcancel="this.style.background=''">SEO Services</a>
+  <a href="case-studies.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;" ontouchstart="this.style.background='#f3f4f6'" ontouchend="this.style.background=''" ontouchcancel="this.style.background=''">Case Studies</a>
+  <a href="about.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;" ontouchstart="this.style.background='#f3f4f6'" ontouchend="this.style.background=''" ontouchcancel="this.style.background=''">About</a>
   <div class="px-6 py-5">
     <a href="contact.html" class="btn-coral flex items-center justify-center w-full bg-[#F47B5A] text-white text-[17px] font-semibold rounded-full py-3">Get in Touch</a>
   </div>
