@@ -362,7 +362,7 @@ function toggleMob() {
             <line x1="300" y1="245" x2="300" y2="155" stroke="#F4956F" stroke-width="1" stroke-dasharray="3,2"/>
             <!-- Tooltip centered at x=300 -->
             <rect x="249" y="105" width="102" height="50" rx="10" fill="transparent" stroke="#FFCFBE" stroke-width="1"/>
-            <text x="259" y="121" font-family="'Poppins',sans-serif" font-size="9.5" font-weight="600" fill="#F47B5A">My optimizations</text>
+            <text x="259" y="121" font-family="'Poppins',sans-serif" font-size="9.5" font-weight="500" fill="#F47B5A">My optimizations</text>
             <rect x="259" y="128" width="44" height="17" rx="5" fill="#dcfce7" stroke="#bbf7d0" stroke-width="0.8"/>
             <polygon points="266,139 269.5,134.5 273,139" fill="#15803d"/>
             <text x="275" y="139.5" font-family="'Inter',sans-serif" font-size="8.5" font-weight="700" fill="#15803d">37%</text>
@@ -536,13 +536,14 @@ function toggleMob() {
     var target = parseInt(el.dataset.target);
     var prefix = el.dataset.prefix || '';
     var suffix = el.dataset.suffix || '';
-    var duration = 1600;
+    var startVal = Math.round(target * 0.50);
+    var duration = 1000;
     var start = performance.now();
     function step(now) {
       var elapsed = now - start;
       var progress = Math.min(elapsed / duration, 1);
       var ease = 1 - Math.pow(1 - progress, 3);
-      var val = Math.round(ease * target);
+      var val = Math.round(startVal + ease * (target - startVal));
       el.textContent = prefix + val + suffix;
       if (progress < 1) requestAnimationFrame(step);
     }
@@ -555,7 +556,7 @@ function toggleMob() {
       if (entry.isIntersecting && !triggered) {
         triggered = true;
         nums.forEach(function(el, i) {
-          setTimeout(function() { countUp(el); }, i * 100);
+          countUp(el);
         });
         observer.disconnect();
       }

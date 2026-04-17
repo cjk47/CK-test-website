@@ -94,22 +94,17 @@
       <span class="mob-bar"></span>
     </button>
   </nav>
-  <div id="mob">
-    <div class="flex items-center justify-between px-6 h-16 border-b border-[#e5e7eb] flex-shrink-0">
-      <a href="index.html"><img src="newlogo.png" alt="Craig Kleila SEO" class="h-7"></a>
-      <button onclick="toggleMob()" class="p-2 text-ink" aria-label="Close menu">
-        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M4 4l14 14M18 4L4 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-      </button>
-    </div>
-    <a href="services.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;">SEO Services</a>
-    <a href="case-studies.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;">Case Studies</a>
-    <a href="about.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;">About</a>
-    <div class="px-6 py-5">
-    <a href="contact.html" class="btn-coral flex items-center justify-center w-full bg-[#F47B5A] text-white text-[17px] font-semibold rounded-full py-3">Get in Touch</a>
-  </div>
-  </div>
   <div id="progress-bar" style="position:absolute;bottom:0;left:0;width:0%;height:3px;background:#F47B5A;z-index:9999;transition:width 0.1s linear;"></div>
 </header>
+</div>
+<div id="mob">
+  <a href="services.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;">SEO Services</a>
+  <a href="case-studies.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;">Case Studies</a>
+  <a href="about.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;">About</a>
+  <div class="px-6 py-5">
+    <a href="contact.html" class="btn-coral flex items-center justify-center w-full bg-[#F47B5A] text-white text-[17px] font-semibold rounded-full py-3">Get in Touch</a>
+  </div>
+</div>
 <script>
 function toggleMob() {
   var mob = document.getElementById('mob');
@@ -119,7 +114,6 @@ function toggleMob() {
   document.body.style.overflow = mob.classList.contains('mob-open') ? 'hidden' : '';
 }
 </script>
-</div>
 
 <!-- HERO -->
 <section style="background:#ffffff;position:relative;overflow:hidden;">

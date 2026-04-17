@@ -92,22 +92,17 @@
       <span class="mob-bar"></span>
     </button>
   </nav>
-  <div id="mob">
-    <div class="flex items-center justify-between px-6 h-16 border-b border-[#e5e7eb] flex-shrink-0">
-      <a href="index.html"><img src="newlogo.png" alt="Craig Kleila SEO" class="h-7"></a>
-      <button onclick="toggleMob()" class="p-2 text-ink" aria-label="Close menu">
-        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M4 4l14 14M18 4L4 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-      </button>
-    </div>
-    <a href="services.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;">SEO Services</a>
-    <a href="case-studies.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;">Case Studies</a>
-    <a href="about.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;">About</a>
-    <div class="px-6 py-5">
-    <a href="contact.html" class="btn-coral flex items-center justify-center w-full bg-[#F47B5A] text-white text-[17px] font-semibold rounded-full py-3">Get in Touch</a>
-  </div>
-  </div>
   <div id="progress-bar" style="position:absolute;bottom:0;left:0;width:0%;height:3px;background:#F47B5A;z-index:9999;transition:width 0.1s linear;"></div>
 </header>
+</div>
+<div id="mob">
+  <a href="services.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;">SEO Services</a>
+  <a href="case-studies.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;">Case Studies</a>
+  <a href="about.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;">About</a>
+  <div class="px-6 py-5">
+    <a href="contact.html" class="btn-coral flex items-center justify-center w-full bg-[#F47B5A] text-white text-[17px] font-semibold rounded-full py-3">Get in Touch</a>
+  </div>
+</div>
 <script>
 function toggleMob() {
   var mob = document.getElementById('mob');
@@ -117,7 +112,6 @@ function toggleMob() {
   document.body.style.overflow = mob.classList.contains('mob-open') ? 'hidden' : '';
 }
 </script>
-</div>
 
 <!-- HERO -->
 <section style="background:#ffffff;position:relative;overflow:hidden;">
@@ -253,9 +247,9 @@ function toggleMob() {
             
             <div>
               <h3 id="s-2" class="font-display font-semibold text-[20px] text-ink mb-3">Strengthen Structured Data</h3>
-              <p class="text-[#4B5563] text-[16px] mt-4" style="line-height:1.8;">Structured data was expanded across key templates, including Hotel, FAQPage, and BreadcrumbList schema.</p>
-              <p class="text-[#4B5563] text-[16px] mt-4" style="line-height:1.8;">This gave search engines clearer context around each page, from property details to how pages relate within the broader site structure, and reinforced the authority and purpose of the content.</p>
-              <p class="text-[#4B5563] text-[16px] mt-4 mb-6" style="line-height:1.8;">Rather than relying on page copy alone, structured data helped ensure key information could be consistently understood and surfaced across search experiences.</p>
+              <p class="text-[#4B5563] text-[16px] mt-4" style="line-height:1.8;">Structured data was added across key templates, including Hotel, FAQPage, and BreadcrumbList schema.</p>
+              <p class="text-[#4B5563] text-[16px] mt-4" style="line-height:1.8;">This helped search engines better understand each page, from property details, to member vs. regular pricing, to how pages fit within the overall site structure.</p>
+              <p class="text-[#4B5563] text-[16px] mt-4 mb-6" style="line-height:1.8;">Instead of relying on page copy alone, structured data helped make key details clearer and easier for search engines and LLMs to interpret, improving how that information could be surfaced.</p>
               <div class="rounded-2xl overflow-hidden">
                 <img src="bwcs2.png" alt="Best Western — Hotel schema markup" class="w-full block">
               </div>
@@ -265,14 +259,14 @@ function toggleMob() {
             
             <div>
               <h3 id="s-3" class="font-display font-semibold text-[20px] text-ink mb-3">Expand Coverage Across Traveler Searches</h3>
-              <p class="text-[#4B5563] text-[16px] mt-4" style="line-height:1.8;">The next step was expanding coverage across high-intent traveler searches.</p>
-              <p class="text-[#4B5563] text-[16px] mt-4" style="line-height:1.8;">To do this, I built a structured set of location-based pages and pages built around specific traveler needs to capture more specific queries.</p>
-              <p class="text-[#4B5563] text-[16px] mt-4 mb-4" style="line-height:1.8;">These pages were linked from existing city pages and included:</p>
+              <p class="text-[#4B5563] text-[16px] mt-4" style="line-height:1.8;">The next step was expanding content to capture high-intent traveler searches. To do this, I built a structured set of pages around specific traveler needs, designed to target long-tail queries.</p>
+              <p class="text-[#4B5563] text-[16px] mt-4 mb-4" style="line-height:1.8;">These pages included:</p>
               <ul class="space-y-4 mb-6">
-                <li class="flex items-start gap-3 text-[16px] text-[#4B5563]"><span class="w-5 h-5 rounded-full bg-coral-light flex items-center justify-center flex-shrink-0 mt-0.5"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#F47B5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><strong class="text-ink">Hotels Near Airports:</strong> pages for major airports that highlight distance, shuttle availability, and nearby properties</span></li>
-                <li class="flex items-start gap-3 text-[16px] text-[#4B5563]"><span class="w-5 h-5 rounded-full bg-coral-light flex items-center justify-center flex-shrink-0 mt-0.5"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#F47B5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><strong class="text-ink">Hotels Near Attractions:</strong> pages built around landmarks and venues, with proximity details and relevant amenities</span></li>
-                <li class="flex items-start gap-3 text-[16px] text-[#4B5563]"><span class="w-5 h-5 rounded-full bg-coral-light flex items-center justify-center flex-shrink-0 mt-0.5"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#F47B5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><strong class="text-ink">Regional Destination Pages:</strong> broader pages covering popular nearby areas and travel hubs</span></li>
-                <li class="flex items-start gap-3 text-[16px] text-[#4B5563]"><span class="w-5 h-5 rounded-full bg-coral-light flex items-center justify-center flex-shrink-0 mt-0.5"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#F47B5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><strong class="text-ink">Themed Pages:</strong> pages for specific needs like family-friendly stays or business travel, with curated property recommendations</span></li>
+                <li class="flex items-start gap-3 text-[16px] text-[#4B5563]"><span class="w-5 h-5 rounded-full bg-coral-light flex items-center justify-center flex-shrink-0 mt-0.5"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#F47B5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><strong class="text-ink">Hotels near airports</strong> (e.g., hotels near JFK Airport): Pages for major airports highlighting distance, shuttle availability, and nearby properties.</span></li>
+                <li class="flex items-start gap-3 text-[16px] text-[#4B5563]"><span class="w-5 h-5 rounded-full bg-coral-light flex items-center justify-center flex-shrink-0 mt-0.5"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#F47B5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><strong class="text-ink">Hotels near attractions</strong> (e.g., hotels near Times Square): Pages built around landmarks with proximity details and key amenities.</span></li>
+                <li class="flex items-start gap-3 text-[16px] text-[#4B5563]"><span class="w-5 h-5 rounded-full bg-coral-light flex items-center justify-center flex-shrink-0 mt-0.5"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#F47B5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><strong class="text-ink">Hotels in popular regions</strong> (e.g., hotels in Cape Cod): Pages aggregating properties in high-demand destinations to capture broader location searches.</span></li>
+                <li class="flex items-start gap-3 text-[16px] text-[#4B5563]"><span class="w-5 h-5 rounded-full bg-coral-light flex items-center justify-center flex-shrink-0 mt-0.5"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#F47B5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><strong class="text-ink">Themed hotel pages</strong> (e.g., hotels with casinos): Pages for specific needs like family-friendly stays or business travel, with curated property recommendations.</span></li>
+                <li class="flex items-start gap-3 text-[16px] text-[#4B5563]"><span class="w-5 h-5 rounded-full bg-coral-light flex items-center justify-center flex-shrink-0 mt-0.5"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#F47B5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><strong class="text-ink">Events hub + subpages:</strong> A central "Events" page with dedicated pages for Meetings &amp; Conferences, Celebrations, Group Travel, and Weddings, targeting searches like "hotels for events," "conference hotels," "hotel party venues," "hotels for large groups," and "hotel wedding venues."</span></li>
               </ul>
               <div class="rounded-2xl overflow-hidden mb-4">
                 <img src="bwnewww.png" alt="Best Western — content category landing pages" class="w-full block">
