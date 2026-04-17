@@ -124,6 +124,12 @@ function toggleMob() {
   document.body.style.overflow = mob.classList.contains('mob-open') ? 'hidden' : '';
 }
 </script>
+<script>
+document.querySelectorAll(".mob-nav-link").forEach(function(l){
+  l.addEventListener("touchstart",function(){l.style.background="#f3f4f6";},{passive:true});
+  l.addEventListener("touchend",function(){setTimeout(function(){l.style.background="";},300);},{passive:true});
+});
+</script>
 
 <!-- PAGE HEADER -->
 <section style="background:#FDFCFF;overflow-x:hidden;">

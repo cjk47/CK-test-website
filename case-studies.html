@@ -106,6 +106,12 @@ function toggleMob() {
   document.body.style.overflow = mob.classList.contains('mob-open') ? 'hidden' : '';
 }
 </script>
+<script>
+document.querySelectorAll(".mob-nav-link").forEach(function(l){
+  l.addEventListener("touchstart",function(){l.style.background="#f3f4f6";},{passive:true});
+  l.addEventListener("touchend",function(){setTimeout(function(){l.style.background="";},300);},{passive:true});
+});
+</script>
 
 <!-- PAGE HEADER -->
 <section style="background:#FDFCFF;overflow-x:hidden;">
@@ -127,9 +133,9 @@ function toggleMob() {
       <div class="mosaic-grid" style="min-width:0;width:100%;max-width:100%;margin:0 auto;overflow:hidden;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr) minmax(0,1fr);grid-template-rows:152px 55px 80px 56px;gap:12px;">
 
         <!-- Col 1 Row 1-2: photo with gradient overlay -->
-        <div class="mosaic-photo-wrap" style="grid-row:1/3;grid-column:1/2;border-radius:18px;overflow:hidden;position:relative;">
-          <img class="mosaic-photo-img" src="rukkkkky3.jpg" alt="Rukkus" style="width:100%;height:100%;object-fit:cover;object-position:center;filter:contrast(1.15) saturate(1.1) url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg'><filter id='s'><feConvolveMatrix order='3' kernelMatrix='0 -0.5 0 -0.5 3 -0.5 0 -0.5 0'/></filter></svg>#s");">
-          <div style="position:absolute;inset:0;background:rgba(0,0,0,0.11);border-radius:18px;"></div>
+        <div class="mosaic-photo-wrap" style="grid-row:1/3;grid-column:1/2;border-radius:18px;overflow:hidden;position:relative;background:#5bc8d0;">
+          <img class="mosaic-photo-img" src="1rahrahhhh.jpeg" alt="Rukkus" style="width:100%;height:100%;object-fit:cover;object-position:center;filter:contrast(1.2) saturate(1.1) url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg'><filter id='s'><feConvolveMatrix order='3' kernelMatrix='0 -0.5 0 -0.5 3 -0.5 0 -0.5 0'/></filter></svg>#s");">
+          <div style="position:absolute;inset:0;background:rgba(0,0,0,0.12);border-radius:18px;"></div>
         </div>
 
         <!-- Col 1 Row 3-4: Rukkus stat card -->
@@ -424,7 +430,7 @@ function toggleMob() {
         <img src="chasenew.png" alt="Chase" style="height:22px;object-fit:contain;object-position:left;mix-blend-mode:multiply;">
       </div>
       <div class="px-5 pt-2 pb-10 flex-1">
-        <p class="text-ink" style="font-size:0.875rem;line-height:1.6;font-weight:400;color:#6B7280;">Chase was ceding high-intent traffic to competitors on its most valuable pages — a targeted content strategy took it back.</p>
+        <p class="text-ink" style="font-size:0.875rem;line-height:1.6;font-weight:400;color:#6B7280;">Credit card site grows organic clicks 69.8% by closing content gaps and building authority to key pages.</p>
       </div>
       <div style="border-top:1px solid #E8E8F0;margin:0 20px;"></div>
       <div class="flex">
