@@ -46,6 +46,7 @@
   .ticker-track:hover { animation-play-state: paused; }
   @media (max-width: 767px) {
     .mosaic-grid { grid-template-rows: 90px 44px 65px 46px !important; }
+    .mosaic-chart-svg { width: 100% !important; height: 100% !important; }
     .mosaic-stat { padding: 8px 10px !important; gap: 5px !important; }
     .mosaic-stat .stat-num { font-size: 0.95rem !important; }
     .mosaic-stat .stat-label { font-size: 0.55rem !important; margin-top: 2px !important; }
@@ -203,7 +204,7 @@ document.querySelectorAll(".mob-nav-link").forEach(function(l){
 
         <!-- Col 2 Row 3-4: Organic traffic chart -->
         <div style="grid-row:3/5;grid-column:2/3;background:#EBF0F5;border-radius:14px;padding:8px;overflow:hidden;display:flex;align-items:center;justify-content:center;">
-          <svg viewBox="-7 0 125 75" preserveAspectRatio="xMidYMid meet" style="width:88%;height:88%;overflow:visible;">
+          <svg class="mosaic-chart-svg" viewBox="-7 0 125 75" preserveAspectRatio="xMidYMid meet" style="width:88%;height:88%;overflow:visible;">
             <rect x="4"  y="55" width="6" height="12" rx="2" fill="#6B8FAD"/>
             <rect x="14" y="45" width="6" height="22" rx="2" fill="#A8C4D8"/>
             <rect x="25" y="50" width="6" height="17" rx="2" fill="#6B8FAD"/>

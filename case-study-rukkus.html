@@ -54,6 +54,11 @@
     .cs-meta-grid .whitespace-nowrap { white-space: normal !important; }
     .cs-testimonial-card { padding-left: 24px !important; padding-right: 24px !important; }
     .cs-cta-card { padding-left: 24px !important; padding-right: 24px !important; }
+    .cs-results-grid > div { padding: 10px 4px !important; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+    .cs-results-grid p:first-child { font-size: 1.45rem !important; }
+  }
+  @media (min-width: 400px) and (max-width: 767px) {
+    .cs-results-grid p:first-child { font-size: 1.65rem !important; }
     .cs-meta-row { align-items: stretch !important; }
     .cs-accordion-col { width: 100% !important; }
   }
@@ -149,7 +154,7 @@ function toggleMob() {
 
     <!-- Hero image — stats repositioned to upper-middle area -->
     <div class="hero-img-container relative rounded-2xl overflow-hidden" style="height:460px;">
-      <img src="livemusic.jpg" alt="Rukkus Case Study" class="w-full h-full object-cover object-center">
+      <img src="cs3.png" alt="Rukkus Case Study" class="w-full h-full object-cover object-center">
       <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent"></div>
       <!-- Stats repositioned to sit above the white curve -->
       <div class="absolute left-0 right-0 p-4 md:p-8 bottom-0">
@@ -435,7 +440,7 @@ function toggleMob() {
             <img src="https://www.google.com/s2/favicons?domain=democratandchronicle.com&sz=64" style="height:16px;width:16px;object-fit:contain;"><span style="font-weight:600;font-size:13px;color:#1a1a1a;">Democrat &amp; Chronicle</span>
           </div>
         </div>
-        <div class="grid grid-cols-3 gap-4 mt-8">
+        <div class="grid grid-cols-3 gap-4 mt-8 cs-results-grid">
           <div class="bg-offwhite rounded-xl p-5 text-center">
             <p class="font-display font-bold text-3xl text-coral">+1,256%</p>
             <p class="text-xs text-muted mt-1">Organic Traffic</p>
