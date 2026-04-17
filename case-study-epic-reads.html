@@ -54,6 +54,9 @@
     .cs-meta-grid .whitespace-nowrap { white-space: normal !important; }
     .cs-meta-row { align-items: stretch !important; }
     .cs-accordion-col { width: 100% !important; }
+  }
+  @media (max-width: 399px) {
+    .cs-accordion-col { width: calc(100vw - 48px) !important; margin-left: calc(-(15vw + 1.5rem - 24px)) !important; }
     .cs-cta-card { padding-left: 24px !important; padding-right: 24px !important; }
     .cs-results-grid > div { padding: 10px 4px !important; display: flex; flex-direction: column; align-items: center; justify-content: center; }
     .cs-results-grid p:first-child { font-size: 1.45rem !important; }
