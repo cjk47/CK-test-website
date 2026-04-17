@@ -58,7 +58,8 @@
     .mosaic-xvivo { height: 80px !important; }
     .organic-growth-label { display: none !important; }
     .organic-growth-strip { justify-content: center !important; }
-    .mosaic-photo-wrap { border: 1.5px solid #E8E8F0 !important; }
+    .mosaic-photo-wrap { border: 1.5px solid #E8E8F0 !important; isolation: isolate !important; transform: translateZ(0) !important; }
+    .mosaic-photo-img { filter: contrast(1.2) saturate(1.1) !important; }
   }
   #mob { display: flex; flex-direction: column; position: fixed; top: 64px; left: 0; right: 0; bottom: 0; z-index: 40; background: #fff; transform: translateY(-105%); transition: transform 0.4s cubic-bezier(0.4,0,0.2,1); pointer-events: none; overflow-y: auto; }
   #mob.mob-open { transform: translateY(0) !important; pointer-events: auto; }
@@ -69,7 +70,7 @@
   #mob-btn .mob-bar:first-child { margin-bottom: 6px; }
   #mob-btn.mob-open .mob-bar:first-child { transform: translateY(4px) rotate(45deg); }
   #mob-btn.mob-open .mob-bar:last-child { transform: translateY(-4px) rotate(-45deg); }
-  @media (max-width: 767px) { .mosaic-grid { gap: 12px !important; width: 100% !important; max-width: 100% !important; margin: 0 auto !important; } .mosaic-col3 { gap: 12px !important; } }
+  @media (max-width: 767px) { .mosaic-grid { gap: 12px !important; width: 100% !important; max-width: 100% !important; margin: 0 auto !important; overflow: visible !important; } .mosaic-col3 { gap: 12px !important; } }
 </style>
 </head>
 <body class="antialiased">
