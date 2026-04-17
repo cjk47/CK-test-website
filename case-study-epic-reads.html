@@ -530,7 +530,7 @@ function toggleMob() {
   var next=document.getElementById('cs-next');
   var dotsWrap=document.getElementById('cs-dots');
   var current=0;
-  var touchX=0,touchY=0,touchBase=0,touchDelta=0,touchLocked=null;
+  var swipeStartX=0,swipeStartY=0;
   function mob(){ return window.innerWidth<768; }
   function vis(){ return mob()?1:3; }
   function gap(){ return mob()?12:24; }
@@ -567,10 +567,8 @@ function toggleMob() {
       d.style.transform=i===current?'scale(1.3)':'scale(1)';
     });
   }
-  track.addEventListener('touchstart',function(e){if(!mob())return;var t=e.touches[0];touchX=t.clientX;touchY=t.clientY;touchDelta=0;touchLocked=null;var cw=cardW();var g=gap();var mx=maxIdx();touchBase=current*(cw+g);if(current===mx&&mx>0)touchBase=current*(cw+g)+cw-(track.parentElement.offsetWidth-2);track.style.transition='none';},{passive:true});
-  track.addEventListener('touchmove',function(e){if(!mob())return;var t=e.touches[0];var dx=t.clientX-touchX;var dy=t.clientY-touchY;if(touchLocked===null){if(Math.abs(dx)>4||Math.abs(dy)>4)touchLocked=Math.abs(dx)>Math.abs(dy)?'h':'v';}if(touchLocked==='h'){e.preventDefault();touchDelta=dx;track.style.transform='translateX('+(-touchBase+touchDelta)+'px)';}},{passive:false});
-  track.addEventListener('touchend',function(e){if(!mob())return;track.style.transition='transform 0.3s cubic-bezier(0.25,0.46,0.45,0.94)';if(touchLocked==='h'){if(touchDelta<=-10&&current<maxIdx())current++;else if(touchDelta>=10&&current>0)current--;}update();});
-  track.addEventListener('touchcancel',function(e){if(!mob())return;track.style.transition='transform 0.3s cubic-bezier(0.25,0.46,0.45,0.94)';update();});
+  track.addEventListener('touchstart',function(e){if(!mob())return;swipeStartX=e.touches[0].clientX;swipeStartY=e.touches[0].clientY;},{passive:true});
+  track.addEventListener('touchend',function(e){if(!mob())return;var dx=e.changedTouches[0].clientX-swipeStartX;var dy=e.changedTouches[0].clientY-swipeStartY;if(Math.abs(dx)>30&&Math.abs(dx)>Math.abs(dy)){if(dx<0&&current<maxIdx())current++;else if(dx>0&&current>0)current--;update();}},{passive:true});
   prev.addEventListener('click',function(){if(current>0){current--;update();}});
   next.addEventListener('click',function(){if(current<maxIdx()){current++;update();}});
   window.addEventListener('resize',function(){buildDots();update();});
