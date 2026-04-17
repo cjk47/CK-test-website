@@ -442,7 +442,7 @@ function toggleMob() {
     <h2 class="text-center font-display font-bold text-[32px] text-ink mb-12">Other success stories</h2>
     <div style="position:relative;">
       <div style="overflow:hidden;padding:1px;margin:-1px;">
-        <div id="cs-track" class="flex" style="gap:24px;transition:transform 0.35s cubic-bezier(0.4,0,0.2,1);touch-action:pan-y;">
+        <div id="cs-track" class="flex" style="gap:24px;transition:transform 0.35s cubic-bezier(0.4,0,0.2,1);">
           <a href="case-study-xvivo.html" class="cs-card card-hover flex flex-col bg-white rounded-2xl overflow-hidden flex-none" style="width:calc((100% - 48px) / 3);border:1px solid #E8E8F0;">
             <div style="height:145px;overflow:hidden;position:relative;">
               <img src="new-xvivo.png" alt="XVIVO" class="w-full h-full object-cover">
@@ -530,8 +530,7 @@ function toggleMob() {
   var next=document.getElementById('cs-next');
   var dotsWrap=document.getElementById('cs-dots');
   var current=0;
-  var dragStartX=0,dragDelta=0,isDragging=false;
-  function baseTranslate(){var cw=cardW();var g=gap();var mx=maxIdx();var t=current*(cw+g);if(mob()&&current===mx&&mx>0){var cW=track.parentElement.offsetWidth;t=current*(cw+g)+cw-(cW-2);}return t;}
+  var touchX=0,touchY=0,touchBase=0,touchDelta=0,touchLocked=null;
   function mob(){ return window.innerWidth<768; }
   function vis(){ return mob()?1:3; }
   function gap(){ return mob()?12:24; }
@@ -568,10 +567,10 @@ function toggleMob() {
       d.style.transform=i===current?'scale(1.3)':'scale(1)';
     });
   }
-  track.addEventListener('pointerdown',function(e){if(!mob())return;isDragging=true;dragStartX=e.clientX;dragDelta=0;track.style.transition='none';track.setPointerCapture(e.pointerId);},{passive:true});
-  track.addEventListener('pointermove',function(e){if(!isDragging||!mob())return;dragDelta=e.clientX-dragStartX;track.style.transform='translateX('+(-baseTranslate()+dragDelta)+'px)';});
-  track.addEventListener('pointerup',function(e){if(!isDragging)return;isDragging=false;track.style.transition='transform 0.3s cubic-bezier(0.25,0.46,0.45,0.94)';if(dragDelta<=-10&&current<maxIdx())current++;else if(dragDelta>=10&&current>0)current--;update();});
-  track.addEventListener('pointercancel',function(e){if(!isDragging)return;isDragging=false;track.style.transition='transform 0.3s cubic-bezier(0.25,0.46,0.45,0.94)';update();});
+  track.addEventListener('touchstart',function(e){if(!mob())return;var t=e.touches[0];touchX=t.clientX;touchY=t.clientY;touchDelta=0;touchLocked=null;var cw=cardW();var g=gap();var mx=maxIdx();touchBase=current*(cw+g);if(current===mx&&mx>0)touchBase=current*(cw+g)+cw-(track.parentElement.offsetWidth-2);track.style.transition='none';},{passive:true});
+  track.addEventListener('touchmove',function(e){if(!mob())return;var t=e.touches[0];var dx=t.clientX-touchX;var dy=t.clientY-touchY;if(touchLocked===null){if(Math.abs(dx)>4||Math.abs(dy)>4)touchLocked=Math.abs(dx)>Math.abs(dy)?'h':'v';}if(touchLocked==='h'){e.preventDefault();touchDelta=dx;track.style.transform='translateX('+(-touchBase+touchDelta)+'px)';}},{passive:false});
+  track.addEventListener('touchend',function(e){if(!mob())return;track.style.transition='transform 0.3s cubic-bezier(0.25,0.46,0.45,0.94)';if(touchLocked==='h'){if(touchDelta<=-10&&current<maxIdx())current++;else if(touchDelta>=10&&current>0)current--;}update();});
+  track.addEventListener('touchcancel',function(e){if(!mob())return;track.style.transition='transform 0.3s cubic-bezier(0.25,0.46,0.45,0.94)';update();});
   prev.addEventListener('click',function(){if(current>0){current--;update();}});
   next.addEventListener('click',function(){if(current<maxIdx()){current++;update();}});
   window.addEventListener('resize',function(){buildDots();update();});
