@@ -47,6 +47,7 @@
   .approach-blob { position: absolute; width: 0; height: 0; border-radius: 50%; background: #F0EFFE; transform: translate(-50%,-50%); opacity: 0; pointer-events: none; z-index: 0; }
   .approach-card .approach-content { position: relative; z-index: 1; }
   .svc-card-h2 { font-size: clamp(1.1rem, 2.6vw, 1.56rem) !important; }
+  @media (min-width: 1024px) { .svc-card-h2 { font-size: 1.50rem !important; font-weight: 600 !important; } }
   @media (min-width: 768px) { .svc-h2 { font-size: 2.25rem !important; } }
   @media (max-width: 767px) {
     .svc-h2 { font-size: 1.875rem !important; }
@@ -136,7 +137,7 @@ document.querySelectorAll(".mob-nav-link").forEach(function(l){
 <section style="background:#FDFCFF;overflow-x:hidden;">
   <div style="background:linear-gradient(160deg, rgba(244,123,90,0.03) 0%, rgba(255,255,255,0) 40%), linear-gradient(to bottom, rgba(123,104,238,0.03) 0%, rgba(255,255,255,0) 60%);">
 
-  <div class="max-w-6xl mx-auto px-6 pt-[40px] pb-[40px] md:pt-[103px] md:pb-[103px]">
+  <div class="max-w-6xl mx-auto px-6 pt-[40px] pb-[40px] md:pt-[77px] md:pb-[77px]">
     <div id="svc-hero-grid" class="grid md:grid-cols-[60fr_40fr] gap-3 md:gap-17" style="align-items:stretch;">
 
       <!-- LEFT -->
@@ -388,15 +389,15 @@ document.querySelectorAll(".mob-nav-link").forEach(function(l){
 </script>
 
 <!-- VALUE PROP BAND -->
-<section id="what-i-do" class="pt-16 pb-6 md:pt-10 md:pb-14" style="background:#ffffff;">
+<section id="what-i-do" class="pt-16 pb-6 md:pt-10 md:pb-[52px]" style="background:#ffffff;">
   <div class="max-w-6xl mx-auto px-6 text-left md:text-center flex flex-col items-start md:items-center">
     <div class="inline-flex items-center gap-2 bg-coral-light text-coral text-xs font-semibold px-3 py-1.5 rounded-full mb-5">
       What I do
     </div>
     <h2 class="svc-h2" style="font-family:'Poppins',sans-serif;font-weight:800;font-size:clamp(1.875rem,3.6vw,2.26rem);color:#1A1A2E;letter-spacing:-0.02em;line-height:1.2;margin-bottom:12px;">
-Grow your organic traffic<span class="inline md:block"> &amp; conversions</span>
+Amplify your SEO performance
     </h2>
-    <p style="font-size:1rem;color:#6B7280;max-width:480px;line-height:1.7;font-family:'Inter',sans-serif;margin-bottom:0;">A people-first approach to search, built around better experiences that move people to act.</p>
+    <p style="font-size:1rem;color:#6B7280;max-width:480px;line-height:1.7;font-family:'Inter',sans-serif;margin-bottom:0;">Search built around better digital experiences that drive connection & growth.</p>
   </div>
 </section>
 
