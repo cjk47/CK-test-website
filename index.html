@@ -56,6 +56,7 @@
   a.service-card { text-decoration: none; color: inherit; display: block; cursor: pointer; }
   .card-content { position: relative; z-index: 1; }
 .card-icon { display: flex; align-items: center; justify-content: center; }
+  @media (min-width: 1024px) { .card-icon { width: 36px !important; height: 36px !important; } .card-icon svg { width: 16px !important; height: 16px !important; } }
   @keyframes hero-circle-pulse {
     0%, 100% { transform: scale(1); }
     50%       { transform: scale(1.1); }
@@ -104,7 +105,7 @@
   }
   .brand-logos .logo-cell img { filter: brightness(0) opacity(0.3); }
   @media (min-width: 768px) {
-    .brands-heading { font-weight: 500 !important; font-size: 1.2rem !important; color: #6B7280 !important; letter-spacing: 0.01em !important; }
+    .brands-heading { font-weight: 500 !important; font-size: 1.2rem !important; color: #323232 !important; letter-spacing: 0.01em !important; }
     .brand-logos .logo-cell img { filter: brightness(0) opacity(0.63) !important; mix-blend-mode: multiply !important; }
     .brand-logos .logo-cell img[alt="Oral-B"],
     .brand-logos .logo-cell img[alt="Best Western"],
@@ -163,7 +164,7 @@ function toggleMob() {
     <div class="hero-top flex flex-col items-center text-center max-w-4xl mx-auto pt-24 md:pt-[77px]">
 
       <!-- Headline -->
-      <h1 class="fade-up leading-[1.12] hero-h1-mobile text-ink mb-5" style="font-family:'Poppins',sans-serif;font-weight:800;font-size:clamp(2.6rem,5.5vw,4.2rem);letter-spacing:-0.025em;">
+      <h1 class="fade-up leading-[1.12] hero-h1-mobile text-ink mb-5" style="font-family:'Poppins',sans-serif;font-weight:750;font-size:clamp(2.6rem,4.8vw,3.9rem);letter-spacing:-0.025em;">
         Get found wherever your<br id="hero-br">
         <span class="hero-line2" style="display:inline-flex;align-items:center;justify-content:center;gap:0.3em;white-space:nowrap;">
           <span class="hero-customers">customers</span>
@@ -237,19 +238,19 @@ function toggleMob() {
 
       <!-- Trusted by the brands you love (right — matches reference exactly) -->
       <div class="brands-col order-2 md:order-2 pt-0 mt-4 md:mt-0 max-w-md mx-auto md:max-w-none md:mx-0 md:pr-8">
-        <p class="brands-heading text-ink mb-7 md:mb-[30px] text-center md:text-left" style="font-family:'Poppins',sans-serif;font-weight:800;font-size:clamp(1.45rem,5.8vw,1.75rem);white-space:nowrap;line-height:1.2;color:#323232;">Trusted by brands you love</p>
+        <p class="brands-heading text-ink mb-7 md:mb-[30px] text-center md:text-left" style="font-family:'Poppins',sans-serif;font-weight:500;font-size:1.1rem;letter-spacing:0.01em;line-height:1.2;color:#323232;">Trusted by brands you love</p>
         <div class="brand-logos" style="display:flex;flex-direction:column;gap:2rem;width:100%;">
           <div class="logo-row" style="display:flex;align-items:center;gap:1rem;">
-            <div class="logo-cell" style="flex:1;display:flex;align-items:center;"><img src="1h-chase.png" alt="Chase" style="height:37px;width:auto;max-width:100%;filter:brightness(0) opacity(0.3);mix-blend-mode:multiply;"></div>
-            <div class="logo-cell" style="flex:1;display:flex;align-items:center;"><img src="1h-applbees.png" alt="Applebee's" style="height:33px;width:auto;max-width:100%;filter:brightness(0) opacity(0.3);mix-blend-mode:multiply;"></div>
-            <div class="logo-cell" style="flex:1;display:flex;align-items:center;"><img src="1h-ibm.png" alt="IBM" style="height:22px;width:auto;max-width:100%;filter:brightness(0) opacity(0.3);mix-blend-mode:multiply;position:relative;top:1px;"></div>
-            <div class="logo-cell" style="flex:1;display:flex;align-items:center;"><img src="1h-hennessy.png" alt="Hennessy" style="height:37px;width:auto;max-width:100%;filter:grayscale(1) opacity(0.4);mix-blend-mode:multiply;"></div>
+            <div class="logo-cell" style="flex:1;display:flex;align-items:center;"><img src="1h-chase.png" alt="Chase" style="height:37px;width:auto;max-width:100%;filter:brightness(0) opacity(0.63);mix-blend-mode:multiply;"></div>
+            <div class="logo-cell" style="flex:1;display:flex;align-items:center;"><img src="1h-applbees.png" alt="Applebee's" style="height:33px;width:auto;max-width:100%;filter:grayscale(1) contrast(2) opacity(0.63);mix-blend-mode:multiply;"></div>
+            <div class="logo-cell" style="flex:1;display:flex;align-items:center;"><img src="1h-ibm.png" alt="IBM" style="height:22px;width:auto;max-width:100%;filter:brightness(0) opacity(0.63);mix-blend-mode:multiply;position:relative;top:1px;"></div>
+            <div class="logo-cell" style="flex:1;display:flex;align-items:center;"><img src="1h-hennessy.png" alt="Hennessy" style="height:37px;width:auto;max-width:100%;filter:grayscale(1) contrast(2) opacity(0.63);mix-blend-mode:multiply;"></div>
           </div>
           <div class="logo-row" style="display:flex;align-items:center;gap:1rem;">
-            <div class="logo-cell" style="flex:1;display:flex;align-items:center;"><img src="1h-bestwestern.png" alt="Best Western" style="height:49px;width:auto;max-width:100%;filter:grayscale(1) opacity(0.4);mix-blend-mode:multiply;"></div>
-            <div class="logo-cell" style="flex:1;display:flex;align-items:center;"><img src="1h-HarperCollins.png" alt="HarperCollins" style="height:49px;width:auto;max-width:100%;filter:brightness(0) opacity(0.3);mix-blend-mode:multiply;"></div>
-            <div class="logo-cell" style="flex:1;display:flex;align-items:center;"><img src="1h-playstation.png" alt="PlayStation" style="height:37px;width:auto;max-width:100%;filter:brightness(0) opacity(0.3);mix-blend-mode:multiply;"></div>
-            <div class="logo-cell" style="flex:1;display:flex;align-items:center;"><img src="1h-oralb.png" alt="Oral-B" style="height:25px;width:auto;max-width:100%;filter:grayscale(1) opacity(0.4);mix-blend-mode:multiply;"></div>
+            <div class="logo-cell" style="flex:1;display:flex;align-items:center;"><img src="1h-bestwestern.png" alt="Best Western" style="height:49px;width:auto;max-width:100%;filter:grayscale(1) contrast(2) opacity(0.63);mix-blend-mode:multiply;"></div>
+            <div class="logo-cell" style="flex:1;display:flex;align-items:center;"><img src="1h-HarperCollins.png" alt="HarperCollins" style="height:49px;width:auto;max-width:100%;filter:brightness(0) opacity(0.63);mix-blend-mode:multiply;"></div>
+            <div class="logo-cell" style="flex:1;display:flex;align-items:center;"><img src="1h-playstation.png" alt="PlayStation" style="height:37px;width:auto;max-width:100%;filter:brightness(0) opacity(0.63);mix-blend-mode:multiply;"></div>
+            <div class="logo-cell" style="flex:1;display:flex;align-items:center;"><img src="1h-oralb.png" alt="Oral-B" style="height:25px;width:auto;max-width:100%;filter:grayscale(1) contrast(2) opacity(0.63);mix-blend-mode:multiply;"></div>
           </div>
         </div>
       </div>
@@ -266,7 +267,7 @@ function toggleMob() {
         <div class="inline-flex items-center gap-2 bg-coral-light text-coral text-xs font-semibold px-3 py-1.5 rounded-full mb-4">
           <span class="w-1.5 h-1.5 rounded-full bg-coral"></span>What I do
         </div>
-        <h2 class="font-display font-extrabold text-3xl md:text-4xl text-ink tracking-tight">Amplify your SEO performance</h2>
+        <h2 class="font-display font-extrabold text-3xl md:text-4xl text-ink tracking-tight" style="font-weight:750;">Amplify your SEO performance</h2>
       </div>
       <a href="services.html" class="btn-outline ripple-btn border border-border text-muted px-5 py-2 rounded-full text-sm font-semibold self-start md:self-auto hidden md:inline-flex">All services →</a>
     </div>
@@ -328,7 +329,7 @@ function toggleMob() {
       <div class="inline-flex items-center gap-2 bg-violet-light text-violet text-xs font-semibold px-3 py-1.5 rounded-full mb-5">
         <span class="w-1.5 h-1.5 rounded-full bg-violet"></span>Track record
       </div>
-      <h2 class="font-display font-extrabold text-3xl md:text-4xl text-ink tracking-tight leading-tight">Results that speak for themselves</h2>
+      <h2 class="font-display font-extrabold text-3xl md:text-4xl text-ink tracking-tight leading-tight" style="font-weight:750;">Results that speak for themselves</h2>
     </div>
 
     <!-- Mobile: order 2 | Desktop: col 1 rows 1–2 — graph -->
@@ -421,7 +422,7 @@ function toggleMob() {
         <div class="inline-flex items-center gap-2 bg-coral-light text-coral text-xs font-semibold px-3 py-1.5 rounded-full mb-5">
           <span class="w-1.5 h-1.5 rounded-full bg-coral"></span>About me
         </div>
-        <h2 class="font-display font-extrabold text-3xl md:text-4xl text-ink tracking-tight leading-tight mb-5 md:mb-5">10+ years helping brands drive millions in revenue</h2>
+        <h2 class="font-display font-extrabold text-3xl md:text-4xl text-ink tracking-tight leading-tight mb-5 md:mb-5" style="font-weight:750;">10+ years helping brands drive millions in revenue</h2>
         <!-- Paragraphs: hidden on mobile, shown on desktop -->
         <p class="text-muted mb-4 hidden md:block" style="line-height:1.7;">I'm Craig Kleila, a data-driven SEO consultant who grows qualified website traffic with evidence-backed testing and clear, actionable strategies.</p>
         <p class="text-muted md:mb-8 mb-0 hidden md:block" style="line-height:1.7;">Over the last decade, I've successfully led SEO for businesses of all sizes, working in-house, at agencies, and independently. Each engagement has exposed me to different contexts and constraints, helping me succeed in any search environment.</p>
