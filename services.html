@@ -134,8 +134,9 @@ document.querySelectorAll(".mob-nav-link").forEach(function(l){
 </script>
 
 <!-- PAGE HEADER -->
-<section style="background:#FDFCFF;overflow-x:hidden;">
-  <div style="background:linear-gradient(160deg, rgba(244,123,90,0.03) 0%, rgba(255,255,255,0) 40%), linear-gradient(to bottom, rgba(123,104,238,0.03) 0%, rgba(255,255,255,0) 60%);">
+<section style="background:#fff5f2;overflow-x:hidden;">
+  <div>
+
 
   <div class="max-w-6xl mx-auto px-6 pt-[40px] pb-[40px] md:pt-[77px] md:pb-[77px]">
     <div id="svc-hero-grid" class="grid md:grid-cols-[60fr_40fr] gap-3 md:gap-17" style="align-items:stretch;">
@@ -314,11 +315,12 @@ document.querySelectorAll(".mob-nav-link").forEach(function(l){
     var card = document.getElementById('aim-card');
     if (!content || !col || !card) return;
     col.style.paddingTop = '0px';
+    col.style.paddingBottom = '0px';
     var contentRect = content.getBoundingClientRect();
     var colRect = col.getBoundingClientRect();
     var contentRelTop = contentRect.top - colRect.top;
     var contentCenter = contentRelTop + contentRect.height / 2;
-    var cardH = card.offsetHeight;
+    var cardH = card.getBoundingClientRect().height;
     var pt = Math.max(0, contentCenter - cardH / 2);
     col.style.paddingTop = pt + 'px';
   }
@@ -326,10 +328,20 @@ document.querySelectorAll(".mob-nav-link").forEach(function(l){
     setSubtextWidth();
     centerAimCard();
   }
+  function run() {
+    requestAnimationFrame(function() {
+      requestAnimationFrame(function() {
+        init();
+      });
+    });
+  }
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
+    document.addEventListener('DOMContentLoaded', run);
   } else {
-    init();
+    run();
+  }
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(run);
   }
   window.addEventListener('resize', init);
 })();

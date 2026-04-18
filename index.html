@@ -99,18 +99,14 @@
     #hero-icon-wrap { width: 36px !important; height: 36px !important; border-radius: 10px !important; vertical-align: middle; margin-right: 0.3em; }
     .hero-icon-search { display: inline !important; }
     .hero-h1-mobile { line-height: 1.22 !important; }
-  @media (max-width: 767px) { .hero-h1-mobile { font-size: 9vw !important; } #hero-br { display: none !important; } }
+  @media (max-width: 767px) { .hero-h1-mobile { font-size: 9vw !important; } #hero-br { display: none !important; } .brand-logos .logo-row { gap: 0 !important; } .brand-logos .logo-cell { flex: 1 !important; justify-content: center !important; } }
   @media (max-width: 390px) { .hero-h1-mobile { font-size: 8.95vw !important; } }
   @media (min-width: 428px) and (max-width: 432px) { .hero-h1-mobile { font-size: 9.05vw !important; } .hero-top { padding-top: 120px !important; } .hero-bottom { padding-bottom: 120px !important; } }
   }
   .brand-logos .logo-cell img { filter: brightness(0) opacity(0.3); }
   @media (min-width: 768px) {
-    .brands-heading { font-weight: 500 !important; font-size: 1.2rem !important; color: #323232 !important; letter-spacing: 0.01em !important; }
-    .brand-logos .logo-cell img { filter: brightness(0) opacity(0.63) !important; mix-blend-mode: multiply !important; }
-    .brand-logos .logo-cell img[alt="Oral-B"],
-    .brand-logos .logo-cell img[alt="Best Western"],
-    .brand-logos .logo-cell img[alt="Hennessy"],
-    .brand-logos .logo-cell img[alt="Applebee's"] { filter: grayscale(1) contrast(2) opacity(0.63) !important; mix-blend-mode: multiply !important; }
+    .brands-heading { font-weight: 500 !important; font-size: 1.2rem !important; color: #6B7280 !important; letter-spacing: 0.01em !important; }
+    .brand-logos .logo-cell img { filter: grayscale(1) contrast(20) opacity(0.68) !important; mix-blend-mode: multiply !important; }
   }
   @media (min-width: 768px) and (max-width: 1023px) {
     .brands-col > p { font-size: 1.35rem !important; }
@@ -164,7 +160,7 @@ function toggleMob() {
     <div class="hero-top flex flex-col items-center text-center max-w-4xl mx-auto pt-24 md:pt-[77px]">
 
       <!-- Headline -->
-      <h1 class="fade-up leading-[1.12] hero-h1-mobile text-ink mb-5" style="font-family:'Poppins',sans-serif;font-weight:750;font-size:clamp(2.6rem,4.8vw,3.9rem);letter-spacing:-0.025em;">
+      <h1 class="fade-up leading-[1.12] hero-h1-mobile text-ink mb-5" style="font-family:'Poppins',sans-serif;font-weight:750;font-size:clamp(2.6rem,4.9vw,4.08rem);letter-spacing:-0.025em;">
         Get found wherever your<br id="hero-br">
         <span class="hero-line2" style="display:inline-flex;align-items:center;justify-content:center;gap:0.3em;white-space:nowrap;">
           <span class="hero-customers">customers</span>
@@ -190,7 +186,7 @@ function toggleMob() {
       </h1>
 
       <!-- Sub copy -->
-      <p class="fade-up-2 text-base text-ink max-w-lg mb-7" style="line-height:1.7;">
+      <p class="fade-up-2 text-base text-muted max-w-lg mb-7" style="line-height:1.7;">
         Work 1:1 with an experienced SEO lead to grow organic visibility across Google, LLMs, and AI Overviews.
       </p>
 
@@ -218,7 +214,7 @@ function toggleMob() {
     <div class="grid md:grid-cols-2 gap-10 md:gap-8 mt-10 md:mt-0 pt-0 md:pt-12 pb-8 md:pb-16 items-start md:items-stretch">
 
       <!-- Testimonial card (left — matches Jonathan Doe card in reference) -->
-      <div class="order-1 md:order-1 rounded-2xl p-7 max-w-md mx-auto md:max-w-md md:mx-0 text-center md:text-left md:flex md:flex-col" style="background:#fff4f2;box-shadow: 0 4px 20px -4px rgba(244,123,90,0.10);">
+      <div class="order-2 md:order-1 rounded-2xl p-7 max-w-md mx-auto md:max-w-md md:mx-0 text-center md:text-left md:flex md:flex-col" style="background:#fff4f2;box-shadow: 0 4px 20px -4px rgba(244,123,90,0.10);">
         <div class="flex items-center justify-center md:justify-start gap-4 mb-5">
           <img src="mike.jpeg" alt="Michael Astrachan" class="w-11 h-11 rounded-full object-cover flex-shrink-0">
           <div>
@@ -237,20 +233,20 @@ function toggleMob() {
       </div>
 
       <!-- Trusted by the brands you love (right — matches reference exactly) -->
-      <div class="brands-col order-2 md:order-2 pt-0 mt-4 md:mt-0 max-w-md mx-auto md:max-w-none md:mx-0 md:pr-8">
-        <p class="brands-heading text-ink mb-7 md:mb-[30px] text-center md:text-left" style="font-family:'Poppins',sans-serif;font-weight:500;font-size:1.1rem;letter-spacing:0.01em;line-height:1.2;color:#323232;">Trusted by brands you love</p>
+      <div class="brands-col order-1 md:order-2 pt-0 mt-4 md:mt-0 md:max-w-none md:mx-0 md:pr-8">
+        <p class="brands-heading text-ink mb-7 md:mb-[30px] text-center md:text-left" style="font-family:'Poppins',sans-serif;font-weight:500;font-size:1.1rem;letter-spacing:0.01em;line-height:1.2;color:#6B7280;">Trusted by brands you love</p>
         <div class="brand-logos" style="display:flex;flex-direction:column;gap:2rem;width:100%;">
           <div class="logo-row" style="display:flex;align-items:center;gap:1rem;">
-            <div class="logo-cell" style="flex:1;display:flex;align-items:center;"><img src="1h-chase.png" alt="Chase" style="height:37px;width:auto;max-width:100%;filter:brightness(0) opacity(0.63);mix-blend-mode:multiply;"></div>
-            <div class="logo-cell" style="flex:1;display:flex;align-items:center;"><img src="1h-applbees.png" alt="Applebee's" style="height:33px;width:auto;max-width:100%;filter:grayscale(1) contrast(2) opacity(0.63);mix-blend-mode:multiply;"></div>
-            <div class="logo-cell" style="flex:1;display:flex;align-items:center;"><img src="1h-ibm.png" alt="IBM" style="height:22px;width:auto;max-width:100%;filter:brightness(0) opacity(0.63);mix-blend-mode:multiply;position:relative;top:1px;"></div>
-            <div class="logo-cell" style="flex:1;display:flex;align-items:center;"><img src="1h-hennessy.png" alt="Hennessy" style="height:37px;width:auto;max-width:100%;filter:grayscale(1) contrast(2) opacity(0.63);mix-blend-mode:multiply;"></div>
+            <div class="logo-cell" style="flex:1;display:flex;align-items:center;"><img src="1h-chase.png" alt="Chase" style="height:37px;width:auto;max-width:100%;filter:grayscale(1) contrast(20) opacity(0.68);mix-blend-mode:multiply;"></div>
+            <div class="logo-cell" style="flex:1;display:flex;align-items:center;"><img src="1h-applbees.png" alt="Applebee's" style="height:33px;width:auto;max-width:100%;filter:grayscale(1) contrast(20) opacity(0.68);mix-blend-mode:multiply;"></div>
+            <div class="logo-cell" style="flex:1;display:flex;align-items:center;"><img src="1h-ibm.png" alt="IBM" style="height:22px;width:auto;max-width:100%;filter:grayscale(1) contrast(20) opacity(0.68);mix-blend-mode:multiply;position:relative;top:1px;"></div>
+            <div class="logo-cell" style="flex:1;display:flex;align-items:center;"><img src="1h-hennessy.png" alt="Hennessy" style="height:37px;width:auto;max-width:100%;filter:grayscale(1) contrast(20) opacity(0.68);mix-blend-mode:multiply;"></div>
           </div>
           <div class="logo-row" style="display:flex;align-items:center;gap:1rem;">
-            <div class="logo-cell" style="flex:1;display:flex;align-items:center;"><img src="1h-bestwestern.png" alt="Best Western" style="height:49px;width:auto;max-width:100%;filter:grayscale(1) contrast(2) opacity(0.63);mix-blend-mode:multiply;"></div>
-            <div class="logo-cell" style="flex:1;display:flex;align-items:center;"><img src="1h-HarperCollins.png" alt="HarperCollins" style="height:49px;width:auto;max-width:100%;filter:brightness(0) opacity(0.63);mix-blend-mode:multiply;"></div>
-            <div class="logo-cell" style="flex:1;display:flex;align-items:center;"><img src="1h-playstation.png" alt="PlayStation" style="height:37px;width:auto;max-width:100%;filter:brightness(0) opacity(0.63);mix-blend-mode:multiply;"></div>
-            <div class="logo-cell" style="flex:1;display:flex;align-items:center;"><img src="1h-oralb.png" alt="Oral-B" style="height:25px;width:auto;max-width:100%;filter:grayscale(1) contrast(2) opacity(0.63);mix-blend-mode:multiply;"></div>
+            <div class="logo-cell" style="flex:1;display:flex;align-items:center;"><img src="1h-bestwestern.png" alt="Best Western" style="height:49px;width:auto;max-width:100%;filter:grayscale(1) contrast(20) opacity(0.68);mix-blend-mode:multiply;"></div>
+            <div class="logo-cell" style="flex:1;display:flex;align-items:center;"><img src="1h-HarperCollins.png" alt="HarperCollins" style="height:49px;width:auto;max-width:100%;filter:grayscale(1) contrast(20) opacity(0.68);mix-blend-mode:multiply;"></div>
+            <div class="logo-cell" style="flex:1;display:flex;align-items:center;"><img src="1h-playstation.png" alt="PlayStation" style="height:37px;width:auto;max-width:100%;filter:grayscale(1) contrast(20) opacity(0.68);mix-blend-mode:multiply;"></div>
+            <div class="logo-cell" style="flex:1;display:flex;align-items:center;"><img src="1h-oralb.png" alt="Oral-B" style="height:25px;width:auto;max-width:100%;filter:grayscale(1) contrast(20) opacity(0.68);mix-blend-mode:multiply;"></div>
           </div>
         </div>
       </div>
