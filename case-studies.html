@@ -73,6 +73,7 @@
   #mob-btn.mob-open .mob-bar:first-child { transform: translateY(4px) rotate(45deg); }
   #mob-btn.mob-open .mob-bar:last-child { transform: translateY(-4px) rotate(-45deg); }
   @media (max-width: 767px) { .mosaic-grid { gap: 12px !important; width: 100% !important; max-width: 100% !important; margin: 0 auto !important; overflow: visible !important; } .mosaic-col3 { gap: 12px !important; } }
+  @media (min-width: 1024px) { .cs-results-break { display: block; } }
 </style>
 </head>
 <body class="antialiased">
@@ -130,7 +131,7 @@ document.querySelectorAll(".mob-nav-link").forEach(function(l){
           You're in good company
         </div>
         <h1 class="cs-hero-h1 font-display font-extrabold text-ink leading-tight md:leading-[1.12] mb-5" style="font-size:clamp(2.5rem,4.5vw,3.5rem);letter-spacing:-0.02em;font-weight:750;">SEO success stories</h1>
-        <p class="text-muted max-w-sm md:max-w-md" style="line-height:1.75">From startups to big brands, I've helped businesses<br class="hidden md:block"> like yours grow organic traffic and revenue.</p>
+        <p class="text-muted max-w-sm md:max-w-md" style="line-height:1.75">From startups to big brands, I've helped<br class="hidden lg:block"> businesses like yours grow organic revenue.</p>
       </div>
 
       <!-- RIGHT: photo + stat card mosaic -->
@@ -139,7 +140,7 @@ document.querySelectorAll(".mob-nav-link").forEach(function(l){
 
         <!-- Col 1 Row 1-2: photo with gradient overlay -->
         <div class="mosaic-photo-wrap" style="grid-row:1/3;grid-column:1/2;border-radius:18px;overflow:hidden;position:relative;background:#5bc8d0;">
-          <img class="mosaic-photo-img" src="1rahrahhhh.jpeg" alt="Rukkus" style="width:100%;height:100%;object-fit:cover;object-position:center;filter:contrast(1.2) saturate(1.1) url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg'><filter id='s'><feConvolveMatrix order='3' kernelMatrix='0 -0.5 0 -0.5 3 -0.5 0 -0.5 0'/></filter></svg>#s");">
+          <img class="mosaic-photo-img" src="1rahrahhhh.jpeg" alt="Rukkus" style="width:100%;height:100%;object-fit:cover;object-position:center;filter:contrast(1.2) saturate(1.1) hue-rotate(40deg) url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg'><filter id='s'><feConvolveMatrix order='3' kernelMatrix='0 -0.5 0 -0.5 3 -0.5 0 -0.5 0'/></filter></svg>#s");">
           <div style="position:absolute;inset:0;background:rgba(0,0,0,0.12);border-radius:18px;"></div>
         </div>
 
@@ -229,8 +230,9 @@ document.querySelectorAll(".mob-nav-link").forEach(function(l){
           </div>
 
           <!-- Chase photo -->
-          <div style="flex:1;border-radius:18px;overflow:hidden;">
+          <div style="flex:1;border-radius:18px;overflow:hidden;position:relative;">
             <img src="cccc.png" alt="Chase" style="width:100%;height:100%;object-fit:cover;object-position:59% center;">
+            <div style="position:absolute;inset:0;background:rgba(123,104,238,0.18);mix-blend-mode:multiply;"></div>
           </div>
 
           <!-- XVIVO stat card -->
