@@ -40,6 +40,8 @@
   .btn-coral:active { transform: translateY(0); }
   .btn-outline { transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease; }
   .btn-outline:hover { background: #F9F8FF; border-color: #7B68EE; color: #5E4DD6; }
+  .btn-outline-slate { transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease; }
+  .btn-outline-slate:hover { background: #eef1f4; border-color: #5c7a8f; color: #4a6578; }
   nav a { transition: color 0.15s ease; }
   nav a:not(.btn-coral):hover { color: #F47B5A; }
   .service-card { scroll-margin-top: 100px; }
@@ -144,13 +146,13 @@ document.querySelectorAll(".mob-nav-link").forEach(function(l){
   <div>
 
 
-  <div class="max-w-6xl mx-auto px-6 pt-[40px] pb-[40px] md:pt-[77px] md:pb-[77px]">
+  <div class="max-w-6xl mx-auto px-6 pt-[40px] pb-[40px] md:pt-[72px] md:pb-[92px]">
     <div id="svc-hero-grid" class="grid md:grid-cols-[60fr_40fr] gap-3 md:gap-17" style="align-items:stretch;">
 
       <!-- LEFT -->
       <div id="svc-hero-left" class="text-center md:text-left flex flex-col items-center md:items-start justify-center">
         <div class="inline-flex items-center gap-2 text-coral text-xs font-semibold px-3 py-1.5 rounded-full mb-5" style="background:#ffe8df;">
-          SEO consulting
+          Freelance SEO consultant
         </div>
         <div id="svc-main-content">
         <h1 class="svc-hero-h1 font-display font-extrabold text-ink leading-tight md:leading-[1.12] mb-5" style="font-size:clamp(2.5rem,4.3vw,3.3rem);letter-spacing:-0.02em;font-weight:750;"><span class="svcmd:block">SEO services built</span> <span class="svcmd:block">for what's next</span></h1>
@@ -410,10 +412,10 @@ document.querySelectorAll(".mob-nav-link").forEach(function(l){
 </script>
 
 <!-- VALUE PROP BAND -->
-<section id="what-i-do" class="pt-16 pb-6 md:pt-10 md:pb-[52px]" style="background:#ffffff;">
+<section id="what-i-do" class="pt-16 pb-6 md:pt-[50px] md:pb-[52px]" style="background:#ffffff;">
   <div class="max-w-6xl mx-auto px-6 text-left md:text-center flex flex-col items-start md:items-center">
     <div class="inline-flex items-center gap-2 bg-coral-light text-coral text-xs font-semibold px-3 py-1.5 rounded-full mb-5">
-      Services
+      SEO services
     </div>
     <h2 class="svc-h2" style="font-family:'Poppins',sans-serif;font-weight:750;font-size:clamp(1.875rem,3.6vw,2.26rem);color:#1A1A2E;letter-spacing:-0.02em;line-height:1.2;margin-bottom:12px;">
 Amplify your SEO performance
@@ -600,6 +602,8 @@ Amplify your SEO performance
 </div>
 
 
+
+
 <!-- SEO IS EVOLVING -->
 <section style="background:#F9F8FF;padding:60px 0 100px;overflow-x:hidden;">
   <div class="max-w-6xl mx-auto px-6">
@@ -617,7 +621,7 @@ Amplify your SEO performance
     <div id="evolve-row" class="flex flex-col md:flex-row items-stretch gap-0 md:gap-0 relative" style="overflow:visible;">
 
       <!-- Left: Old way -->
-      <div id="evolve-left" class="flex-1 rounded-3xl p-10" style="background:#F3F4F6;border:1px solid #E5E7EB;transform:rotate(-4deg) translateX(55%);transition:transform 1.6s cubic-bezier(0.22,1,0.36,1);">
+      <div id="evolve-left" class="flex-1 rounded-3xl p-10" style="background:#F3F4F6;transform:rotate(-4deg) translateX(55%);transition:transform 1.6s cubic-bezier(0.22,1,0.36,1);">
         <p class="font-display text-base mb-7" style="font-weight:600;font-size:1.05rem;color:#9CA3AF;letter-spacing:0.01em;">The old way</p>
         <ul class="flex flex-col gap-4">
           <li class="flex items-center gap-3">
@@ -702,9 +706,96 @@ Amplify your SEO performance
 })();
 </script>
 
+<!-- PROBLEMS I SOLVE -->
+<section style="background:#ffffff;padding:72px 0 80px;">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-left md:text-center mb-12 flex flex-col items-start md:items-center">
+      <div class="inline-flex items-center gap-2 bg-coral-light text-coral text-xs font-semibold px-3 py-1.5 rounded-full mb-5">
+        Sound familiar?
+      </div>
+      <h2 class="font-display font-extrabold text-ink svc-h2" style="font-size:clamp(1.875rem,3.6vw,2.26rem);letter-spacing:-0.02em;line-height:1.2;font-weight:750;">Problems I solve</h2>
+      <p class="text-muted mt-3" style="font-size:1rem;line-height:1.7;max-width:480px;">If any of these describe your situation, we should talk.</p>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+
+      <div class="rounded-2xl px-6 py-5 flex gap-4 items-start" style="background:#ffffff;">
+        <div class="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center mt-0.5" style="background:#FFF1EC;">
+          <svg width="14" height="14" viewBox="0 0 20 20" fill="none"><path d="M10 3v7l4 4" stroke="#F47B5A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="10" r="8" stroke="#F47B5A" stroke-width="1.8"/></svg>
+        </div>
+        <div>
+          <p class="font-display font-semibold text-ink" style="font-size:0.9rem;line-height:1.4;margin-bottom:4px;">Traffic dropped after a Google update</p>
+          <p style="font-size:0.82rem;color:#6B7280;line-height:1.6;">Recovery requires understanding exactly why — not guessing. I diagnose what changed and build a targeted fix.</p>
+        </div>
+      </div>
+
+      <div class="rounded-2xl px-6 py-5 flex gap-4 items-start" style="background:#ffffff;">
+        <div class="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center mt-0.5" style="background:#FFF1EC;">
+          <svg width="14" height="14" viewBox="0 0 20 20" fill="none"><path d="M4 16L10 4l6 12" stroke="#F47B5A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M6.5 11.5h7" stroke="#F47B5A" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </div>
+        <div>
+          <p class="font-display font-semibold text-ink" style="font-size:0.9rem;line-height:1.4;margin-bottom:4px;">Publishing content but not ranking</p>
+          <p style="font-size:0.82rem;color:#6B7280;line-height:1.6;">Volume isn't the problem — strategy is. I audit your content gaps and build a plan that targets the right queries with the right depth.</p>
+        </div>
+      </div>
+
+      <div class="rounded-2xl px-6 py-5 flex gap-4 items-start" style="background:#ffffff;">
+        <div class="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center mt-0.5" style="background:#FFF1EC;">
+          <svg width="14" height="14" viewBox="0 0 20 20" fill="none"><path d="M10 1C10 1 11 8 19 10C11 12 10 19 10 19C10 19 9 12 1 10C9 8 10 1 10 1Z" fill="none" stroke="#F47B5A" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        </div>
+        <div>
+          <p class="font-display font-semibold text-ink" style="font-size:0.9rem;line-height:1.4;margin-bottom:4px;">Not showing up in AI search results</p>
+          <p style="font-size:0.82rem;color:#6B7280;line-height:1.6;">ChatGPT, Gemini, and AI Overviews are reshaping search. I structure your content so it gets cited and surfaced in AI-generated answers.</p>
+        </div>
+      </div>
+
+      <div class="rounded-2xl px-6 py-5 flex gap-4 items-start" style="background:#ffffff;">
+        <div class="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center mt-0.5" style="background:#FFF1EC;">
+          <svg width="14" height="14" viewBox="0 0 20 20" fill="none"><path d="M3 10h14M10 3l7 7-7 7" stroke="#F47B5A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div>
+          <p class="font-display font-semibold text-ink" style="font-size:0.9rem;line-height:1.4;margin-bottom:4px;">Competitors are outranking you</p>
+          <p style="font-size:0.82rem;color:#6B7280;line-height:1.6;">I run a gap analysis to pinpoint exactly where competitors have the edge — links, content, or authority — and close those gaps strategically.</p>
+        </div>
+      </div>
+
+      <div class="rounded-2xl px-6 py-5 flex gap-4 items-start" style="background:#ffffff;">
+        <div class="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center mt-0.5" style="background:#FFF1EC;">
+          <svg width="14" height="14" viewBox="0 0 20 20" fill="none"><path d="M8 6L3 12l5 6" stroke="#F47B5A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 6l5 6-5 6" stroke="#F47B5A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div>
+          <p class="font-display font-semibold text-ink" style="font-size:0.9rem;line-height:1.4;margin-bottom:4px;">Technical issues holding back growth</p>
+          <p style="font-size:0.82rem;color:#6B7280;line-height:1.6;">Crawl errors, slow load times, duplicate content — these silently limit rankings. I find them, prioritize what matters, and work with your team to fix them.</p>
+        </div>
+      </div>
+
+      <div class="rounded-2xl px-6 py-5 flex gap-4 items-start" style="background:#ffffff;">
+        <div class="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center mt-0.5" style="background:#FFF1EC;">
+          <svg width="14" height="14" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="#F47B5A" stroke-width="1.8"/><path d="M10 6v4l3 3" stroke="#F47B5A" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </div>
+        <div>
+          <p class="font-display font-semibold text-ink" style="font-size:0.9rem;line-height:1.4;margin-bottom:4px;">Organic search isn't driving revenue</p>
+          <p style="font-size:0.82rem;color:#6B7280;line-height:1.6;">Rankings without conversions mean nothing. I align SEO with your funnel — targeting queries with commercial intent that turn visitors into customers.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- MY APPROACH -->
 <style>
-  .lt-card { background:#fff;border:1px solid #E8E8F0;border-radius:16px;padding:28px; }
+  .lt-card { background:#fff;border-radius:16px;padding:28px; }
+  /* Process section responsive */
+  .process-outer { display:flex;flex-direction:column;gap:28px; }
+  .process-left { width:100%; }
+  .process-steps { display:grid;grid-template-columns:1fr 1fr;gap:24px; }
+  .process-step { min-width:0; }
+  @media (min-width:768px) {
+    .process-outer { flex-direction:row;gap:40px;align-items:stretch; }
+    .process-left { flex-shrink:0;width:260px; }
+    .process-steps { flex:1;display:flex;flex-direction:row;align-items:flex-end;gap:0; }
+    .process-step { flex:1;padding:0 24px;min-width:0; }
+  }
   .lt-icon { width:40px;height:40px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;overflow:visible; }
   @media (max-width: 767px) {
     .principles-wrap { flex-direction: column !important; gap: 16px !important; }
@@ -715,20 +806,18 @@ Amplify your SEO performance
     #evolve-vs { transition: opacity 0.3s ease 0.55s !important; }
   }
 </style>
-<section class="bg-white" style="padding:80px 0;">
+<section style="background:#EBEFF3;padding:80px 0;">
   <div class="max-w-6xl mx-auto px-6">
     <div class="principles-wrap" style="display:flex;gap:80px;align-items:flex-start;">
 
       <!-- LEFT: sticky -->
       <div class="principles-sticky" style="width:280px;flex-shrink:0;position:sticky;top:108px;align-self:flex-start;padding-top:44px;">
-        <div class="inline-flex items-center gap-2 bg-coral-light text-coral text-xs font-semibold px-3 py-1.5 rounded-full mb-5">
+        <div class="inline-flex items-center gap-2 text-xs font-semibold px-3 py-1.5 rounded-full mb-5" style="background:#d3dce5;color:#5c7a8f;">
           My approach
         </div>
         <h2 class="font-display font-extrabold text-ink mb-4 svc-h2" style="font-size:clamp(1.875rem,3.6vw,2.46rem);line-height:1.15;letter-spacing:-0.03em;font-weight:750;">SEO principles behind the work</h2>
         <p class="text-muted mb-3 md:mb-8" style="line-height:1.75;font-size:1rem;">Six beliefs that shape every engagement I take on.</p>
-        <a href="contact.html" class="btn-coral hidden md:inline-flex items-center gap-2 bg-coral text-white font-semibold px-5 py-2.5 rounded-full text-sm">Get in touch
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
+        <a href="contact.html" class="btn-outline-slate hidden md:inline-flex items-center gap-2 border font-semibold px-5 py-2.5 rounded-full text-sm" style="border-color:rgba(92,122,143,0.35);color:#5c7a8f;">Get in touch →</a>
       </div>
 
       <!-- RIGHT: two explicit flex columns (2 left, 3 right) -->
@@ -739,7 +828,7 @@ Amplify your SEO performance
 
           <div class="lt-card">
             <div class="lt-icon">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6L12 2z" stroke="#F47B5A" stroke-width="1.6" stroke-linejoin="round"/></svg>
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6L12 2z" stroke="#5c7a8f" stroke-width="1.6" stroke-linejoin="round"/></svg>
             </div>
             <h3 class="font-display font-semibold text-ink mb-2" style="font-size:1rem;letter-spacing:-0.01em;">Value over vanity</h3>
             <p class="text-muted text-sm" style="line-height:1.75;">Most SEO tasks don't move the needle. I skip the checkboxes and focus only on the work that drives ROI.</p>
@@ -747,7 +836,7 @@ Amplify your SEO performance
 
           <div class="lt-card">
             <div class="lt-icon">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="#F47B5A" stroke-width="1.6"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke="#F47B5A" stroke-width="1.6" stroke-linecap="round"/></svg>
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="#5c7a8f" stroke-width="1.6"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke="#5c7a8f" stroke-width="1.6" stroke-linecap="round"/></svg>
             </div>
             <h3 class="font-display font-semibold text-ink mb-2" style="font-size:1rem;letter-spacing:-0.01em;">Be worth finding</h3>
             <p class="text-muted text-sm" style="line-height:1.75;">Visibility follows good experiences. If real people struggle to find what they need, no amount of optimization will get you seen.</p>
@@ -760,7 +849,7 @@ Amplify your SEO performance
 
           <div class="lt-card">
             <div class="lt-icon">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="3" y="15" width="18" height="4" rx="1" stroke="#F47B5A" stroke-width="1.6"/><rect x="6" y="10" width="12" height="4" rx="1" stroke="#F47B5A" stroke-width="1.6"/><rect x="9" y="5" width="6" height="4" rx="1" stroke="#F47B5A" stroke-width="1.6"/></svg>
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="3" y="15" width="18" height="4" rx="1" stroke="#5c7a8f" stroke-width="1.6"/><rect x="6" y="10" width="12" height="4" rx="1" stroke="#5c7a8f" stroke-width="1.6"/><rect x="9" y="5" width="6" height="4" rx="1" stroke="#5c7a8f" stroke-width="1.6"/></svg>
             </div>
             <h3 class="font-display font-semibold text-ink mb-2" style="font-size:1rem;letter-spacing:-0.01em;">Build on solid ground</h3>
             <p class="text-muted text-sm" style="line-height:1.75;">Technical SEO is the foundation. If search engines can't properly crawl and index your site, nothing else matters.</p>
@@ -768,7 +857,7 @@ Amplify your SEO performance
 
           <div class="lt-card">
             <div class="lt-icon">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M5 3v18" stroke="#F47B5A" stroke-width="1.6" stroke-linecap="round"/><path d="M5 4h11l-2.5 3.5L16 11H5" stroke="#F47B5A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M5 3v18" stroke="#5c7a8f" stroke-width="1.6" stroke-linecap="round"/><path d="M5 4h11l-2.5 3.5L16 11H5" stroke="#5c7a8f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </div>
             <h3 class="font-display font-semibold text-ink mb-2" style="font-size:1rem;letter-spacing:-0.01em;">Marathon, not a sprint</h3>
             <p class="text-muted text-sm" style="line-height:1.75;">SEO requires consistency. Staying active keeps you competitive as algorithms, competitors, and search behavior evolve.</p>
@@ -776,7 +865,7 @@ Amplify your SEO performance
 
           <div class="lt-card">
             <div class="lt-icon">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="#F47B5A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><rect x="3" y="3" width="18" height="18" rx="4" stroke="#F47B5A" stroke-width="1.6"/></svg>
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="#5c7a8f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><rect x="3" y="3" width="18" height="18" rx="4" stroke="#5c7a8f" stroke-width="1.6"/></svg>
             </div>
             <h3 class="font-display font-semibold text-ink mb-2" style="font-size:1rem;letter-spacing:-0.01em;">No games, no gimmicks</h3>
             <p class="text-muted text-sm" style="line-height:1.75;">Forget the fake guarantees and short sighted hacks. I collaborate with you to drive sustainable, long-term business results.</p>
@@ -787,167 +876,64 @@ Amplify your SEO performance
       </div>
     </div>
     <div class="md:hidden mt-8 flex justify-start px-6">
-      <a href="contact.html" class="btn-coral inline-flex items-center gap-2 bg-coral text-white font-semibold px-5 py-2.5 rounded-full text-sm">Get in touch
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
+      <a href="contact.html" class="btn-outline-slate inline-flex items-center gap-2 border font-semibold px-5 py-2.5 rounded-full text-sm" style="border-color:rgba(92,122,143,0.35);color:#5c7a8f;">Get in touch →</a>
     </div>
   </div>
 </section>
 
 <!-- SEO PROCESS -->
-<style>
-  .process-item {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.45s cubic-bezier(0.22,1,0.36,1), transform 0.45s cubic-bezier(0.22,1,0.36,1);
-  }
-  @media (max-width: 767px) {
-    .process-item { transition-duration: 0.25s !important; }
-  }
-  .process-item.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-</style>
-<section id="process-section" style="background:#F9F8FF;padding:60px 0 80px;">
+<section style="background:#ffffff;padding:60px 0 80px;">
   <div class="max-w-6xl mx-auto px-6">
-    <div class="text-center mb-16">
-      <div class="inline-flex items-center gap-2 bg-violet-light text-violet text-xs font-semibold px-3 py-1.5 rounded-full mb-5">
-        SEO process
-      </div>
-      <h2 class="font-display font-bold text-3xl md:text-4xl text-ink tracking-tight mb-4 svc-h2" style="font-weight:750;">What working together looks like</h2>
-      <p class="text-muted max-w-xl mx-auto" style="line-height:1.7;">I'll guide you through each step, ensuring you're informed and confident in my approach.</p>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr_auto_1fr_auto_1fr] gap-x-2 gap-y-6 items-stretch">
-      <!-- Step 1 -->
-      <div class="process-item" data-delay="0" style="padding-top:22px;position:relative;display:flex;flex-direction:column;">
-        <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);z-index:1;width:44px;height:44px;border-radius:50%;background:#7B68EE;display:flex;align-items:center;justify-content:center;">
-          <span style="font-size:1.1rem;font-weight:800;color:#ffffff;font-family:'Poppins',sans-serif;line-height:1;">1</span>
+    <div class="rounded-3xl p-8 md:p-10" style="background:#F5F4FF;">
+      <div class="process-outer">
+
+        <!-- Left: label + heading + desc -->
+        <div class="process-left">
+          <p class="font-display font-semibold text-violet mb-4" style="font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:600;">My process</p>
+          <h2 class="font-display font-extrabold text-ink mb-4" style="font-size:clamp(1.5rem,2.8vw,1.9rem);letter-spacing:-0.02em;line-height:1.2;font-weight:750;">How we'll work together</h2>
+          <p class="text-muted" style="font-size:0.9rem;line-height:1.7;">I'll guide you through each step, so you're confident in my approach.</p>
         </div>
-        <div class="rounded-2xl overflow-hidden text-center" style="background:#ffffff;border:1px solid #E5E7EB;flex:1;display:flex;flex-direction:column;">
-          <div style="height:22px;"></div>
-          <div style="padding:18px 24px 24px;">
-            <h3 class="font-display font-bold text-base mb-2 text-ink">Discovery & Goal Setting</h3>
-            <p class="text-sm text-muted" style="line-height:1.65;">I begin by understanding your business, audience, and objectives.</p>
+
+        <!-- Right: 4 steps -->
+        <div class="process-steps">
+
+          <div class="process-step">
+            <div class="rounded-2xl flex items-center justify-center" style="width:40px;height:40px;background:#E8E5FF;flex-shrink:0;margin-bottom:14px;">
+              <span class="font-display font-bold text-violet" style="font-size:0.78rem;">01</span>
+            </div>
+            <h3 class="font-display font-bold text-ink mb-2" style="font-size:0.95rem;">Discover</h3>
+            <p class="text-muted" style="font-size:0.83rem;line-height:1.65;">Understand your business, audience, and goals.</p>
           </div>
-        </div>
-      </div>
-      <!-- Arrow 1→2 -->
-      <div class="process-item process-arrow flex items-center justify-center" data-delay="150" style="align-self:center;padding-top:16px;padding-bottom:16px;">
-        <svg class="hidden md:block" width="24" height="16" viewBox="0 0 24 16" fill="none"><path d="M1 8h18" stroke="#D1D5DB" stroke-width="1.6" stroke-linecap="round" class="arrow-path"/><path d="M14 3l5 5-5 5" stroke="#D1D5DB" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="arrow-path"/></svg>
-        <svg class="block md:hidden" width="16" height="32" viewBox="0 0 16 32" fill="none">
-  <path d="M8 1v24" stroke="#D1D5DB" stroke-width="1.6" stroke-linecap="round"/>
-  <path d="M3 20l5 5 5-5" stroke="#D1D5DB" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M8 1v24" stroke="#7B68EE" stroke-width="1.6" stroke-linecap="round" class="arrow-path"/>
-  <path d="M3 20l5 5 5-5" stroke="#7B68EE" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="arrow-path"/>
-</svg>
-      </div>
-      <!-- Step 2 -->
-      <div class="process-item" data-delay="200" style="padding-top:22px;position:relative;display:flex;flex-direction:column;">
-        <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);z-index:1;width:44px;height:44px;border-radius:50%;background:#7B68EE;display:flex;align-items:center;justify-content:center;">
-          <span style="font-size:1.1rem;font-weight:800;color:#ffffff;font-family:'Poppins',sans-serif;line-height:1;">2</span>
-        </div>
-        <div class="rounded-2xl overflow-hidden text-center" style="background:#ffffff;border:1px solid #E5E7EB;flex:1;display:flex;flex-direction:column;">
-          <div style="height:22px;"></div>
-          <div style="padding:18px 24px 24px;">
-            <h3 class="font-display font-bold text-base mb-2 text-ink">In-Depth Website<br class="hidden md:block"> Audit</h3>
-            <p class="text-sm text-muted" style="line-height:1.65;">A comprehensive SEO audit of your site's technical setup, content, and authority.</p>
+
+          <div class="process-step">
+            <div class="rounded-2xl flex items-center justify-center" style="width:40px;height:40px;background:#E8E5FF;flex-shrink:0;margin-bottom:14px;">
+              <span class="font-display font-bold text-violet" style="font-size:0.78rem;">02</span>
+            </div>
+            <h3 class="font-display font-bold text-ink mb-2" style="font-size:0.95rem;">Audit</h3>
+            <p class="text-muted" style="font-size:0.83rem;line-height:1.65;">Review your technical setup, content &amp; authority.</p>
           </div>
-        </div>
-      </div>
-      <!-- Arrow 2→3 -->
-      <div class="process-item process-arrow flex items-center justify-center" data-delay="350" style="align-self:center;padding-top:16px;padding-bottom:16px;">
-        <svg class="hidden md:block" width="24" height="16" viewBox="0 0 24 16" fill="none"><path d="M1 8h18" stroke="#D1D5DB" stroke-width="1.6" stroke-linecap="round" class="arrow-path"/><path d="M14 3l5 5-5 5" stroke="#D1D5DB" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="arrow-path"/></svg>
-        <svg class="block md:hidden" width="16" height="32" viewBox="0 0 16 32" fill="none">
-  <path d="M8 1v24" stroke="#D1D5DB" stroke-width="1.6" stroke-linecap="round"/>
-  <path d="M3 20l5 5 5-5" stroke="#D1D5DB" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M8 1v24" stroke="#7B68EE" stroke-width="1.6" stroke-linecap="round" class="arrow-path"/>
-  <path d="M3 20l5 5 5-5" stroke="#7B68EE" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="arrow-path"/>
-</svg>
-      </div>
-      <!-- Step 3 -->
-      <div class="process-item" data-delay="400" style="padding-top:22px;position:relative;display:flex;flex-direction:column;">
-        <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);z-index:1;width:44px;height:44px;border-radius:50%;background:#7B68EE;display:flex;align-items:center;justify-content:center;">
-          <span style="font-size:1.1rem;font-weight:800;color:#ffffff;font-family:'Poppins',sans-serif;line-height:1;">3</span>
-        </div>
-        <div class="rounded-2xl overflow-hidden text-center" style="background:#ffffff;border:1px solid #E5E7EB;flex:1;display:flex;flex-direction:column;">
-          <div style="height:22px;"></div>
-          <div style="padding:18px 24px 24px;">
-            <h3 class="font-display font-bold text-base mb-2 text-ink">Custom Strategy Development</h3>
-            <p class="text-sm text-muted" style="line-height:1.65;">Based on the findings, I build a strategy focused on your biggest growth opportunities.</p>
+
+          <div class="process-step">
+            <div class="rounded-2xl flex items-center justify-center" style="width:40px;height:40px;background:#E8E5FF;flex-shrink:0;margin-bottom:14px;">
+              <span class="font-display font-bold text-violet" style="font-size:0.78rem;">03</span>
+            </div>
+            <h3 class="font-display font-bold text-ink mb-2" style="font-size:0.95rem;">Strategy</h3>
+            <p class="text-muted" style="font-size:0.83rem;line-height:1.65;">Build a plan around your biggest opportunities.</p>
           </div>
-        </div>
-      </div>
-      <!-- Arrow 3→4 -->
-      <div class="process-item process-arrow flex items-center justify-center" data-delay="550" style="align-self:center;padding-top:16px;padding-bottom:16px;">
-        <svg class="hidden md:block" width="24" height="16" viewBox="0 0 24 16" fill="none"><path d="M1 8h18" stroke="#D1D5DB" stroke-width="1.6" stroke-linecap="round" class="arrow-path"/><path d="M14 3l5 5-5 5" stroke="#D1D5DB" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="arrow-path"/></svg>
-        <svg class="block md:hidden" width="16" height="32" viewBox="0 0 16 32" fill="none">
-  <path d="M8 1v24" stroke="#D1D5DB" stroke-width="1.6" stroke-linecap="round"/>
-  <path d="M3 20l5 5 5-5" stroke="#D1D5DB" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M8 1v24" stroke="#7B68EE" stroke-width="1.6" stroke-linecap="round" class="arrow-path"/>
-  <path d="M3 20l5 5 5-5" stroke="#7B68EE" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="arrow-path"/>
-</svg>
-      </div>
-      <!-- Step 4 -->
-      <div class="process-item" data-delay="600" style="padding-top:22px;position:relative;display:flex;flex-direction:column;">
-        <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);z-index:1;width:44px;height:44px;border-radius:50%;background:#7B68EE;display:flex;align-items:center;justify-content:center;">
-          <span style="font-size:1.1rem;font-weight:800;color:#ffffff;font-family:'Poppins',sans-serif;line-height:1;">4</span>
-        </div>
-        <div class="rounded-2xl overflow-hidden text-center" style="background:#ffffff;border:1px solid #E5E7EB;flex:1;display:flex;flex-direction:column;">
-          <div style="height:22px;"></div>
-          <div style="padding:18px 24px 24px;">
-            <h3 class="font-display font-bold text-base mb-2 text-ink">Implementation & Refinement</h3>
-            <p class="text-sm text-muted" style="line-height:1.65;">Execute the strategy, measure performance, and continuously improve results.</p>
+
+          <div class="process-step">
+            <div class="rounded-2xl flex items-center justify-center" style="width:40px;height:40px;background:#E8E5FF;flex-shrink:0;margin-bottom:14px;">
+              <span class="font-display font-bold text-violet" style="font-size:0.78rem;">04</span>
+            </div>
+            <h3 class="font-display font-bold text-ink mb-2" style="font-size:0.95rem;">Implementation</h3>
+            <p class="text-muted" style="font-size:0.83rem;line-height:1.65;">Implement, measure, and improve performance.</p>
           </div>
+
         </div>
       </div>
     </div>
   </div>
 </section>
-<script>
-(function(){
-  var items = document.querySelectorAll('.process-item');
-  var fired = false;
-
-  var obs = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if(e.isIntersecting && !fired){
-        fired = true;
-        items.forEach(function(el){
-          var delay = parseInt(el.getAttribute('data-delay')) || 0;
-          setTimeout(function(){ el.classList.add('visible'); }, delay);
-        });
-        obs.disconnect();
-      }
-    });
-  }, { threshold: 0.3, rootMargin: '0px 0px -60px 0px' });
-  obs.observe(document.getElementById('process-section'));
-
-  // Gradually fill arrows purple as you scroll (mobile only)
-  var arrows = document.querySelectorAll('.process-arrow');
-  arrows.forEach(function(el){
-    el.querySelectorAll('.arrow-path').forEach(function(p){
-      var len = p.getTotalLength ? p.getTotalLength() : 30;
-      p.style.strokeDasharray = len;
-      p.style.strokeDashoffset = len;
-    });
-  });
-
-  function updateArrows(){
-    var wh = window.innerHeight;
-    arrows.forEach(function(el){
-      var rect = el.getBoundingClientRect();
-      var progress = Math.min(Math.max((wh - rect.top) / (rect.height + 60), 0), 1);
-      el.querySelectorAll('.arrow-path').forEach(function(p){
-        var len = parseFloat(p.style.strokeDasharray) || 30;
-        p.style.strokeDashoffset = len * (1 - progress);
-      });
-    });
-  }
-  window.addEventListener('scroll', updateArrows, { passive: true });
-  updateArrows();
-})();
-</script>
 
 <!-- CTA -->
 <section class="relative overflow-hidden bg-white border-t border-border py-20 px-6 text-center">
