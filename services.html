@@ -54,6 +54,13 @@
   @media (max-width: 767px) {
     .svc-h2 { font-size: 1.875rem !important; }
     .aim-col { margin-top: -28px !important; justify-content: flex-start !important; }
+    .svc-card-h2 { font-size: 1.18rem !important; }
+    .service-card .text-sm { margin-bottom: 2rem !important; }
+    .service-card .flex.items-start.justify-between { margin-bottom: 0.75rem !important; }
+    .svc-card-grid { gap: 12px !important; margin-bottom: 12px !important; }
+    #prob-headline { display: none !important; }
+    .prob-layout { gap: 6px !important; }
+    #prob-card { margin-top: -12px !important; }
   }
   @media (max-width: 390px) {
     .svc-hero-h1 { font-size: 2.2rem !important; }
@@ -513,7 +520,7 @@ Amplify your SEO performance
 <div class="max-w-6xl mx-auto px-6 pb-16 mt-2 md:-mt-2">
 
   <!-- Top row: 2 cards -->
-  <div class="grid md:grid-cols-2 mb-[18px]" style="gap:17px;">
+  <div class="svc-card-grid grid md:grid-cols-2 mb-[18px]" style="gap:17px;">
 
     <!-- Content Strategy -->
     <div id="content" class="service-card rounded-3xl p-6 md:p-10" style="background:#FFF3F3;">
@@ -554,7 +561,7 @@ Amplify your SEO performance
   </div>
 
   <!-- Bottom row: 3 cards -->
-  <div class="grid md:grid-cols-3" style="gap:17px;">
+  <div class="svc-card-grid grid md:grid-cols-3" style="gap:17px;">
 
     <!-- AI Search Strategy -->
     <div id="ai" class="service-card rounded-3xl p-6 md:p-8" style="background:#FFFAF3;">
@@ -837,7 +844,7 @@ function selectProb(idx) {
       </div>
 
       <!-- Right: Craig Kleila way -->
-      <div id="evolve-right" class="flex-1 rounded-3xl p-10" style="background:#FF8F72;border:1px solid #FF8F72;transform:rotate(3deg) translateX(-55%);transition:transform 1.6s cubic-bezier(0.22,1,0.36,1);">
+      <div id="evolve-right" class="flex-1 rounded-3xl p-10" style="background:#F78B70;border:1px solid #F78B70;transform:rotate(3deg) translateX(-55%);transition:transform 1.6s cubic-bezier(0.22,1,0.36,1);">
         <p class="font-display text-base mb-7" style="font-weight:600;font-size:1.05rem;color:rgba(255,255,255,0.80);letter-spacing:0.01em;">The right way</p>
         <ul class="flex flex-col gap-4">
           <li class="flex items-center gap-3">

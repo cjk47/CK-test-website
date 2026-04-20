@@ -36,9 +36,12 @@
   .btn-coral:hover { transform: translateY(-2px); box-shadow: 0 10px 28px -6px rgba(244,123,90,0.45); }
   .btn-coral:active { transform: translateY(0); }
   .card-hover { transition: box-shadow 0.2s ease, transform 0.2s cubic-bezier(0.22,1,0.36,1); }
-  .card-hover:hover { box-shadow: 0 8px 32px -8px rgba(123,104,238,0.12); transform: translateY(-2px); }
+  .card-hover:hover { box-shadow: 0 8px 32px -8px rgba(0,0,0,0.10); transform: translateY(-2px); }
   .card-arrow { display: inline-flex; transition: transform 0.2s cubic-bezier(0.22,1,0.36,1); }
   .card-hover:hover .card-arrow { transform: translateX(4px); }
+  .cs-coming-soon { opacity: 0.6; cursor: default; }
+  .cta-btn { transition: filter 0.2s ease; }
+  .cta-btn:hover { filter: brightness(0.9); }
   nav a { transition: color 0.15s ease; }
   nav a:not(.btn-coral):hover { color: #F47B5A; }
   @media (min-width: 1024px) { .cs-hero-h1 { font-size: clamp(2.5rem, 4.5vw, 3.5rem) !important; } }
@@ -305,13 +308,17 @@ document.querySelectorAll(".mob-nav-link").forEach(function(l){
 </div>
 
 <!-- GRID -->
-<section class="max-w-6xl mx-auto px-6 pt-10 pb-20">
+<section class="max-w-6xl mx-auto px-6 pt-6 pb-20">
+  <div class="flex items-center gap-4 mb-6">
+    <span style="font-family:'Inter',sans-serif;font-size:0.72rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#9CA3AF;">Selected work</span>
+    <div style="flex:1;height:1px;background:#E8E8F0;"></div>
+  </div>
   <div class="grid md:grid-cols-3 gap-4">
 
     <!-- Case Study 1 - XVIVO -->
     <a href="case-study-xvivo.html" class="card-hover flex flex-col bg-white rounded-2xl overflow-hidden" style="border:1px solid #E8E8F0;">
-      <div style="height:175px;overflow:hidden;position:relative;">
-        <img src="new-xvivo.png" alt="XVIVO" class="w-full h-full object-cover" style="object-position:center 20%;">
+      <div style="height:200px;overflow:hidden;position:relative;">
+        <img src="new-xvivo.png" alt="XVIVO" class="card-img w-full h-full object-cover" style="object-position:center 20%;">
         <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(0,0,0,0.45) 0%, transparent 55%);"></div>
         <div style="position:absolute;bottom:0;right:0;width:80px;height:28px;background:linear-gradient(to left, rgba(0,0,0,0.55), transparent);"></div>
         <div style="position:absolute;bottom:10px;left:12px;display:flex;gap:5px;flex-wrap:wrap;"><span class="bg-white/20 backdrop-blur-sm text-white font-semibold text-xs px-2.5 py-1 rounded-full">Content Strategy</span><span class="bg-white/20 backdrop-blur-sm text-white font-semibold text-xs px-2.5 py-1 rounded-full">Technical SEO</span></div>
@@ -341,8 +348,8 @@ document.querySelectorAll(".mob-nav-link").forEach(function(l){
 
     <!-- Case Study 2 - Rukkus -->
     <a href="case-study-rukkus.html" class="card-hover flex flex-col bg-white rounded-2xl overflow-hidden" style="border:1px solid #E8E8F0;">
-      <div style="height:175px;overflow:hidden;position:relative;">
-        <img src="cs3.png" alt="Rukkus" class="w-full h-full object-cover">
+      <div style="height:200px;overflow:hidden;position:relative;">
+        <img src="cs3.png" alt="Rukkus" class="card-img w-full h-full object-cover">
         <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(0,0,0,0.45) 0%, transparent 55%);"></div>
         <div style="position:absolute;bottom:10px;left:12px;"><span class="bg-white/20 backdrop-blur-sm text-white font-semibold text-xs px-2.5 py-1 rounded-full">Off-site SEO</span></div>
       </div>
@@ -371,8 +378,8 @@ document.querySelectorAll(".mob-nav-link").forEach(function(l){
 
     <!-- Case Study 3 - Epic Reads -->
     <a href="case-study-epic-reads.html" class="card-hover flex flex-col bg-white rounded-2xl overflow-hidden" style="border:1px solid #E8E8F0;">
-      <div style="height:175px;overflow:hidden;position:relative;">
-        <img src="cs4.png" alt="Epic Reads" class="w-full h-full object-cover">
+      <div style="height:200px;overflow:hidden;position:relative;">
+        <img src="cs4.png" alt="Epic Reads" class="card-img w-full h-full object-cover">
         <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(0,0,0,0.45) 0%, transparent 55%);"></div>
         <div style="position:absolute;bottom:10px;left:12px;"><span class="bg-white/20 backdrop-blur-sm text-white font-semibold text-xs px-2.5 py-1 rounded-full">Content Strategy</span></div>
       </div>
@@ -401,8 +408,8 @@ document.querySelectorAll(".mob-nav-link").forEach(function(l){
 
     <!-- Case Study 4 - Best Western -->
     <a href="case-study-best-western.html" class="card-hover flex flex-col bg-white rounded-2xl overflow-hidden" style="border:1px solid #E8E8F0;">
-      <div style="height:175px;overflow:hidden;position:relative;">
-        <img src="rl.png" alt="Best Western" class="w-full h-full object-cover">
+      <div style="height:200px;overflow:hidden;position:relative;">
+        <img src="rl.png" alt="Best Western" class="card-img w-full h-full object-cover">
         <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(0,0,0,0.45) 0%, transparent 55%);"></div>
         <div style="position:absolute;bottom:10px;left:12px;display:flex;gap:5px;flex-wrap:wrap;"><span class="bg-white/20 backdrop-blur-sm text-white font-semibold text-xs px-2.5 py-1 rounded-full">AI Search Strategy</span><span class="bg-white/20 backdrop-blur-sm text-white font-semibold text-xs px-2.5 py-1 rounded-full">Technical SEO</span></div>
       </div>
@@ -430,9 +437,9 @@ document.querySelectorAll(".mob-nav-link").forEach(function(l){
     </a>
 
     <!-- Case Study 5 - Chase -->
-    <div class="flex flex-col bg-white rounded-2xl overflow-hidden" style="border:1px solid #E8E8F0;cursor:default;">
-      <div style="height:175px;overflow:hidden;position:relative;">
-        <img src="cccc.png" alt="Chase" class="w-full h-full object-cover">
+    <div class="cs-coming-soon flex flex-col bg-white rounded-2xl overflow-hidden" style="border:1px solid #E8E8F0;cursor:default;">
+      <div style="height:200px;overflow:hidden;position:relative;">
+        <img src="cccc.png" alt="Chase" class="card-img w-full h-full object-cover">
         <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(0,0,0,0.45) 0%, transparent 55%);"></div>
         <div style="position:absolute;bottom:10px;left:12px;display:flex;gap:5px;flex-wrap:wrap;"><span class="bg-white/20 backdrop-blur-sm text-white font-semibold text-xs px-2.5 py-1 rounded-full">Content Strategy</span><span class="bg-white/20 backdrop-blur-sm text-white font-semibold text-xs px-2.5 py-1 rounded-full">Technical SEO</span></div>
       </div>
@@ -460,17 +467,17 @@ document.querySelectorAll(".mob-nav-link").forEach(function(l){
     </div>
 
     <!-- CTA Card -->
-    <div class="flex flex-col rounded-2xl overflow-hidden" style="border:1px solid #E8E8F0;">
-      <div class="bg-coral p-6 flex flex-col" style="flex:1;">
+    <div class="card-hover flex flex-col rounded-2xl overflow-hidden" style="border:1px solid #E8E8F0;">
+      <div class="bg-coral p-6 flex flex-col" style="height:200px;flex-shrink:0;">
         <div class="inline-flex items-center bg-white/20 text-white text-xs font-semibold px-3 py-1.5 rounded-full self-start mb-6">Your project here</div>
         <p class="font-display font-bold text-white" style="font-size:1.55rem;line-height:1.25;letter-spacing:-0.02em;">Want results like these?</p>
       </div>
-      <div class="bg-white px-6 pt-5 flex flex-col flex-1">
+      <div class="bg-white px-6 pt-5 flex flex-col" style="flex:1;position:relative;">
         <p class="font-display font-bold text-ink mb-2" style="font-size:1rem;">Let's work together</p>
-        <p class="text-sm text-muted flex-1" style="line-height:1.7;">Every project is different. Send me a note about your situation and let's talk through what's possible.</p>
-        <div style="border-top:1px solid #E8E8F0;margin:0 -24px;" class="mt-5"></div>
-        <div class="py-4">
-          <a href="contact.html" class="inline-block bg-coral text-white font-semibold px-5 py-2.5 rounded-full text-sm">Start a conversation →</a>
+        <p class="text-sm text-muted" style="line-height:1.7;">Every project is different. Send me a note about your situation and let's talk through what's possible.</p>
+        <div style="position:absolute;bottom:115px;left:0;right:0;border-top:1px solid #E8E8F0;"></div>
+        <div style="position:absolute;bottom:0;left:0;right:0;height:115px;display:flex;align-items:center;padding:0 20px;">
+          <a href="contact.html" class="btn-coral inline-block bg-coral text-white font-semibold px-5 py-2.5 rounded-full text-sm">Start a conversation →</a>
         </div>
       </div>
     </div>
