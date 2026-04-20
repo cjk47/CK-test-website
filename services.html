@@ -430,12 +430,12 @@ Amplify your SEO performance
     <div class="flex flex-wrap gap-3">
       <a href="#content" data-pill="content" class="nav-pill inline-flex items-center gap-2.5 bg-offwhite border border-border text-ink font-semibold px-5 py-2.5 rounded-full text-sm hover:border-coral hover:text-coral transition-colors duration-200">
         <span class="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0" style="background:#ffe5e4;">
-          <svg width="12" height="12" viewBox="0 0 20 20" fill="none"><path d="M3 4h14M3 8h10M3 12h14M3 16h8" stroke="#3A62A7" stroke-width="1.6" stroke-linecap="round"/></svg>
+          <svg width="12" height="12" viewBox="0 0 20 20" fill="none"><path d="M3 4h14M3 8h10M3 12h14M3 16h8" stroke="#F47B5A" stroke-width="1.6" stroke-linecap="round"/></svg>
         </span>Content Strategy
       </a>
       <a href="#technical" data-pill="technical" class="nav-pill inline-flex items-center gap-2.5 bg-offwhite border border-border text-ink font-semibold px-5 py-2.5 rounded-full text-sm hover:border-violet hover:text-violet transition-colors duration-200">
         <span class="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0" style="background:#eae1fe;">
-          <svg width="12" height="12" viewBox="0 0 20 20" fill="none"><path d="M8 4l-4 6 4 6M12 4l4 6-4 6" stroke="#3A62A7" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg width="12" height="12" viewBox="0 0 20 20" fill="none"><path d="M8 4l-4 6 4 6M12 4l4 6-4 6" stroke="#F47B5A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </span>Technical SEO
       </a>
       <a href="#ai" data-pill="ai" class="nav-pill inline-flex items-center gap-2.5 bg-offwhite border border-border text-ink font-semibold px-5 py-2.5 rounded-full text-sm transition-colors duration-200" onmouseover="this.style.borderColor='#C4900A';this.style.color='#C4900A'" onmouseout="if(activePill!=='ai'){this.style.borderColor='';this.style.color=''}">
@@ -619,7 +619,7 @@ Amplify your SEO performance
 
 <!-- MY APPROACH -->
 <style>
-  .lt-card { background:#FFFFFF;border-radius:16px;padding:28px; }
+  .lt-card { background:#fffcfa;border-radius:16px;padding:28px;box-shadow:none; }
   /* Process section responsive */
   .process-outer { display:flex;flex-direction:column;gap:28px; }
   .process-left { width:100%; }
@@ -653,13 +653,13 @@ Amplify your SEO performance
     width:100%;display:flex;align-items:center;gap:14px;padding:12px 14px;background:none;border:none;cursor:pointer;text-align:left;border-radius:10px;
     transition:background 0.18s ease;
   }
-  .prob-item:hover { background:rgba(123,104,238,0.07); }
-  .prob-item.prob-active { background:#ede9ff; }
+  .prob-item:hover { background:rgba(0,0,0,0.03); }
+  .prob-item.prob-active { background:rgba(123,104,238,0.07); }
   .prob-item .prob-icon {
     flex-shrink:0;width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;
-    background:rgba(123,104,238,0.1);transition:background 0.18s ease;
+    background:rgba(0,0,0,0.04);transition:background 0.18s ease;
   }
-  .prob-item.prob-active .prob-icon { background:rgba(123,104,238,0.18); }
+  .prob-item.prob-active .prob-icon { background:rgba(123,104,238,0.1); }
   .prob-diag-panel { animation: probFadeIn 0.22s ease; }
   @keyframes probFadeIn { from { opacity:0;transform:translateY(6px); } to { opacity:1;transform:translateY(0); } }
   @media (max-width: 767px) {
@@ -675,29 +675,29 @@ Amplify your SEO performance
       <!-- LEFT: sticky heading + problem list -->
       <div class="prob-sticky" style="width:300px;flex-shrink:0;align-self:flex-start;position:sticky;top:88px;">
         <div class="inline-flex items-center gap-2 text-xs font-semibold px-3 py-1.5 rounded-full mb-5" style="background:#e8e4fd;color:#7B68EE;">Sound familiar?</div>
-        <h2 class="font-display font-extrabold text-ink mb-3 svc-h2" style="font-size:clamp(1.875rem,3.6vw,2.26rem);line-height:1.2;letter-spacing:-0.02em;font-weight:750;">Common SEO problems I solve</h2>
-        <p class="text-muted mb-7" style="line-height:1.7;font-size:0.9rem;">Tap any problem to see what's really going on — and how I fix it.</p>
+        <h2 class="font-display font-extrabold text-ink svc-h2" style="font-size:clamp(1.875rem,3.6vw,2.26rem);line-height:1.2;letter-spacing:-0.02em;font-weight:750;margin-bottom:12px;">Common SEO problems I solve</h2>
+        <p class="text-muted mb-7" style="line-height:1.7;font-size:1rem;">Tap any problem to see what's really going on — and how I fix it.</p>
 
         <div style="display:flex;flex-direction:column;gap:2px;">
           <button class="prob-item prob-active" onclick="selectProb(0)">
-            <span class="prob-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><polyline points="3,6 8,12 12,9 17,15 21,18" stroke="#7B68EE" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><polyline points="17,18 21,18 21,14" stroke="#7B68EE" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-            <span class="font-display font-semibold text-ink" style="font-size:0.88rem;letter-spacing:-0.01em;font-weight:580;">Organic traffic is declining</span>
+            <span class="prob-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><polyline points="3,6 8,12 12,9 17,15 21,18" stroke="#9CA3AF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><polyline points="17,18 21,18 21,14" stroke="#9CA3AF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span class="font-display text-ink" style="font-size:0.88rem;letter-spacing:-0.01em;font-weight:520;color:#4B5563;">Organic traffic is declining</span>
           </button>
           <button class="prob-item" onclick="selectProb(1)">
-            <span class="prob-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="2" y="12" width="6" height="8" stroke="#7B68EE" stroke-width="1.7" stroke-linejoin="round"/><rect x="8" y="7" width="8" height="13" stroke="#7B68EE" stroke-width="1.7" stroke-linejoin="round"/><rect x="16" y="14" width="6" height="6" stroke="#7B68EE" stroke-width="1.7" stroke-linejoin="round"/></svg></span>
-            <span class="font-display font-semibold text-ink" style="font-size:0.88rem;letter-spacing:-0.01em;font-weight:580;">Competitors winning in search</span>
+            <span class="prob-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="2" y="12" width="6" height="8" stroke="#9CA3AF" stroke-width="1.5" stroke-linejoin="round"/><rect x="8" y="7" width="8" height="13" stroke="#9CA3AF" stroke-width="1.5" stroke-linejoin="round"/><rect x="16" y="14" width="6" height="6" stroke="#9CA3AF" stroke-width="1.5" stroke-linejoin="round"/></svg></span>
+            <span class="font-display text-ink" style="font-size:0.88rem;letter-spacing:-0.01em;font-weight:520;color:#4B5563;">Competitors winning in search</span>
           </button>
           <button class="prob-item" onclick="selectProb(2)">
-            <span class="prob-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 3C12 3 13 10 21 12C13 14 12 21 12 21C12 21 11 14 3 12C11 10 12 3 12 3Z" stroke="#7B68EE" stroke-width="1.7" stroke-linejoin="round"/><path d="M20 4L4 20" stroke="#7B68EE" stroke-width="1.7" stroke-linecap="round"/></svg></span>
-            <span class="font-display font-semibold text-ink" style="font-size:0.88rem;letter-spacing:-0.01em;font-weight:580;">Not appearing in AI answers</span>
+            <span class="prob-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 3C12 3 13 10 21 12C13 14 12 21 12 21C12 21 11 14 3 12C11 10 12 3 12 3Z" stroke="#9CA3AF" stroke-width="1.5" stroke-linejoin="round"/><path d="M20 4L4 20" stroke="#9CA3AF" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+            <span class="font-display text-ink" style="font-size:0.88rem;letter-spacing:-0.01em;font-weight:520;color:#4B5563;">Not appearing in AI answers</span>
           </button>
           <button class="prob-item" onclick="selectProb(3)">
-            <span class="prob-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="#7B68EE" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><polyline points="14,2 14,8 20,8" stroke="#7B68EE" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><circle cx="11" cy="14" r="2.5" stroke="#7B68EE" stroke-width="1.7"/><line x1="13" y1="16" x2="16" y2="19" stroke="#7B68EE" stroke-width="1.7" stroke-linecap="round"/></svg></span>
-            <span class="font-display font-semibold text-ink" style="font-size:0.88rem;letter-spacing:-0.01em;font-weight:580;">Content isn't gaining traction</span>
+            <span class="prob-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="#9CA3AF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><polyline points="14,2 14,8 20,8" stroke="#9CA3AF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="11" cy="14" r="2.5" stroke="#9CA3AF" stroke-width="1.5"/><line x1="13" y1="16" x2="16" y2="19" stroke="#9CA3AF" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+            <span class="font-display text-ink" style="font-size:0.88rem;letter-spacing:-0.01em;font-weight:520;color:#4B5563;">Content isn't gaining traction</span>
           </button>
           <button class="prob-item" onclick="selectProb(4)">
-            <span class="prob-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><line x1="12" y1="2" x2="12" y2="22" stroke="#7B68EE" stroke-width="1.7" stroke-linecap="round"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke="#7B68EE" stroke-width="1.7" stroke-linecap="round"/></svg></span>
-            <span class="font-display font-semibold text-ink" style="font-size:0.88rem;letter-spacing:-0.01em;font-weight:580;">Clicks aren't converting</span>
+            <span class="prob-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><line x1="12" y1="2" x2="12" y2="22" stroke="#9CA3AF" stroke-width="1.5" stroke-linecap="round"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke="#9CA3AF" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+            <span class="font-display text-ink" style="font-size:0.88rem;letter-spacing:-0.01em;font-weight:520;color:#4B5563;">Clicks aren't converting</span>
           </button>
         </div>
       </div>
@@ -707,21 +707,21 @@ Amplify your SEO performance
 
       <!-- RIGHT: diagnosis — no card, content sits on background -->
       <div id="prob-card" class="prob-diag-panel" style="flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center;padding-left:8px;">
-        <h3 id="prob-headline" class="font-display font-extrabold text-ink" style="font-size:clamp(1.5rem,2.6vw,1.9rem);line-height:1.2;letter-spacing:-0.025em;font-weight:750;margin-bottom:32px;">Traffic drops don't happen randomly.</h3>
+        <h3 id="prob-headline" class="font-display text-ink" style="font-size:clamp(1.3rem,2.2vw,1.6rem);line-height:1.2;letter-spacing:-0.02em;font-weight:620;margin-bottom:32px;">Traffic drops don't happen randomly.</h3>
         <div class="prob-diag-cols" style="display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-bottom:1.9rem;">
           <div>
-            <p style="font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#7B68EE;margin-bottom:10px;">Often caused by</p>
+            <p style="font-size:0.68rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:#7B68EE;margin-bottom:10px;">Often caused by</p>
             <p id="prob-cause" class="text-muted" style="font-size:0.875rem;line-height:1.75;">Increased competition, seasonality, algorithm updates, changes in how results are displayed, declining search demand, lost backlinks, or content decay.</p>
           </div>
           <div>
-            <p style="font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#7B68EE;margin-bottom:10px;">How I fix it</p>
+            <p style="font-size:0.68rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:#7B68EE;margin-bottom:10px;">How I fix it</p>
             <p id="prob-fix" class="text-muted" style="font-size:0.875rem;line-height:1.75;">I run a forensic audit to find where traffic is leaking, then fix the root issue, whether that's content gaps, technical problems, or something else, and build a prioritized recovery plan.</p>
           </div>
         </div>
         <!-- First Step: white card -->
         <div style="background:#fff;border-radius:12px;padding:20px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;box-shadow:0 1px 4px rgba(0,0,0,0.06);">
           <div>
-            <p style="font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#9ca3af;margin-bottom:4px;">First step</p>
+            <p style="font-size:0.68rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:#9ca3af;margin-bottom:4px;">First step</p>
             <p id="prob-step" class="text-ink font-display font-semibold" style="font-size:0.92rem;font-weight:580;">A 30-minute diagnostic call. No pitch.</p>
           </div>
           <a href="#contact" style="display:inline-flex;align-items:center;gap:8px;background:#7B68EE;color:#fff;font-family:inherit;font-size:0.85rem;font-weight:650;padding:11px 22px;border-radius:8px;text-decoration:none;white-space:nowrap;transition:background 0.18s ease,transform 0.18s ease;" onmouseover="this.style.background='#6a58d6';this.style.transform='translateY(-1px)'" onmouseout="this.style.background='#7B68EE';this.style.transform='translateY(0)'">Book It <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
@@ -779,7 +779,7 @@ function selectProb(idx) {
 </script>
 
 <!-- SEO IS EVOLVING -->
-<section style="background:#ffffff;padding:60px 0 100px;overflow-x:hidden;">
+<section style="background:#ffffff;padding:60px 0 72px;overflow-x:hidden;">
   <div class="max-w-6xl mx-auto px-6">
 
     <!-- Heading -->
@@ -942,18 +942,18 @@ function selectProb(idx) {
 
 
 <!-- SEO PRINCIPLES -->
-<section style="background:#f3f8ff;padding:80px 0;">
+<section style="background:radial-gradient(ellipse at 20% 0%, rgba(244,123,90,0.16) 0%, rgba(244,123,90,0.05) 45%, rgba(255,255,255,0) 75%), radial-gradient(ellipse at 85% 100%, rgba(244,123,90,0.08) 0%, rgba(255,255,255,0) 55%), #fff8f5;padding:80px 0;">
   <div class="max-w-6xl mx-auto px-6">
     <div class="principles-wrap" style="display:flex;gap:80px;align-items:flex-start;">
 
       <!-- LEFT: sticky -->
       <div class="principles-sticky" style="width:280px;flex-shrink:0;position:sticky;top:108px;align-self:flex-start;padding-top:44px;">
-        <div class="inline-flex items-center gap-2 text-xs font-semibold px-3 py-1.5 rounded-full mb-5" style="background:#ddeaf8;color:#3A62A7;">
+        <div class="inline-flex items-center gap-2 text-xs font-semibold px-3 py-1.5 rounded-full mb-5" style="background:#fde0d8;color:#d45a38;">
           My approach
         </div>
         <h2 class="font-display font-extrabold text-ink mb-4 svc-h2" style="font-size:clamp(1.875rem,3.6vw,2.46rem);line-height:1.15;letter-spacing:-0.03em;font-weight:750;">Principles behind the work</h2>
         <p class="text-muted mb-3 md:mb-8" style="line-height:1.75;font-size:1rem;">Five beliefs that shape every engagement I take on.</p>
-        <a href="contact.html" class="btn-outline-slate hidden md:inline-flex items-center gap-2 border font-semibold px-5 py-2.5 rounded-full text-sm" style="border-color:rgba(58,98,167,0.35);color:#3A62A7;">Get in touch →</a>
+        <a href="contact.html" class="btn-outline-slate hidden md:inline-flex items-center gap-2 border font-semibold px-5 py-2.5 rounded-full text-sm" style="border-color:rgba(244,123,90,0.35);color:#d45a38;">Get in touch →</a>
       </div>
 
       <!-- RIGHT: two explicit flex columns (2 left, 3 right) -->
@@ -964,7 +964,7 @@ function selectProb(idx) {
 
           <div class="lt-card">
             <div class="lt-icon">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6L12 2z" stroke="#3A62A7" stroke-width="1.6" stroke-linejoin="round"/></svg>
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6L12 2z" stroke="#F47B5A" stroke-width="1.6" stroke-linejoin="round"/></svg>
             </div>
             <h3 class="font-display font-semibold text-ink mb-2" style="font-size:1rem;letter-spacing:-0.01em;">Value over vanity</h3>
             <p class="text-muted text-sm" style="line-height:1.75;">Most SEO tasks don't move the needle. I skip the checkboxes and focus only on the work that drives ROI.</p>
@@ -972,7 +972,7 @@ function selectProb(idx) {
 
           <div class="lt-card">
             <div class="lt-icon">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="#3A62A7" stroke-width="1.6"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke="#3A62A7" stroke-width="1.6" stroke-linecap="round"/></svg>
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="#F47B5A" stroke-width="1.6"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke="#F47B5A" stroke-width="1.6" stroke-linecap="round"/></svg>
             </div>
             <h3 class="font-display font-semibold text-ink mb-2" style="font-size:1rem;letter-spacing:-0.01em;">Be worth finding</h3>
             <p class="text-muted text-sm" style="line-height:1.75;">Visibility follows good experiences. If real people struggle to find what they need, no amount of optimization will get you seen.</p>
@@ -985,7 +985,7 @@ function selectProb(idx) {
 
           <div class="lt-card">
             <div class="lt-icon">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="3" y="15" width="18" height="4" rx="1" stroke="#3A62A7" stroke-width="1.6"/><rect x="6" y="10" width="12" height="4" rx="1" stroke="#3A62A7" stroke-width="1.6"/><rect x="9" y="5" width="6" height="4" rx="1" stroke="#3A62A7" stroke-width="1.6"/></svg>
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="3" y="15" width="18" height="4" rx="1" stroke="#F47B5A" stroke-width="1.6"/><rect x="6" y="10" width="12" height="4" rx="1" stroke="#F47B5A" stroke-width="1.6"/><rect x="9" y="5" width="6" height="4" rx="1" stroke="#F47B5A" stroke-width="1.6"/></svg>
             </div>
             <h3 class="font-display font-semibold text-ink mb-2" style="font-size:1rem;letter-spacing:-0.01em;">Build on solid ground</h3>
             <p class="text-muted text-sm" style="line-height:1.75;">Technical SEO is the foundation. If search engines can't properly crawl and index your site, nothing else matters.</p>
@@ -993,7 +993,7 @@ function selectProb(idx) {
 
           <div class="lt-card">
             <div class="lt-icon">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M5 3v18" stroke="#3A62A7" stroke-width="1.6" stroke-linecap="round"/><path d="M5 4h11l-2.5 3.5L16 11H5" stroke="#3A62A7" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M5 3v18" stroke="#F47B5A" stroke-width="1.6" stroke-linecap="round"/><path d="M5 4h11l-2.5 3.5L16 11H5" stroke="#F47B5A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </div>
             <h3 class="font-display font-semibold text-ink mb-2" style="font-size:1rem;letter-spacing:-0.01em;">Marathon, not a sprint</h3>
             <p class="text-muted text-sm" style="line-height:1.75;">SEO requires consistency. Staying active keeps you competitive as algorithms, competitors, and search behavior evolve.</p>
@@ -1001,7 +1001,7 @@ function selectProb(idx) {
 
           <div class="lt-card">
             <div class="lt-icon">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="#3A62A7" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><rect x="3" y="3" width="18" height="18" rx="4" stroke="#3A62A7" stroke-width="1.6"/></svg>
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="#F47B5A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><rect x="3" y="3" width="18" height="18" rx="4" stroke="#F47B5A" stroke-width="1.6"/></svg>
             </div>
             <h3 class="font-display font-semibold text-ink mb-2" style="font-size:1rem;letter-spacing:-0.01em;">No games, no gimmicks</h3>
             <p class="text-muted text-sm" style="line-height:1.75;">Forget the fake guarantees and short sighted hacks. I collaborate with you to drive sustainable, long-term business results.</p>
@@ -1072,7 +1072,7 @@ function selectProb(idx) {
 </section>
 
 <!-- CTA -->
-<section class="relative overflow-hidden bg-white pt-2 pb-20 px-6 text-center">
+<section class="relative overflow-hidden bg-white pt-20 pb-20 px-6 text-center">
   <div class="relative z-10 max-w-xl mx-auto">
     <div class="inline-flex items-center gap-2 text-coral text-xs font-semibold px-3 py-1.5 rounded-full mb-5" style="background:#FFF1EC;">
       Let's Talk
