@@ -104,8 +104,8 @@
   }
   .brand-logos .logo-cell img { filter: grayscale(1) contrast(20) opacity(0.65); mix-blend-mode: multiply; }
   @media (min-width: 768px) {
-    .brands-heading { font-weight: 300 !important; font-size: 1.2rem !important; color: #6B7280 !important; letter-spacing: 0.01em !important; }
-    .brand-logos .logo-cell img { filter: grayscale(1) contrast(20) opacity(0.65) !important; mix-blend-mode: multiply !important; }
+    .brands-heading { font-weight: 400 !important; font-size: 1.2rem !important; color: #323232 !important; letter-spacing: 0.01em !important; }
+    .brand-logos .logo-cell img { filter: grayscale(1) contrast(20) opacity(0.6) !important; mix-blend-mode: multiply !important; }
   }
   @media (min-width: 768px) and (max-width: 1023px) {
     .brands-col > p { font-size: 1.35rem !important; }
@@ -233,7 +233,7 @@ function toggleMob() {
 
       <!-- Trusted by the brands you love (right — matches reference exactly) -->
       <div class="brands-col order-1 md:order-2 pt-0 mt-4 md:mt-0 md:max-w-none md:mx-0 md:pr-8">
-        <p class="brands-heading text-ink mb-7 md:mb-[30px] text-center md:text-left" style="font-family:'Poppins',sans-serif;font-weight:300;font-size:1.1rem;letter-spacing:0.01em;line-height:1.2;color:#6B7280;">Trusted by brands you love</p>
+        <p class="brands-heading text-ink mb-7 md:mb-[30px] text-center md:text-left" style="font-family:'Poppins',sans-serif;font-weight:300;font-size:1.1rem;letter-spacing:0.01em;line-height:1.2;color:#323232;">Trusted by brands you love</p>
         <div class="brand-logos" style="display:flex;flex-direction:column;gap:2.5rem;width:100%;">
           <div class="logo-row" style="display:flex;align-items:center;gap:1rem;">
             <div class="logo-cell" style="flex:1;display:flex;align-items:center;"><img src="1h-chase.png" alt="Chase" style="max-height:37px;width:auto;max-width:100%;filter:grayscale(1) contrast(20) opacity(0.65);mix-blend-mode:multiply;"></div>
@@ -255,22 +255,22 @@ function toggleMob() {
 </section>
 
 <!-- SERVICES TEASER -->
-<section class="pt-8 pb-12 md:pt-16 md:pb-20" style="background:#ffffff;">
+<section class="pt-8 pb-12 md:py-20" style="background:#ffffff;">
   <div class="max-w-6xl mx-auto px-6">
-    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6 md:mb-8">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8 md:mb-10">
       <div>
         <div class="inline-flex items-center gap-2 text-coral text-xs font-semibold px-3 py-1.5 rounded-full mb-4" style="background:#ffece5;">
           What I do
         </div>
-        <h2 class="font-display font-extrabold text-3xl md:text-4xl text-ink tracking-tight" style="font-weight:750;">How I grow your search presence</h2>
+        <h2 class="font-display font-extrabold text-ink tracking-tight" style="font-size:clamp(1.75rem,3vw,2.25rem);font-weight:750;">How I grow your search presence</h2>
       </div>
       <a href="services.html" class="btn-outline ripple-btn border border-border text-muted px-5 py-2 rounded-full text-sm font-semibold self-start md:self-auto hidden md:inline-flex">All services →</a>
     </div>
-    <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-4 md:-mx-6">
+    <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-5">
 
-      <div class="service-card rounded-2xl p-6 border border-[#E8E8F0] md:border-0" style="min-height:220px;">
+      <div class="service-card rounded-2xl p-6 border border-[#E8E8F0]" style="background:#ffffff;">
         <div class="card-content flex flex-col h-full">
-          <div class="card-icon mb-5">
+          <div class="card-icon mb-6">
             <svg width="24" height="24" viewBox="0 0 20 20" fill="none"><path d="M3 4h14M3 8h10M3 12h14M3 16h8" stroke="#F47B5A" stroke-width="1.6" stroke-linecap="round"/></svg>
           </div>
           <h3 class="font-display font-medium text-lg text-ink mb-2 card-title">Content Strategy</h3>
@@ -281,9 +281,9 @@ function toggleMob() {
         </div>
       </div>
 
-      <div class="service-card rounded-2xl p-6 border border-[#E8E8F0] md:border-0" style="min-height:220px;">
+      <div class="service-card rounded-2xl p-6 border border-[#E8E8F0]" style="background:#ffffff;">
         <div class="card-content flex flex-col h-full">
-          <div class="card-icon mb-5">
+          <div class="card-icon mb-6">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M7 6L3 12L7 18" stroke="#7B68EE" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M17 6L21 12L17 18" stroke="#7B68EE" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><line x1="14" y1="5" x2="10" y2="19" stroke="#7B68EE" stroke-width="1.6" stroke-linecap="round"/></svg>
           </div>
           <h3 class="font-display font-medium text-lg text-ink mb-2 card-title">Technical SEO</h3>
@@ -294,9 +294,9 @@ function toggleMob() {
         </div>
       </div>
 
-      <div class="service-card rounded-2xl p-6 border border-[#E8E8F0] md:border-0" style="min-height:220px;">
+      <div class="service-card rounded-2xl p-6 border border-[#E8E8F0]" style="background:#ffffff;">
         <div class="card-content flex flex-col h-full">
-          <div class="card-icon mb-5">
+          <div class="card-icon mb-6">
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 1C10 1 11 8 19 10C11 12 10 19 10 19C10 19 9 12 1 10C9 8 10 1 10 1Z" fill="none" stroke="#C4900A" stroke-width="1.6" stroke-linejoin="round"/></svg>
           </div>
           <h3 class="font-display font-medium text-lg text-ink mb-2 card-title">AI Search Strategy</h3>
@@ -307,9 +307,9 @@ function toggleMob() {
         </div>
       </div>
 
-      <div class="service-card rounded-2xl p-6 border border-[#E8E8F0] md:border-0" style="min-height:220px;">
+      <div class="service-card rounded-2xl p-6 border border-[#E8E8F0]" style="background:#ffffff;">
         <div class="card-content flex flex-col h-full">
-          <div class="card-icon mb-5">
+          <div class="card-icon mb-6">
             <svg width="24" height="24" viewBox="0 0 20 20" fill="none"><circle cx="5" cy="10" r="2" stroke="#5E7082" stroke-width="1.6"/><circle cx="15" cy="5" r="2" stroke="#5E7082" stroke-width="1.6"/><circle cx="15" cy="15" r="2" stroke="#5E7082" stroke-width="1.6"/><path d="M7 9l6-3M7 11l6 3" stroke="#5E7082" stroke-width="1.6" stroke-linecap="round"/></svg>
           </div>
           <h3 class="font-display font-medium text-lg text-ink mb-2 card-title">Off-site SEO</h3>
@@ -328,7 +328,7 @@ function toggleMob() {
 </section>
 
 <!-- ABOUT TEASER -->
-<section class="bg-white py-12 md:pt-0 md:pb-20">
+<section class="bg-white py-12 md:py-20">
   <div class="max-w-6xl mx-auto px-6">
   <div class="rounded-3xl px-8 py-10 md:px-14 md:py-14 flex flex-col md:grid md:grid-cols-2 md:gap-x-16 md:gap-y-5 md:items-center gap-6" style="background:#F0EFFE;">
 
@@ -422,9 +422,9 @@ function toggleMob() {
 </section>
 
 <!-- ABOUT SECTION -->
-<section class="py-12 md:pt-8 md:pb-20" style="background:#ffffff;">
+<section class="py-12 md:py-20" style="background:#ffffff;">
   <div class="max-w-6xl mx-auto px-6">
-    <div class="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+    <div class="grid md:grid-cols-2 gap-12 md:gap-24 items-center">
 
       <!-- Copy top: badge + h2 (mobile: above portrait) -->
       <div class="text-center md:text-left order-1 md:order-1">
@@ -482,7 +482,7 @@ function toggleMob() {
     </div>
 
     <!-- Stats row -->
-    <div class="rounded-2xl mt-12 md:mt-16 px-8 py-10 md:px-12 md:py-10" style="background:#fff5f2;box-shadow:0 2px 16px -4px rgba(244,123,90,0.12);">
+    <div class="rounded-2xl mt-12 md:mt-20 px-8 py-10 md:px-12 md:py-12" style="background:#fff5f2;box-shadow:0 2px 16px -4px rgba(244,123,90,0.12);">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
         <div class="text-center md:text-left">
           <div class="font-display font-extrabold text-coral mb-1 stat-num" data-target="13" data-prefix="" data-suffix="+" style="font-size:2rem;letter-spacing:-0.02em;font-weight:750;">0</div>
@@ -590,7 +590,7 @@ function toggleMob() {
 
 
 <!-- CTA BANNER -->
-<section class="relative overflow-hidden bg-white pt-8 pb-20 px-6 text-center">
+<section class="relative overflow-hidden bg-white py-20 px-6 text-center">
   <div class="absolute -left-16 top-1/2 -translate-y-1/2 w-64 h-64 rounded-full" style="background: radial-gradient(circle, #F47B5A18 0%, transparent 70%);"></div>
   <div class="absolute -right-16 top-1/2 -translate-y-1/2 w-64 h-64 rounded-full" style="background: radial-gradient(circle, #7B68EE18 0%, transparent 70%);"></div>
   <div class="relative z-10 max-w-xl mx-auto">
