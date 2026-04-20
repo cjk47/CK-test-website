@@ -43,7 +43,7 @@
   .fade-up-3 { animation: fadeUp 0.55s 0.2s cubic-bezier(0.22,1,0.36,1) both; }
   .fade-up-4 { animation: fadeUp 0.55s 0.3s cubic-bezier(0.22,1,0.36,1) both; }
   @media (min-width: 768px) { .brand-logos img { transform: scale(1.06); transform-origin: left center; } .brand-logos .logo-row { gap: 1.8rem; } .brand-logos .logo-row:first-child { margin-top: 0px; } .brand-logos .logo-row:last-child { margin-top: 7px; } .brands-col { margin-top: -8px !important; } .brand-logos .logo-row { align-items: center; } .brand-logos { margin-left: 3px !important; } .brand-logos .logo-cell { justify-content: flex-start !important; padding-left: 0 !important; } }
-  @media (max-width: 767px) { .brand-logos img { transform: scale(0.88); transform-origin: left center; } }
+  @media (max-width: 767px) { .brand-logos img { transform: scale(0.88); transform-origin: left center; } .brand-logos .logo-cell img { filter: grayscale(1) contrast(20) opacity(0.6) !important; mix-blend-mode: normal !important; } }
   .btn-coral { transition: filter 0.18s ease, transform 0.15s cubic-bezier(0.34,1.56,0.64,1); }
   .btn-coral:hover { filter: brightness(0.92); }
   .btn-coral:active { transform: scale(0.96); filter: brightness(0.88); }
@@ -268,7 +268,7 @@ function toggleMob() {
     </div>
     <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-5">
 
-      <div class="service-card rounded-2xl p-6" style="background:#FAF8F7;border:0.5px solid #C8C5D6;">
+      <div class="service-card rounded-2xl p-6" style="background:#FEFEFF;border:0.5px solid #C8C5D6;">
         <div class="card-content flex flex-col h-full">
           <div class="card-icon mb-6">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 5h16M4 10h12M4 15h16M4 20h10" stroke="#F47B5A" stroke-width="1.5" stroke-linecap="round"/></svg>
@@ -281,7 +281,7 @@ function toggleMob() {
         </div>
       </div>
 
-      <div class="service-card rounded-2xl p-6" style="background:#FAF8F7;border:0.5px solid #C8C5D6;">
+      <div class="service-card rounded-2xl p-6" style="background:#FEFEFF;border:0.5px solid #C8C5D6;">
         <div class="card-content flex flex-col h-full">
           <div class="card-icon mb-6">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M7 6L3 12L7 18" stroke="#7B68EE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M17 6L21 12L17 18" stroke="#7B68EE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><line x1="14" y1="5" x2="10" y2="19" stroke="#7B68EE" stroke-width="1.5" stroke-linecap="round"/></svg>
@@ -294,7 +294,7 @@ function toggleMob() {
         </div>
       </div>
 
-      <div class="service-card rounded-2xl p-6" style="background:#FAF8F7;border:0.5px solid #C8C5D6;">
+      <div class="service-card rounded-2xl p-6" style="background:#FEFEFF;border:0.5px solid #C8C5D6;">
         <div class="card-content flex flex-col h-full">
           <div class="card-icon mb-6">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 2C12 2 13 10 22 12C13 14 12 22 12 22C12 22 11 14 2 12C11 10 12 2 12 2Z" fill="none" stroke="#A07020" stroke-width="1.5" stroke-linejoin="round"/></svg>
@@ -307,7 +307,7 @@ function toggleMob() {
         </div>
       </div>
 
-      <div class="service-card rounded-2xl p-6" style="background:#FAF8F7;border:0.5px solid #C8C5D6;">
+      <div class="service-card rounded-2xl p-6" style="background:#FEFEFF;border:0.5px solid #C8C5D6;">
         <div class="card-content flex flex-col h-full">
           <div class="card-icon mb-6">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="6" cy="12" r="2.5" stroke="#3A62A7" stroke-width="1.5"/><circle cx="18" cy="6" r="2.5" stroke="#3A62A7" stroke-width="1.5"/><circle cx="18" cy="18" r="2.5" stroke="#3A62A7" stroke-width="1.5"/><path d="M8.5 10.8l7-3.6M8.5 13.2l7 3.6" stroke="#3A62A7" stroke-width="1.5" stroke-linecap="round"/></svg>

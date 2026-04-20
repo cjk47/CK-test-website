@@ -639,6 +639,16 @@ Amplify your SEO performance
     .principles-offset { margin-top: 0 !important; }
     #evolve-left, #evolve-right { transition-duration: 0.8s !important; }
     #evolve-vs { transition: opacity 0.3s ease 0.55s !important; }
+    .platforms-subsection { flex-direction: column !important; gap: 24px !important; }
+    .platforms-text { flex: none !important; width: 100% !important; }
+    .platforms-icons { display: none !important; }
+    .platforms-marquee-wrap { display: block !important; overflow: hidden; width: 100%; }
+    .platforms-marquee-track { display: flex; gap: 28px; width: max-content; animation: marquee-scroll 14s linear infinite; }
+    .platforms-marquee-track:hover { animation-play-state: paused; }
+    @keyframes marquee-scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
   }
   .prob-acc-item { transition: background 0.15s ease; border-radius: 8px; margin: 0 -12px; padding: 0 12px; }
   .prob-acc-item:hover { background: #f0effe; }
@@ -856,14 +866,14 @@ function selectProb(idx) {
     </div>
 
     <!-- Platforms subsection -->
-    <div style="margin-top:64px;padding-top:48px;border-top:1px solid #f0ede8;display:flex;flex-wrap:wrap;gap:40px;align-items:center;">
+    <div class="platforms-subsection" style="margin-top:64px;padding-top:48px;border-top:1px solid #f0ede8;display:flex;flex-wrap:wrap;gap:40px;align-items:center;">
       <!-- Left: text -->
-      <div style="flex:0 0 260px;">
+      <div class="platforms-text" style="flex:0 0 260px;">
         <p class="font-display font-bold text-ink" style="font-size:1.1rem;letter-spacing:-0.01em;line-height:1.3;margin-bottom:8px;">Optimized across every surface people search</p>
         <p style="font-size:0.875rem;color:#9CA3AF;line-height:1.65;">From classic search engines to AI answers and local maps.</p>
       </div>
       <!-- Right: icons -->
-      <div style="flex:1;display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between;">
+      <div class="platforms-icons" style="flex:1;display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between;">
         <!-- Google -->
         <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
           <div style="width:52px;height:52px;border-radius:50%;background:#fff0ec;border:none;display:flex;align-items:center;justify-content:center;">
@@ -902,7 +912,7 @@ function selectProb(idx) {
           <div style="width:52px;height:52px;border-radius:50%;background:#fff0ec;border:none;display:flex;align-items:center;justify-content:center;">
             <img src="maps_512dp.png" width="28" height="28" alt="Google Maps"/>
           </div>
-          <span style="font-size:0.72rem;color:#9CA3AF;font-weight:500;">Google Maps</span>
+          <span style="font-size:0.72rem;color:#9CA3AF;font-weight:500;"><span class="hidden md:inline">Google </span>Maps</span>
         </div>
         <!-- Gemini -->
         <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
@@ -910,6 +920,61 @@ function selectProb(idx) {
             <img src="gemini.avif" width="28" height="28" alt="Gemini" style="border-radius:50%;"/>
           </div>
           <span style="font-size:0.72rem;color:#9CA3AF;font-weight:500;">Gemini</span>
+        </div>
+      </div>
+      <!-- Mobile marquee -->
+      <div class="platforms-marquee-wrap" style="display:none;">
+        <div class="platforms-marquee-track">
+          <!-- Set 1 -->
+          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;flex-shrink:0;">
+            <div style="width:52px;height:52px;border-radius:50%;background:#fff0ec;display:flex;align-items:center;justify-content:center;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M21.8 12.2c0-.7-.1-1.4-.2-2H12v3.8h5.5a4.7 4.7 0 01-2 3.1v2.6h3.3c1.9-1.8 3-4.4 3-7.5z" fill="#3A62A7"/><path d="M12 22c2.7 0 5-.9 6.7-2.4l-3.3-2.6c-.9.6-2.1 1-3.4 1-2.6 0-4.8-1.8-5.6-4.1H3v2.6C4.7 19.8 8.1 22 12 22z" fill="#2e7050"/><path d="M6.4 13.9A6 6 0 016.1 12c0-.7.1-1.3.3-1.9V7.5H3A10 10 0 002 12c0 1.6.4 3.1 1 4.5l3.4-2.6z" fill="#A07020"/><path d="M12 5.9c1.5 0 2.8.5 3.8 1.5l2.8-2.8C16.9 2.9 14.7 2 12 2 8.1 2 4.7 4.2 3 7.5l3.4 2.6C7.2 7.7 9.4 5.9 12 5.9z" fill="#F47B5A"/></svg></div>
+            <span style="font-size:0.72rem;color:#9CA3AF;font-weight:500;">Google</span>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;flex-shrink:0;">
+            <div style="width:52px;height:52px;border-radius:50%;background:#fff0ec;display:flex;align-items:center;justify-content:center;"><img src="chatgpt.avif" width="28" height="28" alt="ChatGPT" style="border-radius:50%;"/></div>
+            <span style="font-size:0.72rem;color:#9CA3AF;font-weight:500;">ChatGPT</span>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;flex-shrink:0;">
+            <div style="width:52px;height:52px;border-radius:50%;background:#fff0ec;display:flex;align-items:center;justify-content:center;"><img src="claude.avif" width="28" height="28" alt="Claude" style="border-radius:50%;"/></div>
+            <span style="font-size:0.72rem;color:#9CA3AF;font-weight:500;">Claude</span>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;flex-shrink:0;">
+            <div style="width:52px;height:52px;border-radius:50%;background:#fff0ec;display:flex;align-items:center;justify-content:center;"><img src="perplexity.avif" width="28" height="28" alt="Perplexity" style="border-radius:50%;"/></div>
+            <span style="font-size:0.72rem;color:#9CA3AF;font-weight:500;">Perplexity</span>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;flex-shrink:0;">
+            <div style="width:52px;height:52px;border-radius:50%;background:#fff0ec;display:flex;align-items:center;justify-content:center;"><img src="maps_512dp.png" width="28" height="28" alt="Google Maps"/></div>
+            <span style="font-size:0.72rem;color:#9CA3AF;font-weight:500;">Maps</span>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;flex-shrink:0;">
+            <div style="width:52px;height:52px;border-radius:50%;background:#fff0ec;display:flex;align-items:center;justify-content:center;"><img src="gemini.avif" width="28" height="28" alt="Gemini" style="border-radius:50%;"/></div>
+            <span style="font-size:0.72rem;color:#9CA3AF;font-weight:500;">Gemini</span>
+          </div>
+          <!-- Set 2 (duplicate for seamless loop) -->
+          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;flex-shrink:0;">
+            <div style="width:52px;height:52px;border-radius:50%;background:#fff0ec;display:flex;align-items:center;justify-content:center;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M21.8 12.2c0-.7-.1-1.4-.2-2H12v3.8h5.5a4.7 4.7 0 01-2 3.1v2.6h3.3c1.9-1.8 3-4.4 3-7.5z" fill="#3A62A7"/><path d="M12 22c2.7 0 5-.9 6.7-2.4l-3.3-2.6c-.9.6-2.1 1-3.4 1-2.6 0-4.8-1.8-5.6-4.1H3v2.6C4.7 19.8 8.1 22 12 22z" fill="#2e7050"/><path d="M6.4 13.9A6 6 0 016.1 12c0-.7.1-1.3.3-1.9V7.5H3A10 10 0 002 12c0 1.6.4 3.1 1 4.5l3.4-2.6z" fill="#A07020"/><path d="M12 5.9c1.5 0 2.8.5 3.8 1.5l2.8-2.8C16.9 2.9 14.7 2 12 2 8.1 2 4.7 4.2 3 7.5l3.4 2.6C7.2 7.7 9.4 5.9 12 5.9z" fill="#F47B5A"/></svg></div>
+            <span style="font-size:0.72rem;color:#9CA3AF;font-weight:500;">Google</span>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;flex-shrink:0;">
+            <div style="width:52px;height:52px;border-radius:50%;background:#fff0ec;display:flex;align-items:center;justify-content:center;"><img src="chatgpt.avif" width="28" height="28" alt="ChatGPT" style="border-radius:50%;"/></div>
+            <span style="font-size:0.72rem;color:#9CA3AF;font-weight:500;">ChatGPT</span>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;flex-shrink:0;">
+            <div style="width:52px;height:52px;border-radius:50%;background:#fff0ec;display:flex;align-items:center;justify-content:center;"><img src="claude.avif" width="28" height="28" alt="Claude" style="border-radius:50%;"/></div>
+            <span style="font-size:0.72rem;color:#9CA3AF;font-weight:500;">Claude</span>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;flex-shrink:0;">
+            <div style="width:52px;height:52px;border-radius:50%;background:#fff0ec;display:flex;align-items:center;justify-content:center;"><img src="perplexity.avif" width="28" height="28" alt="Perplexity" style="border-radius:50%;"/></div>
+            <span style="font-size:0.72rem;color:#9CA3AF;font-weight:500;">Perplexity</span>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;flex-shrink:0;">
+            <div style="width:52px;height:52px;border-radius:50%;background:#fff0ec;display:flex;align-items:center;justify-content:center;"><img src="maps_512dp.png" width="28" height="28" alt="Google Maps"/></div>
+            <span style="font-size:0.72rem;color:#9CA3AF;font-weight:500;">Maps</span>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;flex-shrink:0;">
+            <div style="width:52px;height:52px;border-radius:50%;background:#fff0ec;display:flex;align-items:center;justify-content:center;"><img src="gemini.avif" width="28" height="28" alt="Gemini" style="border-radius:50%;"/></div>
+            <span style="font-size:0.72rem;color:#9CA3AF;font-weight:500;">Gemini</span>
+          </div>
         </div>
       </div>
     </div>
@@ -1012,7 +1077,7 @@ function selectProb(idx) {
       </div>
     </div>
     <div class="md:hidden mt-8 flex justify-start px-6">
-      <a href="contact.html" class="btn-outline-slate inline-flex items-center gap-2 border font-semibold px-5 py-2.5 rounded-full text-sm" style="border-color:rgba(92,122,143,0.35);color:#5c7a8f;">Get in touch →</a>
+      <a href="contact.html" class="btn-outline-slate inline-flex items-center gap-2 border font-semibold px-5 py-2.5 rounded-full text-sm" style="border-color:rgba(244,123,90,0.35);color:#d45a38;">Get in touch →</a>
     </div>
   </div>
 </section>
