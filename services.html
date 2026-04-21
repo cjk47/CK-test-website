@@ -35,6 +35,7 @@
 <style>
   body { font-family: 'Inter', sans-serif; background: #ffffff; color: #323232; }
   .font-display { font-family: 'Poppins', sans-serif; }
+  .section-pill { font-size: 12px !important; font-weight: 500 !important; letter-spacing: 0.05em !important; opacity: 0.78; }
   .btn-coral { transition: transform 0.2s cubic-bezier(0.22,1,0.36,1), box-shadow 0.2s cubic-bezier(0.22,1,0.36,1); }
   .btn-coral:hover { transform: translateY(-2px); box-shadow: 0 10px 28px -6px rgba(244,123,90,0.45); }
   .btn-coral:active { transform: translateY(0); }
@@ -162,7 +163,7 @@ document.querySelectorAll(".mob-nav-link").forEach(function(l){
 
       <!-- LEFT -->
       <div id="svc-hero-left" class="text-center md:text-left flex flex-col items-center md:items-start justify-center">
-        <div class="inline-flex items-center gap-2 text-coral text-xs font-semibold px-3 py-1.5 rounded-full mb-5" style="background:#ffe8df;">
+        <div class="section-pill inline-flex items-center gap-2 text-coral text-xs font-semibold px-3 py-1.5 rounded-full mb-5" style="background:#ffe8df;">
           How I can help
         </div>
         <div id="svc-main-content">
@@ -425,7 +426,7 @@ document.querySelectorAll(".mob-nav-link").forEach(function(l){
 <!-- VALUE PROP BAND -->
 <section id="what-i-do" class="pt-16 pb-6 md:pt-[50px] md:pb-[52px]" style="background:#ffffff;scroll-margin-top:64px;">
   <div class="max-w-6xl mx-auto px-6 text-left md:text-center flex flex-col items-start md:items-center">
-    <div class="inline-flex items-center gap-2 bg-coral-light text-coral text-xs font-semibold px-3 py-1.5 rounded-full mb-5">
+    <div class="section-pill inline-flex items-center gap-2 bg-coral-light text-coral text-xs font-semibold px-3 py-1.5 rounded-full mb-5">
       SEO services
     </div>
     <h2 class="svc-h2" style="font-family:'Poppins',sans-serif;font-weight:750;font-size:clamp(1.875rem,3.6vw,2.26rem);color:#1A1A2E;letter-spacing:-0.02em;line-height:1.2;margin-bottom:12px;">
@@ -659,7 +660,7 @@ Amplify your SEO performance
     opacity: 0.45;
   }
   .prob-item:hover { background:rgba(0,0,0,0.03); opacity:0.7; }
-  .prob-item.prob-active { background:rgba(123,104,238,0.07); opacity:1; }
+  .prob-item.prob-active { background:rgba(123,104,238,0.04); opacity:1; }
   .prob-item .prob-icon {
     flex-shrink:0;width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;
     background:rgba(0,0,0,0.04);transition:background 0.18s ease;
@@ -679,7 +680,7 @@ Amplify your SEO performance
     <div style="width:300px;margin-bottom:20px;">
       <div class="inline-flex items-center gap-2 text-xs font-semibold px-3 py-1.5 rounded-full" style="background:#e8e4fd;color:#7B68EE;">Sound familiar?</div>
     </div>
-    <div class="prob-layout" style="display:flex;gap:64px;align-items:center;">
+    <div class="prob-layout" style="display:flex;gap:100px;align-items:center;">
 
       <!-- LEFT: sticky heading + problem list -->
       <div class="prob-sticky" style="width:300px;flex-shrink:0;align-self:flex-start;position:sticky;top:88px;">
@@ -710,11 +711,8 @@ Amplify your SEO performance
         </div>
       </div>
 
-      <!-- Divider -->
-      <div style="flex-shrink:0;width:1px;align-self:stretch;background:linear-gradient(to bottom, transparent, rgba(123,104,238,0.2) 20%, rgba(123,104,238,0.2) 80%, transparent);"></div>
-
       <!-- RIGHT: diagnosis — no card, content sits on background -->
-      <div id="prob-card" class="prob-diag-panel" style="flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center;padding-left:8px;">
+      <div id="prob-card" class="prob-diag-panel" style="flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center;padding-left:40px;">
         <h3 id="prob-headline" class="font-display text-ink" style="font-size:clamp(1.3rem,2.2vw,1.6rem);line-height:1.2;letter-spacing:-0.02em;font-weight:620;margin-bottom:32px;">Search traffic is trending down.</h3>
         <div class="prob-diag-cols" style="display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-bottom:1.9rem;">
           <div>
@@ -732,13 +730,13 @@ Amplify your SEO performance
           <div style="display:flex;flex-direction:column;justify-content:center;gap:14px;flex:1;min-width:0;padding:24px 28px;background:#FDFBFF;">
             <!-- Logo only -->
             <div>
-              <img id="prob-case-logo" src="xvivo.png" alt="" style="height:17px;width:auto;object-fit:contain;object-position:left;filter:grayscale(1) contrast(1.4);mix-blend-mode:multiply;">
+              <img id="prob-case-logo" src="xvivo.png" alt="" style="height:15px;width:auto;object-fit:contain;object-position:left;filter:grayscale(1) contrast(1.4);mix-blend-mode:multiply;opacity:0.55;">
             </div>
             <!-- Headline — 3 forced lines -->
             <p class="font-display" style="font-size:1.1rem;font-weight:700;color:#1a1a2e;line-height:1.45;margin:0;">
               <span id="prob-case-line1" style="display:block;">Organic traffic was dropping.</span>
               <span id="prob-case-line2" style="display:block;">After a technical SEO rebuild,</span>
-              <span id="prob-case-line3" style="display:block;color:#7B68EE;font-weight:800;">it grew 45%.</span>
+              <span id="prob-case-line3" style="display:block;color:#7B68EE;font-weight:700;">it grew 45%.</span>
             </p>
             <!-- Filled violet button -->
             <a id="prob-case-link" href="case-study-xvivo.html" class="btn-violet" style="display:inline-flex;align-items:center;gap:6px;background:#7B68EE;color:#fff;font-size:0.78rem;font-weight:600;padding:8px 18px;border-radius:8px;flex-shrink:0;white-space:nowrap;text-decoration:none;align-self:flex-start;">Read case study <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
@@ -829,7 +827,7 @@ function selectProb(idx) {
   document.getElementById('prob-case-link').href = d.caseLink;
   var logo = document.getElementById('prob-case-logo');
   logo.src = d.caseLogo;
-  logo.style.cssText = 'height:17px;width:auto;object-fit:contain;object-position:left;' + (d.caseLogoStyle || 'filter:grayscale(1) contrast(1.4);mix-blend-mode:multiply;');
+  logo.style.cssText = 'height:15px;width:auto;object-fit:contain;object-position:left;opacity:0.55;' + (d.caseLogoStyle || 'filter:grayscale(1) contrast(1.4);mix-blend-mode:multiply;');
   document.getElementById('prob-case-line1').textContent = d.caseLine1;
   document.getElementById('prob-case-line2').textContent = d.caseLine2;
   document.getElementById('prob-case-line3').textContent = d.caseLine3;
@@ -845,7 +843,7 @@ function selectProb(idx) {
 
     <!-- Heading -->
     <div class="text-left md:text-center mb-14 flex flex-col items-start md:items-center">
-      <div class="inline-flex items-center gap-2 text-xs font-semibold px-3 py-1.5 rounded-full mb-5" style="background:#fff0ed;color:#F47B5A;">
+      <div class="section-pill inline-flex items-center gap-2 text-xs font-semibold px-3 py-1.5 rounded-full mb-5" style="background:#fff0ed;color:#F47B5A;">
         Search is evolving
       </div>
       <h2 class="font-display font-extrabold text-ink svc-h2" style="font-size:clamp(1.875rem,3.6vw,2.26rem);letter-spacing:-0.02em;line-height:1.2;font-weight:750;">Modernize your SEO strategy</h2>
@@ -1064,7 +1062,7 @@ function selectProb(idx) {
 
       <!-- LEFT: sticky -->
       <div class="principles-sticky" style="width:280px;flex-shrink:0;position:sticky;top:108px;align-self:flex-start;padding-top:44px;">
-        <div class="inline-flex items-center gap-2 text-xs font-semibold px-3 py-1.5 rounded-full mb-5" style="background:#fde0d8;color:#d45a38;">
+        <div class="section-pill inline-flex items-center gap-2 text-xs font-semibold px-3 py-1.5 rounded-full mb-5" style="background:#fde0d8;color:#d45a38;">
           My approach
         </div>
         <h2 class="font-display font-extrabold text-ink mb-4 svc-h2" style="font-size:clamp(1.875rem,3.6vw,2.46rem);line-height:1.15;letter-spacing:-0.03em;font-weight:750;">Principles behind the work</h2>
@@ -1141,7 +1139,7 @@ function selectProb(idx) {
 
         <!-- Left: label + heading + desc -->
         <div class="process-left">
-          <div class="inline-flex items-center gap-2 text-xs font-semibold px-3 py-1.5 rounded-full mb-4" style="background:#e8e4fd;color:#7B68EE;">My process</div>
+          <div class="section-pill inline-flex items-center gap-2 text-xs font-semibold px-3 py-1.5 rounded-full mb-4" style="background:#e8e4fd;color:#7B68EE;">My process</div>
           <h2 class="font-display font-extrabold text-ink mb-4" style="font-size:clamp(1.5rem,2.8vw,1.9rem);letter-spacing:-0.02em;line-height:1.2;font-weight:750;">How we'll work together</h2>
           <p class="text-muted" style="font-size:0.9rem;line-height:1.7;">I'll guide you through each step, so you're confident in my approach.</p>
         </div>
@@ -1190,7 +1188,7 @@ function selectProb(idx) {
 <!-- CTA -->
 <section class="relative overflow-hidden bg-white pt-20 pb-20 px-6 text-center">
   <div class="relative z-10 max-w-xl mx-auto">
-    <div class="inline-flex items-center gap-2 text-coral text-xs font-semibold px-3 py-1.5 rounded-full mb-5" style="background:#FFF1EC;">
+    <div class="section-pill inline-flex items-center gap-2 text-coral text-xs font-semibold px-3 py-1.5 rounded-full mb-5" style="background:#FFF1EC;">
       Let's Talk
     </div>
     <h2 class="font-display font-bold text-4xl text-ink tracking-tight mb-4 svc-h2" style="font-weight:750;">Ready to get discovered?</h2>
