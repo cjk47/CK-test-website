@@ -182,73 +182,15 @@ function toggleMob() {
   </div>
 </section>
 
-<!-- STATS BANNER -->
-<section class="pb-8 pt-8" style="background:#ffffff;">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="rounded-2xl px-10 py-12" style="background:linear-gradient(135deg,#7B68EE,#5E4DD6);" id="stats-banner">
-      <p class="font-display font-bold text-white text-center mb-10" style="font-size:2.4rem;letter-spacing:-0.03em;">By the numbers</p>
-      <div class="flex flex-col md:flex-row md:justify-center items-center md:items-stretch">
-
-        <div class="px-8 py-2 md:py-0 border-b md:border-b-0 md:border-r border-white/25 text-center md:text-left" style="min-width:260px;">
-          <p class="font-display font-bold text-white mb-1" style="font-size:2.75rem;line-height:1;letter-spacing:-0.03em;"><span class="count-up" data-target="13" data-prefix="" data-suffix="+">0</span></p>
-          <p style="color:rgba(255,255,255,0.65);font-size:0.8rem;font-family:'Inter',sans-serif;line-height:1.5;">Years in organic search</p>
-        </div>
-
-        <div class="px-8 py-4 md:py-0 border-b md:border-b-0 md:border-r border-white/25 text-center md:text-left" style="min-width:260px;">
-          <p class="font-display font-bold text-white mb-1" style="font-size:2.75rem;line-height:1;letter-spacing:-0.03em;"><span class="count-up" data-target="100" data-prefix="" data-suffix="+">0</span></p>
-          <p style="color:rgba(255,255,255,0.65);font-size:0.8rem;font-family:'Inter',sans-serif;line-height:1.5;">Clients worked with</p>
-        </div>
-
-        <div class="px-8 py-4 md:py-0 border-b md:border-b-0 md:border-r border-white/25 text-center md:text-left" style="min-width:260px;">
-          <p class="font-display font-bold text-white mb-1" style="font-size:2.75rem;line-height:1;letter-spacing:-0.03em;"><span class="count-up" data-target="10" data-prefix="$" data-suffix="M+">0</span></p>
-          <p style="color:rgba(255,255,255,0.65);font-size:0.8rem;font-family:'Inter',sans-serif;line-height:1.5;">In organic revenue driven</p>
-        </div>
-
-        <div class="px-8 py-4 md:py-0 text-center md:text-left" style="min-width:260px;">
-          <p class="font-display font-bold text-white mb-1" style="font-size:2.75rem;line-height:1;letter-spacing:-0.03em;"><span class="count-up" data-target="97" data-prefix="" data-suffix="%">0</span></p>
-          <p style="color:rgba(255,255,255,0.65);font-size:0.8rem;font-family:'Inter',sans-serif;line-height:1.5;">Client retention rate</p>
-        </div>
-
-      </div>
-    </div>
-  </div>
-</section>
-<script>
-(function(){
-  var els = document.querySelectorAll('.count-up');
-  var fired = false;
-  function runCounters() {
-    if (fired) return;
-    fired = true;
-    els.forEach(function(el) {
-      var target = parseInt(el.dataset.target, 10);
-      var prefix = el.dataset.prefix || '';
-      var suffix = el.dataset.suffix || '';
-      var duration = 900;
-      var start = performance.now();
-      function tick(now) {
-        var elapsed = now - start;
-        var progress = Math.min(elapsed / duration, 1);
-        var eased = 1 - Math.pow(1 - progress, 3);
-        var val = Math.round(eased * target);
-        el.textContent = prefix + val + suffix;
-        if (progress < 1) requestAnimationFrame(tick);
-      }
-      requestAnimationFrame(tick);
-    });
-  }
-  new IntersectionObserver(function(entries, obs) {
-    if (entries[0].isIntersecting) { runCounters(); obs.disconnect(); }
-  }, { threshold: 0.3 }).observe(document.getElementById('stats-banner'));
-})();
-</script>
 
 <!-- TIMELINE -->
 <section class="pt-10 pb-20" style="background:#ffffff;">
-  <div class="max-w-4xl mx-auto px-6">
+  <div class="max-w-6xl mx-auto px-6">
+    <div style="background:#F9F8FF;border-radius:20px;padding:52px 64px 60px;border:1px solid #ece9f7;">
+    <div class="max-w-4xl mx-auto">
 
     <div class="text-center mb-16">
-      <div class="inline-flex items-center gap-2 bg-coral-light text-coral text-xs font-semibold px-3 py-1.5 rounded-full mb-5">
+      <div class="inline-flex items-center gap-2 text-xs font-semibold px-3 py-1.5 rounded-full mb-5" style="background:#ede9fd;color:#7B68EE;">
         Timeline
       </div>
       <h2 class="font-display font-bold text-ink mb-3" style="font-size:clamp(1.8rem,3vw,2.5rem);letter-spacing:-0.02em;line-height:1.2;">How I got here</h2>
@@ -258,15 +200,15 @@ function toggleMob() {
     <!-- Desktop timeline -->
     <div id="tl-desktop" class="hidden md:block" style="position:relative;">
       <div id="tl-desktop-line" style="position:absolute;left:50%;width:1.5px;background:#E5E7EB;transform:translateX(-50%);overflow:hidden;">
-        <div id="tl-desktop-fill" style="position:absolute;top:0;left:0;width:100%;height:0;background:#F47B5A;transition:height 0.1s linear;"></div>
+        <div id="tl-desktop-fill" style="position:absolute;top:0;left:0;width:100%;height:0;background:#7B68EE;transition:height 0.1s linear;"></div>
       </div>
 
       <!-- Item 1: left -->
       <div style="display:flex;align-items:flex-start;margin-bottom:60px;position:relative;">
-        <div style="position:absolute;left:50%;top:22px;transform:translateX(-50%);z-index:2;width:28px;height:28px;border-radius:50%;background:radial-gradient(circle, #fff 18%, #F47B5A 18%);border:2px solid #F47B5A;box-shadow:0 0 0 20px #fff;" class="tl-dot"></div>
+        <div style="position:absolute;left:50%;top:22px;transform:translateX(-50%);z-index:2;width:28px;height:28px;border-radius:50%;background:radial-gradient(circle, #fff 18%, #7B68EE 18%);border:2px solid #7B68EE;" class="tl-dot"></div>
         <div style="flex:1;text-align:right;padding-right:66px;">
           <div style="display:flex;justify-content:flex-end;margin-bottom:10px;">
-            <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M3 10.5V9a1 1 0 011-1h16a1 1 0 011 1v1.5a2 2 0 000 3V15a1 1 0 01-1 1H4a1 1 0 01-1-1v-1.5a2 2 0 000-3z" stroke="#F47B5A" stroke-width="1.5" stroke-linejoin="round"/><line x1="9" y1="8" x2="9" y2="16" stroke="#F9B49A" stroke-width="1.5" stroke-dasharray="2 2"/></svg>
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M3 10.5V9a1 1 0 011-1h16a1 1 0 011 1v1.5a2 2 0 000 3V15a1 1 0 01-1 1H4a1 1 0 01-1-1v-1.5a2 2 0 000-3z" stroke="#7B68EE" stroke-width="1.5" stroke-linejoin="round"/><line x1="9" y1="8" x2="9" y2="16" stroke="#B0A4EE" stroke-width="1.5" stroke-dasharray="2 2"/></svg>
           </div>
           <p class="font-display font-semibold text-ink mb-1" style="font-size:0.95rem;letter-spacing:-0.01em;">2013</p>
           <p class="text-sm text-muted" style="line-height:1.7;">Led SEO for a live entertainment startup that was acquired by StubHub.</p>
@@ -276,11 +218,11 @@ function toggleMob() {
 
       <!-- Item 2: right -->
       <div style="display:flex;align-items:flex-start;margin-bottom:60px;position:relative;">
-        <div style="position:absolute;left:50%;top:22px;transform:translateX(-50%);z-index:2;width:28px;height:28px;border-radius:50%;background:radial-gradient(circle, #fff 18%, #F47B5A 18%);border:2px solid #F47B5A;box-shadow:0 0 0 20px #fff;" class="tl-dot"></div>
+        <div style="position:absolute;left:50%;top:22px;transform:translateX(-50%);z-index:2;width:28px;height:28px;border-radius:50%;background:radial-gradient(circle, #fff 18%, #7B68EE 18%);border:2px solid #7B68EE;" class="tl-dot"></div>
         <div style="flex:1;"></div>
         <div style="flex:1;padding-left:66px;">
           <div style="margin-bottom:10px;">
-            <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><rect x="2" y="7" width="20" height="14" rx="2" stroke="#F9B49A" stroke-width="1.5"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2" stroke="#F47B5A" stroke-width="1.5" stroke-linejoin="round"/><line x1="12" y1="12" x2="12" y2="16" stroke="#F47B5A" stroke-width="1.5" stroke-linecap="round"/><line x1="10" y1="14" x2="14" y2="14" stroke="#F47B5A" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><rect x="2" y="7" width="20" height="14" rx="2" stroke="#B0A4EE" stroke-width="1.5"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2" stroke="#7B68EE" stroke-width="1.5" stroke-linejoin="round"/><line x1="12" y1="12" x2="12" y2="16" stroke="#7B68EE" stroke-width="1.5" stroke-linecap="round"/><line x1="10" y1="14" x2="14" y2="14" stroke="#7B68EE" stroke-width="1.5" stroke-linecap="round"/></svg>
           </div>
           <p class="font-display font-semibold text-ink mb-1" style="font-size:0.95rem;letter-spacing:-0.01em;">2015</p>
           <p class="text-sm text-muted" style="line-height:1.7;">Spent several years in the agency world managing SEO for Fortune 500 brands at Havas, Publicis, and Cronin.</p>
@@ -289,10 +231,10 @@ function toggleMob() {
 
       <!-- Item 3: left -->
       <div style="display:flex;align-items:flex-start;margin-bottom:60px;position:relative;">
-        <div style="position:absolute;left:50%;top:22px;transform:translateX(-50%);z-index:2;width:28px;height:28px;border-radius:50%;background:radial-gradient(circle, #fff 18%, #F47B5A 18%);border:2px solid #F47B5A;box-shadow:0 0 0 20px #fff;" class="tl-dot"></div>
+        <div style="position:absolute;left:50%;top:22px;transform:translateX(-50%);z-index:2;width:28px;height:28px;border-radius:50%;background:radial-gradient(circle, #fff 18%, #7B68EE 18%);border:2px solid #7B68EE;" class="tl-dot"></div>
         <div style="flex:1;text-align:right;padding-right:66px;">
           <div style="display:flex;justify-content:flex-end;margin-bottom:10px;">
-            <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="#F47B5A" stroke-width="1.5"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke="#F9B49A" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="#7B68EE" stroke-width="1.5"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke="#B0A4EE" stroke-width="1.5" stroke-linecap="round"/></svg>
           </div>
           <p class="font-display font-semibold text-ink mb-1" style="font-size:0.95rem;letter-spacing:-0.01em;">2022</p>
           <p class="text-sm text-muted" style="line-height:1.7;">Launched my freelance SEO business, working with small to medium-sized companies.</p>
@@ -302,11 +244,11 @@ function toggleMob() {
 
       <!-- Item 4: right -->
       <div style="display:flex;align-items:flex-start;position:relative;">
-        <div style="position:absolute;left:50%;top:22px;transform:translateX(-50%);z-index:2;width:28px;height:28px;border-radius:50%;background:radial-gradient(circle, #fff 18%, #F47B5A 18%);border:2px solid #F47B5A;box-shadow:0 0 0 20px #fff;" class="tl-dot"></div>
+        <div style="position:absolute;left:50%;top:22px;transform:translateX(-50%);z-index:2;width:28px;height:28px;border-radius:50%;background:radial-gradient(circle, #fff 18%, #7B68EE 18%);border:2px solid #7B68EE;" class="tl-dot"></div>
         <div style="flex:1;"></div>
         <div style="flex:1;padding-left:66px;">
           <div style="margin-bottom:10px;">
-            <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><rect x="2" y="13" width="4" height="8" rx="1" stroke="#F47B5A" stroke-width="1.5"/><rect x="10" y="9" width="4" height="12" rx="1" stroke="#F9B49A" stroke-width="1.5"/><rect x="18" y="4" width="4" height="17" rx="1" stroke="#F47B5A" stroke-width="1.5"/></svg>
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><rect x="2" y="13" width="4" height="8" rx="1" stroke="#7B68EE" stroke-width="1.5"/><rect x="10" y="9" width="4" height="12" rx="1" stroke="#B0A4EE" stroke-width="1.5"/><rect x="18" y="4" width="4" height="17" rx="1" stroke="#7B68EE" stroke-width="1.5"/></svg>
           </div>
           <p class="font-display font-semibold text-ink mb-1" style="font-size:0.95rem;letter-spacing:-0.01em;">2023 – Present</p>
           <p class="text-sm text-muted" style="line-height:1.7;">Joined Bounteous to lead the SEO department, while continuing to take on freelance clients.</p>
@@ -318,15 +260,15 @@ function toggleMob() {
     <!-- Mobile timeline -->
     <div id="tl-mobile" class="md:hidden" style="position:relative;max-width:420px;margin:0 auto;">
       <div id="tl-mobile-line" style="position:absolute;left:50%;transform:translateX(-50%);width:1.5px;background:#E5E7EB;overflow:hidden;">
-        <div id="tl-mobile-fill" style="position:absolute;top:0;left:0;width:100%;height:0;background:#F47B5A;transition:height 0.1s linear;"></div>
+        <div id="tl-mobile-fill" style="position:absolute;top:0;left:0;width:100%;height:0;background:#7B68EE;transition:height 0.1s linear;"></div>
       </div>
 
       <!-- Item 1: left -->
       <div style="display:flex;align-items:flex-start;margin-bottom:48px;position:relative;">
-        <div style="position:absolute;left:50%;top:14px;transform:translateX(-50%);z-index:2;width:28px;height:28px;border-radius:50%;background:radial-gradient(circle, #fff 18%, #F47B5A 18%);border:2px solid #F47B5A;" class="tl-dot-mobile"></div>
+        <div style="position:absolute;left:50%;top:14px;transform:translateX(-50%);z-index:2;width:28px;height:28px;border-radius:50%;background:radial-gradient(circle, #fff 18%, #7B68EE 18%);border:2px solid #7B68EE;" class="tl-dot-mobile"></div>
         <div style="flex:1;text-align:right;padding-right:44px;">
           <div style="display:flex;justify-content:flex-end;margin-bottom:8px;">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M3 10.5V9a1 1 0 011-1h16a1 1 0 011 1v1.5a2 2 0 000 3V15a1 1 0 01-1 1H4a1 1 0 01-1-1v-1.5a2 2 0 000-3z" stroke="#F47B5A" stroke-width="1.5" stroke-linejoin="round"/><line x1="9" y1="8" x2="9" y2="16" stroke="#F9B49A" stroke-width="1.5" stroke-dasharray="2 2"/></svg>
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M3 10.5V9a1 1 0 011-1h16a1 1 0 011 1v1.5a2 2 0 000 3V15a1 1 0 01-1 1H4a1 1 0 01-1-1v-1.5a2 2 0 000-3z" stroke="#7B68EE" stroke-width="1.5" stroke-linejoin="round"/><line x1="9" y1="8" x2="9" y2="16" stroke="#B0A4EE" stroke-width="1.5" stroke-dasharray="2 2"/></svg>
           </div>
           <p class="font-display font-semibold text-ink mb-1" style="font-size:0.9rem;letter-spacing:-0.01em;">2013</p>
           <p class="text-sm text-muted" style="line-height:1.7;">Led SEO for a live entertainment startup that was acquired by StubHub.</p>
@@ -336,11 +278,11 @@ function toggleMob() {
 
       <!-- Item 2: right -->
       <div style="display:flex;align-items:flex-start;margin-bottom:48px;position:relative;">
-        <div style="position:absolute;left:50%;top:14px;transform:translateX(-50%);z-index:2;width:28px;height:28px;border-radius:50%;background:radial-gradient(circle, #fff 18%, #F47B5A 18%);border:2px solid #F47B5A;" class="tl-dot-mobile"></div>
+        <div style="position:absolute;left:50%;top:14px;transform:translateX(-50%);z-index:2;width:28px;height:28px;border-radius:50%;background:radial-gradient(circle, #fff 18%, #7B68EE 18%);border:2px solid #7B68EE;" class="tl-dot-mobile"></div>
         <div style="flex:1;"></div>
         <div style="flex:1;padding-left:44px;">
           <div style="margin-bottom:8px;">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="2" y="7" width="20" height="14" rx="2" stroke="#F9B49A" stroke-width="1.5"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2" stroke="#F47B5A" stroke-width="1.5" stroke-linejoin="round"/><line x1="12" y1="12" x2="12" y2="16" stroke="#F47B5A" stroke-width="1.5" stroke-linecap="round"/><line x1="10" y1="14" x2="14" y2="14" stroke="#F47B5A" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="2" y="7" width="20" height="14" rx="2" stroke="#B0A4EE" stroke-width="1.5"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2" stroke="#7B68EE" stroke-width="1.5" stroke-linejoin="round"/><line x1="12" y1="12" x2="12" y2="16" stroke="#7B68EE" stroke-width="1.5" stroke-linecap="round"/><line x1="10" y1="14" x2="14" y2="14" stroke="#7B68EE" stroke-width="1.5" stroke-linecap="round"/></svg>
           </div>
           <p class="font-display font-semibold text-ink mb-1" style="font-size:0.9rem;letter-spacing:-0.01em;">2015</p>
           <p class="text-sm text-muted" style="line-height:1.7;">Spent several years in the agency world managing SEO for Fortune 500 brands at Havas, Publicis, and Cronin.</p>
@@ -349,10 +291,10 @@ function toggleMob() {
 
       <!-- Item 3: left -->
       <div style="display:flex;align-items:flex-start;margin-bottom:48px;position:relative;">
-        <div style="position:absolute;left:50%;top:14px;transform:translateX(-50%);z-index:2;width:28px;height:28px;border-radius:50%;background:radial-gradient(circle, #fff 18%, #F47B5A 18%);border:2px solid #F47B5A;" class="tl-dot-mobile"></div>
+        <div style="position:absolute;left:50%;top:14px;transform:translateX(-50%);z-index:2;width:28px;height:28px;border-radius:50%;background:radial-gradient(circle, #fff 18%, #7B68EE 18%);border:2px solid #7B68EE;" class="tl-dot-mobile"></div>
         <div style="flex:1;text-align:right;padding-right:44px;">
           <div style="display:flex;justify-content:flex-end;margin-bottom:8px;">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="#F47B5A" stroke-width="1.5"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke="#F9B49A" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="#7B68EE" stroke-width="1.5"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke="#B0A4EE" stroke-width="1.5" stroke-linecap="round"/></svg>
           </div>
           <p class="font-display font-semibold text-ink mb-1" style="font-size:0.9rem;letter-spacing:-0.01em;">2022</p>
           <p class="text-sm text-muted" style="line-height:1.7;">Launched my freelance SEO business, working with small to medium-sized companies.</p>
@@ -362,11 +304,11 @@ function toggleMob() {
 
       <!-- Item 4: right -->
       <div style="display:flex;align-items:flex-start;position:relative;">
-        <div style="position:absolute;left:50%;top:14px;transform:translateX(-50%);z-index:2;width:28px;height:28px;border-radius:50%;background:radial-gradient(circle, #fff 18%, #F47B5A 18%);border:2px solid #F47B5A;" class="tl-dot-mobile"></div>
+        <div style="position:absolute;left:50%;top:14px;transform:translateX(-50%);z-index:2;width:28px;height:28px;border-radius:50%;background:radial-gradient(circle, #fff 18%, #7B68EE 18%);border:2px solid #7B68EE;" class="tl-dot-mobile"></div>
         <div style="flex:1;"></div>
         <div style="flex:1;padding-left:44px;">
           <div style="margin-bottom:8px;">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="3" y="14" width="4" height="7" rx="1" stroke="#F47B5A" stroke-width="1.6"/><rect x="10" y="9" width="4" height="12" rx="1" stroke="#F9B49A" stroke-width="1.6"/><rect x="17" y="4" width="4" height="17" rx="1" stroke="#F47B5A" stroke-width="1.6"/></svg>
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="3" y="14" width="4" height="7" rx="1" stroke="#7B68EE" stroke-width="1.6"/><rect x="10" y="9" width="4" height="12" rx="1" stroke="#B0A4EE" stroke-width="1.6"/><rect x="17" y="4" width="4" height="17" rx="1" stroke="#7B68EE" stroke-width="1.6"/></svg>
           </div>
           <p class="font-display font-semibold text-ink mb-1" style="font-size:0.9rem;letter-spacing:-0.01em;">2023 – Present</p>
           <p class="text-sm text-muted" style="line-height:1.7;">Joined Bounteous to lead the SEO department, while continuing to take on freelance clients.</p>
@@ -374,6 +316,8 @@ function toggleMob() {
       </div>
 
     </div>
+    </div><!-- end inner -->
+    </div><!-- end card -->
   </div>
 </section>
 <script>
@@ -423,6 +367,143 @@ function toggleMob() {
   window.addEventListener('resize', init);
   window.addEventListener('scroll', updateFill, { passive: true });
 })();
+</script>
+
+<!-- BRANDS I'VE WORKED WITH -->
+<section style="background:#ffffff;padding:72px 0 80px;">
+  <div class="max-w-6xl mx-auto px-6">
+
+    <div class="text-center mb-10">
+      <div class="inline-flex items-center gap-2 text-xs font-semibold px-3 py-1.5 rounded-full mb-5" style="background:#fff0ed;color:#F47B5A;">Brands</div>
+      <h2 class="font-display font-bold text-ink mb-3" style="font-size:clamp(1.8rem,3vw,2.5rem);letter-spacing:-0.02em;line-height:1.2;">Brands I've worked with</h2>
+      <p class="text-muted mx-auto" style="max-width:440px;line-height:1.75;">In-house, at agencies, and as a freelancer — across a range of industries.</p>
+    </div>
+
+    <!-- Filter pills -->
+    <div class="flex flex-wrap justify-center gap-2 mb-12" id="brand-filters">
+      <button onclick="filterBrands('all')" class="brand-filter brand-filter-active text-xs font-semibold px-4 py-1.5 rounded-full transition-all duration-150">All</button>
+      <button onclick="filterBrands('food')" class="brand-filter text-xs font-semibold px-4 py-1.5 rounded-full transition-all duration-150">Food & Beverage</button>
+      <button onclick="filterBrands('finance')" class="brand-filter text-xs font-semibold px-4 py-1.5 rounded-full transition-all duration-150">Financial</button>
+      <button onclick="filterBrands('hospitality')" class="brand-filter text-xs font-semibold px-4 py-1.5 rounded-full transition-all duration-150">Hospitality</button>
+      <button onclick="filterBrands('tech')" class="brand-filter text-xs font-semibold px-4 py-1.5 rounded-full transition-all duration-150">Technology</button>
+      <button onclick="filterBrands('cpg')" class="brand-filter text-xs font-semibold px-4 py-1.5 rounded-full transition-all duration-150">CPG & Retail</button>
+      <button onclick="filterBrands('media')" class="brand-filter text-xs font-semibold px-4 py-1.5 rounded-full transition-all duration-150">Media & Publishing</button>
+    </div>
+
+    <!-- Logo grid -->
+    <div id="brand-grid" style="display:grid;grid-template-columns:repeat(5,1fr);gap:16px 0;">
+
+      <div class="brand-item brand-cell" data-cat="food">
+        <img src="1h-applbees.png" alt="Applebee's" class="brand-logo" style="max-height:33px;max-width:138px;">
+      </div>
+      <div class="brand-item brand-cell" data-cat="food">
+        <img src="logo3.png" alt="Pizza Hut" class="brand-logo" style="max-height:43px;max-width:125px;">
+      </div>
+      <div class="brand-item brand-cell" data-cat="food">
+        <img src="1h-hennessy.png" alt="Hennessy" class="brand-logo" style="max-height:53px;max-width:113px;">
+      </div>
+      <div class="brand-item brand-cell" data-cat="food">
+        <img src="logo12.jpg" alt="Ragú" class="brand-logo" style="max-height:38px;max-width:100px;">
+      </div>
+      <div class="brand-item brand-cell" data-cat="food">
+        <img src="logo13.png" alt="Gerber" class="brand-logo" style="max-height:48px;max-width:113px;">
+      </div>
+
+      <div class="brand-item brand-cell" data-cat="finance">
+        <img src="1h-chase.png" alt="Chase" class="brand-logo" style="max-height:38px;max-width:125px;">
+      </div>
+      <div class="brand-item brand-cell" data-cat="finance">
+        <img src="logo19.png" alt="Amica" class="brand-logo" style="max-height:33px;max-width:113px;">
+      </div>
+      <div class="brand-item brand-cell" data-cat="hospitality">
+        <img src="1h-bestwestern.png" alt="Best Western" class="brand-logo" style="max-height:50px;max-width:163px;">
+      </div>
+      <div class="brand-item brand-cell" data-cat="tech">
+        <img src="1h-ibm.png" alt="IBM" class="brand-logo" style="max-height:23px;max-width:100px;">
+      </div>
+      <div class="brand-item brand-cell" data-cat="tech">
+        <img src="1h-playstation.png" alt="PlayStation" class="brand-logo" style="max-height:35px;max-width:150px;">
+      </div>
+
+      <div class="brand-item brand-cell" data-cat="tech">
+        <img src="logo15.png" alt="Dish" class="brand-logo" style="max-height:33px;max-width:100px;">
+      </div>
+      <div class="brand-item brand-cell" data-cat="cpg">
+        <img src="1h-oralb.png" alt="Oral-B" class="brand-logo" style="max-height:35px;max-width:113px;">
+      </div>
+      <div class="brand-item brand-cell" data-cat="cpg">
+        <img src="logo14.png" alt="P&G" class="brand-logo" style="max-height:48px;max-width:75px;">
+      </div>
+      <div class="brand-item brand-cell" data-cat="cpg">
+        <img src="logo7.webp" alt="Marc Jacobs" class="brand-logo" style="max-height:23px;max-width:163px;">
+      </div>
+      <div class="brand-item brand-cell" data-cat="media">
+        <img src="1h-HarperCollins.png" alt="HarperCollins" class="brand-logo" style="max-height:50px;max-width:125px;">
+      </div>
+
+      <!-- Last row: 2 items, centered with spacers -->
+      <div class="brand-item brand-cell" data-cat="media" style="grid-column:2;">
+        <img src="2016_Discovery_logo.svg" alt="Discovery" class="brand-logo" style="max-height:33px;max-width:138px;">
+      </div>
+      <div class="brand-item brand-cell" data-cat="media" style="grid-column:4;">
+        <img src="er-logo-menu-blk.png" alt="Epic Reads" class="brand-logo" style="max-height:25px;max-width:125px;">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .brand-filter {
+    background: #fff;
+    color: #6B7280;
+    border: 1px solid #f0ded8;
+  }
+  .brand-filter:hover {
+    background: #fff0ed;
+    color: #F47B5A;
+    border-color: #f4c0b0;
+  }
+  .brand-filter-active {
+    background: #F47B5A !important;
+    color: #fff !important;
+    border-color: #F47B5A !important;
+  }
+  /* Logo cells: fixed 160×80px containers, logo centered inside */
+  .brand-cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 160px;
+    height: 80px;
+    margin: 0 auto;
+  }
+  .brand-logo {
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    filter: grayscale(100%) opacity(0.55);
+    transition: filter 0.2s ease, opacity 0.2s ease;
+  }
+  .brand-cell:hover .brand-logo {
+    filter: grayscale(0%) opacity(1);
+  }
+  .brand-item.hidden-brand {
+    display: none;
+  }
+</style>
+<script>
+function filterBrands(cat) {
+  document.querySelectorAll('.brand-filter').forEach(function(b) { b.classList.remove('brand-filter-active'); });
+  event.currentTarget.classList.add('brand-filter-active');
+  document.querySelectorAll('.brand-item').forEach(function(item) {
+    if (cat === 'all' || item.dataset.cat === cat) {
+      item.classList.remove('hidden-brand');
+    } else {
+      item.classList.add('hidden-brand');
+    }
+  });
+}
 </script>
 
 <!-- GUITAR STRINGS -->

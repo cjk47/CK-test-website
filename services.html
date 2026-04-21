@@ -655,16 +655,17 @@ Amplify your SEO performance
 <style>
   .prob-item {
     width:100%;display:flex;align-items:center;gap:14px;padding:12px 14px;background:none;border:none;cursor:pointer;text-align:left;border-radius:10px;
-    transition:background 0.18s ease;
+    transition:background 0.18s ease, opacity 0.18s ease;
+    opacity: 0.45;
   }
-  .prob-item:hover { background:rgba(0,0,0,0.03); }
-  .prob-item.prob-active { background:rgba(123,104,238,0.07); }
+  .prob-item:hover { background:rgba(0,0,0,0.03); opacity:0.7; }
+  .prob-item.prob-active { background:rgba(123,104,238,0.07); opacity:1; }
   .prob-item .prob-icon {
     flex-shrink:0;width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;
     background:rgba(0,0,0,0.04);transition:background 0.18s ease;
   }
   .prob-item.prob-active .prob-icon { background:rgba(123,104,238,0.1); }
-  .prob-item.prob-active span:last-child { color:#323232 !important; }
+  .prob-item.prob-active span:last-child { }
   .prob-diag-panel { animation: probFadeIn 0.22s ease; }
   @keyframes probFadeIn { from { opacity:0;transform:translateY(6px); } to { opacity:1;transform:translateY(0); } }
   @media (max-width: 767px) {
@@ -675,11 +676,13 @@ Amplify your SEO performance
 </style>
 <section style="background:#F9F8FF;padding:80px 0;">
   <div class="max-w-6xl mx-auto px-6">
-    <div class="prob-layout" style="display:flex;gap:64px;align-items:stretch;">
+    <div style="width:300px;margin-bottom:20px;">
+      <div class="inline-flex items-center gap-2 text-xs font-semibold px-3 py-1.5 rounded-full" style="background:#e8e4fd;color:#7B68EE;">Sound familiar?</div>
+    </div>
+    <div class="prob-layout" style="display:flex;gap:64px;align-items:center;">
 
       <!-- LEFT: sticky heading + problem list -->
       <div class="prob-sticky" style="width:300px;flex-shrink:0;align-self:flex-start;position:sticky;top:88px;">
-        <div class="inline-flex items-center gap-2 text-xs font-semibold px-3 py-1.5 rounded-full mb-5" style="background:#e8e4fd;color:#7B68EE;">Sound familiar?</div>
         <h2 class="font-display font-extrabold text-ink svc-h2" style="font-size:clamp(1.875rem,3.6vw,2.26rem);line-height:1.2;letter-spacing:-0.02em;font-weight:750;margin-bottom:12px;">Common SEO problems I solve</h2>
         <p class="text-muted mb-7" style="line-height:1.7;font-size:1rem;">Select a problem to see what could be causing it, and how I fix it.</p>
 
@@ -708,7 +711,7 @@ Amplify your SEO performance
       </div>
 
       <!-- Divider -->
-      <div style="flex-shrink:0;width:1px;background:linear-gradient(to bottom, transparent, rgba(123,104,238,0.2) 20%, rgba(123,104,238,0.2) 80%, transparent);"></div>
+      <div style="flex-shrink:0;width:1px;align-self:stretch;background:linear-gradient(to bottom, transparent, rgba(123,104,238,0.2) 20%, rgba(123,104,238,0.2) 80%, transparent);"></div>
 
       <!-- RIGHT: diagnosis — no card, content sits on background -->
       <div id="prob-card" class="prob-diag-panel" style="flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center;padding-left:8px;">
@@ -724,18 +727,26 @@ Amplify your SEO performance
           </div>
         </div>
         <!-- Client highlight card -->
-        <div style="display:flex;align-items:center;gap:24px;background:#FDFCFF;border-radius:14px;padding:20px 24px;border:1px solid #ece9f7;border-left:2px solid rgba(244,123,90,0.6);">
-          <!-- Left: label row + headline stacked -->
-          <div style="display:flex;flex-direction:column;gap:12px;flex:1;min-width:0;">
-            <div style="display:flex;align-items:center;gap:10px;">
-              <span style="font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#7B68EE;">Case study</span>
-              <span style="width:1px;height:11px;background:rgba(0,0,0,0.18);flex-shrink:0;"></span>
-              <img id="prob-case-logo" src="xvivo.png" alt="" style="height:16px;width:auto;object-fit:contain;object-position:left;filter:grayscale(1) opacity(0.5);">
+        <div style="display:flex;align-items:stretch;background:#FDFBFF;border-radius:14px;border:1px solid #ece9f7;overflow:hidden;min-height:160px;">
+          <!-- Left panel -->
+          <div style="display:flex;flex-direction:column;justify-content:center;gap:14px;flex:1;min-width:0;padding:24px 28px;background:#FDFBFF;">
+            <!-- Logo only -->
+            <div>
+              <img id="prob-case-logo" src="xvivo.png" alt="" style="height:17px;width:auto;object-fit:contain;object-position:left;filter:grayscale(1) contrast(1.4);mix-blend-mode:multiply;">
             </div>
-            <p id="prob-case-headline" class="font-display" style="font-size:1rem;font-weight:700;color:#1a1a2e;line-height:1.4;margin:0;max-width:80%;">Organic traffic was dropping. After a technical SEO rebuild, it grew 45%.</p>
+            <!-- Headline — 3 forced lines -->
+            <p class="font-display" style="font-size:1.1rem;font-weight:700;color:#1a1a2e;line-height:1.45;margin:0;">
+              <span id="prob-case-line1" style="display:block;">Organic traffic was dropping.</span>
+              <span id="prob-case-line2" style="display:block;">After a technical SEO rebuild,</span>
+              <span id="prob-case-line3" style="display:block;color:#7B68EE;font-weight:800;">it grew 45%.</span>
+            </p>
+            <!-- Filled violet button -->
+            <a id="prob-case-link" href="case-study-xvivo.html" class="btn-violet" style="display:inline-flex;align-items:center;gap:6px;background:#7B68EE;color:#fff;font-size:0.78rem;font-weight:600;padding:8px 18px;border-radius:8px;flex-shrink:0;white-space:nowrap;text-decoration:none;align-self:flex-start;">Read case study <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
           </div>
-          <!-- Right: button vertically centered -->
-          <a id="prob-case-link" href="case-study-xvivo.html" class="btn-violet" style="display:inline-flex;align-items:center;gap:6px;background:#ede9fd;color:#7B68EE;font-size:0.78rem;font-weight:600;padding:7px 16px;border-radius:20px;flex-shrink:0;white-space:nowrap;text-decoration:none;">Read case study <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <!-- Right panel: chart image vertically centered -->
+          <div style="width:44%;flex-shrink:0;position:relative;overflow:hidden;">
+            <img id="prob-case-image" src="9e49903e-2fcc-4fdc-b864-8e19789e742e.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center calc(50% + 4px);display:block;mix-blend-mode:multiply;">
+          </div>
         </div>
       </div>
 
@@ -749,7 +760,11 @@ var probData = [
     cause: 'Increased competition, seasonality, algorithm updates, changes in how results are displayed, declining search demand, lost backlinks, or content decay.',
     fix: 'I run a forensic audit to find where traffic is leaking, then fix the root issue, whether that\'s content gaps, technical problems, or something else, and build a prioritized recovery plan.',
     caseLogo: 'xvivo.png',
-    caseHeadline: 'Organic traffic was dropping. After a technical SEO rebuild, it grew 45%.',
+    caseLine1: 'Organic traffic was dropping.',
+    caseLine2: 'After a technical SEO rebuild,',
+    caseLine3: 'it grew 45%.',
+    caseImage: '9e49903e-2fcc-4fdc-b864-8e19789e742e.png',
+    caseImageStyle: 'object-position:center calc(50% + 4px);',
     caseLink: 'case-study-xvivo.html'
   },
   {
@@ -757,7 +772,11 @@ var probData = [
     cause: 'Stronger authority, better site experience, higher-quality content, more content across key topics, or structural issues that make it easier for competitors to win those topics.',
     fix: 'I run a gap analysis across content, authority, and site structure to pinpoint where competitors have the edge, then build a focused plan to close those gaps.',
     caseLogo: 'rukkus.png',
-    caseHeadline: 'Competitors dominated search. Off-site SEO closed the gap, leading to a buyout.',
+    caseLogoStyle: 'height:27px;margin-left:-4px;filter:grayscale(1) invert(1) brightness(8);mix-blend-mode:multiply;opacity:0.55;',
+    caseLine1: 'Competitors dominated search.',
+    caseLine2: 'Off-site SEO closed the gap,',
+    caseLine3: 'leading to a buyout.',
+    caseImage: 'prob2.png',
     caseLink: 'case-study-rukkus.html'
   },
   {
@@ -765,7 +784,11 @@ var probData = [
     cause: 'Weak SEO fundamentals, content that isn\'t structured for AI retrieval, poor trust and expertise signals, limited topical authority and missing schema markup.',
     fix: 'Fixes could include reworking your pages into answer-first passages, strengthening E-E-A-T signals, or building topical authority through content clusters.',
     caseLogo: 'newbw.webp',
-    caseHeadline: 'AI visibility was low. Content restructuring drove 349% growth.',
+    caseLogoStyle: 'height:20px;filter:grayscale(1) contrast(0.7) brightness(1.6);mix-blend-mode:multiply;',
+    caseLine1: 'AI visibility was low.',
+    caseLine2: 'Content restructuring',
+    caseLine3: 'drove 349% growth.',
+    caseImage: 'prob3.png',
     caseLink: 'case-study-best-western.html'
   },
   {
@@ -773,7 +796,11 @@ var probData = [
     cause: 'Content misaligned with search intent, thin topic coverage, targeting low-volume queries, and weaker authority compared to competitors with stronger links and deeper content.',
     fix: 'I analyze your content to find what\'s holding it back, then build a plan. This could include optimizing pages to better address customer pain points or strengthening authority.',
     caseLogo: 'er-logo-menu-blk.png',
-    caseHeadline: 'Content wasn\'t performing. Aligning it to search demand grew traffic 35%.',
+    caseLogoStyle: 'height:18px;filter:grayscale(1) contrast(0.7) brightness(1.6);mix-blend-mode:multiply;',
+    caseLine1: 'Content wasn\'t performing.',
+    caseLine2: 'Aligning it to search demand',
+    caseLine3: 'grew traffic 35%.',
+    caseImage: 'prob4.png',
     caseLink: 'case-study-epic-reads.html'
   },
   {
@@ -781,7 +808,11 @@ var probData = [
     cause: 'Low-intent queries driving most of your traffic, landing pages that don\'t match what searchers want when they arrive, and weak conversion paths once they\'re on the page.',
     fix: 'Align SEO with your funnel by targeting high-intent queries, sharpening landing pages to match what visitors came for, and guiding users toward conversion in a natural, helpful way.',
     caseLogo: 'xvivo.png',
-    caseHeadline: 'Traffic wasn\'t converting. A content and UX overhaul increased leads 27%.',
+    caseLine1: 'Traffic wasn\'t converting.',
+    caseLine2: 'A content and UX overhaul',
+    caseLine3: 'increased leads 27%.',
+    caseImage: 'prob5.png',
+    caseImageStyle: 'transform:scale(0.82);transform-origin:center;',
     caseLink: 'case-study-xvivo.html'
   }
 ];
@@ -796,8 +827,15 @@ function selectProb(idx) {
   document.getElementById('prob-cause').textContent = d.cause;
   document.getElementById('prob-fix').textContent = d.fix;
   document.getElementById('prob-case-link').href = d.caseLink;
-  document.getElementById('prob-case-logo').src = d.caseLogo;
-  document.getElementById('prob-case-headline').textContent = d.caseHeadline;
+  var logo = document.getElementById('prob-case-logo');
+  logo.src = d.caseLogo;
+  logo.style.cssText = 'height:17px;width:auto;object-fit:contain;object-position:left;' + (d.caseLogoStyle || 'filter:grayscale(1) contrast(1.4);mix-blend-mode:multiply;');
+  document.getElementById('prob-case-line1').textContent = d.caseLine1;
+  document.getElementById('prob-case-line2').textContent = d.caseLine2;
+  document.getElementById('prob-case-line3').textContent = d.caseLine3;
+  var img = document.getElementById('prob-case-image');
+  img.src = d.caseImage;
+  img.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center;display:block;mix-blend-mode:multiply;' + (d.caseImageStyle || '');
 }
 </script>
 

@@ -56,7 +56,7 @@
   a.service-card { text-decoration: none; color: inherit; display: block; cursor: pointer; }
   .card-content { position: relative; z-index: 1; }
 .card-icon { display: flex; align-items: flex-start; height: 24px; }
-  @media (min-width: 768px) { .card-title-row { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; } .card-title-row .card-icon { margin-bottom: 0; height: 26px; flex-shrink: 0; } .card-title-row .card-title { margin-bottom: 0; font-size: 17px; } .card-title-row + .card-desc { margin-top: 2px; } }
+  @media (min-width: 768px) { .card-title-row { display: flex; align-items: center; gap: 13px; margin-bottom: 8px; } .card-title-row .card-icon { margin-bottom: 0; height: 26px; flex-shrink: 0; } .card-title-row .card-title { margin-bottom: 0; font-size: 17px; -webkit-text-stroke: 0.2px currentColor; } .card-title-row + .card-desc { margin-top: 12px; } .svc-header-row { margin-bottom: 34px !important; } .service-card .mt-auto { padding-top: 35px !important; } }
   @keyframes hero-circle-pulse {
     0%, 100% { transform: scale(1); }
     50%       { transform: scale(1.1); }
@@ -258,7 +258,7 @@ function toggleMob() {
 <!-- SERVICES TEASER -->
 <section class="pt-8 pb-12 md:pt-16 md:pb-10" style="background:#ffffff;">
   <div class="max-w-6xl mx-auto px-6">
-    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8 md:mb-6">
+    <div class="svc-header-row flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8 md:mb-9">
       <div class="text-center md:text-left flex flex-col items-center md:items-start">
         <div class="inline-flex items-center gap-2 text-coral text-xs font-semibold px-3 py-1.5 rounded-full mb-4" style="background:#ffece5;">
           What I do
@@ -269,7 +269,7 @@ function toggleMob() {
     </div>
     <div class="grid sm:grid-cols-2 md:grid-cols-[1fr_1px_1fr_1px_1fr_1px_1fr] gap-5">
 
-      <div class="service-card rounded-2xl p-6" style="background:#FEFEFF;">
+      <div class="service-card rounded-2xl p-6">
         <div class="card-content flex flex-col h-full">
           <div class="card-title-row">
             <div class="card-icon mb-6">
@@ -277,16 +277,16 @@ function toggleMob() {
             </div>
             <h3 class="font-display font-medium text-ink mb-2 card-title">Content Strategy</h3>
           </div>
-          <p class="text-sm text-muted card-desc" style="line-height:1.65">Find what your audience is searching for and deliver content that people and robots will love.</p>
+          <p class="text-sm text-muted card-desc" style="line-height:1.77">Find what your audience is searching for and deliver content that people and robots will love.</p>
           <div class="mt-auto pt-5">
             <span class="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold" style="background:#fff0ed;color:#F47B5A;">Capture high-intent traffic</span>
           </div>
         </div>
       </div>
 
-      <div class="hidden md:flex items-center justify-center self-stretch"><div style="width:1px;height:65%;background:#ECEAF4;"></div></div>
+      <div class="hidden md:flex items-center justify-center self-stretch"><div style="width:1px;height:72%;background:#ECEAF4;opacity:0.9;"></div></div>
 
-      <div class="service-card rounded-2xl p-6" style="background:#FEFEFF;">
+      <div class="service-card rounded-2xl p-6">
         <div class="card-content flex flex-col h-full">
           <div class="card-title-row">
             <div class="card-icon mb-6">
@@ -294,16 +294,16 @@ function toggleMob() {
             </div>
             <h3 class="font-display font-medium text-ink mb-2 card-title">Technical SEO</h3>
           </div>
-          <p class="text-sm text-muted card-desc" style="line-height:1.65">Fix what's holding your site back behind the scenes, from crawl issues to indexation to speed.</p>
+          <p class="text-sm text-muted card-desc" style="line-height:1.77">Fix what's holding your site back behind the scenes, from crawl issues to indexation to speed.</p>
           <div class="mt-auto pt-5">
             <span class="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold" style="background:#edeafd;color:#7B68EE;">Improve crawling & indexing</span>
           </div>
         </div>
       </div>
 
-      <div class="hidden md:flex items-center justify-center self-stretch"><div style="width:1px;height:65%;background:#ECEAF4;"></div></div>
+      <div class="hidden md:flex items-center justify-center self-stretch"><div style="width:1px;height:72%;background:#ECEAF4;opacity:0.9;"></div></div>
 
-      <div class="service-card rounded-2xl p-6" style="background:#FEFEFF;">
+      <div class="service-card rounded-2xl p-6">
         <div class="card-content flex flex-col h-full">
           <div class="card-title-row">
             <div class="card-icon mb-6">
@@ -311,16 +311,16 @@ function toggleMob() {
             </div>
             <h3 class="font-display font-medium text-ink mb-2 card-title">AI Search</h3>
           </div>
-          <p class="text-sm text-muted card-desc" style="line-height:1.65">Make your brand easy for AI to understand, trust, and cite in tools like AI Overviews and ChatGPT.</p>
+          <p class="text-sm text-muted card-desc" style="line-height:1.77">Make your brand easy for AI to understand, trust, and cite in tools like AI Overviews and ChatGPT.</p>
           <div class="mt-auto pt-5">
             <span class="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold" style="background:#fef3d4;color:#A07020;">Show up in AI answers</span>
           </div>
         </div>
       </div>
 
-      <div class="hidden md:flex items-center justify-center self-stretch"><div style="width:1px;height:65%;background:#ECEAF4;"></div></div>
+      <div class="hidden md:flex items-center justify-center self-stretch"><div style="width:1px;height:72%;background:#ECEAF4;opacity:0.9;"></div></div>
 
-      <div class="service-card rounded-2xl p-6" style="background:#FEFEFF;">
+      <div class="service-card rounded-2xl p-6">
         <div class="card-content flex flex-col h-full">
           <div class="card-title-row">
             <div class="card-icon mb-6">
@@ -328,7 +328,7 @@ function toggleMob() {
             </div>
             <h3 class="font-display font-medium text-ink mb-2 card-title">Off-site SEO</h3>
           </div>
-          <p class="text-sm text-muted card-desc" style="line-height:1.65">Earn quality backlinks and mentions that strengthen your site's authority in search.</p>
+          <p class="text-sm text-muted card-desc" style="line-height:1.77">Earn quality backlinks and mentions that strengthen your site's authority in search.</p>
           <div class="mt-auto pt-5">
             <span class="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold" style="background:#ddeaf8;color:#3A62A7;">Build authority & trust</span>
           </div>
@@ -357,8 +357,8 @@ function toggleMob() {
 
     <!-- Mobile: order 2 | Desktop: col 1 rows 1–2 — graph -->
     <div class="relative order-2 md:col-start-1 md:row-start-1 md:row-span-2">
-      <div class="relative rounded-2xl overflow-hidden" style="background:#f7f6fe;">
-        <svg id="chart-svg" width="100%" viewBox="13 58 595 322" preserveAspectRatio="xMidYMid meet" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block;background:#f7f6fe;width:100%;height:auto;">
+      <div class="relative rounded-2xl overflow-hidden" style="background:#faf9fe;">
+        <svg id="chart-svg" width="100%" viewBox="13 58 595 322" preserveAspectRatio="xMidYMid meet" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block;background:#faf9fe;width:100%;height:auto;">
           <defs>
             <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
               <stop offset="0%" stop-color="#7B68EE" stop-opacity="0.14"/>
@@ -375,56 +375,58 @@ function toggleMob() {
               <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
             </filter>
             <linearGradient id="fadeRight" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0%" stop-color="#f4f2ff" stop-opacity="0"/>
-              <stop offset="70%" stop-color="#f4f2ff" stop-opacity="0.5"/>
-              <stop offset="100%" stop-color="#f9f8ff" stop-opacity="1"/>
+              <stop offset="0%" stop-color="#faf9fe" stop-opacity="0"/>
+              <stop offset="70%" stop-color="#faf9fe" stop-opacity="0.5"/>
+              <stop offset="100%" stop-color="#faf9fe" stop-opacity="1"/>
             </linearGradient>
           </defs>
 
+          <!-- ── Background ── -->
+          <rect x="13" y="58" width="595" height="322" fill="#faf9fe"/>
+
           <!-- ── Grid lines ── -->
-          <line x1="70" y1="95"  x2="582" y2="95"  stroke="#F3F4F6" stroke-width="1"/>
-          <text x="57" y="99"  font-family="'Inter',sans-serif" font-size="9" fill="#D1D5DB" text-anchor="end">3K</text>
-          <line x1="70" y1="173" x2="582" y2="173" stroke="#F3F4F6" stroke-width="1"/>
-          <text x="57" y="177" font-family="'Inter',sans-serif" font-size="9" fill="#D1D5DB" text-anchor="end">2.5K</text>
-          <line x1="70" y1="251" x2="582" y2="251" stroke="#F3F4F6" stroke-width="1"/>
-          <text x="57" y="255" font-family="'Inter',sans-serif" font-size="9" fill="#D1D5DB" text-anchor="end">2K</text>
-          <line x1="70" y1="330" x2="582" y2="330" stroke="#F3F4F6" stroke-width="1"/>
-          <text x="57" y="334" font-family="'Inter',sans-serif" font-size="9" fill="#D1D5DB" text-anchor="end">1.5K</text>
+          <line x1="70" y1="95" x2="582" y2="95" stroke="#C8C4E8" stroke-width="0.6" stroke-dasharray="6,5" stroke-opacity="0.28"/>
+          <text x="57" y="99" font-family="'Inter',sans-serif" font-size="9" fill="#9B97B8" text-anchor="end">3K</text>
+          <line x1="70" y1="173" x2="582" y2="173" stroke="#C8C4E8" stroke-width="0.6" stroke-dasharray="6,5" stroke-opacity="0.28"/>
+          <text x="57" y="177" font-family="'Inter',sans-serif" font-size="9" fill="#9B97B8" text-anchor="end">2.5K</text>
+          <line x1="70" y1="251" x2="582" y2="251" stroke="#C8C4E8" stroke-width="0.6" stroke-dasharray="6,5" stroke-opacity="0.28"/>
+          <text x="57" y="255" font-family="'Inter',sans-serif" font-size="9" fill="#9B97B8" text-anchor="end">2K</text>
+          <line x1="70" y1="330" x2="582" y2="330" stroke="#C8C4E8" stroke-width="0.6" stroke-dasharray="6,5" stroke-opacity="0.28"/>
+          <text x="57" y="334" font-family="'Inter',sans-serif" font-size="9" fill="#9B97B8" text-anchor="end">1.5K</text>
 
           <!-- ── Area fill ── -->
-          <path d="M 60,330 L 60,272 C 76,272 91,255 107,255 C 124,255 140,263 156,263 C 172,263 188,248 204,248 C 220,248 236,247 252,247 C 268,247 284,245 300,245 C 316,238 332,226 348,224 C 364,220 380,214 396,214 C 412,214 428,219 444,219 C 460,219 476,200 492,186 C 508,172 524,154 540,148 C 556,143 568,138 582,136 L 582,330 Z" fill="url(#areaGrad)" clip-path="url(#revealClip)"/>
+          <path d="M 60,330 L 60,258 C 66,258 74,258 90,258 C 102,258 110,260 117,261 C 132,263 150,264 163,264 C 178,263 196,258 210,257 C 222,256 236,226 252,227 C 268,227 286,227 300,227 C 312,225 332,215 348,214 C 364,213 382,219 396,220 C 411,220 429,203 444,200 C 460,196 478,186 492,183 C 508,182 526,168 540,166 C 556,160 570,141 582,137 L 582,330 Z" fill="url(#areaGrad)" clip-path="url(#revealClip)"/>
 
           <!-- ── Line ── -->
-          <path d="M 60,272 C 76,272 91,255 107,255 C 124,255 140,263 156,263 C 172,263 188,248 204,248 C 220,248 236,247 252,247 C 268,247 284,245 300,245 C 316,238 332,226 348,224 C 364,220 380,214 396,214 C 412,214 428,219 444,219 C 460,219 476,200 492,186 C 508,172 524,154 540,148 C 556,143 568,138 582,136" stroke="#7B68EE" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" clip-path="url(#revealClip)" filter="url(#lineGlow)"/>
+          <path d="M 60,258 C 66,258 74,258 90,258 C 102,258 110,260 117,261 C 132,263 150,264 163,264 C 178,263 196,258 210,257 C 222,256 236,226 252,227 C 268,227 286,227 300,227 C 312,225 332,215 348,214 C 364,213 382,219 396,220 C 411,220 429,203 444,200 C 460,196 478,186 492,183 C 508,182 526,168 540,166 C 556,160 570,141 582,137" stroke="#7B68EE" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" clip-path="url(#revealClip)" filter="url(#lineGlow)"/>
+
 
           <!-- ── Jun marker ── -->
           <g id="chart-marker" style="opacity:0;transition:opacity 1.2s ease;">
-            <circle cx="300" cy="245" r="5" fill="#F4956F" stroke="white" stroke-width="2.5"/>
-            <!-- Short upward vertical line centered on circle and label -->
-            <line x1="300" y1="245" x2="300" y2="155" stroke="#F4956F" stroke-width="1" stroke-dasharray="3,2"/>
-            <!-- Tooltip centered at x=300 -->
-            <rect x="249" y="105" width="102" height="50" rx="10" fill="transparent" stroke="#FFCFBE" stroke-width="1"/>
-            <text x="259" y="121" font-family="'Poppins',sans-serif" font-size="9.5" font-weight="500" fill="#F47B5A">My optimizations</text>
-            <rect x="259" y="128" width="44" height="17" rx="5" fill="#dcfce7" stroke="#bbf7d0" stroke-width="0.8"/>
-            <polygon points="266,139 269.5,134.5 273,139" fill="#15803d"/>
-            <text x="275" y="139.5" font-family="'Inter',sans-serif" font-size="8.5" font-weight="700" fill="#15803d">37%</text>
+            <circle cx="300" cy="227" r="5" fill="#7B68EE" stroke="white" stroke-width="2.5"/>
+            <!-- Light violet dotted vertical line to tooltip -->
+            <line x1="300" y1="222" x2="300" y2="155" stroke="#b4a6f8" stroke-width="1.2" stroke-dasharray="4,4"/>
+            <!-- Tooltip: white card with shadow -->
+            <rect x="251" y="105" width="99" height="50" rx="10" fill="white" filter="url(#tipShadow)"/>
+            <text x="261" y="121" font-family="'Inter',sans-serif" font-size="9.5" font-weight="600" fill="#7B68EE">My optimizations</text>
+            <rect x="261" y="128" width="42" height="17" rx="5" fill="#dcfce7" stroke="#bbf7d0" stroke-width="0.8"/>
+            <polygon points="268,139 271.5,134.5 275,139" fill="#15803d"/>
+            <text x="277" y="139.5" font-family="'Inter',sans-serif" font-size="8.5" font-weight="700" fill="#15803d">37%</text>
           </g>
 
           <!-- ── X labels ── -->
-          <text x="70"  y="352" font-family="'Inter',sans-serif" font-size="9" fill="#D1D5DB" text-anchor="middle">Jan</text>
-          <text x="107" y="352" font-family="'Inter',sans-serif" font-size="9" fill="#D1D5DB" text-anchor="middle">Feb</text>
-          <text x="156" y="352" font-family="'Inter',sans-serif" font-size="9" fill="#D1D5DB" text-anchor="middle">Mar</text>
-          <text x="204" y="352" font-family="'Inter',sans-serif" font-size="9" fill="#D1D5DB" text-anchor="middle">Apr</text>
-          <text x="252" y="352" font-family="'Inter',sans-serif" font-size="9" fill="#D1D5DB" text-anchor="middle">May</text>
-          <text x="300" y="352" font-family="'Inter',sans-serif" font-size="9" font-weight="600" fill="#D1D5DB" text-anchor="middle">Jun</text>
-          <text x="348" y="352" font-family="'Inter',sans-serif" font-size="9" fill="#D1D5DB" text-anchor="middle">Jul</text>
-          <text x="396" y="352" font-family="'Inter',sans-serif" font-size="9" fill="#D1D5DB" text-anchor="middle">Aug</text>
-          <text x="444" y="352" font-family="'Inter',sans-serif" font-size="9" fill="#D1D5DB" text-anchor="middle">Sep</text>
-          <text x="492" y="352" font-family="'Inter',sans-serif" font-size="9" fill="#D1D5DB" text-anchor="middle">Oct</text>
-          <text x="540" y="352" font-family="'Inter',sans-serif" font-size="9" fill="#D1D5DB" text-anchor="middle">Nov</text>
-          <text x="582" y="352" font-family="'Inter',sans-serif" font-size="9" fill="#D1D5DB" text-anchor="middle">Dec</text>
-          <!-- Right fade -->
-          <rect x="460" y="63" width="136" height="313" fill="url(#fadeRight)"/>
+          <text x="70"  y="352" font-family="'Inter',sans-serif" font-size="9" fill="#9B97B8" text-anchor="middle">Jan</text>
+          <text x="107" y="352" font-family="'Inter',sans-serif" font-size="9" fill="#9B97B8" text-anchor="middle">Feb</text>
+          <text x="156" y="352" font-family="'Inter',sans-serif" font-size="9" fill="#9B97B8" text-anchor="middle">Mar</text>
+          <text x="204" y="352" font-family="'Inter',sans-serif" font-size="9" fill="#9B97B8" text-anchor="middle">Apr</text>
+          <text x="252" y="352" font-family="'Inter',sans-serif" font-size="9" fill="#9B97B8" text-anchor="middle">May</text>
+          <text x="300" y="352" font-family="'Inter',sans-serif" font-size="9" font-weight="600" fill="#9B97B8" text-anchor="middle">Jun</text>
+          <text x="348" y="352" font-family="'Inter',sans-serif" font-size="9" fill="#9B97B8" text-anchor="middle">Jul</text>
+          <text x="396" y="352" font-family="'Inter',sans-serif" font-size="9" fill="#9B97B8" text-anchor="middle">Aug</text>
+          <text x="444" y="352" font-family="'Inter',sans-serif" font-size="9" fill="#9B97B8" text-anchor="middle">Sep</text>
+          <text x="492" y="352" font-family="'Inter',sans-serif" font-size="9" fill="#9B97B8" text-anchor="middle">Oct</text>
+          <text x="540" y="352" font-family="'Inter',sans-serif" font-size="9" fill="#9B97B8" text-anchor="middle">Nov</text>
+          <text x="582" y="352" font-family="'Inter',sans-serif" font-size="9" fill="#9B97B8" text-anchor="end">Dec</text>
         </svg>
       </div>
     </div>
@@ -450,7 +452,7 @@ function toggleMob() {
         <div class="inline-flex items-center gap-2 bg-coral-light text-coral text-xs font-semibold px-3 py-1.5 rounded-full mb-5">
           About me
         </div>
-        <h2 class="font-display font-extrabold text-3xl md:text-4xl text-ink tracking-tight leading-tight mb-5 md:mb-5" style="font-weight:750;">10+ years helping brands drive millions in revenue</h2>
+        <h2 class="font-display font-extrabold text-3xl md:text-4xl text-ink tracking-tight leading-tight mb-5 md:mb-5" style="font-weight:750;">13+ years helping brands drive millions in revenue</h2>
         <!-- Paragraphs: hidden on mobile, shown on desktop -->
         <p class="text-muted mb-4 hidden md:block" style="line-height:1.7;">I'm Craig Kleila, a data-driven SEO consultant who grows qualified website traffic with evidence-backed testing and clear, actionable strategies.</p>
         <p class="text-muted md:mb-8 mb-0 hidden md:block" style="line-height:1.7;">Over the last decade, I've successfully led SEO for businesses of all sizes, working in-house, at agencies, and independently. Each engagement has exposed me to different contexts and constraints, helping me cut through the noise and focus on what matters.</p>
@@ -504,12 +506,12 @@ function toggleMob() {
     <div class="rounded-2xl mt-12 md:mt-20 px-8 py-10 md:px-12 md:py-12" style="background:#fff5f2;box-shadow:0 2px 16px -4px rgba(244,123,90,0.12);">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
         <div class="text-center md:text-left">
-          <div class="font-display font-extrabold text-coral mb-1 stat-num" data-target="13" data-prefix="" data-suffix="+" style="font-size:2rem;letter-spacing:-0.02em;font-weight:750;">0</div>
-          <div class="text-sm text-muted" style="line-height:1.5;">Years in SEO</div>
-        </div>
-        <div class="text-center md:text-left">
           <div class="font-display font-extrabold text-coral mb-1 stat-num" data-target="100" data-prefix="" data-suffix="+" style="font-size:2rem;letter-spacing:-0.02em;font-weight:750;">0</div>
           <div class="text-sm text-muted" style="line-height:1.5;">Brands worked with</div>
+        </div>
+        <div class="text-center md:text-left">
+          <div class="font-display font-extrabold text-coral mb-1 stat-num" data-target="97" data-prefix="" data-suffix="%" style="font-size:2rem;letter-spacing:-0.02em;font-weight:750;">0</div>
+          <div class="text-sm text-muted" style="line-height:1.5;">Client retention rate</div>
         </div>
         <div class="text-center md:text-left">
           <div class="font-display font-extrabold text-coral mb-1 stat-num" data-target="50" data-prefix="" data-suffix="M+" style="font-size:2rem;letter-spacing:-0.02em;font-weight:750;">0</div>
