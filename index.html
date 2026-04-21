@@ -370,13 +370,18 @@ function toggleMob() {
             <filter id="tipShadow" x="-20%" y="-20%" width="140%" height="140%">
               <feDropShadow dx="0" dy="2" stdDeviation="6" flood-color="#00000012"/>
             </filter>
+            <filter id="lineGlow" x="-10%" y="-50%" width="120%" height="200%">
+              <feGaussianBlur stdDeviation="0.25" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
             <linearGradient id="fadeRight" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0%" stop-color="#f7f6fe" stop-opacity="0"/>
-              <stop offset="100%" stop-color="#f7f6fe" stop-opacity="0.9"/>
+              <stop offset="0%" stop-color="#f4f2ff" stop-opacity="0"/>
+              <stop offset="70%" stop-color="#f4f2ff" stop-opacity="0.5"/>
+              <stop offset="100%" stop-color="#f9f8ff" stop-opacity="1"/>
             </linearGradient>
           </defs>
 
-          <!-- ── Grid lines (y: 95=3K, 173=2.5K, 251=2K, 330=1.5K) ── -->
+          <!-- ── Grid lines ── -->
           <line x1="70" y1="95"  x2="582" y2="95"  stroke="#F3F4F6" stroke-width="1"/>
           <text x="57" y="99"  font-family="'Inter',sans-serif" font-size="9" fill="#D1D5DB" text-anchor="end">3K</text>
           <line x1="70" y1="173" x2="582" y2="173" stroke="#F3F4F6" stroke-width="1"/>
@@ -386,12 +391,11 @@ function toggleMob() {
           <line x1="70" y1="330" x2="582" y2="330" stroke="#F3F4F6" stroke-width="1"/>
           <text x="57" y="334" font-family="'Inter',sans-serif" font-size="9" fill="#D1D5DB" text-anchor="end">1.5K</text>
 
-
           <!-- ── Area fill ── -->
           <path d="M 60,330 L 60,272 C 76,272 91,255 107,255 C 124,255 140,263 156,263 C 172,263 188,248 204,248 C 220,248 236,247 252,247 C 268,247 284,245 300,245 C 316,238 332,226 348,224 C 364,220 380,214 396,214 C 412,214 428,219 444,219 C 460,219 476,200 492,186 C 508,172 524,154 540,148 C 556,143 568,138 582,136 L 582,330 Z" fill="url(#areaGrad)" clip-path="url(#revealClip)"/>
 
           <!-- ── Line ── -->
-          <path d="M 60,272 C 76,272 91,255 107,255 C 124,255 140,263 156,263 C 172,263 188,248 204,248 C 220,248 236,247 252,247 C 268,247 284,245 300,245 C 316,238 332,226 348,224 C 364,220 380,214 396,214 C 412,214 428,219 444,219 C 460,219 476,200 492,186 C 508,172 524,154 540,148 C 556,143 568,138 582,136" stroke="#7B68EE" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" clip-path="url(#revealClip)"/>
+          <path d="M 60,272 C 76,272 91,255 107,255 C 124,255 140,263 156,263 C 172,263 188,248 204,248 C 220,248 236,247 252,247 C 268,247 284,245 300,245 C 316,238 332,226 348,224 C 364,220 380,214 396,214 C 412,214 428,219 444,219 C 460,219 476,200 492,186 C 508,172 524,154 540,148 C 556,143 568,138 582,136" stroke="#7B68EE" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" clip-path="url(#revealClip)" filter="url(#lineGlow)"/>
 
           <!-- ── Jun marker ── -->
           <g id="chart-marker" style="opacity:0;transition:opacity 1.2s ease;">
@@ -420,7 +424,7 @@ function toggleMob() {
           <text x="540" y="352" font-family="'Inter',sans-serif" font-size="9" fill="#D1D5DB" text-anchor="middle">Nov</text>
           <text x="582" y="352" font-family="'Inter',sans-serif" font-size="9" fill="#D1D5DB" text-anchor="middle">Dec</text>
           <!-- Right fade -->
-          <rect x="510" y="63" width="86" height="313" fill="url(#fadeRight)"/>
+          <rect x="460" y="63" width="136" height="313" fill="url(#fadeRight)"/>
         </svg>
       </div>
     </div>

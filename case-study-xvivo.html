@@ -256,7 +256,7 @@ function toggleMob() {
             <div>
               <h3 id="s-1" class="font-display font-semibold text-[20px] text-ink mb-3">Fix the Technical Foundation</h3>
               <p class="text-[#4B5563] text-[16px] mt-4" style="line-height:1.8;">First, I conducted a full technical audit to ensure search engines could properly crawl, understand, and index the site.</p>
-              <p class="text-[#4B5563] text-[16px] mt-4 mb-2" style="line-height:1.8;">The audit uncovered several issues:</p>
+              <p class="text-[#4B5563] text-[16px] mt-4 mb-4" style="line-height:1.8;">The audit uncovered several issues:</p>
               <ul class="space-y-4 mb-4">
                 <li class="flex items-center gap-3 text-[16px] text-[#4B5563]"><span class="w-5 h-5 rounded-full bg-coral-light flex items-center justify-center flex-shrink-0"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#F47B5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Parameterized portfolio URLs were creating tons of duplicate content</li>
                 <li class="flex items-center gap-3 text-[16px] text-[#4B5563]"><span class="w-5 h-5 rounded-full bg-coral-light flex items-center justify-center flex-shrink-0"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#F47B5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Key links weren't crawlable in the raw or rendered HTML</li>
@@ -264,46 +264,39 @@ function toggleMob() {
                 <li class="flex items-center gap-3 text-[16px] text-[#4B5563]"><span class="w-5 h-5 rounded-full bg-coral-light flex items-center justify-center flex-shrink-0"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#F47B5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Crawl inefficiencies were prioritizing low-value pages</li>
                 <li class="flex items-center gap-3 text-[16px] text-[#4B5563]"><span class="w-5 h-5 rounded-full bg-coral-light flex items-center justify-center flex-shrink-0"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#F47B5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Core content was not fully indexed</li>
               </ul>
-              <p class="text-[#4B5563] text-[16px]" style="line-height:1.8;">Over 20 technical issues were identified and resolved. This ensured key pages were indexed, improved crawlability, and consolidated ranking signals on high-value pages.</p>
-            </div>
-          </li>
-          <li>
-            <div>
-              <h3 id="s-2" class="font-display font-semibold text-[20px] text-ink mb-3">Rewrite Metadata to Match How Customers Search</h3>
-              <p class="text-[#4B5563] text-[16px] mt-4" style="line-height:1.8;">Alongside the technical cleanup, I focused on quick metadata wins. Title tags and meta descriptions across 40+ pages were rewritten to match each page's topic. This made it easier for both search engines and potential customers to understand what each page offered.</p>
-              <p class="text-[#4B5563] text-[16px] mt-4" style="line-height:1.8;">For example, the mechanism of action animation page was updated to target <em>mechanism of action animation</em> instead of broader terms like <em>medical animation company</em>. Customers aren't searching broadly. They're looking for the exact type of animation they need, whether that's oncology, patient education, or clinical trial content.</p>
-              <div class="rounded-2xl overflow-hidden">
-                <img src="xcs2.png" alt="XVIVO — page metadata" class="w-full block">
-              </div>
-            </div>
-          </li>
-          <li>
-            <div>
-              <h3 id="s-3" class="font-display font-semibold text-[20px] text-ink mb-3">Build Topic Depth Around Medical Animation</h3>
-              <p class="text-[#4B5563] text-[16px] mt-4 mb-6" style="line-height:1.8;">The next step was expanding content coverage across the full range of medical animation needs.</p>
-              <p class="text-[#4B5563] text-[16px] mt-4" style="line-height:1.8;">Keyword research revealed gaps across key animation types, therapeutic areas, and use cases. I addressed this by creating new pages targeting high-intent searches like MoA animation, oncology and neurology animation, and pharmaceutical marketing.</p>
-              <p class="text-[#4B5563] text-[16px] mt-4" style="line-height:1.8;">Each page focused on a specific area, while together they built depth across the broader medical animation topic. This helped search engines better understand XVIVO's expertise and improved visibility across a wider set of queries.</p>
-              <div class="rounded-2xl overflow-hidden">
-                <img src="xcs.png" alt="XVIVO — Types of Medical Animations" class="w-full block">
-              </div>
-            </div>
-          </li>
-          <li>
-            <div>
-              <h3 id="s-4" class="font-display font-semibold text-[20px] text-ink mb-3">Consolidate Signals Across Duplicate Portfolio Pages</h3>
-              <p class="text-[#4B5563] text-[16px] mt-4" style="line-height:1.8;">The portfolio used filters to sort content by animation type, but each version showed nearly identical content with little unique value. Search engines treated these as separate pages, spreading authority across duplicates instead of concentrating it on the main portfolio page.</p>
-              <p class="text-[#4B5563] text-[16px] mt-4 mb-6" style="line-height:1.8;">To fix this, I added canonical tags to point all filtered versions back to the primary pages. This reduced duplication, focused ranking signals on the right URLs, and helped ensure the most important pages were indexed and able to perform.</p>
+              <p class="text-[#4B5563] text-[16px] mb-4" style="line-height:1.8;">Over 20 technical issues were identified and resolved.</p>
+              <p class="text-[#4B5563] text-[16px] mb-6" style="line-height:1.8;">For example, portfolio filters were creating near-identical pages across different animation types. Search engines treated these as separate URLs, spreading authority across duplicates instead of concentrating it on the main portfolio page.</p>
+              <p class="text-[#4B5563] text-[16px] mb-6" style="line-height:1.8;">To fix this, I implemented canonical tags so all filtered versions point back to the main page. This reduced duplication, consolidated ranking signals, and ensured the most important page was indexed and able to perform.</p>
               <img src="xxxxxxv.png" alt="XVIVO canonical tag example" class="rounded-xl w-full" style="max-width:600px;border:1px solid #e5e7eb;margin-top:8px;">
             </div>
           </li>
           <li>
             <div>
+              <h3 id="s-2" class="font-display font-semibold text-[20px] text-ink mb-3">Rewrite Metadata to Match How Customers Search</h3>
+              <p class="text-[#4B5563] text-[16px] mt-4" style="line-height:1.8;">Alongside the technical cleanup, I focused on quick metadata wins. Title tags and meta descriptions were rewritten across 40+ pages to better match the content and search intent.</p>
+              <p class="text-[#4B5563] text-[16px] mt-4" style="line-height:1.8;">For example, the mechanism of action animation page was refocused on <em>"mechanism of action animation"</em> instead of broad terms like <em>"medical animation company."</em></p>
+              <p class="text-[#4B5563] text-[16px] mt-4" style="line-height:1.8;">This made it easier for both search engines and potential customers to understand what each page offered.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h3 id="s-3" class="font-display font-semibold text-[20px] text-ink mb-3">Build Topic Depth Around Medical Animation</h3>
+              <p class="text-[#4B5563] text-[16px] mt-4 mb-6" style="line-height:1.8;">Next, I expanded content to cover the full range of medical animation needs.</p>
+              <p class="text-[#4B5563] text-[16px] mt-4" style="line-height:1.8;">Keyword research revealed gaps across animation types, therapeutic areas, and use cases. To capture this demand, I created new pages targeting high-intent searches like MoA animation, oncology and neurology animation, and pharmaceutical marketing.</p>
+              <p class="text-[#4B5563] text-[16px] mt-4" style="line-height:1.8;">Each page focused on a specific use case, while collectively building stronger coverage of the overall topic. This helped search engines better understand XVIVO's expertise and improved visibility across a wider set of queries.</p>
+              <div class="rounded-2xl overflow-hidden" style="margin-top:20px;">
+                <img src="xreal.png" alt="XVIVO — Types of Medical Animations" class="w-full block">
+              </div>
+            </div>
+          </li>
+          <li>
+            <div>
               <h3 id="s-5" class="font-display font-semibold text-[20px] text-ink mb-3">Match Pages to Search Intent</h3>
-              <p class="text-[#4B5563] text-[16px] mt-4" style="line-height:1.8;">Lastly, each priority page was reviewed and updated based on what someone expects to see when they land on it.</p>
-              <p class="text-[#4B5563] text-[16px] mt-4" style="line-height:1.8;">For example, someone searching for a medical animation company wants to see the work, not read about it. On the homepage, video examples were moved above the fold to immediately showcase capabilities. This change helped improve rankings for medical animation from position 3 to 2 and reduced bounce rate by 18%.</p>
+              <p class="text-[#4B5563] text-[16px] mt-4" style="line-height:1.8;">Each priority page was reviewed and updated based on what someone expects to see when they land on it.</p>
+              <p class="text-[#4B5563] text-[16px] mt-4" style="line-height:1.8;">For example, someone searching for a medical animation company wants to see the work, not read about it. On the homepage, video examples were moved above the fold to immediately showcase capabilities. This adjustment helped improve rankings for <em>"medical animation"</em> and reduced bounce rate by 18%.</p>
               <p class="text-[#4B5563] text-[16px] mt-4 mb-6" style="line-height:1.8;">Content across other key pages was restructured to better highlight work examples, use cases, and outcomes, making it easier for users to evaluate XVIVO and take the next step.</p>
               <div class="rounded-2xl overflow-hidden">
-                <img src="xcs3.png" alt="XVIVO — Our Medical Animation Videos" class="w-full block">
+                <img src="x2.png" alt="XVIVO — Our Medical Animation Videos" class="w-full block">
               </div>
             </div>
           </li>
@@ -312,9 +305,8 @@ function toggleMob() {
 
       <section id="results" class="mb-8 scroll-mt-24">
         <h2 class="font-display font-bold text-[28px] text-ink mb-4">The Results</h2>
-        <p class="text-[#4B5563] text-[16px] mb-6" style="line-height:1.85;">Within three months, XVIVO saw clear improvements across every tracked metric.</p>
+        <p class="text-[#4B5563] text-[16px] mb-6" style="line-height:1.85;">Within three months, XVIVO saw measurable gains across every tracked metric.</p>
         <p class="text-[#4B5563] text-[16px] mb-6" style="line-height:1.85;">More high-value pages were being properly crawled and indexed, deeper content coverage helped the site rank for a broader set of relevant queries, updates to metadata improved CTRs, and on-page improvements boosted engagement.</p>
-        <p class="text-[#4B5563] text-[16px] mb-6" style="line-height:1.85;">The impact wasn't driven by a single change. It came from technical, content, and user experience improvements all working together.</p>
         <div class="grid grid-cols-3 gap-4 mt-8 cs-results-grid">
           <div class="bg-offwhite rounded-xl p-5 text-center">
             <p class="font-display font-bold text-3xl text-coral">+27%</p>
@@ -351,7 +343,6 @@ function toggleMob() {
                 <a href="#s-1" class="toc-h3-link block text-[12.5px] py-2 pl-3 border-l-[2px] border-transparent transition-colors duration-150" style="color:#8896A8;margin-left:-2px;">Fix the Technical Foundation</a>
                 <a href="#s-2" class="toc-h3-link block text-[12.5px] py-2 pl-3 border-l-[2px] border-transparent transition-colors duration-150" style="color:#8896A8;margin-left:-2px;">Rewrite Metadata</a>
                 <a href="#s-3" class="toc-h3-link block text-[12.5px] py-2 pl-3 border-l-[2px] border-transparent transition-colors duration-150" style="color:#8896A8;margin-left:-2px;">Build Topic Depth</a>
-                <a href="#s-4" class="toc-h3-link block text-[12.5px] py-2 pl-3 border-l-[2px] border-transparent transition-colors duration-150" style="color:#8896A8;margin-left:-2px;">Canonicalize Filter Pages</a>
                 <a href="#s-5" class="toc-h3-link block text-[12.5px] py-2 pl-3 border-l-[2px] border-transparent transition-colors duration-150" style="color:#8896A8;margin-left:-2px;">Match Search Intent</a>
               </div>
             </div>
@@ -376,7 +367,7 @@ function toggleMob() {
         <img src="mike.jpeg" alt="Michael Astrachan" class="w-20 h-20 rounded-full object-cover" style="border:4px solid #fff;box-shadow:0 2px 12px rgba(0,0,0,0.12);">
       </div>
       <div class="cs-testimonial-card bg-white rounded-2xl border border-border" style="box-shadow:0 2px 16px rgba(0,0,0,0.06);padding:72px 80px 48px;">
-        <p class="text-base text-ink text-center mb-8" style="line-height:1.8;">"Every time Craig has analyzed our site and recommended content tweaks, structural improvements, or tag optimizations, we've seen a measurable boost in rankings and traffic. His approach isn't guesswork — it's expertise, and it works."</p>
+        <p class="text-base text-ink text-center mb-8" style="line-height:1.8;">"Every time Craig has analyzed our site and recommended content tweaks, structural improvements, or tag optimizations, we've seen a measurable boost in rankings and traffic. His approach isn't guesswork, it's expertise, and it works."</p>
         <hr class="border-border mb-6">
         <div class="flex items-center justify-between gap-4">
           <div>
