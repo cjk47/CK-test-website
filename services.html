@@ -38,6 +38,9 @@
   .btn-coral { transition: transform 0.2s cubic-bezier(0.22,1,0.36,1), box-shadow 0.2s cubic-bezier(0.22,1,0.36,1); }
   .btn-coral:hover { transform: translateY(-2px); box-shadow: 0 10px 28px -6px rgba(244,123,90,0.45); }
   .btn-coral:active { transform: translateY(0); }
+  .btn-violet { transition: transform 0.2s cubic-bezier(0.22,1,0.36,1), box-shadow 0.2s cubic-bezier(0.22,1,0.36,1); }
+  .btn-violet:hover { transform: translateY(-2px); box-shadow: 0 10px 28px -6px rgba(123,104,238,0.35); }
+  .btn-violet:active { transform: translateY(0); }
   .btn-outline { transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease; }
   .btn-outline:hover { background: #F9F8FF; border-color: #7B68EE; color: #5E4DD6; }
   .btn-outline-slate { transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease; }
@@ -721,13 +724,19 @@ Amplify your SEO performance
           </div>
         </div>
         <!-- Client highlight card -->
-        <a id="prob-case-link" href="case-study-xvivo.html" style="display:flex;align-items:center;justify-content:space-between;gap:16px;background:#fff;border-radius:12px;padding:18px 22px;box-shadow:0 1px 4px rgba(0,0,0,0.06);text-decoration:none;transition:box-shadow 0.2s ease,transform 0.2s ease;" onmouseover="this.style.boxShadow='0 6px 20px -4px rgba(0,0,0,0.1)';this.style.transform='translateY(-1px)'" onmouseout="this.style.boxShadow='0 1px 4px rgba(0,0,0,0.06)';this.style.transform='translateY(0)'">
-          <div style="display:flex;align-items:center;gap:14px;">
-            <img id="prob-case-logo" src="xvivo.png" alt="" style="height:22px;width:auto;flex-shrink:0;object-fit:contain;filter:grayscale(1) opacity(0.55);">
-            <p id="prob-case-text" class="text-ink font-display font-semibold" style="font-size:0.88rem;font-weight:580;color:#323232;line-height:1.4;margin:0;">I fixed this for XVIVO — organic traffic up 45% after a full technical SEO rebuild.</p>
+        <div style="display:flex;align-items:center;gap:24px;background:#FDFCFF;border-radius:14px;padding:20px 24px;border:1px solid #ece9f7;border-left:2px solid rgba(244,123,90,0.6);">
+          <!-- Left: label row + headline stacked -->
+          <div style="display:flex;flex-direction:column;gap:12px;flex:1;min-width:0;">
+            <div style="display:flex;align-items:center;gap:10px;">
+              <span style="font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#7B68EE;">Case study</span>
+              <span style="width:1px;height:11px;background:rgba(0,0,0,0.18);flex-shrink:0;"></span>
+              <img id="prob-case-logo" src="xvivo.png" alt="" style="height:16px;width:auto;object-fit:contain;object-position:left;filter:grayscale(1) opacity(0.5);">
+            </div>
+            <p id="prob-case-headline" class="font-display" style="font-size:1rem;font-weight:700;color:#1a1a2e;line-height:1.4;margin:0;max-width:80%;">Organic traffic was dropping. After a technical SEO rebuild, it grew 45%.</p>
           </div>
-          <span style="display:inline-flex;align-items:center;gap:6px;color:#7B68EE;font-size:0.82rem;font-weight:600;white-space:nowrap;flex-shrink:0;">Read story <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        </a>
+          <!-- Right: button vertically centered -->
+          <a id="prob-case-link" href="case-study-xvivo.html" class="btn-violet" style="display:inline-flex;align-items:center;gap:6px;background:#ede9fd;color:#7B68EE;font-size:0.78rem;font-weight:600;padding:7px 16px;border-radius:20px;flex-shrink:0;white-space:nowrap;text-decoration:none;">Read case study <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
       </div>
 
     </div>
@@ -739,41 +748,41 @@ var probData = [
     headline: 'Search traffic is trending down.',
     cause: 'Increased competition, seasonality, algorithm updates, changes in how results are displayed, declining search demand, lost backlinks, or content decay.',
     fix: 'I run a forensic audit to find where traffic is leaking, then fix the root issue, whether that\'s content gaps, technical problems, or something else, and build a prioritized recovery plan.',
-    caseText: 'I fixed this for XVIVO — organic traffic up 45% after a full technical SEO rebuild.',
-    caseLink: 'case-study-xvivo.html',
-    caseLogo: 'xvivo.png'
+    caseLogo: 'xvivo.png',
+    caseHeadline: 'Organic traffic was dropping. After a technical SEO rebuild, it grew 45%.',
+    caseLink: 'case-study-xvivo.html'
   },
   {
     headline: 'Competitors are gaining ground.',
     cause: 'Stronger authority, better site experience, higher-quality content, more content across key topics, or structural issues that make it easier for competitors to win those topics.',
     fix: 'I run a gap analysis across content, authority, and site structure to pinpoint where competitors have the edge, then build a focused plan to close those gaps.',
-    caseText: 'I did exactly this for XVIVO — closed the gap on competitors and grew organic traffic 45%.',
-    caseLink: 'case-study-xvivo.html',
-    caseLogo: 'xvivo.png'
+    caseLogo: 'rukkus.png',
+    caseHeadline: 'Competitors dominated search. Off-site SEO closed the gap, leading to a buyout.',
+    caseLink: 'case-study-rukkus.html'
   },
   {
     headline: 'AI platforms aren\'t surfacing your content.',
     cause: 'Weak SEO fundamentals, content that isn\'t structured for AI retrieval, poor trust and expertise signals, limited topical authority and missing schema markup.',
     fix: 'Fixes could include reworking your pages into answer-first passages, strengthening E-E-A-T signals, or building topical authority through content clusters.',
-    caseText: 'I solved this for Best Western — restructured their content for AI retrieval and grew visibility 349%.',
-    caseLink: 'case-study-best-western.html',
-    caseLogo: 'newbw.webp'
+    caseLogo: 'newbw.webp',
+    caseHeadline: 'AI visibility was low. Content restructuring drove 349% growth.',
+    caseLink: 'case-study-best-western.html'
   },
   {
     headline: 'Publishing content but nothing sticks.',
     cause: 'Content misaligned with search intent, thin topic coverage, targeting low-volume queries, and weaker authority compared to competitors with stronger links and deeper content.',
     fix: 'I analyze your content to find what\'s holding it back, then build a plan. This could include optimizing pages to better address customer pain points or strengthening authority.',
-    caseText: 'I did this for Epic Reads — shifted to high-intent content and grew their online sales 37%.',
-    caseLink: 'case-study-epic-reads.html',
-    caseLogo: 'er-logo-menu-blk.png'
+    caseLogo: 'er-logo-menu-blk.png',
+    caseHeadline: 'Content wasn\'t performing. Aligning it to search demand grew traffic 35%.',
+    caseLink: 'case-study-epic-reads.html'
   },
   {
     headline: 'You\'re getting traffic, but not customers.',
     cause: 'Low-intent queries driving most of your traffic, landing pages that don\'t match what searchers want when they arrive, and weak conversion paths once they\'re on the page.',
     fix: 'Align SEO with your funnel by targeting high-intent queries, sharpening landing pages to match what visitors came for, and guiding users toward conversion in a natural, helpful way.',
-    caseText: 'I solved this for Rukkus — aligned their SEO with buyer intent and conversions increased.',
-    caseLink: 'case-study-rukkus.html',
-    caseLogo: 'rukkus.png'
+    caseLogo: 'xvivo.png',
+    caseHeadline: 'Traffic wasn\'t converting. A content and UX overhaul increased leads 27%.',
+    caseLink: 'case-study-xvivo.html'
   }
 ];
 function selectProb(idx) {
@@ -786,9 +795,9 @@ function selectProb(idx) {
   document.getElementById('prob-headline').textContent = d.headline;
   document.getElementById('prob-cause').textContent = d.cause;
   document.getElementById('prob-fix').textContent = d.fix;
-  document.getElementById('prob-case-text').textContent = d.caseText;
   document.getElementById('prob-case-link').href = d.caseLink;
   document.getElementById('prob-case-logo').src = d.caseLogo;
+  document.getElementById('prob-case-headline').textContent = d.caseHeadline;
 }
 </script>
 
