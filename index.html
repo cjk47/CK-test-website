@@ -56,6 +56,7 @@
   a.service-card { text-decoration: none; color: inherit; display: block; cursor: pointer; }
   .card-content { position: relative; z-index: 1; }
 .card-icon { display: flex; align-items: flex-start; height: 24px; }
+  @media (min-width: 768px) { .card-title-row { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; } .card-title-row .card-icon { margin-bottom: 0; height: 26px; flex-shrink: 0; } .card-title-row .card-title { margin-bottom: 0; } }
   @keyframes hero-circle-pulse {
     0%, 100% { transform: scale(1); }
     50%       { transform: scale(1.1); }
@@ -174,7 +175,7 @@ function toggleMob() {
             </span>
             <!-- Claude -->
             <span class="hero-logo" data-idx="2" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;transition:opacity 0.4s ease;opacity:0;background:#D97757;">
-              <img src="Claude-ai-icon.svg.png" width="32" height="32" style="display:block;object-fit:cover;border-radius:6px;">
+              <img src="Claude-ai-icon.svg.png" width="26" height="26" style="display:block;object-fit:cover;border-radius:6px;">
             </span>
             <!-- Perplexity -->
             <span class="hero-logo" data-idx="3" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;transition:opacity 0.4s ease;opacity:0;background:#0d3b3e;">
@@ -270,10 +271,12 @@ function toggleMob() {
 
       <div class="service-card rounded-2xl p-6" style="background:#FEFEFF;">
         <div class="card-content flex flex-col h-full">
-          <div class="card-icon mb-6">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 5h16M4 10h12M4 15h16M4 20h10" stroke="#F47B5A" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <div class="card-title-row">
+            <div class="card-icon mb-6">
+              <svg width="23" height="23" viewBox="0 0 24 24" fill="none"><path d="M4 5h16M4 10h12M4 15h16M4 20h10" stroke="#F47B5A" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="font-display font-medium text-lg text-ink mb-2 card-title">Content Strategy</h3>
           </div>
-          <h3 class="font-display font-medium text-lg text-ink mb-2 card-title">Content Strategy</h3>
           <p class="text-sm text-muted card-desc" style="line-height:1.65">Find what your audience is searching for and deliver content that people and robots will love.</p>
           <div class="mt-auto pt-5">
             <span class="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold" style="background:#fff0ed;color:#F47B5A;">Capture high-intent traffic</span>
@@ -285,10 +288,12 @@ function toggleMob() {
 
       <div class="service-card rounded-2xl p-6" style="background:#FEFEFF;">
         <div class="card-content flex flex-col h-full">
-          <div class="card-icon mb-6">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M7 6L3 12L7 18" stroke="#7B68EE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M17 6L21 12L17 18" stroke="#7B68EE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><line x1="14" y1="5" x2="10" y2="19" stroke="#7B68EE" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <div class="card-title-row">
+            <div class="card-icon mb-6">
+              <svg width="27" height="27" viewBox="0 0 24 24" fill="none"><path d="M7 6L3 12L7 18" stroke="#7B68EE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M17 6L21 12L17 18" stroke="#7B68EE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><line x1="14" y1="5" x2="10" y2="19" stroke="#7B68EE" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="font-display font-medium text-lg text-ink mb-2 card-title">Technical SEO</h3>
           </div>
-          <h3 class="font-display font-medium text-lg text-ink mb-2 card-title">Technical SEO</h3>
           <p class="text-sm text-muted card-desc" style="line-height:1.65">Fix what's holding your site back behind the scenes, from crawl issues to indexation to speed.</p>
           <div class="mt-auto pt-5">
             <span class="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold" style="background:#edeafd;color:#7B68EE;">Improve crawling & indexing</span>
@@ -300,10 +305,12 @@ function toggleMob() {
 
       <div class="service-card rounded-2xl p-6" style="background:#FEFEFF;">
         <div class="card-content flex flex-col h-full">
-          <div class="card-icon mb-6">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 2C12 2 13 10 22 12C13 14 12 22 12 22C12 22 11 14 2 12C11 10 12 2 12 2Z" fill="none" stroke="#A07020" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          <div class="card-title-row">
+            <div class="card-icon mb-6">
+              <svg width="23" height="23" viewBox="0 0 24 24" fill="none"><path d="M12 2C12 2 13 10 22 12C13 14 12 22 12 22C12 22 11 14 2 12C11 10 12 2 12 2Z" fill="none" stroke="#A07020" stroke-width="1.5" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="font-display font-medium text-lg text-ink mb-2 card-title">AI Search</h3>
           </div>
-          <h3 class="font-display font-medium text-lg text-ink mb-2 card-title">AI Search Strategy</h3>
           <p class="text-sm text-muted card-desc" style="line-height:1.65">Make your brand easy for AI to understand, trust, and cite in tools like AI Overviews and ChatGPT.</p>
           <div class="mt-auto pt-5">
             <span class="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold" style="background:#fef3d4;color:#A07020;">Show up in AI answers</span>
@@ -315,10 +322,12 @@ function toggleMob() {
 
       <div class="service-card rounded-2xl p-6" style="background:#FEFEFF;">
         <div class="card-content flex flex-col h-full">
-          <div class="card-icon mb-6">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="6" cy="12" r="2.5" stroke="#3A62A7" stroke-width="1.5"/><circle cx="18" cy="6" r="2.5" stroke="#3A62A7" stroke-width="1.5"/><circle cx="18" cy="18" r="2.5" stroke="#3A62A7" stroke-width="1.5"/><path d="M8.5 10.8l7-3.6M8.5 13.2l7 3.6" stroke="#3A62A7" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <div class="card-title-row">
+            <div class="card-icon mb-6">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="6" cy="12" r="2.5" stroke="#3A62A7" stroke-width="1.5"/><circle cx="18" cy="6" r="2.5" stroke="#3A62A7" stroke-width="1.5"/><circle cx="18" cy="18" r="2.5" stroke="#3A62A7" stroke-width="1.5"/><path d="M8.5 10.8l7-3.6M8.5 13.2l7 3.6" stroke="#3A62A7" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="font-display font-medium text-lg text-ink mb-2 card-title">Off-site SEO</h3>
           </div>
-          <h3 class="font-display font-medium text-lg text-ink mb-2 card-title">Off-site SEO</h3>
           <p class="text-sm text-muted card-desc" style="line-height:1.65">Earn quality backlinks and mentions that strengthen your site's authority in search.</p>
           <div class="mt-auto pt-5">
             <span class="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold" style="background:#ddeaf8;color:#3A62A7;">Build authority & trust</span>
