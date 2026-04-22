@@ -73,6 +73,8 @@
     .portrait-circle { width: 320px !important; height: 320px !important; }
     .portrait-badge { left: 50% !important; transform: translateX(-50%) !important; top: auto !important; bottom: 0px !important; }
     .about-h1 { font-size: 2.75rem; }
+    .timeline-box { padding: 36px 20px 40px !important; }
+    .timeline-header { padding: 0 44px; }
   }
   @media (min-width: 768px) {
     .about-h1 { font-size: 3.75rem; }
@@ -186,10 +188,10 @@ function toggleMob() {
 <!-- TIMELINE -->
 <section class="pt-10 pb-20" style="background:#ffffff;">
   <div class="max-w-6xl mx-auto px-6">
-    <div style="background:#F9F8FF;border-radius:20px;padding:52px 64px 60px;border:1px solid #ece9f7;">
+    <div class="timeline-box" style="background:#F9F8FF;border-radius:20px;padding:52px 64px 60px;border:1px solid #ece9f7;">
     <div class="max-w-4xl mx-auto">
 
-    <div class="text-center mb-16">
+    <div class="text-center mb-16 timeline-header">
       <div class="inline-flex items-center gap-2 text-xs font-semibold px-3 py-1.5 rounded-full mb-5" style="background:#ede9fd;color:#7B68EE;">
         Timeline
       </div>
@@ -517,10 +519,27 @@ function toggleMob() {
       </div>
 
     </div>
+    <!-- See more / See less toggle -->
+    <div class="text-center mt-6" id="brand-toggle-wrap">
+      <button id="brand-toggle" onclick="toggleBrandGrid()" class="inline-flex items-center gap-1.5 text-sm font-semibold text-muted hover:text-coral transition-colors duration-200" style="cursor:pointer;background:none;border:none;padding:8px 16px;">
+        <span id="brand-toggle-text">See more</span>
+        <svg id="brand-toggle-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" style="transition:transform 0.25s ease;"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
   </div>
 </section>
 
 <style>
+  /* Collapsed grid: show only first 20 items (4 rows × 5 cols) */
+  #brand-grid.collapsed .brand-item:nth-child(n+21) {
+    display: none !important;
+  }
+  @media (max-width: 767px) {
+    /* Mobile: 3 cols, 4 rows = 12 items */
+    #brand-grid.collapsed .brand-item:nth-child(n+13) {
+      display: none !important;
+    }
+  }
   .brand-filter {
     background: #fff;
     color: #6B7280;
@@ -550,20 +569,10 @@ function toggleMob() {
     max-width: 100%;
     height: auto;
     object-fit: contain;
-    filter: brightness(0) invert(0.45);
+    filter: none;
     opacity: 1;
-    transition: filter 0.25s ease, opacity 0.25s ease;
+    transition: opacity 0.25s ease;
     transform: scale(0.92);
-  }
-  .brand-cell:hover .brand-logo {
-    filter: brightness(1) invert(0);
-    opacity: 1;
-  }
-  .brand-logo.no-filter {
-    filter: grayscale(1) opacity(0.65);
-  }
-  .brand-cell:hover .brand-logo.no-filter {
-    filter: grayscale(0) opacity(1);
   }
   .brand-item.hidden-brand {
     display: none;
@@ -585,6 +594,9 @@ function toggleMob() {
   }
 </style>
 <script>
+// Start collapsed on "All" tab
+document.getElementById('brand-grid').classList.add('collapsed');
+
 function filterBrands(cat) {
   document.querySelectorAll('.brand-filter').forEach(function(b) { b.classList.remove('brand-filter-active'); });
   event.currentTarget.classList.add('brand-filter-active');
@@ -596,6 +608,32 @@ function filterBrands(cat) {
       item.classList.add('hidden-brand');
     }
   });
+  var grid = document.getElementById('brand-grid');
+  var toggleWrap = document.getElementById('brand-toggle-wrap');
+  if (cat === 'all') {
+    grid.classList.add('collapsed');
+    toggleWrap.style.display = '';
+    document.getElementById('brand-toggle-text').textContent = 'See more';
+    document.getElementById('brand-toggle-arrow').style.transform = '';
+  } else {
+    grid.classList.remove('collapsed');
+    toggleWrap.style.display = 'none';
+  }
+}
+
+function toggleBrandGrid() {
+  var grid = document.getElementById('brand-grid');
+  var text = document.getElementById('brand-toggle-text');
+  var arrow = document.getElementById('brand-toggle-arrow');
+  if (grid.classList.contains('collapsed')) {
+    grid.classList.remove('collapsed');
+    text.textContent = 'See less';
+    arrow.style.transform = 'rotate(180deg)';
+  } else {
+    grid.classList.add('collapsed');
+    text.textContent = 'See more';
+    arrow.style.transform = '';
+  }
 }
 </script>
 
