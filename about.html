@@ -382,130 +382,138 @@ function toggleMob() {
     <!-- Filter pills -->
     <div class="flex flex-wrap justify-center gap-2 mb-12" id="brand-filters">
       <button onclick="filterBrands('all')" class="brand-filter brand-filter-active text-xs font-semibold px-4 py-1.5 rounded-full transition-all duration-150">All</button>
-      <button onclick="filterBrands('food')" class="brand-filter text-xs font-semibold px-4 py-1.5 rounded-full transition-all duration-150">Food & Beverage</button>
-      <button onclick="filterBrands('finance')" class="brand-filter text-xs font-semibold px-4 py-1.5 rounded-full transition-all duration-150">Financial</button>
-      <button onclick="filterBrands('hospitality')" class="brand-filter text-xs font-semibold px-4 py-1.5 rounded-full transition-all duration-150">Hospitality</button>
-      <button onclick="filterBrands('tech')" class="brand-filter text-xs font-semibold px-4 py-1.5 rounded-full transition-all duration-150">Technology</button>
-      <button onclick="filterBrands('cpg')" class="brand-filter text-xs font-semibold px-4 py-1.5 rounded-full transition-all duration-150">CPG & Retail</button>
-      <button onclick="filterBrands('media')" class="brand-filter text-xs font-semibold px-4 py-1.5 rounded-full transition-all duration-150">Media & Publishing</button>
       <button onclick="filterBrands('ecommerce')" class="brand-filter text-xs font-semibold px-4 py-1.5 rounded-full transition-all duration-150">E-commerce</button>
+      <button onclick="filterBrands('enterprise')" class="brand-filter text-xs font-semibold px-4 py-1.5 rounded-full transition-all duration-150">Enterprise & B2B</button>
+      <button onclick="filterBrands('cpg')" class="brand-filter text-xs font-semibold px-4 py-1.5 rounded-full transition-all duration-150">Consumer Brands</button>
+      <button onclick="filterBrands('media')" class="brand-filter text-xs font-semibold px-4 py-1.5 rounded-full transition-all duration-150">Media & Entertainment</button>
+      <button onclick="filterBrands('food')" class="brand-filter text-xs font-semibold px-4 py-1.5 rounded-full transition-all duration-150">Food & Beverage</button>
+      <button onclick="filterBrands('finance')" class="brand-filter text-xs font-semibold px-4 py-1.5 rounded-full transition-all duration-150">Finance & Healthcare</button>
+      <button onclick="filterBrands('tech')" class="brand-filter text-xs font-semibold px-4 py-1.5 rounded-full transition-all duration-150">Technology</button>
     </div>
 
     <!-- Logo grid -->
-    <div id="brand-grid" style="display:grid;grid-template-columns:repeat(6,1fr);gap:24px 0;">
+    <div id="brand-grid" style="display:grid;grid-template-columns:repeat(5,1fr);gap:16px 0;">
 
+      <!-- Row 1 -->
       <div class="brand-item brand-cell" data-cat="media">
-        <img src="2-hc.svg.png" alt="HarperCollins" class="brand-logo" style="max-height:50px;max-width:125px;">
+        <img src="2-hc.svg.png" alt="HarperCollins" class="brand-logo" style="max-height:48px;max-width:145px;">
       </div>
-      <div class="brand-item brand-cell" data-cat="tech">
-        <img src="2-playstation.svg" alt="PlayStation" class="brand-logo" style="max-height:35px;max-width:150px;">
+      <div class="brand-item brand-cell" data-cat="media tech">
+        <img src="2-playstation.svg" alt="PlayStation" class="brand-logo" style="max-height:32px;max-width:140px;">
       </div>
-      <div class="brand-item brand-cell" data-cat="food">
-        <img src="2-applebees.png" alt="Applebee's" class="brand-logo" style="max-height:33px;max-width:138px;">
+      <div class="brand-item brand-cell" data-cat="ecommerce food">
+        <img src="2-applebees.png" alt="Applebee's" class="brand-logo" style="max-height:35px;max-width:140px;">
       </div>
       <div class="brand-item brand-cell" data-cat="media">
-        <img src="2-discovery.png" alt="Discovery" class="brand-logo" style="max-height:33px;max-width:138px;">
+        <img src="2-discovery.png" alt="Discovery" class="brand-logo" style="max-height:25px;max-width:115px;">
       </div>
-      <div class="brand-item brand-cell" data-cat="food">
-        <img src="1h-hennessy.png" alt="Hennessy" class="brand-logo" style="max-height:53px;max-width:113px;">
+      <div class="brand-item brand-cell" data-cat="cpg food">
+        <img src="1h-hennessy.png" alt="Hennessy" class="brand-logo no-filter" style="max-height:44px;max-width:115px;">
       </div>
 
+      <!-- Row 2 -->
       <div class="brand-item brand-cell" data-cat="tech">
-        <img src="2-toshiba.svg.png" alt="Toshiba" class="brand-logo" style="max-height:28px;max-width:125px;">
+        <img src="2-toshiba.svg.png" alt="Toshiba" class="brand-logo" style="max-height:18px;max-width:95px;">
       </div>
-      <div class="brand-item brand-cell" data-cat="tech">
-        <img src="1h-ibm.png" alt="IBM" class="brand-logo" style="max-height:23px;max-width:100px;">
+      <div class="brand-item brand-cell" data-cat="enterprise tech">
+        <img src="1h-ibm.png" alt="IBM" class="brand-logo" style="max-height:22px;max-width:90px;">
       </div>
-      <div class="brand-item brand-cell" data-cat="food">
-        <img src="kinder-logo-freelogovectors.net_-400x136.png" alt="Kinder" class="brand-logo" style="max-height:33px;max-width:113px;">
+      <div class="brand-item brand-cell" data-cat="cpg food">
+        <img src="kinder-logo-freelogovectors.net_-400x136.png" alt="Kinder" class="brand-logo" style="max-height:26px;max-width:95px;">
       </div>
       <div class="brand-item brand-cell" data-cat="ecommerce">
-        <img src="3333.png" alt="Marc Jacobs" class="brand-logo" style="max-height:23px;max-width:163px;">
+        <img src="3333.png" alt="Marc Jacobs" class="brand-logo" style="max-height:34px;max-width:180px;">
       </div>
       <div class="brand-item brand-cell" data-cat="cpg">
-        <img src="logo14.png" alt="P&G" class="brand-logo" style="max-height:48px;max-width:75px;">
+        <img src="logo14.png" alt="P&G" class="brand-logo" style="max-height:30px;max-width:55px;">
       </div>
 
-      <div class="brand-item brand-cell" data-cat="food">
-        <img src="logo13.png" alt="Gerber" class="brand-logo" style="max-height:48px;max-width:113px;">
+      <!-- Row 3 -->
+      <div class="brand-item brand-cell" data-cat="cpg">
+        <img src="logo13.png" alt="Gerber" class="brand-logo no-filter" style="max-height:50px;max-width:120px;">
       </div>
       <div class="brand-item brand-cell" data-cat="cpg">
-        <img src="OralB.svg.png" alt="Oral-B" class="brand-logo" style="max-height:35px;max-width:113px;">
+        <img src="OralB.svg.png" alt="Oral-B" class="brand-logo" style="max-height:22px;max-width:90px;">
       </div>
       <div class="brand-item brand-cell" data-cat="ecommerce">
-        <img src="1599.png" alt="DKNY" class="brand-logo" style="max-height:28px;max-width:113px;">
+        <img src="1599.png" alt="DKNY" class="brand-logo" style="max-height:18px;max-width:85px;">
       </div>
       <div class="brand-item brand-cell" data-cat="finance">
-        <img src="2-harvard.png" alt="Harvard Pilgrim Health Care" class="brand-logo" style="max-height:33px;max-width:138px;">
+        <img src="2-harvard.png" alt="Harvard Pilgrim Health Care" class="brand-logo no-filter" style="max-height:36px;max-width:145px;">
       </div>
       <div class="brand-item brand-cell" data-cat="finance">
-        <img src="2-chase.svg.png" alt="Chase" class="brand-logo" style="max-height:38px;max-width:125px;">
+        <img src="2-chase.svg.png" alt="Chase" class="brand-logo" style="max-height:23px;max-width:95px;">
       </div>
 
-      <div class="brand-item brand-cell" data-cat="hospitality">
-        <img src="2-bw.webp" alt="Best Western" class="brand-logo" style="max-height:50px;max-width:163px;">
+      <!-- Row 4 -->
+      <div class="brand-item brand-cell" data-cat="ecommerce enterprise">
+        <img src="246-2466294_best-western-logo-best-western-removebg-preview.webp" alt="Best Western" class="brand-logo" style="max-height:33px;max-width:140px;">
       </div>
       <div class="brand-item brand-cell" data-cat="food">
-        <img src="logo3.png" alt="Pizza Hut" class="brand-logo" style="max-height:43px;max-width:125px;">
+        <img src="logo3.png" alt="Pizza Hut" class="brand-logo" style="max-height:38px;max-width:115px;">
       </div>
-      <div class="brand-item brand-cell" data-cat="food">
-        <img src="unnamed.png" alt="Ragú" class="brand-logo" style="max-height:38px;max-width:100px;">
+      <div class="brand-item brand-cell" data-cat="cpg food">
+        <img src="unnamed.png" alt="Ragú" class="brand-logo" style="max-height:26px;max-width:80px;">
       </div>
       <div class="brand-item brand-cell" data-cat="finance">
-        <img src="Amica_Mutual_Insurance_Logo.svg.png" alt="Amica" class="brand-logo" style="max-height:33px;max-width:113px;">
+        <img src="Amica_Mutual_Insurance_Logo.svg.png" alt="Amica" class="brand-logo" style="max-height:30px;max-width:110px;">
       </div>
       <div class="brand-item brand-cell" data-cat="tech">
-        <img src="DISH-Network-Logo-2019-present.png" alt="Dish" class="brand-logo" style="max-height:33px;max-width:100px;">
+        <img src="DISH-Network-Logo-2019-present.png" alt="Dish" class="brand-logo" style="max-height:25px;max-width:85px;">
       </div>
 
+      <!-- Row 5 -->
       <div class="brand-item brand-cell" data-cat="media">
-        <img src="er-logo-menu-blk.png" alt="Epic Reads" class="brand-logo" style="max-height:25px;max-width:125px;">
+        <img src="er-logo-menu-blk.png" alt="Epic Reads" class="brand-logo" style="max-height:26px;max-width:125px;">
       </div>
-      <div class="brand-item brand-cell" data-cat="food">
-        <img src="2-bertolli.png" alt="Bertolli" class="brand-logo" style="max-height:45px;max-width:125px;">
-      </div>
-      <div class="brand-item brand-cell" data-cat="cpg">
-        <img src="2-crest.png" alt="Crest" class="brand-logo" style="max-height:33px;max-width:113px;">
-      </div>
-      <div class="brand-item brand-cell" data-cat="food">
-        <img src="2-heineken.png" alt="Heineken" class="brand-logo" style="max-height:33px;max-width:138px;">
+      <div class="brand-item brand-cell" data-cat="cpg food">
+        <img src="2-bertolli.png" alt="Bertolli" class="brand-logo no-filter" style="max-height:40px;max-width:128px;">
       </div>
       <div class="brand-item brand-cell" data-cat="cpg">
-        <img src="2-reynolds.png" alt="Reynolds" class="brand-logo" style="max-height:33px;max-width:125px;">
+        <img src="2-crest.png" alt="Crest" class="brand-logo" style="max-height:28px;max-width:108px;">
+      </div>
+      <div class="brand-item brand-cell" data-cat="cpg">
+        <img src="2-heineken.png" alt="Heineken" class="brand-logo" style="max-height:33px;max-width:140px;">
+      </div>
+      <div class="brand-item brand-cell" data-cat="cpg">
+        <img src="2-reynolds.png" alt="Reynolds" class="brand-logo" style="max-height:36px;max-width:145px;">
       </div>
 
+      <!-- Row 6 -->
       <div class="brand-item brand-cell" data-cat="ecommerce">
-        <img src="2-gt.png" alt="Generation Tux" class="brand-logo" style="max-height:38px;max-width:138px;">
+        <img src="2-gt.png" alt="Generation Tux" class="brand-logo" style="max-height:38px;max-width:140px;">
       </div>
-      <div class="brand-item brand-cell" data-cat="tech">
-        <img src="2-nelson.png" alt="Nelson Worldwide" class="brand-logo" style="max-height:23px;max-width:125px;">
-      </div>
-      <div class="brand-item brand-cell" data-cat="ecommerce">
-        <img src="2-wrensilva.png" alt="Wrensilva" class="brand-logo" style="max-height:45px;max-width:138px;">
+      <div class="brand-item brand-cell" data-cat="enterprise">
+        <img src="2-nelson.png" alt="Nelson Worldwide" class="brand-logo" style="max-height:23px;max-width:110px;">
       </div>
       <div class="brand-item brand-cell" data-cat="ecommerce">
-        <img src="2-bookit.svg" alt="BookIt" class="brand-logo" style="max-height:33px;max-width:125px;">
+        <img src="2-wrensilva.png" alt="Wrensilva" class="brand-logo" style="max-height:50px;max-width:170px;">
       </div>
-      <div class="brand-item brand-cell" data-cat="finance">
-        <img src="2-cb.png" alt="Central Bank" class="brand-logo" style="max-height:45px;max-width:113px;">
+      <div class="brand-item brand-cell" data-cat="ecommerce">
+        <img src="2-bookit.svg" alt="BookIt" class="brand-logo no-filter" style="max-height:36px;max-width:145px;">
       </div>
-      <div class="brand-item brand-cell" data-cat="tech">
-        <img src="2-Athenahealth_Logo_og.png" alt="Athenahealth" class="brand-logo" style="max-height:30px;max-width:150px;">
+      <div class="brand-item brand-cell" data-cat="enterprise finance">
+        <img src="2-cb.png" alt="Central Bank" class="brand-logo no-filter" style="max-height:38px;max-width:110px;">
+      </div>
+
+      <!-- Row 7 -->
+      <div class="brand-item brand-cell" data-cat="enterprise finance">
+        <img src="2-Athenahealth_Logo_og.png" alt="Athenahealth" class="brand-logo" style="max-height:28px;max-width:145px;">
       </div>
       <div class="brand-item brand-cell" data-cat="cpg">
-        <img src="BIG-LOTS-LOGO-FB-1024x1024.png" alt="Big Lots" class="brand-logo" style="max-height:40px;max-width:113px;">
+        <img src="BIG-LOTS-LOGO-FB-1024x1024.png" alt="Big Lots" class="brand-logo" style="max-height:38px;max-width:100px;">
       </div>
-      <div class="brand-item brand-cell" data-cat="tech">
-        <img src="2-Seagate_logo.svg.png" alt="Seagate" class="brand-logo" style="max-height:30px;max-width:138px;">
-      </div>
-      <div class="brand-item brand-cell" data-cat="finance">
-        <img src="logo-meemic-horizontal.png" alt="Meemic" class="brand-logo" style="max-height:38px;max-width:138px;">
-      </div>
-      <div class="brand-item brand-cell" data-cat="tech">
-        <img src="signiant.png" alt="Signiant" class="brand-logo" style="max-height:33px;max-width:125px;">
+      <div class="brand-item brand-cell" data-cat="enterprise tech">
+        <img src="2-Seagate_logo.svg.png" alt="Seagate" class="brand-logo no-filter" style="max-height:34px;max-width:155px;">
       </div>
       <div class="brand-item brand-cell" data-cat="finance">
-        <img src="Payability-Logo-Dark.svg" alt="Payability" class="brand-logo" style="max-height:25px;max-width:138px;">
+        <img src="logo-meemic-horizontal.png" alt="Meemic" class="brand-logo" style="max-height:48px;max-width:170px;">
+      </div>
+      <div class="brand-item brand-cell" data-cat="enterprise tech">
+        <img src="signiant.png" alt="Signiant" class="brand-logo" style="max-height:44px;max-width:155px;">
+      </div>
+      <div class="brand-item brand-cell" data-cat="ecommerce enterprise finance">
+        <img src="Payability-Logo-Dark.svg" alt="Payability" class="brand-logo" style="max-height:28px;max-width:145px;">
       </div>
 
     </div>
@@ -534,7 +542,7 @@ function toggleMob() {
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 70px;
+    height: 64px;
     padding: 0 10px;
     box-sizing: border-box;
   }
@@ -542,13 +550,20 @@ function toggleMob() {
     max-width: 100%;
     height: auto;
     object-fit: contain;
-    filter: brightness(0) invert(0.55);
+    filter: brightness(0) invert(0.45);
     opacity: 1;
     transition: filter 0.25s ease, opacity 0.25s ease;
+    transform: scale(0.92);
   }
   .brand-cell:hover .brand-logo {
     filter: brightness(1) invert(0);
     opacity: 1;
+  }
+  .brand-logo.no-filter {
+    filter: grayscale(1) opacity(0.65);
+  }
+  .brand-cell:hover .brand-logo.no-filter {
+    filter: grayscale(0) opacity(1);
   }
   .brand-item.hidden-brand {
     display: none;
@@ -574,7 +589,8 @@ function filterBrands(cat) {
   document.querySelectorAll('.brand-filter').forEach(function(b) { b.classList.remove('brand-filter-active'); });
   event.currentTarget.classList.add('brand-filter-active');
   document.querySelectorAll('.brand-item').forEach(function(item) {
-    if (cat === 'all' || item.dataset.cat === cat) {
+    var cats = item.dataset.cat.split(' ');
+    if (cat === 'all' || cats.indexOf(cat) !== -1) {
       item.classList.remove('hidden-brand');
     } else {
       item.classList.add('hidden-brand');

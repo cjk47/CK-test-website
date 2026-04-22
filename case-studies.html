@@ -49,8 +49,10 @@
   @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
   .ticker-track { display: flex; width: max-content; animation: ticker 48s linear infinite; }
   .ticker-track:hover { animation-play-state: paused; }
-  .ticker-logo { filter: grayscale(1) opacity(0.65); mix-blend-mode: multiply; transition: filter 0.2s ease; }
-  .ticker-logo:hover { filter: grayscale(0) opacity(1); }
+  .ticker-logo { filter: grayscale(1) brightness(0) invert(0.55); transition: filter 0.2s ease; }
+  .ticker-logo.no-invert { filter: grayscale(1) opacity(0.5); }
+  .ticker-logo:hover { filter: brightness(1) invert(0); }
+  .ticker-logo.no-invert:hover { filter: grayscale(0) opacity(1); }
   @media (max-width: 767px) {
     .mosaic-grid { grid-template-rows: 90px 44px 65px 46px !important; }
     .mosaic-chart-svg { width: 100% !important; height: 100% !important; }
@@ -267,41 +269,41 @@ document.querySelectorAll(".mob-nav-link").forEach(function(l){
     <div class="ticker-track">
       <!-- Set 1 -->
       <div class="flex items-center gap-14 pr-14">
-        <img src="1h-applbees.png" alt="Applebee's" class="ticker-logo" style="height:30px;width:auto;">
-        <img src="2-bw.webp" alt="Best Western" class="ticker-logo" style="height:38px;width:auto;">
-        <img src="2-chase.svg.png" alt="Chase" class="ticker-logo" style="height:32px;width:auto;">
-        <img src="logo3.png" alt="Pizza Hut" class="ticker-logo" style="height:28px;width:auto;">
-        <img src="1h-hennessy.png" alt="Hennessy" class="ticker-logo" style="height:34px;width:auto;">
-        <img src="1h-ibm.png" alt="IBM" class="ticker-logo" style="height:22px;width:auto;">
-        <img src="1h-oralb.png" alt="Oral-B" class="ticker-logo" style="height:28px;width:auto;">
-        <img src="logo7.webp" alt="Marc Jacobs" class="ticker-logo" style="height:30px;width:auto;">
-        <img src="1h-HarperCollins.png" alt="HarperCollins" class="ticker-logo" style="height:39px;width:auto;">
-        <img src="logo13.png" alt="Gerber" class="ticker-logo" style="height:32px;width:auto;">
-        <img src="2-playstation.svg" alt="PlayStation" class="ticker-logo" style="height:32px;width:auto;">
-        <img src="2016_Discovery_logo.svg" alt="Discovery" class="ticker-logo" style="height:30px;width:auto;">
-        <img src="unnamed.png" alt="Ragú" class="ticker-logo" style="height:28px;width:auto;">
-        <img src="logo14.png" alt="P&G" class="ticker-logo" style="height:30px;width:auto;">
-        <img src="DISH-Network-Logo-2019-present.png" alt="Dish" class="ticker-logo" style="height:28px;width:auto;">
-        <img src="Amica_Mutual_Insurance_Logo.svg.png" alt="Amica" class="ticker-logo" style="height:30px;width:auto;">
+        <img src="1h-applbees.png" alt="Applebee's" class="ticker-logo" style="height:31px;width:auto;">
+        <img src="2-bw.webp" alt="Best Western" class="ticker-logo no-invert" style="height:29px;width:auto;">
+        <img src="2-chase.svg.png" alt="Chase" class="ticker-logo" style="height:20px;width:auto;">
+        <img src="logo3.png" alt="Pizza Hut" class="ticker-logo" style="height:34px;width:auto;">
+        <img src="1h-hennessy.png" alt="Hennessy" class="ticker-logo no-invert" style="height:39px;width:auto;">
+        <img src="1h-ibm.png" alt="IBM" class="ticker-logo" style="height:25px;width:auto;">
+        <img src="1h-oralb.png" alt="Oral-B" class="ticker-logo no-invert" style="height:25px;width:auto;">
+        <img src="logo7.webp" alt="Marc Jacobs" class="ticker-logo no-invert" style="height:30px;width:auto;">
+        <img src="1h-HarperCollins.png" alt="HarperCollins" class="ticker-logo" style="height:43px;width:auto;">
+        <img src="logo13.png" alt="Gerber" class="ticker-logo no-invert" style="height:36px;width:auto;">
+        <img src="1h-playstation.png" alt="PlayStation" class="ticker-logo" style="height:32px;width:auto;">
+        <img src="2-discovery.png" alt="Discovery" class="ticker-logo" style="height:22px;width:auto;">
+        <img src="unnamed.png" alt="Ragú" class="ticker-logo" style="height:23px;width:auto;">
+        <img src="logo14.png" alt="P&G" class="ticker-logo" style="height:24px;width:auto;">
+        <img src="DISH-Network-Logo-2019-present.png" alt="Dish" class="ticker-logo" style="height:22px;width:auto;">
+        <img src="Amica_Mutual_Insurance_Logo.svg.png" alt="Amica" class="ticker-logo" style="height:23px;width:auto;">
       </div>
       <!-- Set 2 (duplicate for seamless loop) -->
       <div class="flex items-center gap-14 pr-14">
-        <img src="1h-applbees.png" alt="Applebee's" class="ticker-logo" style="height:30px;width:auto;">
-        <img src="2-bw.webp" alt="Best Western" class="ticker-logo" style="height:38px;width:auto;">
-        <img src="2-chase.svg.png" alt="Chase" class="ticker-logo" style="height:32px;width:auto;">
-        <img src="logo3.png" alt="Pizza Hut" class="ticker-logo" style="height:28px;width:auto;">
-        <img src="1h-hennessy.png" alt="Hennessy" class="ticker-logo" style="height:34px;width:auto;">
-        <img src="1h-ibm.png" alt="IBM" class="ticker-logo" style="height:22px;width:auto;">
-        <img src="1h-oralb.png" alt="Oral-B" class="ticker-logo" style="height:28px;width:auto;">
-        <img src="logo7.webp" alt="Marc Jacobs" class="ticker-logo" style="height:30px;width:auto;">
-        <img src="1h-HarperCollins.png" alt="HarperCollins" class="ticker-logo" style="height:39px;width:auto;">
-        <img src="logo13.png" alt="Gerber" class="ticker-logo" style="height:32px;width:auto;">
-        <img src="2-playstation.svg" alt="PlayStation" class="ticker-logo" style="height:32px;width:auto;">
-        <img src="2016_Discovery_logo.svg" alt="Discovery" class="ticker-logo" style="height:30px;width:auto;">
-        <img src="unnamed.png" alt="Ragú" class="ticker-logo" style="height:28px;width:auto;">
-        <img src="logo14.png" alt="P&G" class="ticker-logo" style="height:30px;width:auto;">
-        <img src="DISH-Network-Logo-2019-present.png" alt="Dish" class="ticker-logo" style="height:28px;width:auto;">
-        <img src="Amica_Mutual_Insurance_Logo.svg.png" alt="Amica" class="ticker-logo" style="height:30px;width:auto;">
+        <img src="1h-applbees.png" alt="Applebee's" class="ticker-logo" style="height:31px;width:auto;">
+        <img src="2-bw.webp" alt="Best Western" class="ticker-logo no-invert" style="height:29px;width:auto;">
+        <img src="2-chase.svg.png" alt="Chase" class="ticker-logo" style="height:20px;width:auto;">
+        <img src="logo3.png" alt="Pizza Hut" class="ticker-logo" style="height:34px;width:auto;">
+        <img src="1h-hennessy.png" alt="Hennessy" class="ticker-logo no-invert" style="height:39px;width:auto;">
+        <img src="1h-ibm.png" alt="IBM" class="ticker-logo" style="height:25px;width:auto;">
+        <img src="1h-oralb.png" alt="Oral-B" class="ticker-logo no-invert" style="height:25px;width:auto;">
+        <img src="logo7.webp" alt="Marc Jacobs" class="ticker-logo no-invert" style="height:30px;width:auto;">
+        <img src="1h-HarperCollins.png" alt="HarperCollins" class="ticker-logo" style="height:43px;width:auto;">
+        <img src="logo13.png" alt="Gerber" class="ticker-logo no-invert" style="height:36px;width:auto;">
+        <img src="1h-playstation.png" alt="PlayStation" class="ticker-logo" style="height:32px;width:auto;">
+        <img src="2-discovery.png" alt="Discovery" class="ticker-logo" style="height:22px;width:auto;">
+        <img src="unnamed.png" alt="Ragú" class="ticker-logo" style="height:23px;width:auto;">
+        <img src="logo14.png" alt="P&G" class="ticker-logo" style="height:24px;width:auto;">
+        <img src="DISH-Network-Logo-2019-present.png" alt="Dish" class="ticker-logo" style="height:22px;width:auto;">
+        <img src="Amica_Mutual_Insurance_Logo.svg.png" alt="Amica" class="ticker-logo" style="height:23px;width:auto;">
       </div>
     </div>
   </div>
