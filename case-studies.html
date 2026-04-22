@@ -95,7 +95,7 @@
       <a href="case-studies.html" class="text-coral font-semibold">Case Studies</a>
       <a href="about.html">About</a>
       
-      <a href="contact.html" class="btn-coral bg-coral text-white px-5 py-2 rounded-full font-semibold text-sm">Get in Touch</a>
+      <a href="contact.html" class="btn-coral bg-coral text-white px-5 py-2 rounded-full font-semibold text-sm">Let's Talk</a>
     </div>
     <button class="md:hidden flex flex-col justify-center text-ink" id="mob-btn" onclick="toggleMob()" aria-label="Toggle menu" style="width:36px;height:28px;padding:3px 7px;">
       <span class="mob-bar"></span>
@@ -108,7 +108,7 @@
   <a href="case-studies.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;" ontouchstart="this.style.background='#f3f4f6'" ontouchend="this.style.background=''" ontouchcancel="this.style.background=''">Case Studies</a>
   <a href="about.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;" ontouchstart="this.style.background='#f3f4f6'" ontouchend="this.style.background=''" ontouchcancel="this.style.background=''">About</a>
   <div class="px-6 py-5">
-    <a href="contact.html" class="btn-coral flex items-center justify-center w-full bg-[#F47B5A] text-white text-[17px] font-semibold rounded-full py-3">Get in Touch</a>
+    <a href="contact.html" class="btn-coral flex items-center justify-center w-full bg-[#F47B5A] text-white text-[17px] font-semibold rounded-full py-3">Let's Talk</a>
   </div>
 </div>
 <script>
@@ -135,7 +135,7 @@ document.querySelectorAll(".mob-nav-link").forEach(function(l){
 
       <!-- LEFT -->
       <div class="text-center md:text-left flex flex-col items-center md:items-start">
-        <div class="inline-flex items-center gap-2 bg-violet-light text-violet text-xs font-semibold px-3 py-1.5 rounded-full mb-5">
+        <div class="inline-flex items-center gap-2 text-violet text-xs font-semibold px-3 py-1.5 rounded-full mb-5" style="background:#ede9fd;">
           You're in good company
         </div>
         <h1 class="cs-hero-h1 font-display font-extrabold text-ink leading-tight md:leading-[1.12] mb-5" style="font-size:clamp(2.5rem,4.5vw,3.5rem);letter-spacing:-0.02em;font-weight:750;">SEO success stories</h1>
@@ -153,7 +153,7 @@ document.querySelectorAll(".mob-nav-link").forEach(function(l){
         </div>
 
         <!-- Col 1 Row 3-4: Rukkus stat card -->
-        <div class="mosaic-stat" style="grid-row:3/5;grid-column:1/2;background:#FCC5B4;border-radius:18px;padding:14px 16px;display:flex;flex-direction:column;justify-content:center;gap:10px;overflow:hidden;">
+        <div class="mosaic-stat" style="grid-row:3/5;grid-column:1/2;background:#FDE4DE;border-radius:18px;padding:14px 16px;display:flex;flex-direction:column;justify-content:center;gap:10px;overflow:hidden;">
           <canvas id="rukkus-symbol" class="rukkus-logo" width="84" height="84" style="flex-shrink:0;width:28px;height:28px;"></canvas>
           <script>
           (function(){
@@ -177,9 +177,9 @@ document.querySelectorAll(".mob-nav-link").forEach(function(l){
                 var lum = (0.2126*px[i] + 0.7152*px[i+1] + 0.0722*px[i+2])/255;
                 if(lum > 0.68){
                   var t = (x/cw*0.5 + y/ch*0.5);
-                  px[i]   = Math.round(200 + (95-200)*t);
-                  px[i+1] = Math.round(90  + (35-90)*t);
-                  px[i+2] = Math.round(65  + (18-65)*t);
+                  px[i]   = Math.round(220 + (140-220)*t);
+                  px[i+1] = Math.round(120 + (70-120)*t);
+                  px[i+2] = Math.round(100 + (50-100)*t);
                   px[i+3] = Math.round(((lum-0.68)/0.32)*255);
                 } else {
                   px[i+3] = 0;
@@ -192,8 +192,8 @@ document.querySelectorAll(".mob-nav-link").forEach(function(l){
           })();
           </script>
           <div>
-            <p class="stat-num" style="font-family:'Poppins',sans-serif;font-weight:500;font-size:1.55rem;color:#5A2008;line-height:1;">+1,256%</p>
-            <p class="stat-label" style="font-size:0.68rem;color:#5A2008;margin-top:4px;opacity:0.85;">Traffic increase</p>
+            <p class="stat-num" style="font-family:'Poppins',sans-serif;font-weight:500;font-size:1.55rem;color:#7A3A1A;line-height:1;">+1,256%</p>
+            <p class="stat-label" style="font-size:0.68rem;color:#7A3A1A;margin-top:4px;opacity:0.85;">Traffic increase</p>
           </div>
         </div>
 
@@ -327,11 +327,10 @@ document.querySelectorAll(".mob-nav-link").forEach(function(l){
         <div style="position:absolute;bottom:10px;left:12px;display:flex;gap:5px;flex-wrap:wrap;"><span class="bg-white/20 backdrop-blur-sm text-white font-semibold text-xs px-2.5 py-1 rounded-full">Content Strategy</span><span class="bg-white/20 backdrop-blur-sm text-white font-semibold text-xs px-2.5 py-1 rounded-full">Technical SEO</span></div>
       </div>
       <div class="px-5 pt-4 pb-2">
-        <img src="xvivo.png" alt="XVIVO" style="height:22px;object-fit:contain;object-position:left;mix-blend-mode:multiply;">
+        <img src="xvivo.png" alt="XVIVO" style="height:17px;object-fit:contain;object-position:left;mix-blend-mode:multiply;">
       </div>
-      <div class="px-5 pt-3 pb-6 flex-1">
-        <p class="font-display font-semibold text-ink mb-3" style="font-size:1.05rem;line-height:1.3;letter-spacing:-0.01em;">How XVIVO's traffic jumped 45% after a full SEO rebuild</p>
-        <p class="text-ink" style="font-size:0.825rem;line-height:1.72;font-weight:400;color:#5A5A6E;">Medical animation studio regains visibility through technical fixes and content expansion.</p>
+      <div class="px-5 pt-3 pb-5">
+        <p class="font-display font-semibold text-ink mb-3" style="font-size:1.2rem;line-height:1.4;letter-spacing:-0.01em;">How XVIVO's traffic jumped 45% after a full SEO rebuild</p>
       </div>
       <div style="border-top:1px solid #E8E8F0;margin:0 20px;"></div>
       <div class="flex">
@@ -360,9 +359,8 @@ document.querySelectorAll(".mob-nav-link").forEach(function(l){
       <div class="px-5 pt-4 pb-2">
         <img src="rukkus_logo_Wht_med.png" alt="Rukkus" style="height:22px;object-fit:contain;object-position:left;filter:brightness(0);">
       </div>
-      <div class="px-5 pt-3 pb-6 flex-1">
-        <p class="font-display font-semibold text-ink mb-3" style="font-size:1.05rem;line-height:1.3;letter-spacing:-0.01em;">Rukkus ticket sales soar 451% with strategic link building</p>
-        <p class="text-ink" style="font-size:0.825rem;line-height:1.72;font-weight:400;color:#5A5A6E;">Ticket marketplace grows revenue with original data, news-driven content, and off-site SEO.</p>
+      <div class="px-5 pt-3 pb-5">
+        <p class="font-display font-semibold text-ink mb-3" style="font-size:1.2rem;line-height:1.4;letter-spacing:-0.01em;">Rukkus ticket sales soar 451% with strategic link building</p>
       </div>
       <div style="border-top:1px solid #E8E8F0;margin:0 20px;"></div>
       <div class="flex">
@@ -391,9 +389,8 @@ document.querySelectorAll(".mob-nav-link").forEach(function(l){
       <div class="px-5 pt-4 pb-2">
         <img src="er-logo-menu-blk.png" alt="Epic Reads" style="height:22px;object-fit:contain;object-position:left;mix-blend-mode:multiply;">
       </div>
-      <div class="px-5 pt-3 pb-6 flex-1">
-        <p class="font-display font-semibold text-ink mb-3" style="font-size:1.05rem;line-height:1.3;letter-spacing:-0.01em;">How Epic Reads grew sales 24% by aligning content to search behavior</p>
-        <p class="text-ink" style="font-size:0.825rem;line-height:1.72;font-weight:400;color:#5A5A6E;">Book blog drives clicks and sales by focusing on what its audience is searching for.</p>
+      <div class="px-5 pt-3 pb-5">
+        <p class="font-display font-semibold text-ink mb-3" style="font-size:1.2rem;line-height:1.4;letter-spacing:-0.01em;">How Epic Reads grew sales 24% with demand-driven content</p>
       </div>
       <div style="border-top:1px solid #E8E8F0;margin:0 20px;"></div>
       <div class="flex">
@@ -415,16 +412,15 @@ document.querySelectorAll(".mob-nav-link").forEach(function(l){
     <!-- Case Study 4 - Best Western -->
     <a href="case-study-best-western.html" class="card-hover flex flex-col bg-white rounded-2xl overflow-hidden" style="border:1px solid #E8E8F0;">
       <div class="card-img-wrap" style="height:180px;overflow:hidden;position:relative;">
-        <img src="rl.png" alt="Best Western" class="card-img w-full h-full object-cover">
+        <img src="rl.png" alt="Best Western" class="card-img w-full h-full object-cover" style="object-position:center 80%;">
         <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(0,0,0,0.45) 0%, transparent 55%);"></div>
         <div style="position:absolute;bottom:10px;left:12px;display:flex;gap:5px;flex-wrap:wrap;"><span class="bg-white/20 backdrop-blur-sm text-white font-semibold text-xs px-2.5 py-1 rounded-full">AI Search Strategy</span><span class="bg-white/20 backdrop-blur-sm text-white font-semibold text-xs px-2.5 py-1 rounded-full">Technical SEO</span></div>
       </div>
       <div class="px-5 pt-4 pb-2">
-        <img src="2-bw.webp" alt="Best Western" style="height:22px;object-fit:contain;object-position:left;mix-blend-mode:multiply;">
+        <img src="2-bw.webp" alt="Best Western" style="height:24px;object-fit:contain;object-position:left;mix-blend-mode:multiply;">
       </div>
-      <div class="px-5 pt-3 pb-6 flex-1">
-        <p class="font-display font-semibold text-ink mb-3" style="font-size:1.05rem;line-height:1.3;letter-spacing:-0.01em;">Best Western boosts AI Overview visibility by 349%</p>
-        <p class="text-ink" style="font-size:0.825rem;line-height:1.72;font-weight:400;color:#5A5A6E;">Hotel brand increases AI visibility through content restructuring and stronger SEO foundations.</p>
+      <div class="px-5 pt-3 pb-5">
+        <p class="font-display font-semibold text-ink mb-3" style="font-size:1.2rem;line-height:1.4;letter-spacing:-0.01em;">Best Western boosts AI Overview visibility by 349%</p>
       </div>
       <div style="border-top:1px solid #E8E8F0;margin:0 20px;"></div>
       <div class="flex">
@@ -451,11 +447,10 @@ document.querySelectorAll(".mob-nav-link").forEach(function(l){
         <div style="position:absolute;bottom:10px;left:12px;display:flex;gap:5px;flex-wrap:wrap;"><span class="bg-white/20 backdrop-blur-sm text-white font-semibold text-xs px-2.5 py-1 rounded-full">Content Strategy</span><span class="bg-white/20 backdrop-blur-sm text-white font-semibold text-xs px-2.5 py-1 rounded-full">Technical SEO</span></div>
       </div>
       <div class="px-5 pt-4 pb-2">
-        <img src="2-chase.svg.png" alt="Chase" style="height:22px;object-fit:contain;object-position:left;mix-blend-mode:multiply;">
+        <img src="2-chase.svg.png" alt="Chase" style="height:20px;object-fit:contain;object-position:left;mix-blend-mode:multiply;">
       </div>
-      <div class="px-5 pt-3 pb-6 flex-1">
-        <p class="font-display font-semibold text-ink mb-3" style="font-size:1.05rem;line-height:1.3;letter-spacing:-0.01em;">How Chase grew organic clicks 69.8% by closing content gaps</p>
-        <p class="text-ink" style="font-size:0.825rem;line-height:1.72;font-weight:400;color:#5A5A6E;">Credit card site grows traffic by closing content gaps and building authority to key pages.</p>
+      <div class="px-5 pt-3 pb-5">
+        <p class="font-display font-semibold text-ink mb-3" style="font-size:1.2rem;line-height:1.4;letter-spacing:-0.01em;">How Chase grew organic clicks 69.8% by closing content gaps</p>
       </div>
       <div style="border-top:1px solid #E8E8F0;margin:0 20px;"></div>
       <div class="flex">
@@ -476,15 +471,18 @@ document.querySelectorAll(".mob-nav-link").forEach(function(l){
 
     <!-- CTA Card -->
     <div class="card-hover flex flex-col rounded-2xl overflow-hidden" style="border:1px solid #E8E8F0;">
-      <div class="bg-coral p-6 flex flex-col" style="height:200px;flex-shrink:0;">
+      <div class="bg-coral p-6 flex flex-col card-img-wrap" style="height:180px;flex-shrink:0;">
         <div class="inline-flex items-center bg-white/20 text-white text-xs font-semibold px-3 py-1.5 rounded-full self-start mb-6">Your project here</div>
         <p class="font-display font-bold text-white" style="font-size:1.55rem;line-height:1.25;letter-spacing:-0.02em;">Want results like these?</p>
       </div>
-      <div class="bg-white px-6 pt-5 flex flex-col" style="flex:1;position:relative;">
-        <p class="font-display font-bold text-ink mb-2" style="font-size:1rem;">Let's work together</p>
-        <p class="text-sm text-muted" style="line-height:1.7;">Every project is different. Send me a note about your situation and let's talk through what's possible.</p>
-        <div style="position:absolute;bottom:115px;left:0;right:0;border-top:1px solid #E8E8F0;"></div>
-        <div style="position:absolute;bottom:0;left:0;right:0;height:115px;display:flex;align-items:center;padding:0 20px;">
+      <div class="bg-white flex flex-col" style="flex:1;position:relative;">
+        <div class="px-5 pt-4 pb-2">
+          <img src="Your-Logo-512x512.png" alt="Your Logo" style="height:25px;object-fit:contain;object-position:left;mix-blend-mode:multiply;">
+        </div>
+        <p class="font-display font-semibold text-ink mb-2 px-5 pt-2" style="font-size:1.05rem;line-height:1.3;letter-spacing:-0.01em;">Let's work together to grow your organic traffic</p>
+        <p class="text-ink px-5" style="font-size:0.825rem;line-height:1.72;font-weight:400;color:#5A5A6E;">Every project is different. Send me a note and we'll talk through what's possible.</p>
+        <div style="position:absolute;bottom:124px;left:0;right:0;border-top:1px solid #E8E8F0;margin:0 20px;"></div>
+        <div style="position:absolute;bottom:0;left:0;right:0;height:124px;display:flex;align-items:center;padding:0 20px;">
           <a href="contact.html" class="btn-coral inline-block bg-coral text-white font-semibold px-5 py-2.5 rounded-full text-sm">Start a conversation →</a>
         </div>
       </div>
