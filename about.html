@@ -763,19 +763,34 @@ function toggleBrandGrid() {
 <!-- MUSIC -->
 <section class="py-16" style="background:#F9F8FF;">
   <div class="max-w-6xl mx-auto px-6">
-    <div class="grid md:grid-cols-2 gap-12 items-center">
+    <div class="grid md:grid-cols-[1fr_1.2fr] gap-12 items-center">
       <div>
         <div class="inline-flex items-center gap-2 bg-violet-light text-violet text-xs font-semibold px-3 py-1.5 rounded-full mb-5">
           Beyond SEO
         </div>
-        <h2 class="font-display font-bold text-4xl text-ink mb-4" style="letter-spacing:-0.02em;">A bit about me outside of work</h2>
-        <p class="text-muted mb-2" style="line-height:1.75;">When I'm not delivering SEO results, here are a few things I enjoy:</p>
-        <ul class="mb-4 space-y-3 about-bullets" style="list-style:none;padding:0;margin-top:0;margin-bottom:1rem;">
-          <li class="flex items-start gap-3 text-muted"><span class="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style="background:rgba(123,104,238,0.12);margin-top:4px;flex-shrink:0;"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#7B68EE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Playing guitar, collecting vinyl, and doing discography deep-dives of my <span id="music-tooltip-trigger" style="text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:default;">favorite artists 🎵</span></span></li>
-          <li class="flex items-start gap-3 text-muted"><span class="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style="background:rgba(123,104,238,0.12);margin-top:4px;flex-shrink:0;"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#7B68EE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Playing and watching <span id="bball-tooltip-trigger" style="text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:default;">basketball 🏀</span></span></li>
-          <li class="flex items-start gap-3 text-muted"><span class="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style="background:rgba(123,104,238,0.12);margin-top:4px;flex-shrink:0;"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#7B68EE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Catching a good <span id="movie-tooltip-trigger" style="text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:default;">movie 🎥</span></span></li>
-          <li class="flex items-start gap-3 text-muted"><span class="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style="background:rgba(123,104,238,0.12);margin-top:4px;flex-shrink:0;"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#7B68EE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Walking around my Brooklyn <span id="hood-tooltip-trigger" style="text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:default;">neighborhood 📍</span></span></li>
-        </ul>
+        <h2 class="font-display font-bold text-4xl text-ink mb-4" style="letter-spacing:-0.02em;">Outside of SEO</h2>
+        <p class="text-muted mb-4" style="line-height:1.75;">When I'm not deep in SEO, this is what I'm usually doing:</p>
+        <div class="mb-4" style="max-width:370px;">
+          <div class="flex items-center gap-4 py-4">
+            <img src="about-music.png" alt="Music" style="width:48px;height:48px;flex-shrink:0;mix-blend-mode:multiply;">
+            <span class="text-muted" style="font-size:1rem;line-height:1.5;">Playing guitar, vinyl collecting, and discography <span id="music-tooltip-trigger" style="text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:default;">deep dives</span></span>
+          </div>
+          <div style="border-top:1px solid #E0DDF0;"></div>
+          <div class="flex items-center gap-4 py-4">
+            <img src="about-bball.png" alt="Basketball" style="width:48px;height:48px;flex-shrink:0;mix-blend-mode:multiply;">
+            <span class="text-muted" style="font-size:1rem;line-height:1.5;">Playing and watching <span id="bball-tooltip-trigger" style="text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:default;">basketball</span></span>
+          </div>
+          <div style="border-top:1px solid #E0DDF0;"></div>
+          <div class="flex items-center gap-4 py-4">
+            <img src="about-movies.png" alt="Movies" style="width:48px;height:48px;flex-shrink:0;mix-blend-mode:multiply;">
+            <span class="text-muted" style="font-size:1rem;line-height:1.5;">Watching <span id="movie-tooltip-trigger" style="text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:default;">movies</span></span>
+          </div>
+          <div style="border-top:1px solid #E0DDF0;"></div>
+          <div class="flex items-center gap-4 py-4">
+            <img src="about-location.png" alt="Location" style="width:48px;height:48px;flex-shrink:0;mix-blend-mode:multiply;">
+            <span class="text-muted" style="font-size:1rem;line-height:1.5;">Walking around my Brooklyn <span id="hood-tooltip-trigger" style="text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:default;">neighborhood</span></span>
+          </div>
+        </div>
 <div id="movie-tooltip" style="position:fixed;background:#000;border-radius:14px;padding:0;font-size:13px;font-family:'Inter',sans-serif;box-shadow:0 8px 32px -4px rgba(0,0,0,0.36),0 2px 8px rgba(0,0,0,0.16);opacity:0;pointer-events:none;transition:opacity 0.16s ease;z-index:9999;transform:translateY(0) translateX(0) rotate(0deg);width:220px;height:260px;overflow:hidden;">
   <div style="margin-top:-80px;">
     <iframe id="movie-iframe" src="" width="440" height="900" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="display:block;border:none;transform:scale(0.5);transform-origin:top left;"></iframe>
