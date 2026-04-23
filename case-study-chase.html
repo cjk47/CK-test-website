@@ -35,7 +35,7 @@
   .font-display { font-family: 'Poppins', sans-serif; }
   .btn-coral { transition: transform 0.2s cubic-bezier(0.22,1,0.36,1), box-shadow 0.2s cubic-bezier(0.22,1,0.36,1); }
   .card-hover { transition: box-shadow 0.2s ease, transform 0.2s cubic-bezier(0.22,1,0.36,1); }
-  .card-hover:hover { box-shadow: 0 8px 32px -8px rgba(123,104,238,0.12); transform: translateY(-2px); }
+  @media (hover: hover) { .card-hover:hover { box-shadow: 0 8px 32px -8px rgba(123,104,238,0.12); transform: translateY(-2px); } }
   .btn-coral:hover { transform: translateY(-2px); box-shadow: 0 10px 28px -6px rgba(244,123,90,0.45); }
   .btn-coral:active { transform: translateY(0); }
   nav a { transition: color 0.15s ease; }
@@ -315,7 +315,7 @@ function toggleMob() {
           </div>
           <!-- 2. Strategy -->
           <div class="toc-section" data-section="strategy">
-            <a href="#strategy" class="toc-h2-link block text-[14px] font-semibold py-2.5 transition-colors duration-200" style="color:#4B5563;">2. The Strategy</a>
+            <a href="#strategy" class="toc-h2-link block text-[14px] font-semibold py-2.5 transition-colors duration-200" style="color:#4B5563;">The Strategy</a>
             <div class="toc-children">
               <div style="margin-left:1.5px;border-left:2px solid #E5E7EB;padding-left:0;">
                 <a href="#s-1" class="toc-h3-link block text-[12.5px] py-2 pl-3 border-l-[2px] border-transparent transition-colors duration-150" style="color:#8896A8;margin-left:-2px;">Search Gap Analysis</a>

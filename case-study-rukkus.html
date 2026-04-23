@@ -35,7 +35,7 @@
   .font-display { font-family: 'Poppins', sans-serif; }
   .btn-coral { transition: transform 0.2s cubic-bezier(0.22,1,0.36,1), box-shadow 0.2s cubic-bezier(0.22,1,0.36,1); }
   .card-hover { transition: box-shadow 0.2s ease, transform 0.2s cubic-bezier(0.22,1,0.36,1); }
-  .card-hover:hover { box-shadow: 0 8px 32px -8px rgba(123,104,238,0.12); transform: translateY(-2px); }
+  @media (hover: hover) { .card-hover:hover { box-shadow: 0 8px 32px -8px rgba(123,104,238,0.12); transform: translateY(-2px); } }
   .btn-coral:hover { transform: translateY(-2px); box-shadow: 0 10px 28px -6px rgba(244,123,90,0.45); }
   .btn-coral:active { transform: translateY(0); }
   nav a { transition: color 0.15s ease; }
@@ -52,9 +52,12 @@
 
 
     .cs-meta-grid .whitespace-nowrap { white-space: normal !important; }
-    .cs-testimonial-card { padding-left: 24px !important; padding-right: 24px !important; }
-    .cs-cta-card { padding-left: 24px !important; padding-right: 24px !important; }
-    .cs-results-grid > div { padding: 10px 4px !important; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+    .cs-testimonial-card { padding-left: 32px !important; padding-right: 32px !important; }
+    .cs-testimonial-card .text-center { text-align: left !important; }
+    .cs-cta-card { padding: 32px !important; }
+    .cs-results-grid > div { padding: 10px 4px !important; flex-direction: column; align-items: center; justify-content: center; }
+    .cs-results-grid > div.hidden { display: none !important; }
+    #first-visible-stat { border-left: none !important; }
     .cs-results-grid p:first-child { font-size: 1.45rem !important; }
   }
   @media (min-width: 400px) and (max-width: 767px) {
@@ -162,11 +165,11 @@ function toggleMob() {
       <!-- Stats repositioned to sit above the white curve -->
       <div class="absolute left-0 right-0 p-4 md:p-8 bottom-0">
         <div class="flex gap-0 divide-x divide-white/20">
-          <div class="flex-1 text-center px-2 md:px-6">
+          <div class="hidden md:block flex-1 text-center px-2 md:px-6">
             <p class="font-display font-bold text-2xl md:text-5xl text-white">+1,256%</p>
             <p class="text-sm text-white/70 mt-1">Organic Traffic</p>
           </div>
-          <div class="flex-1 text-center px-2 md:px-6">
+          <div id="first-visible-stat" class="flex-1 text-center px-2 md:px-6">
             <p class="font-display font-bold text-2xl md:text-5xl text-white">74K</p>
             <p class="text-sm text-white/70 mt-1">New Visitors</p>
           </div>
@@ -446,8 +449,8 @@ function toggleMob() {
             <img src="https://www.google.com/s2/favicons?domain=democratandchronicle.com&sz=64" style="height:16px;width:16px;object-fit:contain;"><span style="font-weight:600;font-size:13px;color:#1a1a1a;">Democrat &amp; Chronicle</span>
           </div>
         </div>
-        <div class="grid grid-cols-4 gap-4 mt-8 cs-results-grid">
-          <div class="bg-offwhite rounded-xl p-5 flex flex-col items-center">
+        <div class="grid grid-cols-3 md:grid-cols-4 gap-4 mt-8 cs-results-grid">
+          <div class="bg-offwhite rounded-xl p-5 flex-col items-center hidden md:flex">
             <p class="font-display font-bold text-3xl text-coral">+1,256%</p>
             <p class="text-xs text-muted mt-1">Organic Traffic</p>
           </div>
@@ -480,7 +483,7 @@ function toggleMob() {
           </div>
           <!-- 2. Strategy -->
           <div class="toc-section" data-section="strategy">
-            <a href="#strategy" class="toc-h2-link block text-[14px] font-semibold py-2.5 transition-colors duration-200" style="color:#4B5563;">2. The Strategy</a>
+            <a href="#strategy" class="toc-h2-link block text-[14px] font-semibold py-2.5 transition-colors duration-200" style="color:#4B5563;">The Strategy</a>
             <div class="toc-children">
               <div style="margin-left:1.5px;border-left:2px solid #E5E7EB;padding-left:0;">
                 <a href="#s-1" class="toc-h3-link block text-[12.5px] py-2 pl-3 border-l-[2px] border-transparent transition-colors duration-150" style="color:#8896A8;margin-left:-2px;">Offer Unique Data</a>
