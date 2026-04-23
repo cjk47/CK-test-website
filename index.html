@@ -104,7 +104,7 @@
   @media (min-width: 428px) and (max-width: 432px) { .hero-h1-mobile { font-size: 9.05vw !important; } .hero-top { padding-top: 120px !important; } .hero-bottom { padding-bottom: 120px !important; } }
   }
   .brand-logos .logo-cell img { filter: grayscale(1) contrast(20) opacity(0.65); mix-blend-mode: normal; }
-  .brand-logos .logo-cell:hover img { filter: grayscale(0) contrast(1) opacity(1) !important; mix-blend-mode: normal !important; }
+  @media (hover: hover) { .brand-logos .logo-cell:hover img { filter: grayscale(0) contrast(1) opacity(1) !important; mix-blend-mode: normal !important; } }
   @media (min-width: 768px) {
     .brands-heading { font-weight: 500 !important; font-size: 20px !important; color: #323232 !important; letter-spacing: normal !important; -webkit-text-stroke: 0.2px currentColor; }
     .brand-logos .logo-cell img { filter: grayscale(1) contrast(20) opacity(0.5) !important; mix-blend-mode: multiply !important; }
@@ -284,7 +284,7 @@ function toggleMob() {
             </div>
             <h3 class="font-display font-medium text-ink mb-2 card-title">Content Strategy</h3>
           </div>
-          <p class="text-sm text-muted card-desc" style="line-height:1.75">Find what your audience is searching for and create content that people and bots love.</p>
+          <p class="text-sm text-muted card-desc" style="line-height:1.75">Find what your audience is searching for and create content that people and bots will love.</p>
           <div class="mt-auto pt-5 flex items-center gap-2">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><polyline points="3,18 9,12 13,15 21,6" stroke="#F47B5A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="16,6 21,6 21,11" stroke="#F47B5A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             <span class="text-xs font-semibold" style="color:#F47B5A;">Capture high-intent traffic</span>
@@ -447,7 +447,7 @@ function toggleMob() {
 
     <!-- Mobile: order 3 | Desktop: col 2 row 2 — subcopy + button -->
     <div class="order-3 md:col-start-2 md:row-start-2">
-      <p class="text-muted mb-4" style="line-height:1.7">Organic traffic only matters when it converts. I help brands show up for the topics that matter most, and create experiences that turn those clicks into action.</p>
+      <p class="text-muted mb-4" style="line-height:1.7">I help brands show up for the topics that matter most, and create experiences that turn those clicks into action.</p>
       <p class="text-muted mb-8" style="line-height:1.7">Discover how I've helped businesses like yours turn SEO into a powerful marketing channel.</p>
       <a href="case-studies.html" class="btn-outline ripple-btn inline-flex items-center gap-2 border text-violet px-5 py-2.5 rounded-full text-sm font-semibold focus-visible:outline-2 focus-visible:outline-violet" style="border-color:rgba(123,104,238,0.35);">View case studies →</a>
     </div>
