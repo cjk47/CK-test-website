@@ -424,15 +424,12 @@ document.querySelectorAll(".mob-nav-link").forEach(function(l){
 </script>
 
 <!-- VALUE PROP BAND -->
-<section id="what-i-do" class="pt-16 pb-6 md:pt-[90px] md:pb-[52px]" style="background:#ffffff;scroll-margin-top:64px;">
-  <div class="max-w-6xl mx-auto px-6 text-left md:text-center flex flex-col items-start md:items-center">
-    <div class="inline-flex items-center gap-2 bg-coral-light text-coral text-xs font-semibold px-3 py-1.5 rounded-full mb-5">
-      SEO services
-    </div>
+<section id="what-i-do" class="pt-16 pb-6 md:pt-[80px] md:pb-[52px]" style="background:#ffffff;scroll-margin-top:64px;">
+  <div class="max-w-6xl mx-auto px-6 text-center flex flex-col items-center md:items-center">
     <h2 class="svc-h2" style="font-family:'Poppins',sans-serif;font-weight:750;font-size:clamp(1.875rem,3.6vw,2.26rem);color:#1A1A2E;letter-spacing:-0.02em;line-height:1.2;margin-bottom:12px;">
 Amplify your SEO performance
     </h2>
-    <p style="font-size:1rem;color:#6B7280;max-width:480px;line-height:1.7;font-family:'Inter',sans-serif;margin-bottom:0;">Search built around better digital experiences that drive connection & growth.</p>
+    <p style="font-size:1rem;color:#6B7280;max-width:480px;line-height:1.7;font-family:'Inter',sans-serif;margin-bottom:0;">Search built around better digital experiences <br class="md:hidden">that drive connection & growth.</p>
   </div>
 </section>
 
@@ -678,9 +675,11 @@ Amplify your SEO performance
     .prob-sticky { width: auto !important; position: static !important; }
     .prob-diag-cols { grid-template-columns: 1fr !important; }
     .prob-diag-panel { padding-left: 0 !important; text-align: left !important; }
+    .prob-section-mobile { padding-top: 20px !important; }
+    .modernize-section { padding-top: 20px !important; }
   }
 </style>
-<section style="background:linear-gradient(to bottom, #ffffff 0%, #F9F8FF 15%, #F9F8FF 85%, #ffffff 100%);padding:80px 0 100px;">
+<section class="prob-section-mobile" style="background:linear-gradient(to bottom, #ffffff 0%, #F9F8FF 15%, #F9F8FF 85%, #ffffff 100%);padding:80px 0 100px;">
   <div class="max-w-6xl mx-auto px-6" style="padding-top:20px;">
     <div style="width:300px;margin-bottom:20px;">
       <div class="inline-flex items-center gap-2 text-xs font-semibold px-3 py-1.5 rounded-full" style="background:#e8e4fd;color:#7B68EE;">Sound familiar?</div>
@@ -746,7 +745,7 @@ Amplify your SEO performance
           </div>
           <!-- Right panel: chart image vertically centered -->
           <div style="width:36%;flex-shrink:0;position:relative;overflow:hidden;">
-            <img id="prob-case-image" src="9e49903e-2fcc-4fdc-b864-8e19789e742e.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center calc(50% + 4px);display:block;mix-blend-mode:multiply;">
+            <img id="prob-case-image" src="9-1.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center;display:block;mix-blend-mode:multiply;">
           </div>
         </div>
       </div>
@@ -763,8 +762,8 @@ var probData = [
     caseLogo: 'xvivo.png',
     caseLine1: 'Organic traffic was dropping. After a technical SEO rebuild, ',
     caseLine2: 'it grew 45%.',
-    caseImage: '9e49903e-2fcc-4fdc-b864-8e19789e742e.png',
-    caseImageStyle: 'object-position:center calc(50% + 4px);',
+    caseImage: '9-1.png',
+    caseImageStyle: 'object-position:center;mix-blend-mode:multiply;',
     caseLink: 'case-study-xvivo.html'
   },
   {
@@ -772,11 +771,11 @@ var probData = [
     cause: 'Stronger authority, better site experience, higher-quality content, more content across key topics, or structural issues that make it easier for competitors to win those topics.',
     fix: 'I run a gap analysis across content, authority, and site structure to pinpoint where competitors have the edge, then build a focused plan to close those gaps.',
     caseLogo: 'rukkus.png',
-    caseLogoStyle: 'height:27px;margin-left:-4px;filter:grayscale(1) invert(1) brightness(8);mix-blend-mode:multiply;opacity:0.55;',
+    caseLogoStyle: 'height:27px;margin-left:-4px;filter:brightness(0) invert(0.45);',
     caseLine1: 'Competitors owned search. Off-site SEO closed the gap, ',
     caseLine2: 'leading to a buyout.',
-    caseImage: '7-competitors.png',
-    caseImageStyle: 'transform:scale(0.7) translateY(-2px);transform-origin:center;',
+    caseImage: '9-2.png',
+    caseImageStyle: 'object-position:center;mix-blend-mode:multiply;',
     caseLink: 'case-study-rukkus.html'
   },
   {
@@ -787,8 +786,8 @@ var probData = [
     caseLogoStyle: 'height:20px;filter:grayscale(1) contrast(0.7) brightness(1.6);mix-blend-mode:multiply;',
     caseLine1: 'AI visibility was low. Content restructuring ',
     caseLine2: 'drove 349% growth.',
-    caseImage: 'prob3.png',
-    caseImageStyle: 'transform:translateX(-9px);',
+    caseImage: '9-10.png',
+    caseImageStyle: 'object-position:center;transform:scale(0.82) translateX(-20px);',
     caseLink: 'case-study-best-western.html'
   },
   {
@@ -799,7 +798,8 @@ var probData = [
     caseLogoStyle: 'height:18px;filter:grayscale(1) contrast(0.7) brightness(1.6);mix-blend-mode:multiply;',
     caseLine1: 'Content wasn\'t performing. Aligning it to search demand ',
     caseLine2: 'grew traffic 35%.',
-    caseImage: 'prob4.png',
+    caseImage: '9-7.png',
+    caseImageStyle: 'object-position:center;mix-blend-mode:multiply;transform:scale(0.7);',
     caseLink: 'case-study-epic-reads.html'
   },
   {
@@ -809,8 +809,8 @@ var probData = [
     caseLogo: 'xvivo.png',
     caseLine1: 'Traffic wasn\'t converting. A content and UX overhaul ',
     caseLine2: 'increased leads 27%.',
-    caseImage: 'prob5.png',
-    caseImageStyle: 'transform:scale(0.82);transform-origin:center;',
+    caseImage: '9-8.png',
+    caseImageStyle: 'object-position:center;mix-blend-mode:multiply;transform:scale(0.65);',
     caseLink: 'case-study-xvivo.html'
   }
 ];
@@ -837,7 +837,7 @@ function selectProb(idx) {
 </script>
 
 <!-- SEO IS EVOLVING -->
-<section style="background:#ffffff;padding:60px 0 72px;overflow-x:hidden;">
+<section class="modernize-section" style="background:#ffffff;padding:60px 0 72px;overflow-x:hidden;">
   <div class="max-w-6xl mx-auto px-6">
 
     <!-- Heading -->
@@ -890,11 +890,11 @@ function selectProb(idx) {
         <ul class="flex flex-col gap-4">
           <li class="flex items-center gap-3">
             <span class="flex-shrink-0"><img src="https://www.animalz.co/assets/face-laugh-wink.svg" width="18" height="18" style="filter:brightness(0) invert(1) opacity(0.7);" alt=""/></span>
-            <span style="font-size:0.9rem;color:rgba(255,255,255,1);line-height:1.5;">Content aligned to search intent and context</span>
+            <span style="font-size:0.9rem;color:rgba(255,255,255,1);line-height:1.5;">Content aligned to search intent<span class="hidden md:inline"> and context</span></span>
           </li>
           <li class="flex items-center gap-3">
             <span class="flex-shrink-0"><img src="https://www.animalz.co/assets/face-smile-wink.svg" width="18" height="18" style="filter:brightness(0) invert(1) opacity(0.7);" alt=""/></span>
-            <span style="font-size:0.9rem;color:rgba(255,255,255,1);line-height:1.5;">Focused, high-impact content over volume</span>
+            <span style="font-size:0.9rem;color:rgba(255,255,255,1);line-height:1.5;"><span class="hidden md:inline">Focused, h</span><span class="md:hidden">H</span>igh-impact content over volume</span>
           </li>
           <li class="flex items-center gap-3">
             <span class="flex-shrink-0"><img src="https://www.animalz.co/assets/face-laugh-beam.svg" width="18" height="18" style="filter:brightness(0) invert(1) opacity(0.7);" alt=""/></span>
