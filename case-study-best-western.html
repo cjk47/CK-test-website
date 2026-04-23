@@ -264,9 +264,15 @@ function toggleMob() {
             
             <div>
               <h3 id="s-2" class="font-display font-semibold text-[20px] text-ink mb-3">Strengthen Structured Data</h3>
-              <p class="text-[#4B5563] text-[16px] mt-4" style="line-height:1.8;">Structured data was added across key templates, including Hotel, FAQPage, and BreadcrumbList schema.</p>
-              <p class="text-[#4B5563] text-[16px] mt-4" style="line-height:1.8;">This helped search engines better understand each page, from property details, to member vs. regular pricing, to how pages fit within the overall site structure.</p>
-              <p class="text-[#4B5563] text-[16px] mt-4 mb-6" style="line-height:1.8;">Instead of relying on page copy alone, structured data helped make key details clearer and easier for search engines and LLMs to interpret, improving how that information could be surfaced.</p>
+              <p class="text-[#4B5563] text-[16px] mt-4" style="line-height:1.8;">Structured data was added across key templates, including Hotel, FAQPage, and BreadcrumbList schema, to give search engines clearer context beyond the page copy.</p>
+              <p class="text-[#4B5563] text-[16px] mt-4" style="line-height:1.8;">For hotel detail pages, implementing Hotel schema was especially important because it helped search engines and LLMs better understand and surface the right details. This included:</p>
+              <ul class="space-y-3 mt-4 mb-6">
+                <li class="flex items-start gap-3 text-[16px] text-[#4B5563]" style="line-height:1.8;"><span class="w-5 h-5 rounded-full bg-coral-light flex items-center justify-center flex-shrink-0 mt-1"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#F47B5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Capturing all rate types, including member-exclusive pricing, so AI systems can accurately compare options and surface the right price</li>
+                <li class="flex items-start gap-3 text-[16px] text-[#4B5563]" style="line-height:1.8;"><span class="w-5 h-5 rounded-full bg-coral-light flex items-center justify-center flex-shrink-0 mt-1"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#F47B5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Structuring offers by room type, making it easier to answer specific questions like member pricing for a King room</li>
+                <li class="flex items-start gap-3 text-[16px] text-[#4B5563]" style="line-height:1.8;"><span class="w-5 h-5 rounded-full bg-coral-light flex items-center justify-center flex-shrink-0 mt-1"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#F47B5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Defining the correct booking contact, so search and AI interfaces use the right phone number</li>
+                <li class="flex items-start gap-3 text-[16px] text-[#4B5563]" style="line-height:1.8;"><span class="w-5 h-5 rounded-full bg-coral-light flex items-center justify-center flex-shrink-0 mt-1"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#F47B5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Making area served explicit, improving signals for "hotels near" searches</li>
+                <li class="flex items-start gap-3 text-[16px] text-[#4B5563]" style="line-height:1.8;"><span class="w-5 h-5 rounded-full bg-coral-light flex items-center justify-center flex-shrink-0 mt-1"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#F47B5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Surfacing trusted signals like ratings and review volume directly</li>
+              </ul>
               <div class="rounded-2xl overflow-hidden">
                 <img src="bwcs2.png" alt="Best Western — Hotel schema markup" class="w-full block">
               </div>
@@ -276,7 +282,7 @@ function toggleMob() {
 
             <div>
               <h3 id="s-3" class="font-display font-semibold text-[20px] text-ink mb-3">Align Hotel Pages to Local Intent</h3>
-              <p class="text-[#4B5563] text-[16px] mt-4" style="line-height:1.8;">Before expanding content, I focused on fixing what already existed. Hotel detail pages relied on generic, templated descriptions that didn't reflect their actual location, so they were rewritten to better align with where each hotel is and what's around it.</p>
+              <p class="text-[#4B5563] text-[16px] mt-4" style="line-height:1.8;">Hotel detail pages relied on templated descriptions that didn't reflect their actual location, so they were rewritten to better align with where each hotel is and what's around it.</p>
               <p class="text-[#4B5563] text-[16px] mt-4" style="line-height:1.8;">Content was made more local and specific, highlighting proximity to key landmarks and attractions, nearby neighborhoods, and clear directions and access details.</p>
               <p class="text-[#4B5563] text-[16px] mt-4" style="line-height:1.8;">This made each page more relevant for location-based searches and gave users a clearer sense of what to expect from the property.</p>
             </div>
@@ -284,8 +290,8 @@ function toggleMob() {
           <li class="flex gap-3">
             <div>
               <h3 id="s-4" class="font-display font-semibold text-[20px] text-ink mb-3">Enhance City Pages with Local FAQs</h3>
-              <p class="text-[#4B5563] text-[16px] mt-4" style="line-height:1.8;">After improving individual hotel pages, the next step was making city pages more aligned with how people search at the local level.</p>
-              <p class="text-[#4B5563] text-[16px] mt-4" style="line-height:1.8;">City pages were updated to directly target common location-based searches. For example, the NYC listings page was updated to answer queries like <em>"What Best Western hotels are near Times Square?"</em>, while the Las Vegas page covered questions like <em>"Which Best Western hotels are on or near the Las Vegas Strip?"</em>.</p>
+              <p class="text-[#4B5563] text-[16px] mt-4" style="line-height:1.8;">After improving hotel pages, the next step was making city pages more aligned with how people search.</p>
+              <p class="text-[#4B5563] text-[16px] mt-4" style="line-height:1.8;">These pages were updated to directly target common location-based searches. For example, the NYC listings page was updated to answer queries like <em>"What Best Western hotels are near Times Square?"</em>, while the Las Vegas page covered questions like <em>"Which Best Western hotels are on or near the Las Vegas Strip?"</em>.</p>
               <p class="text-[#4B5563] text-[16px] mt-4" style="line-height:1.8;">Answers were written clearly and directly, making them easier for search engines and LLMs to surface, while also helping users quickly find the right hotel.</p>
             </div>
           </li>
