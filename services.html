@@ -640,7 +640,8 @@ Amplify your SEO performance
     #evolve-left, #evolve-right { transition-duration: 0.8s !important; }
     #evolve-vs { transition: opacity 0.3s ease 0.55s !important; }
     .platforms-subsection { flex-direction: column !important; gap: 24px !important; }
-    .platforms-text { flex: none !important; width: 100% !important; }
+    .platforms-text { flex: none !important; width: 100% !important; text-align: center !important; }
+    .platforms-subsection > div:last-child { flex: none !important; width: 100% !important; }
     .platforms-marquee-wrap { display: block !important; overflow: hidden; width: 100%; }
     .platforms-marquee-track { display: flex; gap: 28px; width: max-content; animation: marquee-scroll 14s linear infinite; }
     .platforms-marquee-track:hover { animation-play-state: paused; }
@@ -684,7 +685,7 @@ Amplify your SEO performance
     .prob-diag-cols { grid-template-columns: 1fr !important; }
     .prob-diag-panel { padding-left: 0 !important; text-align: left !important; }
     .prob-section-mobile { padding-top: 20px !important; }
-    .modernize-section { padding-top: 20px !important; }
+    .modernize-section { padding-top: 48px !important; }
   }
 </style>
 <section class="prob-section-mobile" style="background:#fbfafe;padding:80px 0 100px;">
@@ -967,12 +968,12 @@ function selectProb(idx) {
 
       <!-- LEFT: sticky -->
       <div class="principles-sticky" style="width:280px;flex-shrink:0;position:sticky;top:108px;align-self:flex-start;padding-top:44px;">
-        <div class="inline-flex items-center gap-2 text-xs font-semibold px-3 py-1.5 rounded-full mb-5" style="background:#ede9fe;color:#7B68EE;">
+        <div class="inline-flex items-center gap-2 text-xs font-semibold px-3 py-1.5 rounded-full mb-5" style="background:#eeedf4;color:#7B68EE;">
           My approach
         </div>
         <h2 class="font-display font-extrabold text-ink mb-4 svc-h2" style="font-size:clamp(1.875rem,3.6vw,2.46rem);line-height:1.15;letter-spacing:-0.03em;font-weight:750;">Principles behind the work</h2>
         <p class="text-muted mb-3 md:mb-8" style="line-height:1.75;font-size:1rem;">Five beliefs that shape every engagement I take on.</p>
-        <a href="contact.html" class="btn-outline-slate hidden md:inline-flex items-center gap-2 border font-semibold px-5 py-2.5 rounded-full text-sm" style="border-color:rgba(123,104,238,0.25);color:#7B68EE;">Get in touch →</a>
+        <a href="contact.html" class="btn-outline-slate hidden md:inline-flex items-center gap-2 border font-semibold px-5 py-2.5 rounded-full text-sm" style="border-color:rgba(100,100,120,0.25);color:#6B6B80;">Get in touch →</a>
       </div>
 
       <!-- RIGHT: two explicit flex columns (2 left, 3 right) -->
@@ -1031,7 +1032,7 @@ function selectProb(idx) {
       </div>
     </div>
     <div class="md:hidden mt-8 flex justify-start px-6">
-      <a href="contact.html" class="btn-outline-slate inline-flex items-center gap-2 border font-semibold px-5 py-2.5 rounded-full text-sm" style="border-color:rgba(123,104,238,0.25);color:#7B68EE;">Get in touch →</a>
+      <a href="contact.html" class="btn-outline-slate inline-flex items-center gap-2 border font-semibold px-5 py-2.5 rounded-full text-sm" style="border-color:rgba(100,100,120,0.25);color:#6B6B80;">Get in touch →</a>
     </div>
   </div>
 </section>
@@ -1094,13 +1095,11 @@ function selectProb(idx) {
 </section>
 
 <!-- CTA -->
-<section class="py-12 md:py-20 px-6">
-  <div class="max-w-6xl mx-auto rounded-3xl py-14 md:py-16 px-6 md:px-14 text-center" style="background:linear-gradient(135deg, #FFE8E5 0%, #FFDAD4 12%, #FFE8E5 25%, #EBE5FF 42%, #FFF0DC 60%, #E5EEFF 78%, #FFE8E5 100%);background-size:300% 300%;animation:svcCtaGradient 12s ease infinite;box-shadow:0 4px 24px rgba(0,0,0,0.06);">
+<section class="py-14 md:py-20 px-6 text-center" style="background:linear-gradient(135deg, #FFE8E5 0%, #FFDAD4 12%, #FFE8E5 25%, #EBE5FF 42%, #FFF0DC 60%, #E5EEFF 78%, #FFE8E5 100%);background-size:300% 300%;animation:svcCtaGradient 12s ease infinite;">
     <div class="inline-flex items-center gap-2 text-xs font-semibold px-3 py-1.5 rounded-full mb-6" style="background:rgba(255,255,255,0.55);color:#F47B5A;">Get in touch</div>
     <h2 class="font-display font-bold text-3xl md:text-4xl text-ink tracking-tight mb-4" style="font-weight:750;">Make SEO your<br>competitive advantage</h2>
     <p class="text-muted mb-8" style="line-height:1.7;max-width:480px;margin-left:auto;margin-right:auto;">Drop me a note and I'll show you how to improve visibility, trust, and demand across modern buying journeys.</p>
     <a href="contact.html" id="cta-shimmy-btn" class="btn-coral ripple-btn inline-flex items-center gap-2 bg-coral text-white font-semibold px-8 py-4 rounded-full text-base">Let's Talk <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-  </div>
 </section>
 <style>
 @keyframes svcCtaGradient {
