@@ -774,7 +774,7 @@ function toggleBrandGrid() {
   .otc-video-card { background:#000;border-radius:16px;overflow:hidden;box-shadow:0 8px 32px -4px rgba(0,0,0,0.2);width:100%;max-width:220px; }
   .otc-video-card video { width:100%;display:block;background:#000; }
   .otc-video-label { position:absolute;top:12px;left:12px;background:rgba(0,0,0,0.5);backdrop-filter:blur(8px);color:#fff;font-size:0.7rem;font-weight:600;padding:4px 10px;border-radius:20px;font-family:'Inter',sans-serif; }
-  @media (max-width:767px) { .otc-top { flex-direction:column !important;gap:24px !important; } .hobby-cards-row { grid-template-columns:1fr 1fr !important; } .otc-bottom { flex-direction:column !important; } .otc-video-card { max-width:100% !important; } }
+  @media (max-width:767px) { .otc-top { flex-direction:column !important;gap:24px !important; } .otc-bottom { display:grid !important;grid-template-columns:1fr 1fr !important;gap:14px !important;grid-auto-rows:1fr !important; } .hobby-cards-row { display:contents !important; } .otc-video-card { max-width:100% !important;grid-column:auto !important;overflow:hidden !important; } .otc-video-card video { height:100% !important;object-fit:cover !important; } #otc-placeholder { height:100% !important;aspect-ratio:unset !important; } }
 </style>
 <section class="py-16" style="background:#F9F8FF;">
   <div class="max-w-6xl mx-auto px-6">
