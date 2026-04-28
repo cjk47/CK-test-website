@@ -665,7 +665,7 @@ Amplify your SEO performance
 <!-- SEO PROBLEMS I SOLVE -->
 <style>
   .prob-item {
-    width:100%;display:flex;align-items:center;gap:14px;padding:16px 18px;background:none;border:none;cursor:pointer;text-align:left;border-radius:12px;
+    width:100%;max-width:300px;display:flex;align-items:center;gap:14px;padding:16px 18px;background:none;border:none;cursor:pointer;text-align:left;border-radius:12px;
     transition:background 0.18s ease, opacity 0.18s ease;
     opacity: 0.65;
   }
@@ -698,7 +698,7 @@ Amplify your SEO performance
       <!-- LEFT: sticky heading + problem list -->
       <div class="prob-sticky" style="width:380px;flex-shrink:0;align-self:flex-start;position:sticky;top:88px;">
         <h2 class="font-display font-extrabold text-ink svc-h2" style="font-size:clamp(1.875rem,3.6vw,2.26rem);line-height:1.2;letter-spacing:-0.02em;font-weight:750;margin-bottom:12px;">Common SEO problems I solve</h2>
-        <p class="text-muted mb-7" style="line-height:1.7;font-size:1rem;">Select a problem to see what could be causing it, and how I fix it.</p>
+        <p class="text-muted mb-7" style="line-height:1.7;font-size:1rem;">Select a problem to see what could be<br class="hidden md:inline"> causing it, and how I fix it.</p>
 
         <div style="display:flex;flex-direction:column;gap:8px;">
           <button class="prob-item prob-active" onclick="selectProb(0)">
@@ -724,32 +724,33 @@ Amplify your SEO performance
         </div>
       </div>
 
-      <!-- RIGHT: diagnosis — no card, content sits on background -->
-      <div id="prob-card" class="prob-diag-panel" style="flex:1;min-width:0;padding-left:40px;">
+      <!-- RIGHT: diagnosis card -->
+      <div id="prob-card" class="prob-diag-panel" style="flex:1;min-width:0;background:#fefcff;border-radius:20px;padding:36px 40px;box-shadow:0 2px 10px -4px rgba(0,0,0,0.05);">
         <div style="display:flex;align-items:center;gap:14px;margin-bottom:28px;margin-top:20px;">
           <div id="prob-headline-icon" style="flex-shrink:0;width:38px;height:38px;border-radius:50%;background:#f3eefe;display:flex;align-items:center;justify-content:center;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><polyline points="3,6 8,12 12,9 17,15 21,18" stroke="#7B68EE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><polyline points="17,18 21,18 21,14" stroke="#7B68EE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
           <h3 id="prob-headline" class="font-display text-ink" style="font-size:clamp(1.3rem,2.2vw,1.6rem);line-height:1.2;letter-spacing:-0.02em;font-weight:620;margin:0;">Search traffic is trending down.</h3>
         </div>
+        <p id="prob-subtext" class="text-muted" style="font-size:0.875rem;line-height:1.6;margin-top:-16px;margin-bottom:28px;display:none;"></p>
         <div class="prob-diag-cols" style="display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-bottom:28px;">
           <div>
-            <p style="font-size:0.68rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#7B68EE;margin-bottom:10px;">Often caused by</p>
-            <p id="prob-cause" class="text-muted" style="font-size:0.875rem;line-height:1.75;">Increased competition, seasonality, algorithm updates, changes in how results are displayed, declining search demand, lost backlinks, or content decay.</p>
+            <p style="font-size:0.68rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#7B68EE;margin-bottom:10px;">Common causes</p>
+            <div id="prob-cause" class="text-muted" style="font-size:0.875rem;line-height:1.75;"><ul style="list-style:disc;padding-left:1.2em;margin:0;display:flex;flex-direction:column;gap:6px;"><li>SERP changes or algorithm updates</li><li>Increased competition</li><li>Declining search demand</li></ul></div>
           </div>
           <div>
             <p style="font-size:0.68rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#7B68EE;margin-bottom:10px;">How I fix it</p>
-            <p id="prob-fix" class="text-muted" style="font-size:0.875rem;line-height:1.75;">I run a forensic audit to find where traffic is leaking, then build a recovery plan to fix the root issue, whether that's closing content gaps, building authority, or something else.</p>
+            <div id="prob-fix" class="text-muted" style="font-size:0.875rem;line-height:1.75;"><ul style="list-style:disc;padding-left:1.2em;margin:0;display:flex;flex-direction:column;gap:6px;"><li>Identify where traffic dropped and why</li><li>Fix gaps (content, links, or technical)</li><li>Optimize key pages to regain visibility</li></ul></div>
           </div>
         </div>
         <!-- Client highlight card -->
-        <div id="prob-case-card" style="display:flex;align-items:stretch;background:#fcfbfe;border-radius:14px;border:1px solid #ece9f7;overflow:hidden;min-height:160px;box-shadow:0 2px 10px -4px rgba(0,0,0,0.05);">
+        <div id="prob-case-card" style="display:flex;align-items:stretch;background:#fefcff;border-radius:14px;border:1px solid #ece9f7;overflow:hidden;min-height:120px;box-shadow:0 2px 10px -4px rgba(0,0,0,0.05);">
           <!-- Left panel -->
-          <div id="prob-case-left" style="display:flex;flex-direction:column;justify-content:center;gap:14px;flex:1;min-width:0;padding:24px 28px;background:#fcfbfe;">
+          <div id="prob-case-left" style="display:flex;flex-direction:column;justify-content:center;gap:10px;flex:1;min-width:0;padding:18px 24px;background:#fefcff;">
             <!-- Logo only -->
             <div style="display:none;">
               <img id="prob-case-logo" src="" alt="" style="height:15px;width:auto;object-fit:contain;object-position:left;display:none;">
             </div>
             <!-- Headline -->
-            <p class="font-display" style="font-size:1.1rem;font-weight:700;color:#1a1a2e;line-height:1.45;margin:0;">
+            <p class="font-display" style="font-size:0.95rem;font-weight:650;color:#1a1a2e;line-height:1.4;margin:0;">
               <span id="prob-case-line1">Organic traffic was dropping. After a technical SEO rebuild, it grew 45%.</span><span id="prob-case-line2" style="color:#7B68EE;font-weight:700;"></span>
             </p>
             <!-- Text link -->
@@ -775,8 +776,8 @@ var probIcons = [
 var probData = [
   {
     headline: 'Search traffic is trending down.',
-    cause: 'Increased competition, seasonality, algorithm updates, changes in how results are displayed, declining search demand, lost backlinks, or content decay.',
-    fix: 'I run a forensic audit to find where traffic is leaking, then build a recovery plan to fix the root issue, whether that\'s closing content gaps, building links, or something else.',
+    cause: '<ul style="list-style:disc;padding-left:1.2em;margin:0;display:flex;flex-direction:column;gap:6px;"><li>SERP changes or algorithm updates</li><li>Increased competition</li><li>Declining search demand</li></ul>',
+    fix: '<ul style="list-style:disc;padding-left:1.2em;margin:0;display:flex;flex-direction:column;gap:6px;"><li>Identify where traffic dropped and why</li><li>Fix gaps (content, links, or technical)</li><li>Optimize key pages to regain visibility</li></ul>',
     caseLogo: '',
     caseLogoStyle: 'display:none;',
     caseLine1: 'Organic traffic was dropping. After a technical SEO rebuild, it grew 45%.',
@@ -789,8 +790,8 @@ var probData = [
   },
   {
     headline: 'Competitors are gaining ground.',
-    cause: 'Stronger authority, better site experience, higher-quality content, more content across key topics, or structural issues that make it easier for competitors to win those topics.',
-    fix: 'I run a gap analysis across content, authority, and site structure to pinpoint where competitors have the edge, then build a focused plan to close those gaps.',
+    cause: '<ul style="list-style:disc;padding-left:1.2em;margin:0;display:flex;flex-direction:column;gap:6px;"><li>Stronger, more complete content</li><li>Higher authority and better backlinks</li><li>Deeper topical coverage</li></ul>',
+    fix: '<ul style="list-style:disc;padding-left:1.2em;margin:0;display:flex;flex-direction:column;gap:6px;"><li>Identify gaps vs. top competitors</li><li>Expand and improve key content</li><li>Strengthen authority in priority areas</li></ul>',
     caseLogo: '',
     caseLogoStyle: 'display:none;',
     caseLine1: 'Competitors owned search. Off-site SEO closed the gap, led to a buyout.',
@@ -803,30 +804,31 @@ var probData = [
   },
   {
     headline: 'AI platforms aren\'t surfacing your content.',
-    cause: 'Weak SEO fundamentals, content that isn\'t structured for AI retrieval, poor trust and expertise signals, limited topical authority and missing schema markup.',
-    fix: 'Fixes could include reworking your pages into answer-first passages, strengthening E-E-A-T signals, or building topical authority through content clusters.',
+    cause: '<ul style="list-style:disc;padding-left:1.2em;margin:0;display:flex;flex-direction:column;gap:6px;"><li>Weak SEO fundamentals</li><li>Content not structured for AI</li><li>Limited trust and expertise signals</li></ul>',
+    fix: '<ul style="list-style:disc;padding-left:1.2em;margin:0;display:flex;flex-direction:column;gap:6px;"><li>Prioritize answer-first clarity</li><li>Strengthen E-E-A-T signals</li><li>Build topical authority</li></ul>',
     caseLogo: '',
     caseLogoStyle: 'display:none;',
     caseLine1: 'AI visibility was low. Content restructuring drove 349% growth.',
     caseLine2: '',
     caseImage: 'aiaiaiaiaia.png',
-    caseImageStyle: 'object-position:left center;object-fit:contain;transform:scale(1.2) translateX(-10px);',
+    caseImageStyle: 'object-position:3px center;object-fit:contain;transform:scale(1.2);',
     caseCardStyle: 'background:#fcfbfe;',
     caseLink: 'case-study-best-western.html',
     caseLinkText: 'Best Western case study'
   },
   {
     headline: 'You\'re getting traffic, but not customers.',
-    cause: 'Low-intent queries driving most of your traffic, landing pages that don\'t match what searchers want when they arrive, and weak conversion paths once they\'re on the page.',
-    fix: 'Align SEO with your funnel by targeting high-intent queries, sharpening landing pages to match what visitors came for, and guiding users toward conversion.',
+    cause: '<ul style="list-style:disc;padding-left:1.2em;margin:0;display:flex;flex-direction:column;gap:6px;"><li>Content and offers don\'t match intent</li><li>Confusing page experience or weak UX</li><li>No clear path to take action</li></ul>',
+    fix: '<ul style="list-style:disc;padding-left:1.2em;margin:0;display:flex;flex-direction:column;gap:6px;"><li>Align content and offers with intent</li><li>Improve UX and reduce friction</li><li>Build clear conversion paths and CTAs</li></ul>',
     caseLogo: '',
     caseLogoStyle: 'display:none;',
     caseLine1: 'Traffic wasn\'t converting. A content and UX overhaul increased leads 27%.',
     caseLine2: '',
     caseCardStyle: 'background:#fcfbfe;',
     caseLinkText: 'XVIVO case study',
-    caseImage: '9-8.png',
-    caseImageStyle: 'object-position:center;mix-blend-mode:multiply;transform:scale(0.65);',
+    caseImage: 'clickyy.png',
+    caseImageStyle: 'object-position:center;object-fit:contain;transform:scale(0.95);',
+    caseCardStyle: 'background:#fcfbfe;',
     caseLink: 'case-study-xvivo.html'
   }
 ];
@@ -838,9 +840,13 @@ function selectProb(idx) {
   card.offsetHeight;
   card.style.animation = 'probFadeIn 0.22s ease';
   document.getElementById('prob-headline').textContent = d.headline;
-  document.getElementById('prob-headline-icon').innerHTML = probIcons[idx];
-  document.getElementById('prob-cause').textContent = d.cause;
-  document.getElementById('prob-fix').textContent = d.fix;
+  var subtext = document.getElementById('prob-subtext');
+  if (d.subtext) { subtext.textContent = d.subtext; subtext.style.display = ''; } else { subtext.textContent = ''; subtext.style.display = 'none'; }
+  var iconEl = document.getElementById('prob-headline-icon');
+  iconEl.style.display = 'flex';
+  iconEl.innerHTML = probIcons[idx];
+  document.getElementById('prob-cause').innerHTML = d.cause;
+  document.getElementById('prob-fix').innerHTML = d.fix;
   var caseLink = document.getElementById('prob-case-link');
   caseLink.href = d.caseLink;
   caseLink.innerHTML = (d.caseLinkText || 'Read case study') + ' <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
@@ -952,6 +958,9 @@ function selectProb(idx) {
           <div style="display:flex;flex-direction:column;align-items:center;gap:8px;flex-shrink:0;"><div style="width:52px;height:52px;border-radius:50%;background:#fff0ec;display:flex;align-items:center;justify-content:center;"><img src="perplexity.avif" width="28" height="28" alt="Perplexity" style="border-radius:50%;"/></div><span style="font-size:0.72rem;color:#9CA3AF;font-weight:500;">Perplexity</span></div>
           <div style="display:flex;flex-direction:column;align-items:center;gap:8px;flex-shrink:0;"><div style="width:52px;height:52px;border-radius:50%;background:#fff0ec;display:flex;align-items:center;justify-content:center;"><img src="maps_512dp.png" width="28" height="28" alt="Google Maps"/></div><span style="font-size:0.72rem;color:#9CA3AF;font-weight:500;">Google Maps</span></div>
           <div style="display:flex;flex-direction:column;align-items:center;gap:8px;flex-shrink:0;"><div style="width:52px;height:52px;border-radius:50%;background:#fff0ec;display:flex;align-items:center;justify-content:center;"><img src="gemini.avif" width="28" height="28" alt="Gemini" style="border-radius:50%;"/></div><span style="font-size:0.72rem;color:#9CA3AF;font-weight:500;">Gemini</span></div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;flex-shrink:0;"><div style="width:52px;height:52px;border-radius:50%;background:#fff0ec;display:flex;align-items:center;justify-content:center;"><img src="microsoft-bing.png" width="19" height="19" alt="Bing"/></div><span style="font-size:0.72rem;color:#9CA3AF;font-weight:500;">Bing</span></div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;flex-shrink:0;"><div style="width:52px;height:52px;border-radius:50%;background:#fff0ec;display:flex;align-items:center;justify-content:center;"><img src="Youtube_logo.png" width="28" height="28" alt="YouTube" style="border-radius:4px;"/></div><span style="font-size:0.72rem;color:#9CA3AF;font-weight:500;">YouTube</span></div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;flex-shrink:0;"><div style="width:52px;height:52px;border-radius:50%;background:#fff0ec;display:flex;align-items:center;justify-content:center;"><img src="amazon-logo.png" width="30" height="30" alt="Amazon" style="object-fit:cover;border-radius:50%;"/></div><span style="font-size:0.72rem;color:#9CA3AF;font-weight:500;">Amazon</span></div>
           <!-- Duplicate for seamless loop -->
           <div style="display:flex;flex-direction:column;align-items:center;gap:8px;flex-shrink:0;"><div style="width:52px;height:52px;border-radius:50%;background:#fff0ec;display:flex;align-items:center;justify-content:center;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M21.8 12.2c0-.7-.1-1.4-.2-2H12v3.8h5.5a4.7 4.7 0 01-2 3.1v2.6h3.3c1.9-1.8 3-4.4 3-7.5z" fill="#3A62A7"/><path d="M12 22c2.7 0 5-.9 6.7-2.4l-3.3-2.6c-.9.6-2.1 1-3.4 1-2.6 0-4.8-1.8-5.6-4.1H3v2.6C4.7 19.8 8.1 22 12 22z" fill="#2e7050"/><path d="M6.4 13.9A6 6 0 016.1 12c0-.7.1-1.3.3-1.9V7.5H3A10 10 0 002 12c0 1.6.4 3.1 1 4.5l3.4-2.6z" fill="#A07020"/><path d="M12 5.9c1.5 0 2.8.5 3.8 1.5l2.8-2.8C16.9 2.9 14.7 2 12 2 8.1 2 4.7 4.2 3 7.5l3.4 2.6C7.2 7.7 9.4 5.9 12 5.9z" fill="#F47B5A"/></svg></div><span style="font-size:0.72rem;color:#9CA3AF;font-weight:500;">Google</span></div>
           <div style="display:flex;flex-direction:column;align-items:center;gap:8px;flex-shrink:0;"><div style="width:52px;height:52px;border-radius:50%;background:#fff0ec;display:flex;align-items:center;justify-content:center;"><img src="chatgpt.avif" width="28" height="28" alt="ChatGPT" style="border-radius:50%;"/></div><span style="font-size:0.72rem;color:#9CA3AF;font-weight:500;">ChatGPT</span></div>
@@ -959,6 +968,9 @@ function selectProb(idx) {
           <div style="display:flex;flex-direction:column;align-items:center;gap:8px;flex-shrink:0;"><div style="width:52px;height:52px;border-radius:50%;background:#fff0ec;display:flex;align-items:center;justify-content:center;"><img src="perplexity.avif" width="28" height="28" alt="Perplexity" style="border-radius:50%;"/></div><span style="font-size:0.72rem;color:#9CA3AF;font-weight:500;">Perplexity</span></div>
           <div style="display:flex;flex-direction:column;align-items:center;gap:8px;flex-shrink:0;"><div style="width:52px;height:52px;border-radius:50%;background:#fff0ec;display:flex;align-items:center;justify-content:center;"><img src="maps_512dp.png" width="28" height="28" alt="Google Maps"/></div><span style="font-size:0.72rem;color:#9CA3AF;font-weight:500;">Google Maps</span></div>
           <div style="display:flex;flex-direction:column;align-items:center;gap:8px;flex-shrink:0;"><div style="width:52px;height:52px;border-radius:50%;background:#fff0ec;display:flex;align-items:center;justify-content:center;"><img src="gemini.avif" width="28" height="28" alt="Gemini" style="border-radius:50%;"/></div><span style="font-size:0.72rem;color:#9CA3AF;font-weight:500;">Gemini</span></div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;flex-shrink:0;"><div style="width:52px;height:52px;border-radius:50%;background:#fff0ec;display:flex;align-items:center;justify-content:center;"><img src="microsoft-bing.png" width="19" height="19" alt="Bing"/></div><span style="font-size:0.72rem;color:#9CA3AF;font-weight:500;">Bing</span></div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;flex-shrink:0;"><div style="width:52px;height:52px;border-radius:50%;background:#fff0ec;display:flex;align-items:center;justify-content:center;"><img src="Youtube_logo.png" width="28" height="28" alt="YouTube" style="border-radius:4px;"/></div><span style="font-size:0.72rem;color:#9CA3AF;font-weight:500;">YouTube</span></div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;flex-shrink:0;"><div style="width:52px;height:52px;border-radius:50%;background:#fff0ec;display:flex;align-items:center;justify-content:center;"><img src="amazon-logo.png" width="30" height="30" alt="Amazon" style="object-fit:cover;border-radius:50%;"/></div><span style="font-size:0.72rem;color:#9CA3AF;font-weight:500;">Amazon</span></div>
         </div>
       </div>
     </div>
