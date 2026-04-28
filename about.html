@@ -395,7 +395,7 @@ function toggleMob() {
     </div>
 
     <!-- Logo grid -->
-    <style>@media (min-width: 768px) { #brand-grid { gap: 25px 0 !important; } }</style>
+    <style>@media (min-width: 768px) { #brand-grid { gap: 40px 0 !important; } }</style>
     <div id="brand-grid" style="display:grid;grid-template-columns:repeat(5,1fr);gap:20px 0;">
 
       <!-- Row 1: Chase, Best Western, HarperCollins, IBM, P&G -->
@@ -880,7 +880,14 @@ var otcLockedHeight = null;
   });
 })();
 
+var activeHobby = -1;
 function selectHobby(idx) {
+  if (activeHobby === idx) {
+    deselectHobby();
+    activeHobby = -1;
+    return;
+  }
+  activeHobby = idx;
   document.querySelectorAll('.hobby-card').forEach(function(c,i){ c.classList.toggle('hobby-active', i===idx); });
   document.getElementById('otc-placeholder').style.display = 'none';
   document.getElementById('otc-video-wrap').style.display = '';
@@ -891,6 +898,7 @@ function selectHobby(idx) {
 }
 
 function deselectHobby() {
+  activeHobby = -1;
   document.querySelectorAll('.hobby-card').forEach(function(c){ c.classList.remove('hobby-active'); });
   document.getElementById('otc-video-wrap').style.display = 'none';
   otcVideo.pause();
