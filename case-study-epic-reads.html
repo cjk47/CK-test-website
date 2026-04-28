@@ -87,9 +87,10 @@
 <script>
   window.addEventListener('scroll', function() {
     var start = document.getElementById('challenge').offsetTop - 180;
+    var resultsEl = document.getElementById('results');
+    var end = resultsEl ? resultsEl.offsetTop + resultsEl.offsetHeight - document.documentElement.clientHeight : document.documentElement.scrollHeight;
     var s = document.documentElement.scrollTop || document.body.scrollTop;
-    var h = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    var pct = Math.min(Math.max((s - start) / (h - start) * 100, 0), 100);
+    var pct = Math.min(Math.max((s - start) / (end - start) * 100, 0), 100);
     document.getElementById('progress-bar').style.width = pct + '%';
   }, { passive: true });
 </script>
@@ -414,26 +415,14 @@ function toggleMob() {
 
 <!-- TESTIMONIAL SECTION -->
 
+<style>@keyframes csCtaGradient { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }</style>
 <!-- CTA BANNER -->
 <section style="background:#ffffff;padding:64px 0;">
   <div class="max-w-5xl mx-auto px-6">
-    <div class="cs-cta-card" style="position:relative;overflow:hidden;border-radius:20px;background:#323232;padding:48px 56px;display:flex;align-items:center;min-height:160px;">
-      <div style="position:relative;z-index:2;max-width:400px;">
-        <p class="font-display" style="font-size:1.55rem;line-height:1.35;color:#ffffff;margin-bottom:24px;"><strong>Ready to grow</strong> your organic traffic and turn it into real revenue?</p>
-        <a href="contact.html" style="display:inline-flex;align-items:center;gap:6px;background:#ffffff;color:#323232;font-family:'Inter',sans-serif;font-weight:600;font-size:0.875rem;padding:10px 22px;border-radius:999px;text-decoration:none;">Get in touch →</a>
-      </div>
-      <div style="position:absolute;right:-150px;top:50%;transform:translateY(-43%);width:420px;height:420px;z-index:1;">
-        <svg xmlns="http://www.w3.org/2000/svg" width="420" height="420" viewBox="0 0 790 790" fill="none">
-          <circle cx="408.489" cy="400.489" r="312.489" fill="#7B68EE"/>
-          <path d="M709.086 155.469C677.631 114.223 638.359 79.5761 593.513 53.5069C548.668 27.4378 499.127 10.4569 447.719 3.53386C396.311 -3.38923 344.042 -0.118944 293.898 13.158C243.754 26.4349 196.716 49.4585 155.469 80.9141C114.223 112.37 79.576 151.641 53.5069 196.487C27.4378 241.333 10.4569 290.874 3.53385 342.282C-3.38923 393.69 -0.118938 445.958 13.158 496.102C26.4349 546.247 49.4585 593.285 80.9142 634.531L106.583 614.955C77.6979 577.08 56.5559 533.886 44.3641 487.84C32.1722 441.794 29.1692 393.797 35.5265 346.59C41.8837 299.383 57.4768 253.891 81.4155 212.711C105.354 171.53 137.169 135.468 175.045 106.583C212.92 77.6979 256.114 56.5559 302.161 44.3641C348.207 32.1722 396.203 29.1692 443.41 35.5265C490.617 41.8838 536.109 57.4769 577.29 81.4155C618.47 105.354 654.533 137.169 683.418 175.045L709.086 155.469Z" fill="url(#brandGradER)"/>
-          <circle cx="83.5006" cy="177.5" r="15.8939" transform="rotate(169.609 83.5006 177.5)" fill="#B8AEFF"/>
-          <defs>
-            <linearGradient id="brandGradER" x1="-64" y1="204.5" x2="128.5" y2="156" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#A599FF"/>
-              <stop offset="1" stop-color="#A599FF" stop-opacity="0"/>
-            </linearGradient>
-          </defs>
-        </svg>
+    <div class="cs-cta-card" style="position:relative;overflow:hidden;border-radius:20px;background:linear-gradient(135deg, #FFE8E5 0%, #FFDAD4 12%, #FFE8E5 25%, #EBE5FF 42%, #FFF0DC 60%, #E5EEFF 78%, #FFE8E5 100%);background-size:300% 300%;animation:csCtaGradient 20s ease infinite;padding:48px 56px;text-align:center;min-height:160px;">
+      <div style="position:relative;z-index:2;max-width:500px;margin:0 auto;">
+        <div class="inline-flex items-center gap-2 text-xs font-semibold px-3 py-1.5 rounded-full mb-6" style="background:rgba(255,255,255,0.55);color:#F47B5A;">Let's work together</div><p class="font-display" style="font-size:1.55rem;line-height:1.35;color:#1A1A2E;margin-bottom:24px;"><strong>Ready to grow</strong> your organic traffic and turn it into real revenue?</p>
+        <a href="contact.html" class="btn-coral" style="display:inline-flex;align-items:center;gap:6px;background:#F47B5A;color:#ffffff;font-family:'Inter',sans-serif;font-weight:600;font-size:0.875rem;padding:10px 22px;border-radius:999px;text-decoration:none;">Get in touch →</a>
       </div>
     </div>
   </div>

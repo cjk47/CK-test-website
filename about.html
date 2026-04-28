@@ -395,6 +395,7 @@ function toggleMob() {
     </div>
 
     <!-- Logo grid -->
+    <style>@media (min-width: 768px) { #brand-grid { gap: 25px 0 !important; } }</style>
     <div id="brand-grid" style="display:grid;grid-template-columns:repeat(5,1fr);gap:20px 0;">
 
       <!-- Row 1: Chase, Best Western, HarperCollins, IBM, P&G -->
@@ -768,27 +769,28 @@ function toggleBrandGrid() {
         <div class="inline-flex items-center gap-2 bg-violet-light text-violet text-xs font-semibold px-3 py-1.5 rounded-full mb-5">
           Beyond SEO
         </div>
-        <h2 class="font-display font-bold text-4xl text-ink mb-4" style="letter-spacing:-0.02em;">Outside of SEO</h2>
+        <h2 class="font-display font-bold text-4xl text-ink mb-4" style="letter-spacing:-0.02em;">Off the clock</h2>
         <p class="text-muted mb-4" style="line-height:1.75;">When I'm not deep in SEO, this is what I'm usually doing:</p>
-        <div class="mb-4" style="max-width:370px;">
-          <div class="flex items-center gap-4 py-4">
-            <img src="about-music.png" alt="Music" style="width:48px;height:48px;flex-shrink:0;mix-blend-mode:multiply;">
-            <span class="text-muted" style="font-size:1rem;line-height:1.5;">Playing guitar, vinyl collecting, and discography <span id="music-tooltip-trigger" style="text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:default;">deep dives</span></span>
+        <div class="mb-4" style="display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:420px;">
+          <div class="flex items-center gap-3" style="background:#ffffff;border-radius:14px;padding:14px 16px;box-shadow:0 2px 8px -3px rgba(0,0,0,0.06);">
+            <img src="about-music.png" alt="Music" style="width:40px;height:40px;flex-shrink:0;">
+            <span class="text-muted" style="font-size:0.88rem;line-height:1.4;"><span id="music-tooltip-trigger" style="cursor:pointer;">Guitar & vinyl</span></span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;opacity:0.3;"><path d="M8 5v14l11-7z" fill="#6B7280"/></svg>
           </div>
-          <div style="border-top:1px solid #E0DDF0;"></div>
-          <div class="flex items-center gap-4 py-4">
-            <img src="about-bball.png" alt="Basketball" style="width:48px;height:48px;flex-shrink:0;mix-blend-mode:multiply;">
-            <span class="text-muted" style="font-size:1rem;line-height:1.5;">Playing and watching <span id="bball-tooltip-trigger" style="text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:default;">basketball</span></span>
+          <div class="flex items-center gap-3" style="background:#ffffff;border-radius:14px;padding:14px 16px;box-shadow:0 2px 8px -3px rgba(0,0,0,0.06);">
+            <img src="about-bball.png" alt="Basketball" style="width:40px;height:40px;flex-shrink:0;">
+            <span class="text-muted" style="font-size:0.88rem;line-height:1.4;"><span id="bball-tooltip-trigger" style="cursor:pointer;">Basketball</span></span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;opacity:0.3;"><path d="M8 5v14l11-7z" fill="#6B7280"/></svg>
           </div>
-          <div style="border-top:1px solid #E0DDF0;"></div>
-          <div class="flex items-center gap-4 py-4">
-            <img src="about-movies.png" alt="Movies" style="width:48px;height:48px;flex-shrink:0;mix-blend-mode:multiply;">
-            <span class="text-muted" style="font-size:1rem;line-height:1.5;">Watching <span id="movie-tooltip-trigger" style="text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:default;">movies</span></span>
+          <div class="flex items-center gap-3" style="background:#ffffff;border-radius:14px;padding:14px 16px;box-shadow:0 2px 8px -3px rgba(0,0,0,0.06);">
+            <img src="about-movies.png" alt="Movies" style="width:40px;height:40px;flex-shrink:0;">
+            <span class="text-muted" style="font-size:0.88rem;line-height:1.4;"><span id="movie-tooltip-trigger" style="cursor:pointer;">Movies</span></span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;opacity:0.3;"><path d="M8 5v14l11-7z" fill="#6B7280"/></svg>
           </div>
-          <div style="border-top:1px solid #E0DDF0;"></div>
-          <div class="flex items-center gap-4 py-4">
-            <img src="about-location.png" alt="Location" style="width:48px;height:48px;flex-shrink:0;mix-blend-mode:multiply;">
-            <span class="text-muted" style="font-size:1rem;line-height:1.5;">Walking around my Brooklyn <span id="hood-tooltip-trigger" style="text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:default;">neighborhood</span></span>
+          <div class="flex items-center gap-3" style="background:#ffffff;border-radius:14px;padding:14px 16px;box-shadow:0 2px 8px -3px rgba(0,0,0,0.06);">
+            <img src="about-location.png" alt="Location" style="width:40px;height:40px;flex-shrink:0;">
+            <span class="text-muted" style="font-size:0.88rem;line-height:1.4;"><span id="hood-tooltip-trigger" style="cursor:pointer;">Brooklyn walks</span></span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;opacity:0.3;"><path d="M8 5v14l11-7z" fill="#6B7280"/></svg>
           </div>
         </div>
 <div id="movie-tooltip" style="position:fixed;background:#000;border-radius:14px;padding:0;font-size:13px;font-family:'Inter',sans-serif;box-shadow:0 8px 32px -4px rgba(0,0,0,0.36),0 2px 8px rgba(0,0,0,0.16);opacity:0;pointer-events:none;transition:opacity 0.16s ease;z-index:9999;transform:translateY(0) translateX(0) rotate(0deg);width:220px;height:260px;overflow:hidden;">
