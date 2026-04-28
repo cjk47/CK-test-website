@@ -766,13 +766,14 @@ function toggleBrandGrid() {
 <!-- OFF THE CLOCK -->
 <style>
   .hobby-card { background:#ffffff;border-radius:16px;padding:20px 16px;text-align:center;cursor:pointer;transition:transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;box-shadow:0 2px 8px -3px rgba(0,0,0,0.06);border:2px solid transparent;display:flex;flex-direction:column;justify-content:center; }
-  .hobby-card:hover { transform:translateY(-2px);box-shadow:0 6px 16px -4px rgba(0,0,0,0.1); }
-  .hobby-card.hobby-active { border-color:#7B68EE;box-shadow:0 4px 12px -2px rgba(123,104,238,0.15); }
+  @media (hover:hover) { .hobby-card:hover { transform:translateY(-2px);box-shadow:0 6px 16px -4px rgba(0,0,0,0.1); } }
+  .hobby-card.hobby-active { border-color:#7B68EE !important;box-shadow:0 4px 12px -2px rgba(123,104,238,0.15); }
+  @media (min-width:768px) { .hobby-reading { display:none !important; } }
   .hobby-card .hobby-icon { width:40px;height:40px;margin:0 auto 10px; }
   .hobby-card h4 { font-size:0.88rem;font-weight:600;color:#1A1A2E;margin-bottom:4px; }
   .hobby-card p { font-size:0.72rem;color:#6B7280;line-height:1.45; }
-  .otc-video-card { background:#000;border-radius:16px;overflow:hidden;box-shadow:0 8px 32px -4px rgba(0,0,0,0.2);width:100%;max-width:220px; }
-  .otc-video-card video { width:100%;display:block;background:#000; }
+  .otc-video-card { background:#000;border-radius:16px;overflow:hidden;box-shadow:0 8px 32px -4px rgba(0,0,0,0.2);width:100%;max-width:300px; }
+  .otc-video-card video { width:100%;display:block;background:#000;object-fit:cover; }
   .otc-video-label { position:absolute;top:12px;left:12px;background:rgba(0,0,0,0.5);backdrop-filter:blur(8px);color:#fff;font-size:0.7rem;font-weight:600;padding:4px 10px;border-radius:20px;font-family:'Inter',sans-serif; }
   @media (max-width:767px) { .otc-top { flex-direction:column !important;gap:24px !important; } .otc-bottom { display:grid !important;grid-template-columns:1fr 1fr !important;gap:14px !important;grid-auto-rows:1fr !important; } .hobby-cards-row { display:contents !important; } .otc-video-card { max-width:100% !important;grid-column:auto !important;overflow:hidden !important; } .otc-video-card video { height:100% !important;object-fit:cover !important; } #otc-placeholder { height:100% !important;aspect-ratio:unset !important; } }
 </style>
@@ -799,10 +800,10 @@ function toggleBrandGrid() {
     </div>
 
     <!-- Bottom: 4 cards left + video right -->
-    <div class="otc-bottom" style="display:flex;gap:32px;align-items:stretch;">
+    <div class="otc-bottom" style="display:flex;gap:14px;align-items:stretch;">
 
       <!-- Cards -->
-      <div class="hobby-cards-row" style="flex:1;display:grid;grid-template-columns:repeat(5,1fr);gap:14px;">
+      <div class="hobby-cards-row" style="flex:1;display:grid;grid-template-columns:repeat(4,1fr);gap:14px;">
         <div class="hobby-card" data-hobby="0" onclick="selectHobby(0)">
           <img src="about-music.png" alt="Music" class="hobby-icon">
           <h4 class="font-display">Live music</h4>
@@ -823,7 +824,7 @@ function toggleBrandGrid() {
           <h4 class="font-display">Brooklyn</h4>
           <p>Walking and exploring the neighborhood</p>
         </div>
-        <div class="hobby-card" data-hobby="4" onclick="selectHobby(4)">
+        <div class="hobby-card hobby-reading" data-hobby="4" onclick="selectHobby(4)">
           <img src="about-movies.png" alt="Reading" class="hobby-icon">
           <h4 class="font-display">Reading</h4>
           <p>Always learning, always curious</p>
@@ -833,7 +834,7 @@ function toggleBrandGrid() {
       <!-- Video player -->
       <div class="otc-video-card" style="flex-shrink:0;">
         <!-- Placeholder shown before any card is clicked -->
-        <div id="otc-placeholder" style="width:100%;background:#f0effe;border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;">
+        <div id="otc-placeholder" style="width:100%;min-height:300px;background:#f0effe;border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;">
           <div style="width:48px;height:48px;border-radius:50%;background:rgba(123,104,238,0.12);display:flex;align-items:center;justify-content:center;">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7z" fill="#7B68EE"/></svg>
           </div>
@@ -841,15 +842,15 @@ function toggleBrandGrid() {
         </div>
         <!-- Video (hidden initially) -->
         <div id="otc-video-wrap" style="position:relative;display:none;">
-          <video id="otc-video" muted loop playsinline src="" style="width:100%;display:block;background:#000;border-radius:16px;"></video>
-          <div style="position:absolute;bottom:0;left:0;right:0;padding:10px 14px;display:flex;align-items:center;gap:10px;background:linear-gradient(transparent, rgba(0,0,0,0.7));border-radius:0 0 16px 16px;">
-            <button id="otc-playpause" onclick="togglePlay()" style="background:none;border:none;cursor:pointer;padding:0;display:flex;">
+          <video id="otc-video" muted loop playsinline src="" style="width:100%;display:block;background:#000;border-radius:16px;pointer-events:none;"></video>
+          <div style="position:absolute;bottom:0;left:0;right:0;padding:10px 14px;display:flex;align-items:center;gap:10px;background:linear-gradient(transparent, rgba(0,0,0,0.7));border-radius:0 0 16px 16px;z-index:20;">
+            <button id="otc-playpause" style="background:none;border:none;cursor:pointer;padding:0;display:flex;">
               <svg id="otc-play-icon" width="14" height="14" viewBox="0 0 24 24" fill="white" style="display:none;"><path d="M8 5v14l11-7z"/></svg>
               <svg id="otc-pause-icon" width="14" height="14" viewBox="0 0 24 24" fill="white"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg>
             </button>
-            <div id="otc-progress-bar" style="flex:1;height:6px;background:rgba(255,255,255,0.3);border-radius:3px;cursor:pointer;position:relative;z-index:10;"><div id="otc-progress" style="width:0%;height:100%;background:#7B68EE;border-radius:2px;pointer-events:none;"></div></div>
+            <div id="otc-progress-bar" style="flex:1;height:6px;background:rgba(255,255,255,0.3);border-radius:3px;cursor:pointer;position:relative;z-index:30;"><div id="otc-progress" style="width:0%;height:100%;background:#7B68EE;border-radius:2px;pointer-events:none;"></div></div>
             <span id="otc-time" style="font-size:10px;color:rgba(255,255,255,0.7);font-family:'Inter',sans-serif;">0:00 / 0:00</span>
-            <button id="otc-mute-btn" onclick="toggleMute()" style="background:none;border:none;cursor:pointer;padding:0;display:flex;">
+            <button id="otc-mute-btn" style="background:none;border:none;cursor:pointer;padding:0;display:flex;">
               <svg id="otc-muted-icon" width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M11 5L6 9H2v6h4l5 4V5z" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="23" y1="9" x2="17" y2="15" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round"/><line x1="17" y1="9" x2="23" y2="15" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round"/></svg>
               <svg id="otc-unmuted-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" style="display:none;"><path d="M11 5L6 9H2v6h4l5 4V5z" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
@@ -861,17 +862,21 @@ function toggleBrandGrid() {
     </div>
   </div>
 <script>
-var hobbyVideos = ['movies.mp4', 'movies.mp4', 'movies.mp4', 'movies.mp4', 'movies.mp4'];
+var hobbyVideos = ['geese.mp4', 'movies.mp4', 'godfather.mp4', 'movies.mp4', 'movies.mp4'];
 var otcVideo = document.getElementById('otc-video');
-// Set placeholder height to match video
+// Set placeholder and video height to match basketball video
+var otcLockedHeight = null;
 (function(){
   var temp = document.createElement('video');
-  temp.src = hobbyVideos[0];
+  temp.src = hobbyVideos[1]; // basketball = reference height
   temp.addEventListener('loadedmetadata', function(){
     var ratio = temp.videoHeight / temp.videoWidth;
     var card = document.querySelector('.otc-video-card');
     var w = card.offsetWidth;
-    document.getElementById('otc-placeholder').style.height = (w * ratio) + 'px';
+    otcLockedHeight = Math.round(w * ratio);
+    document.getElementById('otc-placeholder').style.height = otcLockedHeight + 'px';
+    otcVideo.style.height = otcLockedHeight + 'px';
+    otcVideo.style.objectFit = 'cover';
   });
 })();
 
@@ -885,7 +890,26 @@ function selectHobby(idx) {
   document.getElementById('otc-pause-icon').style.display = '';
 }
 
-function togglePlay() {
+function deselectHobby() {
+  document.querySelectorAll('.hobby-card').forEach(function(c){ c.classList.remove('hobby-active'); });
+  document.getElementById('otc-video-wrap').style.display = 'none';
+  otcVideo.pause();
+  otcVideo.src = '';
+  var placeholder = document.getElementById('otc-placeholder');
+  placeholder.style.display = 'flex';
+  if (otcLockedHeight) placeholder.style.height = otcLockedHeight + 'px';
+  placeholder.style.minHeight = otcLockedHeight ? otcLockedHeight + 'px' : '300px';
+}
+
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.hobby-card') && !e.target.closest('.otc-video-card') && !e.target.closest('#otc-progress-bar') && !e.target.closest('#otc-playpause') && !e.target.closest('#otc-mute-btn')) {
+    deselectHobby();
+  }
+});
+
+// Custom controls
+document.getElementById('otc-playpause').addEventListener('click', function(e) {
+  e.stopPropagation();
   if (otcVideo.paused) {
     otcVideo.play();
     document.getElementById('otc-play-icon').style.display = 'none';
@@ -895,40 +919,32 @@ function togglePlay() {
     document.getElementById('otc-play-icon').style.display = '';
     document.getElementById('otc-pause-icon').style.display = 'none';
   }
-}
+});
 
-function toggleMute() {
+document.getElementById('otc-mute-btn').addEventListener('click', function(e) {
+  e.stopPropagation();
   otcVideo.muted = !otcVideo.muted;
   document.getElementById('otc-muted-icon').style.display = otcVideo.muted ? '' : 'none';
   document.getElementById('otc-unmuted-icon').style.display = otcVideo.muted ? 'none' : '';
-}
-
-function seekVideo(e) {
-  e.stopPropagation();
-  var bar = document.getElementById('otc-progress-bar');
-  var rect = bar.getBoundingClientRect();
-  var pct = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
-  if (otcVideo.duration && !isNaN(otcVideo.duration)) {
-    otcVideo.currentTime = pct * otcVideo.duration;
-  }
-}
+});
 
 document.getElementById('otc-progress-bar').addEventListener('click', function(e) {
   e.stopPropagation();
   var rect = this.getBoundingClientRect();
   var pct = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
-  if (otcVideo.duration && !isNaN(otcVideo.duration)) {
+  if (otcVideo.duration && isFinite(otcVideo.duration)) {
     otcVideo.currentTime = pct * otcVideo.duration;
   }
 });
 
-otcVideo.addEventListener('timeupdate', function(){
+otcVideo.addEventListener('timeupdate', function() {
   var pct = (otcVideo.currentTime / otcVideo.duration * 100) || 0;
   document.getElementById('otc-progress').style.width = pct + '%';
   var cur = Math.floor(otcVideo.currentTime);
   var dur = Math.floor(otcVideo.duration) || 0;
   document.getElementById('otc-time').textContent = Math.floor(cur/60)+':'+('0'+cur%60).slice(-2)+' / '+Math.floor(dur/60)+':'+('0'+dur%60).slice(-2);
 });
+
 </script>
 </section>
 
