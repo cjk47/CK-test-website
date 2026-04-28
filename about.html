@@ -653,6 +653,7 @@ function toggleBrandGrid() {
 }
 </script>
 
+
 <!-- GUITAR STRINGS -->
 <div style="background:#F9F8FF;width:100%;overflow:hidden;cursor:crosshair;line-height:0;user-select:none;position:relative;" id="guitar-strings-wrap">
   <svg id="guitar-strings-svg" viewBox="0 0 1200 72" preserveAspectRatio="none" style="width:100%;height:72px;display:block;">
@@ -761,335 +762,175 @@ function toggleBrandGrid() {
 })();
 </script>
 
-<!-- MUSIC -->
+
+<!-- OFF THE CLOCK -->
+<style>
+  .hobby-card { background:#ffffff;border-radius:16px;padding:20px 16px;text-align:center;cursor:pointer;transition:transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;box-shadow:0 2px 8px -3px rgba(0,0,0,0.06);border:2px solid transparent;display:flex;flex-direction:column;justify-content:center; }
+  .hobby-card:hover { transform:translateY(-2px);box-shadow:0 6px 16px -4px rgba(0,0,0,0.1); }
+  .hobby-card.hobby-active { border-color:#7B68EE;box-shadow:0 4px 12px -2px rgba(123,104,238,0.15); }
+  .hobby-card .hobby-icon { width:40px;height:40px;margin:0 auto 10px; }
+  .hobby-card h4 { font-size:0.88rem;font-weight:600;color:#1A1A2E;margin-bottom:4px; }
+  .hobby-card p { font-size:0.72rem;color:#6B7280;line-height:1.45; }
+  .otc-video-card { background:#000;border-radius:16px;overflow:hidden;box-shadow:0 8px 32px -4px rgba(0,0,0,0.2);width:100%;max-width:220px; }
+  .otc-video-card video { width:100%;display:block;background:#000; }
+  .otc-video-label { position:absolute;top:12px;left:12px;background:rgba(0,0,0,0.5);backdrop-filter:blur(8px);color:#fff;font-size:0.7rem;font-weight:600;padding:4px 10px;border-radius:20px;font-family:'Inter',sans-serif; }
+  @media (max-width:767px) { .otc-top { flex-direction:column !important;gap:24px !important; } .hobby-cards-row { grid-template-columns:1fr 1fr !important; } .otc-bottom { flex-direction:column !important; } .otc-video-card { max-width:100% !important; } }
+</style>
 <section class="py-16" style="background:#F9F8FF;">
   <div class="max-w-6xl mx-auto px-6">
-    <div class="grid md:grid-cols-[1fr_1.2fr] gap-12 items-center">
+
+    <!-- Top: heading left -->
+    <div class="otc-top" style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:32px;">
       <div>
         <div class="inline-flex items-center gap-2 bg-violet-light text-violet text-xs font-semibold px-3 py-1.5 rounded-full mb-5">
           Beyond SEO
         </div>
-        <h2 class="font-display font-bold text-4xl text-ink mb-4" style="letter-spacing:-0.02em;">Off the clock</h2>
-        <p class="text-muted mb-4" style="line-height:1.75;">When I'm not deep in SEO, this is what I'm usually doing:</p>
-        <div class="mb-4" style="display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:420px;">
-          <div class="flex items-center gap-3" style="background:#ffffff;border-radius:14px;padding:14px 16px;box-shadow:0 2px 8px -3px rgba(0,0,0,0.06);">
-            <img src="about-music.png" alt="Music" style="width:40px;height:40px;flex-shrink:0;">
-            <span class="text-muted" style="font-size:0.88rem;line-height:1.4;"><span id="music-tooltip-trigger" style="cursor:pointer;">Guitar & vinyl</span></span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;opacity:0.3;"><path d="M8 5v14l11-7z" fill="#6B7280"/></svg>
-          </div>
-          <div class="flex items-center gap-3" style="background:#ffffff;border-radius:14px;padding:14px 16px;box-shadow:0 2px 8px -3px rgba(0,0,0,0.06);">
-            <img src="about-bball.png" alt="Basketball" style="width:40px;height:40px;flex-shrink:0;">
-            <span class="text-muted" style="font-size:0.88rem;line-height:1.4;"><span id="bball-tooltip-trigger" style="cursor:pointer;">Basketball</span></span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;opacity:0.3;"><path d="M8 5v14l11-7z" fill="#6B7280"/></svg>
-          </div>
-          <div class="flex items-center gap-3" style="background:#ffffff;border-radius:14px;padding:14px 16px;box-shadow:0 2px 8px -3px rgba(0,0,0,0.06);">
-            <img src="about-movies.png" alt="Movies" style="width:40px;height:40px;flex-shrink:0;">
-            <span class="text-muted" style="font-size:0.88rem;line-height:1.4;"><span id="movie-tooltip-trigger" style="cursor:pointer;">Movies</span></span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;opacity:0.3;"><path d="M8 5v14l11-7z" fill="#6B7280"/></svg>
-          </div>
-          <div class="flex items-center gap-3" style="background:#ffffff;border-radius:14px;padding:14px 16px;box-shadow:0 2px 8px -3px rgba(0,0,0,0.06);">
-            <img src="about-location.png" alt="Location" style="width:40px;height:40px;flex-shrink:0;">
-            <span class="text-muted" style="font-size:0.88rem;line-height:1.4;"><span id="hood-tooltip-trigger" style="cursor:pointer;">Brooklyn walks</span></span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;opacity:0.3;"><path d="M8 5v14l11-7z" fill="#6B7280"/></svg>
-          </div>
-        </div>
-<div id="movie-tooltip" style="position:fixed;background:#000;border-radius:14px;padding:0;font-size:13px;font-family:'Inter',sans-serif;box-shadow:0 8px 32px -4px rgba(0,0,0,0.36),0 2px 8px rgba(0,0,0,0.16);opacity:0;pointer-events:none;transition:opacity 0.16s ease;z-index:9999;transform:translateY(0) translateX(0) rotate(0deg);width:220px;height:260px;overflow:hidden;">
-  <div style="margin-top:-80px;">
-    <iframe id="movie-iframe" src="" width="440" height="900" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="display:block;border:none;transform:scale(0.5);transform-origin:top left;"></iframe>
-  </div>
-</div>
-<script>
-(function(){
-  var trigger = document.getElementById('movie-tooltip-trigger');
-  var tip = document.getElementById('movie-tooltip');
-  var iframe = document.getElementById('movie-iframe');
-  if(!trigger||!tip||!iframe) return;
-  var SRC = 'https://www.youtube.com/embed/kStzFP3Agsw?autoplay=1&mute=1&loop=1&playlist=kStzFP3Agsw&controls=0&modestbranding=1&playsinline=1';
-
-  // Spring state
-  var rotCur=0, rotVel=0, rotTarget=0;
-  var txCur=0, txVel=0, txTarget=0;
-  var visible = false;
-  var raf = null;
-  var stiffness=120, damping=14, dt=1/60;
-
-  function springTick(){
-    var rf = -stiffness*(rotCur-rotTarget) - damping*rotVel;
-    rotVel += rf*dt; rotCur += rotVel*dt;
-    var tf = -stiffness*(txCur-txTarget) - damping*txVel;
-    txVel += tf*dt; txCur += txVel*dt;
-    tip.style.transform = 'translateY(0) translateX('+txCur.toFixed(2)+'px) rotate('+rotCur.toFixed(2)+'deg)';
-    var done = Math.abs(rotCur-rotTarget)<0.01 && Math.abs(rotVel)<0.01 &&
-               Math.abs(txCur-txTarget)<0.01 && Math.abs(txVel)<0.01;
-    if(!done) raf = requestAnimationFrame(springTick);
-    else raf = null;
-  }
-
-  function startSpring(){
-    if(!raf) raf = requestAnimationFrame(springTick);
-  }
-
-  function position(){
-    var r = trigger.getBoundingClientRect();
-    var tw = tip.offsetWidth, th = tip.offsetHeight;
-    tip.style.left = (r.left + r.width/2 - tw/2) + 'px';
-    tip.style.top  = (r.top - th - 10) + 'px';
-  }
-
-  trigger.addEventListener('mouseenter', function(){
-    visible = true;
-    iframe.src = SRC;
-    position();
-    rotCur=0; rotVel=0; txCur=0; txVel=0;
-    rotTarget=0; txTarget=0;
-    tip.style.opacity = '1';
-    tip.style.transform = 'translateY(0) translateX(0) rotate(0deg)';
-  });
-
-  trigger.addEventListener('mousemove', function(e){
-    if(!visible) return;
-    position();
-    var r = trigger.getBoundingClientRect();
-    var x = e.clientX - r.left - r.width/2;
-    var norm = x / (r.width/2);
-    rotTarget  = norm * 12;
-    txTarget   = norm * 18;
-    startSpring();
-  });
-
-  trigger.addEventListener('mouseleave', function(){
-    visible = false;
-    iframe.src = '';
-    tip.style.opacity = '0';
-    rotTarget=0; txTarget=0;
-    startSpring();
-  });
-})();
-</script>
-<div id="bball-tooltip" style="position:fixed;background:#000;border-radius:14px;font-size:13px;font-family:'Inter',sans-serif;box-shadow:0 8px 32px -4px rgba(0,0,0,0.36),0 2px 8px rgba(0,0,0,0.16);opacity:0;pointer-events:none;transition:opacity 0.16s ease;z-index:9999;transform:translateY(0) translateX(0) rotate(0deg);width:220px;height:210px;overflow:hidden;padding:0;">
-  <div style="margin-top:-120px;">
-    <iframe id="bball-iframe" src="" width="440" height="900" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="display:block;border:none;transform:scale(0.5);transform-origin:top left;"></iframe>
-  </div>
-</div>
-<script>
-(function(){
-  var trigger = document.getElementById('bball-tooltip-trigger');
-  var tip = document.getElementById('bball-tooltip');
-  var iframe = document.getElementById('bball-iframe');
-  if(!trigger||!tip||!iframe) return;
-  var SRC = 'https://www.youtube.com/embed/MseAMFBtjag?autoplay=1&mute=1&loop=1&playlist=MseAMFBtjag&controls=0&modestbranding=1&playsinline=1';
-
-  var rotCur=0, rotVel=0, rotTarget=0;
-  var txCur=0, txVel=0, txTarget=0;
-  var visible=false, raf=null;
-  var stiffness=120, damping=14, dt=1/60;
-
-  function springTick(){
-    var rf=-stiffness*(rotCur-rotTarget)-damping*rotVel;
-    rotVel+=rf*dt; rotCur+=rotVel*dt;
-    var tf=-stiffness*(txCur-txTarget)-damping*txVel;
-    txVel+=tf*dt; txCur+=txVel*dt;
-    tip.style.transform='translateY(0) translateX('+txCur.toFixed(2)+'px) rotate('+rotCur.toFixed(2)+'deg)';
-    var done=Math.abs(rotCur-rotTarget)<0.01&&Math.abs(rotVel)<0.01&&Math.abs(txCur-txTarget)<0.01&&Math.abs(txVel)<0.01;
-    if(!done) raf=requestAnimationFrame(springTick); else raf=null;
-  }
-
-  function startSpring(){ if(!raf) raf=requestAnimationFrame(springTick); }
-
-  function position(){
-    var r=trigger.getBoundingClientRect();
-    var tw=tip.offsetWidth, th=tip.offsetHeight;
-    tip.style.left=(r.left+r.width/2-tw/2)+'px';
-    tip.style.top=(r.top-th-10)+'px';
-  }
-
-  trigger.addEventListener('mouseenter', function(){
-    visible=true;
-    iframe.src=SRC;
-    position();
-    rotCur=0; rotVel=0; txCur=0; txVel=0;
-    rotTarget=0; txTarget=0;
-    tip.style.opacity='1';
-    tip.style.transform='translateY(0) translateX(0) rotate(0deg)';
-  });
-
-  trigger.addEventListener('mousemove', function(e){
-    if(!visible) return;
-    position();
-    var r=trigger.getBoundingClientRect();
-    var norm=(e.clientX-r.left-r.width/2)/(r.width/2);
-    rotTarget=norm*12; txTarget=norm*18;
-    startSpring();
-  });
-
-  trigger.addEventListener('mouseleave', function(){
-    visible=false;
-    tip.style.opacity='0';
-    iframe.src='';
-    rotTarget=0; txTarget=0;
-    startSpring();
-  });
-})();
-</script>
-<div id="music-tooltip" style="position:fixed;background:#000;border-radius:14px;padding:0;font-size:13px;font-family:'Inter',sans-serif;box-shadow:0 8px 32px -4px rgba(0,0,0,0.36),0 2px 8px rgba(0,0,0,0.16);opacity:0;pointer-events:none;transition:opacity 0.16s ease;z-index:9999;transform:translateY(0) translateX(0) rotate(0deg);width:280px;height:158px;overflow:hidden;">
-  <div style="margin-top:-30px;">
-    <iframe id="music-iframe" src="" width="280" height="218" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="display:block;border:none;"></iframe>
-  </div>
-</div>
-<script>
-(function(){
-  var trigger = document.getElementById('music-tooltip-trigger');
-  var tip = document.getElementById('music-tooltip');
-  var iframe = document.getElementById('music-iframe');
-  if(!trigger||!tip||!iframe) return;
-  var SRC = 'https://www.youtube.com/embed/WHI2nWdRdXw?autoplay=1&mute=1&loop=1&playlist=WHI2nWdRdXw&controls=0&modestbranding=1&playsinline=1';
-  var rotCur=0,rotVel=0,rotTarget=0,txCur=0,txVel=0,txTarget=0,visible=false,raf=null;
-  var stiffness=120,damping=14,dt=1/60;
-  function springTick(){
-    var rf=-stiffness*(rotCur-rotTarget)-damping*rotVel; rotVel+=rf*dt; rotCur+=rotVel*dt;
-    var tf=-stiffness*(txCur-txTarget)-damping*txVel; txVel+=tf*dt; txCur+=txVel*dt;
-    tip.style.transform='translateY(0) translateX('+txCur.toFixed(2)+'px) rotate('+rotCur.toFixed(2)+'deg)';
-    var done=Math.abs(rotCur-rotTarget)<0.01&&Math.abs(rotVel)<0.01&&Math.abs(txCur-txTarget)<0.01&&Math.abs(txVel)<0.01;
-    if(!done) raf=requestAnimationFrame(springTick); else raf=null;
-  }
-  function startSpring(){ if(!raf) raf=requestAnimationFrame(springTick); }
-  function position(){
-    var r=trigger.getBoundingClientRect(),tw=tip.offsetWidth,th=tip.offsetHeight;
-    tip.style.left=(r.left+r.width/2-tw/2)+'px';
-    tip.style.top=(r.top-th-10)+'px';
-  }
-  trigger.addEventListener('mouseenter',function(){
-    visible=true; iframe.src=SRC; position();
-    rotCur=0;rotVel=0;txCur=0;txVel=0;rotTarget=0;txTarget=0;
-    tip.style.opacity='1'; tip.style.transform='translateY(0) translateX(0) rotate(0deg)';
-  });
-  trigger.addEventListener('mousemove',function(e){
-    if(!visible) return; position();
-    var r=trigger.getBoundingClientRect(),norm=(e.clientX-r.left-r.width/2)/(r.width/2);
-    rotTarget=norm*12; txTarget=norm*18; startSpring();
-  });
-  trigger.addEventListener('mouseleave',function(){
-    visible=false; tip.style.opacity='0'; iframe.src=''; rotTarget=0; txTarget=0; startSpring();
-  });
-})();
-</script>
-<div id="hood-tooltip" style="position:fixed;background:#000;border-radius:14px;padding:0;font-size:13px;font-family:'Inter',sans-serif;box-shadow:0 8px 32px -4px rgba(0,0,0,0.36),0 2px 8px rgba(0,0,0,0.16);opacity:0;pointer-events:none;transition:opacity 0.16s ease;z-index:9999;transform:translateY(0) translateX(0) rotate(0deg);width:220px;height:260px;overflow:hidden;">
-  <div style="margin-top:-80px;">
-    <iframe id="hood-iframe" src="" width="440" height="900" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="display:block;border:none;transform:scale(0.5);transform-origin:top left;"></iframe>
-  </div>
-</div>
-<script>
-(function(){
-  var trigger = document.getElementById('hood-tooltip-trigger');
-  var tip = document.getElementById('hood-tooltip');
-  var iframe = document.getElementById('hood-iframe');
-  if(!trigger||!tip||!iframe) return;
-  var SRC = 'https://www.youtube.com/embed/5sKctiKO47c?autoplay=1&mute=1&loop=1&playlist=5sKctiKO47c&controls=0&modestbranding=1&playsinline=1&start=12';
-  var rotCur=0,rotVel=0,rotTarget=0,txCur=0,txVel=0,txTarget=0,visible=false,raf=null;
-  var stiffness=120,damping=14,dt=1/60;
-  function springTick(){
-    var rf=-stiffness*(rotCur-rotTarget)-damping*rotVel; rotVel+=rf*dt; rotCur+=rotVel*dt;
-    var tf=-stiffness*(txCur-txTarget)-damping*txVel; txVel+=tf*dt; txCur+=txVel*dt;
-    tip.style.transform='translateY(0) translateX('+txCur.toFixed(2)+'px) rotate('+rotCur.toFixed(2)+'deg)';
-    var done=Math.abs(rotCur-rotTarget)<0.01&&Math.abs(rotVel)<0.01&&Math.abs(txCur-txTarget)<0.01&&Math.abs(txVel)<0.01;
-    if(!done) raf=requestAnimationFrame(springTick); else raf=null;
-  }
-  function startSpring(){ if(!raf) raf=requestAnimationFrame(springTick); }
-  function position(){
-    var r=trigger.getBoundingClientRect(),tw=tip.offsetWidth,th=tip.offsetHeight;
-    tip.style.left=(r.left+r.width/2-tw/2)+'px';
-    tip.style.top=(r.top-th-10)+'px';
-  }
-  trigger.addEventListener('mouseenter',function(){
-    visible=true; iframe.src=SRC; position();
-    rotCur=0;rotVel=0;txCur=0;txVel=0;rotTarget=0;txTarget=0;
-    tip.style.opacity='1'; tip.style.transform='translateY(0) translateX(0) rotate(0deg)';
-  });
-  trigger.addEventListener('mousemove',function(e){
-    if(!visible) return; position();
-    var r=trigger.getBoundingClientRect(),norm=(e.clientX-r.left-r.width/2)/(r.width/2);
-    rotTarget=norm*12; txTarget=norm*18; startSpring();
-  });
-  trigger.addEventListener('mouseleave',function(){
-    visible=false; iframe.src=''; tip.style.opacity='0'; rotTarget=0; txTarget=0; startSpring();
-  });
-})();
-</script>
+        <h2 class="font-display font-bold text-3xl text-ink mb-3" style="letter-spacing:-0.02em;">Off the clock</h2>
+        <p class="text-muted" style="line-height:1.7;font-size:0.9rem;">A few things I enjoy that help me think, create, and recharge.</p>
       </div>
-      <div class="music-right-col">
-        <script>
-        var PL_TRACKS = [
-          { id: '2zf1izCOz2F22PF27uhxRF', title: 'Love Takes Miles',          artist: 'Cameron Winter'                  },
-          { id: '6JvhkfpPHGnnJ8FLDSRwc3', title: 'Same',                      artist: 'Courtney Barnett'                },
-          { id: '2waAug1IePTKYs2KhTCYlc', title: 'New Threats From The Soul', artist: 'Ryan Davis & the Roadhouse Band' },
-        ];
-        </script>
-        <div class="rounded-2xl overflow-hidden" style="box-shadow:0 4px 24px -6px rgba(0,0,0,0.08);background:linear-gradient(135deg,#7B68EE,#F47B5A);">
-          <div class="flex items-center gap-2 px-5 py-3">
-            <div class="flex items-end gap-0.5" style="height:14px;">
-              <span style="width:2.5px;background:#fff;border-radius:2px;animation:bar 0.8s ease-in-out infinite alternate;height:6px;display:inline-block;"></span>
-              <span style="width:2.5px;background:#fff;border-radius:2px;animation:bar 0.8s ease-in-out 0.2s infinite alternate;height:11px;display:inline-block;"></span>
-              <span style="width:2.5px;background:#fff;border-radius:2px;animation:bar 0.8s ease-in-out 0.4s infinite alternate;height:5px;display:inline-block;"></span>
-              <span style="width:2.5px;background:#fff;border-radius:2px;animation:bar 0.8s ease-in-out 0.1s infinite alternate;height:13px;display:inline-block;"></span>
-            </div>
-            <p class="text-xs font-semibold uppercase tracking-widest" style="color:#fff;letter-spacing:0.1em;">Now listening</p>
-          </div>
-          <div id="pl-list"></div>
-          <div style="padding:0 12px 12px;">
-            <div id="pl-embed-wrap" style="border-radius:10px;overflow:hidden;"></div>
-          </div>
-        </div>
-        <script src="https://open.spotify.com/embed/iframe-api/v1" async></script>
-        <script>
-        var plController = null, plPendingUri = null;
-        window.onSpotifyIframeApiReady = function(IFrameAPI) {
-          var el = document.getElementById('pl-embed-wrap');
-          IFrameAPI.createController(el, { uri:'spotify:track:'+PL_TRACKS[0].id, height:80 }, function(ctrl){
-            plController = ctrl;
-            if(plPendingUri){ ctrl.loadUri(plPendingUri); ctrl.play(); plPendingUri = null; }
-          });
-        };
-        (function(){
-          var active = 0;
-          var list = document.getElementById('pl-list');
-          function render(){
-            list.innerHTML = '';
-            PL_TRACKS.forEach(function(t,i){
-              var isActive = i===active;
-              var row = document.createElement('div');
-              row.style.cssText = 'display:flex;align-items:center;gap:12px;padding:10px 14px;cursor:pointer;border-bottom:1px solid rgba(255,255,255,0.06);transition:background 0.15s;'+(isActive?'background:rgba(244,123,90,0.15);':'');
-              row.innerHTML = '<span style="font-size:0.7rem;width:14px;text-align:center;flex-shrink:0;color:'+(isActive?'#fff':'rgba(255,255,255,0.5)')+';text-shadow:0 1px 4px rgba(0,0,0,0.4);">'+(isActive?'▶':(i+1))+'</span>'+
-                '<div style="min-width:0;flex:1;"><p style="font-size:0.8rem;font-weight:600;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-shadow:0 1px 4px rgba(0,0,0,0.35);">'+t.title+'</p>'+
-                '<p style="font-size:0.7rem;color:rgba(255,255,255,0.7);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-shadow:0 1px 3px rgba(0,0,0,0.3);">'+t.artist+'</p></div>';
-              row.addEventListener('mouseenter',function(){ if(i!==active) row.style.background='rgba(255,255,255,0.05)'; });
-              row.addEventListener('mouseleave',function(){ if(i!==active) row.style.background=''; });
-              row.addEventListener('click',function(){
-                active=i; render();
-                var uri='spotify:track:'+t.id;
-                if(plController){ plController.loadUri(uri); plController.play(); } else { plPendingUri=uri; }
-              });
-              list.appendChild(row);
-            });
-            if(list.lastChild) list.lastChild.style.borderBottom='none';
-          }
-          render();
-        })();
-        </script>
+      <!-- Hint text + arrow positioned to point at video -->
+      <div class="hidden md:flex items-start gap-2" style="margin-right:180px;margin-top:70px;">
+        <p style="font-size:0.9rem;font-style:italic;color:#7B68EE;font-family:'Inter',sans-serif;">Click a card to see a short clip</p>
+        <svg width="50" height="40" viewBox="0 0 50 40" fill="none" style="margin-top:10px;flex-shrink:0;">
+          <path d="M3 3 C 12 2, 18 22, 30 18 S 45 28, 43 37" stroke="#7B68EE" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+          <path d="M46 31 L43 37 L38 33" stroke="#7B68EE" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
       </div>
     </div>
-  </div>
-</section>
-<style>
-  @keyframes bar { from { transform: scaleY(0.4); } to { transform: scaleY(1); } }
-  @media (min-width: 768px) {
-    .music-right-col { margin-top: 70px; }
-    .about-bullets { row-gap: 0.75rem !important; margin-top: 1rem !important; }
-    .about-bullets > li { margin-top: 0.75rem !important; line-height: 1.85; }
-    .about-bullets > li:first-child { margin-top: 0 !important; }
-    .about-bullets > li > span:last-child { line-height: 1.85; }
-  }
 
-</style>
+    <!-- Bottom: 4 cards left + video right -->
+    <div class="otc-bottom" style="display:flex;gap:32px;align-items:stretch;">
+
+      <!-- Cards -->
+      <div class="hobby-cards-row" style="flex:1;display:grid;grid-template-columns:repeat(5,1fr);gap:14px;">
+        <div class="hobby-card" data-hobby="0" onclick="selectHobby(0)">
+          <img src="about-music.png" alt="Music" class="hobby-icon">
+          <h4 class="font-display">Live music</h4>
+          <p>Nothing beats the energy of a live show</p>
+        </div>
+        <div class="hobby-card" data-hobby="1" onclick="selectHobby(1)">
+          <img src="about-bball.png" alt="Basketball" class="hobby-icon">
+          <h4 class="font-display">Basketball</h4>
+          <p>Playing pickup and watching the NBA</p>
+        </div>
+        <div class="hobby-card" data-hobby="2" onclick="selectHobby(2)">
+          <img src="about-movies.png" alt="Movies" class="hobby-icon">
+          <h4 class="font-display">Movies</h4>
+          <p>Always looking for the next great film</p>
+        </div>
+        <div class="hobby-card" data-hobby="3" onclick="selectHobby(3)">
+          <img src="about-location.png" alt="Location" class="hobby-icon">
+          <h4 class="font-display">Brooklyn</h4>
+          <p>Walking and exploring the neighborhood</p>
+        </div>
+        <div class="hobby-card" data-hobby="4" onclick="selectHobby(4)">
+          <img src="about-movies.png" alt="Reading" class="hobby-icon">
+          <h4 class="font-display">Reading</h4>
+          <p>Always learning, always curious</p>
+        </div>
+      </div>
+
+      <!-- Video player -->
+      <div class="otc-video-card" style="flex-shrink:0;">
+        <!-- Placeholder shown before any card is clicked -->
+        <div id="otc-placeholder" style="width:100%;background:#f0effe;border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:rgba(123,104,238,0.12);display:flex;align-items:center;justify-content:center;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7z" fill="#7B68EE"/></svg>
+          </div>
+          <p style="font-size:0.75rem;color:#7B68EE;font-family:'Inter',sans-serif;margin:0;">Click a card to play</p>
+        </div>
+        <!-- Video (hidden initially) -->
+        <div id="otc-video-wrap" style="position:relative;display:none;">
+          <video id="otc-video" muted loop playsinline src="" style="width:100%;display:block;background:#000;border-radius:16px;"></video>
+          <div style="position:absolute;bottom:0;left:0;right:0;padding:10px 14px;display:flex;align-items:center;gap:10px;background:linear-gradient(transparent, rgba(0,0,0,0.7));border-radius:0 0 16px 16px;">
+            <button id="otc-playpause" onclick="togglePlay()" style="background:none;border:none;cursor:pointer;padding:0;display:flex;">
+              <svg id="otc-play-icon" width="14" height="14" viewBox="0 0 24 24" fill="white" style="display:none;"><path d="M8 5v14l11-7z"/></svg>
+              <svg id="otc-pause-icon" width="14" height="14" viewBox="0 0 24 24" fill="white"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg>
+            </button>
+            <div id="otc-progress-bar" style="flex:1;height:6px;background:rgba(255,255,255,0.3);border-radius:3px;cursor:pointer;position:relative;z-index:10;"><div id="otc-progress" style="width:0%;height:100%;background:#7B68EE;border-radius:2px;pointer-events:none;"></div></div>
+            <span id="otc-time" style="font-size:10px;color:rgba(255,255,255,0.7);font-family:'Inter',sans-serif;">0:00 / 0:00</span>
+            <button id="otc-mute-btn" onclick="toggleMute()" style="background:none;border:none;cursor:pointer;padding:0;display:flex;">
+              <svg id="otc-muted-icon" width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M11 5L6 9H2v6h4l5 4V5z" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="23" y1="9" x2="17" y2="15" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round"/><line x1="17" y1="9" x2="23" y2="15" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round"/></svg>
+              <svg id="otc-unmuted-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" style="display:none;"><path d="M11 5L6 9H2v6h4l5 4V5z" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+        </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+<script>
+var hobbyVideos = ['movies.mp4', 'movies.mp4', 'movies.mp4', 'movies.mp4', 'movies.mp4'];
+var otcVideo = document.getElementById('otc-video');
+// Set placeholder height to match video
+(function(){
+  var temp = document.createElement('video');
+  temp.src = hobbyVideos[0];
+  temp.addEventListener('loadedmetadata', function(){
+    var ratio = temp.videoHeight / temp.videoWidth;
+    var card = document.querySelector('.otc-video-card');
+    var w = card.offsetWidth;
+    document.getElementById('otc-placeholder').style.height = (w * ratio) + 'px';
+  });
+})();
+
+function selectHobby(idx) {
+  document.querySelectorAll('.hobby-card').forEach(function(c,i){ c.classList.toggle('hobby-active', i===idx); });
+  document.getElementById('otc-placeholder').style.display = 'none';
+  document.getElementById('otc-video-wrap').style.display = '';
+  otcVideo.src = hobbyVideos[idx];
+  otcVideo.play();
+  document.getElementById('otc-play-icon').style.display = 'none';
+  document.getElementById('otc-pause-icon').style.display = '';
+}
+
+function togglePlay() {
+  if (otcVideo.paused) {
+    otcVideo.play();
+    document.getElementById('otc-play-icon').style.display = 'none';
+    document.getElementById('otc-pause-icon').style.display = '';
+  } else {
+    otcVideo.pause();
+    document.getElementById('otc-play-icon').style.display = '';
+    document.getElementById('otc-pause-icon').style.display = 'none';
+  }
+}
+
+function toggleMute() {
+  otcVideo.muted = !otcVideo.muted;
+  document.getElementById('otc-muted-icon').style.display = otcVideo.muted ? '' : 'none';
+  document.getElementById('otc-unmuted-icon').style.display = otcVideo.muted ? 'none' : '';
+}
+
+function seekVideo(e) {
+  e.stopPropagation();
+  var bar = document.getElementById('otc-progress-bar');
+  var rect = bar.getBoundingClientRect();
+  var pct = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+  if (otcVideo.duration && !isNaN(otcVideo.duration)) {
+    otcVideo.currentTime = pct * otcVideo.duration;
+  }
+}
+
+document.getElementById('otc-progress-bar').addEventListener('click', function(e) {
+  e.stopPropagation();
+  var rect = this.getBoundingClientRect();
+  var pct = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+  if (otcVideo.duration && !isNaN(otcVideo.duration)) {
+    otcVideo.currentTime = pct * otcVideo.duration;
+  }
+});
+
+otcVideo.addEventListener('timeupdate', function(){
+  var pct = (otcVideo.currentTime / otcVideo.duration * 100) || 0;
+  document.getElementById('otc-progress').style.width = pct + '%';
+  var cur = Math.floor(otcVideo.currentTime);
+  var dur = Math.floor(otcVideo.duration) || 0;
+  document.getElementById('otc-time').textContent = Math.floor(cur/60)+':'+('0'+cur%60).slice(-2)+' / '+Math.floor(dur/60)+':'+('0'+dur%60).slice(-2);
+});
+</script>
+</section>
 
 <!-- FOOTER -->
 <footer class="border-t border-border">
