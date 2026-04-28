@@ -104,10 +104,10 @@
   @media (max-width: 390px) { .hero-h1-mobile { font-size: 11vw !important; } }
   @media (min-width: 428px) and (max-width: 432px) { .hero-h1-mobile { font-size: 11vw !important; } .hero-top { padding-top: 80px !important; } .hero-bottom { padding-bottom: 80px !important; } }
   .brand-logos .logo-cell img { filter: grayscale(1) contrast(20) opacity(0.47); mix-blend-mode: normal; }
-  @media (hover: hover) { .brand-logos:hover .logo-cell img { filter: grayscale(0) contrast(1) opacity(1) !important; mix-blend-mode: normal !important; transition: filter 0.3s ease; } }
   @media (min-width: 768px) {
     .brands-heading { font-weight: 500 !important; font-size: 20px !important; color: #323232 !important; letter-spacing: normal !important; -webkit-text-stroke: 0.2px currentColor; }
     .brand-logos .logo-cell img { filter: grayscale(1) contrast(20) opacity(0.47) !important; mix-blend-mode: normal !important; }
+    .brand-logos:hover .logo-cell img { filter: none !important; mix-blend-mode: normal !important; }
   }
   @media (min-width: 768px) and (max-width: 1023px) {
     .brands-col > p { font-size: 1.35rem !important; }
@@ -154,11 +154,11 @@ function toggleMob() {
 
 <!-- HERO -->
 <section class="relative overflow-x-hidden pt-0 pb-0" style="background:#ffffff;">
-  <div class="hero-bottom relative pb-16 md:pb-[101px]" style="background:radial-gradient(ellipse 70% 60% at 15% 10%, rgba(244,123,90,0.10) 0%, transparent 70%), radial-gradient(ellipse 60% 50% at 85% 90%, rgba(123,104,238,0.09) 0%, transparent 70%);">
+  <div class="hero-bottom relative pb-16 md:pb-[88px]" style="background:radial-gradient(ellipse 70% 60% at 15% 10%, rgba(244,123,90,0.10) 0%, transparent 70%), radial-gradient(ellipse 60% 50% at 85% 90%, rgba(123,104,238,0.09) 0%, transparent 70%);">
   <div class="max-w-6xl mx-auto px-6">
 
     <!-- CENTERED HERO CONTENT -->
-    <div class="hero-top flex flex-col items-center text-center max-w-4xl mx-auto pt-16 md:pt-[101px]">
+    <div class="hero-top flex flex-col items-center text-center max-w-4xl mx-auto pt-16 md:pt-[88px]">
 
       <!-- Headline -->
       <h1 class="fade-up leading-[1.12] hero-h1-mobile text-ink mb-5" style="font-family:'Poppins',sans-serif;font-weight:750;font-size:clamp(2.85rem,4.9vw,4.08rem);letter-spacing:-0.025em;">
@@ -212,7 +212,7 @@ function toggleMob() {
 
   <div class="max-w-6xl mx-auto px-6">
     <!-- BOTTOM ROW: testimonial (left) | trusted brands (right) -->
-    <div class="grid md:grid-cols-2 gap-10 md:gap-8 mt-6 md:mt-0 pt-0 md:pt-[62px] pb-8 md:pb-8 items-start md:items-stretch">
+    <div class="grid md:grid-cols-2 gap-10 md:gap-8 mt-6 md:mt-0 pt-0 md:pt-[59px] pb-8 md:pb-8 items-start md:items-stretch">
 
       <!-- Testimonial card (left — matches Jonathan Doe card in reference) -->
       <div class="order-2 md:order-1 rounded-2xl p-7 max-w-md mx-auto md:max-w-md md:mx-0 text-center md:text-left md:flex md:flex-col" style="background:#fff4f2;box-shadow:0 4px 20px -4px rgba(244,123,90,0.07);">
@@ -229,15 +229,15 @@ function toggleMob() {
       <!-- Trusted by the brands you love (right — matches reference exactly) -->
       <div class="brands-col order-1 md:order-2 pt-0 mt-4 md:mt-0 md:max-w-none md:mx-0 md:pr-8">
         <p class="brands-heading text-ink mb-7 md:mb-[28px] text-center md:text-left" style="font-family:'Poppins',sans-serif;font-weight:500;font-size:20px;line-height:1.2;color:#323232;">Trusted by brands you love</p>
-        <div class="brand-logos" style="display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:1fr 1fr;gap:2.75rem 1rem;width:100%;">
-            <div class="logo-cell" style="display:flex;align-items:center;justify-content:center;"><img src="1h-chase.png" alt="Chase" style="max-height:36px;width:auto;max-width:100%;filter:grayscale(1) contrast(20) opacity(0.47);"></div>
-            <div class="logo-cell" style="display:flex;align-items:center;justify-content:center;"><img id="logo-ibm" src="1h-ibm.png" alt="IBM" style="max-height:21px;width:auto;max-width:100%;filter:grayscale(1) contrast(20) opacity(0.47);"></div>
-            <div class="logo-cell" style="display:flex;align-items:center;justify-content:center;"><img src="2-applebees.png" alt="Applebee's" style="max-height:32px;width:auto;max-width:100%;filter:grayscale(1) contrast(20) opacity(0.47);"></div>
-            <div class="logo-cell" style="display:flex;align-items:center;justify-content:center;"><img src="1h-hennessy.png" alt="Hennessy" style="max-height:38px;width:auto;max-width:100%;filter:grayscale(1) contrast(20) opacity(0.47);"></div>
-            <div class="logo-cell" style="display:flex;align-items:center;justify-content:center;"><img src="1h-bestwestern.png" alt="Best Western" style="max-height:46px;width:auto;max-width:100%;filter:grayscale(1) contrast(20) opacity(0.47);"></div>
-            <div class="logo-cell" style="display:flex;align-items:center;justify-content:center;"><img src="1h-HarperCollins.png" alt="HarperCollins" style="margin-left:3px;max-height:46px;width:auto;max-width:100%;filter:grayscale(1) contrast(20) opacity(0.47);"></div>
-            <div class="logo-cell" style="display:flex;align-items:center;justify-content:center;"><img src="1h-playstation.png" alt="PlayStation" style="max-height:34px;width:auto;max-width:100%;filter:grayscale(1) contrast(20) opacity(0.47);"></div>
-            <div class="logo-cell" style="display:flex;align-items:center;justify-content:center;"><img src="logo14.png" alt="P&amp;G" style="max-height:24px;width:auto;max-width:100%;filter:grayscale(1) contrast(20) opacity(0.47);"></div>
+        <div class="brand-logos" style="display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:1fr 1fr;gap:2.5rem 1rem;width:100%;">
+            <div class="logo-cell" style="display:flex;align-items:center;justify-content:center;"><img src="1h-chase.png" alt="Chase" style="max-height:36px;width:auto;max-width:100%;"></div>
+            <div class="logo-cell" style="display:flex;align-items:center;justify-content:center;"><img id="logo-ibm" src="1h-ibm.png" alt="IBM" style="max-height:21px;width:auto;max-width:100%;"></div>
+            <div class="logo-cell" style="display:flex;align-items:center;justify-content:center;"><img src="2-applebees.png" alt="Applebee's" style="max-height:32px;width:auto;max-width:100%;"></div>
+            <div class="logo-cell" style="display:flex;align-items:center;justify-content:center;"><img src="1h-hennessy.png" alt="Hennessy" style="max-height:38px;width:auto;max-width:100%;"></div>
+            <div class="logo-cell" style="display:flex;align-items:center;justify-content:center;"><img src="1h-bestwestern.png" alt="Best Western" style="max-height:46px;width:auto;max-width:100%;"></div>
+            <div class="logo-cell" style="display:flex;align-items:center;justify-content:center;"><img src="1h-HarperCollins.png" alt="HarperCollins" style="margin-left:3px;max-height:46px;width:auto;max-width:100%;"></div>
+            <div class="logo-cell" style="display:flex;align-items:center;justify-content:center;"><img src="1h-playstation.png" alt="PlayStation" style="max-height:34px;width:auto;max-width:100%;"></div>
+            <div class="logo-cell" style="display:flex;align-items:center;justify-content:center;"><img src="logo14.png" alt="P&amp;G" style="max-height:24px;width:auto;max-width:100%;"></div>
         </div>
       </div>
 
