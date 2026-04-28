@@ -100,7 +100,7 @@
     .hero-icon-search { display: inline !important; }
     .hero-h1-mobile { line-height: 1.22 !important; }
   }
-  @media (max-width: 767px) { .hero-h1-mobile { font-size: 3.35rem !important; } #hero-br { display: none !important; } .brand-logos .logo-row { gap: 0 !important; } .brand-logos .logo-cell { flex: 1 !important; justify-content: center !important; } }
+  @media (max-width: 767px) { #logo-ibm { max-height: 19px !important; } .hero-h1-mobile { font-size: 3.35rem !important; } #hero-br { display: none !important; } .brand-logos .logo-row { gap: 0 !important; } .brand-logos .logo-cell { flex: 1 !important; justify-content: center !important; } }
   @media (max-width: 390px) { .hero-h1-mobile { font-size: 11vw !important; } }
   @media (min-width: 428px) and (max-width: 432px) { .hero-h1-mobile { font-size: 11vw !important; } .hero-top { padding-top: 80px !important; } .hero-bottom { padding-bottom: 80px !important; } }
   .brand-logos .logo-cell img { filter: grayscale(1) contrast(20) opacity(0.47); mix-blend-mode: normal; }
@@ -224,13 +224,6 @@ function toggleMob() {
           </div>
         </div>
         <p class="text-xs md:text-[13.3px] text-ink/80 leading-relaxed italic">"Every time Craig has analyzed our site and recommended content tweaks, structural improvements, or tag optimizations, we've seen a measurable boost in rankings and traffic. His approach isn't guesswork, it's expertise, and it works."</p>
-        <div class="flex md:hidden items-center justify-center gap-0.5 mt-5">
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="#fd7c6e"><path d="M7 1l1.55 3.14L12 4.74l-2.5 2.43.59 3.43L7 8.97l-3.09 1.63.59-3.43L2 4.74l3.45-.6L7 1z"/></svg>
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="#fd7c6e"><path d="M7 1l1.55 3.14L12 4.74l-2.5 2.43.59 3.43L7 8.97l-3.09 1.63.59-3.43L2 4.74l3.45-.6L7 1z"/></svg>
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="#fd7c6e"><path d="M7 1l1.55 3.14L12 4.74l-2.5 2.43.59 3.43L7 8.97l-3.09 1.63.59-3.43L2 4.74l3.45-.6L7 1z"/></svg>
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="#fd7c6e"><path d="M7 1l1.55 3.14L12 4.74l-2.5 2.43.59 3.43L7 8.97l-3.09 1.63.59-3.43L2 4.74l3.45-.6L7 1z"/></svg>
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="#fd7c6e"><path d="M7 1l1.55 3.14L12 4.74l-2.5 2.43.59 3.43L7 8.97l-3.09 1.63.59-3.43L2 4.74l3.45-.6L7 1z"/></svg>
-        </div>
       </div>
 
       <!-- Trusted by the brands you love (right — matches reference exactly) -->
@@ -239,7 +232,7 @@ function toggleMob() {
         <div class="brand-logos" style="display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:1fr 1fr;gap:2.75rem 1rem;width:100%;">
             <div class="logo-cell" style="display:flex;align-items:center;justify-content:center;"><img src="1h-chase.png" alt="Chase" style="max-height:36px;width:auto;max-width:100%;filter:grayscale(1) contrast(20) opacity(0.47);"></div>
             <div class="logo-cell" style="display:flex;align-items:center;justify-content:center;"><img src="2-applebees.png" alt="Applebee's" style="max-height:32px;width:auto;max-width:100%;filter:grayscale(1) contrast(20) opacity(0.47);"></div>
-            <div class="logo-cell" style="display:flex;align-items:center;justify-content:center;"><img src="1h-ibm.png" alt="IBM" style="max-height:18px;width:auto;max-width:100%;filter:grayscale(1) contrast(20) opacity(0.47);"></div>
+            <div class="logo-cell" style="display:flex;align-items:center;justify-content:center;"><img id="logo-ibm" src="1h-ibm.png" alt="IBM" style="max-height:18px;width:auto;max-width:100%;filter:grayscale(1) contrast(20) opacity(0.47);"></div>
             <div class="logo-cell" style="display:flex;align-items:center;justify-content:center;"><img src="1h-hennessy.png" alt="Hennessy" style="max-height:38px;width:auto;max-width:100%;filter:grayscale(1) contrast(20) opacity(0.47);"></div>
             <div class="logo-cell" style="display:flex;align-items:center;justify-content:center;"><img src="1h-bestwestern.png" alt="Best Western" style="max-height:46px;width:auto;max-width:100%;filter:grayscale(1) contrast(20) opacity(0.47);"></div>
             <div class="logo-cell" style="display:flex;align-items:center;justify-content:center;"><img src="1h-HarperCollins.png" alt="HarperCollins" style="margin-left:3px;max-height:46px;width:auto;max-width:100%;filter:grayscale(1) contrast(20) opacity(0.47);"></div>
