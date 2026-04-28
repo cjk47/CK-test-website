@@ -104,7 +104,7 @@
   @media (max-width: 390px) { .hero-h1-mobile { font-size: 11vw !important; } }
   @media (min-width: 428px) and (max-width: 432px) { .hero-h1-mobile { font-size: 11vw !important; } .hero-top { padding-top: 80px !important; } .hero-bottom { padding-bottom: 80px !important; } }
   .brand-logos .logo-cell img { filter: grayscale(1) contrast(20) opacity(0.47); mix-blend-mode: normal; }
-  @media (hover: hover) { .brand-logos .logo-cell:hover img { filter: grayscale(0) contrast(1) opacity(1) !important; mix-blend-mode: normal !important; } }
+  @media (hover: hover) { .brand-logos:hover .logo-cell img { filter: grayscale(0) contrast(1) opacity(1) !important; mix-blend-mode: normal !important; transition: filter 0.3s ease; } }
   @media (min-width: 768px) {
     .brands-heading { font-weight: 500 !important; font-size: 20px !important; color: #323232 !important; letter-spacing: normal !important; -webkit-text-stroke: 0.2px currentColor; }
     .brand-logos .logo-cell img { filter: grayscale(1) contrast(20) opacity(0.47) !important; mix-blend-mode: normal !important; }
@@ -154,11 +154,11 @@ function toggleMob() {
 
 <!-- HERO -->
 <section class="relative overflow-x-hidden pt-0 pb-0" style="background:#ffffff;">
-  <div class="hero-bottom relative pb-16 md:pb-[77px]" style="background:radial-gradient(ellipse 70% 60% at 15% 10%, rgba(244,123,90,0.10) 0%, transparent 70%), radial-gradient(ellipse 60% 50% at 85% 90%, rgba(123,104,238,0.09) 0%, transparent 70%);">
+  <div class="hero-bottom relative pb-16 md:pb-[104px]" style="background:radial-gradient(ellipse 70% 60% at 15% 10%, rgba(244,123,90,0.10) 0%, transparent 70%), radial-gradient(ellipse 60% 50% at 85% 90%, rgba(123,104,238,0.09) 0%, transparent 70%);">
   <div class="max-w-6xl mx-auto px-6">
 
     <!-- CENTERED HERO CONTENT -->
-    <div class="hero-top flex flex-col items-center text-center max-w-4xl mx-auto pt-16 md:pt-[77px]">
+    <div class="hero-top flex flex-col items-center text-center max-w-4xl mx-auto pt-16 md:pt-[104px]">
 
       <!-- Headline -->
       <h1 class="fade-up leading-[1.12] hero-h1-mobile text-ink mb-5" style="font-family:'Poppins',sans-serif;font-weight:750;font-size:clamp(2.85rem,4.9vw,4.08rem);letter-spacing:-0.025em;">
@@ -212,7 +212,7 @@ function toggleMob() {
 
   <div class="max-w-6xl mx-auto px-6">
     <!-- BOTTOM ROW: testimonial (left) | trusted brands (right) -->
-    <div class="grid md:grid-cols-2 gap-10 md:gap-8 mt-6 md:mt-0 pt-0 md:pt-12 pb-8 md:pb-8 items-start md:items-stretch">
+    <div class="grid md:grid-cols-2 gap-10 md:gap-8 mt-6 md:mt-0 pt-0 md:pt-[62px] pb-8 md:pb-8 items-start md:items-stretch">
 
       <!-- Testimonial card (left — matches Jonathan Doe card in reference) -->
       <div class="order-2 md:order-1 rounded-2xl p-7 max-w-md mx-auto md:max-w-md md:mx-0 text-center md:text-left md:flex md:flex-col" style="background:#fff4f2;box-shadow:0 4px 20px -4px rgba(244,123,90,0.07);">
@@ -228,15 +228,15 @@ function toggleMob() {
 
       <!-- Trusted by the brands you love (right — matches reference exactly) -->
       <div class="brands-col order-1 md:order-2 pt-0 mt-4 md:mt-0 md:max-w-none md:mx-0 md:pr-8">
-        <p class="brands-heading text-ink mb-7 md:mb-[26px] text-center md:text-left" style="font-family:'Poppins',sans-serif;font-weight:500;font-size:20px;line-height:1.2;color:#323232;">Trusted by brands you love</p>
+        <p class="brands-heading text-ink mb-7 md:mb-[28px] text-center md:text-left" style="font-family:'Poppins',sans-serif;font-weight:500;font-size:20px;line-height:1.2;color:#323232;">Trusted by brands you love</p>
         <div class="brand-logos" style="display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:1fr 1fr;gap:2.75rem 1rem;width:100%;">
             <div class="logo-cell" style="display:flex;align-items:center;justify-content:center;"><img src="1h-chase.png" alt="Chase" style="max-height:36px;width:auto;max-width:100%;filter:grayscale(1) contrast(20) opacity(0.47);"></div>
+            <div class="logo-cell" style="display:flex;align-items:center;justify-content:center;"><img id="logo-ibm" src="1h-ibm.png" alt="IBM" style="max-height:21px;width:auto;max-width:100%;filter:grayscale(1) contrast(20) opacity(0.47);"></div>
             <div class="logo-cell" style="display:flex;align-items:center;justify-content:center;"><img src="2-applebees.png" alt="Applebee's" style="max-height:32px;width:auto;max-width:100%;filter:grayscale(1) contrast(20) opacity(0.47);"></div>
-            <div class="logo-cell" style="display:flex;align-items:center;justify-content:center;"><img id="logo-ibm" src="1h-ibm.png" alt="IBM" style="max-height:18px;width:auto;max-width:100%;filter:grayscale(1) contrast(20) opacity(0.47);"></div>
             <div class="logo-cell" style="display:flex;align-items:center;justify-content:center;"><img src="1h-hennessy.png" alt="Hennessy" style="max-height:38px;width:auto;max-width:100%;filter:grayscale(1) contrast(20) opacity(0.47);"></div>
             <div class="logo-cell" style="display:flex;align-items:center;justify-content:center;"><img src="1h-bestwestern.png" alt="Best Western" style="max-height:46px;width:auto;max-width:100%;filter:grayscale(1) contrast(20) opacity(0.47);"></div>
             <div class="logo-cell" style="display:flex;align-items:center;justify-content:center;"><img src="1h-HarperCollins.png" alt="HarperCollins" style="margin-left:3px;max-height:46px;width:auto;max-width:100%;filter:grayscale(1) contrast(20) opacity(0.47);"></div>
-            <div class="logo-cell" style="display:flex;align-items:center;justify-content:center;"><img src="1h-playstation.png" alt="PlayStation" style="max-height:32px;width:auto;max-width:100%;filter:grayscale(1) contrast(20) opacity(0.47);"></div>
+            <div class="logo-cell" style="display:flex;align-items:center;justify-content:center;"><img src="1h-playstation.png" alt="PlayStation" style="max-height:34px;width:auto;max-width:100%;filter:grayscale(1) contrast(20) opacity(0.47);"></div>
             <div class="logo-cell" style="display:flex;align-items:center;justify-content:center;"><img src="OralB.svg.png" alt="Oral-B" style="max-height:19px;width:auto;max-width:100%;filter:grayscale(1) contrast(20) opacity(0.47);"></div>
         </div>
       </div>
@@ -246,7 +246,7 @@ function toggleMob() {
 </section>
 
 <!-- SERVICES TEASER -->
-<section class="pt-8 pb-12 md:pt-[80px] md:pb-[80px]" style="background:linear-gradient(to bottom, #ffffff 0%, #f8f8fb 30%, #f8f8fb 70%, #ffffff 100%);">
+<section class="pt-8 pb-12 md:pt-[110px] md:pb-[110px]" style="background:linear-gradient(to bottom, #ffffff 0%, #f8f8fb 15%, #f8f8fb 92%, #ffffff 100%);">
   <div class="max-w-6xl mx-auto px-6">
     <div class="svc-header-row flex flex-col mb-8 md:mb-9 text-center md:text-left items-center md:items-start">
       <div class="inline-flex items-center gap-2 text-coral text-xs font-semibold px-3 py-1.5 rounded-full mb-4" style="background:#ffece5;">
@@ -338,16 +338,16 @@ function toggleMob() {
 </section>
 
 <!-- ABOUT TEASER -->
-<section class="bg-white py-12 md:pt-[80px] md:pb-[80px]">
+<section class="bg-white py-12 md:pt-[30px] md:pb-[65px]">
   <div class="max-w-6xl mx-auto px-6">
   <div class="rounded-3xl px-8 py-10 md:px-14 md:py-14 flex flex-col md:grid md:grid-cols-2 md:gap-x-16 md:gap-y-5 md:items-center gap-6" style="background:#F0EFFE;box-shadow:0 2px 10px -4px rgba(0,0,0,0.05);">
 
     <!-- Mobile: order 1 | Desktop: col 2 row 1 — label + heading -->
     <div class="order-1 md:col-start-2 md:row-start-1">
       <div class="inline-flex items-center gap-2 text-violet text-xs font-semibold px-3 py-1.5 rounded-full mb-5" style="background:#e8e4fd;">
-        Track record
+        Case studies
       </div>
-      <h2 class="font-display font-extrabold text-3xl md:text-4xl text-ink tracking-tight leading-tight" style="font-weight:750;">Results that speak for themselves</h2>
+      <h2 class="font-display font-extrabold text-3xl md:text-4xl text-ink tracking-tight leading-tight" style="font-weight:750;">Proven track record delivering SEO results</h2>
     </div>
 
     <!-- Mobile: order 2 | Desktop: col 1 rows 1–2 — graph -->
@@ -438,7 +438,7 @@ function toggleMob() {
 </section>
 
 <!-- ABOUT SECTION -->
-<section class="py-12 md:pt-[80px] md:pb-[80px]" style="background:#ffffff;">
+<section class="py-12 md:pt-[65px] md:pb-[65px]" style="background:#ffffff;">
   <div class="max-w-6xl mx-auto px-6">
     <div class="grid md:grid-cols-2 gap-12 md:gap-24 items-center">
 
@@ -606,7 +606,7 @@ function toggleMob() {
 
 
 <!-- CTA BANNER -->
-<section class="py-12 md:py-[80px] px-6">
+<section class="py-12 md:py-[65px] px-6">
   <div class="max-w-6xl mx-auto rounded-3xl py-14 md:py-16 px-6 md:px-14 text-center" style="background:linear-gradient(135deg, #FFE8E5 0%, #FFDAD4 12%, #FFE8E5 25%, #EBE5FF 42%, #FFF0DC 60%, #E5EEFF 78%, #FFE8E5 100%);background-size:300% 300%;animation:ctaGradientMove 12s ease infinite;box-shadow:0 4px 24px rgba(0,0,0,0.06);">
     <div class="inline-flex items-center gap-2 text-xs font-semibold px-3 py-1.5 rounded-full mb-6" style="background:rgba(255,255,255,0.55);color:#F47B5A;">Let's move together</div>
     <h2 class="font-display font-bold text-3xl md:text-4xl text-ink tracking-tight mb-4">Ready to future-proof<br>your SEO strategy?</h2>
