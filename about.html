@@ -680,7 +680,7 @@ function toggleBrandGrid() {
           Beyond SEO
         </div>
         <h2 class="font-display font-bold text-3xl text-ink mb-3" style="letter-spacing:-0.02em;">A bit about me outside of work</h2>
-        <p class="text-muted" style="line-height:1.7;font-size:0.9rem;">What I'm into when I'm not working on SEO.</p>
+        <p class="text-muted" style="line-height:1.7;font-size:0.9rem;">What I'm into when I'm not working on SEO.<span class="md:hidden"> Click a card to explore.</span></p>
       </div>
       <!-- Hint text + arrow pointing at video -->
       <div class="hidden md:flex items-start gap-2" style="margin-right:180px;margin-top:70px;">
@@ -845,8 +845,8 @@ function setPlayState(playing){
     var icon = row.querySelector('span');
     if(icon && icon.style.color === 'rgb(33, 103, 225)'){
       icon.innerHTML = playing
-        ? '<svg width="10" height="10" viewBox="0 0 24 24" fill="#2167E1"><rect x="5" y="4" width="5" height="16" rx="1"/><rect x="14" y="4" width="5" height="16" rx="1"/></svg>'
-        : '<svg width="10" height="10" viewBox="0 0 24 24" fill="#2167E1"><path d="M8 5v14l11-7z"/></svg>';
+        ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="#2167E1"><rect x="5" y="4" width="5" height="16" rx="1"/><rect x="14" y="4" width="5" height="16" rx="1"/></svg>'
+        : '<svg width="18" height="18" viewBox="0 0 24 24" fill="#2167E1"><path d="M8 5v14l11-7z"/></svg>';
     }
   });
 }
@@ -885,10 +885,10 @@ function togglePlay(){
       row.style.cssText = 'display:flex;align-items:center;gap:12px;padding:0 14px;cursor:pointer;transition:background 0.15s;margin:0 8px;flex:1;'+(isActive?'background:#E3EDFD;border-radius:10px;':'');
       var iconContent = isActive
         ? (plPlaying
-          ? '<svg width="10" height="10" viewBox="0 0 24 24" fill="#2167E1"><rect x="5" y="4" width="5" height="16" rx="1"/><rect x="14" y="4" width="5" height="16" rx="1"/></svg>'
-          : '<svg width="10" height="10" viewBox="0 0 24 24" fill="#2167E1"><path d="M8 5v14l11-7z"/></svg>')
+          ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="#2167E1"><rect x="5" y="4" width="5" height="16" rx="1"/><rect x="14" y="4" width="5" height="16" rx="1"/></svg>'
+          : '<svg width="18" height="18" viewBox="0 0 24 24" fill="#2167E1"><path d="M8 5v14l11-7z"/></svg>')
         : (i+1);
-      row.innerHTML = '<span style="font-size:0.8rem;width:24px;height:24px;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:'+(isActive?'#2167E1':'#c0c0c0')+';background:'+(isActive?'#E3EDFD':'transparent')+';border-radius:50%;">'+iconContent+'</span>'+
+      row.innerHTML = '<span style="font-size:0.8rem;width:28px;height:28px;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:'+(isActive?'#2167E1':'#c0c0c0')+';background:'+(isActive?'#E3EDFD':'transparent')+';border-radius:50%;">'+iconContent+'</span>'+
         '<div style="min-width:0;flex:1;"><p style="font-size:0.8rem;font-weight:600;color:#1a1a2e;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">'+t.title+'</p>'+
         '<p style="font-size:0.7rem;color:#9ca3af;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">'+t.artist+'</p></div>';
       row.addEventListener('mouseenter',function(){ if(i!==active) row.style.background='#f8f9fc'; });
@@ -1078,7 +1078,7 @@ otcVideo.addEventListener('timeupdate', function() {
     <p>© 2026 Craig Kleila. All rights reserved.</p>
   </div>
 </footer>
-<div style="width:100%;height:0;overflow:hidden;position:relative;"><div id="pl-embed-wrap" style="width:100%;height:80px;"></div></div>
+<div style="width:100%;height:1px;overflow:hidden;opacity:0;pointer-events:none;"><div id="pl-embed-wrap" style="width:100%;height:80px;"></div></div>
 
 </body>
 </html>
