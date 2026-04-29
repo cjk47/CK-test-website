@@ -768,6 +768,7 @@ function toggleBrandGrid() {
   .hobby-card { background:#ffffff;border-radius:16px;padding:20px 16px;text-align:center;cursor:pointer;transition:transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;box-shadow:0 2px 8px -3px rgba(0,0,0,0.06);border:2px solid transparent;display:flex;flex-direction:column;justify-content:center; }
   @media (hover:hover) { .hobby-card:hover { transform:translateY(-2px);box-shadow:0 6px 16px -4px rgba(0,0,0,0.1); } }
   .hobby-card.hobby-active { border-color:#7B68EE !important;box-shadow:0 4px 12px -2px rgba(123,104,238,0.15); }
+  @media (max-width:767px) { .hobby-card.hobby-active { box-shadow:none; } }
   @media (min-width:768px) { .hobby-reading { display:none !important; } }
   .hobby-card .hobby-icon { width:40px;height:40px;margin:0 auto 10px; }
   .hobby-card h4 { font-size:0.88rem;font-weight:600;color:#1A1A2E;margin-bottom:4px; }
@@ -775,7 +776,7 @@ function toggleBrandGrid() {
   .otc-video-card { background:#000;border-radius:16px;overflow:hidden;box-shadow:0 8px 32px -4px rgba(0,0,0,0.2);width:100%;max-width:300px; }
   .otc-video-card video { width:100%;display:block;background:#000;object-fit:cover; }
   .otc-video-label { position:absolute;top:12px;left:12px;background:rgba(0,0,0,0.5);backdrop-filter:blur(8px);color:#fff;font-size:0.7rem;font-weight:600;padding:4px 10px;border-radius:20px;font-family:'Inter',sans-serif; }
-  @media (max-width:767px) { .otc-top { flex-direction:column !important;gap:24px !important; } .otc-bottom { display:grid !important;grid-template-columns:1fr 1fr !important;gap:14px !important;grid-auto-rows:1fr !important; } .hobby-cards-row { display:contents !important; } .otc-video-card { max-width:100% !important;grid-column:auto !important;overflow:hidden !important; } .otc-video-card video { height:100% !important;object-fit:cover !important; } #otc-placeholder { height:100% !important;aspect-ratio:unset !important; } }
+  @media (max-width:767px) { .otc-top { flex-direction:column !important;gap:24px !important; } .otc-bottom { display:grid !important;grid-template-columns:1fr 1fr !important;gap:14px !important; } .hobby-cards-row { display:contents !important; } .hobby-card { box-sizing:border-box !important; } .hobby-reading { max-height:var(--hobby-card-h) !important;overflow:hidden !important; } .otc-video-card { max-width:100% !important;grid-column:auto !important;overflow:hidden !important;max-height:var(--hobby-card-h) !important;display:flex !important;align-items:center !important;justify-content:center !important; } .otc-video-card video { height:100% !important;object-fit:cover !important; } #otc-placeholder { height:100% !important;aspect-ratio:unset !important; } }
 </style>
 <section class="py-16" style="background:#F9F8FF;">
   <div class="max-w-6xl mx-auto px-6">
@@ -861,6 +862,22 @@ function toggleBrandGrid() {
 
     </div>
   </div>
+<script>
+// Set hobby card height variable for mobile
+(function(){
+  var card = document.querySelector('.hobby-card:not(.hobby-reading)');
+  if (card && window.innerWidth < 768) {
+    var h = card.offsetHeight;
+    document.documentElement.style.setProperty('--hobby-card-h', h + 'px');
+  }
+  window.addEventListener('resize', function(){
+    var card = document.querySelector('.hobby-card:not(.hobby-reading)');
+    if (card && window.innerWidth < 768) {
+      document.documentElement.style.setProperty('--hobby-card-h', card.offsetHeight + 'px');
+    }
+  });
+})();
+</script>
 <script>
 var hobbyVideos = ['geese.mp4', 'movies.mp4', 'godfather.mp4', 'movies.mp4', 'movies.mp4'];
 var otcVideo = document.getElementById('otc-video');
