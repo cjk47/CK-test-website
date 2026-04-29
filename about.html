@@ -660,9 +660,9 @@ function toggleBrandGrid() {
 <style>
   .hobby-card { background:#ffffff;border-radius:16px;padding:32px 16px;text-align:center;cursor:pointer;transition:transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;box-shadow:0 2px 8px -3px rgba(0,0,0,0.06);border:2px solid transparent;display:flex;flex-direction:column;justify-content:center; }
   @media (hover:hover) { .hobby-card:hover { transform:translateY(-2px);box-shadow:0 6px 16px -4px rgba(0,0,0,0.1); } }
-  .hobby-card.hobby-active { border-color:#7B68EE !important;box-shadow:0 4px 12px -2px rgba(123,104,238,0.15); }
+  .hobby-card.hobby-active { border-color:#5c7a8f !important;box-shadow:0 4px 12px -2px rgba(92,122,143,0.15); }
   @media (max-width:767px) { .hobby-card.hobby-active { box-shadow:none; } }
-  .hobby-card .hobby-icon { width:40px;height:40px;margin:0 auto 10px; }
+  .hobby-card .hobby-icon { width:40px;height:40px;margin:0 auto 10px;display:flex;align-items:center;justify-content:center; }
   .hobby-card h4 { font-size:0.88rem;font-weight:600;color:#1A1A2E;margin-bottom:4px; }
   .hobby-card p { font-size:0.72rem;color:#6B7280;line-height:1.45;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden; }
   .otc-video-card { background:#000;border-radius:16px;overflow:hidden;box-shadow:0 8px 32px -4px rgba(0,0,0,0.2);width:300px;min-width:300px; }
@@ -670,13 +670,13 @@ function toggleBrandGrid() {
   .otc-video-label { position:absolute;top:12px;left:12px;background:rgba(0,0,0,0.5);backdrop-filter:blur(8px);color:#fff;font-size:0.7rem;font-weight:600;padding:4px 10px;border-radius:20px;font-family:'Inter',sans-serif; }
   @media (max-width:767px) { .otc-top { flex-direction:column !important;gap:24px !important; } .otc-bottom { flex-direction:column !important;gap:14px !important; } .hobby-cards-row { grid-template-columns:repeat(2,1fr) !important; } .hobby-card { box-sizing:border-box !important; } .otc-video-card { width:100% !important;min-width:unset !important;max-width:100% !important;min-height:300px !important; } .otc-video-card video { height:100% !important;object-fit:cover !important; } #otc-placeholder { height:100% !important;aspect-ratio:unset !important; } #otc-video-wrap { min-height:300px !important; } #otc-spotify-wrap { min-height:300px !important; } #otc-movies-wrap { min-height:300px !important; } #otc-youtube-wrap { min-height:300px !important; } }
 </style>
-<section class="py-16" style="background:#F9F8FF;">
+<section class="py-16" style="background:#f3f8ff;">
   <div class="max-w-6xl mx-auto px-6">
 
     <!-- Top: heading left -->
     <div class="otc-top" style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:32px;">
       <div>
-        <div class="inline-flex items-center gap-2 bg-violet-light text-violet text-xs font-semibold px-3 py-1.5 rounded-full mb-5">
+        <div class="inline-flex items-center gap-2 text-xs font-semibold px-3 py-1.5 rounded-full mb-5" style="background:#dce8f5;color:#5c7a8f;">
           Beyond SEO
         </div>
         <h2 class="font-display font-bold text-3xl text-ink mb-3" style="letter-spacing:-0.02em;">A bit about me outside of work</h2>
@@ -684,10 +684,10 @@ function toggleBrandGrid() {
       </div>
       <!-- Hint text + arrow pointing at video -->
       <div class="hidden md:flex items-start gap-2" style="margin-right:180px;margin-top:70px;">
-        <p style="font-size:0.9rem;font-style:italic;color:#7B68EE;font-family:'Inter',sans-serif;">Click a card to explore</p>
+        <p style="font-size:0.9rem;font-style:italic;color:#5c7a8f;font-family:'Inter',sans-serif;">Click a card to explore</p>
         <svg width="50" height="40" viewBox="0 0 50 40" fill="none" style="margin-top:10px;flex-shrink:0;">
-          <path d="M3 3 C 12 2, 18 22, 30 18 S 45 28, 43 37" stroke="#7B68EE" stroke-width="1.2" fill="none" stroke-linecap="round"/>
-          <path d="M46 31 L43 37 L38 33" stroke="#7B68EE" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M3 3 C 12 2, 18 22, 30 18 S 45 28, 43 37" stroke="#5c7a8f" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+          <path d="M46 31 L43 37 L38 33" stroke="#5c7a8f" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </div>
     </div>
@@ -698,32 +698,32 @@ function toggleBrandGrid() {
       <!-- 2x3 Things I Like grid -->
       <div class="hobby-cards-row" style="flex:1;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:1fr 1fr;gap:14px;">
         <div class="hobby-card" data-hobby="0" onclick="selectHobby(0)">
-          <img src="about-music.png" alt="Music" class="hobby-icon">
+          <img src="00-music.png" alt="Music" class="hobby-icon">
           <h4 class="font-display">Music</h4>
           <p>Playing guitar, collecting vinyl, doing discography deep-dives</p>
         </div>
         <div class="hobby-card" data-hobby="1" onclick="selectHobby(1)">
-          <img src="about-movies.png" alt="Movies" class="hobby-icon">
+          <img src="00-movie.png" alt="Movies" class="hobby-icon">
           <h4 class="font-display">Movies</h4>
           <p>Going to the theaters or watching a movie at home</p>
         </div>
         <div class="hobby-card" data-hobby="2" onclick="selectHobby(2)">
-          <img src="about-bball.png" alt="Basketball" class="hobby-icon">
+          <img src="00-basketball.png" alt="Basketball" class="hobby-icon">
           <h4 class="font-display">Basketball</h4>
           <p>Playing pickup basketball and watching the Knicks</p>
         </div>
         <div class="hobby-card" data-hobby="3" onclick="selectHobby(3)">
-          <img src="about-location.png" alt="Location" class="hobby-icon">
+          <img src="00-bk.png" alt="Brooklyn" class="hobby-icon">
           <h4 class="font-display">Brooklyn</h4>
           <p>Walking and exploring my neighborhood</p>
         </div>
         <div class="hobby-card" data-hobby="4" onclick="selectHobby(4)">
-          <img src="about-movies.png" alt="Reading" class="hobby-icon">
+          <img src="00-games.png" alt="Video games" class="hobby-icon">
           <h4 class="font-display">Video games</h4>
           <p>Story-driven games and the occasional competitive match</p>
         </div>
         <div class="hobby-card" data-hobby="5" onclick="selectHobby(5)">
-          <img src="about-music.png" alt="Cooking" class="hobby-icon">
+          <img src="00-food.png" alt="Cooking" class="hobby-icon">
           <h4 class="font-display">Cooking</h4>
           <p>Trying new recipes and flavors</p>
         </div>
@@ -732,11 +732,11 @@ function toggleBrandGrid() {
       <!-- Video player -->
       <div class="otc-video-card" style="flex-shrink:0;display:flex;flex-direction:column;">
         <!-- Placeholder shown before any card is clicked -->
-        <div id="otc-placeholder" style="width:100%;flex:1;background:#f0effe;border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;">
-          <div style="width:48px;height:48px;border-radius:50%;background:rgba(123,104,238,0.12);display:flex;align-items:center;justify-content:center;">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7z" fill="#7B68EE"/></svg>
+        <div id="otc-placeholder" style="width:100%;flex:1;background:#e8f0fa;border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:rgba(92,122,143,0.12);display:flex;align-items:center;justify-content:center;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7z" fill="#5c7a8f"/></svg>
           </div>
-          <p style="font-size:0.75rem;color:#7B68EE;font-family:'Inter',sans-serif;margin:0;">Click a card to explore</p>
+          <p style="font-size:0.75rem;color:#5c7a8f;font-family:'Inter',sans-serif;margin:0;">Click a card to explore</p>
         </div>
         <!-- Video (hidden initially) -->
         <div id="otc-video-wrap" style="position:relative;display:none;flex:1;min-height:0;">
@@ -746,7 +746,7 @@ function toggleBrandGrid() {
               <svg id="otc-play-icon" width="14" height="14" viewBox="0 0 24 24" fill="white" style="display:none;"><path d="M8 5v14l11-7z"/></svg>
               <svg id="otc-pause-icon" width="14" height="14" viewBox="0 0 24 24" fill="white"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg>
             </button>
-            <div id="otc-progress-bar" style="flex:1;height:6px;background:rgba(255,255,255,0.3);border-radius:3px;cursor:pointer;position:relative;z-index:30;"><div id="otc-progress" style="width:0%;height:100%;background:#7B68EE;border-radius:2px;pointer-events:none;"></div></div>
+            <div id="otc-progress-bar" style="flex:1;height:6px;background:rgba(255,255,255,0.3);border-radius:3px;cursor:pointer;position:relative;z-index:30;"><div id="otc-progress" style="width:0%;height:100%;background:#5c7a8f;border-radius:2px;pointer-events:none;"></div></div>
             <span id="otc-time" style="font-size:10px;color:rgba(255,255,255,0.7);font-family:'Inter',sans-serif;">0:00 / 0:00</span>
             <button id="otc-mute-btn" style="background:none;border:none;cursor:pointer;padding:0;display:flex;">
               <svg id="otc-muted-icon" width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M11 5L6 9H2v6h4l5 4V5z" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="23" y1="9" x2="17" y2="15" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round"/><line x1="17" y1="9" x2="23" y2="15" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round"/></svg>
