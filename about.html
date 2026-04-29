@@ -668,7 +668,7 @@ function toggleBrandGrid() {
   .otc-video-card { background:#000;border-radius:16px;overflow:hidden;box-shadow:0 8px 32px -4px rgba(0,0,0,0.2);width:300px;min-width:300px; }
   .otc-video-card video { width:100%;display:block;background:#000;object-fit:cover; }
   .otc-video-label { position:absolute;top:12px;left:12px;background:rgba(0,0,0,0.5);backdrop-filter:blur(8px);color:#fff;font-size:0.7rem;font-weight:600;padding:4px 10px;border-radius:20px;font-family:'Inter',sans-serif; }
-  @media (max-width:767px) { .otc-top { flex-direction:column !important;gap:24px !important; } .otc-bottom { flex-direction:column !important;gap:14px !important; } .hobby-cards-row { grid-template-columns:repeat(2,1fr) !important; } .hobby-card { box-sizing:border-box !important; } .otc-video-card { width:100% !important;min-width:unset !important;max-width:100% !important;min-height:300px !important; } .otc-video-card video { height:100% !important;object-fit:cover !important; } #otc-video-wrap { min-height:300px !important; } #otc-spotify-wrap { min-height:300px !important; } #otc-movies-wrap { min-height:300px !important; } #otc-youtube-wrap { min-height:300px !important; } }
+  @media (max-width:767px) { .otc-top { flex-direction:column !important;gap:24px !important; } .otc-bottom { flex-direction:column !important;gap:14px !important; } .hobby-cards-row { grid-template-columns:repeat(2,1fr) !important; } .hobby-card { box-sizing:border-box !important; } .hobby-desktop-only { display:none !important; } .otc-video-card { width:100% !important;min-width:unset !important;max-width:100% !important;min-height:300px !important; } .otc-video-card video { height:100% !important;object-fit:cover !important; } #otc-video-wrap { min-height:300px !important; } #otc-spotify-wrap { min-height:300px !important; } #otc-movies-wrap { min-height:300px !important; } #otc-youtube-wrap { min-height:300px !important; } }
 </style>
 <section class="py-16" style="background:#f3f8ff;">
   <div class="max-w-6xl mx-auto px-6">
@@ -717,12 +717,12 @@ function toggleBrandGrid() {
           <h4 class="font-display">Brooklyn</h4>
           <p>Walking and exploring my neighborhood</p>
         </div>
-        <div class="hobby-card" data-hobby="4" onclick="selectHobby(4)">
+        <div class="hobby-card hobby-desktop-only" data-hobby="4" onclick="selectHobby(4)">
           <img src="00-games.png" alt="Video games" class="hobby-icon">
           <h4 class="font-display">Video games</h4>
           <p>Story-driven games and the occasional competitive match</p>
         </div>
-        <div class="hobby-card" data-hobby="5" onclick="selectHobby(5)">
+        <div class="hobby-card hobby-desktop-only" data-hobby="5" onclick="selectHobby(5)">
           <img src="00-food.png" alt="Cooking" class="hobby-icon">
           <h4 class="font-display">Cooking</h4>
           <p>Trying new recipes and flavors</p>
@@ -844,8 +844,9 @@ function setPlayState(playing){
   rows.forEach(function(row){
     var icon = row.querySelector('span');
     if(icon && icon.style.color === 'rgb(33, 103, 225)'){
-      icon.textContent = playing ? '❚❚' : '▶';
-      icon.style.fontSize = playing ? '0.65rem' : '0.8rem';
+      icon.innerHTML = playing
+        ? '<svg width="10" height="10" viewBox="0 0 24 24" fill="#2167E1"><rect x="5" y="4" width="5" height="16" rx="1"/><rect x="14" y="4" width="5" height="16" rx="1"/></svg>'
+        : '<svg width="10" height="10" viewBox="0 0 24 24" fill="#2167E1"><path d="M8 5v14l11-7z"/></svg>';
     }
   });
 }
@@ -882,7 +883,12 @@ function togglePlay(){
       var isActive = i===active;
       var row = document.createElement('div');
       row.style.cssText = 'display:flex;align-items:center;gap:12px;padding:0 14px;cursor:pointer;transition:background 0.15s;margin:0 8px;flex:1;'+(isActive?'background:#E3EDFD;border-radius:10px;':'');
-      row.innerHTML = '<span style="font-size:'+(isActive && plPlaying ? '0.65rem' : '0.8rem')+';width:24px;height:24px;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:'+(isActive?'#2167E1':'#c0c0c0')+';background:'+(isActive?'#E3EDFD':'transparent')+';border-radius:50%;">'+(isActive?(plPlaying?'❚❚':'▶'):(i+1))+'</span>'+
+      var iconContent = isActive
+        ? (plPlaying
+          ? '<svg width="10" height="10" viewBox="0 0 24 24" fill="#2167E1"><rect x="5" y="4" width="5" height="16" rx="1"/><rect x="14" y="4" width="5" height="16" rx="1"/></svg>'
+          : '<svg width="10" height="10" viewBox="0 0 24 24" fill="#2167E1"><path d="M8 5v14l11-7z"/></svg>')
+        : (i+1);
+      row.innerHTML = '<span style="font-size:0.8rem;width:24px;height:24px;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:'+(isActive?'#2167E1':'#c0c0c0')+';background:'+(isActive?'#E3EDFD':'transparent')+';border-radius:50%;">'+iconContent+'</span>'+
         '<div style="min-width:0;flex:1;"><p style="font-size:0.8rem;font-weight:600;color:#1a1a2e;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">'+t.title+'</p>'+
         '<p style="font-size:0.7rem;color:#9ca3af;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">'+t.artist+'</p></div>';
       row.addEventListener('mouseenter',function(){ if(i!==active) row.style.background='#f8f9fc'; });
@@ -1072,7 +1078,7 @@ otcVideo.addEventListener('timeupdate', function() {
     <p>© 2026 Craig Kleila. All rights reserved.</p>
   </div>
 </footer>
-<div style="width:1px;height:1px;overflow:hidden;position:relative;"><div id="pl-embed-wrap" style="width:300px;height:80px;"></div></div>
+<div style="width:100%;height:0;overflow:hidden;position:relative;"><div id="pl-embed-wrap" style="width:100%;height:80px;"></div></div>
 
 </body>
 </html>
