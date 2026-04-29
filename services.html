@@ -665,7 +665,7 @@ Amplify your SEO performance
 <!-- SEO PROBLEMS I SOLVE -->
 <style>
   .prob-item {
-    width:100%;max-width:300px;display:flex;align-items:center;gap:14px;padding:16px 18px;background:none;border:none;cursor:pointer;text-align:left;border-radius:12px;
+    width:100%;max-width:354px;display:flex;align-items:center;gap:14px;padding:16px 18px;background:none;border:none;cursor:pointer;text-align:left;border-radius:12px;
     transition:background 0.18s ease, opacity 0.18s ease;
     opacity: 0.65;
   }
@@ -698,7 +698,7 @@ Amplify your SEO performance
       <!-- LEFT: sticky heading + problem list -->
       <div class="prob-sticky" style="width:380px;flex-shrink:0;align-self:flex-start;position:sticky;top:88px;">
         <h2 class="font-display font-extrabold text-ink svc-h2" style="font-size:clamp(1.875rem,3.6vw,2.26rem);line-height:1.2;letter-spacing:-0.02em;font-weight:750;margin-bottom:12px;">Common SEO problems I solve</h2>
-        <p class="text-muted mb-7" style="line-height:1.7;font-size:1rem;">Select a problem to see what could be<br class="hidden md:inline"> causing it, and how I fix it.</p>
+        <p class="text-muted mb-7" style="line-height:1.7;font-size:1rem;">Select a problem to see what could be causing<br class="hidden md:inline"> it, and how I fix it.</p>
 
         <div style="display:flex;flex-direction:column;gap:8px;">
           <button class="prob-item prob-active" onclick="selectProb(0)">
@@ -726,10 +726,11 @@ Amplify your SEO performance
 
       <!-- RIGHT: diagnosis card -->
       <div id="prob-card" class="prob-diag-panel" style="flex:1;min-width:0;background:#fefefe;border-radius:20px;padding:36px 40px;box-shadow:0 2px 10px -4px rgba(0,0,0,0.05);">
-        <div style="display:flex;align-items:center;gap:14px;margin-bottom:28px;margin-top:20px;">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:0;margin-top:0;">
           <div id="prob-headline-icon" style="flex-shrink:0;width:38px;height:38px;border-radius:50%;background:#f3eefe;display:flex;align-items:center;justify-content:center;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><polyline points="3,6 8,12 12,9 17,15 21,18" stroke="#7B68EE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><polyline points="17,18 21,18 21,14" stroke="#7B68EE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
           <h3 id="prob-headline" class="font-display text-ink" style="font-size:clamp(1.3rem,2.2vw,1.6rem);line-height:1.2;letter-spacing:-0.02em;font-weight:620;margin:0;">Search traffic is trending down.</h3>
         </div>
+        <div style="border-top:1px solid #E8E6F0;margin:20px 0 28px;"></div>
         <p id="prob-subtext" class="text-muted" style="font-size:0.875rem;line-height:1.6;margin-top:-16px;margin-bottom:28px;display:none;"></p>
         <div class="prob-diag-cols" style="display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-bottom:28px;">
           <div>
@@ -742,9 +743,9 @@ Amplify your SEO performance
           </div>
         </div>
         <!-- Client highlight card -->
-        <div id="prob-case-card" style="display:flex;align-items:stretch;background:#fcfcfe;border-radius:14px;border:1px solid #ece9f7;overflow:hidden;min-height:120px;box-shadow:0 2px 10px -4px rgba(0,0,0,0.05);">
+        <div id="prob-case-card" style="display:flex;align-items:stretch;background:#FAF9FD;border-radius:14px;border:none;overflow:hidden;min-height:120px;box-shadow:0 2px 10px -4px rgba(0,0,0,0.05);">
           <!-- Left panel -->
-          <div id="prob-case-left" style="display:flex;flex-direction:column;justify-content:center;gap:10px;flex:1;min-width:0;padding:18px 24px;background:#fcfcfe;">
+          <div id="prob-case-left" style="display:flex;flex-direction:column;justify-content:center;gap:10px;flex:1;min-width:0;padding:18px 24px;background:#FAF9FD;">
             <!-- Logo only -->
             <div style="display:none;">
               <img id="prob-case-logo" src="" alt="" style="height:15px;width:auto;object-fit:contain;object-position:left;display:none;">
@@ -784,7 +785,7 @@ var probData = [
     caseLine2: '',
     caseImage: '9-1.png',
     caseImageStyle: 'object-position:center;mix-blend-mode:multiply;',
-    caseCardStyle: 'background:#fcfcfe;',
+    caseCardStyle: 'background:#FAF9FD;',
     caseLink: 'case-study-xvivo.html',
     caseLinkText: 'XVIVO case study'
   },
@@ -798,7 +799,7 @@ var probData = [
     caseLine2: '',
     caseImage: '11111111111.png',
     caseImageStyle: 'object-position:center;mix-blend-mode:multiply;transform:scale(1.6);',
-    caseCardStyle: 'background:#fcfcfe;',
+    caseCardStyle: 'background:#FAF9FD;',
     caseLink: 'case-study-rukkus.html',
     caseLinkText: 'Rukkus case study'
   },
@@ -812,7 +813,7 @@ var probData = [
     caseLine2: '',
     caseImage: 'aiaiaiaiaia.png',
     caseImageStyle: 'object-position:3px center;object-fit:contain;transform:scale(1.2);',
-    caseCardStyle: 'background:#fcfcfe;',
+    caseCardStyle: 'background:#FAF9FD;',
     caseLink: 'case-study-best-western.html',
     caseLinkText: 'Best Western case study'
   },
@@ -824,11 +825,11 @@ var probData = [
     caseLogoStyle: 'display:none;',
     caseLine1: 'Traffic wasn\'t converting. A content and UX overhaul increased leads 27%.',
     caseLine2: '',
-    caseCardStyle: 'background:#fcfcfe;',
+    caseCardStyle: 'background:#FAF9FD;',
     caseLinkText: 'XVIVO case study',
     caseImage: 'yassssss.png',
     caseImageStyle: 'object-position:center;object-fit:contain;transform:scale(1.1);',
-    caseCardStyle: 'background:#fcfcfe;',
+    caseCardStyle: 'background:#FAF9FD;',
     caseLink: 'case-study-xvivo.html'
   }
 ];
@@ -859,7 +860,7 @@ function selectProb(idx) {
   var img = document.getElementById('prob-case-image');
   img.src = d.caseImage;
   img.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center;display:block;mix-blend-mode:multiply;' + (d.caseImageStyle || '');
-  var cardBg = d.caseCardStyle ? d.caseCardStyle.replace('background:','').replace(';','') : '#fcfcfe';
+  var cardBg = d.caseCardStyle ? d.caseCardStyle.replace('background:','').replace(';','') : '#FAF9FD';
   document.getElementById('prob-case-card').style.background = cardBg;
   document.getElementById('prob-case-left').style.background = cardBg;
 }
