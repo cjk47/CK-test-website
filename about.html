@@ -658,9 +658,9 @@ function toggleBrandGrid() {
 
 <!-- OFF THE CLOCK -->
 <style>
-  .hobby-card { background:#ffffff;border-radius:16px;padding:32px 16px;text-align:center;cursor:pointer;transition:transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;box-shadow:0 2px 8px -3px rgba(0,0,0,0.06);border:2px solid transparent;display:flex;flex-direction:column;justify-content:center; }
+  .hobby-card { background:#ffffff !important;border-radius:16px;padding:32px 16px;text-align:center;cursor:pointer;transition:transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;box-shadow:0 2px 8px -3px rgba(0,0,0,0.06);border:2px solid #e8eaf2;display:flex;flex-direction:column;justify-content:center; }
   @media (hover:hover) { .hobby-card:hover { transform:translateY(-2px);box-shadow:0 6px 16px -4px rgba(0,0,0,0.1); } }
-  .hobby-card.hobby-active { border-color:#5c7a8f !important;box-shadow:0 4px 12px -2px rgba(92,122,143,0.15); }
+  .hobby-card.hobby-active { border-color:#6895EE !important;background:#f3f8ff !important;box-shadow:0 4px 12px -2px rgba(104,149,238,0.15); }
   @media (max-width:767px) { .hobby-card.hobby-active { box-shadow:none; } }
   .hobby-card .hobby-icon { width:48px;height:48px;margin:0 auto 10px;display:flex;align-items:center;justify-content:center; }
   .hobby-card h4 { font-size:0.88rem;font-weight:600;color:#1A1A2E;margin-bottom:4px; }
@@ -668,7 +668,7 @@ function toggleBrandGrid() {
   .otc-video-card { background:#000;border-radius:16px;overflow:hidden;box-shadow:0 8px 32px -4px rgba(0,0,0,0.2);width:300px;min-width:300px; }
   .otc-video-card video { width:100%;display:block;background:#000;object-fit:cover; }
   .otc-video-label { position:absolute;top:12px;left:12px;background:rgba(0,0,0,0.5);backdrop-filter:blur(8px);color:#fff;font-size:0.7rem;font-weight:600;padding:4px 10px;border-radius:20px;font-family:'Inter',sans-serif; }
-  @media (max-width:767px) { .otc-top { flex-direction:column !important;gap:24px !important; } .otc-bottom { flex-direction:column !important;gap:14px !important; } .hobby-cards-row { grid-template-columns:repeat(2,1fr) !important; } .hobby-card { box-sizing:border-box !important; } .hobby-desktop-only { display:none !important; } .otc-video-card { width:100% !important;min-width:unset !important;max-width:100% !important;min-height:300px !important; } .otc-video-card video { height:100% !important;object-fit:cover !important; } #otc-video-wrap { min-height:300px !important; } #otc-spotify-wrap { min-height:300px !important; } #otc-movies-wrap { min-height:300px !important; } #otc-youtube-wrap { min-height:300px !important; } }
+  @media (max-width:767px) { .otc-top { flex-direction:column !important;gap:24px !important; } .otc-bottom { flex-direction:column !important;gap:14px !important; } .hobby-cards-row { grid-template-columns:repeat(2,1fr) !important; } .hobby-card { box-sizing:border-box !important; } .hobby-desktop-only { display:none !important; }.otc-video-card { width:100% !important;min-width:unset !important;max-width:100% !important;min-height:300px !important; } .otc-video-card video { height:100% !important;object-fit:cover !important; } #otc-video-wrap { min-height:300px !important; } #otc-spotify-wrap { min-height:300px !important; } #otc-movies-wrap { min-height:300px !important; } #otc-youtube-wrap { min-height:300px !important; } }
 </style>
 <section class="py-16" style="background:#f3f8ff;">
   <div class="max-w-6xl mx-auto px-6">
@@ -749,33 +749,33 @@ function toggleBrandGrid() {
           </div>
         </div>
         <!-- Letterboxd top 4 (hidden initially, shown when Movies card clicked) -->
-        <div id="otc-movies-wrap" style="display:none;flex:1;border-radius:16px;overflow:hidden;background:#14181c;flex-direction:column;min-height:0;">
+        <div id="otc-movies-wrap" style="display:none;flex:1;border-radius:16px;overflow:hidden;background:#F8F9FE;flex-direction:column;min-height:0;box-shadow:0 2px 12px rgba(0,0,0,0.08);">
           <div class="flex items-center gap-2 px-5 py-3">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;">
               <circle cx="8" cy="12" r="6" fill="#00e054" opacity="0.8"/>
               <circle cx="16" cy="12" r="6" fill="#40bcf4" opacity="0.8"/>
               <circle cx="12" cy="12" r="6" fill="#ff8000" opacity="0.6"/>
             </svg>
-            <p class="text-xs font-semibold uppercase tracking-widest" style="color:#9ab;letter-spacing:0.1em;">Favorite films</p>
+            <p class="text-xs font-semibold uppercase tracking-widest" style="color:#2167E1;letter-spacing:0.1em;">Favorite films</p>
           </div>
           <div style="flex:1;display:flex;flex-direction:column;gap:8px;padding:0 12px 12px;justify-content:center;">
             <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;">
-              <div style="border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.4);"><img src="9999god.jpg" alt="The Godfather Part II" style="width:100%;display:block;border-radius:8px;"></div>
-              <div style="border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.4);"><img src="999there.jpg" alt="There Will Be Blood" style="width:100%;display:block;border-radius:8px;"></div>
-              <div style="border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.4);"><img src="9999king.jpg" alt="The King of Comedy" style="width:100%;display:block;border-radius:8px;"></div>
-              <div style="border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.4);"><img src="9999being.jpg" alt="Being There" style="width:100%;display:block;border-radius:8px;"></div>
+              <div style="border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.15);aspect-ratio:2/3;"><img src="9999god.jpg" alt="The Godfather Part II" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px;"></div>
+              <div style="border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.15);aspect-ratio:2/3;"><img src="999there.jpg" alt="There Will Be Blood" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px;"></div>
+              <div style="border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.15);aspect-ratio:2/3;"><img src="9999king.jpg" alt="The King of Comedy" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px;"></div>
+              <div style="border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.15);aspect-ratio:2/3;"><img src="9999being.jpg" alt="Being There" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px;"></div>
             </div>
             <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;">
-              <div style="border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.4);"><img src="999pianist.jpg" alt="The Pianist" style="width:100%;display:block;border-radius:8px;"></div>
-              <div style="border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.4);"><img src="999phantom.jpg" alt="Phantom Thread" style="width:100%;display:block;border-radius:8px;"></div>
-              <div style="border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.4);"><img src="9999eyes.jpg" alt="Eyes Wide Shut" style="width:100%;display:block;border-radius:8px;"></div>
-              <div style="border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.4);"><img src="999catch.jpg" alt="Catch Me If You Can" style="width:100%;display:block;border-radius:8px;"></div>
+              <div style="border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.15);aspect-ratio:2/3;"><img src="999pianist.jpg" alt="The Pianist" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px;"></div>
+              <div style="border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.15);aspect-ratio:2/3;"><img src="999phantom.jpg" alt="Phantom Thread" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px;"></div>
+              <div style="border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.15);aspect-ratio:2/3;"><img src="9999eyes.jpg" alt="Eyes Wide Shut" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px;"></div>
+              <div style="border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.15);aspect-ratio:2/3;"><img src="999catch.jpg" alt="Catch Me If You Can" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px;"></div>
             </div>
             <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;">
-              <div style="border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.4);"><img src="9999midnight.jpg" alt="Midnight Cowboy" style="width:100%;display:block;border-radius:8px;"></div>
-              <div style="border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.4);"><img src="999black.jpg" alt="Black" style="width:100%;display:block;border-radius:8px;"></div>
-              <div style="border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.4);"><img src="999butch.jpg" alt="Butch" style="width:100%;display:block;border-radius:8px;"></div>
-              <div style="border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.4);"><img src="999call.jpg" alt="Call" style="width:100%;display:block;border-radius:8px;"></div>
+              <div style="border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.15);aspect-ratio:2/3;"><img src="9999midnight.jpg" alt="Midnight Cowboy" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px;"></div>
+              <div style="border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.15);aspect-ratio:2/3;"><img src="999black.jpg" alt="Black" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px;"></div>
+              <div style="border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.15);aspect-ratio:2/3;"><img src="999butch.jpg" alt="Butch" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px;"></div>
+              <div style="border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.15);aspect-ratio:2/3;"><img src="999call.jpg" alt="Call" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px;"></div>
             </div>
           </div>
         </div>
@@ -794,7 +794,7 @@ function toggleBrandGrid() {
             </div>
             <p class="text-xs font-semibold uppercase tracking-widest" style="color:#2167E1;letter-spacing:0.1em;margin-left:19px;">Now listening</p>
           </div>
-          <div id="pl-list" style="flex:1;display:flex;flex-direction:column;justify-content:stretch;"></div>
+          <div id="pl-list" style="flex:1;display:flex;flex-direction:column;justify-content:center;"></div>
           <div style="margin-top:auto;background:#E3EDFD;border-radius:12px;overflow:hidden;position:relative;margin:4px 8px 10px;">
             <div style="padding:10px 14px 6px;display:flex;align-items:center;gap:12px;">
               <div id="pl-now-art" style="width:44px;height:44px;border-radius:8px;overflow:hidden;flex-shrink:0;background:#dce4f0;">
