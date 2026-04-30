@@ -97,13 +97,16 @@ function toggleMob() {
   <div class="grid md:grid-cols-2 gap-16 items-start">
 
     <!-- Left -->
-    <div>
+    <div id="contact-left">
       <div class="inline-flex items-center gap-2 text-coral text-xs font-semibold px-3 py-1.5 rounded-full mb-5" style="background:#ffe8df;">Let's talk SEO</div>
       <h1 class="font-display font-extrabold text-5xl md:text-6xl text-ink leading-tight mb-6" style="font-weight:750;">How can I help?</h1>
       <p class="text-muted mb-5" style="line-height:1.7">Book a call with me and I'll show you the roadmap to get more organic traffic and revenue through search.</p>
-      <p class="text-muted mb-10" style="line-height:1.7">The best way to reach me is email. I typically respond within one business day.</p>
+      <ul class="mb-10 space-y-3 md:space-y-4">
+        <li class="flex items-center gap-3 text-muted" style="line-height:1.6;font-size:0.95rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="flex-shrink-0"><path d="M5 13l4 4L19 7" stroke="#6B7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Talk through what's holding back your organic growth</li>
+        <li class="flex items-center gap-3 text-muted" style="line-height:1.6;font-size:0.95rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="flex-shrink-0"><path d="M5 13l4 4L19 7" stroke="#6B7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Identify the biggest SEO opportunities for your site</li>
+        <li class="flex items-center gap-3 text-muted" style="line-height:1.6;font-size:0.95rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="flex-shrink-0"><path d="M5 13l4 4L19 7" stroke="#6B7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Discuss the right SEO approach for your business goals</li>
+      </ul>
 
-      <!-- Email -->
       <div class="mb-3 flex items-center gap-3">
         <div class="w-10 h-10 rounded-full bg-coral flex items-center justify-center flex-shrink-0">
           <svg class="spin-slow" width="20" height="20" viewBox="0 0 28 28" fill="none"><rect x="3" y="6" width="22" height="16" rx="2.5" stroke="white" stroke-width="1.8"/><path d="M3 9l11 7 11-7" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg>
@@ -111,138 +114,393 @@ function toggleMob() {
         <a href="mailto:hello@craigkleila.com" class="email-link font-display font-bold text-xl text-coral">hello@craigkleila.com</a>
       </div>
       <p class="text-sm text-muted" style="line-height:1.6;">Or send a message using the form.</p>
+
     </div>
 
     <!-- Right: Contact Form -->
-    <div class="bg-offwhite rounded-3xl border border-border p-8" style="box-shadow:0 8px 32px -8px rgba(244,123,90,0.1),0 2px 8px -4px rgba(0,0,0,0.04);">
-      <h2 class="font-display font-bold text-2xl text-ink mb-6">Send a message</h2>
-      <form action="https://formspree.io/f/hello@craigkleila.com" method="POST" class="space-y-5">
-        <div class="grid grid-cols-2 gap-4">
+    <div class="rounded-3xl p-8" style="background:#f8f8fb;box-shadow:0 8px 32px -8px rgba(200,200,220,0.3),0 2px 8px -4px rgba(0,0,0,0.03);">
+      <form action="https://formspree.io/f/xpqbzpdr" method="POST" id="contact-form">
+
+        <!-- Step 1: About you -->
+        <div id="form-step-1" class="space-y-5">
           <div>
-            <label class="block text-xs font-semibold text-muted uppercase tracking-wider mb-2">First Name</label>
-            <input type="text" name="first_name" required class="w-full bg-white border border-border rounded-xl px-4 py-3 text-sm text-ink placeholder-muted focus:outline-none focus:border-coral transition-colors duration-150" placeholder="Paul">
+            <h2 class="font-display font-bold text-2xl text-ink mb-3">Let's schedule some time</h2>
+            <p class="text-muted text-sm mb-6">Please enter your name and email so we can get the ball rolling.</p>
           </div>
-          <div>
-            <label class="block text-xs font-semibold text-muted uppercase tracking-wider mb-2">Last Name</label>
-            <input type="text" name="last_name" required class="w-full bg-white border border-border rounded-xl px-4 py-3 text-sm text-ink placeholder-muted focus:outline-none focus:border-coral transition-colors duration-150" placeholder="Simon">
+          <div class="grid grid-cols-2 gap-4">
+            <div class="float-field">
+              <input type="text" name="first_name" required id="cf-fname" placeholder=" ">
+              <label for="cf-fname">First Name *</label>
+            </div>
+            <div class="float-field">
+              <input type="text" name="last_name" id="cf-lname" placeholder=" ">
+              <label for="cf-lname">Last Name</label>
+            </div>
           </div>
+          <div class="float-field">
+            <input type="email" name="email" required id="cf-email" placeholder=" ">
+            <label for="cf-email">Email *</label>
+          </div>
+          <div class="float-field float-field-textarea">
+            <textarea name="message" rows="5" id="cf-message" placeholder=" " class="md:!h-[125px]"></textarea>
+            <label for="cf-message">Tell me about your site, your goals, and your timeline...</label>
+          </div>
+          <button type="button" onclick="submitAndContinue()" class="btn-coral w-full bg-coral text-white font-semibold py-3 rounded-full text-sm">Continue</button>
         </div>
-        <div>
-          <label class="block text-xs font-semibold text-muted uppercase tracking-wider mb-2">Email <span class="text-coral">*</span></label>
-          <input type="email" name="email" required class="w-full bg-white border border-border rounded-xl px-4 py-3 text-sm text-ink placeholder-muted focus:outline-none focus:border-coral transition-colors duration-150" placeholder="paulsimon@example.com">
-        </div>
-        <div>
-          <label class="block text-xs font-semibold text-muted uppercase tracking-wider mb-2">Message</label>
-          <textarea name="message" rows="5" required class="w-full bg-white border border-border rounded-xl px-4 py-3 text-sm text-ink placeholder-muted focus:outline-none focus:border-coral transition-colors duration-150 resize-none" placeholder="Tell me about your site, your goals, and your timeline…"></textarea>
-        </div>
-        <button type="submit" class="btn-coral w-full bg-coral text-white font-semibold py-3 rounded-full text-sm">Send Message</button>
+
+
+
       </form>
+
+      <!-- Step 4: Book a call (outside form) -->
+      <div id="form-step-4" class="space-y-5" style="display:none;flex-direction:column;">
+        <div>
+          <h2 class="font-display font-bold text-2xl text-ink mb-3">Book a call</h2>
+          <p class="text-muted text-sm mb-4">Pick a time that works for you.</p>
+        </div>
+        <!-- Month navigation -->
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+          <button type="button" onclick="calNav(-1)" style="background:none;border:none;cursor:pointer;padding:4px 8px;font-size:1.1rem;color:#6B7280;">‹</button>
+          <span id="cal-month" class="font-display font-semibold text-ink" style="font-size:1rem;"></span>
+          <button type="button" onclick="calNav(1)" style="background:none;border:none;cursor:pointer;padding:4px 8px;font-size:1.1rem;color:#6B7280;">›</button>
+        </div>
+        <!-- Day headers -->
+        <div style="display:grid;grid-template-columns:repeat(7,1fr);text-align:center;margin-bottom:4px;">
+          <span class="text-xs font-semibold text-muted">Sun</span>
+          <span class="text-xs font-semibold text-muted">Mon</span>
+          <span class="text-xs font-semibold text-muted">Tue</span>
+          <span class="text-xs font-semibold text-muted">Wed</span>
+          <span class="text-xs font-semibold text-muted">Thu</span>
+          <span class="text-xs font-semibold text-muted">Fri</span>
+          <span class="text-xs font-semibold text-muted">Sat</span>
+        </div>
+        <!-- Calendar grid -->
+        <div id="cal-grid" style="display:grid;grid-template-columns:repeat(7,1fr);gap:4px;"></div>
+        <!-- Time slots -->
+        <div id="cal-times" style="display:none;margin-top:16px;">
+          <p class="text-xs font-semibold text-muted uppercase tracking-wider mb-3">Available times</p>
+          <div id="cal-time-slots" class="flex flex-wrap gap-2"></div>
+        </div>
+        <!-- Confirm -->
+        <div id="cal-confirm" style="display:none;margin-top:12px;">
+          <div style="background:#fff;border-radius:12px;padding:16px;border:1.5px solid #e5e5e5;">
+            <p class="text-sm text-ink"><strong>Selected:</strong> <span id="cal-selected-display"></span></p>
+          </div>
+          <button type="button" onclick="confirmBooking()" class="btn-coral w-full bg-coral text-white font-semibold py-3 rounded-full text-sm mt-4">Confirm Booking</button>
+        </div>
+        <!-- Back button -->
+        <button type="button" id="cal-back-btn" onclick="goToStep(1);window.scrollTo({top:0,behavior:'smooth'});" class="w-full border border-border text-ink font-semibold py-3 rounded-full text-sm transition-colors duration-150 hover:bg-gray-50 mt-4">Back</button>
+        <!-- Success -->
+        <div id="cal-success" style="display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;flex:1;min-height:350px;">
+          <div style="width:56px;height:56px;border-radius:50%;background:#FFF0ED;display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#F47B5A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="font-display font-bold text-xl text-ink mb-2">Thank you 😊</h3>
+          <p class="text-muted text-sm">I'll be in touch shortly.</p>
+        </div>
+      </div>
     </div>
+    <style>
+      .float-field { position:relative; }
+      .float-field input, .float-field textarea {
+        width:100%;background:#fff !important;border:1.5px solid #e5e5e5;border-radius:12px;padding:22px 16px 8px;font-size:0.875rem;color:#1a1a2e;outline:none;transition:border-color 0.15s ease;font-family:inherit;resize:none;
+      }
+      .float-field input:-webkit-autofill,
+      .float-field input:-webkit-autofill:focus {
+        -webkit-box-shadow: 0 0 0 1000px #fff inset !important;
+        box-shadow: 0 0 0 1000px #fff inset !important;
+        -webkit-text-fill-color: #1a1a2e !important;
+      }
+      .float-field label {
+        position:absolute;left:16px;top:50%;transform:translateY(-50%);font-size:0.875rem;color:#9ca3af;pointer-events:none;transition:all 0.2s ease;
+      }
+      .float-field-textarea label { top:18px;transform:none; }
+      .float-field input:focus, .float-field textarea:focus { border-color:#F47B5A; }
+      .float-field input:focus + label,
+      .float-field input:not(:placeholder-shown) + label {
+        top:10px;transform:none;font-size:0.65rem;font-weight:600;color:#9ca3af;letter-spacing:0.01em;
+      }
+      .float-field textarea:focus + label,
+      .float-field textarea:not(:placeholder-shown) + label {
+        top:6px;font-size:0.65rem;font-weight:600;color:#9ca3af;letter-spacing:0.01em;
+      }
+      .svc-chip { cursor:pointer; }
+      .svc-chip span { display:inline-block;padding:8px 16px;border-radius:20px;font-size:0.8rem;font-weight:500;color:#6B7280;background:#fff;border:1.5px solid #e5e5e5;transition:all 0.15s ease; }
+      .svc-chip input:checked + span { background:#FFF0ED;border-color:#F47B5A;color:#F47B5A; }
+      .svc-chip:hover span { border-color:#ccc; }
+      .budget-option { cursor:pointer; }
+      .budget-option span { display:inline-block;padding:8px 16px;border-radius:20px;font-size:0.8rem;font-weight:500;color:#6B7280;background:#fff;border:1.5px solid #e5e5e5;transition:all 0.15s ease; }
+      .budget-option input:checked + span { background:#FFF0ED;border-color:#F47B5A;color:#F47B5A; }
+      .budget-option:hover span { border-color:#ccc; }
+    </style>
+    <script>
+    var step1Height = 0;
+    function captureStep1Height(){
+      var s1 = document.getElementById('form-step-1');
+      if(s1 && s1.style.display !== 'none') step1Height = s1.offsetHeight;
+    }
+    captureStep1Height();
+
+    function goToStep(step){
+      if(step === 2){
+        var fname = document.getElementById('cf-fname');
+        var email = document.getElementById('cf-email');
+        if(!fname.value.trim()){ fname.focus(); return; }
+        if(!email.value.trim() || !email.validity.valid){ email.focus(); return; }
+      }
+      if(step === 1) captureStep1Height();
+      document.getElementById('form-step-1').style.display = step===1?'':'none';
+      if(step===4){
+        document.getElementById('contact-form').style.display = 'none';
+        document.getElementById('form-step-4').style.display = 'flex';
+        document.getElementById('form-step-4').style.flexDirection = 'column';
+      } else {
+        document.getElementById('contact-form').style.display = '';
+        document.getElementById('form-step-4').style.display = 'none';
+      }
+    }
+    function submitAndContinue(){
+      goToStep(4);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    </script>
+    <style>
+      .cal-day { width:100%;aspect-ratio:1.4;border-radius:10px;border:none;font-size:0.8rem;font-weight:500;cursor:pointer;background:transparent;color:#1a1a2e;transition:all 0.15s ease; }
+      .cal-day:hover:not(:disabled):not(.cal-day-active) { background:#f0f0f0; }
+      .cal-day:disabled { color:#d1d5db;cursor:default; }
+      .cal-day-active { background:#F47B5A !important;color:#fff !important;font-weight:600; }
+      .cal-day-today { border:1.5px solid #F47B5A; }
+      .cal-time { padding:8px 16px;border-radius:20px;font-size:0.8rem;font-weight:500;color:#6B7280;background:#fff;border:1.5px solid #e5e5e5;cursor:pointer;transition:all 0.15s ease; }
+      .cal-time:hover { border-color:#ccc; }
+      .cal-time-active { background:#FFF0ED;border-color:#F47B5A;color:#F47B5A; }
+    </style>
+    <script>
+    (function(){
+      var now = new Date();
+      var viewMonth = now.getMonth();
+      var viewYear = now.getFullYear();
+      var selectedDate = null;
+      var selectedTime = null;
+      // Available hours (Mon-Fri, 9am-5pm ET)
+      var timeSlots = ['9:00 AM','9:30 AM','10:00 AM','10:30 AM','11:00 AM','11:30 AM','12:00 PM','12:30 PM','1:00 PM','1:30 PM','2:00 PM','2:30 PM','3:00 PM','3:30 PM','4:00 PM','4:30 PM'];
+      var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+
+      window.calNav = function(dir){
+        viewMonth += dir;
+        if(viewMonth > 11){ viewMonth = 0; viewYear++; }
+        if(viewMonth < 0){ viewMonth = 11; viewYear--; }
+        renderCal();
+      };
+
+      function renderCal(){
+        document.getElementById('cal-month').textContent = months[viewMonth] + ' ' + viewYear;
+        var grid = document.getElementById('cal-grid');
+        grid.innerHTML = '';
+        var first = new Date(viewYear, viewMonth, 1);
+        var lastDay = new Date(viewYear, viewMonth + 1, 0).getDate();
+        var startDay = first.getDay();
+        // Empty cells
+        for(var i = 0; i < startDay; i++){
+          var empty = document.createElement('div');
+          grid.appendChild(empty);
+        }
+        var today = new Date();
+        today.setHours(0,0,0,0);
+        for(var d = 1; d <= lastDay; d++){
+          var btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'cal-day';
+          btn.textContent = d;
+          var date = new Date(viewYear, viewMonth, d);
+          var dayOfWeek = date.getDay();
+          var isPast = date < today;
+          var isWeekend = dayOfWeek === 0 || dayOfWeek === 6;
+          if(isPast || isWeekend){
+            btn.disabled = true;
+          } else {
+            btn.onclick = (function(dd, dt){
+              return function(){
+                selectedDate = dt;
+                selectedTime = null;
+                document.querySelectorAll('.cal-day').forEach(function(b){ b.classList.remove('cal-day-active'); });
+                this.classList.add('cal-day-active');
+                showTimes();
+                document.getElementById('cal-confirm').style.display = 'none';
+              };
+            })(d, date);
+          }
+          if(date.getTime() === today.getTime()) btn.classList.add('cal-day-today');
+          if(selectedDate && date.getTime() === selectedDate.getTime()) btn.classList.add('cal-day-active');
+          grid.appendChild(btn);
+        }
+      }
+
+      function showTimes(){
+        var container = document.getElementById('cal-times');
+        var slots = document.getElementById('cal-time-slots');
+        container.style.display = '';
+        slots.innerHTML = '';
+        timeSlots.forEach(function(t){
+          var btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'cal-time';
+          btn.textContent = t;
+          btn.onclick = function(){
+            selectedTime = t;
+            document.querySelectorAll('.cal-time').forEach(function(b){ b.classList.remove('cal-time-active'); });
+            this.classList.add('cal-time-active');
+            var display = document.getElementById('cal-selected-display');
+            var opts = { weekday:'long', month:'long', day:'numeric' };
+            display.textContent = selectedDate.toLocaleDateString('en-US', opts) + ' at ' + t + ' ET';
+            document.getElementById('cal-confirm').style.display = '';
+            document.getElementById('cal-back-btn').style.display = 'none';
+          };
+          if(selectedTime === t) btn.classList.add('cal-time-active');
+          slots.appendChild(btn);
+        });
+      }
+
+      window.confirmBooking = function(){
+        var opts = { weekday:'long', month:'long', day:'numeric', year:'numeric' };
+        var dateStr = selectedDate.toLocaleDateString('en-US', opts);
+        var fullName = document.getElementById('cf-fname').value + ' ' + (document.getElementById('cf-lname').value || '');
+        var email = document.getElementById('cf-email').value;
+        var website = document.getElementById('cf-website') ? document.getElementById('cf-website').value : '';
+        var message = document.getElementById('cf-message') ? document.getElementById('cf-message').value : '';
+        var formData = new FormData();
+        formData.append('Name', fullName.trim());
+        formData.append('Email', email);
+        formData.append('_replyto', email);
+        formData.append('_subject', 'New SEO call booking from ' + fullName.trim());
+        formData.append('Website', website);
+        formData.append('Message', message);
+        formData.append('Meeting Date', dateStr);
+        formData.append('Meeting Time', selectedTime + ' ET');
+        fetch('https://formspree.io/f/xpqbzpdr', {
+          method:'POST',
+          body: formData,
+          headers:{'Accept':'application/json'}
+        });
+        var step4 = document.getElementById('form-step-4');
+        var children = step4.children;
+        for(var i = 0; i < children.length; i++){
+          children[i].style.display = 'none';
+        }
+        document.getElementById('cal-success').style.display = 'flex';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      };
+
+      // Initial render when step 4 becomes visible
+      var observer = new MutationObserver(function(){
+        if(document.getElementById('form-step-4').style.display !== 'none'){
+          renderCal();
+          observer.disconnect();
+        }
+      });
+      observer.observe(document.getElementById('form-step-4'), { attributes:true, attributeFilter:['style'] });
+      renderCal();
+    })();
+    </script>
 
   </div>
 </section>
 
 <!-- FAQ -->
-<section class="py-20 border-t border-border" style="background:#F9F8FF;">
-  <div class="max-w-4xl mx-auto px-6">
-    <h2 class="font-display font-bold text-center text-ink mb-12" style="font-size:2rem;line-height:1.25;">Frequently asked questions.</h2>
-    <div class="grid md:grid-cols-2 gap-3 items-start">
+<section class="py-20" style="background:#F9F8FF;">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="mb-12 text-center">
+      <h2 class="font-display font-bold text-ink mb-3" style="font-size:2rem;line-height:1.25;">Frequently Asked Questions</h2>
+      <p class="text-muted text-sm">Common questions about working together.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-3 items-start">
 
-      <!-- FAQ 1 -->
-      <div class="bg-white rounded-xl overflow-hidden" style="border:1px solid #E8E8F0;box-shadow:0 2px 12px -4px rgba(244,123,90,0.12);">
-        <button onclick="var p=this.nextElementSibling;var o=p.style.display==='block';p.style.display=o?'none':'block';this.querySelector('.fchev').style.transform=o?'rotate(0deg)':'rotate(90deg)';" class="w-full flex items-center gap-3 px-5 py-4 text-left" style="border-bottom:none;">
-          <svg class="fchev flex-shrink-0" width="16" height="16" viewBox="0 0 16 16" fill="none" style="transition:transform 0.2s;"><path d="M5 4l5 4-5 4" stroke="#F47B5A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <span class="font-semibold text-ink" style="font-size:0.95rem;">What does working with you look like?</span>
+      <div class="faq-card">
+        <button onclick="toggleFaq(this)" class="faq-btn">
+          <div class="flex items-baseline gap-3"><h3 class="faq-q">What does working with you look like?</h3></div>
+          <span class="faq-toggle">+</span>
         </button>
-        <div style="display:none;" class="px-5 pb-5 pt-1 pl-10">
-          <p class="text-sm text-muted" style="line-height:1.6;">I start by understanding your business, goals, and where SEO can drive impact. From there, I run a deep audit and build a focused strategy around your biggest opportunities.<br><br>Then we execute. That can mean improving existing pages, creating new content, fixing technical issues, or strengthening authority off-site.</p>
-        </div>
+        <div class="faq-answer"><p>I start by understanding your business, goals, and where SEO can drive impact. From there, I run a deep audit and build a focused strategy around your biggest opportunities.<br><br>Then we execute. That can mean improving existing pages, creating new content, fixing technical issues, or strengthening authority off-site.</p></div>
       </div>
 
-      <!-- FAQ 2 -->
-      <div class="bg-white rounded-xl overflow-hidden" style="border:1px solid #E8E8F0;box-shadow:0 2px 12px -4px rgba(244,123,90,0.12);">
-        <button onclick="var p=this.nextElementSibling;var o=p.style.display==='block';p.style.display=o?'none':'block';this.querySelector('.fchev').style.transform=o?'rotate(0deg)':'rotate(90deg)';" class="w-full flex items-center gap-3 px-5 py-4 text-left" style="border-bottom:none;">
-          <svg class="fchev flex-shrink-0" width="16" height="16" viewBox="0 0 16 16" fill="none" style="transition:transform 0.2s;"><path d="M5 4l5 4-5 4" stroke="#F47B5A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <span class="font-semibold text-ink" style="font-size:0.95rem;">How long does SEO take?</span>
+      <div class="faq-card">
+        <button onclick="toggleFaq(this)" class="faq-btn">
+          <div class="flex items-baseline gap-3"><h3 class="faq-q">How long does SEO take?</h3></div>
+          <span class="faq-toggle">+</span>
         </button>
-        <div style="display:none;" class="px-5 pb-5 pt-1 pl-10">
-          <p class="text-sm text-muted" style="line-height:1.6;">It depends on your site's current state and what's uncovered during the audit.<br><br>Established brands often see faster gains, especially if SEO hasn't been a focus. I've seen meaningful growth within a few months from technical and on-page improvements.<br><br>For newer sites, results build over time. Some wins can happen in 3 months, but most growth happens over 6–12 months. Early improvements still benefit user experience and conversions right away even before visibility moves.</p>
-        </div>
+        <div class="faq-answer"><p>It depends on your site's current state and what's uncovered during the audit.<br><br>Established brands often see faster gains, especially if SEO hasn't been a focus. I've seen meaningful growth within a few months from technical and on-page improvements.<br><br>For newer sites, results build over time. Some wins can happen in 3 months, but most growth happens over 6–12 months. Early improvements still benefit user experience and conversions right away even before visibility moves.</p></div>
       </div>
 
-      <!-- FAQ 3 -->
-      <div class="bg-white rounded-xl overflow-hidden" style="border:1px solid #E8E8F0;box-shadow:0 2px 12px -4px rgba(244,123,90,0.12);">
-        <button onclick="var p=this.nextElementSibling;var o=p.style.display==='block';p.style.display=o?'none':'block';this.querySelector('.fchev').style.transform=o?'rotate(0deg)':'rotate(90deg)';" class="w-full flex items-center gap-3 px-5 py-4 text-left" style="border-bottom:none;">
-          <svg class="fchev flex-shrink-0" width="16" height="16" viewBox="0 0 16 16" fill="none" style="transition:transform 0.2s;"><path d="M5 4l5 4-5 4" stroke="#F47B5A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <span class="font-semibold text-ink" style="font-size:0.95rem;">Do you guarantee SEO results?</span>
+      <div class="faq-card">
+        <button onclick="toggleFaq(this)" class="faq-btn">
+          <div class="flex items-baseline gap-3"><h3 class="faq-q">Do you guarantee SEO results?</h3></div>
+          <span class="faq-toggle">+</span>
         </button>
-        <div style="display:none;" class="px-5 pb-5 pt-1 pl-10">
-          <p class="text-sm text-muted" style="line-height:1.6;">No, and no one credible should.<br><br>SEO results depend on factors outside of my control, like competition, budget, internal resources, algorithm updates, SERP changes, and domain age.<br><br>What I do guarantee is a focus on the work that actually moves the needle, such as identifying the right opportunities and executing against them in a way that drives long-term growth.</p>
-        </div>
+        <div class="faq-answer"><p>No, and no one credible should.<br><br>SEO results depend on factors outside of my control, like competition, budget, internal resources, algorithm updates, SERP changes, and domain age.<br><br>What I do guarantee is a focus on the work that actually moves the needle, such as identifying the right opportunities and executing against them in a way that drives long-term growth.</p></div>
       </div>
 
-      <!-- FAQ 4 -->
-      <div class="bg-white rounded-xl overflow-hidden" style="border:1px solid #E8E8F0;box-shadow:0 2px 12px -4px rgba(244,123,90,0.12);">
-        <button onclick="var p=this.nextElementSibling;var o=p.style.display==='block';p.style.display=o?'none':'block';this.querySelector('.fchev').style.transform=o?'rotate(0deg)':'rotate(90deg)';" class="w-full flex items-center gap-3 px-5 py-4 text-left" style="border-bottom:none;">
-          <svg class="fchev flex-shrink-0" width="16" height="16" viewBox="0 0 16 16" fill="none" style="transition:transform 0.2s;"><path d="M5 4l5 4-5 4" stroke="#F47B5A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <span class="font-semibold text-ink" style="font-size:0.95rem;">How much does SEO cost?</span>
+      <div class="faq-card">
+        <button onclick="toggleFaq(this)" class="faq-btn">
+          <div class="flex items-baseline gap-3"><h3 class="faq-q">How much does SEO cost?</h3></div>
+          <span class="faq-toggle">+</span>
         </button>
-        <div style="display:none;" class="px-5 pb-5 pt-1 pl-10">
-          <p class="text-sm text-muted" style="line-height:1.6;">Pricing varies depending on the complexity of the project.<br><br>Things like your site setup, market, internal resources, and the scale of issues all play a role in shaping the scope. Once I fully understand the work involved, I'll provide pricing on a case-by-case basis.</p>
-        </div>
+        <div class="faq-answer"><p>Pricing varies depending on the complexity of the project.<br><br>Things like your site setup, market, internal resources, and the scale of issues all play a role in shaping the scope. Once I fully understand the work involved, I'll provide pricing on a case-by-case basis.</p></div>
       </div>
 
-      <!-- FAQ 5 -->
-      <div class="bg-white rounded-xl overflow-hidden" style="border:1px solid #E8E8F0;box-shadow:0 2px 12px -4px rgba(244,123,90,0.12);">
-        <button onclick="var p=this.nextElementSibling;var o=p.style.display==='block';p.style.display=o?'none':'block';this.querySelector('.fchev').style.transform=o?'rotate(0deg)':'rotate(90deg)';" class="w-full flex items-center gap-3 px-5 py-4 text-left" style="border-bottom:none;">
-          <svg class="fchev flex-shrink-0" width="16" height="16" viewBox="0 0 16 16" fill="none" style="transition:transform 0.2s;"><path d="M5 4l5 4-5 4" stroke="#F47B5A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <span class="font-semibold text-ink" style="font-size:0.95rem;">Can I start with a one-time audit?</span>
+      <div class="faq-card">
+        <button onclick="toggleFaq(this)" class="faq-btn">
+          <div class="flex items-baseline gap-3"><h3 class="faq-q">Can I start with a one-time audit?</h3></div>
+          <span class="faq-toggle">+</span>
         </button>
-        <div style="display:none;" class="px-5 pb-5 pt-1 pl-10">
-          <p class="text-sm text-muted" style="line-height:1.6;">Yes.<br><br>A one-time audit is a good starting point if you want to understand what's working, what's not, and where the biggest opportunities are.<br><br>You'll get a clear breakdown of issues, prioritized recommendations, and a roadmap you can act on—whether with me or your internal team.</p>
-        </div>
+        <div class="faq-answer"><p>Yes.<br><br>A one-time audit is a good starting point if you want to understand what's working, what's not, and where the biggest opportunities are.<br><br>You'll get a clear breakdown of issues, prioritized recommendations, and a roadmap you can act on—whether with me or your internal team.</p></div>
       </div>
 
-      <!-- FAQ 6 -->
-      <div class="bg-white rounded-xl overflow-hidden" style="border:1px solid #E8E8F0;box-shadow:0 2px 12px -4px rgba(244,123,90,0.12);">
-        <button onclick="var p=this.nextElementSibling;var o=p.style.display==='block';p.style.display=o?'none':'block';this.querySelector('.fchev').style.transform=o?'rotate(0deg)':'rotate(90deg)';" class="w-full flex items-center gap-3 px-5 py-4 text-left" style="border-bottom:none;">
-          <svg class="fchev flex-shrink-0" width="16" height="16" viewBox="0 0 16 16" fill="none" style="transition:transform 0.2s;"><path d="M5 4l5 4-5 4" stroke="#F47B5A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <span class="font-semibold text-ink" style="font-size:0.95rem;">Will you implement or just advise?</span>
+      <div class="faq-card">
+        <button onclick="toggleFaq(this)" class="faq-btn">
+          <div class="flex items-baseline gap-3"><h3 class="faq-q">Will you implement or just advise?</h3></div>
+          <span class="faq-toggle">+</span>
         </button>
-        <div style="display:none;" class="px-5 pb-5 pt-1 pl-10">
-          <p class="text-sm text-muted" style="line-height:1.6;">Both.<br><br>I can stay high-level and guide your team, or I can get hands-on and help implement changes. Most clients land somewhere in the middle.</p>
-        </div>
+        <div class="faq-answer"><p>Both.<br><br>I can stay high-level and guide your team, or I can get hands-on and help implement changes. Most clients land somewhere in the middle.</p></div>
       </div>
 
-      <!-- FAQ 7 -->
-
-      <!-- FAQ 8 -->
-      <div class="bg-white rounded-xl overflow-hidden" style="border:1px solid #E8E8F0;box-shadow:0 2px 12px -4px rgba(244,123,90,0.12);">
-        <button onclick="var p=this.nextElementSibling;var o=p.style.display==='block';p.style.display=o?'none':'block';this.querySelector('.fchev').style.transform=o?'rotate(0deg)':'rotate(90deg)';" class="w-full flex items-center gap-3 px-5 py-4 text-left" style="border-bottom:none;">
-          <svg class="fchev flex-shrink-0" width="16" height="16" viewBox="0 0 16 16" fill="none" style="transition:transform 0.2s;"><path d="M5 4l5 4-5 4" stroke="#F47B5A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <span class="font-semibold text-ink" style="font-size:0.95rem;">What industries do you work in?</span>
+      <div class="faq-card">
+        <button onclick="toggleFaq(this)" class="faq-btn">
+          <div class="flex items-baseline gap-3"><h3 class="faq-q">What industries do you work in?</h3></div>
+          <span class="faq-toggle">+</span>
         </button>
-        <div style="display:none;" class="px-5 pb-5 pt-1 pl-10">
-          <p class="text-sm text-muted" style="line-height:1.6;">Consumer goods, financial services, media & entertainment, food & beverage, hospitality, fashion, technology, insurance, and more — I've worked across a wide range of industries.</p>
-        </div>
+        <div class="faq-answer"><p>Consumer goods, financial services, media & entertainment, food & beverage, hospitality, fashion, technology, insurance, and more — I've worked across a wide range of industries.</p></div>
       </div>
 
-      <!-- FAQ 9 -->
-      <div class="bg-white rounded-xl overflow-hidden" style="border:1px solid #E8E8F0;box-shadow:0 2px 12px -4px rgba(244,123,90,0.12);">
-        <button onclick="var p=this.nextElementSibling;var o=p.style.display==='block';p.style.display=o?'none':'block';this.querySelector('.fchev').style.transform=o?'rotate(0deg)':'rotate(90deg)';" class="w-full flex items-center gap-3 px-5 py-4 text-left" style="border-bottom:none;">
-          <svg class="fchev flex-shrink-0" width="16" height="16" viewBox="0 0 16 16" fill="none" style="transition:transform 0.2s;"><path d="M5 4l5 4-5 4" stroke="#F47B5A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <span class="font-semibold text-ink" style="font-size:0.95rem;">Do you work with agencies?</span>
+      <div class="faq-card">
+        <button onclick="toggleFaq(this)" class="faq-btn">
+          <div class="flex items-baseline gap-3"><h3 class="faq-q">Do you work with agencies?</h3></div>
+          <span class="faq-toggle">+</span>
         </button>
-        <div style="display:none;" class="px-5 pb-5 pt-1 pl-10">
-          <p class="text-sm text-muted" style="line-height:1.6;">Yes. I'm available for white-label work on a selective basis. Just mention it in your email.</p>
-        </div>
+        <div class="faq-answer"><p>Yes. I'm available for white-label work on a selective basis. Just mention it in your email.</p></div>
       </div>
-
-
 
     </div>
   </div>
 </section>
+<style>
+  .faq-card { border-radius:16px;border:1px solid #e8e6f0;background:#ffffff;overflow:hidden;transition:border-color 0.2s ease,box-shadow 0.2s ease; }
+  .faq-card:hover { border-color:#d0cde0;box-shadow:0 4px 16px -4px rgba(0,0,0,0.06); }
+  .faq-btn { width:100%;display:flex;align-items:center;justify-content:space-between;text-align:left;padding:20px 24px;background:none;border:none;cursor:pointer;color:#1a1a2e; }
+  .faq-num { font-size:0.75rem;color:#c0bdd0;flex-shrink:0; }
+  .faq-q { font-size:0.95rem;font-weight:600;line-height:1.4;color:#1a1a2e; }
+  .faq-toggle { font-size:1.2rem;color:#c0bdd0;transition:color 0.2s,transform 0.2s;flex-shrink:0;margin-left:16px; }
+  .faq-card:hover .faq-toggle { color:#7B68EE; }
+  .faq-card.faq-open .faq-toggle { transform:rotate(45deg);color:#7B68EE; }
+  .faq-answer { display:grid;grid-template-rows:0fr;transition:grid-template-rows 0.3s cubic-bezier(.4,0,.2,1); }
+  .faq-card.faq-open .faq-answer { grid-template-rows:1fr; }
+  .faq-answer > p { overflow:hidden;min-height:0;padding:0 24px 0 24px;font-size:0.875rem;line-height:1.7;color:#6B7280; }
+  .faq-card.faq-open .faq-answer > p { padding-bottom:20px; }
+</style>
+<script>
+function toggleFaq(btn){
+  var card = btn.closest('.faq-card');
+  card.classList.toggle('faq-open');
+}
+</script>
 
 <!-- FOOTER -->
 <footer class="border-t border-border">
