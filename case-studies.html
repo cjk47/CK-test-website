@@ -513,18 +513,20 @@ document.querySelectorAll(".mob-nav-link").forEach(function(l){
   .testi-nav-btn:hover { opacity:1; }
   .testi-nav-btn svg { stroke:#323232;transition:stroke 0.18s ease; }
   .testi-quote { transition:opacity 0.3s ease; }
+  @media (max-width:767px) { .testi-side-arrow { display:none !important; } }
+  .testi-mob-arrows { display:none !important; }
 </style>
 <section class="py-9 md:py-14" style="background:#fff5f2;">
   <div class="max-w-6xl mx-auto px-6">
     <div style="display:flex;align-items:center;gap:24px;">
 
       <!-- Left arrow -->
-      <button class="testi-nav-btn hidden md:flex" onclick="testiMove(-1)" aria-label="Previous testimonial" style="flex-shrink:0;">
+      <button class="testi-nav-btn testi-side-arrow hidden md:flex" onclick="testiMove(-1)" aria-label="Previous testimonial" style="flex-shrink:0;">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
       </button>
 
       <!-- Quote -->
-      <div class="max-w-2xl mx-auto text-center" style="height:320px;display:flex;flex-direction:column;justify-content:center;flex:1;">
+      <div class="max-w-2xl mx-auto text-center" style="min-height:320px;display:flex;flex-direction:column;justify-content:center;flex:1;">
         <blockquote>
           <p id="testi-text" class="testi-quote font-display text-ink" style="font-size:clamp(0.95rem,1.8vw,1.25rem);font-weight:500;line-height:1.55;"></p>
           <div class="flex items-center justify-center gap-6 mt-10">
@@ -540,7 +542,7 @@ document.querySelectorAll(".mob-nav-link").forEach(function(l){
         <div id="testi-dots" class="flex items-center justify-center gap-2 mt-10"></div>
 
         <!-- Mobile arrows -->
-        <div class="flex items-center justify-center gap-3 mt-6 md:hidden">
+        <div class="testi-mob-arrows flex items-center justify-center gap-3 mt-6">
           <button class="testi-nav-btn" onclick="testiMove(-1)" aria-label="Previous testimonial">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
           </button>
@@ -551,7 +553,7 @@ document.querySelectorAll(".mob-nav-link").forEach(function(l){
       </div>
 
       <!-- Right arrow -->
-      <button class="testi-nav-btn hidden md:flex" onclick="testiMove(1)" aria-label="Next testimonial" style="flex-shrink:0;">
+      <button class="testi-nav-btn testi-side-arrow hidden md:flex" onclick="testiMove(1)" aria-label="Next testimonial" style="flex-shrink:0;">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
       </button>
 
@@ -601,6 +603,21 @@ document.querySelectorAll(".mob-nav-link").forEach(function(l){
     showTesti(testiIdx);
   };
   showTesti(0);
+
+  // Touch swipe support
+  var testiWrap = document.querySelector('.max-w-6xl.mx-auto.px-6 [style*="display:flex;align-items:center"]') || document.getElementById('testi-text').closest('section');
+  var touchStartX = 0;
+  var touchEndX = 0;
+  var section = document.getElementById('testi-text').closest('section');
+  section.addEventListener('touchstart', function(e){ touchStartX = e.changedTouches[0].screenX; }, {passive:true});
+  section.addEventListener('touchend', function(e){
+    touchEndX = e.changedTouches[0].screenX;
+    var diff = touchStartX - touchEndX;
+    if(Math.abs(diff) > 50){
+      if(diff > 0) testiMove(1);
+      else testiMove(-1);
+    }
+  }, {passive:true});
 })();
 </script>
 
