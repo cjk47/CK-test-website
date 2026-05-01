@@ -33,11 +33,12 @@
   html, body { overflow-x: clip; }
   body { font-family: 'Inter', sans-serif; background: #ffffff; color: #323232; }
   .font-display { font-family: 'Poppins', sans-serif; }
-  .btn-coral { transition: transform 0.2s cubic-bezier(0.22,1,0.36,1), box-shadow 0.2s cubic-bezier(0.22,1,0.36,1); }
-  .btn-coral:hover { transform: translateY(-2px); box-shadow: 0 10px 28px -6px rgba(244,123,90,0.45); }
-  .btn-coral:active { transform: translateY(0); }
-  .btn-outline { transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease; }
-  .btn-outline:hover { background: #F9F8FF; border-color: #7B68EE; color: #5E4DD6; }
+  .btn-coral { transition: filter 0.18s ease, transform 0.15s cubic-bezier(0.34,1.56,0.64,1); }
+  .btn-coral:hover { filter: brightness(0.92); }
+  .btn-coral:active { transform: scale(0.96); filter: brightness(0.88); }
+  .btn-outline { transition: background 0.18s ease, border-color 0.18s ease, transform 0.15s cubic-bezier(0.34,1.56,0.64,1); }
+  .btn-outline:hover { background: rgba(0,0,0,0.04); border-color: #b0b0b8; }
+  .btn-outline:active { transform: scale(0.96); background: rgba(0,0,0,0.07); }
   nav a { transition: color 0.15s ease; }
   nav a:not(.btn-coral):hover { color: #F47B5A; }
   .section-grad {
@@ -730,79 +731,77 @@ function toggleBrandGrid() {
 
 <!-- OFF THE CLOCK -->
 <style>
-  .hobby-card { background:#ffffff !important;border-radius:16px;padding:32px 16px;text-align:center;cursor:pointer;transition:transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;box-shadow:0 2px 8px -3px rgba(0,0,0,0.06);border:2px solid #e8eaf2;display:flex;flex-direction:column;justify-content:center; }
-  @media (hover:hover) { .hobby-card:hover { transform:translateY(-2px);box-shadow:0 6px 16px -4px rgba(0,0,0,0.1); } }
-  .hobby-card.hobby-active { border-color:#6895EE !important;background:#f3f8ff !important;box-shadow:0 4px 12px -2px rgba(104,149,238,0.15); }
-  @media (max-width:767px) { .hobby-card.hobby-active { box-shadow:none; } }
-  .hobby-card .hobby-icon { width:48px;height:48px;margin:0 auto 10px;display:flex;align-items:center;justify-content:center; }
-  .hobby-card h4 { font-size:0.88rem;font-weight:600;color:#1A1A2E;margin-bottom:4px; }
-  .hobby-card p { font-size:0.72rem;color:#6B7280;line-height:1.45;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden; }
-  .otc-video-card { background:#000;border-radius:16px;overflow:hidden;box-shadow:0 8px 32px -4px rgba(0,0,0,0.2);width:300px;min-width:300px; }
+  .hobby-item {
+    width:100%;max-width:400px;display:flex;align-items:flex-start;gap:14px;padding:16px 18px;background:none;border:none;cursor:pointer;text-align:left;border-radius:12px;
+    transition:background 0.18s ease, opacity 0.18s ease;
+    opacity: 0.65;
+  }
+  .hobby-item .hobby-arrow { opacity:0;margin-left:auto;flex-shrink:0;transition:opacity 0.18s ease; }
+  .hobby-item.hobby-active .hobby-arrow { opacity:0; }
+  .hobby-item:hover { background:rgba(0,0,0,0.03); opacity:0.7; }
+  .hobby-item.hobby-active { background:#F8F9FE; opacity:1; border:1px solid transparent; box-shadow:0 2px 10px -3px rgba(0,0,0,0.08); }
+  .hobby-item.hobby-active .hobby-title { color:#1A1A2E !important; }
+  .hobby-item.hobby-active .hobby-desc { display:block !important; }
+  .hobby-item .hobby-icon { flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center; }
+  .hobby-item .hobby-icon img { width:28px;height:28px;object-fit:contain; }
+  .otc-video-card { background:#000;border-radius:16px;overflow:hidden;box-shadow:0 8px 32px -4px rgba(0,0,0,0.2);width:100%;min-width:0; }
   .otc-video-card video { width:100%;display:block;background:#000;object-fit:cover; }
   .otc-video-label { position:absolute;top:12px;left:12px;background:rgba(0,0,0,0.5);backdrop-filter:blur(8px);color:#fff;font-size:0.7rem;font-weight:600;padding:4px 10px;border-radius:20px;font-family:'Inter',sans-serif; }
-  @media (max-width:767px) { .otc-top { flex-direction:column !important;gap:24px !important; } .otc-bottom { flex-direction:column !important;gap:14px !important; } .hobby-cards-row { grid-template-columns:repeat(2,1fr) !important; } .hobby-card { box-sizing:border-box !important; } .hobby-desktop-only { display:none !important; }.otc-video-card { width:100% !important;min-width:unset !important;max-width:100% !important;min-height:300px !important; } .otc-video-card video { height:100% !important;object-fit:cover !important; } #otc-video-wrap { min-height:300px !important; } #otc-spotify-wrap { min-height:300px !important; } #otc-movies-wrap { min-height:300px !important; } #otc-youtube-wrap { min-height:300px !important; } }
+  @media (max-width:767px) { .otc-layout { flex-direction:column !important;gap:24px !important; } .otc-sticky { position:static !important;width:100% !important; } .hobby-item { max-width:100% !important; } .otc-video-card { width:100% !important;min-width:unset !important;max-width:100% !important;min-height:300px !important; } .otc-video-card video { height:100% !important;object-fit:cover !important; } #otc-video-wrap { min-height:300px !important; } #otc-spotify-wrap { min-height:300px !important; } #otc-movies-wrap { min-height:300px !important; } #otc-youtube-wrap { min-height:300px !important; } }
 </style>
-<section class="py-16" style="background:#f3f8ff;">
+<section class="py-16" style="background:#ffffff;">
   <div class="max-w-6xl mx-auto px-6">
-
-    <!-- Top: heading left -->
-    <div class="otc-top" style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:32px;">
-      <div>
-        <div class="inline-flex items-center gap-2 text-xs font-semibold px-3 py-1.5 rounded-full mb-5" style="background:#dce8f5;color:#5c7a8f;">
-          Beyond SEO
-        </div>
-        <h2 class="font-display font-bold text-3xl text-ink mb-3" style="letter-spacing:-0.02em;">A bit about me outside of work</h2>
-        <p class="text-muted" style="line-height:1.7;font-size:0.9rem;">What I'm into when I'm not working on SEO.<span class="md:hidden"> Click a card to explore.</span></p>
-      </div>
-      <!-- Hint text + arrow pointing at video -->
-      <div class="hidden md:flex items-start gap-2" style="margin-right:180px;margin-top:70px;">
-        <p style="font-size:0.9rem;font-style:italic;color:#5c7a8f;font-family:'Inter',sans-serif;">Click a card to explore</p>
-        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" style="margin-top:6px;flex-shrink:0;">
-          <path d="M4 4 C 20 4, 32 16, 32 34" stroke="#5c7a8f" stroke-width="1.2" fill="none" stroke-linecap="round"/>
-          <path d="M28 30 L32 36 L36 30" stroke="#5c7a8f" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </div>
+    <div style="background:#f3f8ff;border-radius:20px;padding:40px 36px;box-shadow:0 2px 16px -4px rgba(0,0,0,0.06);">
+    <div style="margin-bottom:28px;text-align:center;">
+      <h2 class="font-display font-bold text-ink mb-3" style="font-size:clamp(1.8rem,3vw,2.5rem);letter-spacing:-0.02em;line-height:1.2;">A bit more about me</h2>
+      <p class="text-muted" style="line-height:1.7;font-size:0.9rem;">What I'm into when I'm not working on SEO.</p>
     </div>
+    <div class="otc-layout" style="display:flex;gap:60px;align-items:center;">
 
-    <!-- Bottom: cards left + video right -->
-    <div class="otc-bottom" style="display:flex;gap:14px;align-items:stretch;">
+      <!-- LEFT: sticky hobby list -->
+      <div class="otc-sticky" style="width:380px;flex-shrink:0;align-self:flex-start;position:sticky;top:88px;">
 
-      <!-- 2x3 Things I Like grid -->
-      <div class="hobby-cards-row" style="flex:1;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:1fr 1fr;gap:14px;">
-        <div class="hobby-card" data-hobby="0" onclick="selectHobby(0)">
-          <img src="rr-1.png" alt="Music" class="hobby-icon">
-          <h4 class="font-display">Music</h4>
-          <p>Playing guitar, collecting vinyl, doing discography deep-dives</p>
-        </div>
-        <div class="hobby-card" data-hobby="1" onclick="selectHobby(1)">
-          <img src="rr-2.png" alt="Movies" class="hobby-icon">
-          <h4 class="font-display">Movies</h4>
-          <p>Going to the theaters or watching a movie at home</p>
-        </div>
-        <div class="hobby-card" data-hobby="2" onclick="selectHobby(2)">
-          <img src="rr-3.png" alt="Basketball" class="hobby-icon">
-          <h4 class="font-display">Basketball</h4>
-          <p>Playing pickup basketball and watching the Knicks</p>
-        </div>
-        <div class="hobby-card" data-hobby="3" onclick="selectHobby(3)">
-          <img src="rr-4.png" alt="Brooklyn" class="hobby-icon">
-          <h4 class="font-display">Brooklyn</h4>
-          <p>Walking and exploring my neighborhood</p>
-        </div>
-        <div class="hobby-card hobby-desktop-only" data-hobby="4" onclick="selectHobby(4)">
-          <img src="rr-5.png" alt="Video games" class="hobby-icon">
-          <h4 class="font-display">Video games</h4>
-          <p>Story-driven games and the occasional competitive match</p>
-        </div>
-        <div class="hobby-card hobby-desktop-only" data-hobby="5" onclick="selectHobby(5)">
-          <img src="rr-6.png" alt="Cooking" class="hobby-icon">
-          <h4 class="font-display">Cooking</h4>
-          <p>Trying new recipes and flavors</p>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <button class="hobby-item hobby-active" onclick="selectHobby(0)">
+            <div style="display:flex;flex-direction:column;gap:6px;width:100%;">
+              <span class="font-display text-ink hobby-title" style="font-size:0.88rem;letter-spacing:-0.01em;font-weight:520;color:#1A1A2E;">Music</span>
+              <span class="hobby-desc text-muted" style="font-size:0.8rem;line-height:1.55;display:none;">Playing guitar, collecting vinyl, and discography deep-dives.</span>
+            </div>
+            <span class="hobby-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="#5c7a8f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </button>
+          <button class="hobby-item" onclick="selectHobby(1)">
+            <div style="display:flex;flex-direction:column;gap:6px;width:100%;">
+              <span class="font-display text-ink hobby-title" style="font-size:0.88rem;letter-spacing:-0.01em;font-weight:520;color:#1A1A2E;">Movies</span>
+              <span class="hobby-desc text-muted" style="font-size:0.8rem;line-height:1.55;display:none;">Going to the theaters or watching a movie at home.</span>
+            </div>
+            <span class="hobby-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="#5c7a8f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </button>
+          <button class="hobby-item" onclick="selectHobby(2)">
+            <div style="display:flex;flex-direction:column;gap:6px;width:100%;">
+              <span class="font-display text-ink hobby-title" style="font-size:0.88rem;letter-spacing:-0.01em;font-weight:520;color:#1A1A2E;">Basketball</span>
+              <span class="hobby-desc text-muted" style="font-size:0.8rem;line-height:1.55;display:none;">Playing pickup basketball and watching the Knicks.</span>
+            </div>
+            <span class="hobby-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="#5c7a8f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </button>
+          <button class="hobby-item" onclick="selectHobby(3)">
+            <div style="display:flex;flex-direction:column;gap:6px;width:100%;">
+              <span class="font-display text-ink hobby-title" style="font-size:0.88rem;letter-spacing:-0.01em;font-weight:520;color:#1A1A2E;">Brooklyn</span>
+              <span class="hobby-desc text-muted" style="font-size:0.8rem;line-height:1.55;display:none;">Walking and exploring my neighborhood.</span>
+            </div>
+            <span class="hobby-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="#5c7a8f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </button>
+          <button class="hobby-item" onclick="selectHobby(4)">
+            <div style="display:flex;flex-direction:column;gap:6px;width:100%;">
+              <span class="font-display text-ink hobby-title" style="font-size:0.88rem;letter-spacing:-0.01em;font-weight:520;color:#1A1A2E;">Games</span>
+              <span class="hobby-desc text-muted" style="font-size:0.8rem;line-height:1.55;display:none;">Story-driven games and the occasional competitive match.</span>
+            </div>
+            <span class="hobby-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="#5c7a8f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </button>
         </div>
       </div>
 
-      <!-- Video player -->
-      <div class="otc-video-card" style="flex-shrink:0;display:flex;flex-direction:column;">
+      <!-- RIGHT: media panel -->
+      <div class="otc-video-card" style="flex:1;flex-shrink:0;display:flex;flex-direction:column;height:360px;">
         <!-- Placeholder shown before any card is clicked -->
         <!-- Video (hidden initially) -->
         <div id="otc-video-wrap" style="position:relative;display:none;flex:1;min-height:0;">
@@ -830,25 +829,19 @@ function toggleBrandGrid() {
             </svg>
             <p class="text-xs font-semibold uppercase tracking-widest" style="color:#2167E1;letter-spacing:0.1em;">Favorite films</p>
           </div>
-          <div style="flex:1;display:flex;flex-direction:column;gap:8px;padding:0 12px 12px;justify-content:center;">
-            <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;">
-              <div style="border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.15);aspect-ratio:2/3;"><img src="9999god.jpg" alt="The Godfather Part II" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px;"></div>
-              <div style="border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.15);aspect-ratio:2/3;"><img src="999there.jpg" alt="There Will Be Blood" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px;"></div>
-              <div style="border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.15);aspect-ratio:2/3;"><img src="9999king.jpg" alt="The King of Comedy" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px;"></div>
-              <div style="border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.15);aspect-ratio:2/3;"><img src="9999being.jpg" alt="Being There" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px;"></div>
-            </div>
-            <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;">
-              <div style="border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.15);aspect-ratio:2/3;"><img src="999pianist.jpg" alt="The Pianist" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px;"></div>
-              <div style="border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.15);aspect-ratio:2/3;"><img src="999phantom.jpg" alt="Phantom Thread" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px;"></div>
-              <div style="border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.15);aspect-ratio:2/3;"><img src="9999eyes.jpg" alt="Eyes Wide Shut" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px;"></div>
-              <div style="border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.15);aspect-ratio:2/3;"><img src="999catch.jpg" alt="Catch Me If You Can" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px;"></div>
-            </div>
-            <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;">
-              <div style="border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.15);aspect-ratio:2/3;"><img src="9999midnight.jpg" alt="Midnight Cowboy" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px;"></div>
-              <div style="border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.15);aspect-ratio:2/3;"><img src="999black.jpg" alt="Black" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px;"></div>
-              <div style="border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.15);aspect-ratio:2/3;"><img src="999butch.jpg" alt="Butch" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px;"></div>
-              <div style="border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.15);aspect-ratio:2/3;"><img src="999call.jpg" alt="Call" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px;"></div>
-            </div>
+          <div style="flex:1;display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(3,1fr);gap:8px;padding:0 12px 12px;min-height:0;">
+              <div style="border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.15);min-height:0;"><img src="9999god.jpg" alt="The Godfather Part II" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px;"></div>
+              <div style="border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.15);min-height:0;"><img src="999there.jpg" alt="There Will Be Blood" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px;"></div>
+              <div style="border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.15);min-height:0;"><img src="9999king.jpg" alt="The King of Comedy" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px;"></div>
+              <div style="border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.15);min-height:0;"><img src="9999being.jpg" alt="Being There" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px;"></div>
+              <div style="border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.15);min-height:0;"><img src="999pianist.jpg" alt="The Pianist" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px;"></div>
+              <div style="border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.15);min-height:0;"><img src="999phantom.jpg" alt="Phantom Thread" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px;"></div>
+              <div style="border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.15);min-height:0;"><img src="9999eyes.jpg" alt="Eyes Wide Shut" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px;"></div>
+              <div style="border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.15);min-height:0;"><img src="999catch.jpg" alt="Catch Me If You Can" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px;"></div>
+              <div style="border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.15);min-height:0;"><img src="9999midnight.jpg" alt="Midnight Cowboy" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px;"></div>
+              <div style="border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.15);min-height:0;"><img src="999black.jpg" alt="Black" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px;"></div>
+              <div style="border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.15);min-height:0;"><img src="999butch.jpg" alt="Butch" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px;"></div>
+              <div style="border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.15);min-height:0;"><img src="999call.jpg" alt="Call" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px;"></div>
           </div>
         </div>
         <!-- YouTube embed (hidden initially, shown when Brooklyn card clicked) -->
@@ -892,6 +885,7 @@ function toggleBrandGrid() {
         </div>
       </div>
 
+    </div>
     </div>
   </div>
 <style>
@@ -1047,7 +1041,7 @@ var activeHobby = -1;
 function selectHobby(idx) {
   if (activeHobby === idx) return;
   activeHobby = idx;
-  document.querySelectorAll('.hobby-card').forEach(function(c,i){ c.classList.toggle('hobby-active', i===idx); });
+  document.querySelectorAll('.hobby-item').forEach(function(c,i){ c.classList.toggle('hobby-active', i===idx); });
   // Hide all panels first
   document.getElementById('otc-video-wrap').style.display = 'none';
   document.getElementById('otc-spotify-wrap').style.display = 'none';
@@ -1082,7 +1076,7 @@ function selectHobby(idx) {
 
 function deselectHobby() {
   activeHobby = -1;
-  document.querySelectorAll('.hobby-card').forEach(function(c){ c.classList.remove('hobby-active'); });
+  document.querySelectorAll('.hobby-item').forEach(function(c){ c.classList.remove('hobby-active'); });
   document.getElementById('otc-video-wrap').style.display = 'none';
   document.getElementById('otc-spotify-wrap').style.display = 'none';
   document.getElementById('otc-movies-wrap').style.display = 'none';
