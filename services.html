@@ -701,7 +701,7 @@ Amplify your SEO performance
     .prob-item.prob-active .prob-mobile-content { display:block; }
     .prob-item .font-display { font-size:1rem !important; font-weight:600 !important; }
     .prob-item.prob-active .font-display { color:#1A1A2E !important; }
-    .prob-mob-icon { display:flex !important; }
+    .prob-mob-icon { display:none !important; }
     .prob-item:not(.prob-active) .prob-mob-icon { background:#EDEDF0 !important; }
     .prob-item:not(.prob-active) .prob-mob-icon svg * { stroke:#9CA3AF !important; }
     .prob-section-mobile { padding-top: 80px !important; }
@@ -930,6 +930,11 @@ function selectProb(idx) {
     if(!wasActive) {
       items[idx].classList.add('prob-active');
       origSelect.call(null, idx);
+      setTimeout(function(){
+        var el = items[idx];
+        var top = el.getBoundingClientRect().top + window.scrollY - 72;
+        window.scrollTo({ top: top, behavior: 'smooth' });
+      }, 150);
     }
   };
   // Auto-open first item - force open without toggle

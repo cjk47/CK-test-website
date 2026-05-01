@@ -820,7 +820,7 @@ function toggleBrandGrid() {
           </div>
         </div>
         <!-- Letterboxd top 4 (hidden initially, shown when Movies card clicked) -->
-        <div id="otc-movies-wrap" style="display:none;flex:1;border-radius:16px;overflow:hidden;background:#F8F9FE;flex-direction:column;min-height:0;box-shadow:0 2px 12px rgba(0,0,0,0.08);height:100%;">
+        <div id="otc-movies-wrap" style="display:none;flex:1;border-radius:16px;overflow:hidden;background:#F8F9FE;flex-direction:column;min-height:0;box-shadow:0 2px 12px rgba(0,0,0,0.08);">
           <div class="flex items-center gap-2 px-5 py-3">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;">
               <circle cx="8" cy="12" r="6" fill="#00e054" opacity="0.8"/>
@@ -829,15 +829,22 @@ function toggleBrandGrid() {
             </svg>
             <p class="text-xs font-semibold uppercase tracking-widest" style="color:#5c7a8f;letter-spacing:0.1em;">Favorite films</p>
           </div>
-          <div style="display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(2,1fr);gap:8px;padding:0 12px 12px;height:310px;overflow:hidden;">
-              <div style="border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.15);min-height:0;"><img src="9999god.jpg" alt="The Godfather Part II" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px;"></div>
-              <div style="border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.15);min-height:0;"><img src="999there.jpg" alt="There Will Be Blood" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px;"></div>
-              <div style="border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.15);min-height:0;"><img src="9999king.jpg" alt="The King of Comedy" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px;"></div>
-              <div style="border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.15);min-height:0;"><img src="9999being.jpg" alt="Being There" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px;"></div>
-              <div style="border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.15);min-height:0;"><img src="999pianist.jpg" alt="The Pianist" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px;"></div>
-              <div style="border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.15);min-height:0;"><img src="999phantom.jpg" alt="Phantom Thread" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px;"></div>
-              <div style="border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.15);min-height:0;"><img src="9999eyes.jpg" alt="Eyes Wide Shut" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px;"></div>
-              <div style="border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.15);min-height:0;"><img src="999catch.jpg" alt="Catch Me If You Can" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px;"></div>
+          <div style="display:grid;grid-template-columns:repeat(8,1fr);gap:3px 5px;padding:0 10px 10px;align-content:center;flex:1;">
+              <div class="movie-poster" style="min-height:0;"><div style="border-radius:6px;overflow:hidden;display:inline-block;line-height:0;"><img src="9999god.jpg" alt="The Godfather Part II" style="max-width:58px;display:block;"></div></div>
+              <div class="movie-poster" style="min-height:0;"><div style="border-radius:6px;overflow:hidden;display:inline-block;line-height:0;"><img src="999there.jpg" alt="There Will Be Blood" style="max-width:58px;display:block;"></div></div>
+              <div class="movie-poster" style="min-height:0;"><div style="border-radius:6px;overflow:hidden;display:inline-block;line-height:0;"><img src="9999king.jpg" alt="The King of Comedy" style="max-width:58px;display:block;"></div></div>
+              <div class="movie-poster" style="min-height:0;"><div style="border-radius:6px;overflow:hidden;display:inline-block;line-height:0;"><img src="9999being.jpg" alt="Being There" style="max-width:58px;display:block;"></div></div>
+              <div class="movie-poster" style="min-height:0;"><div style="border-radius:6px;overflow:hidden;display:inline-block;line-height:0;"><img src="999pianist.jpg" alt="The Pianist" style="max-width:58px;display:block;"></div></div>
+              <div class="movie-poster" style="min-height:0;"><div style="border-radius:6px;overflow:hidden;display:inline-block;line-height:0;"><img src="999phantom.jpg" alt="Phantom Thread" style="max-width:58px;display:block;"></div></div>
+              <div class="movie-poster" style="min-height:0;"><div style="border-radius:6px;overflow:hidden;display:inline-block;line-height:0;"><img src="9999eyes.jpg" alt="Eyes Wide Shut" style="max-width:58px;display:block;"></div></div>
+              <div class="movie-poster" style="min-height:0;"><div style="border-radius:6px;overflow:hidden;display:inline-block;line-height:0;"><img src="999catch.jpg" alt="Catch Me If You Can" style="max-width:58px;display:block;"></div></div>
+              <div class="movie-poster" style="min-height:0;"><div style="border-radius:6px;overflow:hidden;display:inline-block;line-height:0;"><img src="9999midnight.jpg" alt="Midnight Cowboy" style="max-width:58px;display:block;"></div></div>
+              <div class="movie-poster" style="min-height:0;"><div style="border-radius:6px;overflow:hidden;display:inline-block;line-height:0;"><img src="999black.jpg" alt="Black Swan" style="max-width:58px;display:block;"></div></div>
+              <div class="movie-poster" style="min-height:0;"><div style="border-radius:6px;overflow:hidden;display:inline-block;line-height:0;"><img src="999butch.jpg" alt="Butch Cassidy" style="max-width:58px;display:block;"></div></div>
+              <div class="movie-poster" style="min-height:0;"><div style="border-radius:6px;overflow:hidden;display:inline-block;line-height:0;"><img src="999call.jpg" alt="Call Me By Your Name" style="max-width:58px;display:block;"></div></div>
+              <div class="movie-poster" style="min-height:0;"><div style="border-radius:6px;overflow:hidden;display:inline-block;line-height:0;"><img src="9992001.jpg" alt="2001: A Space Odyssey" style="max-width:58px;display:block;"></div></div>
+              <div class="movie-poster" style="min-height:0;"><div style="border-radius:6px;overflow:hidden;display:inline-block;line-height:0;"><img src="movie-1.jpg" alt="No Country for Old Men" style="max-width:58px;display:block;"></div></div>
+              <div class="movie-poster" style="min-height:0;"><div style="border-radius:6px;overflow:hidden;display:inline-block;line-height:0;"><img src="movie-2.jpg" alt="GoodFellas" style="max-width:58px;display:block;"></div></div>
           </div>
         </div>
         <!-- YouTube embed (hidden initially, shown when Brooklyn card clicked) -->
