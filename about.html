@@ -739,22 +739,47 @@ function toggleBrandGrid() {
   .hobby-item .hobby-arrow { opacity:0;margin-left:auto;flex-shrink:0;transition:opacity 0.18s ease; }
   .hobby-item.hobby-active .hobby-arrow { opacity:0; }
   .hobby-item:hover { background:rgba(0,0,0,0.03); opacity:0.7; }
-  .hobby-item.hobby-active { background:#EDF3F8; opacity:1; border:1px solid #C8D9E6; }
-  .hobby-item.hobby-active .hobby-title { color:#5c7a8f !important; }
+  .hobby-item.hobby-active { background:#e9f1ff; opacity:1; border:1px solid transparent; box-shadow:0 2px 8px -2px rgba(0,0,0,0.06); }
+  .hobby-item.hobby-active .hobby-title { color:#1A1A2E !important; }
   .hobby-item.hobby-active .hobby-desc { display:block !important; }
   .hobby-item .hobby-icon { flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center; }
   .hobby-item .hobby-icon img { width:28px;height:28px;object-fit:contain; }
-  .otc-video-card { background:#fdfeff;border-radius:20px;overflow:hidden;box-shadow:0 4px 20px -4px rgba(0,0,0,0.08);width:100%;min-width:0; }
+  .otc-video-card { background:#eaf2ff;border-radius:20px;overflow:hidden;box-shadow:0 4px 20px -4px rgba(0,0,0,0.08);width:100%;min-width:0; }
   .otc-video-card video { width:100%;display:block;background:#000;object-fit:cover; }
   .otc-video-label { position:absolute;top:12px;left:12px;background:rgba(0,0,0,0.5);backdrop-filter:blur(8px);color:#fff;font-size:0.7rem;font-weight:600;padding:4px 10px;border-radius:20px;font-family:'Inter',sans-serif; }
-  @media (max-width:767px) { .otc-layout { flex-direction:column !important;gap:24px !important; } .otc-sticky { position:static !important;width:100% !important; } .hobby-item { max-width:100% !important; } .otc-video-card { width:100% !important;min-width:unset !important;max-width:100% !important;min-height:300px !important; } .otc-video-card video { height:100% !important;object-fit:cover !important; } #otc-video-wrap { min-height:300px !important; } #otc-spotify-wrap { min-height:300px !important; } #otc-movies-wrap { min-height:300px !important; } #otc-youtube-wrap { min-height:300px !important; } }
+  .hobby-mobile-content { display:none; }
+  @media (max-width:767px) {
+    .otc-layout { flex-direction:column !important;gap:0 !important; }
+    .otc-sticky { position:static !important;width:100% !important; }
+    .otc-video-card { display:none !important; }
+    .hobby-item { max-width:100% !important; flex-wrap:wrap !important; align-items:center !important; border-radius:16px !important; padding:20px !important; background:#eaf2ff !important; gap:0 !important; }
+    .hobby-item > div:first-child { flex:1; min-width:0; flex-direction:row !important; align-items:center !important; gap:0 !important; }
+    .hobby-item .hobby-desc { display:none !important; }
+    .hobby-item.hobby-active .hobby-desc { display:none !important; }
+    .hobby-item.hobby-active .hobby-mob-desc { display:block !important; margin-top:10px !important; margin-bottom:18px !important; }
+    .hobby-item.hobby-active { background:#e0ebfa !important; border:none !important; }
+    .hobby-item .hobby-arrow { opacity:1 !important; margin-left:auto; }
+    .hobby-item .hobby-arrow svg { transition:transform 0.25s ease; transform:rotate(90deg); }
+    .hobby-item.hobby-active .hobby-arrow svg { transform:rotate(-90deg); }
+    .hobby-item .hobby-title { font-size:1.0625rem !important; font-weight:600 !important; }
+    .hobby-item.hobby-active .hobby-title { color:#1A1A2E !important; }
+    .hobby-mobile-content { display:none; width:100%; overflow:hidden; border-radius:12px; }
+    .hobby-item.hobby-active .hobby-mobile-content { display:block; }
+    .hobby-mobile-content #otc-video-wrap { position:relative !important; display:block !important; height:220px !important; min-height:220px !important; overflow:hidden !important; border-radius:12px !important; }
+    .hobby-mobile-content #otc-video-wrap video { position:absolute !important; inset:0 !important; width:100% !important; height:100% !important; object-fit:cover !important; }
+    .hobby-mobile-content #otc-spotify-wrap { min-height:280px !important; }
+    .hobby-mobile-content #otc-movies-wrap { min-height:280px !important; }
+  }
+  @media (min-width:768px) {
+    .hobby-mobile-content { display:none !important; }
+  }
 </style>
-<section class="py-16 md:pt-0" style="background:#ffffff;">
+<section class="-mt-6 pb-16 md:mt-0 md:pt-0 md:pb-16" style="background:#ffffff;">
   <div class="max-w-6xl mx-auto px-6">
     <div class="px-8 py-10 md:px-14 md:py-14" style="background:#f3f8ff;border-radius:20px;box-shadow:0 2px 16px -4px rgba(0,0,0,0.06);">
     <div style="margin-bottom:28px;text-align:center;">
-      <h2 class="font-display font-bold text-ink mb-3" style="font-size:clamp(1.8rem,3vw,2.5rem);letter-spacing:-0.02em;line-height:1.2;">A bit more about me</h2>
-      <p class="text-muted" style="line-height:1.7;font-size:0.9rem;">What I'm into when I'm not working on SEO.</p>
+      <h2 class="font-display font-bold text-ink mb-3" style="font-size:clamp(1.8rem,3vw,2.5rem);letter-spacing:-0.02em;line-height:1.2;">What I'm into outside work</h2>
+      <p class="text-muted" style="line-height:1.7;font-size:0.9rem;">A few of my favorite things outside of search.</p>
     </div>
     <div class="otc-layout" style="display:flex;gap:60px;align-items:center;">
 
@@ -762,41 +787,56 @@ function toggleBrandGrid() {
       <div class="otc-sticky" style="width:380px;flex-shrink:0;align-self:flex-start;position:sticky;top:88px;">
 
         <div style="display:flex;flex-direction:column;gap:8px;">
-          <button class="hobby-item hobby-active" onclick="selectHobby(0)">
+          <div class="hobby-item hobby-active" onclick="selectHobby(0)">
             <div style="display:flex;flex-direction:column;gap:6px;width:100%;">
               <span class="font-display text-ink hobby-title" style="font-size:0.88rem;letter-spacing:-0.01em;font-weight:520;color:#1A1A2E;">Music</span>
-              <span class="hobby-desc text-muted" style="font-size:0.8rem;line-height:1.55;display:none;">Playing guitar, collecting vinyl, and discography deep-dives.</span>
+              <span class="hobby-desc text-muted" style="font-size:0.8rem;line-height:1.55;display:none;">Playing guitar, collecting vinyl, and doing discography deep-dives of my favorite artists.</span>
             </div>
-            <span class="hobby-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="#5c7a8f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          </button>
-          <button class="hobby-item" onclick="selectHobby(1)">
+            <span class="hobby-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="#6B8DB5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <div class="hobby-mobile-content" id="hobby-mob-0">
+              <p class="hobby-mob-desc text-muted" style="font-size:0.8rem;line-height:1.55;display:none;margin-bottom:12px;">Playing guitar, collecting vinyl, and doing discography deep-dives of my favorite artists.</p>
+            </div>
+          </div>
+          <div class="hobby-item" onclick="selectHobby(1)">
             <div style="display:flex;flex-direction:column;gap:6px;width:100%;">
               <span class="font-display text-ink hobby-title" style="font-size:0.88rem;letter-spacing:-0.01em;font-weight:520;color:#1A1A2E;">Movies</span>
-              <span class="hobby-desc text-muted" style="font-size:0.8rem;line-height:1.55;display:none;">Going to the theaters or watching a movie at home.</span>
+              <span class="hobby-desc text-muted" style="font-size:0.8rem;line-height:1.55;display:none;">Going to the theater, watching classics, and logging it all on Letterboxd.</span>
             </div>
-            <span class="hobby-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="#5c7a8f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          </button>
-          <button class="hobby-item" onclick="selectHobby(2)">
+            <span class="hobby-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="#6B8DB5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <div class="hobby-mobile-content" id="hobby-mob-1">
+              <p class="hobby-mob-desc text-muted" style="font-size:0.8rem;line-height:1.55;display:none;margin-bottom:12px;">Going to the theater, watching classics, and logging it all on Letterboxd.</p>
+            </div>
+          </div>
+          <div class="hobby-item" onclick="selectHobby(2)">
             <div style="display:flex;flex-direction:column;gap:6px;width:100%;">
               <span class="font-display text-ink hobby-title" style="font-size:0.88rem;letter-spacing:-0.01em;font-weight:520;color:#1A1A2E;">Basketball</span>
-              <span class="hobby-desc text-muted" style="font-size:0.8rem;line-height:1.55;display:none;">Playing pickup basketball and watching the Knicks.</span>
+              <span class="hobby-desc text-muted" style="font-size:0.8rem;line-height:1.55;display:none;">Playing pickup, watching the Knicks, and convincing myself I'm an elite shooter.</span>
             </div>
-            <span class="hobby-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="#5c7a8f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          </button>
-          <button class="hobby-item" onclick="selectHobby(3)">
+            <span class="hobby-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="#6B8DB5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <div class="hobby-mobile-content" id="hobby-mob-2">
+              <p class="hobby-mob-desc text-muted" style="font-size:0.8rem;line-height:1.55;display:none;margin-bottom:12px;">Playing pickup, watching the Knicks, and convincing myself I'm an elite shooter.</p>
+            </div>
+          </div>
+          <div class="hobby-item" onclick="selectHobby(3)">
             <div style="display:flex;flex-direction:column;gap:6px;width:100%;">
               <span class="font-display text-ink hobby-title" style="font-size:0.88rem;letter-spacing:-0.01em;font-weight:520;color:#1A1A2E;">Brooklyn</span>
-              <span class="hobby-desc text-muted" style="font-size:0.8rem;line-height:1.55;display:none;">Walking and exploring my neighborhood.</span>
+              <span class="hobby-desc text-muted" style="font-size:0.8rem;line-height:1.55;display:none;">Exploring my neighborhood. I've lived in Brooklyn for 15 years and grew up on Long Island.</span>
             </div>
-            <span class="hobby-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="#5c7a8f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          </button>
-          <button class="hobby-item" onclick="selectHobby(4)">
+            <span class="hobby-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="#6B8DB5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <div class="hobby-mobile-content" id="hobby-mob-3">
+              <p class="hobby-mob-desc text-muted" style="font-size:0.8rem;line-height:1.55;display:none;margin-bottom:12px;">Exploring my neighborhood. I've lived in Brooklyn for 15 years and grew up on Long Island.</p>
+            </div>
+          </div>
+          <div class="hobby-item" onclick="selectHobby(4)">
             <div style="display:flex;flex-direction:column;gap:6px;width:100%;">
               <span class="font-display text-ink hobby-title" style="font-size:0.88rem;letter-spacing:-0.01em;font-weight:520;color:#1A1A2E;">Games</span>
-              <span class="hobby-desc text-muted" style="font-size:0.8rem;line-height:1.55;display:none;">Story-driven games and the occasional competitive match.</span>
+              <span class="hobby-desc text-muted" style="font-size:0.8rem;line-height:1.55;display:none;">Open-world games with cinematic stories.</span>
             </div>
-            <span class="hobby-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="#5c7a8f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          </button>
+            <span class="hobby-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="#6B8DB5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <div class="hobby-mobile-content" id="hobby-mob-4">
+              <p class="hobby-mob-desc text-muted" style="font-size:0.8rem;line-height:1.55;display:none;margin-bottom:12px;">Open-world games with cinematic stories.</p>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -805,13 +845,13 @@ function toggleBrandGrid() {
         <!-- Placeholder shown before any card is clicked -->
         <!-- Video (hidden initially) -->
         <div id="otc-video-wrap" style="position:relative;display:none;flex:1;min-height:0;">
-          <video id="otc-video" muted loop playsinline src="" style="position:absolute;inset:0;width:100%;height:100%;min-height:100%;display:block;background:#000;border-radius:0;pointer-events:none;object-fit:cover;"></video>
+          <video id="otc-video" muted loop playsinline src="" style="position:absolute;left:0;right:0;width:100%;height:130%;top:-15%;display:block;background:#000;border-radius:0;pointer-events:none;object-fit:cover;object-position:center bottom;"></video>
           <div style="position:absolute;bottom:0;left:0;right:0;padding:10px 14px;display:flex;align-items:center;gap:10px;background:linear-gradient(transparent, rgba(0,0,0,0.7));border-radius:0 0 16px 16px;z-index:20;">
             <button id="otc-playpause" style="background:none;border:none;cursor:pointer;padding:0;display:flex;">
               <svg id="otc-play-icon" width="14" height="14" viewBox="0 0 24 24" fill="white" style="display:none;"><path d="M8 5v14l11-7z"/></svg>
               <svg id="otc-pause-icon" width="14" height="14" viewBox="0 0 24 24" fill="white"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg>
             </button>
-            <div id="otc-progress-bar" style="flex:1;height:6px;background:rgba(255,255,255,0.3);border-radius:3px;cursor:pointer;position:relative;z-index:30;"><div id="otc-progress" style="width:0%;height:100%;background:#5c7a8f;border-radius:2px;pointer-events:none;"></div></div>
+            <div id="otc-progress-bar" style="flex:1;height:6px;background:rgba(255,255,255,0.3);border-radius:3px;cursor:pointer;position:relative;z-index:30;"><div id="otc-progress" style="width:0%;height:100%;background:#6B8DB5;border-radius:2px;pointer-events:none;"></div></div>
             <span id="otc-time" style="font-size:10px;color:rgba(255,255,255,0.7);font-family:'Inter',sans-serif;">0:00 / 0:00</span>
             <button id="otc-mute-btn" style="background:none;border:none;cursor:pointer;padding:0;display:flex;">
               <svg id="otc-muted-icon" width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M11 5L6 9H2v6h4l5 4V5z" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="23" y1="9" x2="17" y2="15" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round"/><line x1="17" y1="9" x2="23" y2="15" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round"/></svg>
@@ -820,14 +860,14 @@ function toggleBrandGrid() {
           </div>
         </div>
         <!-- Letterboxd top 4 (hidden initially, shown when Movies card clicked) -->
-        <div id="otc-movies-wrap" style="display:none;flex:1;border-radius:16px;overflow:hidden;background:#F8F9FE;flex-direction:column;min-height:0;box-shadow:0 2px 12px rgba(0,0,0,0.08);">
+        <div id="otc-movies-wrap" style="display:none;flex:1;border-radius:16px;overflow:hidden;background:#eaf2ff;flex-direction:column;min-height:0;">
           <div class="flex items-center gap-2 px-5 py-3">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;">
               <circle cx="8" cy="12" r="6" fill="#00e054" opacity="0.8"/>
               <circle cx="16" cy="12" r="6" fill="#40bcf4" opacity="0.8"/>
               <circle cx="12" cy="12" r="6" fill="#ff8000" opacity="0.6"/>
             </svg>
-            <p class="text-xs font-semibold uppercase tracking-widest" style="color:#5c7a8f;letter-spacing:0.1em;">Favorite films</p>
+            <p class="text-xs font-semibold uppercase tracking-widest" style="color:#6B8DB5;letter-spacing:0.1em;">Favorite films</p>
           </div>
           <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:3px 5px;padding:0 10px 0;align-content:center;flex:1;justify-items:center;">
               <a href="https://letterboxd.com/film/the-godfather-part-ii/" target="_blank" class="movie-poster" style="min-height:0;"><div style="border-radius:6px;overflow:hidden;display:inline-block;line-height:0;"><img src="9999god.jpg" alt="The Godfather Part II" style="max-width:62px;display:block;"></div></a>
@@ -858,20 +898,20 @@ function toggleBrandGrid() {
           <iframe id="otc-youtube-iframe" width="100%" height="100%" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="border-radius:16px;"></iframe>
         </div>
         <!-- Spotify player (hidden initially, shown when Music card clicked) -->
-        <div id="otc-spotify-wrap" style="display:none;flex:1;border-radius:16px;overflow:hidden;background:#F8F9FE;flex-direction:column;justify-content:space-between;box-shadow:0 2px 12px rgba(0,0,0,0.08);">
+        <div id="otc-spotify-wrap" style="display:none;flex:1;border-radius:16px;overflow:hidden;background:#eaf2ff;flex-direction:column;justify-content:space-between;">
           <div class="flex items-center py-3" style="padding-left:26px;">
             <div class="flex items-end gap-0.5" style="height:14px;width:14px;justify-content:center;flex-shrink:0;">
-              <span style="width:2.5px;background:#5c7a8f;border-radius:2px;animation:bar 0.8s ease-in-out infinite alternate;height:6px;display:inline-block;"></span>
-              <span style="width:2.5px;background:#5c7a8f;border-radius:2px;animation:bar 0.8s ease-in-out 0.2s infinite alternate;height:11px;display:inline-block;"></span>
-              <span style="width:2.5px;background:#5c7a8f;border-radius:2px;animation:bar 0.8s ease-in-out 0.4s infinite alternate;height:5px;display:inline-block;"></span>
-              <span style="width:2.5px;background:#5c7a8f;border-radius:2px;animation:bar 0.8s ease-in-out 0.1s infinite alternate;height:13px;display:inline-block;"></span>
+              <span style="width:2.5px;background:#6B8DB5;border-radius:2px;animation:bar 0.8s ease-in-out infinite alternate;height:6px;display:inline-block;"></span>
+              <span style="width:2.5px;background:#6B8DB5;border-radius:2px;animation:bar 0.8s ease-in-out 0.2s infinite alternate;height:11px;display:inline-block;"></span>
+              <span style="width:2.5px;background:#6B8DB5;border-radius:2px;animation:bar 0.8s ease-in-out 0.4s infinite alternate;height:5px;display:inline-block;"></span>
+              <span style="width:2.5px;background:#6B8DB5;border-radius:2px;animation:bar 0.8s ease-in-out 0.1s infinite alternate;height:13px;display:inline-block;"></span>
             </div>
-            <p class="text-xs font-semibold uppercase tracking-widest" style="color:#5c7a8f;letter-spacing:0.1em;margin-left:19px;">Now listening</p>
+            <p class="text-xs font-semibold uppercase tracking-widest" style="color:#6B8DB5;letter-spacing:0.1em;margin-left:19px;">Now listening</p>
           </div>
           <div id="pl-list" style="flex:1;display:flex;flex-direction:column;justify-content:center;"></div>
-          <div style="margin-top:auto;background:#E0E9EF;border-radius:12px;overflow:hidden;position:relative;margin:4px 8px 10px;">
+          <div style="margin-top:auto;background:#dee8fa;border-radius:12px;overflow:hidden;position:relative;margin:4px 8px 10px;">
             <div style="padding:10px 14px 6px;display:flex;align-items:center;gap:12px;">
-              <div id="pl-now-art" style="width:44px;height:44px;border-radius:8px;overflow:hidden;flex-shrink:0;background:#dce4f0;">
+              <div id="pl-now-art" style="width:44px;height:44px;border-radius:8px;overflow:hidden;flex-shrink:0;background:#dee8fa;">
                 <img id="pl-now-img" src="" style="width:100%;height:100%;object-fit:cover;display:none;">
               </div>
               <div style="flex:1;min-width:0;">
@@ -879,7 +919,7 @@ function toggleBrandGrid() {
                 <p id="pl-now-artist" style="font-size:0.7rem;color:#9ca3af;margin:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;"></p>
               </div>
               <div style="display:flex;align-items:center;gap:8px;flex-shrink:0;">
-                <div id="pl-play-btn" style="width:32px;height:32px;border-radius:50%;background:#5c7a8f;display:flex;align-items:center;justify-content:center;cursor:pointer;">
+                <div id="pl-play-btn" style="width:32px;height:32px;border-radius:50%;background:#6B8DB5;display:flex;align-items:center;justify-content:center;cursor:pointer;">
                   <svg id="pl-btn-play" width="16" height="16" viewBox="0 0 24 24" fill="white" style="pointer-events:none;"><path d="M6 4.83v14.34c0 .79.87 1.27 1.54.84l11.14-7.17a1 1 0 000-1.69L7.54 3.98A.998.998 0 006 4.83z"/></svg>
                   <svg id="pl-btn-pause" width="16" height="16" viewBox="0 0 24 24" fill="white" style="display:none;pointer-events:none;"><rect x="5" y="4" width="5" height="16" rx="1"/><rect x="14" y="4" width="5" height="16" rx="1"/></svg>
                 </div>
@@ -887,7 +927,7 @@ function toggleBrandGrid() {
             </div>
             <div id="pl-progress-bar" style="padding:0 14px 10px;cursor:pointer;">
               <div style="height:3px;background:rgba(0,0,0,0.08);border-radius:2px;position:relative;">
-                <div id="pl-progress" style="width:0%;height:100%;background:#5c7a8f;border-radius:2px;transition:width 0.3s linear;"></div>
+                <div id="pl-progress" style="width:0%;height:100%;background:#6B8DB5;border-radius:2px;transition:width 0.3s linear;"></div>
               </div>
             </div>
           </div>
@@ -920,8 +960,8 @@ function setPlayState(playing){
     var icon = row.querySelector('span');
     if(icon && icon.style.color === 'rgb(33, 103, 225)'){
       icon.innerHTML = playing
-        ? '<svg width="22" height="22" viewBox="0 0 24 24" fill="#5c7a8f"><rect x="5" y="4" width="5" height="16" rx="1"/><rect x="14" y="4" width="5" height="16" rx="1"/></svg>'
-        : '<svg width="22" height="22" viewBox="0 0 24 24" fill="#5c7a8f"><path d="M6 4.83v14.34c0 .79.87 1.27 1.54.84l11.14-7.17a1 1 0 000-1.69L7.54 3.98A.998.998 0 006 4.83z"/></svg>';
+        ? '<svg width="22" height="22" viewBox="0 0 24 24" fill="#6B8DB5"><rect x="5" y="4" width="5" height="16" rx="1"/><rect x="14" y="4" width="5" height="16" rx="1"/></svg>'
+        : '<svg width="22" height="22" viewBox="0 0 24 24" fill="#6B8DB5"><path d="M6 4.83v14.34c0 .79.87 1.27 1.54.84l11.14-7.17a1 1 0 000-1.69L7.54 3.98A.998.998 0 006 4.83z"/></svg>';
     }
   });
 }
@@ -957,13 +997,13 @@ function togglePlay(){
     PL_TRACKS.forEach(function(t,i){
       var isActive = i===active;
       var row = document.createElement('div');
-      row.style.cssText = 'display:flex;align-items:center;gap:12px;padding:12px 14px;cursor:pointer;transition:background 0.15s;margin:0 8px;'+(isActive?'background:#E0E9EF;border-radius:10px;':'');
+      row.style.cssText = 'display:flex;align-items:center;gap:12px;padding:12px 14px;cursor:pointer;transition:background 0.15s;margin:0 8px;'+(isActive?'background:#dee8fa;border-radius:10px;':'');
       var iconContent = isActive
         ? (plPlaying
-          ? '<svg width="22" height="22" viewBox="0 0 24 24" fill="#5c7a8f"><rect x="5" y="4" width="5" height="16" rx="1"/><rect x="14" y="4" width="5" height="16" rx="1"/></svg>'
-          : '<svg width="22" height="22" viewBox="0 0 24 24" fill="#5c7a8f"><path d="M6 4.83v14.34c0 .79.87 1.27 1.54.84l11.14-7.17a1 1 0 000-1.69L7.54 3.98A.998.998 0 006 4.83z"/></svg>')
+          ? '<svg width="22" height="22" viewBox="0 0 24 24" fill="#6B8DB5"><rect x="5" y="4" width="5" height="16" rx="1"/><rect x="14" y="4" width="5" height="16" rx="1"/></svg>'
+          : '<svg width="22" height="22" viewBox="0 0 24 24" fill="#6B8DB5"><path d="M6 4.83v14.34c0 .79.87 1.27 1.54.84l11.14-7.17a1 1 0 000-1.69L7.54 3.98A.998.998 0 006 4.83z"/></svg>')
         : (i+1);
-      row.innerHTML = '<span style="font-size:0.8rem;width:28px;height:28px;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:'+(isActive?'#5c7a8f':'#c0c0c0')+';background:'+(isActive?'#E0E9EF':'transparent')+';border-radius:50%;">'+iconContent+'</span>'+
+      row.innerHTML = '<span style="font-size:0.8rem;width:28px;height:28px;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:'+(isActive?'#6B8DB5':'#c0c0c0')+';background:'+(isActive?'#dee8fa':'transparent')+';border-radius:50%;">'+iconContent+'</span>'+
         '<div style="min-width:0;flex:1;"><p style="font-size:0.8rem;font-weight:600;color:#1a1a2e;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">'+t.title+'</p>'+
         '<p style="font-size:0.7rem;color:#9ca3af;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">'+t.artist+'</p></div>';
       row.addEventListener('mouseenter',function(){ if(i!==active) row.style.background='#f8f9fc'; });
@@ -1029,7 +1069,7 @@ function togglePlay(){
 })();
 </script>
 <script>
-var hobbyVideos = ['geese.mp4', 'godfather.mp4', 'movies.mp4', 'movies.mp4', 'movies.mp4', 'geese.mp4'];
+var hobbyVideos = ['geese.mp4', 'godfather.mp4', 'movies.mp4', 'movies.mp4', 'rd2.mp4', 'geese.mp4'];
 var otcVideo = document.getElementById('otc-video');
 // Set placeholder and video height to match basketball video
 var otcLockedHeight = null;
@@ -1047,11 +1087,32 @@ var otcLockedHeight = null;
 })();
 
 var activeHobby = -1;
+var isMobile = function(){ return window.innerWidth < 768; };
+
+// Map of which panel goes with which hobby index
+var hobbyPanelIds = ['otc-spotify-wrap','otc-movies-wrap',null,'otc-video-wrap','otc-video-wrap'];
+
 function selectHobby(idx) {
+  // On mobile, tapping the active item deselects it
+  if (isMobile() && activeHobby === idx) {
+    deselectHobby();
+    return;
+  }
   if (activeHobby === idx) return;
   activeHobby = idx;
   document.querySelectorAll('.hobby-item').forEach(function(c,i){ c.classList.toggle('hobby-active', i===idx); });
-  // Hide all panels first
+
+  // Put panels back in the desktop card FIRST (before clearing)
+  var desktopCard = document.querySelector('.otc-video-card');
+  ['otc-video-wrap','otc-spotify-wrap','otc-movies-wrap','otc-youtube-wrap'].forEach(function(id){
+    var el = document.getElementById(id);
+    if (el && el.parentElement !== desktopCard) {
+      el.style.display = 'none';
+      desktopCard.appendChild(el);
+    }
+  });
+
+  // Hide all panels, stop video
   document.getElementById('otc-video-wrap').style.display = 'none';
   document.getElementById('otc-spotify-wrap').style.display = 'none';
   document.getElementById('otc-movies-wrap').style.display = 'none';
@@ -1060,22 +1121,25 @@ function selectHobby(idx) {
   document.getElementById('otc-youtube-iframe').src = '';
 
   if (idx === 0) {
-    // Music card — show Spotify player
-    document.getElementById('otc-spotify-wrap').style.display = 'flex';
+    showHobbyPanel('otc-spotify-wrap', idx, 'flex');
   } else if (idx === 1) {
-    // Movies card — show Letterboxd top 4
-    document.getElementById('otc-movies-wrap').style.display = 'flex';
+    showHobbyPanel('otc-movies-wrap', idx, 'flex');
   } else if (idx === 3) {
-    // Brooklyn card — show video
-    document.getElementById('otc-video-wrap').style.display = '';
+    showHobbyPanel('otc-video-wrap', idx);
     otcVideo.src = 'bk.mp4';
     otcVideo.currentTime = 12;
     otcVideo.play();
     document.getElementById('otc-play-icon').style.display = 'none';
     document.getElementById('otc-pause-icon').style.display = '';
+  } else if (idx === 4) {
+    showHobbyPanel('otc-video-wrap', idx);
+    otcVideo.src = hobbyVideos[idx];
+    otcVideo.currentTime = 64;
+    otcVideo.play();
+    document.getElementById('otc-play-icon').style.display = 'none';
+    document.getElementById('otc-pause-icon').style.display = '';
   } else {
-    // Other cards — show video
-    document.getElementById('otc-video-wrap').style.display = '';
+    showHobbyPanel('otc-video-wrap', idx);
     otcVideo.src = hobbyVideos[idx];
     otcVideo.play();
     document.getElementById('otc-play-icon').style.display = 'none';
@@ -1083,13 +1147,28 @@ function selectHobby(idx) {
   }
 }
 
+function showHobbyPanel(panelId, idx, displayStyle) {
+  var panel = document.getElementById(panelId);
+  if (!panel) return;
+  panel.style.display = displayStyle || '';
+  if (isMobile()) {
+    var mob = document.getElementById('hobby-mob-'+idx);
+    if (mob) {
+      mob.appendChild(panel);
+    }
+  }
+}
+
 function deselectHobby() {
   activeHobby = -1;
   document.querySelectorAll('.hobby-item').forEach(function(c){ c.classList.remove('hobby-active'); });
-  document.getElementById('otc-video-wrap').style.display = 'none';
-  document.getElementById('otc-spotify-wrap').style.display = 'none';
-  document.getElementById('otc-movies-wrap').style.display = 'none';
-  document.getElementById('otc-youtube-wrap').style.display = 'none';
+  // Put panels back in the desktop card
+  var desktopCard = document.querySelector('.otc-video-card');
+  ['otc-video-wrap','otc-spotify-wrap','otc-movies-wrap','otc-youtube-wrap'].forEach(function(id){
+    var el = document.getElementById(id);
+    if (el && el.parentElement !== desktopCard) desktopCard.appendChild(el);
+    if (el) { el.style.display = 'none'; }
+  });
   document.getElementById('otc-youtube-iframe').src = '';
   otcVideo.pause();
   otcVideo.src = '';
