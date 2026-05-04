@@ -828,12 +828,12 @@ function toggleBrandGrid() {
           </div>
           <div class="hobby-item" onclick="selectHobby(4)">
             <div style="display:flex;flex-direction:column;gap:6px;width:100%;">
-              <span class="font-display text-ink hobby-title" style="font-size:0.88rem;letter-spacing:-0.01em;font-weight:520;color:#1A1A2E;">Games</span>
-              <span class="hobby-desc text-muted" style="font-size:0.8rem;line-height:1.55;display:none;">Open-world games with cinematic stories.</span>
+              <span class="font-display text-ink hobby-title" style="font-size:0.88rem;letter-spacing:-0.01em;font-weight:520;color:#1A1A2E;">Food</span>
+              <span class="hobby-desc text-muted" style="font-size:0.8rem;line-height:1.55;display:none;">Trying new restaurants and cooking new Italian dishes.</span>
             </div>
             <span class="hobby-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="#6B8DB5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
             <div class="hobby-mobile-content" id="hobby-mob-4">
-              <p class="hobby-mob-desc text-muted" style="font-size:0.8rem;line-height:1.55;display:none;margin-bottom:12px;">Open-world games with cinematic stories.</p>
+              <p class="hobby-mob-desc text-muted" style="font-size:0.8rem;line-height:1.55;display:none;margin-bottom:12px;">Trying new restaurants and cooking new Italian dishes.</p>
             </div>
           </div>
         </div>
@@ -1068,7 +1068,7 @@ function togglePlay(){
 })();
 </script>
 <script>
-var hobbyVideos = ['geese.mp4', 'godfather.mp4', 'movies.mp4', 'movies.mp4', 'rd2.mp4', 'geese.mp4'];
+var hobbyVideos = ['geese.mp4', 'godfather.mp4', 'movies.mp4', 'movies.mp4', 'godfather.mp4', 'geese.mp4'];
 var otcVideo = document.getElementById('otc-video');
 // Set placeholder and video height to match basketball video
 var otcLockedHeight = null;
@@ -1133,7 +1133,7 @@ function selectHobby(idx) {
   } else if (idx === 4) {
     showHobbyPanel('otc-video-wrap', idx);
     otcVideo.src = hobbyVideos[idx];
-    otcVideo.currentTime = 64;
+    otcVideo.currentTime = 0;
     otcVideo.play();
     document.getElementById('otc-play-icon').style.display = 'none';
     document.getElementById('otc-pause-icon').style.display = '';
