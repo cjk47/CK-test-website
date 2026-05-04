@@ -89,8 +89,8 @@
   /* Numbered strategy headings */
   .strategy-num { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: #FFF1EC; color: #F47B5A; font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 0.85rem; margin-right: 10px; vertical-align: middle; }
   /* Coral-dot bullets (matches blog post) — only for the checkmark-style lists */
-  .cs-prose ul li.flex { display: block; position: relative; padding-left: 1.6em; margin-bottom: 0.7em; line-height: 1.78 !important; }
-  .cs-prose ul li.flex::before { content: ""; position: absolute; left: 0.25em; top: 0.78em; width: 6px; height: 6px; border-radius: 50%; background: #F47B5A; }
+  .cs-prose ul li.flex:has(> span.bg-coral-light) { display: block; position: relative; padding-left: 1.6em; margin-bottom: 0.7em; line-height: 1.78 !important; }
+  .cs-prose ul li.flex:has(> span.bg-coral-light)::before { content: ""; position: absolute; left: 0.25em; top: 0.78em; width: 6px; height: 6px; border-radius: 50%; background: #F47B5A; }
   .cs-prose ul li > span.bg-coral-light { display: none; }
   /* Preserve cs-results-grid stat styling within cs-prose */
   .cs-prose .cs-results-grid p { font-size: revert; line-height: 1.2 !important; color: revert; }

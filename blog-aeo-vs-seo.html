@@ -98,6 +98,7 @@
     .prose h2 { font-size: 1.55rem; }
     .prose h3 { font-size: 1.2rem; }
     .article-h1 { font-size: 2.1rem !important; }
+    .hero-img-container { height: 220px !important; }
   }
 </style>
 </head>
@@ -165,7 +166,7 @@ function toggleMob() {
 </div>
 
 <!-- ARTICLE HERO (full width) -->
-<div class="max-w-6xl mx-auto px-6 pt-8 md:pt-10">
+<div class="max-w-5xl mx-auto px-6 pt-8 md:pt-10">
 
   <!-- header (centered) -->
   <header class="mb-8 text-center">
@@ -183,7 +184,7 @@ function toggleMob() {
   </header>
 
   <!-- featured image -->
-  <div class="relative rounded-2xl overflow-hidden mb-12 md:mb-16" style="background:radial-gradient(ellipse 70% 60% at 20% 30%, rgba(244,123,90,0.22) 0%, transparent 60%),radial-gradient(ellipse 70% 60% at 80% 80%, rgba(123,104,238,0.22) 0%, transparent 60%),linear-gradient(135deg, #FFF5F1 0%, #F4F0FE 100%);border:1px solid #E8E8F0;aspect-ratio:21/9;">
+  <div class="hero-img-container relative rounded-2xl overflow-hidden mb-12 md:mb-16" style="background:radial-gradient(ellipse 70% 60% at 20% 30%, rgba(244,123,90,0.22) 0%, transparent 60%),radial-gradient(ellipse 70% 60% at 80% 80%, rgba(123,104,238,0.22) 0%, transparent 60%),linear-gradient(135deg, #FFF5F1 0%, #F4F0FE 100%);border:1px solid #E8E8F0;height:460px;">
     <div class="absolute inset-0 flex items-center justify-center p-2 md:p-4">
       <img src="yano.png" alt="AEO vs. SEO" style="max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;transform:scale(1.31);">
     </div>
@@ -192,11 +193,11 @@ function toggleMob() {
 </div>
 
 <!-- ARTICLE BODY + TOC (2-col) -->
-<div class="max-w-6xl mx-auto px-6 pb-16 md:pb-20">
-  <div class="md:grid md:grid-cols-[700px_1fr_240px] md:gap-12">
+<div class="max-w-5xl mx-auto px-6 pb-16 md:pb-20">
+  <div class="md:grid md:grid-cols-[1fr_280px] md:gap-16">
 
     <!-- LEFT: ARTICLE COLUMN -->
-    <div class="md:max-w-[700px]">
+    <div>
 
       <!-- body -->
       <article class="prose">
@@ -466,11 +467,8 @@ function toggleMob() {
 
     </div>
 
-    <!-- MIDDLE SPACER -->
-    <div class="hidden md:block" aria-hidden="true"></div>
-
     <!-- RIGHT: TOC SIDEBAR -->
-    <aside class="hidden md:block sticky top-24 self-start">
+    <aside class="hidden md:block sticky top-24 self-start pl-[84px]">
       <p class="text-[16px] font-semibold mb-3" style="color:#111;">On this page</p>
       <nav id="toc-nav">
         <div class="toc-section" data-section="aeo-what">
@@ -499,16 +497,6 @@ function toggleMob() {
           <a href="#future" class="toc-h2-link block text-[14px] font-semibold py-2.5 transition-colors duration-200" style="color:#4B5563;">Future-proofing</a>
         </div>
       </nav>
-
-      <!-- Sidebar CTA -->
-      <a href="services.html" class="block mt-10 rounded-xl p-4 text-center" style="background:#FFF5F1;border:1px solid #FCE5DD;transition:background 0.2s ease, border-color 0.2s ease;" onmouseover="this.style.background='#FFEDE5';this.style.borderColor='#F8D5C8'" onmouseout="this.style.background='#FFF5F1';this.style.borderColor='#FCE5DD'">
-        <p class="font-semibold mb-1.5" style="color:#1A1A2E;font-size:1rem;line-height:1.35;">Want help applying this to your site?</p>
-        <p class="text-xs mb-3" style="line-height:1.55;color:#6B7280;">See what an SEO and AEO partnership could look like.</p>
-        <span class="inline-flex items-center gap-1.5 text-[12.5px] font-semibold" style="color:#F47B5A;">
-          Explore services
-          <svg width="11" height="11" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </span>
-      </a>
     </aside>
 
   </div>
