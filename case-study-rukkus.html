@@ -78,6 +78,31 @@
   #mob-btn.mob-open .mob-bar:first-child { transform: translateY(4px) rotate(45deg); }
   #mob-btn.mob-open .mob-bar:last-child { transform: translateY(-4px) rotate(-45deg); }
   h3[id] { scroll-margin-top: 96px; }
+  /* Editorial typography (matches blog post) */
+  .cs-prose h2 { font-size: 1.85rem; line-height: 1.25; letter-spacing: -0.02em; color: #1A1A2E; font-weight: 700; }
+  .cs-prose h3 { font-size: 1.35rem; line-height: 1.3; letter-spacing: -0.015em; font-weight: 650; color: #1A1A2E; }
+  .cs-prose p { font-size: 1.0625rem; line-height: 1.78 !important; color: #2A2A38; }
+  .cs-prose li { font-size: 1.0625rem; color: #2A2A38; }
+  .cs-prose strong { color: #1A1A2E; font-weight: 650; }
+  @media (max-width: 767px) {
+    .cs-prose h2 { font-size: 1.55rem; }
+    .cs-prose h3 { font-size: 1.2rem; }
+    .cs-prose p { font-size: 1rem; line-height: 1.75 !important; }
+    .cs-prose li { font-size: 1rem; }
+  }
+  /* Numbered strategy headings */
+  .strategy-num { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: #FFF1EC; color: #F47B5A; font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 0.85rem; margin-right: 10px; vertical-align: middle; }
+  /* Coral-dot bullets (matches blog post) — only for the checkmark-style lists */
+  .cs-prose ul li.flex { display: block; position: relative; padding-left: 1.6em; margin-bottom: 0.7em; line-height: 1.78 !important; }
+  .cs-prose ul li.flex::before { content: ""; position: absolute; left: 0.25em; top: 0.78em; width: 6px; height: 6px; border-radius: 50%; background: #F47B5A; }
+  .cs-prose ul li > span.bg-coral-light { display: none; }
+  /* Preserve cs-results-grid stat styling within cs-prose */
+  .cs-prose .cs-results-grid p { font-size: revert; line-height: 1.2 !important; color: revert; }
+  .cs-prose .cs-results-grid p.text-3xl { font-size: 1.875rem; }
+  .cs-prose .cs-results-grid p.text-xs { font-size: 0.75rem; line-height: 1rem !important; color: #6B7280; }
+  .cs-prose .cs-results-grid p.text-coral { color: #F47B5A; }
+  .cs-prose .cs-results-grid p.text-violet { color: #7B68EE; }
+  .cs-prose .cs-results-grid p.text-muted { color: #6B7280; }
   @media (min-width: 768px) and (max-width: 1023px) {
     .curved-section { width: 120% !important; margin-left: -10% !important; }
     .curved-section > .max-w-5xl { max-width: 100% !important; width: calc(100vw - 48px) !important; padding-left: 0 !important; padding-right: 0 !important; margin-left: auto !important; margin-right: auto !important; }
@@ -108,6 +133,7 @@
       <a href="services.html">SEO Services</a>
       <a href="case-studies.html" class="text-coral font-semibold">Case Studies</a>
       <a href="about.html">About</a>
+      <a href="blog.html">Blog</a>
       <a href="contact.html" class="btn-coral bg-coral text-white px-5 py-2 rounded-full font-semibold text-sm">Let's Talk</a>
     </div>
     <button class="md:hidden flex flex-col justify-center text-ink" id="mob-btn" onclick="toggleMob()" aria-label="Toggle menu" style="width:36px;height:28px;padding:3px 7px;">
@@ -122,6 +148,7 @@
   <a href="services.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;" ontouchstart="this.style.background='#f3f4f6'" ontouchend="this.style.background=''" ontouchcancel="this.style.background=''">SEO Services</a>
   <a href="case-studies.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;" ontouchstart="this.style.background='#f3f4f6'" ontouchend="this.style.background=''" ontouchcancel="this.style.background=''">Case Studies</a>
   <a href="about.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;" ontouchstart="this.style.background='#f3f4f6'" ontouchend="this.style.background=''" ontouchcancel="this.style.background=''">About</a>
+  <a href="blog.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;" ontouchstart="this.style.background='#f3f4f6'" ontouchend="this.style.background=''" ontouchcancel="this.style.background=''">Blog</a>
   <div class="px-6 py-5">
     <a href="contact.html" class="btn-coral flex items-center justify-center w-full bg-[#F47B5A] text-white text-[17px] font-semibold rounded-full py-3">Let's Talk</a>
   </div>
@@ -153,7 +180,7 @@ function toggleMob() {
       <div class="flex justify-center mb-5">
         <img src="rukkus_logo_Wht_med.png" alt="Rukkus" style="height:27px;object-fit:contain;filter:brightness(0);">
       </div>
-      <h1 class="font-display font-bold text-4xl md:text-5xl text-ink leading-tight mb-6">How Rukkus Grew Ticket Sales 451% and Got Acquired — With Off-Site SEO</h1>
+      <h1 class="font-display text-ink mb-6" style="font-size:clamp(2.2rem,4vw,3rem);letter-spacing:-0.025em;font-weight:750;line-height:1.15;">How Rukkus Grew Ticket Sales 451% and Got Acquired — With Off-Site SEO</h1>
       <div class="flex justify-center gap-2 flex-wrap">
         <span style="background:#ffffff;color:#323232;border:1px solid #E8E8F0;" class="text-xs font-semibold px-3 py-1.5 rounded-full">Off-site SEO</span>
       </div>
@@ -189,7 +216,7 @@ function toggleMob() {
   </div>
 
   <!-- White curved section: arcs UP into the hero image, extends below -->
-  <div class="curved-section" style="background:#F9F8FF;border-radius:50% 50% 0 0/80px 80px 0 0;margin-top:-280px;position:relative;z-index:1;padding-top:310px;padding-bottom:60px;width:150%;margin-left:-25%;">
+  <div class="curved-section" style="background:#FFF8F3;border-radius:50% 50% 0 0/80px 80px 0 0;margin-top:-280px;position:relative;z-index:1;padding-top:310px;padding-bottom:60px;width:150%;margin-left:-25%;">
     <div class="max-w-5xl mx-auto px-6">
       <div class="cs-meta-row flex flex-col md:flex-row gap-10 md:gap-16 items-start">
         <div class="cs-meta-grid grid flex-1" style="grid-template-columns:repeat(3,1fr);column-gap:90px;padding-right:40px;">
@@ -247,7 +274,7 @@ function toggleMob() {
   <div class="grid md:grid-cols-[1fr_280px] gap-16">
 
     <!-- LEFT COLUMN -->
-    <div>
+    <div class="cs-prose">
 
       <section id="challenge" class="mb-8 scroll-mt-24">
         <h2 class="font-display font-bold text-[28px] text-ink mb-4">The Challenge</h2>
@@ -260,7 +287,7 @@ function toggleMob() {
         <p class="text-[#4B5563] text-[16px] mb-8" style="line-height:1.85;">The approach focused on earning "stamps of approval" from sites Google trusts. This included using proprietary data to pitch stories to journalists, creating embed-ready visuals, turning the launch into a story, piggybacking on competitor links, and securing placements on university discount pages.</p>
 
         <div class="mb-11">
-          <h3 id="s-1" class="font-display font-semibold text-[20px] text-ink mb-3">Offer Unique Data to Journalists</h3>
+          <h3 id="s-1" class="font-display font-semibold text-[20px] text-ink mb-3"><span class="strategy-num">1</span>Offer Unique Data to Journalists</h3>
           <p class="text-[#4B5563] text-[16px] mb-6" style="line-height:1.85;">Rukkus had proprietary ticket data, so I used it as a link building asset. By pitching data-driven story angles like <em>"When's the Best Time to Buy Coachella Tickets?"</em> or <em>"How Did Jim Harbaugh's Hiring Affect Ticket Prices?"</em>, I gave journalists genuinely useful material for stories they were already covering.</p>
           <p class="text-[#4B5563] text-[16px] mb-6" style="line-height:1.85;">To scale outreach, I built a tool that scraped the top news stories each morning and flagged ones we could support with ticket data. I then prioritized opportunities by site authority, focusing on high-impact domains and moving quickly. When a relevant story broke, I sent a pitch the same day, leading to placements on outlets like CNN and Fox.</p>
 
@@ -298,7 +325,7 @@ function toggleMob() {
         </div>
 
         <div class="mb-1">
-          <h3 id="s-2" class="font-display font-semibold text-[20px] text-ink mb-3">Produce Engaging Visuals</h3>
+          <h3 id="s-2" class="font-display font-semibold text-[20px] text-ink mb-3"><span class="strategy-num">2</span>Produce Engaging Visuals</h3>
           <p class="text-[#4B5563] text-[16px] mb-6" style="line-height:1.85;">Data alone wasn't always enough. Journalists also needed imagery to bring the story to life, so I created infographics and visual guides that were easy to embed.</p>
           <p class="text-[#4B5563] text-[16px]" style="line-height:1.8;">For example, I designed an infographic on the value of the #1 pick in the NBA draft and pitched it to sports sites that had covered the draft but lacked images. Sports Illustrated was among those that picked it up, with each placement linking back to Rukkus.</p>
 
@@ -322,7 +349,7 @@ function toggleMob() {
         </div>
 
         <div class="mb-6">
-          <h3 id="s-3" class="font-display font-semibold text-[20px] text-ink mb-3">Turn the Launch Into a Story</h3>
+          <h3 id="s-3" class="font-display font-semibold text-[20px] text-ink mb-3"><span class="strategy-num">3</span>Turn the Launch Into a Story</h3>
           <p class="text-[#4B5563] text-[16px] mb-6" style="line-height:1.85;">We believed the launch of Rukkus was a newsworthy event, so I put together a full press kit to show journalists what we were about. It included the company story, digital assets, team bios, product screenshots, key stats, and background on the ticket data we had access to.</p>
           <p class="text-[#4B5563] text-[16px] mb-6" style="line-height:1.85;">This led to coverage and links from Forbes, VentureBeat, Pando, and others.</p>
 
@@ -344,7 +371,7 @@ function toggleMob() {
         </div>
 
         <div class="mb-7">
-          <h3 id="s-4" class="font-display font-semibold text-[20px] text-ink mb-3">Reverse-Engineer the Competition</h3>
+          <h3 id="s-4" class="font-display font-semibold text-[20px] text-ink mb-3"><span class="strategy-num">4</span>Reverse-Engineer the Competition</h3>
           <p class="text-[#4B5563] text-[16px] mb-6" style="line-height:1.85;">Another part of the strategy was analyzing where competitors were getting links. I pulled a list of 1,000+ pages linking to sites like StubHub and SeatGeek but not to Rukkus, then narrowed it down to the most relevant and authoritative domains for outreach.</p>
           <p class="text-[#4B5563] text-[16px] mb-6" style="line-height:1.85;">The idea was simple. If a site was willing to link to a competitor, they might link to us with the right pitch. This led to links from iMore, CNET, and the Atlanta Journal-Constitution.</p>
 
@@ -366,7 +393,7 @@ function toggleMob() {
         </div>
 
         <div class="mb-0">
-          <h3 id="s-5" class="font-display font-semibold text-[20px] text-ink mb-3">Secure University Discount Pages</h3>
+          <h3 id="s-5" class="font-display font-semibold text-[20px] text-ink mb-3"><span class="strategy-num">5</span>Secure University Discount Pages</h3>
           <p class="text-[#4B5563] text-[16px] mb-6" style="line-height:1.85;">College students are a core audience for live events. Using search operators like <code class="bg-offwhite px-1.5 py-0.5 rounded text-sm font-mono text-ink">site:.edu intitle:discounts</code>, I found hundreds of university pages listing student and staff discounts.</p>
           <p class="text-[#4B5563] text-[16px] mb-6" style="line-height:1.85;">I reached out to propose adding Rukkus to their lists, a genuinely useful addition for students, and a trust signal for Google. This landed links from Harvard, Cornell, the University of Pittsburgh, and more.</p>
 
@@ -750,6 +777,7 @@ function toggleMob() {
       <a href="services.html" class="hover:text-coral transition-colors duration-150">SEO Services</a>
       <a href="case-studies.html" class="hover:text-coral transition-colors duration-150">Case Studies</a>
       <a href="about.html" class="hover:text-coral transition-colors duration-150">About</a>
+      <a href="blog.html" class="hover:text-coral transition-colors duration-150">Blog</a>
       <a href="contact.html" class="hover:text-coral transition-colors duration-150">Contact</a>
     </nav>
     <p>© 2026 Craig Kleila. All rights reserved.</p>

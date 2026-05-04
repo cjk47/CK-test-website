@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AEO vs. SEO: Optimizing for the Next Era of Search — Craig Kleila</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          coral:  { DEFAULT: '#F47B5A', light: '#FFF1EC', dark: '#D45F3C' },
+          violet: { DEFAULT: '#7B68EE', light: '#F0EFFE', dark: '#5E4DD6' },
+          ink:    '#323232',
+          muted:  '#6B7280',
+          border: '#E8E8F0',
+          offwhite: '#F9F8FF',
+        },
+        fontFamily: {
+          display: ['Poppins', 'sans-serif'],
+          body:    ['Inter', 'sans-serif'],
+        },
+      }
+    }
+  }
+</script>
+<style>
+  body { font-family: 'Inter', sans-serif; background: #ffffff; color: #323232; }
+  .font-display { font-family: 'Poppins', sans-serif; }
+  .btn-coral { transition: filter 0.18s ease, transform 0.15s cubic-bezier(0.34,1.56,0.64,1); }
+  .btn-coral:hover { filter: brightness(0.92); }
+  .btn-coral:active { transform: scale(0.96); filter: brightness(0.88); }
+  nav a { transition: color 0.15s ease; }
+  nav a:not(.btn-coral):hover { color: #F47B5A; }
+
+  /* Article typography */
+  .prose { color: #2A2A38; font-size: 1.0625rem; line-height: 1.78; }
+  .prose p { margin-bottom: 1.4em; }
+  .prose p:last-child { margin-bottom: 0; }
+  .prose h2 { font-family: 'Poppins', sans-serif; color: #1A1A2E; font-weight: 700; font-size: 1.85rem; line-height: 1.25; letter-spacing: -0.02em; margin-top: 1.9em; margin-bottom: 0.9em; }
+  .prose h2:first-child { margin-top: 0; }
+  .prose h3 { font-family: 'Poppins', sans-serif; color: #1A1A2E; font-weight: 650; font-size: 1.35rem; line-height: 1.3; letter-spacing: -0.015em; margin-top: 2.2em; margin-bottom: 0.7em; }
+  .prose ul { list-style: none; margin: 0 0 1.6em 0; padding: 0; }
+  .prose ul li { position: relative; padding-left: 1.6em; margin-bottom: 0.7em; }
+  .prose ul li::before { content: ""; position: absolute; left: 0.25em; top: 0.78em; width: 6px; height: 6px; border-radius: 50%; background: #F47B5A; }
+  .prose ul li:last-child { margin-bottom: 0; }
+  .prose ul.no-bullets li { padding-left: 0; }
+  .prose ul.no-bullets li::before { content: none; }
+  .prose strong { font-weight: 650; color: #1A1A2E; }
+  .prose a { color: #5E4DD6; text-decoration: underline; text-decoration-color: rgba(123,104,238,0.35); text-underline-offset: 3px; transition: text-decoration-color 0.15s ease, color 0.15s ease; }
+  .prose a:hover { color: #7B68EE; text-decoration-color: #7B68EE; }
+
+  .source-link { font-size: 0.85em; color: #7B68EE; text-decoration: none; padding: 1px 7px; border-radius: 999px; background: #F0EFFE; transition: background 0.15s ease; }
+  .source-link:hover { background: #E1DDFB; }
+
+  /* Pull-out callouts */
+  .callout { background: #F9F8FF; border: 1px solid #ECE9FB; border-radius: 12px; padding: 18px 22px; margin: 1.4em 0 1.8em; }
+  .callout-label { display: inline-block; font-family: 'Poppins', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #7B68EE; margin-bottom: 8px; }
+  .callout p { margin-bottom: 0.9em; }
+  .callout p:last-child { margin-bottom: 0; }
+  .callout ul { margin-bottom: 0; }
+
+  .quote-query { background: #FFF5F1; border-radius: 12px; padding: 14px 18px; font-style: italic; color: #4A4A55; border: 1px solid #FCE5DD; margin: 1em 0 1.4em; line-height: 1.6; }
+
+  /* Comparison table */
+  .compare-table { width: 100%; border-collapse: separate; border-spacing: 0; border: 1px solid #E8E8F0; border-radius: 14px; overflow: hidden; font-size: 0.95rem; margin: 1.6em 0 0; }
+  .compare-table th, .compare-table td { padding: 14px 18px; text-align: left; vertical-align: top; line-height: 1.55; }
+  .compare-table thead th { background: #F9F8FF; font-family: 'Poppins', sans-serif; font-weight: 650; color: #1A1A2E; font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; border-bottom: 1px solid #E8E8F0; }
+  .compare-table tbody td { border-top: 1px solid #EFEEF8; }
+  .compare-table tbody tr:first-child td { border-top: none; }
+  .compare-table tbody td:first-child { font-weight: 600; color: #1A1A2E; background: #FCFBFF; }
+  @media (max-width: 640px) {
+    .compare-table { font-size: 0.85rem; }
+    .compare-table th, .compare-table td { padding: 11px 13px; }
+  }
+
+  /* Section section styling for numbered strategy headings */
+  .strategy-num { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: #FFF1EC; color: #F47B5A; font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 0.85rem; margin-right: 10px; vertical-align: middle; }
+
+  /* Mobile menu */
+  #mob { display: flex; flex-direction: column; position: fixed; top: 64px; left: 0; right: 0; bottom: 0; z-index: 40; background: #fff; transform: translateY(-105%); transition: transform 0.4s cubic-bezier(0.4,0,0.2,1); pointer-events: none; overflow-y: auto; }
+  #mob.mob-open { transform: translateY(0) !important; pointer-events: auto; }
+  @media (min-width: 768px) { #mob { display: none !important; } }
+  .mob-nav-link { cursor: pointer; -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
+  .mob-nav-link:active { background: #f3f4f6 !important; color: #1A1A2E !important; }
+  #mob-btn .mob-bar { display: block; width: 22px; height: 2px; background: currentColor; border-radius: 1px; transition: transform 0.3s ease; }
+  #mob-btn .mob-bar:first-child { margin-bottom: 6px; }
+  #mob-btn.mob-open .mob-bar:first-child { transform: translateY(4px) rotate(45deg); }
+  #mob-btn.mob-open .mob-bar:last-child { transform: translateY(-4px) rotate(-45deg); }
+
+  @media (max-width: 767px) {
+    .prose { font-size: 1rem; line-height: 1.75; }
+    .prose h2 { font-size: 1.55rem; }
+    .prose h3 { font-size: 1.2rem; }
+    .article-h1 { font-size: 2.1rem !important; }
+  }
+</style>
+</head>
+<body class="antialiased">
+<script>
+  window.addEventListener('scroll', function() {
+    var startEl = document.getElementById('aeo-what');
+    var endEl = document.getElementById('future');
+    if(!startEl || !endEl) return;
+    var start = startEl.offsetTop - 180;
+    var end = endEl.offsetTop + endEl.offsetHeight - document.documentElement.clientHeight;
+    var s = document.documentElement.scrollTop || document.body.scrollTop;
+    var pct = Math.min(Math.max((s - start) / (end - start) * 100, 0), 100);
+    var bar = document.getElementById('progress-bar');
+    if(bar) bar.style.width = pct + '%';
+  }, { passive: true });
+</script>
+
+<!-- NAV -->
+<div class="sticky top-0 z-50">
+<header class="bg-white border-b border-border" style="position:relative;">
+  <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+    <a href="index.html"><img src="newlogo.png" alt="Craig Kleila SEO" class="h-7"></a>
+    <div class="hidden md:flex items-center gap-8 text-sm font-medium text-muted">
+      <a href="services.html">SEO Services</a>
+      <a href="case-studies.html">Case Studies</a>
+      <a href="about.html">About</a>
+      <a href="blog.html" class="text-coral font-semibold">Blog</a>
+      <a href="contact.html" class="btn-coral bg-coral text-white px-5 py-2 rounded-full font-semibold text-sm">Let's Talk</a>
+    </div>
+    <button class="md:hidden flex flex-col justify-center text-ink" id="mob-btn" onclick="toggleMob()" aria-label="Toggle menu" style="width:36px;height:28px;padding:3px 7px;">
+      <span class="mob-bar"></span>
+      <span class="mob-bar"></span>
+    </button>
+  </nav>
+  <div id="progress-bar" style="position:absolute;bottom:0;left:0;width:0%;height:3px;background:#F47B5A;z-index:9999;transition:width 0.1s linear;"></div>
+</header>
+</div>
+<div id="mob">
+  <a href="services.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;">SEO Services</a>
+  <a href="case-studies.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;">Case Studies</a>
+  <a href="about.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;">About</a>
+  <a href="blog.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;">Blog</a>
+  <div class="px-6 py-5">
+    <a href="contact.html" class="btn-coral flex items-center justify-center w-full bg-[#F47B5A] text-white text-[17px] font-semibold rounded-full py-3">Let's Talk</a>
+  </div>
+</div>
+<script>
+function toggleMob() {
+  var mob = document.getElementById('mob');
+  var btn = document.getElementById('mob-btn');
+  mob.classList.toggle('mob-open');
+  btn.classList.toggle('mob-open');
+  document.body.style.overflow = mob.classList.contains('mob-open') ? 'hidden' : '';
+}
+</script>
+
+<!-- BREADCRUMB -->
+<div class="max-w-6xl mx-auto px-6 pt-7">
+  <nav class="flex items-center gap-2 text-sm">
+    <a href="blog.html" class="font-bold text-ink underline hover:text-coral" style="transition:color 0.15s ease;">Blog</a>
+    <span class="text-muted">›</span>
+    <span class="text-muted">AEO vs. SEO</span>
+  </nav>
+</div>
+
+<!-- ARTICLE HERO (full width) -->
+<div class="max-w-6xl mx-auto px-6 pt-8 md:pt-10">
+
+  <!-- header (centered) -->
+  <header class="mb-8 text-center">
+    <div class="inline-flex items-center gap-2 text-violet text-xs font-semibold px-3 py-1.5 rounded-full mb-5" style="background:#ede9fd;">
+      AI Search
+    </div>
+    <h1 class="article-h1 font-display font-extrabold text-ink leading-tight mb-5 mx-auto max-w-3xl" style="font-size:clamp(2.2rem,4vw,3rem);letter-spacing:-0.025em;font-weight:750;line-height:1.15;">AEO vs. SEO: Optimizing for the next era of search</h1>
+    <div class="flex flex-wrap items-center justify-center gap-3 text-sm text-muted">
+      <span>By Craig Kleila</span>
+      <span style="width:3px;height:3px;border-radius:50%;background:#D1D5DB;"></span>
+      <span>May 2026</span>
+      <span style="width:3px;height:3px;border-radius:50%;background:#D1D5DB;"></span>
+      <span>9 min read</span>
+    </div>
+  </header>
+
+  <!-- featured image -->
+  <div class="relative rounded-2xl overflow-hidden mb-12 md:mb-16" style="background:radial-gradient(ellipse 70% 60% at 20% 30%, rgba(244,123,90,0.22) 0%, transparent 60%),radial-gradient(ellipse 70% 60% at 80% 80%, rgba(123,104,238,0.22) 0%, transparent 60%),linear-gradient(135deg, #FFF5F1 0%, #F4F0FE 100%);border:1px solid #E8E8F0;aspect-ratio:21/9;">
+    <div class="absolute inset-0 flex items-center justify-center p-2 md:p-4">
+      <img src="yano.png" alt="AEO vs. SEO" style="max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;transform:scale(1.31);">
+    </div>
+  </div>
+
+</div>
+
+<!-- ARTICLE BODY + TOC (2-col) -->
+<div class="max-w-6xl mx-auto px-6 pb-16 md:pb-20">
+  <div class="md:grid md:grid-cols-[700px_1fr_240px] md:gap-12">
+
+    <!-- LEFT: ARTICLE COLUMN -->
+    <div class="md:max-w-[700px]">
+
+      <!-- body -->
+      <article class="prose">
+
+    <p>Search results are no longer just a list of blue links. AI platforms like ChatGPT, AI Overviews, Claude and Perplexity now give people direct answers, sometimes before they ever reach a traditional search results page.</p>
+
+    <p>This shift is redefining how customers discover information and interact with brands. As users move fluidly between search engines, AI assistants, and apps, the traditional SEO playbook must adapt. Enter <strong>Answer Engine Optimization (AEO)</strong>.</p>
+
+    <h2 id="aeo-what" class="scroll-mt-24">What is Answer Engine Optimization (AEO)?</h2>
+
+    <p>Answer Engine Optimization (AEO) is the process of structuring your content so answer engines can easily extract, synthesize, and present it as a direct answer to user questions.</p>
+
+    <p>Unlike traditional SEO, which focuses on rankings, AEO focuses on <strong>answer inclusion</strong>. The goal is to have your content cited by AI systems as the trusted source.</p>
+
+    <p>AEO applies core SEO principles to this new reality, but it requires rethinking how success is defined. Instead of optimizing for clicks, you're optimizing for visibility within the answers AI provides — whether or not the user ever lands on your site. Take some time to understand the differences, and why answer engine optimization is a large part of the future of search visibility.</p>
+
+    <h2 id="aeo-vs-seo" class="scroll-mt-24">AEO vs. SEO: What's the difference?</h2>
+
+    <p>SEO and AEO work best together.</p>
+
+    <p>Strong SEO helps your content get discovered by LLMs because AI platforms rely on search indexes and trusted web sources to find information. Studies show how often AI platforms pull from top search results:</p>
+
+    <ul>
+      <li>38% of AI Overview citations pull from Google's top 10 search results <a href="https://ahrefs.com/blog/ai-overview-citations-top-10/" target="_blank" rel="noopener" class="source-link">Source</a></li>
+      <li>Pages ranking #1 in Google were cited 3.5x more often than pages outside the top 20 SERPs <a href="#" class="source-link">Source</a></li>
+      <li>60% of Perplexity citations overlap with the top 10 organic Google results <a href="https://www.brightedge.com/news/press-releases/brightedge-releases-first-ever-research-perplexity" target="_blank" rel="noopener" class="source-link">Source</a></li>
+    </ul>
+
+    <p>AEO builds on the SEO foundation by making your content easier for LLMs to understand, extract, and ultimately cite. That means placing extra emphasis on using answer-first sections, anticipating follow-up questions, and making sure AI crawlers can access your content.</p>
+
+    <p>A simple way to think about it:</p>
+
+    <p><strong>Traditional SEO</strong> optimizes for the "best page." When someone searches "hotels in Greenpoint Brooklyn with parking," your page needs to match the full search intent to perform well in search results. That means including hotel information, parking details, amenities, location, pricing, reviews, and photos to satisfy the user intent.</p>
+
+    <p><strong>AI Search</strong> prioritizes the "best answer." For that same query, AI places more weight on content that directly answers the specific need — such as whether the hotel offers parking, whether parking is free or paid, where guests can park, and how close the hotel is to Greenpoint.</p>
+
+    <p>The goal is to create content that is thorough enough to perform in search and clear enough to be cited in AI answers.</p>
+
+    <h3>Key differences between AEO and SEO</h3>
+
+    <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Area</th>
+            <th>AEO</th>
+            <th>SEO</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Primary goal</td>
+            <td>Be the direct, cited answer in AI-powered results (ChatGPT, Gemini, etc.)</td>
+            <td>Rank high on traditional search engine results pages (Google, Bing)</td>
+          </tr>
+          <tr>
+            <td>How results appear</td>
+            <td>AI delivers one synthesized answer with source credits and follow-up links</td>
+            <td>Search engines list multiple sites in order of relevance</td>
+          </tr>
+          <tr>
+            <td>Content focus</td>
+            <td>Specific text segments and answer-ready chunks</td>
+            <td>Full web pages and site architecture</td>
+          </tr>
+          <tr>
+            <td>Success metrics</td>
+            <td>Mentions, citations, AI visibility</td>
+            <td>Keyword rankings, organic traffic, CTR</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 id="how-ai-works" class="scroll-mt-24">How AI search works</h2>
+
+    <p>The biggest difference between AI and traditional search is how they interpret a query.</p>
+
+    <p>A traditional search engine treats a long, detailed query as one string of keywords. For example:</p>
+
+    <div class="quote-query">"I want an acoustic guitar under $1,000 that's great for fingerpicking, easy for beginners, and made from sustainable materials."</div>
+
+    <p>Google might return a list of pages matching some, but not all, of those criteria — leaving you to click through and piece together the answer yourself.</p>
+
+    <p>AI search engines take a different approach. Using a technique called <strong>query fan-out</strong>, they often break the query into smaller, focused searches like:</p>
+
+    <ul>
+      <li>Best acoustic guitars under $1,000</li>
+      <li>Acoustic guitars for fingerpicking</li>
+      <li>Beginner-friendly acoustic guitars</li>
+      <li>Sustainable guitar brands</li>
+    </ul>
+
+    <p>Then, AI looks for the most relevant information across multiple sources and combines it into one answer. Depending on the prompt, that information may come from the model's internal training data, live search results, or both.</p>
+
+    <h2 id="optimize" class="scroll-mt-24">How to optimize for AEO</h2>
+
+    <p>The fundamentals haven't changed: understand your audience, build trust, and provide the best answers.</p>
+
+    <p>AEO isn't about reinventing the wheel — it's about taking what already works in SEO and adjusting it for how AI systems find and use content today.</p>
+
+    <p>The strategies below show how to future-proof your approach, blending proven SEO tactics with the nuances of AI-powered search.</p>
+
+    <h3 id="opt-1" class="scroll-mt-24"><span class="strategy-num">1</span>Create topic clusters</h3>
+
+    <p>Aligning your content with AI's query fan-out can improve visibility for your core topics and more specific long-tail searches. The most effective way to do this is by building topic clusters.</p>
+
+    <p>Topic clusters help search engines and LLMs understand how your content fits together. They not only show that you understand the main topic, but also semantically related subtopics — and how those ideas connect.</p>
+
+    <p>Instead of writing one long blog post that briefly covers ten different points, build a cluster around the topic. Create one pillar page for the broader query, then link to supporting pages that answer more specific follow-up questions.</p>
+
+    <div class="callout">
+      <span class="callout-label">Example</span>
+      <p>Let's say you're an online guitar shop. Here's how you might build a topic cluster:</p>
+      <ul class="no-bullets">
+        <li><strong>Pillar page:</strong> Best guitars for beginners</li>
+        <li><strong>Cluster pages:</strong> acoustic guitars under $1,000, best beginner guitars for kids, how to choose your first guitar, beginner guitar accessories</li>
+      </ul>
+    </div>
+
+    <p>This structure tells LLMs that your brand has the answer to the main question and the follow-up questions it will generate.</p>
+
+    <h3 id="opt-2" class="scroll-mt-24"><span class="strategy-num">2</span>Optimize for chunk-level retrieval</h3>
+
+    <p>AI extracts the most relevant passages, not entire pages. That means each section of your content needs to be clear, focused, and easy to understand on its own.</p>
+
+    <p>Each section should:</p>
+
+    <ul>
+      <li>Cover one specific question or subtopic</li>
+      <li>Answer the query without requiring the full article</li>
+      <li>Use descriptive H2s and H3s</li>
+      <li>Keep paragraphs short and direct</li>
+      <li>Avoid relying too heavily on earlier sections of the page</li>
+    </ul>
+
+    <div class="callout">
+      <span class="callout-label">Example</span>
+      <p>A sneaker brand targeting "What running shoes should I buy?" could make the page easier for AI to extract by breaking recommendations into clear, self-contained sections like:</p>
+      <ul class="no-bullets">
+        <li><strong>H2:</strong> Best overall running shoe</li>
+        <li><strong>H2:</strong> Best for racing</li>
+        <li><strong>H2:</strong> Best cushioned</li>
+        <li><strong>H2:</strong> Best lightweight</li>
+        <li><strong>H2:</strong> Best for stability</li>
+        <li><strong>H2:</strong> Best for trail</li>
+        <li><strong>H2:</strong> What to know before you shop for shoes</li>
+      </ul>
+    </div>
+
+    <p>This structure makes it easier for AI systems to extract a specific answer and understand what each section is about without needing the full page for context.</p>
+
+    <h3 id="opt-3" class="scroll-mt-24"><span class="strategy-num">3</span>Demonstrate E-E-A-T</h3>
+
+    <p>LLMs are more likely to trust content that is credible, current, and backed by real expertise. The best way to build that trust is to clearly demonstrate <strong>E-E-A-T</strong>: Experience, Expertise, Authoritativeness, and Trustworthiness.</p>
+
+    <p>Your content should make it easy to verify who created it, why they are qualified, where the information came from, and when it was last reviewed.</p>
+
+    <p>To do that, make sure your content:</p>
+
+    <ul>
+      <li>Uses actual authors instead of generic bylines like "by [company]" or "by admin"</li>
+      <li>Links to author pages that explain why the author is qualified to cover the topic</li>
+      <li>Supports important claims with reputable, up-to-date sources</li>
+      <li>Shows when the content was last reviewed or updated</li>
+      <li>Includes contact information, reviews, policies, awards, or recognitions where relevant</li>
+    </ul>
+
+    <div class="callout">
+      <span class="callout-label">Example</span>
+      <p>An investment platform creating a "Beginner's Guide to Investing" could build trust with LLMs by:</p>
+      <ul>
+        <li>Having a certified financial planner write or review the article</li>
+        <li>Including an author page that explains their financial experience</li>
+        <li>Citing reliable sources for key claims</li>
+        <li>Showing a clear last-updated date</li>
+        <li>Including disclosures and an editorial policy</li>
+      </ul>
+    </div>
+
+    <p>This structure helps show AI systems and users that your recommendations come from real experience, reliable sources, and a brand people can trust.</p>
+
+    <h3 id="opt-4" class="scroll-mt-24"><span class="strategy-num">4</span>Implement structured data and schema markup</h3>
+
+    <p>Structured data helps search engines and LLMs understand the key details on a page. It turns important information into clearly labeled data, making it easier to interpret what the page is about, which entities are mentioned, and how those entities relate to each other.</p>
+
+    <p>Use schema to:</p>
+
+    <ul>
+      <li>Label important details like products, services, locations, FAQs, reviews, authors, and breadcrumbs</li>
+      <li>Connect related entities, such as a brand, product, service, location, author, or topic</li>
+      <li>Reinforce the purpose of the page with schema that matches the on-page content</li>
+    </ul>
+
+    <div class="callout">
+      <span class="callout-label">Example</span>
+      <p>A hotel brand optimizing a hotel detail page could use Hotel schema to clearly label key details like the property name, address, amenities, reviews, room types, pricing, availability, and booking contact information.</p>
+      <p>Even if those details already appear on the page, schema makes them easier for search engines and LLMs to parse. For example, it can clarify which price belongs to which room type and which phone number is for booking.</p>
+    </div>
+
+    <p>This gives search engines and LLMs clearer context, making it easier to understand the page and answer specific user questions accurately.</p>
+
+    <h3 id="opt-5" class="scroll-mt-24"><span class="strategy-num">5</span>Build digital PR and backlinks</h3>
+
+    <p>Backlinks and brand mentions help reinforce trust and authority for both search engines and AI systems. When trusted sites reference your brand, it gives LLMs more evidence that your content is credible and worth citing.</p>
+
+    <p>The best way to earn those signals is to create something worth referencing, then promote it to the right publications, creators, and communities.</p>
+
+    <p>To build stronger authority signals, focus on:</p>
+
+    <ul>
+      <li>Earning links and mentions from reputable sites in your industry</li>
+      <li>Getting cited in relevant articles, guides, and roundups</li>
+      <li>Publishing expert insights, original data, or research others want to reference</li>
+      <li>Avoiding spammy or irrelevant backlinks that can weaken trust</li>
+    </ul>
+
+    <div class="callout">
+      <span class="callout-label">Example</span>
+      <p>Say you're a gym chain creating content about fitness trends across the country. You could analyze check-in data, class bookings, and workout data to show how fitness habits differ by city.</p>
+      <p>For example, you might identify which locations are the most active, which workouts are growing fastest in different regions, or which cities prefer strength training versus yoga.</p>
+      <p>Then, you could pitch those findings to health, lifestyle, and local news publications. Your trainers could also provide quotes explaining what the data says about local fitness behavior.</p>
+    </div>
+
+    <p>Those backlinks and mentions help show search engines and LLMs that your brand is a credible source in the industry. Over time, that can improve your authority and increase the chances your content is surfaced or cited in AI-generated answers.</p>
+
+    <h3 id="opt-6" class="scroll-mt-24"><span class="strategy-num">6</span>Maintain cross-platform visibility</h3>
+
+    <p>AI systems do not rely only on your website. They may also reference trusted publications, YouTube, Reddit, forums, review sites, social platforms, and other third-party sources.</p>
+
+    <p>That means your brand needs to show up consistently across the places your audience already looks for answers. The more often your brand is associated with the same topics across trusted sources, the easier it becomes for search engines and LLMs to understand what you are known for.</p>
+
+    <p>To strengthen cross-platform visibility, focus on:</p>
+
+    <ul>
+      <li>Contributing to trusted industry sites, YouTube, podcasts, and relevant publications</li>
+      <li>Participating in Reddit threads, forums, and niche communities where your audience is active</li>
+      <li>Turning strong website content into videos, graphics, social posts, and short explainers</li>
+      <li>Keeping your messaging, facts, tone, and business information consistent across channels</li>
+      <li>Earning mentions from third-party sources your audience and AI systems are likely to trust</li>
+    </ul>
+
+    <div class="callout">
+      <span class="callout-label">Example</span>
+      <p>Say you're a pet food brand creating content about how to choose the right dog food. You could publish a detailed guide on your website, create a short video with a veterinarian explaining what to look for, share quick comparison graphics on social, answer common questions in pet owner communities, and earn mentions from pet care blogs or local animal shelters.</p>
+    </div>
+
+    <p>This helps reinforce your brand as a trusted source on pet nutrition across multiple channels — not just your own website.</p>
+
+    <h2 id="future" class="scroll-mt-24">Future-proofing your brand visibility</h2>
+
+    <p>Brands that adapt now will maintain visibility and trust in a world where AI does more of the searching, answering, and decision-supporting.</p>
+
+    <p>The path forward is clear: continue investing in strong SEO foundations while refining content for the nuances of AI search. That means writing for both algorithms and people, thinking in answers — not just pages — and demonstrating authority through structure and substance.</p>
+
+    <p>For brands ready to meet this shift head-on, AEO isn't just a buzzword. It's a competitive advantage.</p>
+
+      </article>
+
+      <!-- back link -->
+      <div class="mt-12 pt-7" style="border-top:1px solid #E8E8F0;">
+        <a href="blog.html" class="inline-flex items-center gap-2 text-sm font-semibold text-muted hover:text-coral transition-colors" style="transition:color 0.15s ease;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Back to all articles
+        </a>
+      </div>
+
+    </div>
+
+    <!-- MIDDLE SPACER -->
+    <div class="hidden md:block" aria-hidden="true"></div>
+
+    <!-- RIGHT: TOC SIDEBAR -->
+    <aside class="hidden md:block sticky top-24 self-start">
+      <p class="text-[16px] font-semibold mb-3" style="color:#111;">On this page</p>
+      <nav id="toc-nav">
+        <div class="toc-section" data-section="aeo-what">
+          <a href="#aeo-what" class="toc-h2-link block text-[14px] font-semibold py-2.5 transition-colors duration-200" style="color:#4B5563;">What is AEO?</a>
+        </div>
+        <div class="toc-section" data-section="aeo-vs-seo">
+          <a href="#aeo-vs-seo" class="toc-h2-link block text-[14px] font-semibold py-2.5 transition-colors duration-200" style="color:#4B5563;">AEO vs. SEO</a>
+        </div>
+        <div class="toc-section" data-section="how-ai-works">
+          <a href="#how-ai-works" class="toc-h2-link block text-[14px] font-semibold py-2.5 transition-colors duration-200" style="color:#4B5563;">How AI search works</a>
+        </div>
+        <div class="toc-section" data-section="optimize">
+          <a href="#optimize" class="toc-h2-link block text-[14px] font-semibold py-2.5 transition-colors duration-200" style="color:#4B5563;">How to optimize for AEO</a>
+          <div class="toc-children">
+            <div style="margin-left:1.5px;border-left:2px solid #E5E7EB;padding-left:0;">
+              <a href="#opt-1" class="toc-h3-link block text-[12.5px] py-2 pl-3 border-l-[2px] border-transparent transition-colors duration-150" style="color:#8896A8;margin-left:-2px;">Topic clusters</a>
+              <a href="#opt-2" class="toc-h3-link block text-[12.5px] py-2 pl-3 border-l-[2px] border-transparent transition-colors duration-150" style="color:#8896A8;margin-left:-2px;">Chunk-level retrieval</a>
+              <a href="#opt-3" class="toc-h3-link block text-[12.5px] py-2 pl-3 border-l-[2px] border-transparent transition-colors duration-150" style="color:#8896A8;margin-left:-2px;">E-E-A-T</a>
+              <a href="#opt-4" class="toc-h3-link block text-[12.5px] py-2 pl-3 border-l-[2px] border-transparent transition-colors duration-150" style="color:#8896A8;margin-left:-2px;">Structured data</a>
+              <a href="#opt-5" class="toc-h3-link block text-[12.5px] py-2 pl-3 border-l-[2px] border-transparent transition-colors duration-150" style="color:#8896A8;margin-left:-2px;">Digital PR &amp; backlinks</a>
+              <a href="#opt-6" class="toc-h3-link block text-[12.5px] py-2 pl-3 border-l-[2px] border-transparent transition-colors duration-150" style="color:#8896A8;margin-left:-2px;">Cross-platform visibility</a>
+            </div>
+          </div>
+        </div>
+        <div class="toc-section" data-section="future">
+          <a href="#future" class="toc-h2-link block text-[14px] font-semibold py-2.5 transition-colors duration-200" style="color:#4B5563;">Future-proofing</a>
+        </div>
+      </nav>
+
+      <!-- Sidebar CTA -->
+      <a href="services.html" class="block mt-10 rounded-xl p-4 text-center" style="background:#FFF5F1;border:1px solid #FCE5DD;transition:background 0.2s ease, border-color 0.2s ease;" onmouseover="this.style.background='#FFEDE5';this.style.borderColor='#F8D5C8'" onmouseout="this.style.background='#FFF5F1';this.style.borderColor='#FCE5DD'">
+        <p class="font-semibold mb-1.5" style="color:#1A1A2E;font-size:1rem;line-height:1.35;">Want help applying this to your site?</p>
+        <p class="text-xs mb-3" style="line-height:1.55;color:#6B7280;">See what an SEO and AEO partnership could look like.</p>
+        <span class="inline-flex items-center gap-1.5 text-[12.5px] font-semibold" style="color:#F47B5A;">
+          Explore services
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </a>
+    </aside>
+
+  </div>
+</div>
+
+<!-- TOC active-state script -->
+<script>
+(function(){
+  var sectionIds = ['aeo-what','aeo-vs-seo','how-ai-works','optimize','future'];
+  var h3Ids = ['opt-1','opt-2','opt-3','opt-4','opt-5','opt-6'];
+  var activeSection = null;
+  var activeH3 = null;
+  function setActiveSection(id){
+    if(activeSection === id) return;
+    activeSection = id;
+    document.querySelectorAll('.toc-section').forEach(function(sec){
+      var h2 = sec.querySelector('.toc-h2-link');
+      var isActive = sec.getAttribute('data-section') === id;
+      h2.style.color = isActive ? '#F47B5A' : '#4B5563';
+      h2.style.fontWeight = isActive ? '700' : '600';
+    });
+    if(id !== 'optimize'){
+      activeH3 = null;
+      document.querySelectorAll('.toc-h3-link').forEach(function(a){ a.style.borderLeftColor = 'transparent'; });
+    }
+  }
+  function setActiveH3(id){
+    if(activeH3 === id) return;
+    activeH3 = id;
+    document.querySelectorAll('.toc-h3-link').forEach(function(a){
+      a.style.borderLeftColor = a.getAttribute('href') === '#'+id ? '#F47B5A' : 'transparent';
+    });
+  }
+  var secObs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting) setActiveSection(e.target.id); });
+  }, { rootMargin: '-15% 0px -70% 0px' });
+  sectionIds.forEach(function(id){ var el = document.getElementById(id); if(el) secObs.observe(el); });
+  var h3Obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting) setActiveH3(e.target.id); });
+  }, { rootMargin: '-15% 0px -70% 0px' });
+  h3Ids.forEach(function(id){ var el = document.getElementById(id); if(el) h3Obs.observe(el); });
+  setActiveSection('aeo-what');
+})();
+</script>
+
+<!-- CTA BANNER -->
+<section class="py-12 md:py-[80px] px-6">
+  <div class="max-w-6xl mx-auto rounded-3xl py-14 md:py-16 px-6 md:px-14 text-center" style="position:relative;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.06);background:#FFF5F3;">
+    <canvas id="mesh-grad-cta" style="position:absolute;inset:0;width:100%;height:100%;border-radius:inherit;"></canvas>
+    <div style="position:relative;z-index:1;">
+      <div class="inline-flex items-center gap-2 text-xs font-semibold px-3 py-1.5 rounded-full mb-6" style="background:rgba(255,255,255,0.55);color:#F47B5A;">Let's work together</div>
+      <h2 class="font-display font-bold text-3xl md:text-4xl text-ink tracking-tight mb-4">Need help adapting your<br>SEO for AI search?</h2>
+      <p class="text-muted mb-8" style="line-height:1.7;max-width:440px;margin-left:auto;margin-right:auto;">Drop me an email and let's figure out where to start.<br class="hidden md:inline"> No pressure, just a conversation.</p>
+      <a href="contact.html" class="btn-coral inline-flex items-center gap-2 bg-coral text-white font-semibold px-8 py-4 rounded-full text-base">Let's Talk <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+  </div>
+</section>
+<script>
+(function(){
+  var canvas = document.getElementById('mesh-grad-cta');
+  if(!canvas) return;
+  var gl = canvas.getContext('webgl2');
+  if(!gl) return;
+  var vsSource = `#version 300 es\nin vec2 a_position;\nout vec2 v_objectUV;\nvoid main(){v_objectUV=a_position;gl_Position=vec4(a_position*2.0-1.0,0.0,1.0);}`;
+  var fsSource = `#version 300 es\nprecision mediump float;\nuniform float u_time;uniform vec4 u_colors[5];uniform float u_colorsCount;uniform float u_distortion;uniform float u_swirl;\nin vec2 v_objectUV;out vec4 fragColor;\nfloat hash21(vec2 p){p=fract(p*vec2(123.34,456.21));p+=dot(p,p+45.32);return fract(p.x*p.y);}\nvec2 rotate(vec2 v,float a){float s=sin(a);float c=cos(a);return vec2(v.x*c-v.y*s,v.x*s+v.y*c);}\nvec2 getPosition(int i,float t){float a=float(i)*.37;float b=.6+fract(float(i)/3.)*.9;float c2=.8+fract(float(i+1)/4.);return .5+.5*vec2(sin(t*b+a),cos(t*c2+a*1.5));}\nvoid main(){vec2 uv=v_objectUV+.5;float t=.5*(u_time+41.5);float radius=smoothstep(0.,1.,length(uv-.5));float center=1.-radius;for(float i=1.;i<=2.;i++){uv.x+=u_distortion*center/i*sin(t+i*.4*smoothstep(.0,1.,uv.y))*cos(.2*t+i*2.4*smoothstep(.0,1.,uv.y));uv.y+=u_distortion*center/i*cos(t+i*2.*smoothstep(.0,1.,uv.x));}vec2 uvR=uv-vec2(.5);uvR=rotate(uvR,-3.*u_swirl*radius);uvR+=vec2(.5);vec3 color=vec3(0.);float opacity=0.;float totalWeight=0.;for(int i=0;i<5;i++){if(i>=int(u_colorsCount))break;vec2 pos=getPosition(i,t);float dist=pow(length(uvR-pos),3.5);float weight=1./(dist+1e-3);color+=u_colors[i].rgb*u_colors[i].a*weight;opacity+=u_colors[i].a*weight;totalWeight+=weight;}color/=max(1e-4,totalWeight);opacity=clamp(opacity/max(1e-4,totalWeight),0.,1.);fragColor=vec4(color,opacity);}`;
+  function createShader(type,source){var s=gl.createShader(type);gl.shaderSource(s,source);gl.compileShader(s);if(!gl.getShaderParameter(s,gl.COMPILE_STATUS)){gl.deleteShader(s);return null;}return s;}
+  var vs=createShader(gl.VERTEX_SHADER,vsSource),fs=createShader(gl.FRAGMENT_SHADER,fsSource);
+  var prog=gl.createProgram();gl.attachShader(prog,vs);gl.attachShader(prog,fs);gl.linkProgram(prog);
+  if(!gl.getProgramParameter(prog,gl.LINK_STATUS))return;
+  gl.useProgram(prog);
+  var buf=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,buf);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([0,0,1,0,0,1,1,1]),gl.STATIC_DRAW);
+  var aPos=gl.getAttribLocation(prog,'a_position');gl.enableVertexAttribArray(aPos);gl.vertexAttribPointer(aPos,2,gl.FLOAT,false,0,0);
+  var uTime=gl.getUniformLocation(prog,'u_time'),uColors=gl.getUniformLocation(prog,'u_colors'),uCount=gl.getUniformLocation(prog,'u_colorsCount'),uDist=gl.getUniformLocation(prog,'u_distortion'),uSwirl=gl.getUniformLocation(prog,'u_swirl');
+  function hex(h){return[parseInt(h.slice(1,3),16)/255,parseInt(h.slice(3,5),16)/255,parseInt(h.slice(5,7),16)/255];}
+  gl.uniform4fv(uColors,[...hex('#FFDAD4'),1,...hex('#FFD0C8'),1,...hex('#DDD2FF'),1,...hex('#EBE5FF'),.8,...hex('#FFE6B8'),.5]);
+  gl.uniform1f(uCount,5);gl.uniform1f(uDist,0.3);gl.uniform1f(uSwirl,0.2);
+  gl.enable(gl.BLEND);gl.blendFunc(gl.SRC_ALPHA,gl.ONE_MINUS_SRC_ALPHA);
+  var startTime=performance.now(),running=false;
+  function resize(){var r=canvas.parentElement.getBoundingClientRect();var dpr=window.devicePixelRatio||1;canvas.width=r.width*dpr;canvas.height=r.height*dpr;gl.viewport(0,0,canvas.width,canvas.height);}
+  resize();window.addEventListener('resize',resize);
+  function draw(){if(!running)return;gl.uniform1f(uTime,(performance.now()-startTime)/1000);gl.clearColor(1,0.96,0.95,1);gl.clear(gl.COLOR_BUFFER_BIT);gl.drawArrays(gl.TRIANGLE_STRIP,0,4);requestAnimationFrame(draw);}
+  var observer=new IntersectionObserver(function(entries){if(entries[0].isIntersecting){if(!running){running=true;draw();}}else{running=false;}},{threshold:0.1});
+  observer.observe(canvas.parentElement);
+})();
+</script>
+
+<!-- FOOTER -->
+<footer class="border-t border-border">
+  <div class="max-w-6xl mx-auto px-6 py-10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted">
+    <img src="newlogo.png" alt="Craig Kleila SEO" class="h-7">
+    <nav class="flex flex-wrap justify-center gap-6">
+      <a href="services.html" class="hover:text-coral transition-colors duration-150">SEO Services</a>
+      <a href="case-studies.html" class="hover:text-coral transition-colors duration-150">Case Studies</a>
+      <a href="about.html" class="hover:text-coral transition-colors duration-150">About</a>
+      <a href="blog.html" class="hover:text-coral transition-colors duration-150">Blog</a>
+      <a href="contact.html" class="hover:text-coral transition-colors duration-150">Contact</a>
+    </nav>
+    <p>© 2026 Craig Kleila. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>

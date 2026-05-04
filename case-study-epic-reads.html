@@ -74,6 +74,31 @@
   #mob-btn.mob-open .mob-bar:first-child { transform: translateY(4px) rotate(45deg); }
   #mob-btn.mob-open .mob-bar:last-child { transform: translateY(-4px) rotate(-45deg); }
   h3[id] { scroll-margin-top: 96px; }
+  /* Editorial typography (matches blog post) */
+  .cs-prose h2 { font-size: 1.85rem; line-height: 1.25; letter-spacing: -0.02em; color: #1A1A2E; font-weight: 700; }
+  .cs-prose h3 { font-size: 1.35rem; line-height: 1.3; letter-spacing: -0.015em; font-weight: 650; color: #1A1A2E; }
+  .cs-prose p { font-size: 1.0625rem; line-height: 1.78 !important; color: #2A2A38; }
+  .cs-prose li { font-size: 1.0625rem; color: #2A2A38; }
+  .cs-prose strong { color: #1A1A2E; font-weight: 650; }
+  @media (max-width: 767px) {
+    .cs-prose h2 { font-size: 1.55rem; }
+    .cs-prose h3 { font-size: 1.2rem; }
+    .cs-prose p { font-size: 1rem; line-height: 1.75 !important; }
+    .cs-prose li { font-size: 1rem; }
+  }
+  /* Numbered strategy headings */
+  .strategy-num { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: #FFF1EC; color: #F47B5A; font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 0.85rem; margin-right: 10px; vertical-align: middle; }
+  /* Coral-dot bullets (matches blog post) — only for the checkmark-style lists */
+  .cs-prose ul li.flex { display: block; position: relative; padding-left: 1.6em; margin-bottom: 0.7em; line-height: 1.78 !important; }
+  .cs-prose ul li.flex::before { content: ""; position: absolute; left: 0.25em; top: 0.78em; width: 6px; height: 6px; border-radius: 50%; background: #F47B5A; }
+  .cs-prose ul li > span.bg-coral-light { display: none; }
+  /* Preserve cs-results-grid stat styling within cs-prose */
+  .cs-prose .cs-results-grid p { font-size: revert; line-height: 1.2 !important; color: revert; }
+  .cs-prose .cs-results-grid p.text-3xl { font-size: 1.875rem; }
+  .cs-prose .cs-results-grid p.text-xs { font-size: 0.75rem; line-height: 1rem !important; color: #6B7280; }
+  .cs-prose .cs-results-grid p.text-coral { color: #F47B5A; }
+  .cs-prose .cs-results-grid p.text-violet { color: #7B68EE; }
+  .cs-prose .cs-results-grid p.text-muted { color: #6B7280; }
   @media (min-width: 768px) and (max-width: 1023px) {
     .curved-section { width: 120% !important; margin-left: -10% !important; }
     .curved-section > .max-w-5xl { max-width: 100% !important; width: calc(100vw - 48px) !important; padding-left: 0 !important; padding-right: 0 !important; margin-left: auto !important; margin-right: auto !important; }
@@ -104,6 +129,7 @@
       <a href="services.html">SEO Services</a>
       <a href="case-studies.html" class="text-coral font-semibold">Case Studies</a>
       <a href="about.html">About</a>
+      <a href="blog.html">Blog</a>
       <a href="contact.html" class="btn-coral bg-coral text-white px-5 py-2 rounded-full font-semibold text-sm">Let's Talk</a>
     </div>
     <button class="md:hidden flex flex-col justify-center text-ink" id="mob-btn" onclick="toggleMob()" aria-label="Toggle menu" style="width:36px;height:28px;padding:3px 7px;">
@@ -118,6 +144,7 @@
   <a href="services.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;" ontouchstart="this.style.background='#f3f4f6'" ontouchend="this.style.background=''" ontouchcancel="this.style.background=''">SEO Services</a>
   <a href="case-studies.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;" ontouchstart="this.style.background='#f3f4f6'" ontouchend="this.style.background=''" ontouchcancel="this.style.background=''">Case Studies</a>
   <a href="about.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;" ontouchstart="this.style.background='#f3f4f6'" ontouchend="this.style.background=''" ontouchcancel="this.style.background=''">About</a>
+  <a href="blog.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;" ontouchstart="this.style.background='#f3f4f6'" ontouchend="this.style.background=''" ontouchcancel="this.style.background=''">Blog</a>
   <div class="px-6 py-5">
     <a href="contact.html" class="btn-coral flex items-center justify-center w-full bg-[#F47B5A] text-white text-[17px] font-semibold rounded-full py-3">Let's Talk</a>
   </div>
@@ -149,7 +176,7 @@ function toggleMob() {
       <div class="flex justify-center mb-5">
         <img src="er-logo-menu-blk.png" alt="Epic Reads" style="height:27px;object-fit:contain;mix-blend-mode:multiply;">
       </div>
-      <h1 class="font-display font-bold text-4xl md:text-5xl text-ink leading-tight mb-6">How Epic Reads Grew Sales 24% With Search-Driven Content</h1>
+      <h1 class="font-display text-ink mb-6" style="font-size:clamp(2.2rem,4vw,3rem);letter-spacing:-0.025em;font-weight:750;line-height:1.15;">How Epic Reads Grew Sales 24% With Search-Driven Content</h1>
       <div class="flex justify-center gap-2 flex-wrap">
         <span style="background:#ffffff;color:#323232;border:1px solid #E8E8F0;" class="text-xs font-semibold px-3 py-1.5 rounded-full">Content Strategy</span>
       </div>
@@ -180,7 +207,7 @@ function toggleMob() {
   </div>
 
   <!-- White curved section: arcs UP into the hero image, extends below -->
-  <div class="curved-section" style="background:#F9F8FF;border-radius:50% 50% 0 0/80px 80px 0 0;margin-top:-280px;position:relative;z-index:1;padding-top:310px;padding-bottom:60px;width:150%;margin-left:-25%;">
+  <div class="curved-section" style="background:#FFF8F3;border-radius:50% 50% 0 0/80px 80px 0 0;margin-top:-280px;position:relative;z-index:1;padding-top:310px;padding-bottom:60px;width:150%;margin-left:-25%;">
     <div class="max-w-5xl mx-auto px-6">
       <div class="cs-meta-row flex flex-col md:flex-row gap-10 md:gap-16 items-start">
         <div class="cs-meta-grid grid flex-1" style="grid-template-columns:repeat(3,1fr);column-gap:90px;padding-right:40px;">
@@ -238,7 +265,7 @@ function toggleMob() {
   <div class="grid md:grid-cols-[1fr_280px] gap-16">
 
     <!-- LEFT COLUMN -->
-    <div>
+    <div class="cs-prose">
 
       <section id="challenge" class="mb-8 scroll-mt-24">
         <h2 class="font-display font-bold text-[28px] text-ink mb-4">The Challenge</h2>
@@ -251,7 +278,7 @@ function toggleMob() {
         <p class="text-[#4B5563] text-[16px] mb-6" style="line-height:1.85;">The strategy focused on capturing high-demand searches, bringing those readers to book detail pages, and turning that traffic into sales.</p>
 
         <div class="mb-10">
-          <h3 id="s-1" class="font-display font-semibold text-[20px] text-ink mb-3">Identify What Customers Are Searching For</h3>
+          <h3 id="s-1" class="font-display font-semibold text-[20px] text-ink mb-3"><span class="strategy-num">1</span>Identify What Customers Are Searching For</h3>
           <p class="text-[#4B5563] text-[16px] mb-5" style="line-height:1.85;">The first step was identifying what content Epicreads.com was missing that their audience was searching for.</p>
           <p class="text-[#4B5563] text-[16px] mb-5" style="line-height:1.85;">A gap analysis revealed a clear opportunity. Epic Reads had limited content targeting "best books by genre" searches. The few pages that did exist were going after highly competitive terms and weren't performing well.</p>
           <p class="text-[#4B5563] text-[16px] mb-6" style="line-height:1.85;">So instead of chasing competitive queries, I focused on topics they had a good chance to show up for. Things like <em>"best time travel books,"</em> <em>"best heist novels,"</em> and <em>"best poetry books for teens."</em> People searching these are actively looking for recommendations and are often close to making a decision. We made these types of queries the core focus of the content strategy moving forward.</p>
@@ -309,7 +336,7 @@ function toggleMob() {
         </div>
 
         <div class="mb-10">
-          <h3 id="s-2" class="font-display font-semibold text-[20px] text-ink mb-3">Write for Readers, Optimize for Google</h3>
+          <h3 id="s-2" class="font-display font-semibold text-[20px] text-ink mb-3"><span class="strategy-num">2</span>Write for Readers, Optimize for Google</h3>
           <p class="text-[#4B5563] text-[16px] mb-4" style="line-height:1.85;">After identifying ~50 priority keywords based on search volume, conversion potential, and competition, I created detailed content briefs to guide the writing team.</p>
           <p class="text-[#4B5563] text-[16px] mb-4" style="line-height:1.85;">Each brief acted as a precise blueprint outlining the topics to cover, content structure, page layout, metadata, internal linking opportunities, and clear paths to guide users to book pages.</p>
           <p class="text-[#4B5563] text-[16px] mb-4" style="line-height:1.85;">The focus was on creating content that matched search intent and made it easy for readers to find and buy books.</p>
@@ -334,7 +361,7 @@ function toggleMob() {
         </div>
 
         <div class="mb-10">
-          <h3 id="s-3" class="font-display font-semibold text-[20px] text-ink mb-3">Build Topical Authority Through Clusters</h3>
+          <h3 id="s-3" class="font-display font-semibold text-[20px] text-ink mb-3"><span class="strategy-num">3</span>Build Topical Authority Through Clusters</h3>
           <p class="text-[#4B5563] text-[16px] mb-4" style="line-height:1.85;">As we built out more "best books by genre" content, we organized it into a topic cluster. A central category page acted as the hub, with individual lists supporting it.</p>
           <p class="text-[#4B5563] text-[16px] mb-4" style="line-height:1.85;">Internal linking connected the hub to each list and tied related pages together. Someone reading <em>"best zombie books"</em> could easily move to vampire, werewolf, or dark fantasy lists.</p>
           <p class="text-[#4B5563] text-[16px] mb-4" style="line-height:1.85;">This structure helped build topical authority by creating depth across book genres and signaling clear relationships between pages. It made it easier for both users and search engines to navigate the content and reinforced the site as a credible source on the subject.</p>
@@ -344,7 +371,7 @@ function toggleMob() {
         </div>
 
         <div class="mb-10">
-          <h3 id="s-4" class="font-display font-semibold text-[20px] text-ink mb-3">Track, Learn, and Adjust</h3>
+          <h3 id="s-4" class="font-display font-semibold text-[20px] text-ink mb-3"><span class="strategy-num">4</span>Track, Learn, and Adjust</h3>
           <p class="text-[#4B5563] text-[16px] mb-4" style="line-height:1.8;">Publishing was only the first step. After launch, I monitored traffic, click-through rates, and conversions for every article. Underperforming pieces were revisited by strengthening internal links from higher-authority pages, refining meta tags, reworking intent, expanding thin sections, adding visuals where engagement dropped, and more.</p>
 
         </div>
@@ -653,6 +680,7 @@ function toggleMob() {
       <a href="services.html" class="hover:text-coral transition-colors duration-150">SEO Services</a>
       <a href="case-studies.html" class="hover:text-coral transition-colors duration-150">Case Studies</a>
       <a href="about.html" class="hover:text-coral transition-colors duration-150">About</a>
+      <a href="blog.html" class="hover:text-coral transition-colors duration-150">Blog</a>
       <a href="contact.html" class="hover:text-coral transition-colors duration-150">Contact</a>
     </nav>
     <p>© 2026 Craig Kleila. All rights reserved.</p>
