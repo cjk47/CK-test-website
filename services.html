@@ -692,20 +692,6 @@ Amplify your SEO performance
     flex-shrink:0;width:18px;height:18px;display:flex;align-items:center;justify-content:center;
   }
   .prob-diag-panel { animation: probFadeIn 0.22s ease; }
-  /* Subtle gradient divider at the seam */
-  .prob-layout::after {
-    content:"";
-    position:absolute;
-    left:380px;
-    top:32px;
-    bottom:32px;
-    width:1px;
-    background:linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.06) 18%, rgba(0,0,0,0.06) 82%, transparent 100%);
-    pointer-events:none;
-  }
-  @media (max-width: 767px) {
-    .prob-layout::after { display:none; }
-  }
   @keyframes probFadeIn { from { opacity:0;transform:translateY(6px); } to { opacity:1;transform:translateY(0); } }
   @media (max-width: 767px) {
     .prob-layout { flex-direction: column !important; gap: 0 !important; }
@@ -739,10 +725,10 @@ Amplify your SEO performance
 </style>
 <section class="prob-section-mobile" style="background:#fbfafe;padding:80px 0;">
   <div class="max-w-6xl mx-auto px-6">
-    <div class="prob-layout" style="display:flex;gap:0;align-items:stretch;position:relative;">
+    <div class="prob-layout" style="display:flex;gap:0;align-items:stretch;position:relative;background:linear-gradient(to right, #FBFAFE 0%, #FBFAFE 28%, #FFFFFF 58%);border-radius:20px;">
 
       <!-- LEFT: sticky heading + problem list -->
-      <div class="prob-sticky" style="width:380px;flex-shrink:0;background:linear-gradient(to bottom, #FEFEFF 0%, #FBFAFE 100%);border:1px solid #E8E8F0;border-right:none;border-radius:20px 0 0 20px;padding:36px 40px;">
+      <div class="prob-sticky" style="width:380px;flex-shrink:0;background:transparent;border:1px solid #E8E8F0;border-right:none;border-radius:20px 0 0 20px;padding:36px 40px;">
         <div style="margin-bottom:20px;">
           <div class="inline-flex items-center gap-2 text-xs font-semibold px-3 py-1.5 rounded-full" style="background:#F1F0FD;color:#745AF5;">Sound familiar?</div>
         </div>
@@ -785,7 +771,7 @@ Amplify your SEO performance
       </div>
 
       <!-- RIGHT: diagnosis card -->
-      <div id="prob-card" class="prob-diag-panel" style="flex:1;min-width:0;background:#ffffff;border:1px solid #E8E8F0;border-left:none;border-radius:0 20px 20px 0;padding:36px 40px;display:flex;flex-direction:column;justify-content:center;">
+      <div id="prob-card" class="prob-diag-panel" style="flex:1;min-width:0;background:transparent;border:1px solid #E8E8F0;border-left:none;border-radius:0 20px 20px 0;padding:36px 40px;display:flex;flex-direction:column;justify-content:center;">
         <h3 id="prob-headline" class="font-display text-ink" style="font-size:clamp(1.4rem,2.4vw,1.7rem);line-height:1.2;letter-spacing:-0.02em;font-weight:650;margin:0 0 28px 0;">Search traffic is trending down.</h3>
         <div id="prob-headline-icon" style="display:none;"></div>
         <p id="prob-subtext" class="text-muted" style="font-size:0.875rem;line-height:1.6;margin-top:-16px;margin-bottom:28px;display:none;"></p>
