@@ -715,7 +715,15 @@ function toggleMob() {
 
         <p>If Lighthouse shows poor LCP, the Network tab can help you see whether the LCP element is being discovered too late. The LCP element is often a hero image, featured image, large heading, video poster, or major above-the-fold content block.</p>
 
-        <p>Use the Img filter and look for the likely hero image. Then look at where it starts in the waterfall. A bad loading pattern often looks like this: HTML loads first, then CSS, then JavaScript, then more JavaScript, and only after all of that does the hero image start downloading. By that point, LCP is already delayed.</p>
+        <p>Check where the LCP that you discovered in the Performance tab starts in the waterfall. A bad pattern often looks like this: the HTML loads first, then CSS, JavaScript, and other page resources load, and only after that does the hero image start downloading.</p>
+
+        <p>For example, on the Allbirds homepage, the LCP element is the hero image: <code>26Q2_Pantone_Site_Homepage_Hero_Grid_Static_Desktop_16x9...jpg</code>.</p>
+
+        <p>In the waterfall, that image appears after many other requests instead of near the start of the page load. Since the browser cannot download the LCP image until it discovers it, that late start is directly contributing to their poor LCP.</p>
+
+        <figure style="margin:1.4em 0 1.6em;">
+          <img src="rara.png" alt="Chrome DevTools Network waterfall showing the Allbirds hero image (LCP element) loading after many other requests." style="width:100%;height:auto;display:block;border-radius:12px;border:1px solid #E8E8F0;">
+        </figure>
 
         <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;">
           <table class="cause-table cause-table-2col">
