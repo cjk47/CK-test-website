@@ -42,7 +42,7 @@
   .prose { color: #2A2A38; font-size: 1.0625rem; line-height: 1.78; }
   .prose p { margin-bottom: 1.4em; }
   .prose p:last-child { margin-bottom: 0; }
-  .prose p:has(+ ul), .prose p:has(+ ol) { margin-bottom: 0.5em; }
+  .prose p:has(+ ul), .prose p:has(+ ol) { margin-bottom: 0.9em; }
   .prose h2 { font-family: 'Poppins', sans-serif; color: #1A1A2E; font-weight: 700; font-size: 1.85rem; line-height: 1.25; letter-spacing: -0.02em; margin-top: 1.9em; margin-bottom: 0.9em; }
   .prose h2:has(> .h2-num) { display: flex; align-items: flex-start; gap: 12px; }
   .prose h2 > .h2-num { margin-top: 0; }
@@ -52,6 +52,12 @@
   .prose ul { list-style: none; margin: 0 0 1.6em 0; padding: 0; }
   .prose ul li { position: relative; padding-left: 1.6em; margin-bottom: 0.7em; }
   .prose ul li::before { content: ""; position: absolute; left: 0.25em; top: 0.78em; width: 6px; height: 6px; border-radius: 50%; background: #F47B5A; }
+  .prose ul ul { margin-top: 0.5em; margin-bottom: 0; }
+  .prose ul ul li { margin-bottom: 0.35em; }
+  .prose ul ul li:last-child { margin-bottom: 0; }
+  .prose ul ul li::before { background: transparent; border: 1.5px solid #F47B5A; }
+  .prose ul li:has(> ul) { margin-bottom: 1.3em; }
+  .prose ul li:has(> ul):last-child { margin-bottom: 0; }
   .prose ul li:last-child { margin-bottom: 0; }
   .prose ol { counter-reset: ol-counter; list-style: none; margin: 0 0 1.6em 0; padding: 0; }
   .prose ol li { counter-increment: ol-counter; position: relative; padding-left: 2em; margin-bottom: 0.7em; }
@@ -80,6 +86,9 @@
   .cause-table.cause-table-2col tbody td { background: #FFFFFF; width: 50%; vertical-align: top; }
   .cause-table.cause-table-2col tbody td:first-child { background: #FFFFFF; }
   .cause-table.cause-table-2col tbody td .cause-fix-list, .cause-table.cause-table-2col tbody td .cause-fix-list li { font-size: 0.875rem; color: #2A2A38; }
+  .cause-table.metrics-overview tbody td:first-child { width: 26%; }
+  .cause-table.metrics-overview tbody td:nth-child(2) { width: 47%; }
+  .cause-table.metrics-overview tbody td:nth-child(3) { width: 27%; }
   .cause-table.cause-table-paired tbody td:first-child { background: transparent; width: 40%; }
   .cause-table.cause-table-paired tbody td:nth-child(2) { background: transparent; width: 60%; }
   .cause-table.cause-table-paired tbody tr:nth-child(even) td { background: #FFFDFC; }
@@ -113,6 +122,18 @@
   .metric-pill.good { background:#E7F5EC; color:#1B6B3A; }
   .metric-pill.ok { background:#FEF3D4; color:#8A6010; }
   .metric-pill.poor { background:#FEE5E1; color:#9C2A1A; }
+
+  /* Real-world example callout */
+  .example-card { background:#EAF3FB; border-radius:12px; padding:1em 1.15em; margin:1.4em 0 1.6em; font-family:'Inter',sans-serif; font-size:0.95rem; line-height:1.55; color:#2A2A38; }
+  .example-card::before { content:"Real-world example"; display:block; font-family:'Inter',sans-serif; font-size:0.68rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#2563A8; margin-bottom:1.1em; }
+  .prose .example-card p { font-size:0.95rem; line-height:1.55; margin-bottom:1.1em !important; }
+  .prose .example-card p:last-of-type { margin-bottom:0; }
+  .prose .example-card > ul { list-style:none; margin:0; padding:0; }
+  .prose .example-card > ul > li { position:relative; padding-left:1.45em; margin-bottom:0.7em; font-size:0.95rem; line-height:1.55; }
+  .prose .example-card > ul > li:last-child { margin-bottom:0; }
+  .prose .example-card > ul > li::before { content:""; position:absolute; left:0; top:0.55em; width:6px; height:6px; border-radius:50%; background:#2563A8; }
+  .example-card figure { margin:1em 0 0; }
+  .example-card figure img { border:1px solid #C9DBEC; }
 
   /* Pro tip callout */
   .pro-tip { background:#F0EFFE; border-radius:12px; padding:0.75em 1em 0.85em; margin:1.4em 0 1.6em; font-family:'Inter',sans-serif; font-size:0.9rem; line-height:1.5; color:#2A2A38; }
@@ -311,15 +332,84 @@ function toggleMob() {
 
         <p>The key performance metrics to look for in Lighthouse are:</p>
 
-        <ul>
-          <li><strong>Largest Contentful Paint (LCP)</strong> measures when the largest visible image or text block appears in the viewport. This is one of the most important metrics because it reflects when the main content feels loaded. <span class="cwv-tag">Core Web Vital</span></li>
-          <li><strong>Total Blocking Time (TBT)</strong> measures how long the browser is blocked from responding to user input. TBT is the lab equivalent of First Input Delay (FID). High TBT usually means JavaScript is keeping the browser busy. <span class="cwv-tag">Core Web Vital</span></li>
-          <li><strong>Cumulative Layout Shift (CLS)</strong> measures how much the page moves around while it loads. A high CLS score usually means images, ads, fonts, banners, or injected content are shifting the layout. <span class="cwv-tag">Core Web Vital</span></li>
-          <li><strong>First Contentful Paint (FCP)</strong> measures when the first text or image appears on the screen. It helps show whether the page gives users an early visual response.</li>
-          <li><strong>Speed Index</strong> measures how quickly visible content appears during load. It's useful for understanding how fast the page feels visually, even though it's not a Core Web Vital.</li>
-        </ul>
+        <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;">
+          <table class="cause-table cause-table-3col metrics-overview">
+            <thead>
+              <tr>
+                <th>Metric</th>
+                <th>What it measures</th>
+                <th>Thresholds</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <p class="cause-name">Largest Contentful Paint (LCP)</p>
+                </td>
+                <td><p class="cause-desc">When the largest visible image or text block appears in the viewport. Reflects when the main content feels loaded.</p></td>
+                <td>
+                  <div class="metric-thresholds" style="flex-direction:column;align-items:flex-start;gap:4px;">
+                    <span class="metric-pill good"><span class="label">Good</span> &le; 2.5s</span>
+                    <span class="metric-pill ok"><span class="label">Okay</span> 2.5&ndash;4s</span>
+                    <span class="metric-pill poor"><span class="label">Poor</span> &gt; 4s</span>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p class="cause-name">Total Blocking Time (TBT)</p>
+                </td>
+                <td><p class="cause-desc">How long the browser is blocked from responding to user input. The lab equivalent of First Input Delay (FID). High TBT usually means JavaScript is keeping the browser busy.</p></td>
+                <td>
+                  <div class="metric-thresholds" style="flex-direction:column;align-items:flex-start;gap:4px;">
+                    <span class="metric-pill good"><span class="label">Good</span> &le; 200ms</span>
+                    <span class="metric-pill ok"><span class="label">Okay</span> 200&ndash;600ms</span>
+                    <span class="metric-pill poor"><span class="label">Poor</span> &gt; 600ms</span>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p class="cause-name">Cumulative Layout Shift (CLS)</p>
+                </td>
+                <td><p class="cause-desc">How much the page moves around while it loads. A high score usually means images, ads, fonts, banners, or injected content are shifting the layout.</p></td>
+                <td>
+                  <div class="metric-thresholds" style="flex-direction:column;align-items:flex-start;gap:4px;">
+                    <span class="metric-pill good"><span class="label">Good</span> &le; 0.1</span>
+                    <span class="metric-pill ok"><span class="label">Okay</span> 0.1&ndash;0.25</span>
+                    <span class="metric-pill poor"><span class="label">Poor</span> &gt; 0.25</span>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><p class="cause-name">First Contentful Paint (FCP)</p></td>
+                <td><p class="cause-desc">When the first text or image appears on the screen. Shows whether the page gives users an early visual response.</p></td>
+                <td>
+                  <div class="metric-thresholds" style="flex-direction:column;align-items:flex-start;gap:4px;">
+                    <span class="metric-pill good"><span class="label">Good</span> &le; 1.8s</span>
+                    <span class="metric-pill ok"><span class="label">Okay</span> 1.8&ndash;3s</span>
+                    <span class="metric-pill poor"><span class="label">Poor</span> &gt; 3s</span>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><p class="cause-name">Speed Index</p></td>
+                <td><p class="cause-desc">How quickly visible content appears during load. Useful for understanding how fast the page feels visually.</p></td>
+                <td>
+                  <div class="metric-thresholds" style="flex-direction:column;align-items:flex-start;gap:4px;">
+                    <span class="metric-pill good"><span class="label">Good</span> &le; 3.4s</span>
+                    <span class="metric-pill ok"><span class="label">Okay</span> 3.4&ndash;5.8s</span>
+                    <span class="metric-pill poor"><span class="label">Poor</span> &gt; 5.8s</span>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
-        <p>Lighthouse combines these metrics into an overall performance score from 0 to 100. The score is helpful as a quick benchmark, but the metric details give you more actionable information. LCP, TBT, and CLS make up 70% of the weighted Lighthouse performance score, so they're usually the metrics worth reviewing first.</p>
+        <p>Lighthouse combines these metrics into an overall performance score from 0 to 100. The score is helpful as a quick benchmark, but the metric details give you more actionable information.</p>
+
+        <p>LCP, TBT, and CLS, the three Core Web Vitals, make up 70% of the weighted Lighthouse performance score, so they're usually the metrics worth reviewing first.</p>
 
         <h3 id="insights-diagnostics" class="scroll-mt-24">Insights vs. Diagnostics</h3>
 
@@ -339,199 +429,114 @@ function toggleMob() {
 
         <p>Below are the most common causes for each page speed issue and the fixes that tend to work.</p>
 
-        <div id="lcp-improve" class="metric-row scroll-mt-24" style="margin-bottom:0.4em;">
-          <strong>Largest Contentful Paint (LCP)</strong>
-          <div class="metric-thresholds"><span class="metric-pill good"><span class="label">Good</span> &le; 2.5s</span><span class="metric-pill ok"><span class="label">Okay</span> 2.5&ndash;4s</span><span class="metric-pill poor"><span class="label">Poor</span> &gt; 4s</span></div>
-        </div>
-        <p style="margin-top:0;">Aim for under 2.5 seconds. If LCP is above 4 seconds, the main content is taking too long to load and should be one of your first priorities.</p>
+        <p id="lcp-improve" class="scroll-mt-24" style="margin-bottom:0.4em;font-size:1.2rem;"><strong>Largest Contentful Paint (LCP)</strong> <span class="cwv-tag">Core Web Vital</span></p>
+        <p>LCP issues usually come from one of four places: the server is too slow, important CSS or JavaScript is blocking the page, the LCP resource is too large, or the main content depends too much on client-side JavaScript.</p>
 
-        <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;">
-          <table class="cause-table cause-table-3col">
-            <thead>
-              <tr>
-                <th>Cause</th>
-                <th>Description</th>
-                <th>How to Fix</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><p class="cause-name">Slow server response times</p></td>
-                <td><p class="cause-desc">The server takes too long to send the page to the browser, delaying the rest of the load.</p></td>
-                <td>
-                  <ul class="cause-fix-list">
-                    <li>Improve server performance.</li>
-                    <li>Use a CDN to serve pages from locations closer to users.</li>
-                    <li>Cache static assets and HTML.</li>
-                  </ul>
-                </td>
-              </tr>
-              <tr>
-                <td><p class="cause-name">Render-blocking JavaScript and CSS</p></td>
-                <td><p class="cause-desc">Scripts or stylesheets delay the browser from showing the main content.</p></td>
-                <td>
-                  <ul class="cause-fix-list">
-                    <li>Minify and compress CSS and JavaScript files.</li>
-                    <li>Inline the CSS needed to style above-the-fold content.</li>
-                    <li>Defer CSS or JavaScript that is not needed right away.</li>
-                  </ul>
-                </td>
-              </tr>
-              <tr>
-                <td><p class="cause-name">Slow resource load times</p></td>
-                <td><p class="cause-desc">Large images, videos, fonts, or other files take too long to load.</p></td>
-                <td>
-                  <ul class="cause-fix-list">
-                    <li>Compress images.</li>
-                    <li>Use properly sized media.</li>
-                    <li>Preload the LCP image or other critical resources.</li>
-                    <li>Compress CSS, JavaScript, and HTML.</li>
-                  </ul>
-                </td>
-              </tr>
-              <tr>
-                <td><p class="cause-name">Client-side rendering</p></td>
-                <td><p class="cause-desc">Important content depends on JavaScript before it can appear on the page.</p></td>
-                <td>
-                  <ul class="cause-fix-list">
-                    <li>Reduce the amount of critical JavaScript.</li>
-                    <li>Avoid making key content depend entirely on JS.</li>
-                    <li>Consider server-side rendering for important pages.</li>
-                  </ul>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+        <ul>
+          <li><strong>Slow server response times.</strong> The server takes too long to send the page to the browser, delaying the rest of the load.
+            <ul>
+              <li>Improve server performance.</li>
+              <li>Use a CDN to serve pages from locations closer to users.</li>
+              <li>Cache static assets and HTML.</li>
+            </ul>
+          </li>
+          <li><strong>Render-blocking JavaScript and CSS.</strong> Scripts or stylesheets delay the browser from showing the main content.
+            <ul>
+              <li>Minify and compress CSS and JavaScript files.</li>
+              <li>Inline the CSS needed to style above-the-fold content.</li>
+              <li>Defer CSS or JavaScript that is not needed right away.</li>
+            </ul>
+          </li>
+          <li><strong>Slow resource load times.</strong> Large images, videos, fonts, or other files take too long to load.
+            <ul>
+              <li>Compress images.</li>
+              <li>Use properly sized media.</li>
+              <li>Preload the LCP image or other critical resources.</li>
+              <li>Compress CSS, JavaScript, and HTML.</li>
+            </ul>
+          </li>
+          <li><strong>Client-side rendering.</strong> Important content depends on JavaScript before it can appear on the page.
+            <ul>
+              <li>Reduce critical JavaScript.</li>
+              <li>Avoid making key content depend entirely on JS.</li>
+              <li>Consider server-side rendering for important pages.</li>
+            </ul>
+          </li>
+        </ul>
+
+        <div class="example-card">
+          <p>On the CentralBank.com homepage, several issues stand out as contributing to the high LCP:</p>
+          <ul>
+            <li><strong>Below-the-fold images load before the LCP image.</strong> The browser is spending network resources on images users cannot see yet, which delays the main above-the-fold image.</li>
+            <li><strong>The LCP image is a CSS background image.</strong> Browsers cannot discover a background image until the CSS is downloaded, parsed, and applied to the element. Switch the hero image to a standard &lt;img&gt; or &lt;picture&gt; element with fetchpriority="high".</li>
+            <li><strong>Mobile users are downloading an oversized image.</strong> The page serves a 1000px image for a 430px display area. Use srcset and sizes so mobile users get a smaller version.</li>
+            <li><strong>The LCP image is a JPEG.</strong> Convert the hero image to WebP or AVIF. Modern formats can reduce file size by 30&ndash;50% while keeping similar visual quality.</li>
+            <li><strong>Several images are requested through JavaScript.</strong> Some image requests show the initiator as www.centralbank.com/:838 &mdash; Script. This is fine for some below-the-fold images, but above-the-fold images should not depend on JavaScript before the browser can request them.</li>
+          </ul>
         </div>
 
-        <div id="tbt-improve" class="metric-row scroll-mt-24" style="margin-bottom:0.4em;margin-top:1.9em;">
-          <strong>Total Blocking Time (TBT)</strong>
-          <div class="metric-thresholds"><span class="metric-pill good"><span class="label">Good</span> &le; 200ms</span><span class="metric-pill ok"><span class="label">Okay</span> 200&ndash;600ms</span><span class="metric-pill poor"><span class="label">Poor</span> &gt; 600ms</span></div>
-        </div>
-        <p style="margin-top:0;">Aim for under 200ms. If TBT is above 600ms, JavaScript is likely keeping the browser too busy to respond quickly to users.</p>
+        <p id="tbt-improve" class="scroll-mt-24" style="margin-bottom:0.4em;margin-top:1.9em;font-size:1.2rem;"><strong>Total Blocking Time (TBT)</strong> <span class="cwv-tag">Core Web Vital</span></p>
+        <p>TBT issues almost always come from one place: JavaScript keeping the main thread too busy to respond to user input.</p>
 
-        <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;">
-          <table class="cause-table cause-table-3col">
-            <thead>
-              <tr>
-                <th>Cause</th>
-                <th>Description</th>
-                <th>How to Fix</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><p class="cause-name">Heavy JavaScript</p></td>
-                <td><p class="cause-desc">JavaScript is keeping the main thread busy and the browser can't respond to user input quickly.</p></td>
-                <td>
-                  <ul class="cause-fix-list">
-                    <li>Split large JavaScript tasks into smaller chunks.</li>
-                    <li>Prioritize JS needed for key interactions so users can interact without delay.</li>
-                    <li>Use a web worker to run tasks outside the main browser thread.</li>
-                    <li>Reduce JavaScript execution time.</li>
-                  </ul>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <ul>
+          <li><strong>Heavy JavaScript.</strong> JavaScript is keeping the main thread busy and the browser can't respond to user input quickly.
+            <ul>
+              <li>Split large JavaScript tasks into smaller chunks.</li>
+              <li>Prioritize JS needed for key interactions so users can interact without delay.</li>
+              <li>Use a web worker to run tasks outside the main browser thread.</li>
+              <li>Reduce JavaScript execution time.</li>
+            </ul>
+          </li>
+        </ul>
 
-        <div id="cls-improve" class="metric-row scroll-mt-24" style="margin-bottom:0.4em;margin-top:1.9em;">
-          <strong>Cumulative Layout Shift (CLS)</strong>
-          <div class="metric-thresholds"><span class="metric-pill good"><span class="label">Good</span> &le; 0.1</span><span class="metric-pill ok"><span class="label">Okay</span> 0.1&ndash;0.25</span><span class="metric-pill poor"><span class="label">Poor</span> &gt; 0.25</span></div>
-        </div>
-        <p style="margin-top:0;">Aim to keep CLS below 0.1. If CLS is above 0.25, users are likely seeing noticeable page movement as content loads.</p>
+        <p id="cls-improve" class="scroll-mt-24" style="margin-bottom:0.4em;margin-top:1.9em;font-size:1.2rem;"><strong>Cumulative Layout Shift (CLS)</strong> <span class="cwv-tag">Core Web Vital</span></p>
+        <p>CLS issues usually come from one of three places: images without dimensions, content that loads in late, or fonts swapping after text is already visible.</p>
 
-        <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;">
-          <table class="cause-table cause-table-3col">
-            <thead>
-              <tr>
-                <th>Cause</th>
-                <th>Description</th>
-                <th>How to Fix</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><p class="cause-name">Images without dimensions</p></td>
-                <td><p class="cause-desc">Without width and height attributes, the browser can't allocate space until the image downloads, shifting nearby elements.</p></td>
-                <td>
-                  <ul class="cause-fix-list">
-                    <li>Add width and height attributes on images and videos.</li>
-                  </ul>
-                </td>
-              </tr>
-              <tr>
-                <td><p class="cause-name">Dynamically injected content</p></td>
-                <td><p class="cause-desc">Embedded content (e.g., social posts or widgets) can load at unpredictable heights, causing layout shifts.</p></td>
-                <td>
-                  <ul class="cause-fix-list">
-                    <li>Reserve space before it loads, such as setting a minimum height for the container.</li>
-                  </ul>
-                </td>
-              </tr>
-              <tr>
-                <td><p class="cause-name">Fonts loading after text appears</p></td>
-                <td><p class="cause-desc">Fonts can swap in after text is already visible, which may cause the layout to shift.</p></td>
-                <td>
-                  <ul class="cause-fix-list">
-                    <li>Preload important font files.</li>
+        <ul>
+          <li><strong>Images without dimensions.</strong> Without width and height attributes, the browser can't allocate space until the image downloads, shifting nearby elements.
+            <ul>
+              <li>Add width and height attributes on images and videos.</li>
+            </ul>
+          </li>
+          <li><strong>Dynamically injected content.</strong> Embedded content (e.g., social posts or widgets) can load at unpredictable heights, causing layout shifts.
+            <ul>
+              <li>Reserve space before it loads, such as setting a minimum height for the container.</li>
+            </ul>
+          </li>
+          <li><strong>Fonts loading after text appears.</strong> Fonts can swap in after text is already visible, which may cause the layout to shift.
+            <ul>
+              <li>Preload important font files.</li>
+            </ul>
+          </li>
+        </ul>
 
-                  </ul>
-                </td>
-              </tr>
-              <tr>
-                <td><p class="cause-name">Ads loading at different sizes</p></td>
-                <td><p class="cause-desc">Ad slots can serve different banner sizes. If the loaded ad is taller than the space reserved for it, it can push content down.</p></td>
-                <td>
-                  <ul class="cause-fix-list">
-                    <li>Use consistent ad sizes when possible, or reserve enough space for the largest expected ad size.</li>
-                  </ul>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="example-card">
+          <p>On Xvivo.com, several issues in the hero section stand out as contributing to CLS:</p>
+          <ul>
+            <li><strong>Hero fonts are swapping in late.</strong> The hero headline uses "F37 Judge" and "Montserrat." The text may render first with a fallback font, then shift when the final font files load. Because the headline uses a heavy "F37 Judge" weight, the character widths and line height can change significantly, causing the hero content container to resize after the initial render.</li>
+            <li><strong>The background video does not have a poster image.</strong> The hero video is absolutely positioned with height: 100%, but it does not appear to use a poster attribute. Without a poster image, the browser may not have a stable visual placeholder before the video metadata or first frame loads. Add a poster="image-url.jpg" attribute so the browser can hold the space more consistently while the video loads.</li>
+            <li><strong>The hero layout depends on negative positioning.</strong> The parent .wp-block-cover uses top: -11.5rem and margin-bottom: -11.5rem. Negative offsets on large above-the-fold containers can make the layout more fragile, especially when fonts, video, or other assets load after the initial paint. When those elements settle, the browser may recalculate the hero position and shift nearby content.</li>
+            <li><strong>The hero container needs a more stable height.</strong> The hero relies on layout rules that can change as text and media load. Set a fixed height or explicit aspect-ratio on the hero container so the space is reserved from the start.</li>
+          </ul>
         </div>
 
-        <div id="fcp-improve" class="metric-row scroll-mt-24" style="margin-bottom:0.4em;margin-top:1.9em;">
-          <strong>First Contentful Paint (FCP)</strong>
-          <div class="metric-thresholds"><span class="metric-pill good"><span class="label">Good</span> &le; 1.8s</span><span class="metric-pill ok"><span class="label">Okay</span> 1.8&ndash;3s</span><span class="metric-pill poor"><span class="label">Poor</span> &gt; 3s</span></div>
-        </div>
-        <p style="margin-top:0;">Aim for under 1.8 seconds. If FCP is above 3 seconds, the page is taking too long to show users the first visible text, image, or other content.</p>
+        <p id="fcp-improve" class="scroll-mt-24" style="margin-bottom:0.4em;margin-top:1.9em;font-size:1.2rem;"><strong>First Contentful Paint (FCP)</strong></p>
+        <p>FCP issues usually come from CSS getting in the way: either external stylesheets blocking the page from rendering, or heavy and unused styles slowing down what the browser has to compute.</p>
 
-        <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;">
-          <table class="cause-table cause-table-3col">
-            <thead>
-              <tr>
-                <th>Cause</th>
-                <th>Description</th>
-                <th>How to Fix</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><p class="cause-name">Render-blocking external stylesheets</p></td>
-                <td><p class="cause-desc">External CSS can delay the first visible content because the browser has to download and process the stylesheet before showing the page.</p></td>
-                <td>
-                  <ul class="cause-fix-list">
-                    <li>Inline styles for above-the-fold content.</li>
-                  </ul>
-                </td>
-              </tr>
-              <tr>
-                <td><p class="cause-name">Heavy or unused style calculations</p></td>
-                <td><p class="cause-desc">Complex or unused CSS gives the browser more work to do before it can show content.</p></td>
-                <td>
-                  <ul class="cause-fix-list">
-                    <li>Simplify CSS.</li>
-                    <li>Reduce complex selectors.</li>
-                    <li>Remove styles the page does not use.</li>
-                  </ul>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <ul>
+          <li><strong>Render-blocking external stylesheets.</strong> External CSS can delay the first visible content because the browser has to download and process the stylesheet before showing the page.
+            <ul>
+              <li>Inline styles for above-the-fold content.</li>
+            </ul>
+          </li>
+          <li><strong>Heavy or unused style calculations.</strong> Complex or unused CSS gives the browser more work to do before it can show content.
+            <ul>
+              <li>Simplify CSS.</li>
+              <li>Reduce complex selectors.</li>
+              <li>Remove styles the page does not use.</li>
+            </ul>
+          </li>
+        </ul>
 
         <h2 id="performance" class="scroll-mt-24"><span class="h2-num">2</span>Performance: diagnose CWV issues</h2>
 
@@ -547,26 +552,12 @@ function toggleMob() {
 
         <ul>
           <li><strong>Largest Contentful Paint (LCP):</strong> hover over the LCP element in the Largest Contentful Paint card to see which element is counted as the LCP on the page.</li>
-        </ul>
-
-        <figure style="margin:0.6em 0 1.6em;">
-          <img src="196.png" alt="Chrome DevTools Performance panel highlighting the LCP element on the page." style="width:100%;height:auto;display:block;border-radius:12px;border:1px solid #E8E8F0;">
-        </figure>
-
-        <ul>
           <li><strong>Cumulative Layout Shift (CLS):</strong> hover over the Worst cluster in the CLS card to highlight the area of the page where layout shifts are happening.</li>
-        </ul>
-
-        <figure style="margin:0.6em 0 1.6em;">
-          <img src="197.png" alt="Chrome DevTools Performance panel highlighting the worst layout shift cluster on the page." style="width:100%;height:auto;display:block;border-radius:12px;border:1px solid #E8E8F0;">
-        </figure>
-
-        <ul>
           <li><strong>Interaction to Next Paint (INP):</strong> interact with the page on the left to populate the INP card &mdash; open the navigation, click buttons, use filters, or interact with forms. Chrome will show a local INP value so you can see whether the page responds quickly.</li>
         </ul>
 
         <figure style="margin:0.6em 0 1.6em;">
-          <img src="8.png" alt="Chrome DevTools Performance panel showing the local INP measurement after interacting with the page." style="width:100%;height:auto;display:block;border-radius:12px;border:1px solid #E8E8F0;">
+          <img src="196.png" alt="Chrome DevTools Performance panel highlighting the LCP element on the page." style="width:100%;height:auto;display:block;border-radius:12px;border:1px solid #E8E8F0;">
         </figure>
 
         <h3 id="perf-deeper" class="scroll-mt-24">Further performance insights</h3>
@@ -756,44 +747,6 @@ function toggleMob() {
           </table>
         </div>
 
-        <p>This is one of the most common and highest-impact LCP fixes because the hero image is often the largest visible element on the page.</p>
-
-        <p class="sub-heading">Dependency chains</p>
-
-        <p>A healthy waterfall shows many resources loading in parallel. A problematic waterfall often shows a stair-step pattern, where one file finishes before the next one begins. This usually means the page has dependency chains. For example, one script may need to load before another script can run, or one stylesheet may import another stylesheet.</p>
-
-        <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;">
-          <table class="cause-table cause-table-2col">
-            <thead>
-              <tr>
-                <th>What to watch for</th>
-                <th>How to fix</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <ul class="cause-fix-list">
-                    <li>Files loading one after another</li>
-                    <li>CSS <code>@import</code> rules</li>
-                    <li>Script dependencies delaying other scripts</li>
-                    <li>Theme, framework, or plugin files stacked in sequence</li>
-                  </ul>
-                </td>
-                <td>
-                  <ul class="cause-fix-list">
-                    <li>Reduce unnecessary dependencies</li>
-                    <li>Avoid CSS <code>@import</code></li>
-                    <li>Defer scripts that are not needed immediately</li>
-                    <li>Simplify theme or framework stacks</li>
-                    <li>Load files in parallel when possible</li>
-                  </ul>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
         <h3 id="net-heavy" class="scroll-mt-24">Find heavy resources</h3>
 
         <p class="sub-heading">Large images and oversized downloads</p>
@@ -803,6 +756,10 @@ function toggleMob() {
         <p>As a general rule, images around 300&ndash;500 KB are worth checking, 500 KB&ndash;1 MB should be investigated, and anything over 1 MB should be treated as high priority.</p>
 
         <p>Large images can slow down downloads and directly affect LCP, especially if they appear above the fold.</p>
+
+        <figure style="margin:1.4em 0 1.6em;">
+          <img src="raaa.png" alt="Chrome DevTools Network panel showing large image files identified by size." style="width:100%;height:auto;display:block;border-radius:12px;border:1px solid #E8E8F0;">
+        </figure>
 
         <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;">
           <table class="cause-table cause-table-2col">
@@ -871,43 +828,6 @@ function toggleMob() {
                     <li>Defer non-critical scripts</li>
                     <li>Lazy-load below-the-fold components</li>
                     <li>Reduce hydration cost on mostly static pages</li>
-                  </ul>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <p class="sub-heading">Video files</p>
-
-        <p>Video can quickly dominate page weight, especially if it loads before the main content is usable. Filter by Media or search for <code>mp4</code>, <code>webm</code>, or <code>mov</code>. Look for videos that load early in the waterfall.</p>
-
-        <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;">
-          <table class="cause-table cause-table-2col">
-            <thead>
-              <tr>
-                <th>What to watch for</th>
-                <th>How to fix</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <ul class="cause-fix-list">
-                    <li>Video loading before main content</li>
-                    <li>Autoplay video on mobile</li>
-                    <li>3&ndash;5 MB+ files loaded early</li>
-                    <li>5 MB+ videos during initial page load</li>
-                    <li>Video player JavaScript loading repeatedly</li>
-                  </ul>
-                </td>
-                <td>
-                  <ul class="cause-fix-list">
-                    <li>Use poster images</li>
-                    <li>Lazy-load video after interaction</li>
-                    <li>Avoid autoplaying heavy video on mobile</li>
-                    <li>Compress video aggressively</li>
-                    <li>Do not load video player libraries until needed</li>
                   </ul>
                 </td>
               </tr>
