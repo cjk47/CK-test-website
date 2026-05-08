@@ -132,7 +132,21 @@
   .prose .example-card > ul > li { position:relative; padding-left:1.45em; margin-bottom:0.7em; font-size:0.95rem; line-height:1.55; }
   .prose .example-card > ul > li:last-child { margin-bottom:0; }
   .prose .example-card > ul > li::before { content:""; position:absolute; left:0; top:0.55em; width:6px; height:6px; border-radius:50%; background:#2563A8; }
-  .example-card figure { margin:1em 0 0; }
+  .example-card figure { margin:1.3em 0 !important; }
+  .prose .example-card p:has(+ figure) { margin-bottom:0 !important; }
+  .prose .example-card figure + ul { margin-top:0 !important; }
+  .example-split { display:grid; grid-template-columns:1fr auto; gap:1.5em; align-items:center; margin-bottom:1.1em; }
+  .prose .example-card .example-split p.example-text { margin:0 !important; }
+  .stat-snapshot { background:#FFFFFF; border-radius:10px; padding:calc(0.85em - 4px) calc(0.95em - 4px); display:flex; flex-direction:row; align-items:center; align-self:center; gap:0.75em; min-width:0; box-sizing:border-box; box-shadow:0 1px 3px rgba(37,99,168,0.08), 0 0 0 1px rgba(201,219,236,0.6); }
+  .stat-snapshot .stat-label { font-family:'Inter',sans-serif; font-size:0.65rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#2563A8; line-height:1.15; }
+  .stat-snapshot .stat-value { font-family:'Poppins',sans-serif; font-size:1.15rem; font-weight:650; color:#2A2A38; line-height:1; letter-spacing:-0.01em; }
+  .stat-snapshot .stat-value .stat-unit { font-size:0.95rem; font-weight:600; margin-left:0.05em; color:#4B5563; }
+  .stat-snapshot .metric-pill { font-size:0.65rem; padding:2px 7px; }
+  @media (max-width: 700px) {
+    .example-split { grid-template-columns: 1fr; }
+    .example-split .example-figure { height:auto; max-width:240px; }
+    .example-split .example-figure img { width:100% !important; }
+  }
   .example-card figure img { border:1px solid #C9DBEC; }
 
   /* Pro tip callout */
@@ -318,7 +332,7 @@ function toggleMob() {
         <h3 id="run-lighthouse" class="scroll-mt-24">How to run a Lighthouse report</h3>
 
         <ol>
-          <li>Open the page in Chrome, right-click, and click <strong>Inspect</strong>.</li>
+          <li>Open the page in Chrome Incognito Mode, right-click, and click <strong>Inspect</strong>.</li>
           <li>Go to the <strong>Lighthouse</strong> tab. If you don't see it, click the <strong>&raquo;</strong> icon.</li>
           <li>For most audits: select <strong>Performance</strong>, choose <strong>Mobile</strong>, and keep <strong>Navigation</strong> mode.</li>
           <li>Click <strong>Analyze page load</strong>.</li>
@@ -413,19 +427,19 @@ function toggleMob() {
 
         <h3 id="insights-diagnostics" class="scroll-mt-24">Insights vs. Diagnostics</h3>
 
-        <p>Use the metrics to understand which part of the experience is weak. Then use <strong>Insights</strong> and <strong>Diagnostics</strong> to understand what may be causing the issue and where to investigate next.</p>
+        <p>Use the metrics to identify which part of the page experience needs work. Then use <strong>Insights</strong> and <strong>Diagnostics</strong> to figure out why.</p>
 
-        <p><strong>Insights</strong> give you the big picture. Instead of listing dozens of disconnected warnings, Lighthouse groups related issues into higher-level themes like "LCP bottlenecks" or "CLS culprits." This makes it easier to understand what's actually driving the problem without getting lost in individual line items.</p>
+        <p><strong>Insights</strong> group related issues into clearer themes, like LCP delays or layout shift problems, so you can see the bigger pattern behind the score.</p>
 
-        <p><strong>Diagnostics</strong> are where you go deeper. This is where Lighthouse shows the specific files, elements, and technical details behind those issues &mdash; things like large JavaScript files, exact layout shift elements, or caching behavior.</p>
+        <p><strong>Diagnostics</strong> show the specific details behind those issues, including the files, elements, scripts, or caching problems that may need attention.</p>
 
-        <p>Once you understand both, you can move into fixing the issue more confidently.</p>
+        <p>Together, they help you move from &ldquo;this metric is poor&rdquo; to &ldquo;here's where I should investigate.&rdquo;</p>
 
         <h3 id="lcp-fix" class="scroll-mt-24">How to fix common site speed issues</h3>
 
         <p>Once Lighthouse highlights the metrics dragging the page down, the next step is figuring out how to fix them.</p>
 
-        <p>You can use the "Show audits relevant to" filter to narrow the audit list to issues tied to a specific metric: All, FCP, LCP, TBT, or CLS. Clicking one of these filters shows the audits most relevant to that metric, along with specific issues and recommended fixes.</p>
+        <p>The &ldquo;Show audits relevant to&rdquo; filter lets you narrow the report by metric, including FCP, LCP, TBT, and CLS. This helps you cut through the full audit list and focus on the issues affecting that metric.</p>
 
         <p>Below are the most common causes for each page speed issue and the fixes that tend to work.</p>
 
@@ -465,13 +479,21 @@ function toggleMob() {
         </ul>
 
         <div class="example-card">
-          <p>On the CentralBank.com homepage, several issues stand out as contributing to the high LCP:</p>
+          <div class="example-split">
+            <p class="example-text">On the CentralBank.com homepage, several issues stand out as contributing to the high LCP:</p>
+            <div class="stat-snapshot">
+              <div class="stat-label">LCP</div>
+              <div class="stat-value">4.1<span class="stat-unit">s</span></div>
+            </div>
+          </div>
+          <figure>
+            <img src="ccccc.png" alt="CentralBank.com Network panel showing image loading order related to LCP." style="width:100%;height:auto;display:block;border-radius:8px;">
+          </figure>
           <ul>
             <li><strong>Below-the-fold images load before the LCP image.</strong> The browser is spending network resources on images users cannot see yet, which delays the main above-the-fold image.</li>
             <li><strong>The LCP image is a CSS background image.</strong> Browsers cannot discover a background image until the CSS is downloaded, parsed, and applied to the element. Switch the hero image to a standard &lt;img&gt; or &lt;picture&gt; element with fetchpriority="high".</li>
             <li><strong>Mobile users are downloading an oversized image.</strong> The page serves a 1000px image for a 430px display area. Use srcset and sizes so mobile users get a smaller version.</li>
             <li><strong>The LCP image is a JPEG.</strong> Convert the hero image to WebP or AVIF. Modern formats can reduce file size by 30&ndash;50% while keeping similar visual quality.</li>
-            <li><strong>Several images are requested through JavaScript.</strong> Some image requests show the initiator as www.centralbank.com/:838 &mdash; Script. This is fine for some below-the-fold images, but above-the-fold images should not depend on JavaScript before the browser can request them.</li>
           </ul>
         </div>
 
@@ -488,6 +510,22 @@ function toggleMob() {
             </ul>
           </li>
         </ul>
+
+        <div class="example-card">
+          <div class="example-split">
+            <p class="example-text">On NYTimes.com, large JavaScript is contributing to the high TBT:</p>
+            <div class="stat-snapshot">
+              <div class="stat-label">TBT</div>
+              <div class="stat-value">2,360<span class="stat-unit">ms</span></div>
+            </div>
+          </div>
+          <figure>
+            <img src="nyyyyyy.png" alt="NYTimes.com Performance panel showing large JavaScript bundles consuming main-thread time." style="width:100%;height:auto;display:block;border-radius:8px;">
+          </figure>
+          <ul>
+            <li><strong>Large JavaScript bundles are taking too long to execute.</strong> The page spends significant main-thread time evaluating large scripts, including main-7898505577c9d051fa86.js and a large vendor bundle. Break large bundles into smaller chunks and use dynamic imports so the browser only loads the JavaScript needed for the initial view.</li>
+          </ul>
+        </div>
 
         <p id="cls-improve" class="scroll-mt-24" style="margin-bottom:0.4em;margin-top:1.9em;font-size:1.2rem;"><strong>Cumulative Layout Shift (CLS)</strong> <span class="cwv-tag">Core Web Vital</span></p>
         <p>CLS issues usually come from one of three places: images without dimensions, content that loads in late, or fonts swapping after text is already visible.</p>
@@ -511,12 +549,20 @@ function toggleMob() {
         </ul>
 
         <div class="example-card">
-          <p>On Xvivo.com, several issues in the hero section stand out as contributing to CLS:</p>
+          <div class="example-split">
+            <p class="example-text">On GameSpot.com, several issues stand out as contributing to a poor CLS score:</p>
+            <div class="stat-snapshot">
+              <div class="stat-label">CLS</div>
+              <div class="stat-value">0.68</div>
+            </div>
+          </div>
+          <figure>
+            <img src="gameee.png" alt="GameSpot.com homepage screenshot showing layout shift issue caused by unreserved ad space." style="width:100%;height:auto;display:block;border-radius:8px;">
+          </figure>
           <ul>
-            <li><strong>Hero fonts are swapping in late.</strong> The hero headline uses "F37 Judge" and "Montserrat." The text may render first with a fallback font, then shift when the final font files load. Because the headline uses a heavy "F37 Judge" weight, the character widths and line height can change significantly, causing the hero content container to resize after the initial render.</li>
-            <li><strong>The background video does not have a poster image.</strong> The hero video is absolutely positioned with height: 100%, but it does not appear to use a poster attribute. Without a poster image, the browser may not have a stable visual placeholder before the video metadata or first frame loads. Add a poster="image-url.jpg" attribute so the browser can hold the space more consistently while the video loads.</li>
-            <li><strong>The hero layout depends on negative positioning.</strong> The parent .wp-block-cover uses top: -11.5rem and margin-bottom: -11.5rem. Negative offsets on large above-the-fold containers can make the layout more fragile, especially when fonts, video, or other assets load after the initial paint. When those elements settle, the browser may recalculate the hero position and shift nearby content.</li>
-            <li><strong>The hero container needs a more stable height.</strong> The hero relies on layout rules that can change as text and media load. Set a fixed height or explicit aspect-ratio on the hero container so the space is reserved from the start.</li>
+            <li><strong>Top ad space is not being reserved.</strong> The div#site-wrapper is pushed down when ad units above it load. Reserve the expected ad space upfront so the page content does not jump when the ad appears.</li>
+            <li><strong>Images inside the page do not have reserved dimensions.</strong> Many images in carousel and card sections are missing width and height attributes in the HTML. Without those values, the browser may not reserve enough space before the images load. Add image dimensions or use CSS aspect-ratio so the layout stays stable.</li>
+            <li><strong>Elements above the CLS issue are changing height.</strong> The header and ad containers above where the main CLS issue occurs are expanding after the page starts loading, which pushes #site-wrapper downward. Reserve the expected space upfront with min-height so the layout stays stable.</li>
           </ul>
         </div>
 
@@ -538,13 +584,31 @@ function toggleMob() {
           </li>
         </ul>
 
+        <div class="example-card">
+          <div class="example-split">
+            <p class="example-text">On Athenahealth.com, several issues stand out as contributing to the poor FCP:</p>
+            <div class="stat-snapshot">
+              <div class="stat-label">FCP</div>
+              <div class="stat-value">5.2<span class="stat-unit">s</span></div>
+            </div>
+          </div>
+          <figure>
+            <img src="attttt.png" alt="Athenahealth.com Network panel showing multiple render-blocking CSS files loading early." style="width:100%;height:auto;display:block;border-radius:8px;">
+          </figure>
+          <ul>
+            <li><strong>Too many render-blocking CSS files are loading early.</strong> The page is loading 14 separate stylesheets that block rendering, including component-specific files like CardCarousel.css, PageTitleModule.css, and AthenaOneInAction.css. The browser has to download and parse these files before it can start painting content on the page.</li>
+            <li><strong>Some non-critical CSS is loading before the first paint.</strong> Styles for components that are not needed immediately, such as lower-page carousels or footer sections, appear to be part of the critical rendering path. Defer non-critical CSS so the browser can prioritize the styles needed for the above-the-fold content.</li>
+            <li><strong>Font requests are adding to the critical request chain.</strong> Google Fonts stylesheets for Source Sans Pro and PT Serif add more resources the browser needs to resolve before rendering text cleanly. Use font-display: swap or font-display: optional so text can appear with a fallback font while custom fonts load.</li>
+          </ul>
+        </div>
+
         <h2 id="performance" class="scroll-mt-24"><span class="h2-num">2</span>Performance: diagnose CWV issues</h2>
 
-        <p>The Performance tab is a useful starting point for troubleshooting page speed issues. It can help you understand what is slowing the page down and identify actionable fixes for Core Web Vitals.</p>
+        <p>The Performance tab helps you troubleshoot page speed issues and see what may be hurting Core Web Vitals.</p>
 
-        <p id="perf-setup" class="scroll-mt-24">To run a performance report, open Chrome DevTools in Incognito Mode, go to the Performance tab, then click the Record and reload icon <span style="display:inline-block;width:0.95em;height:0.95em;overflow:hidden;vertical-align:-0.16em;position:relative;margin:0;"><img src="rricon.png" alt="Record and reload icon" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transform:scale(1.2);"></span> to run a lab test.</p>
+        <p id="perf-setup" class="scroll-mt-24">To run a report, open Chrome DevTools, go to the Performance tab, and click Record and reload <span style="display:inline-block;width:0.95em;height:0.95em;overflow:hidden;vertical-align:-0.16em;position:relative;margin:0;"><img src="rricon.png" alt="Record and reload icon" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transform:scale(1.2);"></span> to start a lab test.</p>
 
-        <p>Once the report finishes loading, connect field data in the right column. This lets you compare your local test with Core Web Vitals data from real users.</p>
+        <p>After the report loads, connect field data in the right column. This lets you compare your local test with Core Web Vitals data from real users.</p>
 
         <h3 id="perf-cwv" class="scroll-mt-24">Review Core Web Vitals</h3>
 
@@ -553,11 +617,11 @@ function toggleMob() {
         <ul>
           <li><strong>Largest Contentful Paint (LCP):</strong> hover over the LCP element in the Largest Contentful Paint card to see which element is counted as the LCP on the page.</li>
           <li><strong>Cumulative Layout Shift (CLS):</strong> hover over the Worst cluster in the CLS card to highlight the area of the page where layout shifts are happening.</li>
-          <li><strong>Interaction to Next Paint (INP):</strong> interact with the page on the left to populate the INP card &mdash; open the navigation, click buttons, use filters, or interact with forms. Chrome will show a local INP value so you can see whether the page responds quickly.</li>
+          <li><strong>Interaction to Next Paint (INP):</strong> interact with the page on the left to populate the INP card. Chrome will show a local INP value so you can see whether the page responds quickly.</li>
         </ul>
 
         <figure style="margin:0.6em 0 1.6em;">
-          <img src="196.png" alt="Chrome DevTools Performance panel highlighting the LCP element on the page." style="width:100%;height:auto;display:block;border-radius:12px;border:1px solid #E8E8F0;">
+          <video src="newyyyyyyyyyy2.mov" autoplay muted loop playsinline preload="metadata" style="width:100%;height:auto;display:block;border-radius:12px;"></video>
         </figure>
 
         <h3 id="perf-deeper" class="scroll-mt-24">Further performance insights</h3>
@@ -837,11 +901,15 @@ function toggleMob() {
 
         <p class="sub-heading">Third-party scripts</p>
 
-        <p>Third-party scripts are one of the most common causes of performance problems on large websites. In the Network tab, look for requests from domains like <code>googletagmanager.com</code>, <code>assets.adobedtm.com</code>, <code>facebook.net</code>, <code>doubleclick.net</code>, <code>hotjar.com</code>, <code>linkedin.com</code>, <code>qualtrics.com</code>, and <code>cookielaw.org</code>.</p>
+        <p>Third-party scripts are a common cause of performance problems on large websites.</p>
 
-        <p>These tools often include analytics platforms, tag managers, ad scripts, chat widgets, heatmaps, personalization tools, and tracking pixels.</p>
+        <p>To find them, open the Network tab, click More filters, and select 3rd-party requests from the dropdown. This filters the report to requests from outside domains, such as googletagmanager.com, assets.adobedtm.com, facebook.net, doubleclick.net, or hotjar.com.</p>
 
-        <p><strong>Why it matters:</strong> third-party tools can compete with critical resources, trigger additional requests, add main-thread work, and delay rendering.</p>
+        <p>These scripts become an issue when they affect the initial page load. Look for third-party requests that load before key resources like CSS, fonts, or the LCP image; take several hundred milliseconds to download; trigger extra requests; or create long tasks in the Performance tab.</p>
+
+        <figure style="margin:1.4em 0 1.6em;">
+          <video src="yasssssssss.mov" autoplay muted loop playsinline preload="metadata" style="width:100%;height:auto;display:block;border-radius:12px;"></video>
+        </figure>
 
         <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;">
           <table class="cause-table cause-table-2col">
@@ -856,7 +924,6 @@ function toggleMob() {
                 <td>
                   <ul class="cause-fix-list">
                     <li>Third-party scripts loading before main CSS, JS, or hero images</li>
-                    <li>Scripts starting in the first 1&ndash;2 seconds</li>
                     <li>Tools triggering many additional requests</li>
                     <li>Large third-party files</li>
                     <li>Sitewide scripts not needed on every page</li>
@@ -877,8 +944,6 @@ function toggleMob() {
             </tbody>
           </table>
         </div>
-
-        <p>Your own content should not have to compete with marketing scripts for early bandwidth.</p>
 
         <h2 id="coverage" class="scroll-mt-24"><span class="h2-num">4</span>Coverage: find unused code</h2>
 
@@ -1072,35 +1137,6 @@ function toggleMob() {
   async: script.async,
   defer: script.defer
 }));</code></pre>
-
-        <p class="snippet-title">8. List third-party scripts</p>
-        <p class="code-note"><strong>Why it matters:</strong> Third-party scripts often add hidden network and main-thread cost.</p>
-        <p class="code-note"><strong>How to fix:</strong> Audit vendors, remove unused tools, delay non-essential scripts, and avoid duplicate loading.</p>
-        <span class="paste-label">Paste into Console</span>
-        <pre class="code-block"><code>[...document.scripts]
-.filter(script =&gt; script.src)
-.filter(script =&gt; new URL(script.src).hostname !== location.hostname)
-.map(script =&gt; ({
-  host: new URL(script.src).hostname,
-  src: script.src,
-  async: script.async,
-  defer: script.defer
-}));</code></pre>
-
-        <p class="snippet-title">9. Find largest resources</p>
-        <p class="code-note"><strong>Why it matters:</strong> A few large files often create most of the page-weight problem.</p>
-        <p class="code-note"><strong>How to fix:</strong> Optimize based on type — images, JS, CSS, video, fonts, or third-party resources.</p>
-        <span class="paste-label">Paste into Console</span>
-        <pre class="code-block"><code>performance.getEntriesByType('resource')
-.map(r =&gt; ({
-  name: r.name,
-  type: r.initiatorType,
-  transferKB: Math.round(r.transferSize / 1024),
-  decodedKB: Math.round(r.decodedBodySize / 1024),
-  durationMS: Math.round(r.duration)
-}))
-.sort((a, b) =&gt; b.transferKB - a.transferKB)
-.slice(0, 25);</code></pre>
 
       </article>
 
