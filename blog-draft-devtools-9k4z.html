@@ -60,15 +60,32 @@
   video::-webkit-media-controls-toggle-closed-captions-button,
   video::-webkit-media-controls-play-button,
   video::-webkit-media-controls-current-time-display,
-  video::-webkit-media-controls-time-remaining-display { display: none !important; }
-  .video-play-overlay { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:72px; height:72px; border-radius:50%; background:rgba(255,255,255,0.95); border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:0 6px 22px rgba(0,0,0,0.25); transition:transform 0.18s ease, opacity 0.2s ease, background 0.18s ease; z-index:3; padding:0; }
-  .video-play-overlay:hover { transform:translate(-50%,-50%) scale(1.08); background:#fff; }
-  .video-play-overlay svg { width:28px; height:28px; color:#1A1A2E; margin-left:4px; }
+  video::-webkit-media-controls-time-remaining-display,
+  video::-webkit-media-controls-status-display,
+  video::-webkit-media-controls-time-control-container,
+  video::-webkit-media-controls-cast-button,
+  video::-webkit-media-controls-picture-in-picture-button,
+  video::-webkit-media-controls-airplay-button,
+  video::-webkit-media-controls-rewind-button,
+  video::-webkit-media-controls-forward-button { display: none !important; }
+  @media (hover: none) {
+    video::-webkit-media-controls,
+    video::-webkit-media-controls-panel,
+    video::-webkit-media-controls-enclosure,
+    video::-webkit-media-controls-start-playback-button { display: none !important; -webkit-appearance: none !important; opacity: 0 !important; }
+  }
+  .video-play-overlay { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); background:transparent; border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:transform 0.18s ease, opacity 0.2s ease; z-index:3; padding:0; }
+  .video-play-overlay:hover { transform:translate(-50%,-50%) scale(1.1); }
+  .video-play-overlay svg { width:64px; height:64px; color:#fff; filter:drop-shadow(0 2px 12px rgba(0,0,0,0.45)); }
   .video-wrap.playing .video-play-overlay { opacity:0; pointer-events:none; transform:translate(-50%,-50%) scale(0.85); }
   .video-wrap { position: relative; line-height: 0; }
   .video-restart { position: absolute; bottom: 48px; right: 12px; background: rgba(0,0,0,0.6); color: #fff; border: none; width: 34px; height: 34px; border-radius: 50%; cursor: pointer; opacity: 0; transition: opacity 0.2s ease, background 0.15s ease; display: flex; align-items: center; justify-content: center; padding: 0; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); z-index: 2; }
   .video-restart:hover { background: rgba(0,0,0,0.85); }
-  .video-wrap:hover .video-restart { opacity: 1; }
+  .video-wrap:hover .video-restart,
+  .video-wrap.playing .video-restart { opacity: 1; }
+  @media (hover: none) {
+    .video-restart { opacity: 1; }
+  }
   .video-restart svg { width: 16px; height: 16px; }
   .prose ul { list-style: none; margin: 0 0 1.6em 0; padding: 0; }
   .prose ul li { position: relative; padding-left: 1.6em; margin-bottom: 0.7em; }
@@ -507,8 +524,8 @@ function toggleMob() {
           </figure>
           <ul>
             <li><strong>Below-the-fold images load before the LCP image.</strong> The browser is spending network resources on images users cannot see yet, which delays the main above-the-fold image.</li>
-            <li><strong>The LCP image is a CSS background image.</strong> Browsers cannot discover a background image until the CSS is downloaded, parsed, and applied to the element. Switch the hero image to a standard &lt;img&gt; or &lt;picture&gt; element with fetchpriority="high".</li>
-            <li><strong>Mobile users are downloading an oversized image.</strong> The page serves a 1000px image for a 430px display area. Use srcset and sizes so mobile users get a smaller version.</li>
+            <li><strong>The LCP image is a CSS background image.</strong> The browser has to download and process the CSS before it can discover the image. Use a standard &lt;img&gt; element with fetchpriority="high".</li>
+            <li><strong>The mobile image is oversized.</strong> Mobile users are downloading a 1000px image for a 430px display area. Use srcset and sizes to serve smaller images on smaller screens.</li>
             <li><strong>The LCP image is a JPEG.</strong> Convert the hero image to WebP or AVIF. Modern formats can reduce file size by 30&ndash;50% while keeping similar visual quality.</li>
           </ul>
         </div>
@@ -576,9 +593,9 @@ function toggleMob() {
             <img src="gameee.png" alt="GameSpot.com homepage screenshot showing layout shift issue caused by unreserved ad space." style="width:100%;height:auto;display:block;border-radius:8px;">
           </figure>
           <ul>
-            <li><strong>Top ad space is not being reserved.</strong> The div#site-wrapper is pushed down when ad units above it load. Reserve the expected ad space upfront so the page content does not jump when the ad appears.</li>
-            <li><strong>Images inside the page do not have reserved dimensions.</strong> Many images in carousel and card sections are missing width and height attributes in the HTML. Without those values, the browser may not reserve enough space before the images load. Add image dimensions or use CSS aspect-ratio so the layout stays stable.</li>
-            <li><strong>Elements above the CLS issue are changing height.</strong> The header and ad containers above where the main CLS issue occurs are expanding after the page starts loading, which pushes #site-wrapper downward. Reserve the expected space upfront with min-height so the layout stays stable.</li>
+            <li><strong>Top ad space is not reserved.</strong> When ads load above the page content, they push div#site-wrapper down and cause the page to jump. Reserve the expected ad height before the ad loads.</li>
+            <li><strong>Carousel and card images are missing dimensions.</strong> Many images don't include width and height in the HTML, so the browser can't reliably hold space for them before they load. Add image dimensions or use CSS aspect-ratio.</li>
+            <li><strong>The header and ad containers expand after load.</strong> Elements above the main content change height after the page starts loading, which pushes #site-wrapper downward. Set a min-height for those areas so the layout stays stable.</li>
           </ul>
         </div>
 
@@ -612,9 +629,9 @@ function toggleMob() {
             <img src="attttt.png" alt="Athenahealth.com Network panel showing multiple render-blocking CSS files loading early." style="width:100%;height:auto;display:block;border-radius:8px;">
           </figure>
           <ul>
-            <li><strong>Too many render-blocking CSS files are loading early.</strong> The page is loading 14 separate stylesheets that block rendering, including component-specific files like CardCarousel.css, PageTitleModule.css, and AthenaOneInAction.css. The browser has to download and parse these files before it can start painting content on the page.</li>
-            <li><strong>Some non-critical CSS is loading before the first paint.</strong> Styles for components that are not needed immediately, such as lower-page carousels or footer sections, appear to be part of the critical rendering path. Defer non-critical CSS so the browser can prioritize the styles needed for the above-the-fold content.</li>
-            <li><strong>Font requests are adding to the critical request chain.</strong> Google Fonts stylesheets for Source Sans Pro and PT Serif add more resources the browser needs to resolve before rendering text cleanly. Use font-display: swap or font-display: optional so text can appear with a fallback font while custom fonts load.</li>
+            <li><strong>Too many CSS files are blocking the first paint.</strong> The page loads 14 separate stylesheets early, including component-specific files like CardCarousel.css, PageTitleModule.css, and AthenaOneInAction.css. The browser has to download and parse these files before it can show content.</li>
+            <li><strong>Non-critical CSS is loading too soon.</strong> Styles for lower-page components, such as carousels and footer sections, appear to load before the first paint. Defer CSS that is not needed for above-the-fold content.</li>
+            <li><strong>Font files are adding more delay.</strong> Google Fonts stylesheets for Source Sans Pro and PT Serif add extra requests before text can render cleanly. Use font-display: swap or font-display: optional so text can appear while custom fonts load.</li>
           </ul>
         </div>
 
@@ -683,11 +700,12 @@ function toggleMob() {
 
         <p>The server is slow if you see a long <em>Waiting for server response</em> segment, a large gap before other requests begin, and other resources waiting until the HTML request finishes.</p>
 
-        <p>For example, the Gap.com request below shows a TTFB of 1,030 ms, which is worth reviewing. As a general rule, anything above 500 ms should be investigated.</p>
-
-        <figure style="margin:1.4em 0 1.6em;">
-          <video src="nahhhhhhhh.mov" muted loop playsinline controls controlsList="nodownload nofullscreen noremoteplayback noplaybackrate" disablepictureinpicture preload="metadata" style="width:100%;height:auto;display:block;border-radius:12px;"></video>
-        </figure>
+        <div class="example-card">
+          <p>The Gap.com request below shows a TTFB of 1,030 ms, which is worth reviewing. As a general rule, anything above 500 ms should be investigated.</p>
+          <figure>
+            <video src="nahhhhhhhh.mov" muted loop playsinline controls controlsList="nodownload nofullscreen noremoteplayback noplaybackrate" disablepictureinpicture preload="metadata" style="width:100%;height:auto;display:block;border-radius:8px;"></video>
+          </figure>
+        </div>
 
         <p>If the server takes too long to return the initial HTML, the rest of the page starts late. The browser may not be able to discover the page's CSS, JavaScript, images, fonts, metadata, structured data, or internal links until the HTML document comes back.</p>
 
@@ -1189,13 +1207,22 @@ function toggleMob() {
     play.className = 'video-play-overlay';
     play.type = 'button';
     play.setAttribute('aria-label', 'Play video');
-    play.innerHTML = '<svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20"/></svg>';
-    play.addEventListener('click', function(){ video.play(); });
+    play.innerHTML = '<svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"><polygon points="8 5 18 12 8 19"/></svg>';
+    play.addEventListener('click', function(e){ e.stopPropagation(); video.play(); });
     wrap.appendChild(play);
+
+    video.addEventListener('click', function(){
+      if (video.paused) { video.play(); } else { video.pause(); }
+    });
 
     video.addEventListener('play', function(){ wrap.classList.add('playing'); });
     video.addEventListener('pause', function(){ wrap.classList.remove('playing'); });
     video.addEventListener('ended', function(){ wrap.classList.remove('playing'); });
+
+    // Force first-frame preview (especially on iOS)
+    video.addEventListener('loadedmetadata', function(){
+      try { video.currentTime = 0.001; } catch(e) {}
+    });
 
     videos.push(video);
   });
