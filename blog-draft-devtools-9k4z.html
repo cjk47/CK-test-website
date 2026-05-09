@@ -52,6 +52,24 @@
   .prose h4 { font-family: 'Poppins', sans-serif; color: #1A1A2E; font-weight: 650; font-size: 1.2rem; line-height: 1.35; letter-spacing: -0.012em; margin-top: 1.8em; margin-bottom: 0.55em; }
   .toc-children { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
   .toc-section.active .toc-children { max-height: 600px; }
+  video::-webkit-media-controls-mute-button,
+  video::-webkit-media-controls-volume-slider,
+  video::-webkit-media-controls-volume-control-container,
+  video::-webkit-media-controls-fullscreen-button,
+  video::-webkit-media-controls-overflow-button,
+  video::-webkit-media-controls-toggle-closed-captions-button,
+  video::-webkit-media-controls-play-button,
+  video::-webkit-media-controls-current-time-display,
+  video::-webkit-media-controls-time-remaining-display { display: none !important; }
+  .video-play-overlay { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:72px; height:72px; border-radius:50%; background:rgba(255,255,255,0.95); border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:0 6px 22px rgba(0,0,0,0.25); transition:transform 0.18s ease, opacity 0.2s ease, background 0.18s ease; z-index:3; padding:0; }
+  .video-play-overlay:hover { transform:translate(-50%,-50%) scale(1.08); background:#fff; }
+  .video-play-overlay svg { width:28px; height:28px; color:#1A1A2E; margin-left:4px; }
+  .video-wrap.playing .video-play-overlay { opacity:0; pointer-events:none; transform:translate(-50%,-50%) scale(0.85); }
+  .video-wrap { position: relative; line-height: 0; }
+  .video-restart { position: absolute; bottom: 48px; right: 12px; background: rgba(0,0,0,0.6); color: #fff; border: none; width: 34px; height: 34px; border-radius: 50%; cursor: pointer; opacity: 0; transition: opacity 0.2s ease, background 0.15s ease; display: flex; align-items: center; justify-content: center; padding: 0; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); z-index: 2; }
+  .video-restart:hover { background: rgba(0,0,0,0.85); }
+  .video-wrap:hover .video-restart { opacity: 1; }
+  .video-restart svg { width: 16px; height: 16px; }
   .prose ul { list-style: none; margin: 0 0 1.6em 0; padding: 0; }
   .prose ul li { position: relative; padding-left: 1.6em; margin-bottom: 0.7em; }
   .prose ul li::before { content: ""; position: absolute; left: 0.25em; top: 0.78em; width: 6px; height: 6px; border-radius: 50%; background: #F47B5A; }
@@ -321,10 +339,6 @@ function toggleMob() {
 
         <p>Chrome DevTools will open on the side or bottom of the browser. At the top, you'll see tabs like Elements, Console, Network, Performance, and Lighthouse.</p>
 
-        <figure style="margin:1.6em 0 1.8em;">
-          <img src="devtools.png" alt="Chrome DevTools panel showing Elements, Console, Sources, Network, Performance, Memory, and Lighthouse tabs." style="width:100%;height:auto;display:block;border-radius:12px;border:1px solid #E8E8F0;">
-        </figure>
-
         <h2 id="lighthouse" class="scroll-mt-24"><span class="h2-num">1</span>Lighthouse: run a quick speed audit</h2>
 
         <p>Google Lighthouse is a free tool built into Chrome DevTools that helps you quickly evaluate the quality and performance of a webpage.</p>
@@ -343,7 +357,7 @@ function toggleMob() {
         </ol>
 
         <figure style="margin:1.6em 0 1.8em;">
-          <img src="lighthouse.png" alt="Chrome DevTools Lighthouse panel — Generate a Lighthouse report with Mode, Device, and Categories options, plus the Analyze page load button." style="width:100%;height:auto;display:block;border-radius:12px;border:1px solid #E8E8F0;">
+          <video src="mehhhhhh.mov" muted loop playsinline controls controlsList="nodownload nofullscreen noremoteplayback noplaybackrate" disablepictureinpicture preload="metadata" style="width:100%;height:auto;display:block;border-radius:12px;"></video>
         </figure>
 
         <h3 id="fix-issues" class="scroll-mt-24">Key performance metrics</h3>
@@ -623,16 +637,16 @@ function toggleMob() {
         </ul>
 
         <figure style="margin:0.6em 0 1.6em;">
-          <video src="newyyyyyyyyyy2.mov" autoplay muted loop playsinline preload="metadata" style="width:100%;height:auto;display:block;border-radius:12px;"></video>
+          <video src="newyyyyyyyyyy2.mov" muted loop playsinline controls controlsList="nodownload nofullscreen noremoteplayback noplaybackrate" disablepictureinpicture preload="metadata" style="width:100%;height:auto;display:block;border-radius:12px;"></video>
         </figure>
 
-        <h3 id="perf-deeper" class="scroll-mt-24">Further performance insights</h3>
+        <h3 id="perf-deeper" class="scroll-mt-24">Further insights &amp; Ask AI</h3>
 
-        <p>Click the sidebar icon <span style="display:inline-block;width:1.05em;height:1.05em;overflow:hidden;vertical-align:-0.22em;position:relative;margin:0 1px;"><img src="sidebar.png" alt="Sidebar icon" style="position:absolute;width:118%;height:118%;left:-9%;top:-9%;object-fit:contain;"></span> to open more detailed information about each issue. You can click Ask AI to ask follow-up questions, such as what may be causing the problem and how to fix it.</p>
+        <p>Click the sidebar icon <span style="display:inline-block;width:1.05em;height:1.05em;overflow:hidden;vertical-align:-0.22em;position:relative;margin:0 1px;"><img src="sidebar.png" alt="Sidebar icon" style="position:absolute;width:118%;height:118%;left:-9%;top:-9%;object-fit:contain;"></span> to see more detail about each issue. Then select Ask AI to better understand the problem and how to fix it.</p>
 
-        <p>You can also access AI from any DevTools view by clicking the three-dot icon <span style="display:inline-block;width:1.05em;height:1.05em;overflow:hidden;vertical-align:-0.22em;position:relative;margin:0 1px;"><img src="topright.png" alt="Three-dot icon" style="position:absolute;width:118%;height:118%;left:-9%;top:-9%;object-fit:contain;"></span> and selecting Debug with AI.</p>
+        <p>You can ask AI anywhere in DevTools by clicking the three-dot icon <span style="display:inline-block;width:1.05em;height:1.05em;overflow:hidden;vertical-align:-0.22em;position:relative;margin:0 1px;"><img src="topright.png" alt="Three-dot icon" style="position:absolute;width:118%;height:118%;left:-9%;top:-9%;object-fit:contain;"></span> and selecting Debug with AI.</p>
 
-        <p>To enable these features, go to DevTools Settings &gt; AI innovations.</p>
+        <p>To turn this on, go to DevTools Settings &gt; AI innovations.</p>
 
         <figure style="margin:0.6em 0 1.6em;">
           <img src="39.png" alt="Chrome DevTools Performance panel showing further insights." style="width:100%;height:auto;display:block;border-radius:12px;border:1px solid #E8E8F0;">
@@ -663,16 +677,16 @@ function toggleMob() {
 
         <p class="sub-heading">Check the initial HTML request first</p>
 
-        <p>The first thing I usually check is the main document request. This is normally the first row in the waterfall and matches the page URL.</p>
+        <p>The first thing I usually check is the main document request. This is usually one of the first rows in the waterfall and matches the page URL.</p>
 
         <p>Hover over the waterfall for that request and look for <em>Waiting for server response</em>. This is essentially the page's Time to First Byte (TTFB).</p>
 
         <p>The server is slow if you see a long <em>Waiting for server response</em> segment, a large gap before other requests begin, and other resources waiting until the HTML request finishes.</p>
 
-        <p>For example, the Gap.com request below shows a TTFB of 670 ms, which is worth reviewing. As a general rule, anything above 500 ms should be investigated.</p>
+        <p>For example, the Gap.com request below shows a TTFB of 1,030 ms, which is worth reviewing. As a general rule, anything above 500 ms should be investigated.</p>
 
         <figure style="margin:1.4em 0 1.6em;">
-          <img src="wayt.png" alt="Chrome DevTools Network Timing tab showing a long Waiting for server response segment of 670ms." style="width:100%;height:auto;display:block;border-radius:12px;border:1px solid #E8E8F0;">
+          <video src="nahhhhhhhh.mov" muted loop playsinline controls controlsList="nodownload nofullscreen noremoteplayback noplaybackrate" disablepictureinpicture preload="metadata" style="width:100%;height:auto;display:block;border-radius:12px;"></video>
         </figure>
 
         <p>If the server takes too long to return the initial HTML, the rest of the page starts late. The browser may not be able to discover the page's CSS, JavaScript, images, fonts, metadata, structured data, or internal links until the HTML document comes back.</p>
@@ -889,7 +903,7 @@ function toggleMob() {
         <p>These scripts become an issue when they affect the initial page load. Look for third-party requests that load before key resources like CSS, fonts, or the LCP image; take several hundred milliseconds to download; trigger extra requests; or create long tasks in the Performance tab.</p>
 
         <figure style="margin:1.4em 0 1.6em;">
-          <video src="yasssssssss.mov" autoplay muted loop playsinline preload="metadata" style="width:100%;height:auto;display:block;border-radius:12px;"></video>
+          <video src="yasssssssss.mov" muted loop playsinline controls controlsList="nodownload nofullscreen noremoteplayback noplaybackrate" disablepictureinpicture preload="metadata" style="width:100%;height:auto;display:block;border-radius:12px;"></video>
         </figure>
 
         <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;">
@@ -941,7 +955,7 @@ function toggleMob() {
         <p>To fix it, split JavaScript by route, template, or component so each page gets only the code it needs. Remove unused dependencies, lazy-load non-critical features, and avoid sending desktop-only components to mobile when possible.</p>
 
         <figure style="margin:1.4em 0 1.6em;">
-          <video src="waaaatyyy.mov" autoplay muted loop playsinline preload="metadata" style="width:100%;height:auto;display:block;border-radius:12px;"></video>
+          <video src="waaaatyyy.mov" muted loop playsinline controls controlsList="nodownload nofullscreen noremoteplayback noplaybackrate" disablepictureinpicture preload="metadata" style="width:100%;height:auto;display:block;border-radius:12px;"></video>
         </figure>
 
         <h3 id="cov-css" class="scroll-mt-24">2. Large unused CSS</h3>
@@ -1068,7 +1082,7 @@ function toggleMob() {
           <div class="toc-children">
             <div style="margin-left:1.5px;border-left:2px solid #E5E7EB;padding-left:0;">
               <a href="#perf-cwv" class="toc-h3-link block text-[12.5px] py-2 pl-3 border-l-[2px] border-transparent transition-colors duration-150" style="color:#8896A8;margin-left:-2px;">Review Core Web Vitals</a>
-              <a href="#perf-deeper" class="toc-h3-link block text-[12.5px] py-2 pl-3 border-l-[2px] border-transparent transition-colors duration-150" style="color:#8896A8;margin-left:-2px;">Further insights</a>
+              <a href="#perf-deeper" class="toc-h3-link block text-[12.5px] py-2 pl-3 border-l-[2px] border-transparent transition-colors duration-150" style="color:#8896A8;margin-left:-2px;">Further insights &amp; Ask AI</a>
             </div>
           </div>
         </div>
@@ -1146,6 +1160,55 @@ function toggleMob() {
   }, { rootMargin: '-15% 0px -70% 0px' });
   h3Ids.forEach(function(id){ var el = document.getElementById(id); if(el) h3Obs.observe(el); });
   setActiveSection('open-devtools');
+})();
+</script>
+
+<!-- Video restart button + scroll-into-view restart -->
+<script>
+(function(){
+  var videos = [];
+  document.querySelectorAll('video').forEach(function(video){
+    if (video.parentNode.classList.contains('video-wrap')) return;
+    var wrap = document.createElement('div');
+    wrap.className = 'video-wrap';
+    video.parentNode.insertBefore(wrap, video);
+    wrap.appendChild(video);
+    var btn = document.createElement('button');
+    btn.className = 'video-restart';
+    btn.type = 'button';
+    btn.title = 'Restart video';
+    btn.setAttribute('aria-label', 'Restart video');
+    btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><polyline points="3 4 3 10 9 10"/></svg>';
+    btn.addEventListener('click', function(){
+      video.currentTime = 0;
+      video.play();
+    });
+    wrap.appendChild(btn);
+
+    var play = document.createElement('button');
+    play.className = 'video-play-overlay';
+    play.type = 'button';
+    play.setAttribute('aria-label', 'Play video');
+    play.innerHTML = '<svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20"/></svg>';
+    play.addEventListener('click', function(){ video.play(); });
+    wrap.appendChild(play);
+
+    video.addEventListener('play', function(){ wrap.classList.add('playing'); });
+    video.addEventListener('pause', function(){ wrap.classList.remove('playing'); });
+    video.addEventListener('ended', function(){ wrap.classList.remove('playing'); });
+
+    videos.push(video);
+  });
+
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (!e.isIntersecting) {
+        e.target.pause();
+        e.target.currentTime = 0;
+      }
+    });
+  }, { threshold: 0.1 });
+  videos.forEach(function(v){ obs.observe(v); });
 })();
 </script>
 
