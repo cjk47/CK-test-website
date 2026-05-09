@@ -49,6 +49,9 @@
   .h2-num { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%; background: #FFF1EC; color: #F47B5A; font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 1.05rem; flex-shrink: 0; }
   .prose h2:first-child { margin-top: 0; }
   .prose h3 { font-family: 'Poppins', sans-serif; color: #1A1A2E; font-weight: 650; font-size: 1.55rem; line-height: 1.3; letter-spacing: -0.015em; margin-top: 2.2em; margin-bottom: 0.7em; }
+  .prose h4 { font-family: 'Poppins', sans-serif; color: #1A1A2E; font-weight: 650; font-size: 1.2rem; line-height: 1.35; letter-spacing: -0.012em; margin-top: 1.8em; margin-bottom: 0.55em; }
+  .toc-children { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+  .toc-section.active .toc-children { max-height: 600px; }
   .prose ul { list-style: none; margin: 0 0 1.6em 0; padding: 0; }
   .prose ul li { position: relative; padding-left: 1.6em; margin-bottom: 0.7em; }
   .prose ul li::before { content: ""; position: absolute; left: 0.25em; top: 0.78em; width: 6px; height: 6px; border-radius: 50%; background: #F47B5A; }
@@ -152,6 +155,7 @@
   /* Pro tip callout */
   .pro-tip { background:#F0EFFE; border-radius:12px; padding:0.75em 1em 0.85em; margin:1.4em 0 1.6em; font-family:'Inter',sans-serif; font-size:0.9rem; line-height:1.5; color:#2A2A38; }
   .pro-tip::before { content:"Pro Tips"; display:block; font-family:'Inter',sans-serif; font-size:0.68rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#5E4DD6; margin-bottom:1.1em; }
+  .pro-tip.pro-tip-single::before { content:"Pro Tip"; }
   .prose .pro-tip ul { list-style:none; margin:0; padding:0; }
   .prose .pro-tip ul li { position:relative; padding-left:1.45em; margin-bottom:0.55em; }
   .prose .pro-tip ul li:last-child { margin-bottom:0; }
@@ -342,7 +346,7 @@ function toggleMob() {
           <img src="lighthouse.png" alt="Chrome DevTools Lighthouse panel — Generate a Lighthouse report with Mode, Device, and Categories options, plus the Analyze page load button." style="width:100%;height:auto;display:block;border-radius:12px;border:1px solid #E8E8F0;">
         </figure>
 
-        <h3 id="fix-issues" class="scroll-mt-24">What to Look For</h3>
+        <h3 id="fix-issues" class="scroll-mt-24">Key performance metrics</h3>
 
         <p>The key performance metrics to look for in Lighthouse are:</p>
 
@@ -425,15 +429,13 @@ function toggleMob() {
 
         <p>LCP, TBT, and CLS, the three Core Web Vitals, make up 70% of the weighted Lighthouse performance score, so they're usually the metrics worth reviewing first.</p>
 
-        <h3 id="insights-diagnostics" class="scroll-mt-24">Insights vs. Diagnostics</h3>
+        <h4 id="insights-diagnostics" class="scroll-mt-24">Insights vs. Diagnostics</h4>
 
         <p>Use the metrics to identify which part of the page experience needs work. Then use <strong>Insights</strong> and <strong>Diagnostics</strong> to figure out why.</p>
 
         <p><strong>Insights</strong> group related issues into clearer themes, like LCP delays or layout shift problems, so you can see the bigger pattern behind the score.</p>
 
         <p><strong>Diagnostics</strong> show the specific details behind those issues, including the files, elements, scripts, or caching problems that may need attention.</p>
-
-        <p>Together, they help you move from &ldquo;this metric is poor&rdquo; to &ldquo;here's where I should investigate.&rdquo;</p>
 
         <h3 id="lcp-fix" class="scroll-mt-24">How to fix common site speed issues</h3>
 
@@ -626,55 +628,36 @@ function toggleMob() {
 
         <h3 id="perf-deeper" class="scroll-mt-24">Further performance insights</h3>
 
-        <p>Click the sidebar icon <span style="display:inline-block;width:1.05em;height:1.05em;overflow:hidden;vertical-align:-0.22em;position:relative;margin:0 1px;"><img src="sidebar.png" alt="Sidebar icon" style="position:absolute;width:118%;height:118%;left:-9%;top:-9%;object-fit:contain;"></span> to open more detailed information about each issue. You can also click <strong>Ask AI</strong> to get more context on what may be causing the issue and how to fix it. To enable this, go to <strong>DevTools Settings &gt; AI innovations</strong>.</p>
+        <p>Click the sidebar icon <span style="display:inline-block;width:1.05em;height:1.05em;overflow:hidden;vertical-align:-0.22em;position:relative;margin:0 1px;"><img src="sidebar.png" alt="Sidebar icon" style="position:absolute;width:118%;height:118%;left:-9%;top:-9%;object-fit:contain;"></span> to open more detailed information about each issue. You can click Ask AI to ask follow-up questions, such as what may be causing the problem and how to fix it.</p>
+
+        <p>You can also access AI from any DevTools view by clicking the three-dot icon <span style="display:inline-block;width:1.05em;height:1.05em;overflow:hidden;vertical-align:-0.22em;position:relative;margin:0 1px;"><img src="topright.png" alt="Three-dot icon" style="position:absolute;width:118%;height:118%;left:-9%;top:-9%;object-fit:contain;"></span> and selecting Debug with AI.</p>
+
+        <p>To enable these features, go to DevTools Settings &gt; AI innovations.</p>
 
         <figure style="margin:0.6em 0 1.6em;">
-          <img src="newest1.png" alt="Chrome DevTools Performance panel sidebar showing detailed local and field metrics for LCP, CLS, and INP." style="width:100%;height:auto;display:block;border-radius:12px;border:1px solid #E8E8F0;">
+          <img src="39.png" alt="Chrome DevTools Performance panel showing further insights." style="width:100%;height:auto;display:block;border-radius:12px;border:1px solid #E8E8F0;">
         </figure>
 
         <h2 id="network" class="scroll-mt-24"><span class="h2-num">3</span>Network: analyze page requests</h2>
 
-        <p>The Network tab shows every request a page makes as it loads &mdash; HTML, CSS, JavaScript, images, fonts, API calls, videos, and third-party scripts &mdash; in chronological order.</p>
+        <p>The Network tab shows every request a page makes as it loads, including HTML, CSS, JavaScript, images, fonts, API calls, videos, and third-party scripts.</p>
 
-        <p>To use it, open the Network tab and reload the page. Chrome will populate the panel.</p>
+        <p>Open the Network tab and reload the page. Start with the summary at the bottom to review total requests, transferred data, resource size, finish time, DOMContentLoaded, and load time.</p>
 
-        <p>The most important part is the waterfall chart. It shows when each request starts, how long it waits, how long it takes to download, and when it finishes.</p>
+        <p>Then use the request table and waterfall to see what loads, how large it is, when it starts, how long it waits, and when it finishes.</p>
 
-        <p>A healthy waterfall usually looks compact. Important resources start early, many files load in parallel, and the page finishes loading in a shorter amount of time.</p>
-
-        <p>A slow waterfall often looks stretched out. You may see:</p>
+        <p>Look for:</p>
 
         <ul>
-          <li>Files loading one after another instead of together</li>
-          <li>Long request bars</li>
+          <li>Slow initial HTML requests</li>
+          <li>Large CSS, JavaScript, images, or fonts</li>
           <li>Important resources starting late</li>
+          <li>Files loading one after another instead of in parallel</li>
           <li>Gaps where the browser is waiting</li>
           <li>Third-party scripts competing with critical resources</li>
         </ul>
 
-        <p>Hover over any request in the waterfall to see a timing breakdown. You can also click a request and open the Timing tab for more detail.</p>
-
-        <h3 id="net-read" class="scroll-mt-24">Read the network panel</h3>
-
-        <p class="sub-heading">Network summary</p>
-
-        <p>At the bottom of the Network panel, Chrome gives you a quick summary of the page load, including total requests, transferred data, resource size, finish time, DOMContentLoaded, and load time. Use this to get a fast sense of how heavy the page is before reviewing individual files.</p>
-
-        <p class="sub-heading">Size, Time, and Waterfall columns</p>
-
-        <p>These columns help you see how large each file is, how long it takes to load, and when it loads during the page request.</p>
-
-        <p>The <strong>Size</strong>, <strong>Time</strong>, and <strong>Waterfall</strong> columns show how large each file is, how long it took to load, and when it loaded during the page request.</p>
-
-        <p>Use the <strong>Waterfall</strong> column to see when each request started, how long it waited, and how long it took to download.</p>
-
-        <div class="pro-tip">
-          <ul>
-            <li>Turn on <em>color-code resource types</em> in Network settings to make the waterfall easier to scan.</li>
-            <li>Enable screenshots to connect the timeline with what users actually see as the page loads.</li>
-            <li>Enable big request rows so Chrome shows both the compressed (top value) and uncompressed (bottom value) size &mdash; if the two values are the same, compression may not be working.</li>
-          </ul>
-        </div>
+        <p>For more detail, hover over a request or open the Timing tab.</p>
 
         <h3 id="net-slow" class="scroll-mt-24">Find slow requests</h3>
 
@@ -772,13 +755,11 @@ function toggleMob() {
 
         <p>Check where the LCP that you discovered in the Performance tab starts in the waterfall. A bad pattern often looks like this: the HTML loads first, then CSS, JavaScript, and other page resources load, and only after that does the hero image start downloading.</p>
 
-        <p>For example, on the Allbirds homepage, the LCP element is the hero image: <code>26Q2_Pantone_Site_Homepage_Hero_Grid_Static_Desktop_16x9...jpg</code>.</p>
-
-        <p>In the waterfall, that image appears after many other requests instead of near the start of the page load. Since the browser cannot download the LCP image until it discovers it, that late start is directly contributing to their poor LCP.</p>
-
-        <figure style="margin:1.4em 0 1.6em;">
-          <img src="rara.png" alt="Chrome DevTools Network waterfall showing the Allbirds hero image (LCP element) loading after many other requests." style="width:100%;height:auto;display:block;border-radius:12px;border:1px solid #E8E8F0;">
-        </figure>
+        <div class="pro-tip pro-tip-single">
+          <ul>
+            <li>Click the LCP image's row and check the Initiator column. If it says &ldquo;Parser,&rdquo; the browser found it in the HTML (good). If it says &ldquo;Script,&rdquo; something injected it after the page started loading &mdash; that's why it's late, and where &lt;link rel="preload"&gt; helps most.</li>
+          </ul>
+        </div>
 
         <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;">
           <table class="cause-table cause-table-2col">
@@ -949,74 +930,27 @@ function toggleMob() {
 
         <p>The Coverage tab helps identify CSS and JavaScript that loads but is never actually used. This is extremely common on modern websites.</p>
 
-        <p>Many sites load entire CSS frameworks, large JavaScript libraries, unused plugins, or scripts needed for only one component &mdash; even when most of the page does not use them.</p>
-
         <p>To open it, hit <strong>Cmd + Shift + P</strong> (Mac) or <strong>Ctrl + Shift + P</strong> (Windows) inside DevTools, search for "Coverage," then reload the page. Chrome will show the total bytes loaded, unused bytes, and percentage of unused code for each file.</p>
 
         <h3 id="cov-js" class="scroll-mt-24">1. Large unused JavaScript</h3>
 
-        <p>This combines large first-party JavaScript with high unused bytes, vendor bundles that are mostly unused, interaction-only JS loaded upfront, and mobile Coverage showing desktop-only code. 500 KB+ of unused JavaScript should be considered high priority.</p>
+        <p>Large unused JavaScript means the page is loading code it does not need. This can include first-party JavaScript files, third-party libraries, interaction-only scripts loaded upfront, or desktop-specific code loading on mobile.</p>
+
+        <p>This often happens when one large app, vendor, or design-system bundle is used across every template, even on simple pages. If a page has 500 KB+ of unused JavaScript, treat it as a high-priority issue.</p>
+
+        <p>To fix it, split JavaScript by route, template, or component so each page gets only the code it needs. Remove unused dependencies, lazy-load non-critical features, and avoid sending desktop-only components to mobile when possible.</p>
 
         <figure style="margin:1.4em 0 1.6em;">
-          <img src="unused.png" alt="Chrome DevTools Coverage tab listing files with their total size, unused bytes, and percent unused." style="width:100%;height:auto;display:block;border-radius:12px;border:1px solid #E8E8F0;">
+          <video src="waaaatyyy.mov" autoplay muted loop playsinline preload="metadata" style="width:100%;height:auto;display:block;border-radius:12px;"></video>
         </figure>
-
-        <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;">
-          <table class="cause-table cause-table-2col">
-            <thead>
-              <tr>
-                <th>Cause</th>
-                <th>How to fix</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <p style="margin:0 0 0.7em;">The page is loading JavaScript it does not actually need.</p>
-                  <p style="margin:0;">This often happens when one large app, vendor, or design-system bundle loads across every template.</p>
-                </td>
-                <td>
-                  <ul class="cause-fix-list">
-                    <li>Split JavaScript by route, template, or component so simple pages do not load site-wide code.</li>
-                    <li>Remove unused dependencies.</li>
-                    <li>Lazy-load non-critical features.</li>
-                    <li>Avoid rendering desktop-only components on mobile when possible.</li>
-                  </ul>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
 
         <h3 id="cov-css" class="scroll-mt-24">2. Large unused CSS</h3>
 
-        <p>This combines general CSS files with high unused bytes, render-blocking CSS with high unused bytes, and design-system or theme CSS that's mostly unused. 150 KB+ of unused CSS should be considered high priority.</p>
+        <p>Unused CSS is the stylesheet version of the same problem. It usually happens when a site loads one large global stylesheet, theme file, or design-system file across every template, even when the page only uses a small portion of it.</p>
 
-        <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;">
-          <table class="cause-table cause-table-2col">
-            <thead>
-              <tr>
-                <th>Cause</th>
-                <th>How to fix</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <p style="margin:0 0 0.7em;">The page is loading CSS it does not need.</p>
-                  <p style="margin:0;">This often happens when a site loads styles for every component, template, or CMS block, even if the page only uses a small portion of them. If that CSS is render-blocking, the browser may delay paint for styles that are not even used.</p>
-                </td>
-                <td>
-                  <ul class="cause-fix-list">
-                    <li>Split CSS by template or component so each page only loads the styles it needs.</li>
-                    <li>Inline critical above-the-fold CSS and defer non-critical CSS.</li>
-                    <li>Remove unused or outdated CSS carefully.</li>
-                  </ul>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <p>If unused CSS is render-blocking, the browser may delay paint while it processes styles that are not actually needed. If a page has 150 KB+ of unused CSS, treat it as a high-priority issue.</p>
+
+        <p>To fix it, split CSS by template or component so each page only loads the styles it needs. Additionally, inline critical above-the-fold CSS, defer non-critical CSS, and remove unused or outdated styles carefully.</p>
 
         <h2 id="console" class="scroll-mt-24"><span class="h2-num">5</span>Console: run quick checks with JS</h2>
 
@@ -1108,36 +1042,6 @@ function toggleMob() {
   hasSrcset: !!img.srcset
 }));</code></pre>
 
-        <p class="snippet-title">6. Find CSS background images</p>
-        <p class="code-note"><strong>Why it matters:</strong> If the LCP image is loaded as a CSS background, the browser may discover it late.</p>
-        <p class="code-note"><strong>How to fix:</strong> Use an HTML <code>&lt;img&gt;</code> or <code>&lt;picture&gt;</code> for important content images.</p>
-        <span class="paste-label">Paste into Console</span>
-        <pre class="code-block"><code>[...document.querySelectorAll('*')]
-.map(el =&gt; {
-  const bg = getComputedStyle(el).backgroundImage;
-  const rect = el.getBoundingClientRect();
-  return {
-    element: el.tagName.toLowerCase() + (el.className ? '.' + String(el.className).trim().replace(/\s+/g, '.') : ''),
-    backgroundImage: bg,
-    width: Math.round(rect.width),
-    height: Math.round(rect.height),
-    top: Math.round(rect.top)
-  };
-})
-.filter(item =&gt; item.backgroundImage &amp;&amp; item.backgroundImage !== 'none' &amp;&amp; item.width &gt; 50 &amp;&amp; item.height &gt; 50);</code></pre>
-
-        <p class="snippet-title">7. Find scripts without async or defer</p>
-        <p class="code-note"><strong>Why it matters:</strong> Synchronous scripts can block HTML parsing and delay rendering.</p>
-        <p class="code-note"><strong>How to fix:</strong> Use <code>defer</code> for first-party scripts and <code>async</code> for independent third-party scripts.</p>
-        <span class="paste-label">Paste into Console</span>
-        <pre class="code-block"><code>[...document.scripts]
-.filter(script =&gt; script.src &amp;&amp; !script.async &amp;&amp; !script.defer &amp;&amp; script.type !== 'module')
-.map(script =&gt; ({
-  src: script.src,
-  async: script.async,
-  defer: script.defer
-}));</code></pre>
-
       </article>
 
     </div>
@@ -1154,8 +1058,7 @@ function toggleMob() {
           <div class="toc-children">
             <div style="margin-left:1.5px;border-left:2px solid #E5E7EB;padding-left:0;">
               <a href="#run-lighthouse" class="toc-h3-link block text-[12.5px] py-2 pl-3 border-l-[2px] border-transparent transition-colors duration-150" style="color:#8896A8;margin-left:-2px;">How to run a report</a>
-              <a href="#fix-issues" class="toc-h3-link block text-[12.5px] py-2 pl-3 border-l-[2px] border-transparent transition-colors duration-150" style="color:#8896A8;margin-left:-2px;">What to look for</a>
-              <a href="#insights-diagnostics" class="toc-h3-link block text-[12.5px] py-2 pl-3 border-l-[2px] border-transparent transition-colors duration-150" style="color:#8896A8;margin-left:-2px;">Insights vs. Diagnostics</a>
+              <a href="#fix-issues" class="toc-h3-link block text-[12.5px] py-2 pl-3 border-l-[2px] border-transparent transition-colors duration-150" style="color:#8896A8;margin-left:-2px;">Key metrics</a>
               <a href="#lcp-fix" class="toc-h3-link block text-[12.5px] py-2 pl-3 border-l-[2px] border-transparent transition-colors duration-150" style="color:#8896A8;margin-left:-2px;">Fixing common speed issues</a>
             </div>
           </div>
@@ -1173,7 +1076,6 @@ function toggleMob() {
           <a href="#network" class="toc-h2-link block text-[14px] font-semibold py-2.5 transition-colors duration-200" style="color:#4B5563;">Network</a>
           <div class="toc-children">
             <div style="margin-left:1.5px;border-left:2px solid #E5E7EB;padding-left:0;">
-              <a href="#net-read" class="toc-h3-link block text-[12.5px] py-2 pl-3 border-l-[2px] border-transparent transition-colors duration-150" style="color:#8896A8;margin-left:-2px;">Read the network panel</a>
               <a href="#net-slow" class="toc-h3-link block text-[12.5px] py-2 pl-3 border-l-[2px] border-transparent transition-colors duration-150" style="color:#8896A8;margin-left:-2px;">Find slow requests</a>
               <a href="#net-heavy" class="toc-h3-link block text-[12.5px] py-2 pl-3 border-l-[2px] border-transparent transition-colors duration-150" style="color:#8896A8;margin-left:-2px;">Find heavy resources</a>
             </div>
@@ -1201,7 +1103,7 @@ function toggleMob() {
 <script>
 (function(){
   var sectionIds = ['open-devtools','lighthouse','performance','network','coverage','console'];
-  var h3Ids = ['run-lighthouse','fix-issues','insights-diagnostics','lcp-fix','perf-cwv','perf-deeper','net-read','net-slow','net-heavy','cov-js','cov-css'];
+  var h3Ids = ['run-lighthouse','fix-issues','lcp-fix','perf-cwv','perf-deeper','net-slow','net-heavy','cov-js','cov-css'];
   var activeSection = null;
   var activeH3 = null;
   function setActiveSection(id){
@@ -1212,6 +1114,7 @@ function toggleMob() {
       var isActive = sec.getAttribute('data-section') === id;
       h2.style.color = isActive ? '#F47B5A' : '#4B5563';
       h2.style.fontWeight = isActive ? '700' : '600';
+      sec.classList.toggle('active', isActive);
     });
     if(id !== 'lighthouse' && id !== 'performance' && id !== 'network' && id !== 'coverage'){
       activeH3 = null;
@@ -1225,10 +1128,19 @@ function toggleMob() {
       a.style.borderLeftColor = a.getAttribute('href') === '#'+id ? '#F47B5A' : 'transparent';
     });
   }
-  var secObs = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){ if(e.isIntersecting) setActiveSection(e.target.id); });
-  }, { rootMargin: '-15% 0px -70% 0px' });
-  sectionIds.forEach(function(id){ var el = document.getElementById(id); if(el) secObs.observe(el); });
+  function updateActiveFromScroll(){
+    var scrollPos = window.scrollY + 200;
+    var current = sectionIds[0];
+    for (var i = 0; i < sectionIds.length; i++) {
+      var el = document.getElementById(sectionIds[i]);
+      if (el && el.getBoundingClientRect().top + window.scrollY <= scrollPos) {
+        current = sectionIds[i];
+      }
+    }
+    setActiveSection(current);
+  }
+  window.addEventListener('scroll', updateActiveFromScroll, { passive: true });
+  updateActiveFromScroll();
   var h3Obs = new IntersectionObserver(function(entries){
     entries.forEach(function(e){ if(e.isIntersecting) setActiveH3(e.target.id); });
   }, { rootMargin: '-15% 0px -70% 0px' });
