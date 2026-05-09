@@ -694,8 +694,9 @@ Amplify your SEO performance
   .prob-diag-panel { animation: probFadeIn 0.22s ease; }
   @keyframes probFadeIn { from { opacity:0;transform:translateY(6px); } to { opacity:1;transform:translateY(0); } }
   @media (max-width: 767px) {
-    .prob-layout { flex-direction: column !important; gap: 0 !important; }
+    .prob-layout { flex-direction: column !important; gap: 0 !important; background: transparent !important; border-radius: 0 !important; }
     .prob-sticky { width: auto !important; position: static !important; background: transparent !important; border: none !important; border-radius: 0 !important; padding: 0 !important; }
+    .prob-sticky .inline-flex { background: #F1F0FD !important; }
     #prob-card { display: none !important; }
     .prob-item { max-width:100% !important; flex-direction:column !important; align-items:flex-start !important; border-radius:16px !important; padding:20px !important; }
     .prob-item { background:#F5F5F8 !important; }
