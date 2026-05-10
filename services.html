@@ -722,11 +722,12 @@ Amplify your SEO performance
     .prob-mobile-content { display:none !important; }
     .prob-top-row { display:contents !important; }
     .prob-mob-icon { display:none !important; }
+    #prob-card::before { content:''; position:absolute; left:0; top:36px; bottom:36px; width:1px; background:#E8E8F0; }
   }
 </style>
 <section class="prob-section-mobile" style="background:#fbfafe;padding:80px 0;">
   <div class="max-w-6xl mx-auto px-6">
-    <div class="prob-layout" style="display:flex;gap:0;align-items:stretch;position:relative;background:linear-gradient(to right, #F6F4FE 0%, #FAF9FE 50%);border-radius:20px;">
+    <div class="prob-layout" style="display:flex;gap:0;align-items:stretch;position:relative;background:linear-gradient(to right, #F8F6FE 0%, #FCFBFE 50%);border-radius:20px;">
 
       <!-- LEFT: sticky heading + problem list -->
       <div class="prob-sticky" style="width:380px;flex-shrink:0;background:transparent;border:1px solid #E8E8F0;border-right:none;border-radius:20px 0 0 20px;padding:36px 40px;">
@@ -772,7 +773,7 @@ Amplify your SEO performance
       </div>
 
       <!-- RIGHT: diagnosis card -->
-      <div id="prob-card" class="prob-diag-panel" style="flex:1;min-width:0;background:transparent;border:1px solid #E8E8F0;border-left:none;border-radius:0 20px 20px 0;padding:36px 40px;display:flex;flex-direction:column;justify-content:center;">
+      <div id="prob-card" class="prob-diag-panel" style="flex:1;min-width:0;background:transparent;border:1px solid #E8E8F0;border-left:none;border-radius:0 20px 20px 0;padding:36px 40px;display:flex;flex-direction:column;justify-content:center;position:relative;">
         <h3 id="prob-headline" class="font-display text-ink" style="font-size:clamp(1.4rem,2.4vw,1.7rem);line-height:1.2;letter-spacing:-0.02em;font-weight:650;margin:0 0 28px 0;">Search traffic is trending down.</h3>
         <div id="prob-headline-icon" style="display:none;"></div>
         <p id="prob-subtext" class="text-muted" style="font-size:0.875rem;line-height:1.6;margin-top:-16px;margin-bottom:28px;display:none;"></p>
@@ -794,8 +795,6 @@ Amplify your SEO performance
             <div style="display:none;">
               <img id="prob-case-logo" src="" alt="">
             </div>
-            <!-- Tag -->
-            <p style="font-size:0.65rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#9CA3AF;margin:0;">Real client result</p>
             <!-- Headline -->
             <p class="font-display" style="font-size:0.95rem;font-weight:600;color:#1a1a2e;line-height:1.45;margin:0;">
               <span id="prob-case-line1">Organic traffic was dropping. After a technical SEO rebuild, it grew 45%.</span><span id="prob-case-line2" style="color:#1a1a2e;font-weight:700;"></span>

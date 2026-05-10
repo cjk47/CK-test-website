@@ -52,7 +52,9 @@
   .prose h4 { font-family: 'Poppins', sans-serif; color: #1A1A2E; font-weight: 650; font-size: 1.2rem; line-height: 1.35; letter-spacing: -0.012em; margin-top: 1.8em; margin-bottom: 0.55em; }
   .toc-children { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
   .toc-section.active .toc-children { max-height: 600px; }
-  .cause-tab { display:inline-block; font-family:'Inter',sans-serif; font-size:0.68rem; font-weight:600; padding:1px 8px; margin-left:6px; border-radius:999px; background:#F0F1F4; color:#6B7280; vertical-align:0.12em; letter-spacing:0.02em; }
+  .cause-tab { display:inline-block; font-family:'Inter',sans-serif; font-size:0.68rem; font-weight:600; padding:1px 8px; margin-left:6px; border-radius:999px; background:#F0F1F4; color:#6B7280; vertical-align:0.12em; letter-spacing:0.02em; text-decoration:none; transition: background-color 0.15s ease, color 0.15s ease; }
+  .prose a.cause-tab { color:#6B7280; text-decoration:none; }
+  .prose a.cause-tab:hover { background:#E4E5EB; color:#374151; }
   .click-path { display:inline-flex; align-items:center; flex-wrap:wrap; gap:8px; padding:8px 12px; background:#F5F5F8; border-radius:8px; font-family:'Inter',sans-serif; font-size:0.85rem; font-weight:600; margin:0.6em 0 1.2em; }
   .click-path-label { font-size:0.65rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#6B7280; margin-right:2px; }
   .click-path-step { color:#1A1A2E; background:#FFFFFF; border:1px solid #E0E0E8; padding:3px 10px; border-radius:5px; }
@@ -349,25 +351,22 @@ function toggleMob() {
 
         <p>PageSpeed Insights is useful for a quick audit, but DevTools shows what is actually happening as the page loads. You can see where the slowdown starts, what is causing it, and what to fix first.</p>
 
-        <p>In this guide, I'll focus on the DevTools areas most useful for diagnosing site speed issues: <strong>Lighthouse</strong>, <strong>Performance</strong>, <strong>Network</strong>, <strong>Coverage</strong>, and <strong>Console</strong>.</p>
+        <p>In this guide, I'll focus on the DevTools areas most useful for diagnosing site speed issues: <strong>Lighthouse</strong>, <strong>Performance</strong>, <strong>Network</strong>, and <strong>Coverage</strong>.</p>
 
         <h2 id="open-devtools" class="scroll-mt-24">How to Open Chrome DevTools</h2>
 
-        <p>Before we get into each tab, open the page you want to analyze in Chrome Incognito mode.</p>
-
-        <p>Then right-click anywhere on the page and select <strong>Inspect</strong>.</p>
-
-        <p>You can also use a keyboard shortcut: <strong>Cmd + Option + I</strong> on Mac or <strong>Ctrl + Shift + I</strong> on Windows.</p>
-
-        <p>Chrome DevTools will open on the side or bottom of the browser. At the top, you'll see tabs like Elements, Console, Network, Performance, and Lighthouse.</p>
+        <ol>
+          <li>Before we get into each tab, open the page you want to analyze in Chrome Incognito mode.</li>
+          <li>Then right-click anywhere on the page and select <strong>Inspect</strong>.</li>
+          <li>You can also use a keyboard shortcut: <strong>Cmd + Option + I</strong> on Mac or <strong>Ctrl + Shift + I</strong> on Windows.</li>
+          <li>Chrome DevTools will open on the side or bottom of the browser. At the top, you'll see tabs like Elements, Console, Network, Performance, and Lighthouse.</li>
+        </ol>
 
         <h2 id="lighthouse" class="scroll-mt-24"><span class="h2-num">1</span>Lighthouse: Run a Quick Speed Audit</h2>
 
         <p>Google Lighthouse is a free tool built into Chrome DevTools that helps you quickly evaluate the quality and performance of a webpage.</p>
 
-        <p>For site speed audits, it's usually the best place to start because it gives you a baseline report, highlights the metrics that need attention, and helps you decide where to investigate next.</p>
-
-        <p>One of the most important parts of that report is Core Web Vitals, a set of metrics developed by Google to measure user experience. They measure three things: how quickly the main content loads, how responsive the page feels, and whether the layout stays stable while the page loads.</p>
+        <p>For site speed audits, it's usually the best place to start because it gives you a baseline report, highlights the metrics that need attention, and helps you decide where to investigate next. One of the most important parts of that report is Core Web Vitals, a set of metrics developed by Google to measure user experience.</p>
 
         <h3 id="run-lighthouse" class="scroll-mt-24">How to run a Lighthouse report</h3>
 
@@ -386,94 +385,24 @@ function toggleMob() {
 
         <p>The key performance metrics to look for in Lighthouse are:</p>
 
-        <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;">
-          <table class="cause-table cause-table-3col metrics-overview">
-            <thead>
-              <tr>
-                <th>Metric</th>
-                <th>What it measures</th>
-                <th>Thresholds</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <p class="cause-name">Largest Contentful Paint (LCP)</p>
-                </td>
-                <td><p class="cause-desc">When the largest visible image or text block appears in the viewport. Reflects when the main content feels loaded.</p></td>
-                <td>
-                  <div class="metric-thresholds" style="flex-direction:column;align-items:flex-start;gap:4px;">
-                    <span class="metric-pill good"><span class="label">Good</span> &le; 2.5s</span>
-                    <span class="metric-pill ok"><span class="label">Okay</span> 2.5&ndash;4s</span>
-                    <span class="metric-pill poor"><span class="label">Poor</span> &gt; 4s</span>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <p class="cause-name">Total Blocking Time (TBT)</p>
-                </td>
-                <td><p class="cause-desc">How long the browser is blocked from responding to user input. The lab equivalent of First Input Delay (FID). High TBT usually means JavaScript is keeping the browser busy.</p></td>
-                <td>
-                  <div class="metric-thresholds" style="flex-direction:column;align-items:flex-start;gap:4px;">
-                    <span class="metric-pill good"><span class="label">Good</span> &le; 200ms</span>
-                    <span class="metric-pill ok"><span class="label">Okay</span> 200&ndash;600ms</span>
-                    <span class="metric-pill poor"><span class="label">Poor</span> &gt; 600ms</span>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <p class="cause-name">Cumulative Layout Shift (CLS)</p>
-                </td>
-                <td><p class="cause-desc">How much the page moves around while it loads. A high score usually means images, ads, fonts, banners, or injected content are shifting the layout.</p></td>
-                <td>
-                  <div class="metric-thresholds" style="flex-direction:column;align-items:flex-start;gap:4px;">
-                    <span class="metric-pill good"><span class="label">Good</span> &le; 0.1</span>
-                    <span class="metric-pill ok"><span class="label">Okay</span> 0.1&ndash;0.25</span>
-                    <span class="metric-pill poor"><span class="label">Poor</span> &gt; 0.25</span>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td><p class="cause-name">First Contentful Paint (FCP)</p></td>
-                <td><p class="cause-desc">When the first text or image appears on the screen. Shows whether the page gives users an early visual response.</p></td>
-                <td>
-                  <div class="metric-thresholds" style="flex-direction:column;align-items:flex-start;gap:4px;">
-                    <span class="metric-pill good"><span class="label">Good</span> &le; 1.8s</span>
-                    <span class="metric-pill ok"><span class="label">Okay</span> 1.8&ndash;3s</span>
-                    <span class="metric-pill poor"><span class="label">Poor</span> &gt; 3s</span>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td><p class="cause-name">Speed Index</p></td>
-                <td><p class="cause-desc">How quickly visible content appears during load. Useful for understanding how fast the page feels visually.</p></td>
-                <td>
-                  <div class="metric-thresholds" style="flex-direction:column;align-items:flex-start;gap:4px;">
-                    <span class="metric-pill good"><span class="label">Good</span> &le; 3.4s</span>
-                    <span class="metric-pill ok"><span class="label">Okay</span> 3.4&ndash;5.8s</span>
-                    <span class="metric-pill poor"><span class="label">Poor</span> &gt; 5.8s</span>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <ul>
+          <li><strong>Largest Contentful Paint (LCP).</strong> When the largest visible image or text block appears in the viewport. Reflects when the main content feels loaded. <span class="cwv-tag">Core Web Vital</span></li>
+          <li><strong>Total Blocking Time (TBT).</strong> How long the browser is blocked from responding to user input. The lab equivalent of First Input Delay (FID). <span class="cwv-tag">Core Web Vital</span></li>
+          <li><strong>Cumulative Layout Shift (CLS).</strong> How much the page moves around while it loads. A high score usually means images, ads, fonts, and injected content are shifting the layout. <span class="cwv-tag">Core Web Vital</span></li>
+          <li><strong>First Contentful Paint (FCP).</strong> When the first text or image appears on the screen. Shows whether the page gives users an early visual response.</li>
+        </ul>
 
-        <p>Lighthouse combines these metrics into an overall performance score from 0 to 100. The score is helpful as a quick benchmark, but the metric details give you more actionable information.</p>
-
-        <p>LCP, TBT, and CLS, the three Core Web Vitals, make up 70% of the weighted Lighthouse performance score, so they're usually the metrics worth reviewing first.</p>
+        <p>Lighthouse combines these metrics into an overall performance score from 0 to 100. LCP, TBT, and CLS, the three Core Web Vitals, make up 70% of the score, so they're usually the metrics worth reviewing first.</p>
 
         <h4 id="insights-diagnostics" class="scroll-mt-24">Reading the report</h4>
 
-        <p>Use the metrics to identify which part of the page experience needs work. Then use <strong>Insights</strong> and <strong>Diagnostics</strong> to figure out why.</p>
+        <p>Use the metrics to identify which part of the page experience needs work. Then use the rest of the report to figure out why:</p>
 
-        <p><strong>Insights</strong> group related issues into clearer themes, like LCP delays or layout shift problems, so you can see the bigger pattern behind the score.</p>
-
-        <p><strong>Diagnostics</strong> show the specific details behind those issues, including the files, elements, scripts, or caching problems that may need attention.</p>
-
-        <p>The &ldquo;Show audits relevant to&rdquo; filter lets you narrow the report by metric, including FCP, LCP, TBT, and CLS. This helps you cut through the full audit list and focus on the issues affecting that metric.</p>
+        <ul>
+          <li><strong>Insights</strong> group related issues into clearer themes, like LCP delays or layout shift problems, so you can see the bigger pattern behind the score.</li>
+          <li><strong>Diagnostics</strong> show the specific details behind those issues, including the files, elements, scripts, or caching problems that may need attention.</li>
+          <li>The <strong>&ldquo;Show audits relevant to&rdquo;</strong> filter lets you narrow the report by metric, including FCP, LCP, TBT, and CLS, so you can focus on the issues affecting that metric.</li>
+        </ul>
 
         <h2 id="performance" class="scroll-mt-24"><span class="h2-num">2</span>Performance: Diagnose CWV Issues</h2>
 
@@ -534,6 +463,8 @@ function toggleMob() {
 
         <p>What we're looking for is the <em>Waiting for server response</em>, which is essentially the page's Time to First Byte (TTFB). The server is slow if you see a long <em>Waiting for server response</em> segment, a large gap before other requests begin, and other resources waiting until the HTML request finishes.</p>
 
+        <p>If the server takes too long to return the initial HTML, the rest of the page starts late.</p>
+
         <div class="example-card">
           <p>The Gap.com request below shows a TTFB of 1,030 ms, which is worth reviewing. As a general rule, anything above 500 ms should be investigated.</p>
           <figure style="border-radius:8px;overflow:hidden;border:1px solid #C9DBEC;">
@@ -549,41 +480,6 @@ function toggleMob() {
           </figure>
         </div>
 
-        <p>If the server takes too long to return the initial HTML, the rest of the page starts late. The browser may not be able to discover the page's CSS, JavaScript, images, fonts, metadata, structured data, or internal links until the HTML document comes back.</p>
-
-        <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;">
-          <table class="cause-table cause-table-2col">
-            <thead>
-              <tr>
-                <th>Common causes</th>
-                <th>How to fix</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <ul class="cause-fix-list">
-                    <li>Inadequate hosting</li>
-                    <li>No page-level caching</li>
-                    <li>Server is far from the user</li>
-                    <li>Database overload</li>
-                    <li>Unnecessary redirects</li>
-                  </ul>
-                </td>
-                <td>
-                  <ul class="cause-fix-list">
-                    <li>Upgrade to better hosting</li>
-                    <li>Enable full-page caching</li>
-                    <li>Use a CDN</li>
-                    <li>Reduce database strain</li>
-                    <li>Remove avoidable redirects</li>
-                  </ul>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
         <p class="sub-heading">Render-blocking CSS and JavaScript</p>
 
         <p>After the HTML loads, check what the browser requests next. If the start of the waterfall is filled with CSS or JavaScript, those files may be delaying the first render because the browser has to load, read, or run them before the page appears.</p>
@@ -592,36 +488,13 @@ function toggleMob() {
 
         <p>The goal is to let the browser paint useful content as early as possible, even if the rest of the page continues loading.</p>
 
-        <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;">
-          <table class="cause-table cause-table-2col">
-            <thead>
-              <tr>
-                <th>Common causes</th>
-                <th>How to fix</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <ul class="cause-fix-list">
-                    <li>Large global CSS files</li>
-                    <li>Scripts blocking the page load</li>
-                    <li>Old or unused CSS</li>
-                    <li>Plugins loading globally</li>
-                  </ul>
-                </td>
-                <td>
-                  <ul class="cause-fix-list">
-                    <li>Inline critical CSS and split styles by page or template</li>
-                    <li>Defer non-essential JavaScript</li>
-                    <li>Remove CSS the page doesn't use</li>
-                    <li>Load plugin scripts only when needed</li>
-                  </ul>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <p>What to look for:</p>
+        <ul>
+          <li>Large global CSS files</li>
+          <li>Scripts blocking the page load</li>
+          <li>Old or unused CSS</li>
+          <li>Plugins loading globally</li>
+        </ul>
 
         <p class="sub-heading">LCP element loading too late</p>
 
@@ -633,37 +506,6 @@ function toggleMob() {
           <ul>
             <li>Click the LCP image's row and check the Initiator column. If it says &ldquo;Parser,&rdquo; the browser found it in the HTML (good). If it says &ldquo;Script,&rdquo; something injected it after the page started loading &mdash; that's why it's late, and where &lt;link rel="preload"&gt; helps most.</li>
           </ul>
-        </div>
-
-        <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;">
-          <table class="cause-table cause-table-2col">
-            <thead>
-              <tr>
-                <th>Common causes</th>
-                <th>How to fix</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <ul class="cause-fix-list">
-                    <li>The LCP image is lazy-loaded</li>
-                    <li>The LCP is injected with JavaScript</li>
-                    <li>The LCP is loaded as a CSS background</li>
-                    <li>A page builder or theme delays discovery</li>
-                  </ul>
-                </td>
-                <td>
-                  <ul class="cause-fix-list">
-                    <li>Load the LCP image right away. Do not lazy-load above-the-fold images</li>
-                    <li>Include the LCP content in the initial HTML when possible</li>
-                    <li>Use an <code>&lt;img&gt;</code> or <code>&lt;picture&gt;</code> element for important above-the-fold images</li>
-                    <li>Remove extra wrappers, sliders, scripts, or theme logic that delay the hero content</li>
-                  </ul>
-                </td>
-              </tr>
-            </tbody>
-          </table>
         </div>
 
         <h3 id="net-heavy" class="scroll-mt-24">Find heavy resources</h3>
@@ -686,37 +528,23 @@ function toggleMob() {
           </figcaption>
         </figure>
 
-        <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;">
-          <table class="cause-table cause-table-2col">
-            <thead>
-              <tr>
-                <th>Common cause</th>
-                <th>How to fix</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <ul class="cause-fix-list">
-                    <li>Image file is too large</li>
-                    <li>Image dimensions are too large</li>
-                    <li>Desktop image served on mobile</li>
-                    <li>PNGs used for photos</li>
-                    <li>Too many large images load early</li>
-                  </ul>
-                </td>
-                <td>
-                  <ul class="cause-fix-list">
-                    <li>Compress the image</li>
-                    <li>Resize the image to display size</li>
-                    <li>Use responsive <code>srcset</code></li>
-                    <li>Use WebP, AVIF, or JPEG instead</li>
-                    <li>Lazy-load images below the fold</li>
-                  </ul>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="pro-tip pro-tip-single">
+          <p style="margin:0 0 0.7em;"><strong>Spot oversized images via the Console.</strong> Paste this into the Console tab to list any image with more than 4&times; the pixel count it needs to render.</p>
+          <span class="paste-label">Paste into Console</span>
+          <pre class="code-block"><code>[...document.images]
+.map(img =&gt; {
+  const rect = img.getBoundingClientRect();
+  return {
+    src: img.currentSrc || img.src,
+    natural: `${img.naturalWidth}x${img.naturalHeight}`,
+    rendered: `${Math.round(rect.width)}x${Math.round(rect.height)}`,
+    oversizeRatio: rect.width &amp;&amp; rect.height
+      ? Math.round((img.naturalWidth * img.naturalHeight) / (rect.width * rect.height))
+      : null
+  };
+})
+.filter(img =&gt; img.oversizeRatio &amp;&amp; img.oversizeRatio &gt; 4)
+.sort((a, b) =&gt; b.oversizeRatio - a.oversizeRatio);</code></pre>
         </div>
 
         <p class="sub-heading">Large JavaScript bundles</p>
@@ -725,38 +553,6 @@ function toggleMob() {
 
         <p>Find them the same way as large images, but filter by JS instead.</p>
 
-        <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;">
-          <table class="cause-table cause-table-2col">
-            <thead>
-              <tr>
-                <th>What to look for</th>
-                <th>How to fix</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <ul class="cause-fix-list">
-                    <li>Large bundles like <code>app.js</code>, <code>vendor.js</code>, <code>framework.js</code>, <code>bundle.js</code></li>
-                    <li>Multiple bundles loaded sitewide</li>
-                    <li>Hydration scripts on mostly static pages</li>
-                    <li>Marketing pages loaded with full app bundles</li>
-                  </ul>
-                </td>
-                <td>
-                  <ul class="cause-fix-list">
-                    <li>Reduce bundle size</li>
-                    <li>Split JavaScript by route or template</li>
-                    <li>Remove unused dependencies</li>
-                    <li>Defer non-critical scripts</li>
-                    <li>Lazy-load below-the-fold components</li>
-                    <li>Reduce hydration cost on mostly static pages</li>
-                  </ul>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
 
         <p class="sub-heading">Third-party scripts</p>
 
@@ -764,7 +560,7 @@ function toggleMob() {
 
         <p>These are requests from outside domains, such as googletagmanager.com, assets.adobedtm.com, facebook.net, doubleclick.net, or hotjar.com.</p>
 
-        <p>These scripts become an issue when they affect the initial page load. Look for third-party requests that load before key resources like CSS, fonts, or the LCP image; take several hundred milliseconds to download; trigger extra requests; or create long tasks in the Performance tab.</p>
+        <p>These scripts become an issue when they affect the initial page load. Look for third-party requests that load before key resources like CSS, fonts, or the LCP image, take several hundred milliseconds to download, trigger extra requests, or come from inactive tags.</p>
 
         <figure style="margin:1.4em 0 1.6em;border-radius:12px;overflow:hidden;border:1px solid #E0E0E8;">
           <video src="yasssssssss.mov" muted loop playsinline controls controlsList="nodownload nofullscreen noremoteplayback noplaybackrate" disablepictureinpicture preload="metadata" style="width:100%;height:auto;display:block;border-radius:0;"></video>
@@ -777,40 +573,6 @@ function toggleMob() {
             <span style="display:inline-flex;align-items:center;line-height:1;">3rd-party requests</span>
           </figcaption>
         </figure>
-
-        <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;">
-          <table class="cause-table cause-table-2col">
-            <thead>
-              <tr>
-                <th>What to watch for</th>
-                <th>How to fix</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <ul class="cause-fix-list">
-                    <li>Third-party scripts loading before main CSS, JS, or hero images</li>
-                    <li>Tools triggering many additional requests</li>
-                    <li>Large third-party files</li>
-                    <li>Sitewide scripts not needed on every page</li>
-                    <li>Duplicate tools loaded through both a tag manager and hardcoded scripts</li>
-                  </ul>
-                </td>
-                <td>
-                  <ul class="cause-fix-list">
-                    <li>Audit all third-party vendors</li>
-                    <li>Remove inactive tags</li>
-                    <li>Delay non-essential scripts</li>
-                    <li>Load tools only on pages where they are needed</li>
-                    <li>Fire tags after consent or user interaction</li>
-                    <li>Avoid duplicate tools</li>
-                  </ul>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
 
         <h2 id="coverage" class="scroll-mt-24"><span class="h2-num">4</span>Coverage: Find Unused Code</h2>
 
@@ -838,36 +600,53 @@ function toggleMob() {
 
         <p>To fix it, split CSS by template or component so each page only loads the styles it needs. Additionally, inline critical above-the-fold CSS, defer non-critical CSS, and remove unused or outdated styles carefully.</p>
 
-        <h2 id="console" class="scroll-mt-24"><span class="h2-num">5</span>Console: Run Quick Checks With JS</h2>
+        <h2 id="lcp-fix" class="scroll-mt-24"><span class="h2-num">5</span>Page Speed Fixes by Metric</h2>
 
-        <p>The Console tab is useful because it lets you run quick JavaScript checks directly on the page.</p>
+        <p>Once Lighthouse highlights the metrics dragging the page down, the next step is figuring out how to fix them.</p>
 
-        <p>For site speed audits, this can help you spot issues like oversized images, lazy-loaded hero images, missing image dimensions, missing srcset markup, CSS background images, synchronous scripts, third-party scripts, and large resources.</p>
+        <p>Below are the most common causes for each page speed issue and the fixes that tend to work.</p>
 
-        <p class="snippet-title">1. Find oversized images</p>
-        <p class="code-note"><strong>Why it matters:</strong> Finds images being downloaded much larger than they appear on the page.</p>
-        <p class="code-note"><strong>How to fix:</strong> Use responsive images, image CDN resizing, and better srcset/sizes.</p>
-        <span class="paste-label">Paste into Console</span>
-        <pre class="code-block"><code>[...document.images]
-.map(img =&gt; {
-  const rect = img.getBoundingClientRect();
-  return {
-    src: img.currentSrc || img.src,
-    natural: `${img.naturalWidth}x${img.naturalHeight}`,
-    rendered: `${Math.round(rect.width)}x${Math.round(rect.height)}`,
-    oversizeRatio: rect.width &amp;&amp; rect.height
-      ? Math.round((img.naturalWidth * img.naturalHeight) / (rect.width * rect.height))
-      : null
-  };
-})
-.filter(img =&gt; img.oversizeRatio &amp;&amp; img.oversizeRatio &gt; 4)
-.sort((a, b) =&gt; b.oversizeRatio - a.oversizeRatio);</code></pre>
+        <h3 id="lcp-improve" class="scroll-mt-24">Largest Contentful Paint (LCP)</h3>
+        <div class="metric-thresholds" style="margin:0.4em 0 1.1em;">
+          <span class="metric-pill good"><span class="label">Good</span> &le; 2.5s</span>
+          <span class="metric-pill ok"><span class="label">Okay</span> 2.5&ndash;4s</span>
+          <span class="metric-pill poor"><span class="label">Poor</span> &gt; 4s</span>
+        </div>
+        <p>LCP issues usually come from one of four places: the server is too slow, important CSS or JavaScript is blocking the page, the LCP resource is too large, or the main content depends too much on client-side JavaScript.</p>
 
-        <p class="snippet-title">2. Find lazy-loaded images above the fold</p>
-        <p class="code-note"><strong>Why it matters:</strong> Above-the-fold images shouldn't usually be lazy-loaded, especially the LCP image.</p>
-        <p class="code-note"><strong>How to fix:</strong> Remove <code>loading="lazy"</code> from LCP/hero images.</p>
-        <span class="paste-label">Paste into Console</span>
-        <pre class="code-block"><code>[...document.images]
+        <ul>
+          <li><strong>Slow server response times (high TTFB).</strong> The server takes too long to send the page to the browser, delaying the rest of the load. <a class="cause-tab" href="#network">Network</a>
+            <ul>
+              <li>Upgrade to better hosting.</li>
+              <li>Enable full-page caching.</li>
+              <li>Use a CDN to serve pages from locations closer to users.</li>
+              <li>Reduce database strain.</li>
+              <li>Remove avoidable redirects.</li>
+            </ul>
+          </li>
+          <li><strong>Render-blocking JavaScript and CSS.</strong> Scripts or stylesheets delay the browser from showing the main content. <a class="cause-tab" href="#network">Network</a> <a class="cause-tab" href="#lighthouse">Lighthouse</a>
+            <ul>
+              <li>Minify and compress CSS and JavaScript files.</li>
+              <li>Split styles by page or template.</li>
+              <li>Inline the CSS needed to style above-the-fold content.</li>
+              <li>Defer CSS or JavaScript that is not needed right away.</li>
+            </ul>
+          </li>
+          <li><strong>Slow resource load times.</strong> Large images, videos, fonts, or other files take too long to load. <a class="cause-tab" href="#network">Network</a>
+            <ul>
+              <li>Compress large images, videos, and other files.</li>
+              <li>Resize images to match their display size.</li>
+              <li>Preload the LCP image or other critical resources.</li>
+              <li>Use responsive <code>srcset</code> for images on different screen sizes.</li>
+              <li>Use WebP, AVIF, or JPEG instead of PNGs for photos.</li>
+              <li>Lazy-load images and videos below the fold.</li>
+              <li>Don't lazy-load above-the-fold images.</li>
+              <li>Use a standard <code>&lt;img&gt;</code> for the LCP image. Avoid CSS backgrounds, sliders, or theme wrappers that delay the browser from discovering it.</li>
+            </ul>
+            <div class="pro-tip">
+              <p style="margin:0 0 0.7em;"><strong>Find lazy-load issues via the Console.</strong> Paste these into the Console tab to spot above-the-fold images set to lazy-load (first snippet) and below-the-fold images that aren't (second).</p>
+              <span class="paste-label">Above-the-fold images set to lazy-load</span>
+              <pre class="code-block"><code>[...document.images]
 .filter(img =&gt; {
   const rect = img.getBoundingClientRect();
   return rect.top &lt; window.innerHeight &amp;&amp; img.loading === 'lazy';
@@ -878,12 +657,8 @@ function toggleMob() {
   loading: img.loading,
   top: Math.round(img.getBoundingClientRect().top)
 }));</code></pre>
-
-        <p class="snippet-title">3. Find below-the-fold images that are not lazy-loaded</p>
-        <p class="code-note"><strong>Why it matters:</strong> Below-the-fold images can compete with critical resources during initial load.</p>
-        <p class="code-note"><strong>How to fix:</strong> Add <code>loading="lazy"</code> to non-critical below-the-fold images.</p>
-        <span class="paste-label">Paste into Console</span>
-        <pre class="code-block"><code>[...document.images]
+              <span class="paste-label">Below-the-fold images not lazy-loaded</span>
+              <pre class="code-block"><code>[...document.images]
 .filter(img =&gt; {
   const rect = img.getBoundingClientRect();
   return rect.top &gt; window.innerHeight &amp;&amp; img.loading !== 'lazy';
@@ -894,73 +669,9 @@ function toggleMob() {
   loading: img.loading || '[not set]',
   top: Math.round(img.getBoundingClientRect().top)
 }));</code></pre>
-
-        <p class="snippet-title">4. Find images missing dimensions</p>
-        <p class="code-note"><strong>Why it matters:</strong> Missing dimensions can cause layout shifts.</p>
-        <p class="code-note"><strong>How to fix:</strong> Add width and height attributes, or reserve space with CSS aspect-ratio.</p>
-        <span class="paste-label">Paste into Console</span>
-        <pre class="code-block"><code>[...document.images]
-.filter(img =&gt; {
-  const rect = img.getBoundingClientRect();
-  const visible = rect.width &gt; 20 &amp;&amp; rect.height &gt; 20;
-  const missingAttrs = !img.hasAttribute('width') || !img.hasAttribute('height');
-  return visible &amp;&amp; missingAttrs;
-})
-.map(img =&gt; ({
-  src: img.currentSrc || img.src,
-  alt: img.alt || '[missing alt]',
-  widthAttr: img.getAttribute('width'),
-  heightAttr: img.getAttribute('height'),
-  renderedWidth: Math.round(img.getBoundingClientRect().width),
-  renderedHeight: Math.round(img.getBoundingClientRect().height)
-}));</code></pre>
-
-        <p class="snippet-title">5. Find images missing srcset</p>
-        <p class="code-note"><strong>Why it matters:</strong> Without srcset, mobile users may download desktop-sized images.</p>
-        <p class="code-note"><strong>How to fix:</strong> Add responsive image markup and accurate sizes.</p>
-        <span class="paste-label">Paste into Console</span>
-        <pre class="code-block"><code>[...document.images]
-.filter(img =&gt; !img.srcset &amp;&amp; img.getBoundingClientRect().width &gt; 100)
-.map(img =&gt; ({
-  src: img.currentSrc || img.src,
-  alt: img.alt,
-  renderedWidth: Math.round(img.getBoundingClientRect().width),
-  hasSrcset: !!img.srcset
-}));</code></pre>
-
-        <h2 id="lcp-fix" class="scroll-mt-24"><span class="h2-num">6</span>Common Speed Issues &amp; Fixes</h2>
-
-        <p>Once Lighthouse highlights the metrics dragging the page down, the next step is figuring out how to fix them.</p>
-
-        <p>Below are the most common causes for each page speed issue and the fixes that tend to work.</p>
-
-        <p id="lcp-improve" class="scroll-mt-24" style="margin-bottom:0.4em;font-size:1.2rem;"><strong>Largest Contentful Paint (LCP)</strong> <span class="cwv-tag">Core Web Vital</span></p>
-        <p>LCP issues usually come from one of four places: the server is too slow, important CSS or JavaScript is blocking the page, the LCP resource is too large, or the main content depends too much on client-side JavaScript.</p>
-
-        <ul>
-          <li><strong>Slow server response times.</strong> The server takes too long to send the page to the browser, delaying the rest of the load. <span class="cause-tab">Network</span>
-            <ul>
-              <li>Improve server performance.</li>
-              <li>Use a CDN to serve pages from locations closer to users.</li>
-              <li>Cache static assets and HTML.</li>
-            </ul>
+            </div>
           </li>
-          <li><strong>Render-blocking JavaScript and CSS.</strong> Scripts or stylesheets delay the browser from showing the main content. <span class="cause-tab">Network</span> <span class="cause-tab">Lighthouse</span>
-            <ul>
-              <li>Minify and compress CSS and JavaScript files.</li>
-              <li>Inline the CSS needed to style above-the-fold content.</li>
-              <li>Defer CSS or JavaScript that is not needed right away.</li>
-            </ul>
-          </li>
-          <li><strong>Slow resource load times.</strong> Large images, videos, fonts, or other files take too long to load. <span class="cause-tab">Network</span>
-            <ul>
-              <li>Compress images.</li>
-              <li>Use properly sized media.</li>
-              <li>Preload the LCP image or other critical resources.</li>
-              <li>Compress CSS, JavaScript, and HTML.</li>
-            </ul>
-          </li>
-          <li><strong>Client-side rendering.</strong> Important content depends on JavaScript before it can appear on the page. <span class="cause-tab">Performance</span> <span class="cause-tab">Network</span>
+          <li><strong>Client-side rendering.</strong> Important content depends on JavaScript before it can appear on the page. <a class="cause-tab" href="#performance">Performance</a> <a class="cause-tab" href="#network">Network</a>
             <ul>
               <li>Reduce critical JavaScript.</li>
               <li>Avoid making key content depend entirely on JS.</li>
@@ -988,51 +699,26 @@ function toggleMob() {
           </ul>
         </div>
 
-        <p id="tbt-improve" class="scroll-mt-24" style="margin-bottom:0.4em;margin-top:1.9em;font-size:1.2rem;"><strong>Total Blocking Time (TBT)</strong> <span class="cwv-tag">Core Web Vital</span></p>
-        <p>TBT issues almost always come from one place: JavaScript keeping the main thread too busy to respond to user input.</p>
-
-        <ul>
-          <li><strong>Heavy JavaScript.</strong> JavaScript is keeping the main thread busy and the browser can't respond to user input quickly. <span class="cause-tab">Performance</span> <span class="cause-tab">Network</span> <span class="cause-tab">Coverage</span>
-            <ul>
-              <li>Split large JavaScript tasks into smaller chunks.</li>
-              <li>Prioritize JS needed for key interactions so users can interact without delay.</li>
-              <li>Use a web worker to run tasks outside the main browser thread.</li>
-              <li>Reduce JavaScript execution time.</li>
-            </ul>
-          </li>
-        </ul>
-
-        <div class="example-card">
-          <div class="example-split">
-            <p class="example-text">On NYTimes.com, large JavaScript is contributing to the high TBT:</p>
-            <div class="stat-snapshot">
-              <div class="stat-label">TBT</div>
-              <div class="stat-value">2,360<span class="stat-unit">ms</span></div>
-            </div>
-          </div>
-          <figure>
-            <img src="nyyyyyy.png" alt="NYTimes.com Performance panel showing large JavaScript bundles consuming main-thread time." style="width:100%;height:auto;display:block;border-radius:8px;">
-          </figure>
-          <ul>
-            <li><strong>Large JavaScript bundles are taking too long to execute.</strong> The page spends significant main-thread time evaluating large scripts, including main-7898505577c9d051fa86.js and a large vendor bundle. Break large bundles into smaller chunks and use dynamic imports so the browser only loads the JavaScript needed for the initial view.</li>
-          </ul>
+        <h3 id="cls-improve" class="scroll-mt-24">Cumulative Layout Shift (CLS)</h3>
+        <div class="metric-thresholds" style="margin:0.4em 0 1.1em;">
+          <span class="metric-pill good"><span class="label">Good</span> &le; 0.1</span>
+          <span class="metric-pill ok"><span class="label">Okay</span> 0.1&ndash;0.25</span>
+          <span class="metric-pill poor"><span class="label">Poor</span> &gt; 0.25</span>
         </div>
-
-        <p id="cls-improve" class="scroll-mt-24" style="margin-bottom:0.4em;margin-top:1.9em;font-size:1.2rem;"><strong>Cumulative Layout Shift (CLS)</strong> <span class="cwv-tag">Core Web Vital</span></p>
         <p>CLS issues usually come from one of three places: images without dimensions, content that loads in late, or fonts swapping after text is already visible.</p>
 
         <ul>
-          <li><strong>Images without dimensions.</strong> Without width and height attributes, the browser can't allocate space until the image downloads, shifting nearby elements. <span class="cause-tab">Performance</span> <span class="cause-tab">Console</span>
+          <li><strong>Images without dimensions.</strong> Without width and height attributes, the browser can't allocate space until the image downloads, shifting nearby elements. <a class="cause-tab" href="#performance">Performance</a> <a class="cause-tab" href="#console">Console</a>
             <ul>
               <li>Add width and height attributes on images and videos.</li>
             </ul>
           </li>
-          <li><strong>Dynamically injected content.</strong> Embedded content (e.g., social posts or widgets) can load at unpredictable heights, causing layout shifts. <span class="cause-tab">Performance</span> <span class="cause-tab">Elements</span>
+          <li><strong>Dynamically injected content.</strong> Embedded content (e.g., social posts or widgets) can load at unpredictable heights, causing layout shifts. <a class="cause-tab" href="#performance">Performance</a> <span class="cause-tab">Elements</span>
             <ul>
               <li>Reserve space before it loads, such as setting a minimum height for the container.</li>
             </ul>
           </li>
-          <li><strong>Fonts loading after text appears.</strong> Fonts can swap in after text is already visible, which may cause the layout to shift. <span class="cause-tab">Performance</span> <span class="cause-tab">Network</span>
+          <li><strong>Fonts loading after text appears.</strong> Fonts can swap in after text is already visible, which may cause the layout to shift. <a class="cause-tab" href="#performance">Performance</a> <a class="cause-tab" href="#network">Network</a>
             <ul>
               <li>Preload important font files.</li>
             </ul>
@@ -1057,22 +743,65 @@ function toggleMob() {
           </ul>
         </div>
 
-        <p id="fcp-improve" class="scroll-mt-24" style="margin-bottom:0.4em;margin-top:1.9em;font-size:1.2rem;"><strong>First Contentful Paint (FCP)</strong></p>
+        <h3 id="tbt-improve" class="scroll-mt-24">Total Blocking Time (TBT)</h3>
+        <div class="metric-thresholds" style="margin:0.4em 0 1.1em;">
+          <span class="metric-pill good"><span class="label">Good</span> &le; 200ms</span>
+          <span class="metric-pill ok"><span class="label">Okay</span> 200&ndash;600ms</span>
+          <span class="metric-pill poor"><span class="label">Poor</span> &gt; 600ms</span>
+        </div>
+        <p>TBT issues almost always come from one place: JavaScript keeping the main thread too busy to respond to user input.</p>
+
+        <ul>
+          <li><strong>Heavy JavaScript.</strong> JavaScript is keeping the main thread busy and the browser can't respond to user input quickly. <a class="cause-tab" href="#performance">Performance</a> <a class="cause-tab" href="#network">Network</a> <a class="cause-tab" href="#coverage">Coverage</a>
+            <ul>
+              <li>Split large JavaScript tasks into smaller chunks.</li>
+              <li>Split JavaScript by route or template.</li>
+              <li>Prioritize JS needed for key interactions so users can interact without delay.</li>
+              <li>Use a web worker to run tasks outside the main browser thread.</li>
+              <li>Reduce JavaScript execution time.</li>
+              <li>Reduce hydration cost on mostly static pages.</li>
+            </ul>
+          </li>
+        </ul>
+
+        <div class="example-card">
+          <div class="example-split">
+            <p class="example-text">On NYTimes.com, large JavaScript is contributing to the high TBT:</p>
+            <div class="stat-snapshot">
+              <div class="stat-label">TBT</div>
+              <div class="stat-value">2,360<span class="stat-unit">ms</span></div>
+            </div>
+          </div>
+          <figure>
+            <img src="nyyyyyy.png" alt="NYTimes.com Performance panel showing large JavaScript bundles consuming main-thread time." style="width:100%;height:auto;display:block;border-radius:8px;">
+          </figure>
+          <ul>
+            <li><strong>Large JavaScript bundles are taking too long to execute.</strong> The page spends significant main-thread time evaluating large scripts, including main-7898505577c9d051fa86.js and a large vendor bundle. Break large bundles into smaller chunks and use dynamic imports so the browser only loads the JavaScript needed for the initial view.</li>
+          </ul>
+        </div>
+
+        <h3 id="fcp-improve" class="scroll-mt-24">First Contentful Paint (FCP)</h3>
+        <div class="metric-thresholds" style="margin:0.4em 0 1.1em;">
+          <span class="metric-pill good"><span class="label">Good</span> &le; 1.8s</span>
+          <span class="metric-pill ok"><span class="label">Okay</span> 1.8&ndash;3s</span>
+          <span class="metric-pill poor"><span class="label">Poor</span> &gt; 3s</span>
+        </div>
         <p>FCP issues usually come from CSS getting in the way: either external stylesheets blocking the page from rendering, or heavy and unused styles slowing down what the browser has to compute.</p>
 
         <ul>
-          <li><strong>Render-blocking external stylesheets.</strong> External CSS can delay the first visible content because the browser has to download and process the stylesheet before showing the page. <span class="cause-tab">Network</span> <span class="cause-tab">Lighthouse</span>
+          <li><strong>Render-blocking external stylesheets.</strong> External CSS can delay the first visible content because the browser has to download and process the stylesheet before showing the page. <a class="cause-tab" href="#network">Network</a> <a class="cause-tab" href="#lighthouse">Lighthouse</a>
             <ul>
               <li>Inline styles for above-the-fold content.</li>
             </ul>
           </li>
-          <li><strong>Heavy or unused style calculations.</strong> Complex or unused CSS gives the browser more work to do before it can show content. <span class="cause-tab">Coverage</span> <span class="cause-tab">Performance</span>
+          <li><strong>Heavy or unused style calculations.</strong> Complex or unused CSS gives the browser more work to do before it can show content. <a class="cause-tab" href="#coverage">Coverage</a> <a class="cause-tab" href="#performance">Performance</a>
             <ul>
               <li>Simplify CSS.</li>
               <li>Reduce complex selectors.</li>
               <li>Remove styles the page does not use.</li>
             </ul>
           </li>
+          <li>Many of the same causes that hurt LCP &mdash; slow server response and render-blocking JavaScript &mdash; also affect FCP.</li>
         </ul>
 
         <div class="example-card">
@@ -1140,11 +869,16 @@ function toggleMob() {
             </div>
           </div>
         </div>
-        <div class="toc-section" data-section="console">
-          <a href="#console" class="toc-h2-link block text-[14px] font-semibold py-2.5 transition-colors duration-200" style="color:#4B5563;">Console</a>
-        </div>
         <div class="toc-section" data-section="lcp-fix">
-          <a href="#lcp-fix" class="toc-h2-link block text-[14px] font-semibold py-2.5 transition-colors duration-200" style="color:#4B5563;">Common Issues &amp; Fixes</a>
+          <a href="#lcp-fix" class="toc-h2-link block text-[14px] font-semibold py-2.5 transition-colors duration-200" style="color:#4B5563;">Page Speed Fixes by Metric</a>
+          <div class="toc-children">
+            <div style="margin-left:1.5px;border-left:2px solid #E5E7EB;padding-left:0;">
+              <a href="#lcp-improve" class="toc-h3-link block text-[12.5px] py-2 pl-3 border-l-[2px] border-transparent transition-colors duration-150" style="color:#8896A8;margin-left:-2px;">LCP</a>
+              <a href="#cls-improve" class="toc-h3-link block text-[12.5px] py-2 pl-3 border-l-[2px] border-transparent transition-colors duration-150" style="color:#8896A8;margin-left:-2px;">CLS</a>
+              <a href="#tbt-improve" class="toc-h3-link block text-[12.5px] py-2 pl-3 border-l-[2px] border-transparent transition-colors duration-150" style="color:#8896A8;margin-left:-2px;">TBT</a>
+              <a href="#fcp-improve" class="toc-h3-link block text-[12.5px] py-2 pl-3 border-l-[2px] border-transparent transition-colors duration-150" style="color:#8896A8;margin-left:-2px;">FCP</a>
+            </div>
+          </div>
         </div>
       </nav>
     </aside>
@@ -1155,8 +889,8 @@ function toggleMob() {
 <!-- TOC active-state script -->
 <script>
 (function(){
-  var sectionIds = ['open-devtools','lighthouse','performance','network','coverage','console','lcp-fix'];
-  var h3Ids = ['run-lighthouse','fix-issues','perf-cwv','perf-deeper','net-slow','net-heavy','cov-js','cov-css'];
+  var sectionIds = ['open-devtools','lighthouse','performance','network','coverage','lcp-fix'];
+  var h3Ids = ['run-lighthouse','fix-issues','perf-cwv','perf-deeper','net-slow','net-heavy','cov-js','cov-css','lcp-improve','tbt-improve','cls-improve','fcp-improve'];
   var activeSection = null;
   var activeH3 = null;
   function setActiveSection(id){
@@ -1169,7 +903,7 @@ function toggleMob() {
       h2.style.fontWeight = isActive ? '700' : '600';
       sec.classList.toggle('active', isActive);
     });
-    if(id !== 'lighthouse' && id !== 'performance' && id !== 'network' && id !== 'coverage'){
+    if(id !== 'lighthouse' && id !== 'performance' && id !== 'network' && id !== 'coverage' && id !== 'lcp-fix'){
       activeH3 = null;
       document.querySelectorAll('.toc-h3-link').forEach(function(a){ a.style.borderLeftColor = 'transparent'; });
     }
