@@ -746,6 +746,9 @@ function toggleBrandGrid() {
   .hobby-item.hobby-active .hobby-desc { display:block !important; }
   .hobby-item .hobby-icon { flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center; }
   .hobby-item .hobby-icon img { width:28px;height:28px;object-fit:contain; }
+  .otc-chip { display:inline-flex;align-items:center;gap:8px;background:#ffffff;border:1px solid #d9e6f5;color:#3a5778;font-size:0.85rem;font-weight:600;padding:8px 14px;border-radius:999px;text-decoration:none;transition:transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease; }
+  .otc-chip:hover { transform:translateY(-1px);border-color:#6B8DB5;box-shadow:0 4px 12px -4px rgba(107,141,181,0.25); }
+  .otc-chip:focus-visible { outline:2px solid #6B8DB5;outline-offset:2px; }
   .otc-video-card { background:#eaf2ff;border-radius:20px;overflow:hidden;box-shadow:0 4px 20px -4px rgba(0,0,0,0.08);width:100%;min-width:0; }
   .otc-video-card video { width:100%;display:block;background:#000;object-fit:cover; }
   .otc-video-label { position:absolute;top:12px;left:12px;background:rgba(0,0,0,0.5);backdrop-filter:blur(8px);color:#fff;font-size:0.7rem;font-weight:600;padding:4px 10px;border-radius:20px;font-family:'Inter',sans-serif; }
@@ -776,68 +779,39 @@ function toggleBrandGrid() {
     .hobby-mobile-content { display:none !important; }
   }
 </style>
-<section class="-mt-6 pb-16 md:mt-0 md:pt-0 md:pb-16" style="background:#ffffff;">
+<section class="-mt-6 py-20 md:mt-0 md:py-24" style="background:#f3f8ff;">
   <div class="max-w-6xl mx-auto px-6">
-    <div class="px-8 py-10 md:px-14 md:py-14" style="background:#f3f8ff;border-radius:20px;box-shadow:0 2px 16px -4px rgba(0,0,0,0.06);">
-    <div style="margin-bottom:28px;text-align:center;">
+    <div style="margin-bottom:36px;text-align:center;">
       <h2 class="font-display font-bold text-ink mb-3" style="font-size:clamp(1.8rem,3vw,2.5rem);letter-spacing:-0.02em;line-height:1.2;">What I'm into outside work</h2>
-      <p class="text-muted" style="line-height:1.7;font-size:0.9rem;">A few of my favorite things outside of search.</p>
+      <p class="text-muted" style="line-height:1.7;font-size:0.95rem;">A few of my favorite things outside of search.</p>
     </div>
-    <div class="otc-layout" style="display:flex;gap:60px;align-items:center;">
+    <div class="otc-layout" style="display:flex;gap:60px;align-items:flex-start;">
 
-      <!-- LEFT: sticky hobby list -->
-      <div class="otc-sticky" style="width:380px;flex-shrink:0;align-self:flex-start;position:sticky;top:88px;">
-
-        <div style="display:flex;flex-direction:column;gap:8px;">
-          <div class="hobby-item hobby-active" onclick="selectHobby(0)">
-            <div style="display:flex;flex-direction:column;gap:6px;width:100%;">
-              <span class="font-display text-ink hobby-title" style="font-size:0.88rem;letter-spacing:-0.01em;font-weight:520;color:#1A1A2E;">Music</span>
-              <span class="hobby-desc text-muted" style="font-size:0.8rem;line-height:1.55;display:none;">Playing guitar, collecting vinyl, and doing discography deep-dives of my favorite artists.</span>
-            </div>
-            <span class="hobby-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="#6B8DB5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-            <div class="hobby-mobile-content" id="hobby-mob-0">
-              <p class="hobby-mob-desc text-muted" style="font-size:0.8rem;line-height:1.55;display:none;margin-bottom:12px;">Playing guitar, collecting vinyl, and doing discography deep-dives of my favorite artists.</p>
-            </div>
-          </div>
-          <div class="hobby-item" onclick="selectHobby(1)">
-            <div style="display:flex;flex-direction:column;gap:6px;width:100%;">
-              <span class="font-display text-ink hobby-title" style="font-size:0.88rem;letter-spacing:-0.01em;font-weight:520;color:#1A1A2E;">Movies</span>
-              <span class="hobby-desc text-muted" style="font-size:0.8rem;line-height:1.55;display:none;">Going to the theater, watching classics, and logging it all on Letterboxd.</span>
-            </div>
-            <span class="hobby-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="#6B8DB5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-            <div class="hobby-mobile-content" id="hobby-mob-1">
-              <p class="hobby-mob-desc text-muted" style="font-size:0.8rem;line-height:1.55;display:none;margin-bottom:12px;">Going to the theater, watching classics, and logging it all on Letterboxd.</p>
-            </div>
-          </div>
-          <div class="hobby-item" onclick="selectHobby(2)">
-            <div style="display:flex;flex-direction:column;gap:6px;width:100%;">
-              <span class="font-display text-ink hobby-title" style="font-size:0.88rem;letter-spacing:-0.01em;font-weight:520;color:#1A1A2E;">Basketball</span>
-              <span class="hobby-desc text-muted" style="font-size:0.8rem;line-height:1.55;display:none;">Playing pickup, watching the Knicks, and convincing myself I'm an elite shooter.</span>
-            </div>
-            <span class="hobby-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="#6B8DB5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-            <div class="hobby-mobile-content" id="hobby-mob-2">
-              <p class="hobby-mob-desc text-muted" style="font-size:0.8rem;line-height:1.55;display:none;margin-bottom:12px;">Playing pickup, watching the Knicks, and convincing myself I'm an elite shooter.</p>
-            </div>
-          </div>
-          <div class="hobby-item" onclick="selectHobby(3)">
-            <div style="display:flex;flex-direction:column;gap:6px;width:100%;">
-              <span class="font-display text-ink hobby-title" style="font-size:0.88rem;letter-spacing:-0.01em;font-weight:520;color:#1A1A2E;">Brooklyn</span>
-              <span class="hobby-desc text-muted" style="font-size:0.8rem;line-height:1.55;display:none;">Exploring my neighborhood. I've lived in Brooklyn for 15 years and grew up on Long Island.</span>
-            </div>
-            <span class="hobby-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="#6B8DB5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-            <div class="hobby-mobile-content" id="hobby-mob-3">
-              <p class="hobby-mob-desc text-muted" style="font-size:0.8rem;line-height:1.55;display:none;margin-bottom:12px;">Exploring my neighborhood. I've lived in Brooklyn for 15 years and grew up on Long Island.</p>
-            </div>
-          </div>
-          <div class="hobby-item" onclick="selectHobby(4)">
-            <div style="display:flex;flex-direction:column;gap:6px;width:100%;">
-              <span class="font-display text-ink hobby-title" style="font-size:0.88rem;letter-spacing:-0.01em;font-weight:520;color:#1A1A2E;">Food</span>
-              <span class="hobby-desc text-muted" style="font-size:0.8rem;line-height:1.55;display:none;">Trying new restaurants and cooking new Italian dishes.</span>
-            </div>
-            <span class="hobby-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="#6B8DB5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-            <div class="hobby-mobile-content" id="hobby-mob-4">
-              <p class="hobby-mob-desc text-muted" style="font-size:0.8rem;line-height:1.55;display:none;margin-bottom:12px;">Trying new restaurants and cooking new Italian dishes.</p>
-            </div>
+      <!-- LEFT: prose -->
+      <div class="otc-sticky" style="flex:1;min-width:0;align-self:flex-start;">
+        <div class="text-muted" style="font-size:1rem;line-height:1.85;">
+          <p style="margin-bottom:1em;">Outside of work, I enjoy playing guitar, building my vinyl collection, or doing discography deep-dives of my favorite artists. Check out what I've been listening to.</p>
+          <p style="margin-bottom:1.5em;">I also love going to the movies, playing pickup basketball and climbing, watching the Knicks, and exploring new corners of Brooklyn, where I&rsquo;ve lived for 15 years.</p>
+          <div class="otc-chips" style="display:flex;flex-wrap:wrap;gap:10px;">
+            <a href="https://open.spotify.com/" target="_blank" rel="noopener" class="otc-chip">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#1DB954" style="flex-shrink:0;"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.586 14.424a.622.622 0 0 1-.857.207c-2.348-1.435-5.304-1.76-8.785-.964a.623.623 0 0 1-.277-1.215c3.809-.87 7.077-.496 9.713 1.115.293.18.387.563.206.857zm1.223-2.722a.78.78 0 0 1-1.072.257c-2.687-1.652-6.785-2.131-9.965-1.166a.78.78 0 1 1-.452-1.493c3.632-1.102 8.147-.568 11.232 1.33.366.225.481.704.257 1.072zm.105-2.835C14.692 8.954 9.375 8.764 6.27 9.705a.935.935 0 1 1-.542-1.79c3.566-1.082 9.438-.873 13.156 1.337a.935.935 0 0 1-.97 1.615z"/></svg>
+              <span>Spotify</span>
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;opacity:0.6;"><path d="M7 17L17 7M9 7h8v8"/></svg>
+            </a>
+            <a href="https://letterboxd.com/" target="_blank" rel="noopener" class="otc-chip">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;">
+                <circle cx="8" cy="12" r="6" fill="#00e054" opacity="0.85"/>
+                <circle cx="16" cy="12" r="6" fill="#40bcf4" opacity="0.85"/>
+                <circle cx="12" cy="12" r="6" fill="#ff8000" opacity="0.65"/>
+              </svg>
+              <span>Letterboxd</span>
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;opacity:0.6;"><path d="M7 17L17 7M9 7h8v8"/></svg>
+            </a>
+            <a href="https://www.discogs.com/" target="_blank" rel="noopener" class="otc-chip">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6B8DB5" stroke-width="2" style="flex-shrink:0;"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="0.8" fill="#6B8DB5"/></svg>
+              <span>Discogs</span>
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;opacity:0.6;"><path d="M7 17L17 7M9 7h8v8"/></svg>
+            </a>
           </div>
         </div>
       </div>
@@ -937,7 +911,6 @@ function toggleBrandGrid() {
       </div>
 
     </div>
-    </div>
   </div>
 <style>
   @keyframes bar { from { transform: scaleY(0.4); } to { transform: scaleY(1); } }
@@ -945,9 +918,9 @@ function toggleBrandGrid() {
 <script>
 var PL_TRACKS = [
   { id: '2zf1izCOz2F22PF27uhxRF', title: 'Love Takes Miles',          artist: 'Cameron Winter',                  img: 'https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e024738aa171569052376f162fe' },
-  { id: '6JvhkfpPHGnnJ8FLDSRwc3', title: 'Same',                      artist: 'Courtney Barnett',                img: 'https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e0297f5c55e414c80933cf4594c' },
+  { id: '7oG9qhZ0UaQEoUGJJVXh1U', title: 'Favourite',                 artist: 'Fontaines D.C.',                  img: 'https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02a0430b2bfc00d662b83ec095' },
   { id: '2waAug1IePTKYs2KhTCYlc', title: 'New Threats From The Soul', artist: 'Ryan Davis & the Roadhouse Band', img: 'https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e0247f82ecbef8f717ae0862cc8' },
-  { id: '7oG9qhZ0UaQEoUGJJVXh1U', title: 'Favourite',                artist: 'Fontaines D.C.',                  img: 'https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02a0430b2bfc00d662b83ec095' },
+  { id: '7G4T7qkB0Wp32ItIvxBCw5', title: 'Down To Zero',              artist: 'Joan Armatrading',                img: 'https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e0215ba138a939eac2c01d3508d' },
 ];
 </script>
 <script src="https://open.spotify.com/embed/iframe-api/v1" async></script>
