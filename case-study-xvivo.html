@@ -5,6 +5,7 @@
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>XVIVO Case Study — Craig Kleila</title>
+<link rel="canonical" href="https://craigkleila.com/case-study-xvivo">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -89,7 +90,8 @@
     .cs-prose li { font-size: 1rem; }
   }
   /* Numbered strategy headings */
-  .strategy-num { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: #FFF1EC; color: #F47B5A; font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 0.85rem; margin-right: 10px; vertical-align: middle; }
+  h3[data-num] { display: flex; align-items: center; }
+  h3[data-num]::before { content: attr(data-num); display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: #FFF1EC; color: #F47B5A; font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 0.85rem; margin-right: 10px; flex-shrink: 0; }
   /* Coral-dot bullets (matches blog post) — only for the checkmark-style lists */
   .cs-prose ul li.flex:has(> span.bg-coral-light) { display: block; position: relative; padding-left: 1.6em; margin-bottom: 0.7em; line-height: 1.78 !important; }
   .cs-prose ul li.flex:has(> span.bg-coral-light)::before { content: ""; position: absolute; left: 0.25em; top: 0.78em; width: 6px; height: 6px; border-radius: 50%; background: #F47B5A; }
@@ -128,7 +130,7 @@
   <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
     <a href="index.html"><img src="newlogo.png" alt="Craig Kleila SEO" class="h-7"></a>
     <div class="hidden md:flex items-center gap-8 text-sm font-medium text-muted">
-      <a href="services.html">SEO Services</a>
+      <a href="seo-services.html">SEO Services</a>
       <a href="case-studies.html" class="text-coral font-semibold">Case Studies</a>
       <a href="about.html">About</a>
       <a href="blog.html">Blog</a>
@@ -143,7 +145,7 @@
 </header>
 </div>
 <div id="mob">
-  <a href="services.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;" ontouchstart="this.style.background='#f3f4f6'" ontouchend="this.style.background=''" ontouchcancel="this.style.background=''">SEO Services</a>
+  <a href="seo-services.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;" ontouchstart="this.style.background='#f3f4f6'" ontouchend="this.style.background=''" ontouchcancel="this.style.background=''">SEO Services</a>
   <a href="case-studies.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;" ontouchstart="this.style.background='#f3f4f6'" ontouchend="this.style.background=''" ontouchcancel="this.style.background=''">Case Studies</a>
   <a href="about.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;" ontouchstart="this.style.background='#f3f4f6'" ontouchend="this.style.background=''" ontouchcancel="this.style.background=''">About</a>
   <a href="blog.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;" ontouchstart="this.style.background='#f3f4f6'" ontouchend="this.style.background=''" ontouchcancel="this.style.background=''">Blog</a>
@@ -282,7 +284,7 @@ function toggleMob() {
         <ul class="space-y-10">
           <li>
             <div>
-              <h3 id="s-1" class="font-display font-semibold text-[20px] text-ink mb-3"><span class="strategy-num">1</span>Fix the Technical Foundation</h3>
+              <h3 id="s-1" class="font-display font-semibold text-[20px] text-ink mb-3" data-num="1">Fix the Technical Foundation</h3>
               <p class="text-[#4B5563] text-[16px] mt-4" style="line-height:1.8;">First, I conducted a full technical audit to ensure search engines could properly crawl, understand, and index the site.</p>
               <p class="text-[#4B5563] text-[16px] mt-4 mb-4" style="line-height:1.8;">The audit uncovered several issues:</p>
               <ul class="space-y-4 mb-4">
@@ -300,7 +302,7 @@ function toggleMob() {
           </li>
           <li>
             <div>
-              <h3 id="s-2" class="font-display font-semibold text-[20px] text-ink mb-3"><span class="strategy-num">2</span>Rewrite Metadata to Match How Customers Search</h3>
+              <h3 id="s-2" class="font-display font-semibold text-[20px] text-ink mb-3" data-num="2">Rewrite Metadata to Match How Customers Search</h3>
               <p class="text-[#4B5563] text-[16px] mt-4" style="line-height:1.8;">Alongside the technical cleanup, I focused on quick metadata wins. Title tags and meta descriptions were rewritten across 40+ pages to better match the content and search intent.</p>
               <p class="text-[#4B5563] text-[16px] mt-4" style="line-height:1.8;">For example, the mechanism of action animation page was refocused on <em>"mechanism of action animation"</em> instead of broad terms like <em>"medical animation company."</em></p>
               <p class="text-[#4B5563] text-[16px] mt-4" style="line-height:1.8;">This made it easier for both search engines and potential customers to understand what each page offered.</p>
@@ -308,7 +310,7 @@ function toggleMob() {
           </li>
           <li>
             <div>
-              <h3 id="s-3" class="font-display font-semibold text-[20px] text-ink mb-3"><span class="strategy-num">3</span>Build Topic Depth Around Medical Animation</h3>
+              <h3 id="s-3" class="font-display font-semibold text-[20px] text-ink mb-3" data-num="3">Build Topic Depth Around Medical Animation</h3>
               <p class="text-[#4B5563] text-[16px] mt-4 mb-6" style="line-height:1.8;">Next, I expanded content to cover the full range of medical animation needs.</p>
               <p class="text-[#4B5563] text-[16px] mt-4" style="line-height:1.8;">Keyword research revealed gaps across animation types, therapeutic areas, and use cases. To capture this demand, I created new pages targeting high-intent searches like MoA animation, oncology and neurology animation, and pharmaceutical marketing.</p>
               <p class="text-[#4B5563] text-[16px] mt-4" style="line-height:1.8;">Each page focused on a specific use case, while collectively building stronger coverage of the overall topic. This helped search engines better understand XVIVO's expertise and improved visibility across a wider set of queries.</p>
@@ -319,7 +321,7 @@ function toggleMob() {
           </li>
           <li>
             <div>
-              <h3 id="s-5" class="font-display font-semibold text-[20px] text-ink mb-3"><span class="strategy-num">4</span>Match Pages to Search Intent</h3>
+              <h3 id="s-5" class="font-display font-semibold text-[20px] text-ink mb-3" data-num="4">Match Pages to Search Intent</h3>
               <p class="text-[#4B5563] text-[16px] mt-4" style="line-height:1.8;">Each priority page was reviewed and updated based on what someone expects to see when they land on it.</p>
               <p class="text-[#4B5563] text-[16px] mt-4" style="line-height:1.8;">For example, someone searching for a medical animation company wants to see the work, not read about it. On the homepage, video examples were moved above the fold to immediately showcase capabilities. This adjustment helped improve rankings for <em>"medical animation"</em> and reduced bounce rate by 18%.</p>
               <p class="text-[#4B5563] text-[16px] mt-4 mb-6" style="line-height:1.8;">Content across other key pages was restructured to better highlight work examples, use cases, and outcomes, making it easier for users to evaluate XVIVO and take the next step.</p>
@@ -627,7 +629,7 @@ function toggleMob() {
   <div class="max-w-6xl mx-auto px-6 py-10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted">
     <img src="newlogo.png" alt="Craig Kleila SEO" class="h-7">
     <nav class="flex gap-6">
-      <a href="services.html" class="hover:text-coral transition-colors duration-150">SEO Services</a>
+      <a href="seo-services.html" class="hover:text-coral transition-colors duration-150">SEO Services</a>
       <a href="case-studies.html" class="hover:text-coral transition-colors duration-150">Case Studies</a>
       <a href="about.html" class="hover:text-coral transition-colors duration-150">About</a>
       <a href="blog.html" class="hover:text-coral transition-colors duration-150">Blog</a>

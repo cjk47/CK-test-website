@@ -5,6 +5,7 @@
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rukkus Case Study — Craig Kleila</title>
+<link rel="canonical" href="https://craigkleila.com/case-study-rukkus">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -91,7 +92,8 @@
     .cs-prose li { font-size: 1rem; }
   }
   /* Numbered strategy headings */
-  .strategy-num { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: #FFF1EC; color: #F47B5A; font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 0.85rem; margin-right: 10px; vertical-align: middle; }
+  h3[data-num] { display: flex; align-items: center; }
+  h3[data-num]::before { content: attr(data-num); display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: #FFF1EC; color: #F47B5A; font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 0.85rem; margin-right: 10px; flex-shrink: 0; }
   /* Coral-dot bullets (matches blog post) — only for the checkmark-style lists */
   .cs-prose ul li.flex:has(> span.bg-coral-light) { display: block; position: relative; padding-left: 1.6em; margin-bottom: 0.7em; line-height: 1.78 !important; }
   .cs-prose ul li.flex:has(> span.bg-coral-light)::before { content: ""; position: absolute; left: 0.25em; top: 0.78em; width: 6px; height: 6px; border-radius: 50%; background: #F47B5A; }
@@ -130,7 +132,7 @@
   <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
     <a href="index.html"><img src="newlogo.png" alt="Craig Kleila SEO" class="h-7"></a>
     <div class="hidden md:flex items-center gap-8 text-sm font-medium text-muted">
-      <a href="services.html">SEO Services</a>
+      <a href="seo-services.html">SEO Services</a>
       <a href="case-studies.html" class="text-coral font-semibold">Case Studies</a>
       <a href="about.html">About</a>
       <a href="blog.html">Blog</a>
@@ -145,7 +147,7 @@
 </header>
 </div>
 <div id="mob">
-  <a href="services.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;" ontouchstart="this.style.background='#f3f4f6'" ontouchend="this.style.background=''" ontouchcancel="this.style.background=''">SEO Services</a>
+  <a href="seo-services.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;" ontouchstart="this.style.background='#f3f4f6'" ontouchend="this.style.background=''" ontouchcancel="this.style.background=''">SEO Services</a>
   <a href="case-studies.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;" ontouchstart="this.style.background='#f3f4f6'" ontouchend="this.style.background=''" ontouchcancel="this.style.background=''">Case Studies</a>
   <a href="about.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;" ontouchstart="this.style.background='#f3f4f6'" ontouchend="this.style.background=''" ontouchcancel="this.style.background=''">About</a>
   <a href="blog.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;" ontouchstart="this.style.background='#f3f4f6'" ontouchend="this.style.background=''" ontouchcancel="this.style.background=''">Blog</a>
@@ -287,7 +289,7 @@ function toggleMob() {
         <p class="text-[#4B5563] text-[16px] mb-8" style="line-height:1.85;">The approach focused on earning "stamps of approval" from sites Google trusts. This included using proprietary data to pitch stories to journalists, creating embed-ready visuals, turning the launch into a story, piggybacking on competitor links, and securing placements on university discount pages.</p>
 
         <div class="mb-11">
-          <h3 id="s-1" class="font-display font-semibold text-[20px] text-ink mb-3"><span class="strategy-num">1</span>Offer Unique Data to Journalists</h3>
+          <h3 id="s-1" class="font-display font-semibold text-[20px] text-ink mb-3" data-num="1">Offer Unique Data to Journalists</h3>
           <p class="text-[#4B5563] text-[16px] mb-6" style="line-height:1.85;">Rukkus had proprietary ticket data, so I used it as a link building asset. By pitching data-driven story angles like <em>"When's the Best Time to Buy Coachella Tickets?"</em> or <em>"How Did Jim Harbaugh's Hiring Affect Ticket Prices?"</em>, I gave journalists genuinely useful material for stories they were already covering.</p>
           <p class="text-[#4B5563] text-[16px] mb-6" style="line-height:1.85;">To scale outreach, I built a tool that scraped the top news stories each morning and flagged ones we could support with ticket data. I then prioritized opportunities by site authority, focusing on high-impact domains and moving quickly. When a relevant story broke, I sent a pitch the same day, leading to placements on outlets like CNN and Fox.</p>
 
@@ -325,7 +327,7 @@ function toggleMob() {
         </div>
 
         <div class="mb-1">
-          <h3 id="s-2" class="font-display font-semibold text-[20px] text-ink mb-3"><span class="strategy-num">2</span>Produce Engaging Visuals</h3>
+          <h3 id="s-2" class="font-display font-semibold text-[20px] text-ink mb-3" data-num="2">Produce Engaging Visuals</h3>
           <p class="text-[#4B5563] text-[16px] mb-6" style="line-height:1.85;">Data alone wasn't always enough. Journalists also needed imagery to bring the story to life, so I created infographics and visual guides that were easy to embed.</p>
           <p class="text-[#4B5563] text-[16px]" style="line-height:1.8;">For example, I designed an infographic on the value of the #1 pick in the NBA draft and pitched it to sports sites that had covered the draft but lacked images. Sports Illustrated was among those that picked it up, with each placement linking back to Rukkus.</p>
 
@@ -349,7 +351,7 @@ function toggleMob() {
         </div>
 
         <div class="mb-6">
-          <h3 id="s-3" class="font-display font-semibold text-[20px] text-ink mb-3"><span class="strategy-num">3</span>Turn the Launch Into a Story</h3>
+          <h3 id="s-3" class="font-display font-semibold text-[20px] text-ink mb-3" data-num="3">Turn the Launch Into a Story</h3>
           <p class="text-[#4B5563] text-[16px] mb-6" style="line-height:1.85;">We believed the launch of Rukkus was a newsworthy event, so I put together a full press kit to show journalists what we were about. It included the company story, digital assets, team bios, product screenshots, key stats, and background on the ticket data we had access to.</p>
           <p class="text-[#4B5563] text-[16px] mb-6" style="line-height:1.85;">This led to coverage and links from Forbes, VentureBeat, Pando, and others.</p>
 
@@ -371,7 +373,7 @@ function toggleMob() {
         </div>
 
         <div class="mb-7">
-          <h3 id="s-4" class="font-display font-semibold text-[20px] text-ink mb-3"><span class="strategy-num">4</span>Reverse-Engineer the Competition</h3>
+          <h3 id="s-4" class="font-display font-semibold text-[20px] text-ink mb-3" data-num="4">Reverse-Engineer the Competition</h3>
           <p class="text-[#4B5563] text-[16px] mb-6" style="line-height:1.85;">Another part of the strategy was analyzing where competitors were getting links. I pulled a list of 1,000+ pages linking to sites like StubHub and SeatGeek but not to Rukkus, then narrowed it down to the most relevant and authoritative domains for outreach.</p>
           <p class="text-[#4B5563] text-[16px] mb-6" style="line-height:1.85;">The idea was simple. If a site was willing to link to a competitor, they might link to us with the right pitch. This led to links from iMore, CNET, and the Atlanta Journal-Constitution.</p>
 
@@ -393,7 +395,7 @@ function toggleMob() {
         </div>
 
         <div class="mb-0">
-          <h3 id="s-5" class="font-display font-semibold text-[20px] text-ink mb-3"><span class="strategy-num">5</span>Secure University Discount Pages</h3>
+          <h3 id="s-5" class="font-display font-semibold text-[20px] text-ink mb-3" data-num="5">Secure University Discount Pages</h3>
           <p class="text-[#4B5563] text-[16px] mb-6" style="line-height:1.85;">College students are a core audience for live events. Using search operators like <code class="bg-offwhite px-1.5 py-0.5 rounded text-sm font-mono text-ink">site:.edu intitle:discounts</code>, I found hundreds of university pages listing student and staff discounts.</p>
           <p class="text-[#4B5563] text-[16px] mb-6" style="line-height:1.85;">I reached out to propose adding Rukkus to their lists, a genuinely useful addition for students, and a trust signal for Google. This landed links from Harvard, Cornell, the University of Pittsburgh, and more.</p>
 
@@ -774,7 +776,7 @@ function toggleMob() {
   <div class="max-w-6xl mx-auto px-6 py-10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted">
     <img src="newlogo.png" alt="Craig Kleila SEO" class="h-7">
     <nav class="flex gap-6">
-      <a href="services.html" class="hover:text-coral transition-colors duration-150">SEO Services</a>
+      <a href="seo-services.html" class="hover:text-coral transition-colors duration-150">SEO Services</a>
       <a href="case-studies.html" class="hover:text-coral transition-colors duration-150">Case Studies</a>
       <a href="about.html" class="hover:text-coral transition-colors duration-150">About</a>
       <a href="blog.html" class="hover:text-coral transition-colors duration-150">Blog</a>

@@ -5,6 +5,7 @@
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Chase Case Study — Craig Kleila</title>
+<link rel="canonical" href="https://craigkleila.com/case-study-chase">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -88,7 +89,8 @@
     .cs-prose li { font-size: 1rem; }
   }
   /* Numbered strategy headings */
-  .strategy-num { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: #FFF1EC; color: #F47B5A; font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 0.85rem; margin-right: 10px; vertical-align: middle; }
+  h3[data-num] { display: flex; align-items: center; }
+  h3[data-num]::before { content: attr(data-num); display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: #FFF1EC; color: #F47B5A; font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 0.85rem; margin-right: 10px; flex-shrink: 0; }
   /* Coral-dot bullets (matches blog post) — only for the checkmark-style lists */
   .cs-prose ul li.flex:has(> span.bg-coral-light) { display: block; position: relative; padding-left: 1.6em; margin-bottom: 0.7em; line-height: 1.78 !important; }
   .cs-prose ul li.flex:has(> span.bg-coral-light)::before { content: ""; position: absolute; left: 0.25em; top: 0.78em; width: 6px; height: 6px; border-radius: 50%; background: #F47B5A; }
@@ -127,7 +129,7 @@
   <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
     <a href="index.html"><img src="newlogo.png" alt="Craig Kleila SEO" class="h-7"></a>
     <div class="hidden md:flex items-center gap-8 text-sm font-medium text-muted">
-      <a href="services.html">SEO Services</a>
+      <a href="seo-services.html">SEO Services</a>
       <a href="case-studies.html" class="text-coral font-semibold">Case Studies</a>
       <a href="about.html">About</a>
       <a href="blog.html">Blog</a>
@@ -142,7 +144,7 @@
 </header>
 </div>
 <div id="mob">
-  <a href="services.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;" ontouchstart="this.style.background='#f3f4f6'" ontouchend="this.style.background=''" ontouchcancel="this.style.background=''">SEO Services</a>
+  <a href="seo-services.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;" ontouchstart="this.style.background='#f3f4f6'" ontouchend="this.style.background=''" ontouchcancel="this.style.background=''">SEO Services</a>
   <a href="case-studies.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;" ontouchstart="this.style.background='#f3f4f6'" ontouchend="this.style.background=''" ontouchcancel="this.style.background=''">Case Studies</a>
   <a href="about.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;" ontouchstart="this.style.background='#f3f4f6'" ontouchend="this.style.background=''" ontouchcancel="this.style.background=''">About</a>
   <a href="blog.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;" ontouchstart="this.style.background='#f3f4f6'" ontouchend="this.style.background=''" ontouchcancel="this.style.background=''">Blog</a>
@@ -281,28 +283,28 @@ function toggleMob() {
           <li class="flex gap-3">
             
             <div>
-              <h3 id="s-1" class="font-display font-semibold text-[20px] text-ink mb-3"><span class="strategy-num">1</span>Search Gap Analysis</h3>
+              <h3 id="s-1" class="font-display font-semibold text-[20px] text-ink mb-3" data-num="1">Search Gap Analysis</h3>
               <p class="text-[#4B5563] text-[16px] mt-4" style="line-height:1.8;">Pulled full search console data and compared ranking queries against the full universe of relevant searches. Identified dozens of high-volume, high-intent queries the page wasn't capturing.</p>
             </div>
           </li>
           <li class="flex gap-3">
             
             <div>
-              <h3 id="s-2" class="font-display font-semibold text-[20px] text-ink mb-3"><span class="strategy-num">2</span>On-Page Content Updates</h3>
+              <h3 id="s-2" class="font-display font-semibold text-[20px] text-ink mb-3" data-num="2">On-Page Content Updates</h3>
               <p class="text-[#4B5563] text-[16px] mt-4" style="line-height:1.8;">Rewrote sections of the card page to address comparison queries, benefit breakdowns, and common cardholder questions. Added structured content blocks targeting featured snippets.</p>
             </div>
           </li>
           <li class="flex gap-3">
             
             <div>
-              <h3 id="s-3" class="font-display font-semibold text-[20px] text-ink mb-3"><span class="strategy-num">3</span>Metadata Optimization</h3>
+              <h3 id="s-3" class="font-display font-semibold text-[20px] text-ink mb-3" data-num="3">Metadata Optimization</h3>
               <p class="text-[#4B5563] text-[16px] mt-4" style="line-height:1.8;">Updated title tags and meta descriptions to better match the intent behind high-volume queries — improving click-through rates from existing impressions.</p>
             </div>
           </li>
           <li class="flex gap-3">
             
             <div>
-              <h3 id="s-4" class="font-display font-semibold text-[20px] text-ink mb-3"><span class="strategy-num">4</span>Internal Linking Improvements</h3>
+              <h3 id="s-4" class="font-display font-semibold text-[20px] text-ink mb-3" data-num="4">Internal Linking Improvements</h3>
               <p class="text-[#4B5563] text-[16px] mt-4" style="line-height:1.8;">Built internal links from high-traffic supporting content to the card page. Improved link equity flow to the primary conversion page.</p>
             </div>
           </li>
@@ -623,7 +625,7 @@ function toggleMob() {
   <div class="max-w-6xl mx-auto px-6 py-10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted">
     <img src="newlogo.png" alt="Craig Kleila SEO" class="h-7">
     <nav class="flex gap-6">
-      <a href="services.html" class="hover:text-coral transition-colors duration-150">SEO Services</a>
+      <a href="seo-services.html" class="hover:text-coral transition-colors duration-150">SEO Services</a>
       <a href="case-studies.html" class="hover:text-coral transition-colors duration-150">Case Studies</a>
       <a href="about.html" class="hover:text-coral transition-colors duration-150">About</a>
       <a href="blog.html" class="hover:text-coral transition-colors duration-150">Blog</a>

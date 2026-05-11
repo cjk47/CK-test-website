@@ -4,7 +4,8 @@
 <meta charset="UTF-8">
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Using Chrome DevTools to Find &amp; Fix Site Speed Issues — Craig Kleila</title>
+<title>How to Find Page Speed Issues in Chrome DevTools — Craig Kleila</title>
+<link rel="canonical" href="https://craigkleila.com/blog/devtools-page-speed">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -44,9 +45,8 @@
   .prose p:last-child { margin-bottom: 0; }
   .prose p:has(+ ul), .prose p:has(+ ol) { margin-bottom: 0.9em; }
   .prose h2 { font-family: 'Poppins', sans-serif; color: #1A1A2E; font-weight: 700; font-size: 1.85rem; line-height: 1.25; letter-spacing: -0.02em; margin-top: 1.9em; margin-bottom: 0.9em; }
-  .prose h2:has(> .h2-num) { display: flex; align-items: flex-start; gap: 12px; }
-  .prose h2 > .h2-num { margin-top: 0; }
-  .h2-num { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%; background: #FFF1EC; color: #F47B5A; font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 1.05rem; flex-shrink: 0; }
+  .prose h2[data-num] { display: flex; align-items: flex-start; gap: 12px; }
+  .prose h2[data-num]::before { content: attr(data-num); display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%; background: #FFF1EC; color: #F47B5A; font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 1.05rem; flex-shrink: 0; }
   .prose h2:first-child { margin-top: 0; }
   .prose h3 { font-family: 'Poppins', sans-serif; color: #1A1A2E; font-weight: 650; font-size: 1.55rem; line-height: 1.3; letter-spacing: -0.015em; margin-top: 2.2em; margin-bottom: 0.7em; }
   .prose h4 { font-family: 'Poppins', sans-serif; color: #1A1A2E; font-weight: 650; font-size: 1.2rem; line-height: 1.35; letter-spacing: -0.012em; margin-top: 1.8em; margin-bottom: 0.55em; }
@@ -267,13 +267,13 @@
 <div class="sticky top-0 z-50">
 <header class="bg-white border-b border-border" style="position:relative;">
   <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-    <a href="index.html"><img src="newlogo.png" alt="Craig Kleila SEO" class="h-7"></a>
+    <a href="../index.html"><img src="../newlogo.png" alt="Craig Kleila SEO" class="h-7"></a>
     <div class="hidden md:flex items-center gap-8 text-sm font-medium text-muted">
-      <a href="services.html">SEO Services</a>
-      <a href="case-studies.html">Case Studies</a>
-      <a href="about.html">About</a>
-      <a href="blog.html" class="text-coral font-semibold">Blog</a>
-      <a href="contact.html" class="btn-coral bg-coral text-white px-5 py-2 rounded-full font-semibold text-sm">Let's Talk</a>
+      <a href="../seo-services.html">SEO Services</a>
+      <a href="../case-studies.html">Case Studies</a>
+      <a href="../about.html">About</a>
+      <a href="../blog.html" class="text-coral font-semibold">Blog</a>
+      <a href="../contact.html" class="btn-coral bg-coral text-white px-5 py-2 rounded-full font-semibold text-sm">Let's Talk</a>
     </div>
     <button class="md:hidden flex flex-col justify-center text-ink" id="mob-btn" onclick="toggleMob()" aria-label="Toggle menu" style="width:36px;height:28px;padding:3px 7px;">
       <span class="mob-bar"></span>
@@ -284,12 +284,12 @@
 </header>
 </div>
 <div id="mob">
-  <a href="services.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;">SEO Services</a>
-  <a href="case-studies.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;">Case Studies</a>
-  <a href="about.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;">About</a>
-  <a href="blog.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;">Blog</a>
+  <a href="../seo-services.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;">SEO Services</a>
+  <a href="../case-studies.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;">Case Studies</a>
+  <a href="../about.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;">About</a>
+  <a href="../blog.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;">Blog</a>
   <div class="px-6 py-5">
-    <a href="contact.html" class="btn-coral flex items-center justify-center w-full bg-[#F47B5A] text-white text-[17px] font-semibold rounded-full py-3">Let's Talk</a>
+    <a href="../contact.html" class="btn-coral flex items-center justify-center w-full bg-[#F47B5A] text-white text-[17px] font-semibold rounded-full py-3">Let's Talk</a>
   </div>
 </div>
 <script>
@@ -305,7 +305,7 @@ function toggleMob() {
 <!-- BREADCRUMB -->
 <div class="max-w-6xl mx-auto px-6 pt-7">
   <nav class="flex items-center gap-2 text-sm">
-    <a href="blog.html" class="font-bold text-ink underline hover:text-coral" style="transition:color 0.15s ease;">Blog</a>
+    <a href="../blog.html" class="font-bold text-ink underline hover:text-coral" style="transition:color 0.15s ease;">Blog</a>
     <span class="text-muted">›</span>
     <span class="text-muted">Chrome DevTools</span>
   </nav>
@@ -319,7 +319,7 @@ function toggleMob() {
     <div class="inline-flex items-center gap-2 text-violet text-xs font-semibold px-3 py-1.5 rounded-full mb-5" style="background:#ede9fd;">
       Technical SEO
     </div>
-    <h1 class="article-h1 font-display font-extrabold text-ink leading-tight mb-5 mx-auto max-w-3xl" style="font-size:clamp(2.2rem,4vw,3rem);letter-spacing:-0.025em;font-weight:750;line-height:1.15;">Using Chrome DevTools to Find &amp; Fix Page Speed Issues</h1>
+    <h1 class="article-h1 font-display font-extrabold text-ink leading-tight mb-5 mx-auto max-w-3xl" style="font-size:clamp(2.2rem,4vw,3rem);letter-spacing:-0.025em;font-weight:750;line-height:1.15;">How to Find Page Speed Issues in Chrome DevTools</h1>
     <div class="flex flex-wrap items-center justify-center gap-3 text-sm text-muted">
       <span>By Craig Kleila</span>
       <span style="width:3px;height:3px;border-radius:50%;background:#D1D5DB;"></span>
@@ -330,7 +330,7 @@ function toggleMob() {
   <!-- featured image -->
   <div class="hero-img-container relative rounded-2xl overflow-hidden mb-12 md:mb-16" style="background:radial-gradient(ellipse 70% 60% at 20% 30%, rgba(240,216,138,0.5) 0%, transparent 60%),radial-gradient(ellipse 70% 60% at 80% 80%, rgba(181,208,238,0.5) 0%, transparent 60%),linear-gradient(135deg, #FEF3D4 0%, #DDEAF8 100%);border:1px solid #E8E8F0;height:460px;">
     <div class="absolute inset-0 flex items-center justify-center">
-      <img src="devarticle.png" alt="Chrome DevTools site speed audit" style="max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;transform:scale(1.35);">
+      <img src="../devarticle.png" alt="Chrome DevTools site speed audit" style="max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;transform:scale(1.35);">
     </div>
   </div>
 
@@ -363,7 +363,7 @@ function toggleMob() {
           <li>Chrome DevTools will open on the side or bottom of the browser. At the top, you'll see tabs like Elements, Console, Network, Performance, and Lighthouse.</li>
         </ol>
 
-        <h2 id="lighthouse" class="scroll-mt-24"><span class="h2-num">1</span>Lighthouse: Run a Quick Speed Audit</h2>
+        <h2 id="lighthouse" class="scroll-mt-24" data-num="1">Lighthouse: Run a Quick Speed Audit</h2>
 
         <p>Google Lighthouse is a free tool built into Chrome DevTools that helps you quickly evaluate the quality and performance of a webpage.</p>
 
@@ -379,7 +379,7 @@ function toggleMob() {
         </ol>
 
         <figure style="margin:1.6em 0 1.8em;">
-          <video src="mehhhhhh.mov" muted loop playsinline controls controlsList="nodownload nofullscreen noremoteplayback noplaybackrate" disablepictureinpicture preload="metadata" style="width:100%;height:auto;display:block;border-radius:12px;"></video>
+          <video src="../mehhhhhh.mov" muted loop playsinline controls controlsList="nodownload nofullscreen noremoteplayback noplaybackrate" disablepictureinpicture preload="metadata" style="width:100%;height:auto;display:block;border-radius:12px;"></video>
         </figure>
 
         <h3 id="fix-issues" class="scroll-mt-24">Key performance metrics</h3>
@@ -405,17 +405,17 @@ function toggleMob() {
           <li>The <strong>&ldquo;Show audits relevant to&rdquo;</strong> filter lets you narrow the report by metric, including FCP, LCP, TBT, and CLS, so you can focus on the issues affecting that metric.</li>
         </ul>
 
-        <h2 id="performance" class="scroll-mt-24"><span class="h2-num">2</span>Performance: Diagnose CWV Issues</h2>
+        <h2 id="performance" class="scroll-mt-24" data-num="2">Performance: Diagnose CWV Issues</h2>
 
         <p>The Performance tab helps you troubleshoot page speed issues and see what may be hurting Core Web Vitals.</p>
 
-        <p id="perf-setup" class="scroll-mt-24">To run a report, open Chrome DevTools, go to the Performance tab, and click Record and reload <span style="display:inline-block;width:0.95em;height:0.95em;overflow:hidden;vertical-align:-0.16em;position:relative;margin:0;"><img src="rricon.png" alt="Record and reload icon" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transform:scale(1.2);"></span> to start a lab test.</p>
+        <p id="perf-setup" class="scroll-mt-24">To run a report, open Chrome DevTools, go to the Performance tab, and click Record and reload <span style="display:inline-block;width:0.95em;height:0.95em;overflow:hidden;vertical-align:-0.16em;position:relative;margin:0;"><img src="../rricon.png" alt="Record and reload icon" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transform:scale(1.2);"></span> to start a lab test.</p>
 
         <p>After the report loads, connect field data in the right column. This lets you compare your local test with Core Web Vitals data from real users.</p>
 
         <h3 id="perf-cwv" class="scroll-mt-24">Review Core Web Vitals</h3>
 
-        <p>Click the home icon <span style="display:inline-block;width:0.95em;height:0.95em;overflow:hidden;vertical-align:-0.16em;position:relative;margin:0;"><img src="homeeee.png" alt="Home icon" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transform:scale(1.65);"></span> in the toolbar to see your page's Core Web Vitals. From there, you can inspect each metric more closely:</p>
+        <p>Click the home icon <span style="display:inline-block;width:0.95em;height:0.95em;overflow:hidden;vertical-align:-0.16em;position:relative;margin:0;"><img src="../homeeee.png" alt="Home icon" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transform:scale(1.65);"></span> in the toolbar to see your page's Core Web Vitals. From there, you can inspect each metric more closely:</p>
 
         <ul>
           <li><strong>Find the LCP element:</strong> hover over the LCP element in the Largest Contentful Paint card to see which element is counted as the LCP on the page.</li>
@@ -424,22 +424,22 @@ function toggleMob() {
         </ul>
 
         <figure style="margin:0.6em 0 1.6em;">
-          <video src="newyyyyyyyyyy2.mov" muted loop playsinline controls controlsList="nodownload nofullscreen noremoteplayback noplaybackrate" disablepictureinpicture preload="metadata" style="width:100%;height:auto;display:block;border-radius:12px;"></video>
+          <video src="../newyyyyyyyyyy2.mov" muted loop playsinline controls controlsList="nodownload nofullscreen noremoteplayback noplaybackrate" disablepictureinpicture preload="metadata" style="width:100%;height:auto;display:block;border-radius:12px;"></video>
         </figure>
 
         <h3 id="perf-deeper" class="scroll-mt-24">Further insights &amp; Ask AI</h3>
 
-        <p>Click the sidebar icon <span style="display:inline-block;width:1.05em;height:1.05em;overflow:hidden;vertical-align:-0.22em;position:relative;margin:0 1px;"><img src="sidebar.png" alt="Sidebar icon" style="position:absolute;width:118%;height:118%;left:-9%;top:-9%;object-fit:contain;"></span> to see more detail about each issue. Then select Ask AI to better understand the problem and how to fix it.</p>
+        <p>Click the sidebar icon <span style="display:inline-block;width:1.05em;height:1.05em;overflow:hidden;vertical-align:-0.22em;position:relative;margin:0 1px;"><img src="../sidebar.png" alt="Sidebar icon" style="position:absolute;width:118%;height:118%;left:-9%;top:-9%;object-fit:contain;"></span> to see more detail about each issue. Then select Ask AI to better understand the problem and how to fix it.</p>
 
-        <p>You can ask AI anywhere in DevTools by clicking the three-dot icon <span style="display:inline-block;width:1.05em;height:1.05em;overflow:hidden;vertical-align:-0.22em;position:relative;margin:0 1px;"><img src="topright.png" alt="Three-dot icon" style="position:absolute;width:118%;height:118%;left:-9%;top:-9%;object-fit:contain;"></span> and selecting Debug with AI.</p>
+        <p>You can ask AI anywhere in DevTools by clicking the three-dot icon <span style="display:inline-block;width:1.05em;height:1.05em;overflow:hidden;vertical-align:-0.22em;position:relative;margin:0 1px;"><img src="../topright.png" alt="Three-dot icon" style="position:absolute;width:118%;height:118%;left:-9%;top:-9%;object-fit:contain;"></span> and selecting Debug with AI.</p>
 
         <p>To turn this on, go to DevTools Settings &gt; AI innovations.</p>
 
         <figure style="margin:0.6em 0 1.6em;">
-          <img src="39.png" alt="Chrome DevTools Performance panel showing further insights." style="width:100%;height:auto;display:block;border-radius:12px;border:1px solid #E8E8F0;">
+          <img src="../39.png" alt="Chrome DevTools Performance panel showing further insights." style="width:100%;height:auto;display:block;border-radius:12px;border:1px solid #E8E8F0;">
         </figure>
 
-        <h2 id="network" class="scroll-mt-24"><span class="h2-num">3</span>Network: Analyze Page Requests</h2>
+        <h2 id="network" class="scroll-mt-24" data-num="3">Network: Analyze Page Requests</h2>
 
         <p>The Network tab shows every request a page makes as it loads, including HTML, CSS, JavaScript, images, fonts, API calls, videos, and third-party scripts.</p>
 
@@ -469,7 +469,7 @@ function toggleMob() {
         <div class="example-card">
           <p>The Gap.com request below shows a TTFB of 1,030 ms, which is worth reviewing. As a general rule, anything above 500 ms should be investigated.</p>
           <figure style="border-radius:8px;overflow:hidden;border:1px solid #C9DBEC;">
-            <video src="nahhhhhhhh.mov" muted loop playsinline controls controlsList="nodownload nofullscreen noremoteplayback noplaybackrate" disablepictureinpicture preload="metadata" style="width:100%;height:auto;display:block;border-radius:0;"></video>
+            <video src="../nahhhhhhhh.mov" muted loop playsinline controls controlsList="nodownload nofullscreen noremoteplayback noplaybackrate" disablepictureinpicture preload="metadata" style="width:100%;height:auto;display:block;border-radius:0;"></video>
             <figcaption style="margin:0;display:flex;width:100%;align-items:center;flex-wrap:wrap;gap:6px;background:#FFFFFF;border-top:1px solid #EFEFF3;padding:14px 18px;box-sizing:border-box;font-family:'Inter',sans-serif;font-size:0.78rem;font-weight:500;color:#8896A8;line-height:1;">
               <span style="font-size:0.62rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:#B8BCC8;margin-right:4px;line-height:1;display:inline-flex;align-items:center;">Find it</span>
               <span style="display:inline-flex;align-items:center;line-height:1;">Network</span>
@@ -518,7 +518,7 @@ function toggleMob() {
         <p>As a general rule, images around 300&ndash;500 KB are worth checking, 500 KB&ndash;1 MB should be investigated, and anything over 1 MB should be treated as high priority.</p>
 
         <figure style="margin:1.4em 0 1.6em;border-radius:12px;overflow:hidden;border:1px solid #E0E0E8;">
-          <img src="raaa.png" alt="Chrome DevTools Network panel showing large image files identified by size." style="width:100%;height:auto;display:block;border-radius:0;">
+          <img src="../raaa.png" alt="Chrome DevTools Network panel showing large image files identified by size." style="width:100%;height:auto;display:block;border-radius:0;">
           <figcaption style="margin:0;display:flex;width:100%;align-items:center;flex-wrap:wrap;gap:6px;background:#FFFFFF;border-top:1px solid #EFEFF3;padding:14px 18px;box-sizing:border-box;font-family:'Inter',sans-serif;font-size:0.78rem;font-weight:500;color:#8896A8;line-height:1;">
             <span style="font-size:0.62rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:#B8BCC8;margin-right:4px;line-height:1;display:inline-flex;align-items:center;">Find it</span>
             <span style="display:inline-flex;align-items:center;line-height:1;">Network</span>
@@ -564,7 +564,7 @@ function toggleMob() {
         <p>These scripts become an issue when they affect the initial page load. Look for third-party requests that load before key resources like CSS, fonts, or the LCP image, take several hundred milliseconds to download, trigger extra requests, or come from inactive tags.</p>
 
         <figure style="margin:1.4em 0 1.6em;border-radius:12px;overflow:hidden;border:1px solid #E0E0E8;">
-          <video src="yasssssssss.mov" muted loop playsinline controls controlsList="nodownload nofullscreen noremoteplayback noplaybackrate" disablepictureinpicture preload="metadata" style="width:100%;height:auto;display:block;border-radius:0;"></video>
+          <video src="../yasssssssss.mov" muted loop playsinline controls controlsList="nodownload nofullscreen noremoteplayback noplaybackrate" disablepictureinpicture preload="metadata" style="width:100%;height:auto;display:block;border-radius:0;"></video>
           <figcaption style="margin:0;display:flex;width:100%;align-items:center;flex-wrap:wrap;gap:6px;background:#FFFFFF;border-top:1px solid #EFEFF3;padding:14px 18px;box-sizing:border-box;font-family:'Inter',sans-serif;font-size:0.78rem;font-weight:500;color:#8896A8;line-height:1;">
             <span style="font-size:0.62rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:#B8BCC8;margin-right:4px;line-height:1;display:inline-flex;align-items:center;">Find it</span>
             <span style="display:inline-flex;align-items:center;line-height:1;">Network</span>
@@ -575,13 +575,13 @@ function toggleMob() {
           </figcaption>
         </figure>
 
-        <h2 id="coverage" class="scroll-mt-24"><span class="h2-num">4</span>Coverage: Find Unused Code</h2>
+        <h2 id="coverage" class="scroll-mt-24" data-num="4">Coverage: Find Unused Code</h2>
 
         <p>The Coverage tab helps identify CSS and JavaScript that loads but is never actually used. This is extremely common on modern websites.</p>
 
         <p>To open it, hit <strong>Cmd + Shift + P</strong> (Mac) or <strong>Ctrl + Shift + P</strong> (Windows) inside DevTools, search for "Coverage," then reload the page. Chrome will show the total bytes loaded, unused bytes, and percentage of unused code for each file.</p>
 
-        <h3 id="cov-js" class="scroll-mt-24">1. Large unused JavaScript</h3>
+        <h3 id="cov-js" class="scroll-mt-24">Large unused JavaScript</h3>
 
         <p>Large unused JavaScript means the page is loading code it does not need. This can include first-party JavaScript files, third-party libraries, interaction-only scripts loaded upfront, or desktop-specific code loading on mobile.</p>
 
@@ -590,10 +590,10 @@ function toggleMob() {
         <p>To fix it, split JavaScript by route, template, or component so each page gets only the code it needs. Remove unused dependencies, lazy-load non-critical features, and avoid sending desktop-only components to mobile when possible.</p>
 
         <figure style="margin:1.4em 0 1.6em;">
-          <video src="waaaatyyy.mov" muted loop playsinline controls controlsList="nodownload nofullscreen noremoteplayback noplaybackrate" disablepictureinpicture preload="metadata" style="width:100%;height:auto;display:block;border-radius:12px;"></video>
+          <video src="../waaaatyyy.mov" muted loop playsinline controls controlsList="nodownload nofullscreen noremoteplayback noplaybackrate" disablepictureinpicture preload="metadata" style="width:100%;height:auto;display:block;border-radius:12px;"></video>
         </figure>
 
-        <h3 id="cov-css" class="scroll-mt-24">2. Large unused CSS</h3>
+        <h3 id="cov-css" class="scroll-mt-24">Large unused CSS</h3>
 
         <p>Unused CSS is the stylesheet version of the same problem. It usually happens when a site loads one large global stylesheet, theme file, or design-system file across every template, even when the page only uses a small portion of it.</p>
 
@@ -601,7 +601,7 @@ function toggleMob() {
 
         <p>To fix it, split CSS by template or component so each page only loads the styles it needs. Additionally, inline critical above-the-fold CSS, defer non-critical CSS, and remove unused or outdated styles carefully.</p>
 
-        <h2 id="lcp-fix" class="scroll-mt-24"><span class="h2-num">5</span>Page Speed Fixes by Metric</h2>
+        <h2 id="lcp-fix" class="scroll-mt-24" data-num="5">Page Speed Fixes by Metric</h2>
 
         <p>Once Lighthouse highlights the metrics dragging the page down, the next step is figuring out how to fix them.</p>
 
@@ -690,7 +690,7 @@ function toggleMob() {
             </div>
           </div>
           <figure>
-            <img src="ccccc.png" alt="CentralBank.com Network panel showing image loading order related to LCP." style="width:100%;height:auto;display:block;border-radius:8px;">
+            <img src="../ccccc.png" alt="CentralBank.com Network panel showing image loading order related to LCP." style="width:100%;height:auto;display:block;border-radius:8px;">
           </figure>
           <ul>
             <li><strong>Below-the-fold images load before the LCP image.</strong> The browser is spending network resources on images users cannot see yet, which delays the main above-the-fold image.</li>
@@ -735,7 +735,7 @@ function toggleMob() {
             </div>
           </div>
           <figure>
-            <img src="gameee.png" alt="GameSpot.com homepage screenshot showing layout shift issue caused by unreserved ad space." style="width:100%;height:auto;display:block;border-radius:8px;">
+            <img src="../gameee.png" alt="GameSpot.com homepage screenshot showing layout shift issue caused by unreserved ad space." style="width:100%;height:auto;display:block;border-radius:8px;">
           </figure>
           <ul>
             <li><strong>Top ad space is not reserved.</strong> When ads load above the page content, they push div#site-wrapper down and cause the page to jump. Reserve the expected ad height before the ad loads.</li>
@@ -774,7 +774,7 @@ function toggleMob() {
             </div>
           </div>
           <figure>
-            <img src="nyyyyyy.png" alt="NYTimes.com Performance panel showing large JavaScript bundles consuming main-thread time." style="width:100%;height:auto;display:block;border-radius:8px;">
+            <img src="../nyyyyyy.png" alt="NYTimes.com Performance panel showing large JavaScript bundles consuming main-thread time." style="width:100%;height:auto;display:block;border-radius:8px;">
           </figure>
           <ul>
             <li><strong>Large JavaScript bundles are taking too long to execute.</strong> The page spends significant main-thread time evaluating large scripts, including main-7898505577c9d051fa86.js and a large vendor bundle. Break large bundles into smaller chunks and use dynamic imports so the browser only loads the JavaScript needed for the initial view.</li>
@@ -814,7 +814,7 @@ function toggleMob() {
             </div>
           </div>
           <figure>
-            <img src="attttt.png" alt="Athenahealth.com Network panel showing multiple render-blocking CSS files loading early." style="width:100%;height:auto;display:block;border-radius:8px;">
+            <img src="../attttt.png" alt="Athenahealth.com Network panel showing multiple render-blocking CSS files loading early." style="width:100%;height:auto;display:block;border-radius:8px;">
           </figure>
           <ul>
             <li><strong>Too many CSS files are blocking the first paint.</strong> The page loads 14 separate stylesheets early, including component-specific files like CardCarousel.css, PageTitleModule.css, and AthenaOneInAction.css. The browser has to download and parse these files before it can show content.</li>
@@ -1045,13 +1045,13 @@ function toggleMob() {
 <!-- FOOTER -->
 <footer class="border-t border-border">
   <div class="max-w-6xl mx-auto px-6 py-10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted">
-    <img src="newlogo.png" alt="Craig Kleila SEO" class="h-7">
+    <img src="../newlogo.png" alt="Craig Kleila SEO" class="h-7">
     <nav class="flex flex-wrap justify-center gap-6">
-      <a href="services.html" class="hover:text-coral transition-colors duration-150">SEO Services</a>
-      <a href="case-studies.html" class="hover:text-coral transition-colors duration-150">Case Studies</a>
-      <a href="about.html" class="hover:text-coral transition-colors duration-150">About</a>
-      <a href="blog.html" class="hover:text-coral transition-colors duration-150">Blog</a>
-      <a href="contact.html" class="hover:text-coral transition-colors duration-150">Contact</a>
+      <a href="../seo-services.html" class="hover:text-coral transition-colors duration-150">SEO Services</a>
+      <a href="../case-studies.html" class="hover:text-coral transition-colors duration-150">Case Studies</a>
+      <a href="../about.html" class="hover:text-coral transition-colors duration-150">About</a>
+      <a href="../blog.html" class="hover:text-coral transition-colors duration-150">Blog</a>
+      <a href="../contact.html" class="hover:text-coral transition-colors duration-150">Contact</a>
     </nav>
     <p>© 2026 Craig Kleila. All rights reserved.</p>
   </div>

@@ -5,6 +5,7 @@
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AEO vs. SEO: Optimizing for the Next Era of Search — Craig Kleila</title>
+<link rel="canonical" href="https://craigkleila.com/blog/aeo-vs-seo">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -80,7 +81,8 @@
   }
 
   /* Section section styling for numbered strategy headings */
-  .strategy-num { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: #FFF1EC; color: #F47B5A; font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 0.85rem; margin-right: 10px; vertical-align: middle; }
+  .prose h3[data-num] { display: flex; align-items: center; }
+  .prose h3[data-num]::before { content: attr(data-num); display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: #FFF1EC; color: #F47B5A; font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 0.85rem; margin-right: 10px; flex-shrink: 0; }
 
   /* Mobile menu */
   #mob { display: flex; flex-direction: column; position: fixed; top: 64px; left: 0; right: 0; bottom: 0; z-index: 40; background: #fff; transform: translateY(-105%); transition: transform 0.4s cubic-bezier(0.4,0,0.2,1); pointer-events: none; overflow-y: auto; }
@@ -121,13 +123,13 @@
 <div class="sticky top-0 z-50">
 <header class="bg-white border-b border-border" style="position:relative;">
   <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-    <a href="index.html"><img src="newlogo.png" alt="Craig Kleila SEO" class="h-7"></a>
+    <a href="../index.html"><img src="../newlogo.png" alt="Craig Kleila SEO" class="h-7"></a>
     <div class="hidden md:flex items-center gap-8 text-sm font-medium text-muted">
-      <a href="services.html">SEO Services</a>
-      <a href="case-studies.html">Case Studies</a>
-      <a href="about.html">About</a>
-      <a href="blog.html" class="text-coral font-semibold">Blog</a>
-      <a href="contact.html" class="btn-coral bg-coral text-white px-5 py-2 rounded-full font-semibold text-sm">Let's Talk</a>
+      <a href="../seo-services.html">SEO Services</a>
+      <a href="../case-studies.html">Case Studies</a>
+      <a href="../about.html">About</a>
+      <a href="../blog.html" class="text-coral font-semibold">Blog</a>
+      <a href="../contact.html" class="btn-coral bg-coral text-white px-5 py-2 rounded-full font-semibold text-sm">Let's Talk</a>
     </div>
     <button class="md:hidden flex flex-col justify-center text-ink" id="mob-btn" onclick="toggleMob()" aria-label="Toggle menu" style="width:36px;height:28px;padding:3px 7px;">
       <span class="mob-bar"></span>
@@ -138,12 +140,12 @@
 </header>
 </div>
 <div id="mob">
-  <a href="services.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;">SEO Services</a>
-  <a href="case-studies.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;">Case Studies</a>
-  <a href="about.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;">About</a>
-  <a href="blog.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;">Blog</a>
+  <a href="../seo-services.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;">SEO Services</a>
+  <a href="../case-studies.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;">Case Studies</a>
+  <a href="../about.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;">About</a>
+  <a href="../blog.html" class="mob-nav-link flex items-center px-6 py-5 border-b border-[#e5e7eb] text-[17px] font-semibold" style="color:#1A1A2E;">Blog</a>
   <div class="px-6 py-5">
-    <a href="contact.html" class="btn-coral flex items-center justify-center w-full bg-[#F47B5A] text-white text-[17px] font-semibold rounded-full py-3">Let's Talk</a>
+    <a href="../contact.html" class="btn-coral flex items-center justify-center w-full bg-[#F47B5A] text-white text-[17px] font-semibold rounded-full py-3">Let's Talk</a>
   </div>
 </div>
 <script>
@@ -159,7 +161,7 @@ function toggleMob() {
 <!-- BREADCRUMB -->
 <div class="max-w-6xl mx-auto px-6 pt-7">
   <nav class="flex items-center gap-2 text-sm">
-    <a href="blog.html" class="font-bold text-ink underline hover:text-coral" style="transition:color 0.15s ease;">Blog</a>
+    <a href="../blog.html" class="font-bold text-ink underline hover:text-coral" style="transition:color 0.15s ease;">Blog</a>
     <span class="text-muted">›</span>
     <span class="text-muted">AEO vs. SEO</span>
   </nav>
@@ -173,7 +175,7 @@ function toggleMob() {
     <div class="inline-flex items-center gap-2 text-violet text-xs font-semibold px-3 py-1.5 rounded-full mb-5" style="background:#ede9fd;">
       AI Search
     </div>
-    <h1 class="article-h1 font-display font-extrabold text-ink leading-tight mb-5 mx-auto max-w-3xl" style="font-size:clamp(2.2rem,4vw,3rem);letter-spacing:-0.025em;font-weight:750;line-height:1.15;">AEO vs. SEO: Optimizing for the next era of search</h1>
+    <h1 class="article-h1 font-display font-extrabold text-ink leading-tight mb-5 mx-auto max-w-3xl" style="font-size:clamp(2.2rem,4vw,3rem);letter-spacing:-0.025em;font-weight:750;line-height:1.15;">AEO vs. SEO: Optimizing for the Next Era of Search</h1>
     <div class="flex flex-wrap items-center justify-center gap-3 text-sm text-muted">
       <span>By Craig Kleila</span>
       <span style="width:3px;height:3px;border-radius:50%;background:#D1D5DB;"></span>
@@ -186,7 +188,7 @@ function toggleMob() {
   <!-- featured image -->
   <div class="hero-img-container relative rounded-2xl overflow-hidden mb-12 md:mb-16" style="background:radial-gradient(ellipse 70% 60% at 20% 30%, rgba(244,123,90,0.22) 0%, transparent 60%),radial-gradient(ellipse 70% 60% at 80% 80%, rgba(123,104,238,0.22) 0%, transparent 60%),linear-gradient(135deg, #FFF5F1 0%, #F4F0FE 100%);border:1px solid #E8E8F0;height:460px;">
     <div class="absolute inset-0 flex items-center justify-center p-2 md:p-4">
-      <img src="yano.png" alt="AEO vs. SEO" style="max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;transform:scale(1.31);">
+      <img src="../yano.png" alt="AEO vs. SEO" style="max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;transform:scale(1.31);">
     </div>
   </div>
 
@@ -206,7 +208,7 @@ function toggleMob() {
 
     <p>This shift is redefining how customers discover information and interact with brands. As users move fluidly between search engines, AI assistants, and apps, the traditional SEO playbook must adapt. Enter <strong>Answer Engine Optimization (AEO)</strong>.</p>
 
-    <h2 id="aeo-what" class="scroll-mt-24">What is Answer Engine Optimization (AEO)?</h2>
+    <h2 id="aeo-what" class="scroll-mt-24">What Is Answer Engine Optimization (AEO)?</h2>
 
     <p>Answer Engine Optimization (AEO) is the process of structuring your content so answer engines can easily extract, synthesize, and present it as a direct answer to user questions.</p>
 
@@ -214,7 +216,7 @@ function toggleMob() {
 
     <p>AEO applies core SEO principles to this new reality, but it requires rethinking how success is defined. Instead of optimizing for clicks, you're optimizing for visibility within the answers AI provides, whether or not the user ever lands on your site. Take some time to understand the differences, and why answer engine optimization is a large part of the future of search visibility.</p>
 
-    <h2 id="aeo-vs-seo" class="scroll-mt-24">AEO vs. SEO: What's the difference?</h2>
+    <h2 id="aeo-vs-seo" class="scroll-mt-24">AEO vs. SEO: What's the Difference?</h2>
 
     <p>SEO and AEO work best together.</p>
 
@@ -272,7 +274,7 @@ function toggleMob() {
       </table>
     </div>
 
-    <h2 id="how-ai-works" class="scroll-mt-24">How AI search works</h2>
+    <h2 id="how-ai-works" class="scroll-mt-24">How AI Search Works</h2>
 
     <p>The biggest difference between AI and traditional search is how they interpret a query.</p>
 
@@ -293,7 +295,7 @@ function toggleMob() {
 
     <p>Then, AI looks for the most relevant information across multiple sources and combines it into one answer. Depending on the prompt, that information may come from the model's internal training data, live search results, or both.</p>
 
-    <h2 id="optimize" class="scroll-mt-24">How to optimize for AEO</h2>
+    <h2 id="optimize" class="scroll-mt-24">How to Optimize for AEO</h2>
 
     <p>The fundamentals haven't changed: understand your audience, build trust, and provide the best answers.</p>
 
@@ -301,7 +303,7 @@ function toggleMob() {
 
     <p>The strategies below show how to future-proof your approach, blending proven SEO tactics with the nuances of AI-powered search.</p>
 
-    <h3 id="opt-1" class="scroll-mt-24"><span class="strategy-num">1</span>Create topic clusters</h3>
+    <h3 id="opt-1" class="scroll-mt-24" data-num="1">Create topic clusters</h3>
 
     <p>Aligning your content with AI's query fan-out can improve visibility for your core topics and more specific long-tail searches. The most effective way to do this is by building topic clusters.</p>
 
@@ -320,7 +322,7 @@ function toggleMob() {
 
     <p>This structure tells LLMs that your brand has the answer to the main question and the follow-up questions it will generate.</p>
 
-    <h3 id="opt-2" class="scroll-mt-24"><span class="strategy-num">2</span>Optimize for chunk-level retrieval</h3>
+    <h3 id="opt-2" class="scroll-mt-24" data-num="2">Optimize for chunk-level retrieval</h3>
 
     <p>AI extracts the most relevant passages, not entire pages. That means each section of your content needs to be clear, focused, and easy to understand on its own.</p>
 
@@ -350,7 +352,7 @@ function toggleMob() {
 
     <p>This structure makes it easier for AI systems to extract a specific answer and understand what each section is about without needing the full page for context.</p>
 
-    <h3 id="opt-3" class="scroll-mt-24"><span class="strategy-num">3</span>Demonstrate E-E-A-T</h3>
+    <h3 id="opt-3" class="scroll-mt-24" data-num="3">Demonstrate E-E-A-T</h3>
 
     <p>LLMs are more likely to trust content that is credible, current, and backed by real expertise. The best way to build that trust is to clearly demonstrate <strong>E-E-A-T</strong>: Experience, Expertise, Authoritativeness, and Trustworthiness.</p>
 
@@ -372,7 +374,7 @@ function toggleMob() {
 
     <p>This structure helps show AI systems and users that your recommendations come from real experience, reliable sources, and a brand people can trust.</p>
 
-    <h3 id="opt-4" class="scroll-mt-24"><span class="strategy-num">4</span>Implement structured data and schema markup</h3>
+    <h3 id="opt-4" class="scroll-mt-24" data-num="4">Implement structured data and schema markup</h3>
 
     <p>Structured data turns page content into machine-readable, unambiguous information, helping LLMs interpret context, identify entities, and verify facts. This can improve eligibility for AI citations and facilitate rich search results like ratings or FAQ dropdowns.</p>
 
@@ -394,7 +396,7 @@ function toggleMob() {
 
     <p>This gives search engines and LLMs clearer context, making it easier to understand the page and answer specific user questions accurately.</p>
 
-    <h3 id="opt-5" class="scroll-mt-24"><span class="strategy-num">5</span>Build digital PR and backlinks</h3>
+    <h3 id="opt-5" class="scroll-mt-24" data-num="5">Build digital PR and backlinks</h3>
 
     <p>Backlinks and brand mentions help build trust with search engines and AI systems. When reputable sites reference your brand, it gives LLMs more evidence that your content is credible and worth citing.</p>
 
@@ -411,7 +413,7 @@ function toggleMob() {
 
     <p>Those backlinks and mentions help show search engines and LLMs that your brand is a credible source in the industry. Over time, that can improve your authority and increase the chances your content is surfaced or cited in AI-generated answers.</p>
 
-    <h3 id="opt-6" class="scroll-mt-24"><span class="strategy-num">6</span>Maintain cross-platform visibility</h3>
+    <h3 id="opt-6" class="scroll-mt-24" data-num="6">Maintain cross-platform visibility</h3>
 
     <p>AI systems do not rely only on your website. They may also reference trusted publications, YouTube, Reddit, forums, review sites, social platforms, and other third-party sources.</p>
 
@@ -433,7 +435,7 @@ function toggleMob() {
 
     <p>This helps reinforce your brand as a trusted source on pet nutrition across multiple channels, not just your own website.</p>
 
-    <h2 id="future" class="scroll-mt-24">Future-proofing your brand visibility</h2>
+    <h2 id="future" class="scroll-mt-24">Future-Proofing Your Brand Visibility</h2>
 
     <p>Brands that adapt now will maintain visibility and trust in a world where AI does more of the searching, answering, and decision-supporting.</p>
 
@@ -445,7 +447,7 @@ function toggleMob() {
 
       <!-- back link -->
       <div class="mt-12 pt-7" style="border-top:1px solid #E8E8F0;">
-        <a href="blog.html" class="inline-flex items-center gap-2 text-sm font-semibold text-muted hover:text-coral transition-colors" style="transition:color 0.15s ease;">
+        <a href="../blog.html" class="inline-flex items-center gap-2 text-sm font-semibold text-muted hover:text-coral transition-colors" style="transition:color 0.15s ease;">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           Back to all articles
         </a>
@@ -458,16 +460,16 @@ function toggleMob() {
       <p class="text-[16px] font-semibold mb-3" style="color:#111;">On this page</p>
       <nav id="toc-nav">
         <div class="toc-section" data-section="aeo-what">
-          <a href="#aeo-what" class="toc-h2-link block text-[14px] font-semibold py-2.5 transition-colors duration-200" style="color:#4B5563;">What is AEO?</a>
+          <a href="#aeo-what" class="toc-h2-link block text-[14px] font-semibold py-2.5 transition-colors duration-200" style="color:#4B5563;">What Is AEO?</a>
         </div>
         <div class="toc-section" data-section="aeo-vs-seo">
           <a href="#aeo-vs-seo" class="toc-h2-link block text-[14px] font-semibold py-2.5 transition-colors duration-200" style="color:#4B5563;">AEO vs. SEO</a>
         </div>
         <div class="toc-section" data-section="how-ai-works">
-          <a href="#how-ai-works" class="toc-h2-link block text-[14px] font-semibold py-2.5 transition-colors duration-200" style="color:#4B5563;">How AI search works</a>
+          <a href="#how-ai-works" class="toc-h2-link block text-[14px] font-semibold py-2.5 transition-colors duration-200" style="color:#4B5563;">How AI Search Works</a>
         </div>
         <div class="toc-section" data-section="optimize">
-          <a href="#optimize" class="toc-h2-link block text-[14px] font-semibold py-2.5 transition-colors duration-200" style="color:#4B5563;">How to optimize for AEO</a>
+          <a href="#optimize" class="toc-h2-link block text-[14px] font-semibold py-2.5 transition-colors duration-200" style="color:#4B5563;">How to Optimize for AEO</a>
           <div class="toc-children">
             <div style="margin-left:1.5px;border-left:2px solid #E5E7EB;padding-left:0;">
               <a href="#opt-1" class="toc-h3-link block text-[12.5px] py-2 pl-3 border-l-[2px] border-transparent transition-colors duration-150" style="color:#8896A8;margin-left:-2px;">Topic clusters</a>
@@ -480,7 +482,7 @@ function toggleMob() {
           </div>
         </div>
         <div class="toc-section" data-section="future">
-          <a href="#future" class="toc-h2-link block text-[14px] font-semibold py-2.5 transition-colors duration-200" style="color:#4B5563;">Future-proofing</a>
+          <a href="#future" class="toc-h2-link block text-[14px] font-semibold py-2.5 transition-colors duration-200" style="color:#4B5563;">Future-Proofing</a>
         </div>
       </nav>
     </aside>
@@ -536,7 +538,7 @@ function toggleMob() {
       <div class="inline-flex items-center gap-2 text-xs font-semibold px-3 py-1.5 rounded-full mb-6" style="background:rgba(255,255,255,0.55);color:#F47B5A;">Let's work together</div>
       <h2 class="font-display font-bold text-3xl md:text-4xl text-ink tracking-tight mb-4">Need help adapting your<br>SEO for AI search?</h2>
       <p class="text-muted mb-8" style="line-height:1.7;max-width:440px;margin-left:auto;margin-right:auto;">Drop me an email and let's figure out where to start.<br class="hidden md:inline"> No pressure, just a conversation.</p>
-      <a href="contact.html" class="btn-coral inline-flex items-center gap-2 bg-coral text-white font-semibold px-8 py-4 rounded-full text-base">Let's Talk <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="../contact.html" class="btn-coral inline-flex items-center gap-2 bg-coral text-white font-semibold px-8 py-4 rounded-full text-base">Let's Talk <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     </div>
   </div>
 </section>
@@ -572,13 +574,13 @@ function toggleMob() {
 <!-- FOOTER -->
 <footer class="border-t border-border">
   <div class="max-w-6xl mx-auto px-6 py-10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted">
-    <img src="newlogo.png" alt="Craig Kleila SEO" class="h-7">
+    <img src="../newlogo.png" alt="Craig Kleila SEO" class="h-7">
     <nav class="flex flex-wrap justify-center gap-6">
-      <a href="services.html" class="hover:text-coral transition-colors duration-150">SEO Services</a>
-      <a href="case-studies.html" class="hover:text-coral transition-colors duration-150">Case Studies</a>
-      <a href="about.html" class="hover:text-coral transition-colors duration-150">About</a>
-      <a href="blog.html" class="hover:text-coral transition-colors duration-150">Blog</a>
-      <a href="contact.html" class="hover:text-coral transition-colors duration-150">Contact</a>
+      <a href="../seo-services.html" class="hover:text-coral transition-colors duration-150">SEO Services</a>
+      <a href="../case-studies.html" class="hover:text-coral transition-colors duration-150">Case Studies</a>
+      <a href="../about.html" class="hover:text-coral transition-colors duration-150">About</a>
+      <a href="../blog.html" class="hover:text-coral transition-colors duration-150">Blog</a>
+      <a href="../contact.html" class="hover:text-coral transition-colors duration-150">Contact</a>
     </nav>
     <p>© 2026 Craig Kleila. All rights reserved.</p>
   </div>
