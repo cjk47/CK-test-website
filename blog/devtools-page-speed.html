@@ -175,7 +175,15 @@
   .cause-row .cause-fix > ul li { position: relative; padding-left: 1.1em; margin-bottom: 0.5em; font-size: 0.95rem; line-height: 1.55; color: #2A2A38; }
   .cause-row .cause-fix > ul li:last-child { margin-bottom: 0; }
   .cause-row .cause-fix > ul li::before { content: ""; position: absolute; left: 0.15em; top: 0.62em; width: 5px; height: 5px; border-radius: 50%; background: #F47B5A; }
-  @media (max-width: 767px) { .cause-row, .cause-header { grid-template-columns: 1fr; gap: 10px; } .cause-row { padding: 18px 0; } }
+  @media (max-width: 767px) {
+    .cause-header { display: none; }
+    .cause-row { grid-template-columns: 1fr; grid-template-areas: "name" "fix" "tools"; gap: 10px; padding: 18px 0; }
+    .cause-row > .cause-name { grid-area: name; }
+    .cause-row > .cause-fix { grid-area: fix; }
+    .cause-row > .cause-tools { grid-area: tools; display: flex; flex-direction: row; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+    .cause-row > .cause-tools .cause-tab { margin-left: 0; }
+    .cause-row > .pro-tip { grid-column: 1 / -1; }
+  }
 
   /* Metric threshold pills (Good/Needs Improvement/Poor) */
   .metric-row { display:flex; flex-wrap:wrap; align-items:center; gap:8px 14px; }
@@ -276,7 +284,7 @@
 <script>
   window.addEventListener('scroll', function() {
     var startEl = document.getElementById('open-devtools');
-    var endEl = document.getElementById('console');
+    var endEl = document.getElementById('wrapping-up');
     if(!startEl || !endEl) return;
     var start = startEl.offsetTop - 180;
     var end = endEl.offsetTop + endEl.offsetHeight - document.documentElement.clientHeight;
@@ -347,7 +355,9 @@ function toggleMob() {
     <div class="flex flex-wrap items-center justify-center gap-3 text-sm text-muted">
       <span>By Craig Kleila</span>
       <span style="width:3px;height:3px;border-radius:50%;background:#D1D5DB;"></span>
-      <span>Draft</span>
+      <span>May 2026</span>
+      <span style="width:3px;height:3px;border-radius:50%;background:#D1D5DB;"></span>
+      <span>14 min read</span>
     </div>
   </header>
 
@@ -848,7 +858,7 @@ function toggleMob() {
           </ul>
         </div>
 
-        <h2 class="scroll-mt-24">Wrapping up</h2>
+        <h2 id="wrapping-up" class="scroll-mt-24">Wrapping up</h2>
 
         <p>Page speed issues are easier to fix when you know where to look.</p>
 
